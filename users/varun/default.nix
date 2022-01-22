@@ -9,10 +9,10 @@
     description = "Varun Narravula";
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "audio" "video" "input" "networkmanager" ];
   };
 
   home-manager.users.varun = { suites, ... }: {
-    imports = suites.base;
+    imports = suites.base ++ suites.graphical;
   };
 }

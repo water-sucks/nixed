@@ -15,6 +15,7 @@ in
       dosfstools
       exa
       fd
+      freshfetch
       git
       bottom
       gptfdisk
@@ -25,6 +26,7 @@ in
       nix-index
       neovim
       nmap
+      psmisc
       ripgrep
       skim
       tealdeer
@@ -40,10 +42,14 @@ in
   };
 
   fonts = {
-    fonts = with pkgs; [ powerline-fonts dejavu_fonts ];
+    fonts = with pkgs; [
+      ibm-plex
+      (nerdfonts.override { fonts = [ "IBMPlexMono" "JetBrainsMono" ]; })
+    ];
     fontconfig.defaultFonts = {
-      monospace = [ "DejaVu Sans Mono for Powerline" ];
-      sansSerif = [ "DejaVu Sans" ];
+      monospace = [ "BlexMono Nerd Font" ];
+      sansSerif = [ "IBM Plex Sans" ];
+      serif = [ "IBM Plex Serif" ];
     };
   };
 

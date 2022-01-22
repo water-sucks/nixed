@@ -34,6 +34,7 @@
       kernelModules = [ "dm-snapshot" "amdgpu" ];
     };
     kernelModules = [ "amdgpu" "kvm-amd" "wl" ];
+    kernelParams = [ "quiet" "loglevel=1" "udev.log_level=3" ];
   };
 
   fileSystems."/" =
@@ -52,4 +53,7 @@
     [{ device = "/dev/disk/by-uuid/c859b4eb-d5c6-47bc-bec1-9c8a85bcff5c"; }];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  systemd.services.systemd-udev-settle.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
 }
