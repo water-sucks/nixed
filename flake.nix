@@ -109,7 +109,7 @@
               users = digga.lib.rakeLeaves ./users;
             };
             suites = with profiles; rec {
-              base = [ core users.varun users.root ];
+              base = [ core kmscon users.varun users.root ];
               graphical = [ wm-helper greetd ];
             };
           };
