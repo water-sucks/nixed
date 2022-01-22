@@ -110,7 +110,7 @@
             };
             suites = with profiles; rec {
               base = [ core users.varun users.root ];
-              graphical = [ wm-helper ];
+              graphical = [ wm-helper greetd ];
             };
           };
         };
@@ -122,6 +122,7 @@
             profiles = digga.lib.rakeLeaves ./users/profiles;
             suites = with profiles; rec {
               base = [ direnv git zsh ];
+              graphical = [ hikari gtk kitty firefox ];
             };
           };
           users = {
