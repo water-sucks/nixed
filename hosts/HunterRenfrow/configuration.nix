@@ -9,11 +9,11 @@
   time.timeZone = "America/Los_Angeles";
 
   networking = {
-    hostName = "TheBeastNix";
+    hostName = "HunterRenfrow";
     useDHCP = false;
     networkmanager = {
       enable = true;
-      insertNameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
+      insertNameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700:1001" ];
       dns = "none";
     };
   };
@@ -22,17 +22,17 @@
 
   services.openssh = {
     enable = true;
-    openFirewall = true;
+    openFirewall = false;
   };
 
-  age.secrets.varun-user-TheBeastNix.file = "${self}/secrets/varun-user-TheBeastNix.age";
+  age.secrets.varun-user-HunterRenfrow.file = "${self}/secrets/varun-user-HunterRenfrow.age";
   users.users.varun.passwordFile = "/run/agenix/varun-user-HunterRenfrow";
 
-  age.secrets.root-user-TheBeastNix.file = "${self}/secrets/root-user-TheBeastNix.age";
-  users.users.root.passwordFile = "/run/agenix/root-user-TheBeastNix";
+  age.secrets.root-user-HunterRenfrow.file = "${self}/secrets/root-user-HunterRenfrow.age";
+  users.users.root.passwordFile = "/run/agenix/root-user-HunterRenfrow";
 
   services.earlyoom.enable = true;
 
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.05";
 }
 
