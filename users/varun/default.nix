@@ -12,8 +12,13 @@
     extraGroups = [ "wheel" "audio" "video" "input" "networkmanager" ];
   };
 
-  home-manager.users.varun = { suites, ... }: {
-    imports = suites.base ++ suites.graphical;
+  home-manager.users.varun = { suites, profiles, ... }: {
+    imports = with suites; base ++ graphical ++ apps;
+
+    home.packages = with pkgs; [
+      ydotool
+      waybar
+    ];
 
     programs.git = {
       userEmail = "varun@cvte.org";

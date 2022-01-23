@@ -23,4 +23,18 @@
   # Theming helpers
   programs.dconf.enable = true;
   services.dbus.packages = with pkgs; [ dconf ];
+
+  # Permissions for /dev/uinput (for ydotool to work on user side)
+  services.udev.extraRules = ''
+    KERNEL==”uinput”, GROUP=”uinput”, MODE:=”0660″
+  '';
+
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm.enable = false;
+    displayManager.startx.enable = true;
+    layout = "us";
+    libinput.enable = true;
+    windowManager.berry.enable = true;
+  };
 }
