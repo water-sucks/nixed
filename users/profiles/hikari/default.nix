@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     wofi
+    gtk-layer-shell
   ];
 
   wayland.windowManager.hikari = {

@@ -109,8 +109,8 @@
               users = digga.lib.rakeLeaves ./users;
             };
             suites = with profiles; rec {
-              base = [ core kmscon users.varun users.root ];
-              graphical = [ wm-helper greetd ];
+              base = [ core users.varun users.root ];
+              graphical = [ kmscon wm-helper greetd ];
             };
           };
         };
@@ -122,7 +122,8 @@
             profiles = digga.lib.rakeLeaves ./users/profiles;
             suites = with profiles; rec {
               base = [ direnv git zsh ];
-              graphical = [ hikari gtk kitty firefox ];
+              graphical = [ hikari gtk picom polybar rofi sxhkd feh ];
+              apps = [ firefox kitty spotify ];
             };
           };
           users = {
