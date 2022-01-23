@@ -16,8 +16,8 @@
     };
     initrd = {
       luks.devices."nixos".device = "/dev/disk/by-uuid/cc3ec9fa-ac2b-449c-a314-c734ef29fcd1";
-      availableKernelModules = [ "mt7921e" "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
-      kernelModules = [ "mt7921e" "amdgpu" ];
+      availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
+      kernelModules = [ ];
     };
     kernelPackages = pkgs.linuxPackages_latest;
     kernelPatches = [
@@ -30,9 +30,9 @@
       }
     ];
     kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" ];
-    kernelParams = [ "quiet" "udev.log_level=3" ];
+    kernelParams = [ "quiet" "udev.log_level=0" ];
     extraModulePackages = [ ];
-    # consoleLogLevel = 0;
+    consoleLogLevel = 0;
   };
 
   fileSystems."/" =
