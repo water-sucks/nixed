@@ -6,6 +6,9 @@ super + Return
     kitty
 
 # program launcher
+super + space
+    rofi -show drun
+
 super + d
     rofi -show run
 
