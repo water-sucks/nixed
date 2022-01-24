@@ -14,13 +14,13 @@
   };
   picom = {
     pname = "picom";
-    version = "v7.5";
+    version = "v8";
     src = fetchFromGitHub ({
-      owner = "ibhagwan";
+      owner = "jonaburg";
       repo = "picom";
-      rev = "v7.5";
+      rev = "v8";
       fetchSubmodules = false;
-      sha256 = "sha256-n7QuX4iiCLLbmrVrZHMQRh2+lj2DapIyyX9uAmh3iNA=";
+      sha256 = "sha256-JYVk7mq9K9wm/WLDy/q7ghrVcigkGUWT9QiPs89eWxM=";
     });
   };
 }

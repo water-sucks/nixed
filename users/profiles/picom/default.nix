@@ -3,7 +3,8 @@
 {
   services.picom = {
     enable = true;
-    activeOpacity = "0.60";
+    backend = "xrender";
+    activeOpacity = "0.88";
     blur = true;
     extraOptions = ''
       corner-radius = 10;

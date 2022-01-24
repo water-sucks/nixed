@@ -3,6 +3,6 @@ src.git = "https://github.com/mlvzk/manix"
 fetch.github = "mlvzk/manix"
 
 [picom]
-src.github_tag = "ibhagwan/picom"
-fetch.github = "ibhagwan/picom"
+src.github_tag = "jonaburg/picom"
+fetch.github = "jonaburg/picom"
 
