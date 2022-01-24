@@ -9,5 +9,6 @@
       rofi-calc
     ];
     terminal = "${pkgs.kitty}/bin/kitty";
+    theme = "purple";
   };
 }
