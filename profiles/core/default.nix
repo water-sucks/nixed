@@ -41,6 +41,11 @@ in
     };
   };
 
+  programs.thefuck = {
+    enable = true;
+    alias = "fuck";
+  };
+
   fonts = {
     fonts = with pkgs; [
       ibm-plex
