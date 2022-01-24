@@ -9,3 +9,7 @@ fetch.github = "jonaburg/picom"
 [simplefox-theme]
 src.git = "https://github.com/migueravila/SimpleFox"
 fetch.github = "migueravila/SimpleFox"
+
+[tidal-hifi]
+src.github = "Mastermindzh/tidal-hifi"
+fetch.url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/$ver/tidal-hifi_$ver_amd64.deb"
