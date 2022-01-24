@@ -23,4 +23,15 @@
       sha256 = "sha256-JYVk7mq9K9wm/WLDy/q7ghrVcigkGUWT9QiPs89eWxM=";
     });
   };
+  simplefox-theme = {
+    pname = "simplefox-theme";
+    version = "a4c1ec7d2af121047f09da4a572960e032ca29a6";
+    src = fetchFromGitHub ({
+      owner = "migueravila";
+      repo = "SimpleFox";
+      rev = "a4c1ec7d2af121047f09da4a572960e032ca29a6";
+      fetchSubmodules = false;
+      sha256 = "sha256-iNILXnOZYbzy2/HcUpyiq6VOLA2C6fogAAwSWsTun1U=";
+    });
+  };
 }

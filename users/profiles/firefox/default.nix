@@ -11,7 +11,11 @@
       tabliss
       user-agent-string-switcher
     ];
-    # userContent = builtins.readFile "${simplefox}/chrome/userContent.css";
-    # userChrome = builtins.readFile "${simplefox}/chrome/userChrome.css";
+    profiles."default" = {
+      isDefault = true;
+      userContent = builtins.readFile "${pkgs.simplefox-theme}/chrome/userContent.css";
+      userChrome = builtins.readFile "${pkgs.simplefox-theme}/chrome/userChrome.css";
+      extraConfig = builtins.readFile ./user.js;
+    };
   };
 }
