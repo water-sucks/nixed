@@ -66,6 +66,8 @@ in
     allowedUsers = [ "@wheel" ];
     trustedUsers = [ "root" "@wheel" ];
     systemFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+    maxJobs = "auto"; # Sets to number of cores on machine
+    buildCores = 0; # Sets to number of cores on machine
     extraOptions = ''
       min-free = 536870912
       keep-outputs = true
