@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  sources = pkgs.callPackage _sources/generated.nix { };
+in
 {
   programs.zsh = {
     enable = true;
@@ -17,6 +20,10 @@
       #   name = "nix-shell";
       #   inherit (sources.nix-shell) src;
       # }
+      {
+        name = "zsh-autosuggestions";
+        inherit (sources.zsh-autosuggestions) src;
+      }
       {
         name = "fast-syntax-highlighting";
         inherit (sources.fast-syntax-highlighting) src;
