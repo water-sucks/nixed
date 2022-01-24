@@ -34,4 +34,12 @@
       sha256 = "sha256-iNILXnOZYbzy2/HcUpyiq6VOLA2C6fogAAwSWsTun1U=";
     });
   };
+  tidal-hifi = {
+    pname = "tidal-hifi";
+    version = "2.7.1";
+    src = fetchurl {
+      url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/2.7.1/tidal-hifi_2.7.1_amd64.deb";
+      sha256 = "sha256-0ua6Wd1OzC1+eKko8HcOsKDkEDfanTBsUHLmZLR7GZk=";
+    };
+  };
 }
