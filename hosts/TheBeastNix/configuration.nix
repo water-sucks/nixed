@@ -26,7 +26,7 @@
   };
 
   age.secrets.varun-user-TheBeastNix.file = "${self}/secrets/varun-user-TheBeastNix.age";
-  users.users.varun.passwordFile = "/run/agenix/varun-user-HunterRenfrow";
+  users.users.varun.passwordFile = "/run/agenix/varun-user-TheBeastNix";
 
   age.secrets.root-user-TheBeastNix.file = "${self}/secrets/root-user-TheBeastNix.age";
   users.users.root.passwordFile = "/run/agenix/root-user-TheBeastNix";
