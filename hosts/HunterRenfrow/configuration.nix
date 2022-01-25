@@ -22,7 +22,7 @@
 
   services.openssh = {
     enable = true;
-    openFirewall = false;
+    openFirewall = true;
   };
 
   age.secrets.varun-user-HunterRenfrow.file = "${self}/secrets/varun-user-HunterRenfrow.age";
