@@ -121,7 +121,7 @@
           importables = rec {
             profiles = digga.lib.rakeLeaves ./users/profiles;
             suites = with profiles; rec {
-              base = [ direnv git zsh ];
+              base = [ direnv git zsh nvim ];
               graphical = [ hikari gtk picom polybar rofi sxhkd feh ];
               apps = [ firefox kitty spotify messaging ];
             };
