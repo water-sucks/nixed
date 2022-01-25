@@ -1,0 +1,63 @@
+[filetype-nvim]
+src.git = "https://github.com/nathom/filetype.nvim"
+fetch.github = "nathom/filetype.nvim"
+
+[coq-nvim]
+src.git = "https://github.com/ms-jpq/coq_nvim"
+fetch.github = "ms-jpq/coq_nvim"
+
+[sidebar-nvim]
+src.git = "https://github.com/sidebar-nvim/sidebar.nvim"
+fetch.github = "sidebar-nvim/sidebar.nvim"
+
+[focus-nvim]
+src.git = "https://github.com/beauwilliams/focus.nvim"
+fetch.github = "beauwilliams/focus.nvim"
+
+[iswap-nvim]
+src.git = "https://github.com/mizlan/iswap.nvim"
+fetch.github = "mizlan/iswap.nvim"
+
+[renamer-nvim]
+src.git = "https://github.com/filipdutescu/renamer.nvim"
+fetch.github = "filipdutescu/renamer.nvim"
+
+[nui-nvim]
+src.git = "https://github.com/MunifTanjim/nui.nvim"
+fetch.github = "MunifTanjim/nui.nvim"
+
+[searchbox-nvim]
+src.git = "https://github.com/VonHeikemen/searchbox.nvim"
+fetch.github = "VonHeikemen/searchbox.nvim"
+
+[highstr-nvim]
+src.git = "https://github.com/Pocco81/HighStr.nvim"
+fetch.github = "Pocco81/HighStr.nvim"
+
+[autosave-nvim]
+src.git = "https://github.com/Pocco81/AutoSave.nvim"
+fetch.github = "Pocco81/AutoSave.nvim"
+
+[windline-nvim]
+src.git = "https://github.com/windwp/windline.nvim"
+fetch.github = "windwp/windline.nvim"
+
+[circles-nvim]
+src.git = "https://github.com/projekt0n/circles.nvim"
+fetch.github = "projekt0n/circles.nvim"
+
+[zen-mode-nvim]
+src.git = "https://github.com/folke/zen-mode.nvim"
+fetch.github = "folke/zen-mode.nvim"
+
+[tmux-nvim]
+src.git = "https://github.com/aserowy/tmux.nvim"
+fetch.github = "aserowy/tmux.nvim"
+
+[nvim-mapper]
+src.git = "https://github.com/lazytanuki/nvim-mapper"
+fetch.github = "lazytanuki/nvim-mapper"
+
+[flutter-tools-nvim]
+src.git = "https://github.com/akinsho/flutter-tools.nvim"
+fetch.github = "akinsho/flutter-tools.nvim"
