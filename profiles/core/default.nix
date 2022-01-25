@@ -13,6 +13,7 @@ in
       curl
       dnsutils
       dosfstools
+      dutree
       exa
       fd
       freshfetch
@@ -26,13 +27,15 @@ in
       nix-index
       neovim
       nmap
-      psmisc
+      procs
       ripgrep
       skim
       tealdeer
+      tokei
       usbutils
       utillinux
       whois
+      zoxide
     ];
 
     variables = {
