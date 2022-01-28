@@ -16,6 +16,14 @@
     };
     initrd = {
       luks.devices."nixos".device = "/dev/disk/by-uuid/cc3ec9fa-ac2b-449c-a314-c734ef29fcd1";
+      luks.devices."swap" = {
+        device = "/dev/disk/by-uuid/63005784-e8b6-4d72-91d3-a9ac5281be6a";
+        keyFile = "/keyfile-swap.bin";
+        allowDiscards = true;
+      };
+      secrets = {
+        "keyfile-swap.bin" = "/etc/secrets/initrd/keyfile-swap.bin";
+      };
       availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
       kernelModules = [ ];
     };
@@ -42,14 +50,15 @@
       options = [ "subvol=nixos" ];
     };
 
-
   fileSystems."/boot" =
     {
       device = "/dev/disk/by-uuid/5F4A-2418";
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  swapDevices = [
+    { device = "/dev/disk/by-uuid/87c43d12-3fdd-492e-9db2-6312c5b48e3e"; }
+  ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
