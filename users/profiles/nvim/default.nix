@@ -13,16 +13,45 @@ in
     viAlias = true;
     vimAlias = true;
 
-    extraPackages = with pkgs; [
+    withPython3 = true;
+    withRuby = false;
 
+    extraPackages = with pkgs; [
+      pyright
+      ccls
+      flutter
+      gopls
+      # Where GraphQL LSP? Package it!
+      nodePackages.bash-language-server
+      rust-analyzer
+      elixir_ls
+      elmPackages.elm-language-server
+      ocamlPackages.ocaml-lsp
+      sumneko-lua-language-server
+      rnix-lsp
     ];
 
     extraConfig = ''
+      " let g:dig_load_filetypes = 1
+
       lua << EOF
-        ${builtins.readFile ./lua/options.lua}
-        ${builtins.readFile ./lua/functions.lua}
-        ${builtins.readFile ./lua/keymappings.lua}
+      ${builtins.readFile ./lua/options.lua}
+      ${builtins.readFile ./lua/functions.lua}
+      ${builtins.readFile ./lua/keymappings.lua}
+      ${builtins.readFile ./lua/lsp.lua}
+      ${builtins.readFile ./lua/treesitter.lua}
+      ${builtins.readFile ./lua/nvim-tree.lua}
+      ${builtins.readFile ./lua/indent-blankline.lua}
+      ${builtins.readFile ./lua/circles.lua}
+      ${builtins.readFile ./lua/windline.lua}
+      ${builtins.readFile ./lua/gitsigns.lua}
+      ${builtins.readFile ./lua/searchbox.lua}
+      ${builtins.readFile ./lua/sidebar.lua}
+      ${builtins.readFile ./lua/telescope.lua}
+      ${builtins.readFile ./lua/neorg.lua}
       EOF
+
+      colorscheme hachiko
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -35,6 +64,8 @@ in
       # Completion/Linters/LSP support/Snippets
       nvim-lspconfig
       (plug sources.coq-nvim)
+      (plug sources.coq-artifacts)
+      (plug sources.coq-3p)
 
       # Specialized windows
       nvim-tree-lua
@@ -53,6 +84,7 @@ in
       comment-nvim
       nvim-autopairs
       (plug sources.autosave-nvim)
+      vim-sleuth
 
       # UNIX/Git commands
       vim-eunuch
@@ -60,8 +92,32 @@ in
       diffview-nvim
 
       # Appearance/Theming
-      nvim-treesitter
-      wal-vim
+      (nvim-treesitter.withPlugins (plugins: with pkgs.tree-sitter-grammars; [
+        tree-sitter-python
+        tree-sitter-java
+        tree-sitter-c
+        tree-sitter-cpp
+        tree-sitter-dart
+        tree-sitter-go
+        tree-sitter-gomod
+        tree-sitter-graphql
+        tree-sitter-bash
+        tree-sitter-rust
+        tree-sitter-elixir
+        tree-sitter-elm
+        tree-sitter-ocaml
+        tree-sitter-lua
+        tree-sitter-nix
+        tree-sitter-json
+        tree-sitter-yaml
+        tree-sitter-toml
+        tree-sitter-norg
+        tree-sitter-vim
+      ]))
+      # nvim-treesitter-textobjects
+      nvim-ts-rainbow
+      (plug sources.hachiko)
+      lush-nvim
       (plug sources.windline-nvim)
       bufferline-nvim
       nvim-web-devicons
@@ -76,6 +132,7 @@ in
       lightspeed-nvim
       (plug sources.nvim-mapper)
       presence-nvim
+      neorg
 
       # Language-specific plugins
       (plug sources.flutter-tools-nvim)
@@ -83,4 +140,6 @@ in
       nvim-jdtls
     ];
   };
+
+  xdg.configFile."nvim/parser/lua.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-lua}/parser";
 }
