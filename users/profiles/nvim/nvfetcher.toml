@@ -6,6 +6,14 @@ fetch.github = "nathom/filetype.nvim"
 src.git = "https://github.com/ms-jpq/coq_nvim"
 fetch.github = "ms-jpq/coq_nvim"
 
+[coq-artifacts]
+src.git = "https://github.com/ms-jpq/coq.artifacts"
+fetch.github = "ms-jpq/coq.artifacts"
+
+[coq-3p]
+src.git = "https://github.com/ms-jpq/coq.thirdparty"
+fetch.github = "ms-jpq/coq.thirdparty"
+
 [sidebar-nvim]
 src.git = "https://github.com/sidebar-nvim/sidebar.nvim"
 fetch.github = "sidebar-nvim/sidebar.nvim"
@@ -37,6 +45,10 @@ fetch.github = "Pocco81/HighStr.nvim"
 [autosave-nvim]
 src.git = "https://github.com/Pocco81/AutoSave.nvim"
 fetch.github = "Pocco81/AutoSave.nvim"
+
+[hachiko]
+src.git = "https://github.com/water-sucks/hachiko"
+fetch.github = "water-sucks/hachiko"
 
 [windline-nvim]
 src.git = "https://github.com/windwp/windline.nvim"

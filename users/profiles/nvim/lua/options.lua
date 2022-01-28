@@ -6,6 +6,6 @@ vim.o.foldenable = false
 
 vim.opt.number = true
 vim.opt.ignorecase = true
--- vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 
 vim.g.did_load_filetypes = 1
