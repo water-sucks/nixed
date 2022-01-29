@@ -12,6 +12,7 @@
         device = "nodev";
         version = 2;
         efiSupport = true;
+        gfxmodeEfi = "1920x1080";
       };
     };
     initrd = {
@@ -24,8 +25,8 @@
       secrets = {
         "keyfile-swap.bin" = "/etc/secrets/initrd/keyfile-swap.bin";
       };
-      availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
-      kernelModules = [ ];
+      availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu" ];
+      kernelModules = [ "amdgpu" ];
     };
     kernelPackages = pkgs.linuxPackages_latest;
     kernelPatches = [
@@ -38,7 +39,7 @@
       }
     ];
     kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" ];
-    kernelParams = [ "quiet" "udev.log_level=0" ];
+    kernelParams = [ "quiet" "udev.log_level=0" "acpi_backlight=vendor" ];
     extraModulePackages = [ ];
     consoleLogLevel = 0;
   };

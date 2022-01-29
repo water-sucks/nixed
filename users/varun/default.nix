@@ -1,11 +1,8 @@
 { self, pkgs, ... }:
 
 {
-  # age.secrets.varun-user-TheBeastNix.file = "${self}/secrets/varun-user-TheBeastNix.age";
-
   users.users.varun = {
     uid = 1000;
-    # passwordFile = "/run/agenix/varun-user-TheBeastNix";
     description = "Varun Narravula";
     shell = pkgs.zsh;
     isNormalUser = true;
@@ -20,6 +17,9 @@
       waybar
       tidal-hifi
     ];
+
+    xsession.enable = true;
+    # xsession.windowManager.command = "${pkgs.berry}/bin/berry";
 
     programs.git = {
       userEmail = "varun@cvte.org";

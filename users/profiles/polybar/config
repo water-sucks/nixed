@@ -13,31 +13,26 @@ disabled = #707880
 width = 100%
 height = 2.25%
 radius = 6
-
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 line-size = 2
-
+border-top-size = 0
 border-size = 3
 border-color = #00000000
+offset-x=0
+offset-y=0
 
 padding-left = 0
-padding-right = 1
-
+padding-right = 0
 module-margin = 1
 
 separator = |
 separator-foreground = ${colors.disabled}
-
 font-0 = BlexMono Nerd Font:pixelsize=8;1
-
 modules-left = xworkspaces xwindow
 modules-right = filesystem pipewire xkeyboard memory cpu wlan eth date battery
-
 cursor-click = pointer
 cursor-scroll = ns-resize
-
 enable-ipc = true
 
 ; tray-position = right
