@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ self, config, pkgs, nur, ... }:
 
 {
   # Graphics support
@@ -31,10 +31,42 @@
 
   services.xserver = {
     enable = true;
-    displayManager.lightdm.enable = false;
-    displayManager.startx.enable = true;
+    videoDrivers = [ "modesetting" ];
+    displayManager = {
+      lightdm = {
+        enable = true;
+        greeters.gtk = {
+          enable = true;
+          theme = {
+            name = "Orchis-dark";
+            package = pkgs.orchis-theme;
+          };
+          indicators = [
+            "~clock"
+            "~spacer"
+            "~host"
+            "~spacer"
+            "~power"
+          ];
+          clock-format = "%H:%M:%S";
+          extraConfig = ''
+            [greeter]
+            background=${self}/profiles/wm-helper/ice.png
+          '';
+        };
+        extraConfig = ''
+          minimum-vt=1
+        '';
+      };
+      defaultSession = "none+berry";
+    };
     layout = "us";
     libinput.enable = true;
     windowManager.berry.enable = true;
+    desktopManager.xterm.enable = false;
+  };
+
+  systemd.services = {
+    "kmsconvt@tty1.service".enable = false;
   };
 }

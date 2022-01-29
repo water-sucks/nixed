@@ -2,10 +2,11 @@
 
 {
   services.greetd = {
-    enable = true;
+    enable = false;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd \"startx &> /dev/null\"";
+        # command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd \"startx &> /dev/null\"";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --sessions ${pkgs.berry}/share/applications";
         user = "greeter";
       };
     };
