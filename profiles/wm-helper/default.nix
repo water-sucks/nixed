@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    pulseaudio
+    pamixer
   ];
 
   # Graphics support
