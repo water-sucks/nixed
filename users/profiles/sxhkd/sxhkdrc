@@ -66,3 +66,12 @@ super + ctrl + alt + q
 super + alt + {h, j, k, l}
     berryc cardinal_focus {1, 2, 3, 4}
       && berryc window_raise
+
+XF86AudioRaiseVolume
+    pamixer -i 2
+
+XF86AudioLowerVolume
+    pamixer -d 2
+
+XF86AudioMute
+    pamixer -t
