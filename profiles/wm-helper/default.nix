@@ -1,6 +1,10 @@
-{ self, config, pkgs, nur, ... }:
+{ self, config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    pulseaudio
+  ];
+
   # Graphics support
   hardware.opengl = {
     enable = true;
@@ -14,7 +18,7 @@
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = false;
+    alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
     socketActivation = true;
@@ -54,9 +58,6 @@
             background=${self}/profiles/wm-helper/ice.png
           '';
         };
-        extraConfig = ''
-          minimum-vt=1
-        '';
       };
       defaultSession = "none+berry";
     };

@@ -15,6 +15,7 @@ in
 
     withPython3 = true;
     withRuby = false;
+    withNodeJs = false;
 
     extraPackages = with pkgs; [
       pyright
@@ -92,29 +93,7 @@ in
       diffview-nvim
 
       # Appearance/Theming
-      (nvim-treesitter.withPlugins (plugins: with pkgs.tree-sitter-grammars; [
-        tree-sitter-python
-        tree-sitter-java
-        tree-sitter-c
-        tree-sitter-cpp
-        tree-sitter-dart
-        tree-sitter-go
-        tree-sitter-gomod
-        tree-sitter-graphql
-        tree-sitter-bash
-        tree-sitter-rust
-        tree-sitter-elixir
-        tree-sitter-elm
-        tree-sitter-ocaml
-        tree-sitter-lua
-        tree-sitter-nix
-        tree-sitter-json
-        tree-sitter-yaml
-        tree-sitter-toml
-        tree-sitter-norg
-        tree-sitter-vim
-      ]))
-      # nvim-treesitter-textobjects
+      (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
       nvim-ts-rainbow
       (plug sources.hachiko)
       lush-nvim
