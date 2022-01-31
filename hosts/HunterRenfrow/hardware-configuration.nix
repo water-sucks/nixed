@@ -28,7 +28,16 @@
       availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu" ];
       kernelModules = [ "amdgpu" ];
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_16.override {
+      argsOverride = rec {
+        src = pkgs.fetchurl {
+          url = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.16.1.tar.xz";
+          sha256 = "0i9mfapsyf9lp8j0g329lgwf6kyi61a00al0hdrfd8bf3hikdgy7";
+        };
+        version = "5.16.1";
+        modDirVersion = "5.16.1";
+      };
+    });
     kernelPatches = [
       {
         name = "wireless-mt7921e-fix";
@@ -40,7 +49,6 @@
     ];
     kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" ];
     kernelParams = [ "quiet" "udev.log_level=0" "acpi_backlight=vendor" ];
-    extraModulePackages = [ ];
     consoleLogLevel = 0;
   };
 
