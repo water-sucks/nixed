@@ -1,9 +1,72 @@
+format = """
+$username@$hostname in \
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$cobol\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$time\
+$battery\
+$line_break\
+$jobs\
+$status\
+$shell\
+$character """
+
 [aws]
 symbol = " "
 
 [character]
-success_symbol = "[❯](bold purple)"
-vicmd_symbol = "[❮](bold purple)"
+success_symbol = "[➜](bold yellow)"
+error_symbol = "[➜](bold red)"
 
 [battery]
 full_symbol = ""
@@ -13,9 +76,12 @@ discharging_symbol = ""
 [conda]
 symbol = " "
 
+[dart]
+symbol = " "
+
 [directory]
 style = "cyan"
-read_only = " 🔒"
+read_only = " "
 
 [docker_context]
 symbol = " "
@@ -33,11 +99,11 @@ style = "bold dimmed white"
 
 [git_status]
 format = '([「$all_status$ahead_behind」]($style) )'
-conflicted = "⚠️"
+conflicted = " "
 ahead = "⟫${count} "
 behind = "⟪${count}"
-diverged = "🔀 "
-untracked = "📁 "
+diverged = "  "
+untracked = " "
 stashed = "↪ "
 modified = "𝚫 "
 staged = "✔ "
@@ -89,4 +155,20 @@ symbol = " "
 symbol = " "
 
 [status]
+format = "[$status]($style) "
 disabled = false
+
+[username]
+show_always = true
+format = "# [$user]($style)"
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+
+[time]
+disabled = false
+format = "at \\[[$time]($style)\\]"
+style = "bold white"
+use_12hr = false
+time_format = "%T"

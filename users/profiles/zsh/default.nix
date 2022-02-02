@@ -32,7 +32,7 @@ in
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "dirhistory" "thefuck" ];
-      theme = "ys"; # Using starship for theme
+      theme = ""; # Using starship for theme
     };
     initExtraFirst = ''
       freshfetch
@@ -43,7 +43,7 @@ in
       (pkgs.lib.fileContents ../../../profiles/starship/starship.toml)
         };
 
-        # eval "$(${pkgs.starship}/bin/starship init zsh)"
+        eval "$(${pkgs.starship}/bin/starship init zsh)"
     '';
     shellAliases = {
       flk = "bud"; # I don't like the name "bud" for the devos tool, but I like the name "flk"; petty, right?
