@@ -19,7 +19,6 @@
     ];
 
     xsession.enable = true;
-    # xsession.windowManager.command = "${pkgs.berry}/bin/berry";
 
     programs.git = {
       userEmail = "varun@cvte.org";

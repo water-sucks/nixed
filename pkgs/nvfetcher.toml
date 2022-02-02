@@ -2,9 +2,13 @@
 src.git = "https://github.com/mlvzk/manix"
 fetch.github = "mlvzk/manix"
 
+[berry]
+src.git = "https://github.com/JLErvin/berry"
+fetch.github = "JLErvin/berry"
+
 [picom]
-src.github_tag = "jonaburg/picom"
-fetch.github = "jonaburg/picom"
+src.git = "https://github.com/ibhagwan/picom"
+fetch.github = "ibhagwan/picom"
 
 [simplefox-theme]
 src.git = "https://github.com/migueravila/SimpleFox"

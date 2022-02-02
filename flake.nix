@@ -123,7 +123,7 @@
             suites = with profiles; rec {
               base = [ direnv git zsh nvim ];
               graphical = [ hikari gtk picom polybar rofi sxhkd feh ];
-              apps = [ firefox kitty spotify messaging ];
+              apps = [ firefox kitty spotify messaging chromium ];
             };
           };
           users = {

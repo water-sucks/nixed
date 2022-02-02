@@ -81,5 +81,10 @@ in
   };
 
   # Sadness, I wish I did not need this option
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    chromium = {
+      enableWideVine = true;
+    };
+  };
 }
