@@ -66,6 +66,10 @@ fetch.github = "folke/zen-mode.nvim"
 src.git = "https://github.com/aserowy/tmux.nvim"
 fetch.github = "aserowy/tmux.nvim"
 
+[tetris]
+src.git = "https://github.com/alec-gibson/nvim-tetris"
+fetch.github = "alec-gibson/nvim-tetris"
+
 [nvim-mapper]
 src.git = "https://github.com/lazytanuki/nvim-mapper"
 fetch.github = "lazytanuki/nvim-mapper"

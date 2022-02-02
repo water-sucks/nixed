@@ -33,7 +33,9 @@ in
     ];
 
     extraConfig = ''
-      " let g:dig_load_filetypes = 1
+      set shortmess=I
+
+      let g:did_load_filetypes = 1
 
       lua << EOF
       ${builtins.readFile ./lua/options.lua}
@@ -112,6 +114,7 @@ in
       (plug sources.nvim-mapper)
       presence-nvim
       neorg
+      (plug sources.tetris)
 
       # Language-specific plugins
       (plug sources.flutter-tools-nvim)
