@@ -47,7 +47,7 @@
         };
       }
     ];
-    kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" ];
+    kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" "uinput" ];
     kernelParams = [ "quiet" "udev.log_level=0" "acpi_backlight=vendor" ];
     consoleLogLevel = 0;
   };
