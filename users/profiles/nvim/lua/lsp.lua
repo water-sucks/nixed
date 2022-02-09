@@ -15,16 +15,17 @@ lsp.pyright.setup(coq.lsp_ensure_capabilities({}))
 lsp.ccls.setup(coq.lsp_ensure_capabilities({}))
 
 -- Dart (Yay, Flutter and friends! Uses flutter-tools.nvim for automatic setup)
-require("flutter-tools").setup({
-  decorations = {
-    statusline = {
-      device = true,
-    }
-  },
-  widget_guides = {
-    enabled = true,
-  }
-})
+-- require("flutter-tools").setup({
+--   decorations = {
+--     statusline = {
+--       device = true,
+--     }
+--   },
+--   widget_guides = {
+--     enabled = true,
+--   }
+-- })
+lsp.dartls.setup(coq.lsp_ensure_capabilities({}))
 
 -- Golang (Go go go show me how much of a failure I am!)
 lsp.gopls.setup(coq.lsp_ensure_capabilities({}))

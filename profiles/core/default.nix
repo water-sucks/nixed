@@ -22,6 +22,7 @@ in
       gptfdisk
       iputils
       jq
+      lsof
       manix
       moreutils
       nix-index
@@ -49,6 +50,14 @@ in
     alias = "fuck";
   };
 
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "ja_JP.UTF-8/UTF-8"
+    ];
+  };
+
   fonts = {
     fonts = with pkgs; [
       ibm-plex
@@ -56,7 +65,7 @@ in
     ];
     fontconfig.defaultFonts = {
       monospace = [ "BlexMono Nerd Font" ];
-      sansSerif = [ "IBM Plex Sans" ];
+      sansSerif = [ "IBM Plex Sans" "IBM Plex Sans JP" ];
       serif = [ "IBM Plex Serif" ];
     };
   };
@@ -80,9 +89,10 @@ in
     '';
   };
 
-  # Sadness, I wish I did not need this option
+  console.useXkbConfig = true;
+
   nixpkgs.config = {
-    allowUnfree = true;
+    allowUnfree = true; # Sadness, I wish I did not need this option
     chromium = {
       enableWideVine = true;
     };

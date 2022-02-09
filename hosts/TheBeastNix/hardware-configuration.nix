@@ -31,7 +31,7 @@
         "keyfile.bin" = "/etc/secrets/initrd/keyfile.bin";
       };
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-      kernelModules = [ "dm-snapshot" "amdgpu" ];
+      kernelModules = [ "dm-snapshot" "amdgpu" "uinput" ];
     };
     kernelModules = [ "amdgpu" "kvm-amd" "wl" ];
     kernelParams = [ "quiet" "loglevel=1" "udev.log_level=3" ];

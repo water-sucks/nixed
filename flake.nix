@@ -122,7 +122,7 @@
             profiles = digga.lib.rakeLeaves ./users/profiles;
             suites = with profiles; rec {
               base = [ direnv git zsh nvim ];
-              graphical = [ hikari gtk picom polybar rofi sxhkd feh ];
+              graphical = [ hikari gtk picom polybar rofi sxhkd feh fcitx5 ];
               apps = [ firefox kitty spotify messaging chromium ];
             };
           };
