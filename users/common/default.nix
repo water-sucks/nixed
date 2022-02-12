@@ -1,0 +1,5 @@
+{ self, ... }:
+
+{
+  users.mutableUsers = false;
+}

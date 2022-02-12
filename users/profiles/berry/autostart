@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+feh --bg-scale $HOME/.config/wallpapers/PurpleRedStuff.png
+
+berryc decorate_new false
+berryc title_height 0 # Disabling the weird title bar
+berryc focus_color 5d5d5d
+berryc unfocus_color 4b0b46
+
+# No borders by default
+berryc border_width 0
+berryc inner_border_width 0
+
+berryc top_gap 25
+
+polybar-msg cmd restart # Reload bar for EWMH detection

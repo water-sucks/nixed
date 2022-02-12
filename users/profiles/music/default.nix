@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     spotify
     spicetify-cli
-    playerctl
+    tidal-hifi
   ];
+
+  services.playerctld.enable = true;
 }

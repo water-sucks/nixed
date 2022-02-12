@@ -103,14 +103,30 @@
           hosts = {
             /* set host specific properties here */
             TheBeastNix = { };
+            HunterRenfrow = { };
           };
           importables = rec {
             profiles = digga.lib.rakeLeaves ./profiles // {
               users = digga.lib.rakeLeaves ./users;
             };
             suites = with profiles; rec {
-              base = [ core users.varun users.root ];
-              graphical = [ kmscon wm-helper greetd ];
+              base = [
+                nix
+                core
+                cachix
+                starship
+                pam
+                fonts
+                users.common
+                users.varun
+              ];
+              graphical = [
+                wm-helper
+                lightdm
+                sound
+                bluetooth
+                i18n
+              ];
             };
           };
         };
@@ -121,9 +137,40 @@
           importables = rec {
             profiles = digga.lib.rakeLeaves ./users/profiles;
             suites = with profiles; rec {
-              base = [ direnv git zsh nvim ];
-              graphical = [ hikari gtk picom polybar rofi sxhkd feh fcitx5 ];
-              apps = [ firefox kitty spotify messaging chromium ];
+              base = [
+                direnv
+                git
+                zsh
+                nvim
+                tmux
+              ];
+              graphical = [
+                # General
+                xdg
+                gtk
+                dconf
+                fcitx5
+                wallpapers
+                # X11
+                berry
+                picom
+                polybar
+                rofi
+                sxhkd
+                feh
+                xsecurelock
+                # Wayland
+                hikari
+                mako
+                waybar
+              ];
+              apps = [
+                kitty
+                firefox
+                chromium
+                music
+                messaging
+              ];
             };
           };
           users = {

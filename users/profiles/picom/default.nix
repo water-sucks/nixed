@@ -62,9 +62,8 @@
       blur-background-frame = false;
       blur-background-fixed = false;
 
-      use-damage = true;
-      resize-damage = 1;
+      use-damage = false;
     '';
-    experimentalBackends = false;
+    experimentalBackends = true;
   };
 }

@@ -7,7 +7,7 @@ let
 in
 {
   options.wayland.windowManager.hikari = {
-    enable = mkEnableOption "Hikari Wayland compositor";
+    enable = mkEnableOption "hikari Wayland compositor";
 
     autostart = mkOption {
       type = types.lines;
