@@ -12,23 +12,6 @@
     driSupport = true;
   };
 
-  # Sound support with PipeWire/PulseAudio
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    socketActivation = true;
-  };
-
-  # Bluetooth support
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
   # Theming helpers
   programs.dconf.enable = true;
   services.dbus.packages = with pkgs; [ dconf ];
@@ -44,39 +27,20 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "modesetting" ];
-    displayManager = {
-      lightdm = {
-        enable = true;
-        greeters.gtk = {
-          enable = true;
-          theme = {
-            name = "Orchis-dark";
-            package = pkgs.orchis-theme;
-          };
-          indicators = [
-            "~clock"
-            "~spacer"
-            "~host"
-            "~spacer"
-            "~power"
-          ];
-          clock-format = "%H:%M:%S";
-          extraConfig = ''
-            [greeter]
-            background=${self}/profiles/wm-helper/ice.png
-          '';
-        };
-      };
-      defaultSession = "none+berry";
-    };
     layout = "us";
     libinput.enable = true;
     windowManager.berry.enable = true;
     desktopManager.xterm.enable = false;
   };
 
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-mozc ];
-  };
+  # Screenshare support (disabled for now, interfering with startup)
+  # Use berry if you need screenshare support
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
+  #   gtkUsePortal = true;
+  # };
+
+  # Oof, I need Xwayland for fcitx5 input.
+  programs.xwayland.enable = true;
 }

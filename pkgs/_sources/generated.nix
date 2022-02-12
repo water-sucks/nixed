@@ -3,13 +3,13 @@
 {
   berry = {
     pname = "berry";
-    version = "2212ff2c31aa956700fa11f3199f1bd90893c224";
+    version = "8a8857a4fdbc73a6d770fa7b4b75b9ca32f8b245";
     src = fetchFromGitHub ({
       owner = "JLErvin";
       repo = "berry";
-      rev = "2212ff2c31aa956700fa11f3199f1bd90893c224";
+      rev = "8a8857a4fdbc73a6d770fa7b4b75b9ca32f8b245";
       fetchSubmodules = false;
-      sha256 = "sha256-nRjhOsmlY1MeLR38vQHMQn5/iELlYh63e1HyOmuyUCE=";
+      sha256 = "sha256-6asph0QXzhmHuYcfrLcQ8RTP4QzX8m6AcCp5ImA++9M=";
     });
   };
   manix = {

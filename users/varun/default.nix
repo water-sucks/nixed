@@ -12,14 +12,6 @@
   home-manager.users.varun = { suites, profiles, ... }: {
     imports = with suites; base ++ graphical ++ apps;
 
-    home.packages = with pkgs; [
-      ydotool
-      waybar
-      tidal-hifi
-    ];
-
-    xsession.enable = true;
-
     programs.git = {
       userEmail = "varun@cvte.org";
       userName = "Varun Narravula";
