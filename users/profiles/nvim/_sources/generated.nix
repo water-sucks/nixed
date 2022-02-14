@@ -25,35 +25,35 @@
   };
   coq-3p = {
     pname = "coq-3p";
-    version = "d3873bacc99c87a71ab68a93f279f598aad7b2f3";
+    version = "8e3d60d1dbb202edb5aa16481f827981ea8c17ae";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq.thirdparty";
-      rev = "d3873bacc99c87a71ab68a93f279f598aad7b2f3";
+      rev = "8e3d60d1dbb202edb5aa16481f827981ea8c17ae";
       fetchSubmodules = false;
-      sha256 = "sha256-i6KbQ+MRw6/LommOr1BVHiIfiSxMF0e+1L2VmL2B2gM=";
+      sha256 = "sha256-265vUY1iwEhWN2vOylpS2M13yN7chAxKwdpBO6EBEuU=";
     });
   };
   coq-artifacts = {
     pname = "coq-artifacts";
-    version = "db944379f1b0e7f66274707ff5719d260a0b9128";
+    version = "7b3114c40b62918f0d5016e491e596b26b14e5c5";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq.artifacts";
-      rev = "db944379f1b0e7f66274707ff5719d260a0b9128";
+      rev = "7b3114c40b62918f0d5016e491e596b26b14e5c5";
       fetchSubmodules = false;
-      sha256 = "sha256-BaFbzRPZDWZpYZvW+9r6LrKZbmwq5BxnSqO1N5SRoMI=";
+      sha256 = "sha256-7CR7UqEjpZuxieiEa0WP0JXZWSF/jj/+4VPe2b6In5Y=";
     });
   };
   coq-nvim = {
     pname = "coq-nvim";
-    version = "a8955f1c2b16b196472cd3f91b30b0ea2678e1fd";
+    version = "ef645909d5bda165cc40f2a70bc89e3922a1c35b";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq_nvim";
-      rev = "a8955f1c2b16b196472cd3f91b30b0ea2678e1fd";
+      rev = "ef645909d5bda165cc40f2a70bc89e3922a1c35b";
       fetchSubmodules = false;
-      sha256 = "sha256-+52X16DHoRCuU8bHZ82F9+5wlqnZqUr7yUaa+/70zag=";
+      sha256 = "sha256-A14XeSyu1MeyU6VpmXgnBmQNKxC5d4oVS95G7sMHRnU=";
     });
   };
   filetype-nvim = {
@@ -69,13 +69,13 @@
   };
   flutter-tools-nvim = {
     pname = "flutter-tools-nvim";
-    version = "9458303fcaa5cc35e0b1915edb8509886ed986d7";
+    version = "c7e116b90faba2b44943c0dbba80da395bfd24c0";
     src = fetchFromGitHub ({
       owner = "akinsho";
       repo = "flutter-tools.nvim";
-      rev = "9458303fcaa5cc35e0b1915edb8509886ed986d7";
+      rev = "c7e116b90faba2b44943c0dbba80da395bfd24c0";
       fetchSubmodules = false;
-      sha256 = "sha256-iTvYeb/dC0hmv9DO3EYmQy1WQIoDjm05bQub+cxtJBo=";
+      sha256 = "sha256-SdqxHirEM/A7tWLElwRnNl6Gu3QHZzn1eW/AvP0Xz0E=";
     });
   };
   focus-nvim = {
@@ -113,13 +113,13 @@
   };
   iswap-nvim = {
     pname = "iswap-nvim";
-    version = "d70a864cb86cb75a2e942077ac68134291955899";
+    version = "ad8046dc22e0653ff18d9fe086a4024b02016920";
     src = fetchFromGitHub ({
       owner = "mizlan";
       repo = "iswap.nvim";
-      rev = "d70a864cb86cb75a2e942077ac68134291955899";
+      rev = "ad8046dc22e0653ff18d9fe086a4024b02016920";
       fetchSubmodules = false;
-      sha256 = "sha256-BmxkaRROy3FCwsKLY2rz0jPB8e1AUfOj5tegShCSnKA=";
+      sha256 = "sha256-YJyp06x65COtlF/jwV/VJerGgaQ87ps225sBKhPhDqU=";
     });
   };
   nui-nvim = {
@@ -157,24 +157,24 @@
   };
   searchbox-nvim = {
     pname = "searchbox-nvim";
-    version = "0b06f4a8f0b81016fb8d74824b84d71c421384e0";
+    version = "bbb1c08a36d19517633430079ab0c61293e18b91";
     src = fetchFromGitHub ({
       owner = "VonHeikemen";
       repo = "searchbox.nvim";
-      rev = "0b06f4a8f0b81016fb8d74824b84d71c421384e0";
+      rev = "bbb1c08a36d19517633430079ab0c61293e18b91";
       fetchSubmodules = false;
-      sha256 = "sha256-JK2jjdaCm3YjD2C0QfFwHdRemDxmDnQTI0wCs5h0iHo=";
+      sha256 = "sha256-vxcqh2ExTUsye19c2jXoPMrbuYojzyz9Dq7UIrxhAdM=";
     });
   };
   sidebar-nvim = {
     pname = "sidebar-nvim";
-    version = "7d516d963593ffb692db31448c82891b2c29f479";
+    version = "8d473e59f1a30fb62868c9a33106c75b45271b79";
     src = fetchFromGitHub ({
       owner = "sidebar-nvim";
       repo = "sidebar.nvim";
-      rev = "7d516d963593ffb692db31448c82891b2c29f479";
+      rev = "8d473e59f1a30fb62868c9a33106c75b45271b79";
       fetchSubmodules = false;
-      sha256 = "sha256-0xwxRrpksOhUTSDKLKwH1a9QfN5wdcs+c3eEd63qAm8=";
+      sha256 = "sha256-38lEW19r6Lu5GbUNHkPW/obFKhWrrwvDpxFm3dCTYTw=";
     });
   };
   tetris = {
@@ -201,13 +201,13 @@
   };
   windline-nvim = {
     pname = "windline-nvim";
-    version = "15d3a880dd832d502789c020e65a523bedcacc04";
+    version = "a9e9a6c08792478d3ec92f1a3aac366dc5ce976c";
     src = fetchFromGitHub ({
       owner = "windwp";
       repo = "windline.nvim";
-      rev = "15d3a880dd832d502789c020e65a523bedcacc04";
+      rev = "a9e9a6c08792478d3ec92f1a3aac366dc5ce976c";
       fetchSubmodules = false;
-      sha256 = "sha256-rQmYMKRPFub1Fq7Df7OF90mN7xYLSeD1TP+ZJk4gQzM=";
+      sha256 = "sha256-w3ycOPa428Ue55e4F7xxgpcp3MHNkr307dhkwRlbn7Y=";
     });
   };
   zen-mode-nvim = {

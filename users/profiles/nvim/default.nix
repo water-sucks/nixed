@@ -1,4 +1,4 @@
-{ self, lib, pkgs, ... }:
+{ self, config, pkgs, ... }:
 
 let
   sources = pkgs.callPackage _sources/generated.nix { };
@@ -34,6 +34,7 @@ in
 
     extraConfig = ''
       set shortmess=I
+      colorscheme hachiko
 
       let g:did_load_filetypes = 1
 
@@ -54,7 +55,6 @@ in
       ${builtins.readFile ./lua/neorg.lua}
       EOF
 
-      colorscheme hachiko
     '';
 
     plugins = with pkgs.vimPlugins; [

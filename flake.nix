@@ -166,6 +166,7 @@
               ];
               apps = [
                 kitty
+                zathura
                 firefox
                 chromium
                 music
