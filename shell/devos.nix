@@ -33,12 +33,8 @@ in
   commands = with pkgs; [
     (devos nixUnstable)
     (devos agenix)
-    {
-      category = "devos";
-      name = pkgs.nvfetcher-bin.pname;
-      help = pkgs.nvfetcher-bin.meta.description;
-      command = "${pkgs.nvfetcher-bin}/bin/nvfetcher $@";
-    }
+    (devos nvfetcher-bin)
+    (linter stylua)
     (linter nixpkgs-fmt)
     (linter editorconfig-checker)
     # (docs python3Packages.grip) too many deps
