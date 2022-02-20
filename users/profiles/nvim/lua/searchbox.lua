@@ -1,35 +1,25 @@
-require('searchbox').setup({
+require("searchbox").setup({
   popup = {
-    relative = 'win',
+    relative = "win",
     position = {
-      row = '5%',
-      col = '95%',
+      row = "5%",
+      col = "95%",
     },
     size = 40,
     border = {
       style = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-      highlight = 'FloatBorder',
+      highlight = "FloatBorder",
       text = {
-        top = ' Search ',
-        top_align = 'left',
+        top = " Search ",
+        top_align = "left",
       },
     },
     win_options = {
-      winhighlight = 'Normal:Normal',
+      winhighlight = "Normal:Normal",
     },
   },
 })
 
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>s',
-  ':SearchBoxIncSearch visual_mode=true<CR>',
-  {noremap = true}
-)
+vim.api.nvim_set_keymap("n", "<leader>s", ":SearchBoxIncSearch<CR>", { noremap = true })
 
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>r',
-  ':SearchBoxReplace visual_mode=true<CR>',
-  {noremap = true}
-)
+vim.api.nvim_set_keymap("n", "<leader>r", ":SearchBoxReplace<CR>", { noremap = true })

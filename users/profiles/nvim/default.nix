@@ -39,27 +39,45 @@ in
       let g:did_load_filetypes = 1
 
       lua << EOF
+      -- General
       ${builtins.readFile ./lua/options.lua}
       ${builtins.readFile ./lua/functions.lua}
       ${builtins.readFile ./lua/keymappings.lua}
+
+      -- Completion/Linters/LSP support/Snippets
       ${builtins.readFile ./lua/lsp.lua}
       ${builtins.readFile ./lua/treesitter.lua}
+
+      -- Cool specialized windows
       ${builtins.readFile ./lua/nvim-tree.lua}
+      ${builtins.readFile ./lua/telescope.lua}
+      ${builtins.readFile ./lua/sidebar.lua}
+      ${builtins.readFile ./lua/trouble.lua}
+      ${builtins.readFile ./lua/floaterm.lua}
+
+      -- Text editing assistance/annotations
+      ${builtins.readFile ./lua/renamer.lua}
+      ${builtins.readFile ./lua/searchbox.lua}
+      ${builtins.readFile ./lua/comment.lua}
+      ${builtins.readFile ./lua/autopairs.lua}
+
+      -- UNIX/Git commands
+      ${builtins.readFile ./lua/gitsigns.lua}
+      ${builtins.readFile ./lua/diffview.lua}
+
+      -- Appearance
       ${builtins.readFile ./lua/indent-blankline.lua}
       ${builtins.readFile ./lua/circles.lua}
       ${builtins.readFile ./lua/windline.lua}
-      ${builtins.readFile ./lua/gitsigns.lua}
-      ${builtins.readFile ./lua/searchbox.lua}
-      ${builtins.readFile ./lua/sidebar.lua}
-      ${builtins.readFile ./lua/telescope.lua}
-      ${builtins.readFile ./lua/neorg.lua}
+      ${builtins.readFile ./lua/bufferline.lua}
+      ${builtins.readFile ./lua/zen.lua}
+      ${builtins.readFile ./lua/lightbulb.lua}
+      ${builtins.readFile ./lua/pandoc.lua}
       EOF
-
     '';
 
     plugins = with pkgs.vimPlugins; [
       # Vitals
-      impatient-nvim
       (plug sources.filetype-nvim)
       plenary-nvim
       vim-startuptime
@@ -77,10 +95,10 @@ in
       (plug sources.focus-nvim)
       trouble-nvim
       (plug sources.nui-nvim)
+      vim-floaterm
 
       # Text editing assistance/annotations
       vim-surround
-      (plug sources.iswap-nvim)
       (plug sources.renamer-nvim)
       (plug sources.searchbox-nvim)
       (plug sources.highstr-nvim)
@@ -96,7 +114,6 @@ in
 
       # Appearance/Theming
       (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
-      nvim-ts-rainbow
       (plug sources.hachiko)
       lush-nvim
       (plug sources.windline-nvim)
@@ -109,11 +126,7 @@ in
       nvim-lightbulb
 
       # Special Neovim sauce
-      nvim-notify
-      lightspeed-nvim
-      (plug sources.nvim-mapper)
       presence-nvim
-      neorg
       (plug sources.tetris)
 
       # Language-specific plugins
@@ -122,6 +135,4 @@ in
       nvim-jdtls
     ];
   };
-
-  xdg.configFile."nvim/parser/lua.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-lua}/parser";
 }

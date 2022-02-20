@@ -9,6 +9,9 @@
       # recolor-darkcolor = "#dcdccc";
       # recolor-lightcolor = "#1f1f1f";
     };
+    extraConfig = ''
+      map <C-i> recolor
+    '';
   };
 
   xdg.mimeApps.defaultApplications = {

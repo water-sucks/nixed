@@ -1,10 +1,16 @@
 local lsp = require("lspconfig")
+local map = vim.api.nvim_set_keymap
 
 vim.g.coq_settings = {
-  auto_start = 'shut-up',
+  auto_start = "shut-up",
   xdg = true,
 }
 local coq = require("coq")
+
+map("i", "<esc>", [[pumvisible() ? "<c-e><esc>" : "<esc>"]], { expr = true, noremap = true })
+map("i", "<c-c>", [[pumvisible() ? "<c-e><c-c>" : "<c-c>"]], { expr = true, noremap = true })
+map("i", "<tab>", [[pumvisible() ? "<c-n>" : "<tab>"]], { expr = true, noremap = true })
+map("i", "<s-tab>", [[pumvisible() ? "<c-p>" : "<bs>"]], { expr = true, noremap = true })
 
 -- Python (Using Jedi, go and fight!)
 lsp.pyright.setup(coq.lsp_ensure_capabilities({}))
@@ -15,17 +21,17 @@ lsp.pyright.setup(coq.lsp_ensure_capabilities({}))
 lsp.ccls.setup(coq.lsp_ensure_capabilities({}))
 
 -- Dart (Yay, Flutter and friends! Uses flutter-tools.nvim for automatic setup)
--- require("flutter-tools").setup({
---   decorations = {
---     statusline = {
---       device = true,
---     }
---   },
---   widget_guides = {
---     enabled = true,
---   }
--- })
-lsp.dartls.setup(coq.lsp_ensure_capabilities({}))
+require("flutter-tools").setup({
+  decorations = {
+    statusline = {
+      device = true,
+    },
+  },
+  widget_guides = {
+    enabled = true,
+  },
+})
+-- lsp.dartls.setup(coq.lsp_ensure_capabilities({}))
 
 -- Golang (Go go go show me how much of a failure I am!)
 lsp.gopls.setup(coq.lsp_ensure_capabilities({}))
@@ -37,7 +43,7 @@ lsp.graphql.setup(coq.lsp_ensure_capabilities({}))
 lsp.bashls.setup(coq.lsp_ensure_capabilities({}))
 
 -- Rust (Creating stainless steel tools using Rust! Uses rust-tools.nvim for automatic setup)
-require("rust-tools").setup({})
+-- require("rust-tools").setup({}) -- temporary
 
 -- Elixir (Potions and such, except with good directions and lots of map, filter, and reduce)
 lsp.elixirls.setup(coq.lsp_ensure_capabilities({
@@ -50,30 +56,31 @@ lsp.elmls.setup(coq.lsp_ensure_capabilities({}))
 
 -- OCaml (I don't worship camels, I know it's a bit misleading)
 lsp.ocamllsp.setup(coq.lsp_ensure_capabilities({
-  cmd = { "esy", "ocamllsp" }
+  -- cmd = { "esy", "ocamllsp" }
 }))
 
 -- Lua (I don't even understand, arrays start from 1? Sacrilege!)
-lsp.sumneko_lua.setup {
+lsp.sumneko_lua.setup({
   cmd = { "lua-language-server" },
   settings = {
     Lua = {
       runtime = {
-        version = "LuaJIT"
+        version = "LuaJIT",
       },
       diagnostics = {
         globals = { "vim" },
       },
     },
   },
-}
+})
 
 -- Nix (Can't believe my life hasn't been nixed from using Nix)
 lsp.rnix.setup(coq.lsp_ensure_capabilities({}))
 
 -- Explicitly set LSP diagnostics to update in insert mode
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics, {
-        update_in_insert = true,
-      }
-    )
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    update_in_insert = true,
+  }
+)
