@@ -18,6 +18,7 @@ in
     withNodeJs = false;
 
     extraPackages = with pkgs; [
+      # Language servers
       pyright
       ccls
       flutter
@@ -30,6 +31,31 @@ in
       ocamlPackages.ocaml-lsp
       sumneko-lua-language-server
       rnix-lsp
+
+      # null-ls sources
+      asmfmt
+      black
+      # deadnix
+      elmPackages.elm-format
+      gofumpt
+      nixpkgs-fmt
+      # Package prettierd
+      rustfmt
+      shellharden
+      shfmt
+      stylua
+      # Credo included with mix deps
+      cppcheck
+      editorconfig-checker
+      python3Packages.flake8
+      gitlint
+      nodePackages.prettier
+      nodePackages.markdownlint-cli
+      proselint
+      shellcheck
+      statix
+      vim-vint
+      nodePackages.write-good
     ];
 
     extraConfig = ''
@@ -87,6 +113,7 @@ in
       (plug sources.coq-nvim)
       (plug sources.coq-artifacts)
       (plug sources.coq-3p)
+      null-ls-nvim
 
       # Specialized windows
       nvim-tree-lua
