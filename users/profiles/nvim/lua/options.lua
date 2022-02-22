@@ -1,6 +1,7 @@
 vim.o.hidden = true
 vim.o.termguicolors = true
 vim.o.smarttab = true
+vim.o.tabstop = 4
 vim.o.updatetime = 100
 vim.o.foldenable = false
 vim.o.scrolloff = 999
