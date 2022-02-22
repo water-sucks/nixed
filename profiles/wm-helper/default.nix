@@ -1,11 +1,6 @@
 { self, config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    xdotool
-    pamixer
-  ];
-
   # Graphics support
   hardware.opengl = {
     enable = true;
