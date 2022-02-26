@@ -1,92 +1,50 @@
-{ sources
-, stdenv
+{ stdenv
 , lib
-, dpkg
-, glibc
-, gcc-unwrapped
-, autoPatchelfHook
-, makeWrapper
-, nodePackages
-, electron
-, nss
-, gdk-pixbuf
-, libXext
-, libxcb
-, libXrandr
-, libXdamage
-, libXcursor
-, libXcomposite
-, libXtst
-, alsa-lib
-, pango
-, expat
-, gtk3-x11
-, libXScrnSaver
+, appimageTools
+, fetchurl
+, makeDesktopItem
 }:
 
 let
-  deps = [
-    nss
-    gdk-pixbuf
-    libXext
-    libxcb
-    libXrandr
-    libXdamage
-    libXcursor
-    libXcomposite
-    libXtst
-    alsa-lib
-    pango
-    expat
-    gtk3-x11
-    libXScrnSaver
-  ];
+  pname = "tidal-hifi";
+  version = "2.7.2";
+  name = "${pname}-${version}";
+
+  src = fetchurl {
+    url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/2.7.2/tidal-hifi-2.7.2.AppImage";
+    sha256 = "sha256-tWYOS/MiUOfI+7Ej/s8Tkn/IihhkyOEeKxo4JhWMx9E=";
+  };
+
+  contents = appimageTools.extractType2 {
+    inherit name src;
+  };
+
+  desktopItem = makeDesktopItem {
+    name = "pname";
+    desktopName = "TIDAL";
+    comment = "The web version of Tidal running in electron with hifi support thanks to widevine";
+    exec = "${pname} %U";
+    icon = "tidal-hifi";
+    categories = [ "Audio" ];
+  };
 in
-stdenv.mkDerivation {
-  inherit (sources.tidal-hifi) pname version src;
+appimageTools.wrapType2 rec {
+  inherit name src;
 
-  system = "x86_64-linux";
+  extraPkgs = appimageTools.defaultFhsEnvArgs.multiPkgs;
 
-  nativeBuildInputs = [
-    autoPatchelfHook
-    makeWrapper
-    dpkg
-    nodePackages.asar
-  ] ++ deps;
+  extraInstallCommands = ''
+    mv $out/bin/{${name},${pname}}
 
-  buildInputs = [
-    stdenv.cc.cc
-  ];
-
-  dependencies = deps;
-
-  sourceRoot = ".";
-
-  unpackCmd = "dpkg-deb -x $src .";
-
-  postPatch = ''
-    asar e opt/tidal-hifi/resources/app.asar app
-    autoPatchelf app
-    asar p app opt/tidal-hifi/resources/app.asar
-  '';
-
-  installPhase = ''
-    mkdir -p $out/bin
-
-    cp -r usr/share $out/share;
-    cp -r opt/tidal-hifi/resources $out/share/tidal-hifi
-
-    substituteInPlace $out/share/applications/tidal-hifi.desktop \
-      --replace /opt/tidal-hifi/tidal-hifi $out/bin/tidal-hifi
-
-    makeWrapper ${electron}/bin/electron $out/bin/tidal-hifi \
-      --add-flags $out/share/tidal-hifi/app.asar
+    mkdir -p $out/share
+    cp -rt $out/share ${desktopItem}/share/applications ${contents}/usr/share/icons
+    chmod -R +w $out/share
   '';
 
   meta = with lib; {
-    description = "An Electron wrapper around TIDAL's web version";
+    description = "The web version of Tidal running in electron with hifi support thanks to widevine";
     homepage = "https://github.com/Mastermindzh/tidal-hifi";
-    license = licenses.bsd3;
+    license = licenses.mit;
     platforms = [ "x86_64-linux" ];
   };
 }

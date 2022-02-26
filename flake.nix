@@ -122,7 +122,7 @@
               ];
               graphical = [
                 wm-helper
-                lightdm
+                gdm
                 sound
                 bluetooth
                 i18n
