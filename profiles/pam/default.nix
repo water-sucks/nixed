@@ -6,9 +6,9 @@
   ];
 
   security.pam.services = {
-    lightdm.text = lib.mkForce ''
+    gdm-password.text = lib.mkForce ''
       auth      substack      login
-      auth      required      ${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so no_increment_hotp
+      auth      required      ${pkgs.google-authenticator}/lib/security/pam_google_authenticator.so no_increment_hotp nullok
       account   include       login
       password  substack      login
       session   include       login

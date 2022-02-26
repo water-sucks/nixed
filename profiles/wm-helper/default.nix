@@ -1,4 +1,4 @@
-{ self, config, pkgs, ... }:
+{ self, config, lib, pkgs, ... }:
 
 {
   # Graphics support
@@ -25,6 +25,7 @@
     layout = "us";
     libinput.enable = true;
     windowManager.berry.enable = true;
+    desktopManager.gnome.enable = false;
     desktopManager.xterm.enable = false;
   };
 
