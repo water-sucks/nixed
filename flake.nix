@@ -157,6 +157,7 @@
                 polybar
                 rofi
                 sxhkd
+                dunst
                 feh
                 xsecurelock
                 # Wayland
