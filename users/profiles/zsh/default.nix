@@ -44,12 +44,16 @@ in
         };
 
         eval "$(${pkgs.starship}/bin/starship init zsh)"
+
+        eval "$(${pkgs.zoxide}/bin/zoxide init zsh)"
     '';
     shellAliases = {
       flk = "bud"; # I don't like the name "bud" for the devos tool, but I like the name "flk"; petty, right?
       please = "sudo";
       dog = "bat";
       fuckit = "bud rebuild $(hostname) switch";
+      ll = "exa -lag";
+      mkdir = "mkdir -p";
     };
   };
 }

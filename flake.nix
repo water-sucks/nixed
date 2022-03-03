@@ -39,6 +39,11 @@
       naersk.inputs.nixpkgs.follows = "nixos";
 
       nixos-hardware.url = "github:nixos/nixos-hardware";
+
+      asm-lsp = {
+        url = "github:water-sucks/asm-lsp";
+        inputs.nixpkgs.follows = "nixos";
+      };
     };
 
   outputs =
@@ -52,6 +57,7 @@
     , agenix
     , nvfetcher
     , deploy
+    , asm-lsp
     , ...
     } @ inputs:
     digga.lib.mkFlake
@@ -67,6 +73,7 @@
               nur.overlay
               agenix.overlay
               nvfetcher.overlay
+              asm-lsp.overlay
               ./pkgs/default.nix
             ];
           };
