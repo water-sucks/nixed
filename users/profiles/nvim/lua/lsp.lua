@@ -113,6 +113,11 @@ lsp.rnix.setup(coq.lsp_ensure_capabilities({
   on_attach = on_attach,
 }))
 
+lsp.asm_lsp.setup(coq.lsp_ensure_capabilities({
+  on_attach = on_attach,
+  filetypes = { "asm", "vmasm", "s" },
+}))
+
 -- Explicitly set LSP diagnostics to update in insert mode
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,

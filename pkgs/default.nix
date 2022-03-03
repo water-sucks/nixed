@@ -4,4 +4,5 @@ final: prev: {
   # then, call packages with `final.callPackage`
   simplefox-theme = final.callPackage ./applications/networking/browsers/firefox/simplefox-theme { };
   tidal-hifi = final.callPackage ./applications/audio/tidal-hifi { };
+  # asm-lsp = final.callPackage ./development/tools/misc/asm-lsp { };
 }

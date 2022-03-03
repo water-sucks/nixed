@@ -31,6 +31,7 @@ in
       ocamlPackages.ocaml-lsp
       sumneko-lua-language-server
       rnix-lsp
+      asm-lsp
 
       # null-ls sources
       asmfmt
