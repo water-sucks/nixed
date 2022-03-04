@@ -134,6 +134,9 @@
                 bluetooth
                 i18n
               ];
+              virt = [
+                kvm
+              ];
             };
           };
         };
