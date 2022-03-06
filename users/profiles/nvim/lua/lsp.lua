@@ -1,11 +1,11 @@
-local lsp = require("lspconfig")
 local map = vim.api.nvim_set_keymap
+local navigator = require("navigator")
 
 vim.g.coq_settings = {
   auto_start = "shut-up",
   xdg = true,
 }
-local coq = require("coq")
+require("coq")
 
 map("i", "<esc>", [[pumvisible() ? "<c-e><esc>" : "<esc>"]], { expr = true, noremap = true })
 map("i", "<c-c>", [[pumvisible() ? "<c-e><c-c>" : "<c-c>"]], { expr = true, noremap = true })
@@ -16,57 +16,13 @@ local on_attach = function(client)
   if client.resolved_capabilities.document_formatting then
     vim.cmd([[
       augroup LspFormatting
-        autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
       augroup END
     ]])
   end
 end
 
--- Python (Using Jedi, go and fight!)
-lsp.pyright.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-}))
-
--- Java (Pain in the ass, I'll set up later...I think?)
-
--- C++/C (Using clangd, but musically)
-lsp.ccls.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-}))
-
--- Dart (Yay, Flutter and friends! Uses flutter-tools.nvim for automatic setup)
--- Disabling flutter-tools because it does not work on Dart-only projects
--- require("flutter-tools").setup({
---   on_attach = on_attach,
---   decorations = {
---     statusline = {
---       device = true,
---     },
---   },
---   widget_guides = {
---     enabled = true,
---   },
--- })
-lsp.dartls.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-}))
-
--- Golang (Go go go show me how much of a failure I am!)
-lsp.gopls.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-}))
-
--- GraphQL (Running around in circles, just waiting to cross paths with something)
--- lsp.graphql.setup(coq.lsp_ensure_capabilities({})) -- Disabled until I can package it
-
--- Bash (Exactly what I'm doing with my head to the table while writing shell scripts)
-lsp.bashls.setup(coq.lsp_ensure_capabilities({}))
-
--- Rust (Creating stainless steel tools using Rust! Uses rust-tools.nvim for automatic setup)
-require("rust-tools").setup({})
-
--- Elixir (Potions and such, except with good directions and lots of map, filter, and reduce)
 local elixir_ls_path = function()
   if vim.fn.executable("elixir-ls") then
     local handle = io.popen("which elixir-ls")
@@ -77,54 +33,101 @@ local elixir_ls_path = function()
     return ""
   end
 end
-lsp.elixirls.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-  cmd = { elixir_ls_path() },
-  dialyzerEnabled = false,
-}))
 
--- Elm (I'm not stuck in the woods, but at least I'll have no runtime errors if I am!)
-lsp.elmls.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-}))
+navigator.setup({
+  debug = false,
+  width = 0.75,
+  height = 0.3,
+  preview_height = 0.35,
+  border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 
--- OCaml (I don't worship camels, I know it's a bit misleading)
-lsp.ocamllsp.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-}))
+  default_mapping = true,
+  treesitter_analysis = true,
+  lsp_signature_help = false,
+  signature_help_cfg = nil,
+  icons = {
+    icons = true,
 
--- Lua (I don't even understand, arrays start from 1? Sacrilege!)
-lsp.sumneko_lua.setup({
-  cmd = { "lua-language-server" },
-  settings = {
-    Lua = {
-      runtime = {
-        version = "LuaJIT",
-      },
-      diagnostics = {
-        globals = { "vim" },
+    code_action_icon = " ",
+    code_lens_action_icon = " ",
+
+    diagnostic_head = "",
+    diagnostic_err = "裂",
+    diagnostic_warn = "",
+    diagnostic_info = "",
+    diagnostic_hint = "",
+    diagnostic_head_severity_1 = "",
+    diagnostic_head_severity_2 = "",
+    diagnostic_head_severity_3 = "",
+    diagnostic_head_description = "﬍",
+    diagnostic_virtual_text = "",
+    diagnostic_file = "",
+
+    value_changed = "",
+    value_definition = "",
+
+    match_kinds = {
+      var = " ",
+      method = "ƒ ",
+      ["function"] = " ",
+      parameter = "  ",
+      associated = "魯 ",
+      namespace = " ",
+      type = " ",
+      field = " ",
+    },
+
+    treesitter_defult = "", -- Spelled wrong until upstream
+  },
+
+  lsp_installer = false,
+  lsp = {
+    code_action = { enable = true, sign = true, sign_priority = 40, virtual_text = true },
+    code_lens_action = { enable = true, sign = true, sign_priority = 40, virtual_text = true },
+    format_on_save = true,
+    disable_format_cap = { "sumneko_lua", "elixirls", "gopls", "rnix" },
+    diagnostic_virtual_text = true,
+    diagnostic_update_in_insert = true,
+    disply_diagnostic_qf = false, -- Spelled wrong upstrean
+
+    -- elixirls = {
+    --   cmd = { elixir_ls_path() },
+    --   dialyzerEnabled = false,
+    -- }, -- Set up separately for now until spelling error is fixed
+    sumneko_lua = {
+      cmd = { "lua-language-server" },
+      settings = {
+        Lua = {
+          runtime = {
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            globals = { "vim" },
+          },
+        },
       },
     },
+    servers = {
+      "pyright",
+      "ccls",
+      "dartls",
+      "gopls",
+      "bashls",
+      "elmls",
+      "ocamllsp",
+      "rnix",
+      "asm_lsp",
+    },
+    disable_lsp = { "rust_analyzer", "jedi_language_server", "pylsp" },
   },
 })
 
--- Nix (Can't believe my life hasn't been nixed from using Nix)
-lsp.rnix.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-}))
+require("rust-tools").setup({})
 
-lsp.asm_lsp.setup(coq.lsp_ensure_capabilities({
-  on_attach = on_attach,
-  filetypes = { "asm", "vmasm", "s" },
-}))
-
--- Explicitly set LSP diagnostics to update in insert mode
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    update_in_insert = true,
-  }
-)
+require("lspconfig").elixirls.setup({
+  cmd = { elixir_ls_path() },
+  dialyzerEnabled = false,
+})
 
 local null_ls = require("null-ls")
 
@@ -137,19 +140,19 @@ null_ls.setup({
     null_ls.builtins.formatting.elm_format,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.prettier,
-    -- null_ls.builtins.formatting.mix,
+    null_ls.builtins.formatting.mix,
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
 
     null_ls.builtins.diagnostics.cppcheck,
-    -- null_ls.builtins.diagnostics.credo,
+    null_ls.builtins.diagnostics.credo,
     -- null_ls.builtins.diagnostics.editorconfig_checker,
     null_ls.builtins.diagnostics.flake8,
     null_ls.builtins.diagnostics.gitlint,
     null_ls.builtins.diagnostics.markdownlint,
-    -- null_ls.builtins.diagnostics.deadnix,
+    null_ls.builtins.diagnostics.deadnix,
     null_ls.builtins.diagnostics.proselint,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.statix,

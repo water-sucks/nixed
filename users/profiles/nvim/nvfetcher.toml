@@ -14,6 +14,19 @@ fetch.github = "ms-jpq/coq.artifacts"
 src.git = "https://github.com/ms-jpq/coq.thirdparty"
 fetch.github = "ms-jpq/coq.thirdparty"
 
+[navigator-lua]
+# src.git = "https://github.com/ray-x/navigator.lua"
+src.manual = "92f56ffe4b392c9e1c21d47bff01a0198dacae7f"
+fetch.github = "ray-x/navigator.lua"
+
+[guihua-lua]
+src.git = "https://github.com/ray-x/guihua.lua"
+fetch.github = "ray-x/guihua.lua"
+
+[lsp-signature-nvim]
+src.git = "https://github.com/ray-x/lsp_signature.nvim"
+fetch.github = "ray-x/lsp_signature.nvim"
+
 [sidebar-nvim]
 src.git = "https://github.com/sidebar-nvim/sidebar.nvim"
 fetch.github = "sidebar-nvim/sidebar.nvim"
