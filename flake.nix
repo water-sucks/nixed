@@ -161,6 +161,7 @@
                 dconf
                 fcitx5
                 wallpapers
+                screenshot
                 # X11
                 berry
                 picom
