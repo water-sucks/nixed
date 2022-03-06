@@ -36,7 +36,7 @@ in
       # null-ls sources
       asmfmt
       black
-      # deadnix
+      deadnix
       elmPackages.elm-format
       gofumpt
       nixpkgs-fmt
@@ -98,7 +98,6 @@ in
       ${builtins.readFile ./lua/windline.lua}
       ${builtins.readFile ./lua/bufferline.lua}
       ${builtins.readFile ./lua/zen.lua}
-      ${builtins.readFile ./lua/lightbulb.lua}
       ${builtins.readFile ./lua/pandoc.lua}
       EOF
     '';
@@ -115,6 +114,9 @@ in
       (plug sources.coq-artifacts)
       (plug sources.coq-3p)
       null-ls-nvim
+      (plug sources.navigator-lua)
+      (plug sources.guihua-lua)
+      (plug sources.lsp-signature-nvim)
 
       # Specialized windows
       nvim-tree-lua
@@ -151,7 +153,7 @@ in
       (plug sources.zen-mode-nvim) # Couldn't find it, but it probably exists somewhere
       twilight-nvim
       indent-blankline-nvim
-      nvim-lightbulb
+      # nvim-lightbulb
 
       # Special Neovim sauce
       presence-nvim
@@ -164,3 +166,4 @@ in
     ];
   };
 }
+
