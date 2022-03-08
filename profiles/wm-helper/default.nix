@@ -1,10 +1,15 @@
 { self, config, lib, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+  ];
+
   # Graphics support
   hardware.opengl = {
     enable = true;
     driSupport = true;
+    driSupport32Bit = true;
   };
 
   # Theming helpers
