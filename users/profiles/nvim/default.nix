@@ -28,7 +28,7 @@ in
       rust-analyzer
       elixir_ls
       elmPackages.elm-language-server
-      ocamlPackages.ocaml-lsp
+      # ocamlPackages.ocaml-lsp
       sumneko-lua-language-server
       rnix-lsp
       asm-lsp
@@ -36,7 +36,7 @@ in
       # null-ls sources
       asmfmt
       black
-      deadnix
+      # deadnix
       elmPackages.elm-format
       gofumpt
       nixpkgs-fmt

@@ -152,7 +152,10 @@
                 git
                 zsh
                 nvim
+              ];
+              dev = [
                 tmux
+                go
               ];
               graphical = [
                 # General
@@ -183,6 +186,7 @@
                 chromium
                 music
                 messaging
+                insomnia
               ];
             };
           };

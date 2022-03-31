@@ -10,7 +10,7 @@
   };
 
   home-manager.users.varun = { suites, profiles, ... }: {
-    imports = with suites; base ++ graphical ++ apps;
+    imports = with suites; base ++ dev ++ graphical ++ apps;
 
     programs.git = {
       userEmail = "varun@cvte.org";
