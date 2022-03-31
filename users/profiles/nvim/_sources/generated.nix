@@ -25,35 +25,35 @@
   };
   coq-3p = {
     pname = "coq-3p";
-    version = "d12c4f427fe8fa191291cecd6b0c6a9dd8213746";
+    version = "42e7f2abdee14a3c5fa5f68ff4f548df52d3be15";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq.thirdparty";
-      rev = "d12c4f427fe8fa191291cecd6b0c6a9dd8213746";
+      rev = "42e7f2abdee14a3c5fa5f68ff4f548df52d3be15";
       fetchSubmodules = false;
-      sha256 = "sha256-QAuxdTtuoHH053/XIlHcR8iOQQW0frI1w2zduQAsI9U=";
+      sha256 = "sha256-U5cZlWcq7xVSBMC5yOMxZjF+qZ9IoJhYmxiuUAsRRDs=";
     });
   };
   coq-artifacts = {
     pname = "coq-artifacts";
-    version = "5b11e45fb0a8d35226ec90bb45f4884137a7f96a";
+    version = "14ab7b6862696e0b9d6054c695c0f14f732d1271";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq.artifacts";
-      rev = "5b11e45fb0a8d35226ec90bb45f4884137a7f96a";
+      rev = "14ab7b6862696e0b9d6054c695c0f14f732d1271";
       fetchSubmodules = false;
-      sha256 = "sha256-2emsNK1HKvX/LKGDAumyc+AtQ/N+LUMHU3fERuPGPig=";
+      sha256 = "sha256-YKUFiJ85R29V1BhLFCK9uiRnS+QzVUk9zC0zIXa1wes=";
     });
   };
   coq-nvim = {
     pname = "coq-nvim";
-    version = "39c5fde176203793c29d296f3476f0e6934dde51";
+    version = "2bb10396ab574a3c4a6d3b6c8746b8f21d991f69";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq_nvim";
-      rev = "39c5fde176203793c29d296f3476f0e6934dde51";
+      rev = "2bb10396ab574a3c4a6d3b6c8746b8f21d991f69";
       fetchSubmodules = false;
-      sha256 = "sha256-LB5pPldnqTiplcbACiYtP7tQ9Ki2mJD+6zbhW36Vq4U=";
+      sha256 = "sha256-IpFd7IZpAKS6Nq2uKnjQNYdTRVcfpxNbl2o6UgZJ3HE=";
     });
   };
   filetype-nvim = {
@@ -69,35 +69,35 @@
   };
   flutter-tools-nvim = {
     pname = "flutter-tools-nvim";
-    version = "ffe36b437e7a47352ecf8301a2f2ba6dee2094e7";
+    version = "53912f24165d52c4b36a8664550dd11ff1e6e9da";
     src = fetchFromGitHub ({
       owner = "akinsho";
       repo = "flutter-tools.nvim";
-      rev = "ffe36b437e7a47352ecf8301a2f2ba6dee2094e7";
+      rev = "53912f24165d52c4b36a8664550dd11ff1e6e9da";
       fetchSubmodules = false;
-      sha256 = "sha256-yH6bko6oxCpAKeQUKek+h3qw6HltwXA7tz879UNi2zE=";
+      sha256 = "sha256-ojTObqmw2FVw9A8GkqP8MNoWlBAs2C7rTtiRvjt0vPQ=";
     });
   };
   focus-nvim = {
     pname = "focus-nvim";
-    version = "14902d636b5c389d19ef671fd52680d5654edc08";
+    version = "86d036649ab8d00ac8fdca750533a541b892e4fb";
     src = fetchFromGitHub ({
       owner = "beauwilliams";
       repo = "focus.nvim";
-      rev = "14902d636b5c389d19ef671fd52680d5654edc08";
+      rev = "86d036649ab8d00ac8fdca750533a541b892e4fb";
       fetchSubmodules = false;
-      sha256 = "sha256-QuD1MIq9K8BAYrqc3sEa3bd3Dfe8YhkF+JsZy6AJYnY=";
+      sha256 = "sha256-PYuy7OF+ZhSyXWInRBtfH4nvECU22BqvNLn553kvzUI=";
     });
   };
   guihua-lua = {
     pname = "guihua-lua";
-    version = "dc31428364809b4388c007c227e3d5d39f1e4395";
+    version = "a07ad399646282ffb6d582f980949d628cc72532";
     src = fetchFromGitHub ({
       owner = "ray-x";
       repo = "guihua.lua";
-      rev = "dc31428364809b4388c007c227e3d5d39f1e4395";
+      rev = "a07ad399646282ffb6d582f980949d628cc72532";
       fetchSubmodules = false;
-      sha256 = "sha256-Qi6aeHFrYChWbNr4sEE+6KPtTZSlmJRx2msYZK4Y/8s=";
+      sha256 = "sha256-QL+hm2NszglKYZvuh73NMFVt3KnMnwKjT1WiUebl0cs=";
     });
   };
   hachiko = {
@@ -124,13 +124,13 @@
   };
   iswap-nvim = {
     pname = "iswap-nvim";
-    version = "ad8046dc22e0653ff18d9fe086a4024b02016920";
+    version = "f8ce882f445caac721cc6de00d849e98505c73b6";
     src = fetchFromGitHub ({
       owner = "mizlan";
       repo = "iswap.nvim";
-      rev = "ad8046dc22e0653ff18d9fe086a4024b02016920";
+      rev = "f8ce882f445caac721cc6de00d849e98505c73b6";
       fetchSubmodules = false;
-      sha256 = "sha256-YJyp06x65COtlF/jwV/VJerGgaQ87ps225sBKhPhDqU=";
+      sha256 = "sha256-/RAd09wQeUQ03dLBCop0amlVFpS7MyAoXJU6kcNEhKc=";
     });
   };
   lsp-signature-nvim = {
@@ -157,13 +157,13 @@
   };
   nui-nvim = {
     pname = "nui-nvim";
-    version = "6f803e88093573f73d4ee6c0dfe0575df3f97a9f";
+    version = "513ff9bbdde7da53e209232d4328e734ea2bd96a";
     src = fetchFromGitHub ({
       owner = "MunifTanjim";
       repo = "nui.nvim";
-      rev = "6f803e88093573f73d4ee6c0dfe0575df3f97a9f";
+      rev = "513ff9bbdde7da53e209232d4328e734ea2bd96a";
       fetchSubmodules = false;
-      sha256 = "sha256-Pcq7TPKAZB/TUIWD//NY+aK6QNHOqQO6WLdB/Ea7yhY=";
+      sha256 = "sha256-BAyA2/UkRGYEvhPqxgRn42aGFoiCQhXOYUj+JKeLIiM=";
     });
   };
   nvim-mapper = {
@@ -201,13 +201,13 @@
   };
   sidebar-nvim = {
     pname = "sidebar-nvim";
-    version = "abffb43c23bb8097b8a571d7c2682d99507582ba";
+    version = "90123bf8d4255016f06ef0a5de0617da77b83fc8";
     src = fetchFromGitHub ({
       owner = "sidebar-nvim";
       repo = "sidebar.nvim";
-      rev = "abffb43c23bb8097b8a571d7c2682d99507582ba";
+      rev = "90123bf8d4255016f06ef0a5de0617da77b83fc8";
       fetchSubmodules = false;
-      sha256 = "sha256-1e3N7t4WXDRSqmDmKzbcK3pnCcYgCIv3aQXjgeymF5Q=";
+      sha256 = "sha256-FiFIE3kqk/usJeBDcXaHrovqXq68TMNauLl4PPO2zzc=";
     });
   };
   tetris = {
@@ -223,24 +223,24 @@
   };
   tmux-nvim = {
     pname = "tmux-nvim";
-    version = "8bb089ed0707ebfcdb05cd93c6fabb411f050c3a";
+    version = "746cb2a51426e8584af2fa724bdfc960fa9a53ae";
     src = fetchFromGitHub ({
       owner = "aserowy";
       repo = "tmux.nvim";
-      rev = "8bb089ed0707ebfcdb05cd93c6fabb411f050c3a";
+      rev = "746cb2a51426e8584af2fa724bdfc960fa9a53ae";
       fetchSubmodules = false;
-      sha256 = "sha256-tEabwrzsVqKvUf8K0mz+OJsV7irVlxPGwN+xR0cuKu4=";
+      sha256 = "sha256-koQ4cOAHC/IBpp3wL2fbo8PhS3gPLAgzB0to+JnlQP4=";
     });
   };
   windline-nvim = {
     pname = "windline-nvim";
-    version = "7c813099efc4fa6f6505622a167e9b3933c0836d";
+    version = "b02a600957554c162087dd0b431c5ec727fc4016";
     src = fetchFromGitHub ({
       owner = "windwp";
       repo = "windline.nvim";
-      rev = "7c813099efc4fa6f6505622a167e9b3933c0836d";
+      rev = "b02a600957554c162087dd0b431c5ec727fc4016";
       fetchSubmodules = false;
-      sha256 = "sha256-wlJ76CPXTZA7fhuqWIkhG+CG6LyWONXc82FEZmTqOsI=";
+      sha256 = "sha256-XwFu3cSOorjforpbsqwYD9pk8rS6zGABVf7YAR5K5kA=";
     });
   };
   zen-mode-nvim = {
