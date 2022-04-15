@@ -32,8 +32,8 @@
       agenix.url = "github:ryantm/agenix";
       agenix.inputs.nixpkgs.follows = "nixos";
 
-      nvfetcher.url = "github:berberman/nvfetcher";
-      nvfetcher.inputs.nixpkgs.follows = "nixos";
+      # nvfetcher.url = "github:berberman/nvfetcher";
+      # nvfetcher.inputs.nixpkgs.follows = "nixos";
 
       naersk.url = "github:nmattia/naersk";
       naersk.inputs.nixpkgs.follows = "nixos";
@@ -50,7 +50,7 @@
     , nixos-hardware
     , nur
     , agenix
-    , nvfetcher
+      # , nvfetcher
     , deploy
     , ...
     } @ inputs:
@@ -66,7 +66,7 @@
             overlays = [
               nur.overlay
               agenix.overlay
-              nvfetcher.overlay
+              # nvfetcher.overlay
               ./pkgs/default.nix
             ];
           };

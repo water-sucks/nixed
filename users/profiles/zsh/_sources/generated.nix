@@ -15,14 +15,14 @@
   };
   nix-shell = {
     pname = "nix-shell";
-    version = "v0.4.0";
+    version = "v0.5.0";
     src = fetchgit {
       url = "https://github.com/chisui/zsh-nix-shell";
-      rev = "v0.4.0";
+      rev = "v0.5.0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "037wz9fqmx0ngcwl9az55fgkipb745rymznxnssr3rx9irb6apzg";
+      sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
     };
   };
   zsh-autosuggestions = {

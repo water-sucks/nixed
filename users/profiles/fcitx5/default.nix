@@ -39,9 +39,9 @@
       EnumerateGroupForwardKeys=
       EnumerateGroupBackwardKeys=
       [Hotkey/ActivateKeys]
-      0=Control+space
+      0=Control+Alt+space
       [Hotkey/DeactivateKeys]
-      0=Control+space
+      0=Control+Alt+space
     '';
     "fcitx5/conf/classicui.conf".text = ''
       Font="IBM Plex Sans JP Text 10"

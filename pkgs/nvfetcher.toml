@@ -13,7 +13,3 @@ fetch.github = "ibhagwan/picom"
 [simplefox-theme]
 src.git = "https://github.com/migueravila/SimpleFox"
 fetch.github = "migueravila/SimpleFox"
-
-[asm-lsp]
-src.git = "https://github.com/water-sucks/asm-lsp"
-fetch.github = "water-sucks/asm-lsp"
