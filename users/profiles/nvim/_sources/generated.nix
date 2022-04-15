@@ -25,35 +25,35 @@
   };
   coq-3p = {
     pname = "coq-3p";
-    version = "42e7f2abdee14a3c5fa5f68ff4f548df52d3be15";
+    version = "48ae506ecb505c614153bc242f5e8b6df434695b";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq.thirdparty";
-      rev = "42e7f2abdee14a3c5fa5f68ff4f548df52d3be15";
+      rev = "48ae506ecb505c614153bc242f5e8b6df434695b";
       fetchSubmodules = false;
-      sha256 = "sha256-U5cZlWcq7xVSBMC5yOMxZjF+qZ9IoJhYmxiuUAsRRDs=";
+      sha256 = "sha256-DBLHx57OPJ7Kv5RrGZMmJri3pyNgj5T8GPfxPoV9Qic=";
     });
   };
   coq-artifacts = {
     pname = "coq-artifacts";
-    version = "14ab7b6862696e0b9d6054c695c0f14f732d1271";
+    version = "9adbbbbf2ec2b2d3b0de584695ba885992c26168";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq.artifacts";
-      rev = "14ab7b6862696e0b9d6054c695c0f14f732d1271";
+      rev = "9adbbbbf2ec2b2d3b0de584695ba885992c26168";
       fetchSubmodules = false;
-      sha256 = "sha256-YKUFiJ85R29V1BhLFCK9uiRnS+QzVUk9zC0zIXa1wes=";
+      sha256 = "sha256-6l2Q43hWC36JcZ/MoFHVceYAAtkJ1S9oe2v0YyHgLmY=";
     });
   };
   coq-nvim = {
     pname = "coq-nvim";
-    version = "2bb10396ab574a3c4a6d3b6c8746b8f21d991f69";
+    version = "1eeaa99cbf83e60b003f7b633bea500ff6cdfd94";
     src = fetchFromGitHub ({
       owner = "ms-jpq";
       repo = "coq_nvim";
-      rev = "2bb10396ab574a3c4a6d3b6c8746b8f21d991f69";
+      rev = "1eeaa99cbf83e60b003f7b633bea500ff6cdfd94";
       fetchSubmodules = false;
-      sha256 = "sha256-IpFd7IZpAKS6Nq2uKnjQNYdTRVcfpxNbl2o6UgZJ3HE=";
+      sha256 = "sha256-RUjLtA1vHerxknV+rwJgDATL5vyU72Karv3VyD3DCx8=";
     });
   };
   filetype-nvim = {
@@ -131,6 +131,17 @@
       rev = "f8ce882f445caac721cc6de00d849e98505c73b6";
       fetchSubmodules = false;
       sha256 = "sha256-/RAd09wQeUQ03dLBCop0amlVFpS7MyAoXJU6kcNEhKc=";
+    });
+  };
+  lsp-format-nvim = {
+    pname = "lsp-format-nvim";
+    version = "84e117b99bb2bc0d0c8122e2b256046f046f8aff";
+    src = fetchFromGitHub ({
+      owner = "lukas-reineke";
+      repo = "lsp-format.nvim";
+      rev = "84e117b99bb2bc0d0c8122e2b256046f046f8aff";
+      fetchSubmodules = false;
+      sha256 = "sha256-rs3NTZwWdsmBGXnrgUeVxUiNjbN/ULxJHifPYJD9mT4=";
     });
   };
   lsp-signature-nvim = {

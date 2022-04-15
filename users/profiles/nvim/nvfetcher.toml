@@ -27,6 +27,10 @@ fetch.github = "ray-x/guihua.lua"
 src.git = "https://github.com/ray-x/lsp_signature.nvim"
 fetch.github = "ray-x/lsp_signature.nvim"
 
+[lsp-format-nvim]
+src.git = "https://github.com/lukas-reineke/lsp-format.nvim"
+fetch.github = "lukas-reineke/lsp-format.nvim"
+
 [sidebar-nvim]
 src.git = "https://github.com/sidebar-nvim/sidebar.nvim"
 fetch.github = "sidebar-nvim/sidebar.nvim"

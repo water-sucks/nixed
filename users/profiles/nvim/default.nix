@@ -26,7 +26,6 @@ in
       nodePackages.bash-language-server
       rust-analyzer
       elixir_ls
-      elmPackages.elm-language-server
       sumneko-lua-language-server
       rnix-lsp
 
@@ -36,7 +35,6 @@ in
       codespell
       cppcheck
       deadnix
-      elmPackages.elm-format
       editorconfig-checker
       gofumpt
       nixpkgs-fmt
@@ -111,6 +109,7 @@ in
       (plug sources.coq-artifacts)
       (plug sources.coq-3p)
       null-ls-nvim
+      (plug sources.lsp-format-nvim)
       (plug sources.navigator-lua)
       (plug sources.guihua-lua)
       (plug sources.lsp-signature-nvim)
@@ -133,6 +132,7 @@ in
       nvim-autopairs
       (plug sources.autosave-nvim)
       vim-sleuth
+      editorconfig-nvim
 
       # UNIX/Git commands
       vim-eunuch

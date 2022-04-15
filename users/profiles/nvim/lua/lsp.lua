@@ -1,5 +1,5 @@
 local map = vim.api.nvim_set_keymap
-local navigator = require("navigator")
+local lsp_format = require("lsp-format")
 
 vim.g.coq_settings = {
   auto_start = "shut-up",
@@ -12,41 +12,7 @@ map("i", "<c-c>", [[pumvisible() ? "<c-e><c-c>" : "<c-c>"]], { expr = true, nore
 map("i", "<tab>", [[pumvisible() ? "<c-n>" : "<tab>"]], { expr = true, noremap = true })
 map("i", "<s-tab>", [[pumvisible() ? "<c-p>" : "<bs>"]], { expr = true, noremap = true })
 
-local on_attach = function(client)
-  if client.resolved_capabilities.document_formatting then
-    vim.cmd([[
-      augroup LspFormatting
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-      augroup END
-    ]])
-  end
-end
-
-local elixir_ls_path = function()
-  if vim.fn.executable("elixir-ls") then
-    local handle = io.popen("which elixir-ls")
-    local path = handle:read("*a")
-    path = path:gsub("%s+", "")
-    return path
-  else
-    return ""
-  end
-end
-
-local flutter_tools_command = function()
-  if vim.env.FLUTTER_SDK then
-    return {
-      vim.env.FLUTTER_SDK .. "/bin/dart",
-      vim.env.FLUTTER_SDK .. "/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
-      "--lsp",
-    }
-  else
-    return nil
-  end
-end
-
-navigator.setup({
+require("navigator").setup({
   debug = false,
   width = 0.75,
   height = 0.3,
@@ -102,10 +68,6 @@ navigator.setup({
     diagnostic_update_in_insert = true,
     disply_diagnostic_qf = false, -- Spelled wrong upstrean
 
-    -- elixirls = {
-    --   cmd = { elixir_ls_path() },
-    --   dialyzerEnabled = false,
-    -- }, -- Set up separately for now until spelling error is fixed
     sumneko_lua = {
       cmd = { "lua-language-server" },
       settings = {
@@ -124,7 +86,6 @@ navigator.setup({
       "ccls",
       "gopls",
       "bashls",
-      "elmls",
       "rnix",
     },
     disable_lsp = {
@@ -158,7 +119,21 @@ navigator.setup({
 
 require("flutter-tools").setup({
   lsp = {
-    cmd = flutter_tools_command(),
+    cmd = (function()
+      if vim.env.FLUTTER_SDK then
+        return {
+          vim.env.FLUTTER_SDK .. "/bin/dart",
+          vim.env.FLUTTER_SDK .. "/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
+          "--lsp",
+        }
+      else
+        return nil
+      end
+    end)(),
+    on_attach = function(client)
+      client.resolved_capabilities.document_formatting = false
+      lsp_format.on_attach(client)
+    end,
     color = {
       enabled = false,
       background = false,
@@ -187,21 +162,46 @@ require("flutter-tools").setup({
 require("rust-tools").setup({})
 
 require("lspconfig").elixirls.setup({
-  cmd = { elixir_ls_path() },
+  cmd = {
+    (function()
+      if vim.fn.executable("elixir-ls") then
+        local handle = io.popen("which elixir-ls")
+        local path = handle:read("*a")
+        path = path:gsub("%s+", "")
+        return path
+      else
+        return ""
+      end
+    end)(),
+  },
   dialyzerEnabled = false,
 })
 
 local null_ls = require("null-ls")
 
 null_ls.setup({
-  on_attach = on_attach,
+  on_attach = lsp_format.on_attach,
   sources = {
     null_ls.builtins.completion.spell,
 
     null_ls.builtins.formatting.asmfmt,
     null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.dart_format,
-    null_ls.builtins.formatting.elm_format,
+    null_ls.builtins.formatting.dart_format.with({
+      command = (function()
+        if vim.env.FLUTTER_SDK then
+          return vim.env.FLUTTER_SDK .. "/bin/dart"
+        else
+          return "dart"
+        end
+      end)(),
+      args = function(params)
+        return {
+          "format",
+          "-l",
+          vim.b[params.bufnr]["editorconfig"].line_size or 80,
+        }
+      end,
+    }),
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.mix,
