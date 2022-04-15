@@ -6,7 +6,7 @@
     description = "Varun Narravula";
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "video" "input" "networkmanager" "libvirtd" ];
+    extraGroups = [ "wheel" "audio" "video" "input" "networkmanager" "libvirtd" "adbusers" ];
   };
 
   home-manager.users.varun = { suites, profiles, ... }: {

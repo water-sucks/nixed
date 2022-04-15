@@ -3,5 +3,5 @@
 {
   imports = [
     ./configuration.nix
-  ] ++ suites.base ++ suites.graphical;
+  ] ++ (with suites; base ++ graphical ++ dev);
 }

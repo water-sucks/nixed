@@ -34,6 +34,18 @@ local elixir_ls_path = function()
   end
 end
 
+local flutter_tools_command = function()
+  if vim.env.FLUTTER_SDK then
+    return {
+      vim.env.FLUTTER_SDK .. "/bin/dart",
+      vim.env.FLUTTER_SDK .. "/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
+      "--lsp",
+    }
+  else
+    return nil
+  end
+end
+
 navigator.setup({
   debug = false,
   width = 0.75,
@@ -110,15 +122,13 @@ navigator.setup({
     servers = {
       "pyright",
       "ccls",
-      "dartls",
       "gopls",
       "bashls",
       "elmls",
-      -- "ocamllsp",
       "rnix",
-      "asm_lsp",
     },
     disable_lsp = {
+      "dartls",
       "rust_analyzer",
       "angularls",
       "tsserver",
@@ -146,6 +156,34 @@ navigator.setup({
   },
 })
 
+require("flutter-tools").setup({
+  lsp = {
+    cmd = flutter_tools_command(),
+    color = {
+      enabled = false,
+      background = false,
+      foreground = false,
+      virtual_text = true,
+    },
+  },
+  decorations = {
+    app_version = false,
+    device = true,
+  },
+  widget_guides = {
+    enabled = true,
+  },
+  closing_tags = {
+    highlight = "ErrorMsg",
+    prefix = ">|",
+    enabled = true,
+  },
+  dev_tools = {
+    autostart = true,
+    auto_open_browser = true,
+  },
+})
+
 require("rust-tools").setup({})
 
 require("lspconfig").elixirls.setup({
@@ -158,6 +196,8 @@ local null_ls = require("null-ls")
 null_ls.setup({
   on_attach = on_attach,
   sources = {
+    null_ls.builtins.completion.spell,
+
     null_ls.builtins.formatting.asmfmt,
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.dart_format,
@@ -170,18 +210,20 @@ null_ls.setup({
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
 
+    null_ls.builtins.diagnostics.alex,
+    null_ls.builtins.diagnostics.codespell,
     null_ls.builtins.diagnostics.cppcheck,
     null_ls.builtins.diagnostics.credo,
-    -- null_ls.builtins.diagnostics.editorconfig_checker,
+    null_ls.builtins.diagnostics.deadnix,
+    null_ls.builtins.diagnostics.editorconfig_checker.with({ command = "editorconfig-checker" }),
     null_ls.builtins.diagnostics.flake8,
     null_ls.builtins.diagnostics.gitlint,
     null_ls.builtins.diagnostics.markdownlint,
-    -- null_ls.builtins.diagnostics.deadnix,
+    null_ls.builtins.diagnostics.mypy,
     null_ls.builtins.diagnostics.proselint,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.statix,
     null_ls.builtins.diagnostics.vint,
-    null_ls.builtins.diagnostics.write_good,
 
     null_ls.builtins.code_actions.gitsigns,
     null_ls.builtins.code_actions.proselint,
