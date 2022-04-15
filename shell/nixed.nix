@@ -1,13 +1,10 @@
 { pkgs, extraModulesPath, inputs, ... }:
 let
-
   hooks = import ./hooks;
 
   pkgWithCategory = category: package: { inherit package category; };
   linter = pkgWithCategory "linter";
-  docs = pkgWithCategory "docs";
-  devos = pkgWithCategory "devos";
-
+  nixed = pkgWithCategory "nixed";
 in
 {
   _file = toString ./.;
@@ -17,7 +14,7 @@ in
 
   # tempfix: remove when merged https://github.com/numtide/devshell/pull/123
   devshell.startup.load_profiles = pkgs.lib.mkForce (pkgs.lib.noDepEntry ''
-    # PATH is devshell's exorbitant privilige:
+    # PATH is devshell's exorbitant privilege:
     # fence against its pollution
     _PATH=''${PATH}
     # Load installed profiles
@@ -25,26 +22,23 @@ in
       # If that folder doesn't exist, bash loves to return the whole glob
       [[ -f "$file" ]] && source "$file"
     done
-    # Exert exorbitant privilige and leave no trace
+    # Exert exorbitant privilege and leave no trace
     export PATH=''${_PATH}
     unset _PATH
   '');
 
   commands = with pkgs; [
-    (devos nixUnstable)
-    (devos agenix)
-    (devos nvfetcher)
+    (nixed nixUnstable)
+    (nixed agenix)
+    (nixed nvfetcher)
+    (nixed inputs.deploy.packages.${pkgs.system}.deploy-rs)
     (linter stylua)
     (linter nixpkgs-fmt)
     (linter editorconfig-checker)
-    # (docs python3Packages.grip) too many deps
-    (docs mdbook)
-    (devos inputs.deploy.packages.${pkgs.system}.deploy-rs)
   ]
 
   ++ lib.optional
     (system != "i686-linux")
-    (devos cachix)
-
+    (nixed cachix)
   ;
 }
