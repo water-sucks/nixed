@@ -33,7 +33,7 @@ in
   commands = with pkgs; [
     (devos nixUnstable)
     (devos agenix)
-    (devos nvfetcher-bin)
+    (devos nvfetcher)
     (linter stylua)
     (linter nixpkgs-fmt)
     (linter editorconfig-checker)
