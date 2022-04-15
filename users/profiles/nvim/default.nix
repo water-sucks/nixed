@@ -23,40 +23,37 @@ in
       ccls
       flutter
       gopls
-      # Where GraphQL LSP? Package it!
       nodePackages.bash-language-server
       rust-analyzer
       elixir_ls
       elmPackages.elm-language-server
-      # ocamlPackages.ocaml-lsp
       sumneko-lua-language-server
       rnix-lsp
-      asm-lsp
 
       # null-ls sources
       asmfmt
       black
-      # deadnix
+      codespell
+      cppcheck
+      deadnix
       elmPackages.elm-format
+      editorconfig-checker
       gofumpt
       nixpkgs-fmt
-      # Package prettierd
-      rustfmt
-      shellharden
-      shfmt
-      stylua
-      # Credo included with mix deps
-      cppcheck
-      editorconfig-checker
-      python3Packages.flake8
       gitlint
+      mypy
+      nodePackages.alex
       nodePackages.prettier
       nodePackages.markdownlint-cli
       proselint
+      python3Packages.flake8
+      rustfmt
       shellcheck
+      shellharden
+      shfmt
       statix
+      stylua
       vim-vint
-      nodePackages.write-good
     ];
 
     extraConfig = ''
@@ -153,7 +150,6 @@ in
       (plug sources.zen-mode-nvim) # Couldn't find it, but it probably exists somewhere
       twilight-nvim
       indent-blankline-nvim
-      # nvim-lightbulb
 
       # Special Neovim sauce
       presence-nvim
