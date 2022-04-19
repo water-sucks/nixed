@@ -75,7 +75,7 @@ in
       ${builtins.readFile ./lua/telescope.lua}
       ${builtins.readFile ./lua/sidebar.lua}
       ${builtins.readFile ./lua/trouble.lua}
-      ${builtins.readFile ./lua/floaterm.lua}
+      ${builtins.readFile ./lua/terminal.lua}
 
       -- Text editing assistance/annotations
       ${builtins.readFile ./lua/renamer.lua}
