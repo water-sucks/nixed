@@ -115,6 +115,7 @@
               direnv
               git
               zsh
+              freshfetch
               nvim
             ];
             dev = [
@@ -150,6 +151,7 @@
               chromium
               music
               messaging
+              passwords
               insomnia
             ];
           };
