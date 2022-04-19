@@ -27,38 +27,38 @@
   };
   coq-3p = {
     pname = "coq-3p";
-    version = "fee3a732b3b1f21436df82cfbc3cd87011583965";
+    version = "6722c994fda065658789c4b90b533a76e40826c3";
     src = fetchgit {
       url = "https://github.com/ms-jpq/coq.thirdparty";
-      rev = "fee3a732b3b1f21436df82cfbc3cd87011583965";
+      rev = "6722c994fda065658789c4b90b533a76e40826c3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "18mpa4hzlh1y34wc9hy8wdwl5pxds0whlg0va74yk0zj9yqasi2j";
+      sha256 = "1wiqqc4ics68s4zf6h9jcps59jnjfqhq4i03j4nwv8pmicwdlsl5";
     };
   };
   coq-artifacts = {
     pname = "coq-artifacts";
-    version = "1e185ce534f7029ff0d5d86cf23a2a28b9060f89";
+    version = "23bedfc47e9593ddb301edd0e78fc4643368b8da";
     src = fetchgit {
       url = "https://github.com/ms-jpq/coq.artifacts";
-      rev = "1e185ce534f7029ff0d5d86cf23a2a28b9060f89";
+      rev = "23bedfc47e9593ddb301edd0e78fc4643368b8da";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0zamm1mayz30g6mvcxdal5d63p0rfhj52gb3xy0bnmysfa7cin32";
+      sha256 = "0hj0z158jhfzrgffky1rcv5a71lfl9h2r7vh67b1vl72s555sdg5";
     };
   };
   coq-nvim = {
     pname = "coq-nvim";
-    version = "034faa2e24b90c97869ad4d1af7570c0eb1f6385";
+    version = "919afc8779353ccfd79196e6938e0d8391d8c1a0";
     src = fetchgit {
       url = "https://github.com/ms-jpq/coq_nvim";
-      rev = "034faa2e24b90c97869ad4d1af7570c0eb1f6385";
+      rev = "919afc8779353ccfd79196e6938e0d8391d8c1a0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1czn5y6hs5h7cpb3sw29xslm9ac679z5sd3ar1g86xbgxc9v84aj";
+      sha256 = "0kwms1kjm3gzdkp0z4k35wmdynl8hf2hmh7hh80cic9pan466anp";
     };
   };
   filetype-nvim = {
@@ -99,14 +99,14 @@
   };
   guihua-lua = {
     pname = "guihua-lua";
-    version = "a07ad399646282ffb6d582f980949d628cc72532";
+    version = "5f8f9edc1e7a1b01b29ac4d05683267db446e314";
     src = fetchgit {
       url = "https://github.com/ray-x/guihua.lua";
-      rev = "a07ad399646282ffb6d582f980949d628cc72532";
+      rev = "5f8f9edc1e7a1b01b29ac4d05683267db446e314";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1jyiwpk538jm9yih57ycm7f6sm9hrnyqgvlvc550kkkccfds3gs0";
+      sha256 = "1402l69f8f8448kk4yk18zqhasapmyklqcbf8dpr8mh4mgjq5sl9";
     };
   };
   hachiko = {
@@ -147,26 +147,26 @@
   };
   lsp-format-nvim = {
     pname = "lsp-format-nvim";
-    version = "84e117b99bb2bc0d0c8122e2b256046f046f8aff";
+    version = "458fa95c1809b464c34cbc6fe3c5b28ddf23ccef";
     src = fetchgit {
       url = "https://github.com/lukas-reineke/lsp-format.nvim";
-      rev = "84e117b99bb2bc0d0c8122e2b256046f046f8aff";
+      rev = "458fa95c1809b464c34cbc6fe3c5b28ddf23ccef";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0glrzn861kr73r4vql3znf6qsj65jm3q3svr360wjxhnki6wvkdf";
+      sha256 = "0l725y63azkaynwbcyid8ff4k898md9fdpqgqffjnd58b72m0w7q";
     };
   };
   lsp-signature-nvim = {
     pname = "lsp-signature-nvim";
-    version = "ba987530a7129b43e9bfd8cbd95ebe1e438253eb";
+    version = "a351509512687293fd659ba4ee7e34412c3a8f70";
     src = fetchgit {
       url = "https://github.com/ray-x/lsp_signature.nvim";
-      rev = "ba987530a7129b43e9bfd8cbd95ebe1e438253eb";
+      rev = "a351509512687293fd659ba4ee7e34412c3a8f70";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0fwhk527q6in6kc3sblkpxhhf27vk1sx311jyirjyfb931jlh24a";
+      sha256 = "00xzd8b13krysdw21zm9ms902cxm04xl1wd2l7rb04431s2v9vc0";
     };
   };
   navigator-lua = {
@@ -183,14 +183,14 @@
   };
   nui-nvim = {
     pname = "nui-nvim";
-    version = "513ff9bbdde7da53e209232d4328e734ea2bd96a";
+    version = "42552b3797c3452c5c94e0c84a04fbda9591b9d1";
     src = fetchgit {
       url = "https://github.com/MunifTanjim/nui.nvim";
-      rev = "513ff9bbdde7da53e209232d4328e734ea2bd96a";
+      rev = "42552b3797c3452c5c94e0c84a04fbda9591b9d1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "08r2ifkj9zj8c771ahl2i0b8crp3cw2cdshkpq26ci14ypdq0304";
+      sha256 = "0ggiq9yvrkv2fff41qzvz82lsxxc8swlxfvv1n9g5am8zym2ssk1";
     };
   };
   nvim-mapper = {
@@ -255,26 +255,26 @@
   };
   tmux-nvim = {
     pname = "tmux-nvim";
-    version = "746cb2a51426e8584af2fa724bdfc960fa9a53ae";
+    version = "94a5b180b20b8374094f1170b26280898b4ca4d7";
     src = fetchgit {
       url = "https://github.com/aserowy/tmux.nvim";
-      rev = "746cb2a51426e8584af2fa724bdfc960fa9a53ae";
+      rev = "94a5b180b20b8374094f1170b26280898b4ca4d7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "1zj0wnczhs2b0wrhhb0gg15y3hx3vdkjzw4xlq0z42q7w1q3i14j";
+      sha256 = "03rzsy36y4m30q00ydd2q78qg9i4yvckkzx7mgqgqw1a4957ydfr";
     };
   };
   windline-nvim = {
     pname = "windline-nvim";
-    version = "b02a600957554c162087dd0b431c5ec727fc4016";
+    version = "4cfddbb5f5e1a2a26d9cf7ce34ecaeabba0827ee";
     src = fetchgit {
       url = "https://github.com/windwp/windline.nvim";
-      rev = "b02a600957554c162087dd0b431c5ec727fc4016";
+      rev = "4cfddbb5f5e1a2a26d9cf7ce34ecaeabba0827ee";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "0h7698g03n7yal0n1k5snkr69nhg32nb4nxslbgvi8lfqkfnw0az";
+      sha256 = "0sb54qvqk6gv0v8ln2032aip1ns9z0jkjx19scqjcqvypwf04r0p";
     };
   };
   zen-mode-nvim = {
