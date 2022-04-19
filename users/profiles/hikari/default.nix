@@ -5,6 +5,7 @@
     wofi
     gtk-layer-shell
     ydotool
+    wl-clipboard
   ];
 
   wayland.windowManager.hikari = {

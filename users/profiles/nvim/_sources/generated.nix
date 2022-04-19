@@ -171,14 +171,14 @@
   };
   navigator-lua = {
     pname = "navigator-lua";
-    version = "92f56ffe4b392c9e1c21d47bff01a0198dacae7f";
+    version = "15e6b315b7a9091efe63ec73e2c45876d05e6606";
     src = fetchgit {
       url = "https://github.com/ray-x/navigator.lua";
-      rev = "92f56ffe4b392c9e1c21d47bff01a0198dacae7f";
+      rev = "15e6b315b7a9091efe63ec73e2c45876d05e6606";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "05yjd1n1g99k2r91k943sv14ar6pkimrbjwzyl19lq4m4zkfr2y9";
+      sha256 = "19247c36fb8dn1cy4d6bdncq30b9k70nk3lacxs80bhiym9a4886";
     };
   };
   nui-nvim = {

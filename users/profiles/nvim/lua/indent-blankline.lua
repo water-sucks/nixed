@@ -16,12 +16,3 @@ require("indent_blankline").setup({
     "IndentBlanklineIndent6",
   },
 })
-
-vim.cmd([[
-  augroup TerminalIndentBlanklineDisable
-    au!
-    au TermOpen term://* set filetype=terminal | set nonumber | set signcolumn=no | startinsert
-    au TermClose term://* set number | set signcolumn=yes
-    au FileType floaterm set nonumber | set signcolumn=no | startinsert
-  augroup END
-]])
