@@ -358,18 +358,6 @@
         "type": "github"
       }
     },
-    "nur": {
-      "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-XzuvFTmsXULdWynQWzgaPHikepNhjEpK4o5WXfmRqek=",
-        "path": "/nix/store/all4f5y28iyigh60lz4j1j6j02106dn2-source",
-        "type": "path"
-      },
-      "original": {
-        "id": "nur",
-        "type": "indirect"
-      }
-    },
     "poetry2nix": {
       "inputs": {
         "flake-utils": [
@@ -406,8 +394,7 @@
         "digga": "digga",
         "home": "home",
         "latest": "latest_2",
-        "nixos": "nixos",
-        "nur": "nur"
+        "nixos": "nixos"
       }
     },
     "rust-analyzer-src": {
