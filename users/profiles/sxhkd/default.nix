@@ -18,8 +18,8 @@
         "super + shift + alt + Return" = "${rofi} -show run";
         "super + Escape" = "${pkgs.procps}/bin/pkill -USR1 -x sxhkd";
         "super + Print" = "${maim} -s ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png";
-        "XF86AudioRaiseVolume" = "${amixer} sset Master 5+";
-        "XF86AudioLowerVolume" = "${amixer} sset Master 5-";
+        "XF86AudioRaiseVolume" = "${amixer} sset Master 5%+";
+        "XF86AudioLowerVolume" = "${amixer} sset Master 5%-";
         "XF86AudioMute" = "${amixer} sset Master toggle";
 
         # Berry keybindings

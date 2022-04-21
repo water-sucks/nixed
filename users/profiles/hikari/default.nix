@@ -6,6 +6,7 @@
     gtk-layer-shell
     ydotool
     wl-clipboard
+    libinput
   ];
 
   wayland.windowManager.hikari = {
@@ -34,15 +35,24 @@
         };
       };
 
-      actions = {
-        terminal = "${pkgs.kitty}/bin/kitty";
-        launcher = "${pkgs.wofi}/bin/wofi --show=drun";
-        cmdlauncher = "${pkgs.wofi}/bin/wofi --show=run";
-        screenshot = ''
-          ${pkgs.slurp}/bin/slurp | ${pkgs.grim} -g - -t png \
-          $HOME/Pictures/Screenshots/$(${pkgs.coreutils}/bin/date +%Y-%m-%d_%H-%M-%S).png
-        '';
-      };
+      actions =
+        let
+          kitty = "${pkgs.kitty}/bin/kitty";
+          wofi = "${pkgs.wofi}/bin/wofi";
+          slurp = "${pkgs.slurp}/bin/slurp";
+          grim = "${pkgs.grim}/bin/grim";
+          amixer = "${pkgs.alsa-utils}/bin/amixer";
+        in
+        {
+          terminal = kitty;
+          launcher = "${wofi} --show=drun";
+          cmdlauncher = "${wofi} --show=run";
+          screenshot = "${slurp} | ${grim} -g - -t png $HOME/Pictures/Screenshots/$(${pkgs.coreutils}/bin/date +%Y-%m-%d_%H-%M-%S).png";
+
+          mute = "${amixer} sset Master toggle";
+          volume-down = "${amixer} sset Master 5%-";
+          volume-up = "${amixer} sset Master 5%+";
+        };
 
       bindings = {
         keyboard = {
@@ -157,7 +167,11 @@
           "L+Return" = "action-terminal";
           "LS+Return" = "action-launcher";
           "LSA+Return" = "action-cmdlauncher";
-          "L-107" = "action-screenshot";
+          "0-107" = "action-screenshot";
+
+          "0-121" = "action-mute";
+          "0-122" = "action-volume-down";
+          "0-123" = "action-volume-up";
 
           "A+F1" = "vt-switch-to-1";
           "A+F2" = "vt-switch-to-2";
@@ -180,7 +194,16 @@
           "*" = {
             accel = 0.3;
             accel-profile = "adaptive";
+            disable-while-typing = true;
+            middle-emulation = true;
+            natural-scrolling = false;
+            scroll-button = "middle";
+            scroll-method = "on-button-down";
+            tap = true;
+            tap-drag = true;
+            tap-drag-lock = true;
           };
+          "Wacom HID 5218 Finger" = { };
         };
         switches = {
           "Lid Switch" = "lock";
