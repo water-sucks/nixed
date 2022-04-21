@@ -30,12 +30,8 @@
     layout = "us";
     libinput.enable = true;
     windowManager.berry.enable = true;
-    desktopManager.gnome.enable = true;
     desktopManager.xterm.enable = false;
   };
-
-  services.gnome.core-utilities.enable = false;
-  services.power-profiles-daemon.enable = false;
 
   # Screenshare support (disabled for now, interfering with startup)
   # Use berry if you need screenshare support
