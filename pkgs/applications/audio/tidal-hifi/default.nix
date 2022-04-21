@@ -7,12 +7,12 @@
 
 let
   pname = "tidal-hifi";
-  version = "2.7.2";
+  version = "2.8.0";
   name = "${pname}-${version}";
 
   src = fetchurl {
-    url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/2.7.2/tidal-hifi-2.7.2.AppImage";
-    sha256 = "sha256-tWYOS/MiUOfI+7Ej/s8Tkn/IihhkyOEeKxo4JhWMx9E=";
+    url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/${version}/tidal-hifi-${version}.AppImage";
+    sha256 = "sha256-8HCodVBuWcCyA01rTTB5QNHqkcUtCDpCRaEENRwT6/E=";
   };
 
   contents = appimageTools.extractType2 {
