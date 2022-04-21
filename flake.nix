@@ -28,7 +28,7 @@
     agenix.inputs.nixpkgs.follows = "nixos";
   };
 
-  outputs = { self, digga, bud, nixos, home, nur, agenix, deploy, ... }@inputs:
+  outputs = { self, digga, bud, nixos, home, agenix, deploy, ... }@inputs:
     digga.lib.mkFlake {
       inherit self inputs;
 
@@ -38,7 +38,6 @@
         nixos = {
           imports = [ (digga.lib.importOverlays ./overlays) ];
           overlays = [
-            nur.overlay
             agenix.overlay
             ./pkgs/default.nix
           ];
