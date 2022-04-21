@@ -40,7 +40,7 @@
         idle_threshold = 120;
         font = "IBM Plex Snas JP 8";
         markup = "full";
-        format = "<b>%s</b>\n%b";
+        format = "<b>%s</b>\\n%b";
         sticky_history = "no";
         browser = "${pkgs.xdg-utils}/bin/xdg-open";
       };
