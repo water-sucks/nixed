@@ -595,6 +595,12 @@ in
       description = "Autostart script ran on Hikari startup";
     };
 
+    debug = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Run Hikari in debug mode";
+    };
+
     config = mkOption {
       type = types.lines;
       default = '''';
@@ -615,6 +621,15 @@ in
         name = "hikari.conf";
         text = cfg.config;
       };
+
+      hikariPackage =
+        if cfg.debug then
+          pkgs.hikari.overrideAttrs
+            (o: rec {
+              makeFlags = o.makeFlags ++ [ "DEBUG=YES" ];
+            })
+        else
+          pkgs.hikari;
     in
     mkIf cfg.enable {
       xdg.configFile."hikari/hikari.conf".source =
@@ -622,7 +637,7 @@ in
       xdg.configFile."hikari/autostart".text = cfg.autostart;
 
       home.packages = [
-        pkgs.hikari
+        hikariPackage
       ];
     };
 }
