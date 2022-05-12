@@ -114,7 +114,7 @@
               direnv
               git
               zsh
-              freshfetch
+              nerdfetch
               nvim
             ];
             dev = [

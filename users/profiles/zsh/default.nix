@@ -35,7 +35,7 @@ in
       theme = ""; # Using starship for theme
     };
     initExtraFirst = ''
-      freshfetch
+      nerdfetch
     '';
     initExtra = ''
         export STARSHIP_CONFIG=${
