@@ -1,6 +1,7 @@
 format = """
 $username[@](fg:238)$hostname in \
-$directory\$git_branch\
+$directory\
+$git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
@@ -158,5 +159,3 @@ time_format = "%T"
 min_time = 1_000
 show_milliseconds = true
 style = "fg:202"
-show_notifications = true
-notification_timeout = 20_000

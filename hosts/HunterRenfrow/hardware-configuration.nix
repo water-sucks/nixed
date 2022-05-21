@@ -28,25 +28,26 @@
       availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu" ];
       kernelModules = [ "amdgpu" ];
     };
-    kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_16.override {
-      argsOverride = rec {
-        src = pkgs.fetchurl {
-          url = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.16.1.tar.xz";
-          sha256 = "0i9mfapsyf9lp8j0g329lgwf6kyi61a00al0hdrfd8bf3hikdgy7";
-        };
-        version = "5.16.1";
-        modDirVersion = "5.16.1";
-      };
-    });
-    kernelPatches = [
-      {
-        name = "wireless-mt7921e-fix";
-        patch = builtins.fetchurl {
-          url = "https://patchwork.kernel.org/project/linux-wireless/patch/70e27cbc652cbdb78277b9c691a3a5ba02653afb.1641540175.git.objelf@gmail.com/raw";
-          sha256 = "0q4z1wdzsyr5di0q0zngv2xyx2102s14b1bpr8wckdh7zgjypk3d";
-        };
-      }
-    ];
+    # kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_16.override {
+    #   argsOverride = rec {
+    #     src = pkgs.fetchurl {
+    #       url = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.16.1.tar.xz";
+    #       sha256 = "0i9mfapsyf9lp8j0g329lgwf6kyi61a00al0hdrfd8bf3hikdgy7";
+    #     };
+    #     version = "5.16.1";
+    #     modDirVersion = "5.16.1";
+    #   };
+    # });
+    # kernelPatches = [
+    #   {
+    #     name = "wireless-mt7921e-fix";
+    #     patch = builtins.fetchurl {
+    #       url = "https://patchwork.kernel.org/project/linux-wireless/patch/70e27cbc652cbdb78277b9c691a3a5ba02653afb.1641540175.git.objelf@gmail.com/raw";
+    #       sha256 = "0q4z1wdzsyr5di0q0zngv2xyx2102s14b1bpr8wckdh7zgjypk3d";
+    #     };
+    #   }
+    # ];
     kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" "uinput" ];
     kernelParams = [ "quiet" "udev.log_level=3" "acpi_backlight=vendor" "mem_sleep_default=deep" ];
   };
