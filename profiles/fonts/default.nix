@@ -3,8 +3,7 @@
 {
   fonts = {
     fonts = with pkgs; [
-      ibm-plex
-      (nerdfonts.override { fonts = [ "IBMPlexMono" "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
     ];
     fontconfig.defaultFonts = {
       monospace = [ "BlexMono Nerd Font" ];
@@ -12,5 +11,4 @@
       serif = [ "IBM Plex Serif" ];
     };
   };
-
 }
