@@ -19,7 +19,6 @@
       dutree
       exa
       fd
-      freshfetch
       git
       bottom
       gptfdisk

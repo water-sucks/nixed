@@ -85,6 +85,7 @@
               starship
               pam
               fonts
+              kmscon
               users.common
             ];
             graphical = [
