@@ -4,12 +4,11 @@
   services.xserver.displayManager = {
     gdm = {
       enable = true;
-      wayland = true;
-      debug = true;
+      settings = {
+        daemon = {
+          FirstVT = 7;
+        };
+      };
     };
-    sessionPackages = with pkgs; [
-      hikari
-    ];
-    defaultSession = "hikari";
   };
 }
