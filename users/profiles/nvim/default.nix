@@ -1,4 +1,4 @@
-{ self, config, pkgs, ... }:
+{ lib, self, config, pkgs, ... }:
 
 let
   sources = pkgs.callPackage _sources/generated.nix { };
@@ -6,6 +6,14 @@ let
   plug = source: pkgs.vimUtils.buildVimPluginFrom2Nix {
     inherit (source) pname version src;
   };
+
+  tree-sitter = pkgs.tree-sitter.override {
+    extraGrammars = {
+      tree-sitter-nix = lib.importJSON ./tree-sitter-nix.json;
+    };
+  };
+
+  grammars = tree-sitter.allGrammars;
 in
 {
   programs.neovim = {
@@ -140,7 +148,7 @@ in
       diffview-nvim
 
       # Appearance/Theming
-      (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+      (nvim-treesitter.withPlugins (plugins: grammars))
       (plug sources.hachiko)
       lush-nvim
       (plug sources.windline-nvim)

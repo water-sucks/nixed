@@ -1,0 +1,60 @@
+{
+    "fast-syntax-highlighting": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "fast-syntax-highlighting",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "zdharma-continuum",
+            "repo": "fast-syntax-highlighting",
+            "rev": "v1.55",
+            "sha256": "sha256-DWVFBoICroKaKgByLmDEo4O+xo6eA8YO792g8t8R7kA=",
+            "type": "github"
+        },
+        "version": "v1.55"
+    },
+    "nix-shell": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "nix-shell",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "chisui",
+            "repo": "zsh-nix-shell",
+            "rev": "v0.5.0",
+            "sha256": "sha256-IT3wpfw8zhiNQsrw59lbSWYh0NQ1CUdUtFzRzHlURH0=",
+            "type": "github"
+        },
+        "version": "v0.5.0"
+    },
+    "zsh-autosuggestions": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "zsh-autosuggestions",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "zsh-users",
+            "repo": "zsh-autosuggestions",
+            "rev": "v0.7.0",
+            "sha256": "sha256-KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=",
+            "type": "github"
+        },
+        "version": "v0.7.0"
+    }
+}
+
