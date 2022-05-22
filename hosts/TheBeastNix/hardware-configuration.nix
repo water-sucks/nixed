@@ -12,6 +12,7 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot/efi";
       };
+
       grub = {
         enable = true;
         device = "nodev";
@@ -20,6 +21,7 @@
         enableCryptodisk = true;
       };
     };
+
     initrd = {
       luks.devices."root" = {
         device = "/dev/disk/by-uuid/201c36cc-a740-4d8e-8956-b63784c9d475";
@@ -31,10 +33,31 @@
         "keyfile.bin" = "/etc/secrets/initrd/keyfile.bin";
       };
       availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-      kernelModules = [ "dm-snapshot" "amdgpu" "uinput" ];
+      kernelModules = [ "dm-snapshot" "amdgpu" ];
+      systemd.enable = true;
+      verbose = false;
     };
+
     kernelModules = [ "amdgpu" "kvm-amd" "wl" ];
-    kernelParams = [ "quiet" "loglevel=1" "udev.log_level=3" ];
+    kernelParams = [
+      "quiet"
+      "splash"
+      "loglevel=1"
+      "rd.systemd_show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+      "boot.shell_on_fail"
+    ];
+
+    consoleLogLevel = 0;
+    plymouth = {
+      enable = true;
+      theme = "spinning-watch";
+      font = "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexSans-Text.otf";
+      themePackages = with pkgs; [
+        plymouth-spinning-watch-theme
+      ];
+    };
   };
 
   fileSystems."/" =
@@ -53,6 +76,8 @@
     [{ device = "/dev/disk/by-uuid/c859b4eb-d5c6-47bc-bec1-9c8a85bcff5c"; }];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   systemd.services.systemd-udev-settle.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;

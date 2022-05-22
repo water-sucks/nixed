@@ -5,4 +5,5 @@ final: prev: {
   simplefox-theme = final.callPackage ./applications/networking/browsers/firefox/simplefox-theme { };
   tidal-hifi = final.callPackage ./applications/audio/tidal-hifi { };
   nerdfetch = final.callPackage ./applications/misc/nerdfetch { };
+  plymouth-spinning-watch-theme = final.callPackage ./applications/misc/plymouth-spinning-watch-theme { };
 }
