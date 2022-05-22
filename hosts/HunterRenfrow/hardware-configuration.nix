@@ -6,15 +6,16 @@
 
   boot = {
     loader = {
+      timeout = lib.mkDefault 0;
       efi.canTouchEfiVariables = true;
-      grub = {
+      grub.enable = false;
+      systemd-boot = {
         enable = true;
-        device = "nodev";
-        version = 2;
-        efiSupport = true;
-        gfxmodeEfi = "1920x1080";
+        editor = false;
+        configurationLimit = 100;
       };
     };
+
     initrd = {
       luks.devices."nixos".device = "/dev/disk/by-uuid/cc3ec9fa-ac2b-449c-a314-c734ef29fcd1";
       luks.devices."swap" = {
@@ -27,29 +28,31 @@
       };
       availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu" ];
       kernelModules = [ "amdgpu" ];
+      systemd.enable = true;
+      verbose = false;
     };
-    # kernelPackages = pkgs.linuxPackages_latest;
-    # kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_5_16.override {
-    #   argsOverride = rec {
-    #     src = pkgs.fetchurl {
-    #       url = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.16.1.tar.xz";
-    #       sha256 = "0i9mfapsyf9lp8j0g329lgwf6kyi61a00al0hdrfd8bf3hikdgy7";
-    #     };
-    #     version = "5.16.1";
-    #     modDirVersion = "5.16.1";
-    #   };
-    # });
-    # kernelPatches = [
-    #   {
-    #     name = "wireless-mt7921e-fix";
-    #     patch = builtins.fetchurl {
-    #       url = "https://patchwork.kernel.org/project/linux-wireless/patch/70e27cbc652cbdb78277b9c691a3a5ba02653afb.1641540175.git.objelf@gmail.com/raw";
-    #       sha256 = "0q4z1wdzsyr5di0q0zngv2xyx2102s14b1bpr8wckdh7zgjypk3d";
-    #     };
-    #   }
-    # ];
+
     kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" "uinput" ];
-    kernelParams = [ "quiet" "udev.log_level=3" "acpi_backlight=vendor" "mem_sleep_default=deep" ];
+    kernelParams = [
+      "quiet"
+      "splash"
+      "rd.systemd_show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+      "acpi_backlight=vendor"
+      "mem_sleep_default=deep"
+      "boot.shell_on_fail"
+    ];
+
+    consoleLogLevel = 0;
+    plymouth = {
+      enable = true;
+      font = "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexSans-Text.otf";
+      theme = "spinning-watch";
+      themePackages = with pkgs; [
+        plymouth-spinning-watch-theme
+      ];
+    };
   };
 
   fileSystems."/" =
