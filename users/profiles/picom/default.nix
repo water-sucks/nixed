@@ -19,7 +19,7 @@
     fadeExclude = [
       "class_g = 'slop'"
     ];
-    inactiveOpacity = "0.77";
+    inactiveOpacity = "0.69";
     menuOpacity = "1.0";
     shadow = true;
     shadowExclude = [
@@ -32,8 +32,8 @@
     extraOptions = ''
       dbe = true;
 
-      corner-radius = 11.0;
-      round-borders = 11.0;
+      corner-radius = 8.0;
+      round-borders = 8.0;
       round-borders-exclude = [
         "class_g = 'rofi'",
       ];
@@ -45,24 +45,22 @@
       transition-pow-h = 0.1;
       size-transition = true;
 
-      shadow-radius = 32;
-      shadow-offset-x = -32;
-      shadow-offset-y = -32;
+      shadow-radius = 33;
+      shadow-offset-x = -33;
+      shadow-offset-y = -33;
       xinerama-shadow-crop = true;
 
       no-fading-openclose = false;
       no-fading-destroyed-argb = false;
       inactive-opacity-override = false;
 
-      blur-size = 12;
-      blur-strength = 11;
+      blur-size = 11;
+      blur-strength = 8;
       blur-background = true;
       blur-method = "dual_kawase";
       blur-deviation = false;
       blur-background-frame = false;
       blur-background-fixed = false;
-
-      use-damage = false;
     '';
     experimentalBackends = true;
   };

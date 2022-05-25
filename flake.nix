@@ -123,26 +123,17 @@
               go
             ];
             graphical = [
-              # General
+              leftwm
               xdg
               gtk
               dconf
               fcitx5
-              wallpapers
-              screenshot
-              # X11
-              berry
               picom
               polybar
               rofi
-              sxhkd
               dunst
               feh
               xsecurelock
-              # Wayland
-              hikari
-              mako
-              waybar
             ];
             apps = [
               kitty
