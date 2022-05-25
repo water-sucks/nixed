@@ -8,8 +8,8 @@
       name = "IBM Plex Sans";
     };
     iconTheme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome3.adwaita-icon-theme;
+      name = "Orchis-dark";
+      package = pkgs.orchis-theme;
     };
     theme = {
       name = "Orchis-dark";

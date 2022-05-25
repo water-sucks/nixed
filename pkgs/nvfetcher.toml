@@ -2,10 +2,6 @@
 src.git = "https://github.com/mlvzk/manix"
 fetch.github = "mlvzk/manix"
 
-[berry]
-src.git = "https://github.com/JLErvin/berry"
-fetch.github = "JLErvin/berry"
-
 [picom]
 src.git = "https://github.com/ibhagwan/picom"
 fetch.github = "ibhagwan/picom"

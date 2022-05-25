@@ -9,9 +9,6 @@
     xscreensaver.text = ''
       auth    sufficient    pam_unix.so try_first_pass likeauth
     '';
-    hikari-unlocker.text = ''
-      auth    sufficient    pam_unix.so try_first_pass likeauth
-    '';
 
     sshd.googleAuthenticator.enable = lib.mkForce true;
   };

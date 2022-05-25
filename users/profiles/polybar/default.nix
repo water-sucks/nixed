@@ -78,19 +78,8 @@
       "module/view" = {
         type = "custom/script";
         interval = 0;
-        exec = "NAME=$(${pkgs.xdotool}/bin/xdotool getactivewindow getwindowclassname 2> /dev/null); if [ -n \"$NAME\" ] && [ \"$?\" -eq 0 ]; then echo $NAME; else echo \"berry\"; fi";
-        # exec = "{ ${pkgs.xdotool}/bin/xdotool getactivewindow getwindowclassname 2>&1; } | ${pkgs.gnugrep}/bin/grep -q 'BadWindow' && echo berry || ${pkgs.xdotool}/bin/xdotool getactivewindow getwindowclassname";
+        exec = "NAME=$(${pkgs.xdotool}/bin/xdotool getactivewindow getwindowclassname 2> /dev/null); if [ -n \"$NAME\" ] && [ \"$?\" -eq 0 ]; then echo $NAME; else echo \"leftwm\"; fi";
       };
-      # "module/keyboard" = {
-      #   type = "internal/xkeyboard";
-      #   blacklist-0 = "num lock";
-      #   label-layout = "%layout%";
-      #   label-layout-foreground = "\${colors.primary}";
-      #   label-indicator-padding = 2;
-      #   label-indicator-margin = 1;
-      #   label-indicator-foreground = "\${colors.background}";
-      #   label-indicator-background = "\${colors.secondary}";
-      # };
       "module/input-method" = {
         type = "custom/script";
         interval = 0;

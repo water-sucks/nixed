@@ -1,23 +1,4 @@
 {
-    "berry": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "berry",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "JLErvin",
-            "repo": "berry",
-            "rev": "b563041b394376328019a8616fd53b58b99f39e2",
-            "sha256": "sha256-cs1NVwaANMIteCQuGqPcEWuUbfJulhjmfWnlU8Eb2OM=",
-            "type": "github"
-        },
-        "version": "b563041b394376328019a8616fd53b58b99f39e2"
-    },
     "manix": {
         "cargoLocks": null,
         "extract": null,
