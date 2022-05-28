@@ -1,4 +1,4 @@
-{ self, config, pkgs, ... }:
+{ self, config, pkgs, lib, ... }:
 
 {
   imports =
@@ -30,6 +30,13 @@
 
   age.secrets.root-user-TheBeastNix.file = "${self}/secrets/root-user-TheBeastNix.age";
   users.users.root.passwordFile = "/run/agenix/root-user-TheBeastNix";
+
+  home-manager.sharedModules = [
+    {
+      services.polybar.config."module/wlan".interface = lib.mkForce "wlp5s0";
+      services.polybar.config."bar/oofbar".modules-right = lib.mkForce "input dot storage dot cpu dot mem dot audio dot bluetooth dot wlan dot date spacer powermenu";
+    }
+  ];
 
   services.earlyoom.enable = true;
 

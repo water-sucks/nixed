@@ -12,6 +12,7 @@
       "_GTK_FRAME_EXTENTS@:c"
       "window_type = 'desktop'"
       "class_g = 'zoom'"
+      "class_g = 'Polybar'"
     ];
     fade = true;
     fadeDelta = 16;
@@ -26,6 +27,7 @@
       "class_g = 'slop'"
       "name = 'cpt_frame_window'"
       "class_g = 'rofi'"
+      "class_g = 'Polybar'"
     ];
     shadowOpacity = "1.00";
     vSync = true;
@@ -35,7 +37,11 @@
       corner-radius = 8.0;
       round-borders = 8.0;
       round-borders-exclude = [
-        "class_g = 'rofi'",
+        "class_g = 'Polybar'",
+      ];
+
+      rounded-corners-exclude = [
+        "class_g = 'Polybar'",
       ];
 
       transition-length = 300;

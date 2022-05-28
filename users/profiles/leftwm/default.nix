@@ -144,7 +144,9 @@ in
       # ${leftwm} command "LoadTheme" "$SCRIPTPATH/theme.toml"
       echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
-      ${feh} --bg-fill ${./woah.jpg}
+      if [ -x "$(command -v feh)" ]; then
+        ${feh} --bg-scale ${./woah.jpg}
+      fi
       systemctl --user restart polybar # Won't show unless restarted
     '';
 
@@ -156,7 +158,7 @@ in
       # ${leftwm} command "UnloadTheme"
       echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
-      ${pkill} feh &
+      ${pkill} feh
     '';
   };
 }
