@@ -6,6 +6,7 @@ let
 
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
+  rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
   wc = "${pkgs.coreutils}/bin/wc";
   sed = "${pkgs.gnused}/bin/sed";
@@ -32,6 +33,8 @@ let
   toggle-wifi = pkgs.writeShellScript "polybar-wifi-toggle.sh" ''
     ${nmcli} radio wifi "$(${nmcli} r wifi | ${grep} enabled -c | ${sed} -e "s/1/off/" | ${sed} -e "s/0/on/")"
   '';
+
+  power-menu = import ./power-menu.nix pkgs;
 in
 {
   services.polybar.config = {
@@ -41,7 +44,7 @@ in
       content-padding = 2;
       content-foreground = "\${colors.text}";
       content-background = "\${colors.primary}";
-      click-left = ''${pkgs.rofi}/bin/rofi -show combi -combi-modi "window,run,ssh,calc" -modi combi'';
+      click-left = ''${rofi} -show combi -combi-modi "drun,window,run,ssh" -modi combi'';
     };
 
     "module/ewmh" = {
@@ -75,7 +78,7 @@ in
     "module/input" = {
       type = "custom/script";
       interval = 0;
-      exec = "${pkgs.dbus}/bin/dbus-send --session --print-reply --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.CurrentInputMethod | ${pkgs.gnugrep}/bin/grep -Po '(?<=\")[^\"]+' | ${pkgs.gnused}/bin/sed 's/keyboard-//g' | ${pkgs.gnused}/bin/sed 's/mozc/jp/g'"; # Stupid oneliner to get input method between English or Japanese
+      exec = "${pkgs.dbus}/bin/dbus-send --session --print-reply --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.CurrentInputMethod | ${grep} -Po '(?<=\")[^\"]+' | ${sed} 's/keyboard-//g' | ${sed} 's/mozc/jp/g'"; # Stupid oneliner to get input method between English or Japanese
     };
 
     "module/battery" = {
@@ -178,7 +181,7 @@ in
       content-padding = "2";
       content-foreground = "\${colors.text}";
       content-background = "\${colors.primary}";
-      # Add command here after
+      click-left = "${power-menu}";
     };
 
     "module/spacer" = {

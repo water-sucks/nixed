@@ -20,8 +20,8 @@
     };
 
     "bar/oofbar" = {
-      modules-left = "launcher spacer ewmh spacer layout";
-      modules-right = "input dot battery dot storage dot cpu dot mem dot audio dot bluetooth dot wlan dot date spacer powermenu";
+      modules-left = "powermenu spacer ewmh spacer layout";
+      modules-right = "input dot battery dot storage dot cpu dot mem dot audio dot bluetooth dot wlan dot date spacer launcher";
       width = "100%";
       offset-x = 0;
       offset-y = 0;
