@@ -26,9 +26,22 @@
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixos";
+
+    leftwm.url = "github:leftwm/leftwm";
+    leftwm.inputs.nixpkgs.follows = "nixos";
   };
 
-  outputs = { self, digga, bud, nixos, home, agenix, deploy, ... }@inputs:
+  outputs =
+    { self
+    , digga
+    , bud
+    , nixos
+    , home
+    , agenix
+    , deploy
+    , leftwm
+    , ...
+    }@inputs:
     digga.lib.mkFlake {
       inherit self inputs;
 
@@ -39,6 +52,7 @@
           imports = [ (digga.lib.importOverlays ./overlays) ];
           overlays = [
             agenix.overlay
+            leftwm.overlay
             ./pkgs/default.nix
           ];
         };
@@ -123,7 +137,7 @@
               go
             ];
             graphical = [
-              leftwm
+              profiles.leftwm
               xdg
               gtk
               dconf
