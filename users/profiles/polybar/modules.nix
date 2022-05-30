@@ -4,8 +4,12 @@ let
   leftwm-state = "${pkgs.leftwm}/bin/leftwm-state";
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
+  theme = "GTK_THEME=${config.home.sessionVariables.GTK_THEME}";
+  pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
+  blueberry = "${theme} ${pkgs.blueberry}/bin/blueberry";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
+  nmgui = "GTK_THEME=Orchis\\:dark ${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
   wc = "${pkgs.coreutils}/bin/wc";
@@ -57,7 +61,7 @@ in
 
       label-active = "%{+o} %name% %{-o}";
       label-occupied = " %name% ";
-      label-urgent = " %name ";
+      label-urgent = " %name% ";
       label-empty = " %name% ";
 
       label-active-foreground = "\${colors.text}";
@@ -131,6 +135,18 @@ in
       label = " %percentage_used%%";
     };
 
+    "module/brightness" = {
+      type = "internal/backlight";
+      card = "amdgpu_bl0";
+      enable-scroll = true;
+
+      format = "<ramp>";
+      ramp-0 = "";
+      ramp-1 = "ﯧ";
+      ramp-2 = "";
+      ramp-3 = "ﯦ";
+    };
+
     "module/audio" = {
       type = "internal/pulseaudio";
       format-volume = "<ramp-volume>";
@@ -140,7 +156,7 @@ in
       ramp-volume-2 = "墳";
       label-muted = "婢";
       label-muted-foreground = "\${colors.deactivated}";
-      click-right = "${pkgs.pavucontrol}/bin/pavucontrol";
+      click-right = "${pavucontrol}";
     };
 
     "module/bluetooth" = {
@@ -148,7 +164,7 @@ in
       exec = "${bluetooth-status}";
       interval = 2;
       click-left = "${toggle-bluetooth}";
-      click-right = "${pkgs.blueberry}/bin/blueberry";
+      click-right = "${blueberry}";
     };
 
     "module/wlan" = {
@@ -160,8 +176,8 @@ in
       format-disconnected = "<label-disconnected>";
       format-connected-padding = 0;
 
-      label-connected = "%{A1:${toggle-wifi}:}直%{A}";
-      label-disconnected = "%{A1:${toggle-wifi}:}睊%{A}";
+      label-connected = "%{A1:${toggle-wifi}:}%{A3:${nmgui}:}直%{A}%{A}";
+      label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${nmgui}:}睊%{A}%{A}";
 
       label-disconnected-foreground = "\${colors.deactivated}";
     };

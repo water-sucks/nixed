@@ -15,13 +15,14 @@ let
   return = "Return";
 
   leftwm = "${pkgs.leftwm}/bin/leftwm";
+  leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
   feh = "${pkgs.feh}/bin/feh";
-  pkill = "${pkgs.procps}/bin/pkill";
   kitty = "${pkgs.kitty}/bin/kitty";
   rofi = "${pkgs.rofi}/bin/rofi";
   xset = "${pkgs.xorg.xset}/bin/xset";
   maim = "${pkgs.maim}/bin/maim";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
+  light = "${pkgs.light}/bin/light";
 
   switchTag = tag: transform: (bind [ mod ] (toString (transform tag)) "GotoTag" (toString tag));
   moveTag = tag: transform: (bind [ mod shift ] (toString (transform tag)) "MoveToTag" (toString tag));
@@ -59,7 +60,6 @@ in
         "LeftWiderRightStack"
       ];
       layout_mode = "Workspace";
-      scratchpad = [ ];
       disable_current_tag_swap = false;
       focus_behaviour = "Sloppy"; # Bri*ish
       focus_new_windows = true;
@@ -80,23 +80,22 @@ in
         (map (t: (moveTag t (x: x))) (lib.range 1 9))
         (map (t: (moveTag t (x: "KP_${toString x}"))) (lib.range 1 9))
 
-        # Scratchpad
-        # Kitty scratchpad
+        # Scratchpads
+        (bind [ ctrl alt ] "t" "ToggleScratchPad" "Terminal")
 
-        # Layout
+        # Layouts
         (bind [ mod ctrl ] "k" "NextLayout" "")
         (bind [ mod ctrl ] "Up" "NextLayout" "")
         (bind [ mod ctrl ] "j" "PreviousLayout" "")
         (bind [ mod ctrl ] "Down" "PreviousLayout" "")
-        # SetLayout to Monocle
-        # SetLayout to Fibonacci
-
+        (bind [ mod ctrl ] "m" "SetLayout" "Monocle")
+        (bind [ mod ctrl ] "f" "SetLayout" "Fibonacci")
 
         # Workspace
-        (bind [ mod ] "l" "FocusWorkspaceNext" "")
-        (bind [ mod ] "Right" "FocusWorkspaceNext" "")
-        (bind [ mod ] "h" "FocusWorkspacePrevious" "")
-        (bind [ mod ] "Left" "FocusWorkspacePrevious" "")
+        (bind [ mod shift ] "l" "FocusWorkspaceNext" "")
+        (bind [ mod shift ] "Right" "FocusWorkspaceNext" "")
+        (bind [ mod shift ] "h" "FocusWorkspacePrevious" "")
+        (bind [ mod shift ] "Left" "FocusWorkspacePrevious" "")
         (bind [ mod shift ] "w" "MoveToLastWorkspace" "")
 
         # Window
@@ -104,7 +103,7 @@ in
         (bind [ mod ] "Up" "FocusWindowUp" "")
         (bind [ mod ] "j" "FocusWindowDown" "")
         (bind [ mod ] "Down" "FocusWindowDown" "")
-        # (bind [ mod ] "t" "FocusWindowTop" false) # Wait for updated LeftWM to get this feature?
+        (bind [ mod ] "t" "FocusWindowTop" "")
         (bind [ mod shift ] "k" "MoveWindowUp" "")
         (bind [ mod shift ] "Up" "MoveWindowUp" "")
         (bind [ mod shift ] "j" "MoveWindowDown" "")
@@ -115,14 +114,29 @@ in
         (execute [ mod ] return kitty)
         (execute [ mod ] "space" "${rofi} -show drun")
         (execute [ mod shift ] "Return" ''${rofi} -show combi -combi-modi "drun,window,run,ssh" -modi combi'')
-        (execute [ mod shift ] "BackSpace" "${xset} s activate")
+        (execute [ mod ] "l" "${xset} s activate")
         (execute [ mod ctrl alt ] "q" "loginctl kill-session $XDG_SESSION_ID")
         (execute [ mod ] "Print" "${maim} -s ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
         (execute [ ] "Print" "${maim} ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
         (execute [ ] "XF86XK_AudioRaiseVolume" "${amixer} sset Master 5%+")
         (execute [ ] "XF86XK_AudioLowerVolume" "${amixer} sset Master 5%-")
         (execute [ ] "XF86XK_AudioMute" "${amixer} sset Master toggle")
+        (execute [ ] "XF86XK_AudioMicMute" "${amixer} sset Capture toggle")
+        (execute [ ] "XF86XK_MonBrightnessUp" "${light} -A 5")
+        (execute [ ] "XF86XK_MonBrightnessDown" "${light} -U 5")
+        (execute [ ] "XF86XK_Calculator" "rofi -modi calc -show calc")
         (execute [ ctrl alt ] "Delete" "${powerMenu}")
+      ];
+
+      scratchpad = [
+        {
+          name = "Terminal";
+          value = "${pkgs.kitty}/bin/kitty";
+          x = 0.25;
+          y = 0.25;
+          height = 0.5;
+          width = 0.5;
+        }
       ];
     };
 
@@ -145,13 +159,12 @@ in
       fi
       ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 
-      # ${leftwm} command "LoadTheme" "$SCRIPTPATH/theme.toml"
-      echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
+      ${leftwm-command} "LoadTheme $SCRIPTPATH/theme.toml"
 
       if [ -x "$(command -v feh)" ]; then
         ${feh} --bg-scale ${./woah.jpg}
       fi
-      systemctl --user restart polybar # Won't show unless restarted
+      # systemctl --user restart polybar # Won't show unless restarted
     '';
 
     down = ''
@@ -159,10 +172,7 @@ in
 
       export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-      # ${leftwm} command "UnloadTheme"
-      echo "UnloadTheme" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
-
-      ${pkill} feh
+      ${leftwm-command} "UnloadTheme"
     '';
   };
 }

@@ -20,4 +20,8 @@
     windowManager.leftwm.enable = true;
     desktopManager.xterm.enable = false;
   };
+
+  environment.variables = {
+    GTK_THEME = "Orchis:dark";
+  };
 }
