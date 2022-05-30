@@ -25,6 +25,8 @@ let
 
   switchTag = tag: transform: (bind [ mod ] (toString (transform tag)) "GotoTag" (toString tag));
   moveTag = tag: transform: (bind [ mod shift ] (toString (transform tag)) "MoveToTag" (toString tag));
+
+  powerMenu = import ../polybar/power-menu.nix pkgs;
 in
 {
   home.packages = [
@@ -112,6 +114,7 @@ in
         # External
         (execute [ mod ] return kitty)
         (execute [ mod ] "space" "${rofi} -show drun")
+        (execute [ mod shift ] "Return" ''${rofi} -show combi -combi-modi "drun,window,run,ssh" -modi combi'')
         (execute [ mod shift ] "BackSpace" "${xset} s activate")
         (execute [ mod ctrl alt ] "q" "loginctl kill-session $XDG_SESSION_ID")
         (execute [ mod ] "Print" "${maim} -s ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
@@ -119,6 +122,7 @@ in
         (execute [ ] "XF86XK_AudioRaiseVolume" "${amixer} sset Master 5%+")
         (execute [ ] "XF86XK_AudioLowerVolume" "${amixer} sset Master 5%-")
         (execute [ ] "XF86XK_AudioMute" "${amixer} sset Master toggle")
+        (execute [ ctrl alt ] "Delete" "${powerMenu}")
       ];
     };
 
