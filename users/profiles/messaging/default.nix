@@ -7,5 +7,6 @@
     signal-desktop
     slack
     zoom-us
+    skypeforlinux
   ];
 }
