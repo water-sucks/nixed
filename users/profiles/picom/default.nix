@@ -38,10 +38,12 @@
       round-borders = 8.0;
       round-borders-exclude = [
         "class_g = 'Polybar'",
+        "class_g = 'Dunst'",
       ];
 
       rounded-corners-exclude = [
         "class_g = 'Polybar'",
+        "class_g = 'Dunst'",
       ];
 
       transition-length = 300;
