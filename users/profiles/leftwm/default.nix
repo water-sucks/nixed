@@ -21,6 +21,7 @@ let
   rofi = "${pkgs.rofi}/bin/rofi";
   xset = "${pkgs.xorg.xset}/bin/xset";
   maim = "${pkgs.maim}/bin/maim";
+  dunstify = "${pkgs.dunst}/bin/dunstify";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   light = "${pkgs.light}/bin/light";
 
@@ -28,6 +29,17 @@ let
   moveTag = tag: transform: (bind [ mod shift ] (toString (transform tag)) "MoveToTag" (toString tag));
 
   powerMenu = import ../polybar/power-menu.nix pkgs;
+  screenshot = pkgs.writeShellScript "take-screenshot.sh" ''
+    if [ "$1" == "-s" ]; then
+      cmd="${maim} -s"
+    else
+      cmd="${maim}"
+    fi
+
+    if eval "$cmd $HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S)"; then
+      ${dunstify} -u low "Screenshot taken" "at $(date +%r)"
+    fi
+  '';
 in
 {
   home.packages = [
@@ -116,8 +128,10 @@ in
         (execute [ mod shift ] "Return" ''${rofi} -show combi -combi-modi "drun,window,run,ssh" -modi combi'')
         (execute [ mod ] "l" "${xset} s activate")
         (execute [ mod ctrl alt ] "q" "loginctl kill-session $XDG_SESSION_ID")
-        (execute [ mod ] "Print" "${maim} -s ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
-        (execute [ ] "Print" "${maim} ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
+        # (execute [ mod ] "Print" "${maim} -s ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && ${dunstify} 'Screenshot taken.'")
+        (execute [ mod ] "Print" "${screenshot} -s")
+        # (execute [ ] "Print" "${maim} ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png && ${dunstify} 'Screenshot taken.'")
+        (execute [ ] "Print" "${screenshot}")
         (execute [ ] "XF86XK_AudioRaiseVolume" "${amixer} sset Master 5%+")
         (execute [ ] "XF86XK_AudioLowerVolume" "${amixer} sset Master 5%-")
         (execute [ ] "XF86XK_AudioMute" "${amixer} sset Master toggle")
