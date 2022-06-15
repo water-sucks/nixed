@@ -36,7 +36,7 @@ let
       cmd="${maim}"
     fi
 
-    if eval "$cmd $HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S)"; then
+    if eval "$cmd $HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; then
       ${dunstify} -u low "Screenshot taken" "at $(date +%r)"
     fi
   '';
