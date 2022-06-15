@@ -4,8 +4,13 @@ require("indent_blankline").setup({
     "NvimTree",
     "Searchbox",
     "SidebarNvim",
-    "terminal",
     "floaterm",
+    "terminal",
+  },
+  buftype_exclude = {
+    "NvimTree",
+    "nofile",
+    "terminal",
   },
   char_highlight_list = {
     "IndentBlanklineIndent1",

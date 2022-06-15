@@ -1,95 +1,11 @@
-[filetype-nvim]
-src.git = "https://github.com/nathom/filetype.nvim"
-fetch.github = "nathom/filetype.nvim"
+[tree-sitter-norg]
+src.git = "https://github.com/nvim-neorg/tree-sitter-norg"
+fetch.github = "nvim-neorg/tree-sitter-norg"
 
-[coq-nvim]
-src.git = "https://github.com/ms-jpq/coq_nvim"
-fetch.github = "ms-jpq/coq_nvim"
+[tree-sitter-norg-meta]
+src.git = "https://github.com/nvim-neorg/tree-sitter-norg-meta"
+fetch.github = "nvim-neorg/tree-sitter-norg-meta"
 
-[coq-artifacts]
-src.git = "https://github.com/ms-jpq/coq.artifacts"
-fetch.github = "ms-jpq/coq.artifacts"
-
-[coq-3p]
-src.git = "https://github.com/ms-jpq/coq.thirdparty"
-fetch.github = "ms-jpq/coq.thirdparty"
-
-[navigator-lua]
-src.git = "https://github.com/ray-x/navigator.lua"
-fetch.github = "ray-x/navigator.lua"
-
-[guihua-lua]
-src.git = "https://github.com/ray-x/guihua.lua"
-fetch.github = "ray-x/guihua.lua"
-
-[lsp-signature-nvim]
-src.git = "https://github.com/ray-x/lsp_signature.nvim"
-fetch.github = "ray-x/lsp_signature.nvim"
-
-[lsp-format-nvim]
-src.git = "https://github.com/lukas-reineke/lsp-format.nvim"
-fetch.github = "lukas-reineke/lsp-format.nvim"
-
-[sidebar-nvim]
-src.git = "https://github.com/sidebar-nvim/sidebar.nvim"
-fetch.github = "sidebar-nvim/sidebar.nvim"
-
-[focus-nvim]
-src.git = "https://github.com/beauwilliams/focus.nvim"
-fetch.github = "beauwilliams/focus.nvim"
-
-[iswap-nvim]
-src.git = "https://github.com/mizlan/iswap.nvim"
-fetch.github = "mizlan/iswap.nvim"
-
-[renamer-nvim]
-src.git = "https://github.com/filipdutescu/renamer.nvim"
-fetch.github = "filipdutescu/renamer.nvim"
-
-[nui-nvim]
-src.git = "https://github.com/MunifTanjim/nui.nvim"
-fetch.github = "MunifTanjim/nui.nvim"
-
-[searchbox-nvim]
-src.git = "https://github.com/VonHeikemen/searchbox.nvim"
-fetch.github = "VonHeikemen/searchbox.nvim"
-
-[highstr-nvim]
-src.git = "https://github.com/Pocco81/HighStr.nvim"
-fetch.github = "Pocco81/HighStr.nvim"
-
-[autosave-nvim]
-src.git = "https://github.com/Pocco81/AutoSave.nvim"
-fetch.github = "Pocco81/AutoSave.nvim"
-
-[hachiko]
-src.git = "https://github.com/water-sucks/hachiko"
-fetch.github = "water-sucks/hachiko"
-
-[windline-nvim]
-src.git = "https://github.com/windwp/windline.nvim"
-fetch.github = "windwp/windline.nvim"
-
-[circles-nvim]
-src.git = "https://github.com/projekt0n/circles.nvim"
-fetch.github = "projekt0n/circles.nvim"
-
-[zen-mode-nvim]
-src.git = "https://github.com/folke/zen-mode.nvim"
-fetch.github = "folke/zen-mode.nvim"
-
-[tmux-nvim]
-src.git = "https://github.com/aserowy/tmux.nvim"
-fetch.github = "aserowy/tmux.nvim"
-
-[tetris]
-src.git = "https://github.com/alec-gibson/nvim-tetris"
-fetch.github = "alec-gibson/nvim-tetris"
-
-[nvim-mapper]
-src.git = "https://github.com/lazytanuki/nvim-mapper"
-fetch.github = "lazytanuki/nvim-mapper"
-
-[flutter-tools-nvim]
-src.git = "https://github.com/akinsho/flutter-tools.nvim"
-fetch.github = "akinsho/flutter-tools.nvim"
+[tree-sitter-norg-table]
+src.git = "https://github.com/nvim-neorg/tree-sitter-norg-table"
+fetch.github = "nvim-neorg/tree-sitter-norg-table"
