@@ -98,7 +98,6 @@
               nix
               core
               cachix
-              starship
               pam
               fonts
               fontconfig
@@ -129,18 +128,24 @@
           profiles = digga.lib.rakeLeaves ./users/profiles;
           suites = with profiles; rec {
             base = [
-              direnv
-              git
               zsh
               nerdfetch
+              starship
+              fuck
+              exa
+              bat
+              zoxide
               nvim
             ];
             dev = [
+              direnv
+              git
               tmux
               go
             ];
+            # Linux only!
             graphical = [
-              profiles.leftwm
+              leftwm
               xdg
               gtk
               dconf
@@ -154,9 +159,9 @@
             ];
             apps = [
               kitty
-              zathura
               firefox
               chromium
+              zathura
               music
               messaging
               passwords
