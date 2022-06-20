@@ -83,10 +83,14 @@
           ];
         };
 
-        imports = [ (digga.lib.importHosts ./hosts) ];
-        hosts = { };
+        imports = [ (digga.lib.importHosts ./hosts/nixos) ];
+        hosts = {
+          DerekCarr = { };
+          HunterRenfrow = { };
+        };
         importables = rec {
-          profiles = digga.lib.rakeLeaves ./profiles // {
+          profiles = digga.lib.rakeLeaves ./profiles/common //
+            digga.lib.rakeLeaves ./profiles/nixos // {
             users = digga.lib.rakeLeaves ./users;
           };
           suites = with profiles; rec {
@@ -97,6 +101,7 @@
               starship
               pam
               fonts
+              fontconfig
               kmscon
               users.common
             ];

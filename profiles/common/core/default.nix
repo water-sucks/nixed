@@ -1,12 +1,10 @@
 { self, config, lib, pkgs, ... }:
 
+let
+  inherit (pkgs.stdenv) isLinux;
+in
 {
   programs.zsh.enable = true;
-
-  programs.thefuck = {
-    enable = true;
-    alias = "fuck";
-  };
 
   environment = {
     systemPackages = with pkgs; [
@@ -21,8 +19,6 @@
       fd
       git
       bottom
-      gptfdisk
-      iputils
       jq
       lsof
       manix
@@ -30,22 +26,23 @@
       nix-index
       neovim
       nmap
-      procs
       ripgrep
       skim
       tealdeer
       tokei
-      usbutils
-      utillinux
       whois
       zoxide
-    ];
+    ] ++ (lib.optionals isLinux [
+      gptfdisk
+      iputils
+      procs
+      usbutils
+      utillinux
+    ]);
 
     variables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
   };
-
-  i18n.defaultLocale = "en_US.UTF-8";
 }

@@ -1,4 +1,5 @@
 { suites, profiles, ... }:
+
 {
   imports = [
     ./configuration.nix
