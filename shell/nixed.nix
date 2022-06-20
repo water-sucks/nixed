@@ -1,4 +1,5 @@
 { pkgs, extraModulesPath, inputs, ... }:
+
 let
   hooks = import ./hooks;
 
@@ -12,7 +13,6 @@ in
   imports = [ "${extraModulesPath}/git/hooks.nix" ];
   git = { inherit hooks; };
 
-  # tempfix: remove when merged https://github.com/numtide/devshell/pull/123
   devshell.startup.load_profiles = pkgs.lib.mkForce (pkgs.lib.noDepEntry ''
     # PATH is devshell's exorbitant privilege:
     # fence against its pollution
@@ -28,10 +28,11 @@ in
   '');
 
   commands = with pkgs; [
-    (nixed nixUnstable)
+    (nixed nix)
     (nixed agenix)
     (nixed nvfetcher)
     (nixed inputs.deploy.packages.${pkgs.system}.deploy-rs)
+
     (linter stylua)
     (linter nixpkgs-fmt)
     (linter editorconfig-checker)
