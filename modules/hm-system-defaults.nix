@@ -1,11 +1,15 @@
-{ config, ... }: {
+{ inputs, config, pkgs, ... }:
+
+let
+  inherit (pkgs.stdenv) system;
+  homeManagerPackage = inputs.home-manager.packages.${system}.default;
+in
+{
   home-manager.sharedModules = [
     {
-      home.sessionVariables = {
-        inherit (config.environment.sessionVariables) NIX_PATH;
-      };
-      xdg.configFile."nix/registry.json".text =
-        config.environment.etc."nix/registry.json".text;
+      programs.home-manager.enable = true;
+      manual.json.enable = true;
+      news.display = "show";
     }
   ];
 }
