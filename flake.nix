@@ -121,6 +121,45 @@
         };
       };
 
+      darwin = {
+        hostDefaults = {
+          system = "x86_64-darwin";
+          channelName = "nixos";
+          imports = [ (digga.lib.importExportableModules ./modules) ];
+          modules = [
+            { lib.our = self.lib; }
+            home.darwinModules.home-manager
+            agenix.nixosModules.age
+          ];
+        };
+
+        imports = [ (digga.lib.importHosts ./hosts/darwin) ];
+        hosts = { };
+        importables = rec {
+          profiles = digga.lib.rakeLeaves ./profiles/common //
+            digga.lib.rakeLeaves ./profiles/darwin // {
+            users = digga.lib.rakeLeaves ./users;
+          };
+          suites = with profiles; rec {
+            base = [
+              nix
+              core
+              cachix
+              fonts
+              defaults
+            ];
+            brew = with homebrew; [
+              homebrew.brew
+              vitals
+              security
+              dev
+              multimedia
+              messaging
+            ];
+          };
+        };
+      };
+
       home = {
         imports = [ (digga.lib.importExportableModules ./users/modules) ];
         modules = [ ];
