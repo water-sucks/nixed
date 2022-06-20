@@ -134,7 +134,9 @@
         };
 
         imports = [ (digga.lib.importHosts ./hosts/darwin) ];
-        hosts = { };
+        hosts = {
+          CharlesWoodson = { };
+        };
         importables = rec {
           profiles = digga.lib.rakeLeaves ./profiles/common //
             digga.lib.rakeLeaves ./profiles/darwin // {
