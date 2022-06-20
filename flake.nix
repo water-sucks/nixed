@@ -11,10 +11,6 @@
     digga.inputs.home-manager.follows = "home";
     digga.inputs.deploy.follows = "deploy";
 
-    bud.url = "github:divnix/bud";
-    bud.inputs.nixpkgs.follows = "nixos";
-    bud.inputs.devshell.follows = "digga/devshell";
-
     home.url = "github:nix-community/home-manager";
     home.inputs.nixpkgs.follows = "nixos";
 
@@ -29,31 +25,31 @@
 
     leftwm.url = "github:leftwm/leftwm";
     leftwm.inputs.nixpkgs.follows = "nixos";
+
+    nixpkgs.follows = "nixos";
   };
 
   outputs =
     { self
     , digga
-    , bud
     , nixos
     , home
     , agenix
     , deploy
-    , leftwm
     , ...
     }@inputs:
     digga.lib.mkFlake {
       inherit self inputs;
 
-      channelsConfig = { allowUnfree = true; };
+      channelsConfig.allowUnfree = true;
 
       channels = {
         nixos = {
-          imports = [ (digga.lib.importOverlays ./overlays) ];
+          imports = [
+            (digga.lib.importOverlays ./overlays)
+          ];
           overlays = [
-            agenix.overlay
-            leftwm.overlay
-            ./pkgs/default.nix
+            inputs.leftwm.overlay
           ];
         };
         latest = { };
@@ -68,6 +64,9 @@
             our = self.lib;
           });
         })
+
+        agenix.overlay
+        (import ./pkgs)
       ];
 
       nixos = {
@@ -81,7 +80,6 @@
             digga.nixosModules.nixConfig
             home.nixosModules.home-manager
             agenix.nixosModules.age
-            bud.nixosModules.bud
           ];
         };
 
