@@ -1,7 +1,8 @@
-{ pkgs, extraModulesPath, inputs, ... }:
+{ inputs, pkgs, lib, extraModulesPath, ... }:
 
 let
   hooks = import ./hooks;
+  inherit (pkgs.stdenv) isLinux isDarwin;
 
   pkgWithCategory = category: package: { inherit package category; };
   linter = pkgWithCategory "linter";
@@ -36,6 +37,22 @@ in
     (linter stylua)
     (linter nixpkgs-fmt)
     (linter editorconfig-checker)
+
+    {
+      category = "nixed";
+      name = "rebuild";
+      help = "Rebuild current host";
+      command = ''
+        if ${lib.boolToString isLinux}; then
+          sudo nixos-rebuild --flake ".#$(hostname)" $@
+        elif ${lib.boolToString isDarwin}; then
+          TERM=xterm-256color darwin-rebuild --flake ".#$(hostname)" $@
+        else
+          echo "Uh oh! Unknown system detected."
+          exit 1
+        fi
+      '';
+    }
   ]
 
   ++ lib.optional
