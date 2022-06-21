@@ -73,7 +73,10 @@
         hostDefaults = {
           system = "x86_64-linux";
           channelName = "nixos";
-          imports = [ (digga.lib.importExportableModules ./modules) ];
+          imports = [
+            (digga.lib.importExportableModules ./modules/common)
+            # (digga.lib.importExportableModules ./modules/nixos) No modules yet
+          ];
           modules = [
             { lib.our = self.lib; }
             digga.nixosModules.bootstrapIso
@@ -125,7 +128,10 @@
         hostDefaults = {
           system = "x86_64-darwin";
           channelName = "nixos";
-          imports = [ (digga.lib.importExportableModules ./modules) ];
+          imports = [
+            (digga.lib.importExportableModules ./modules/common)
+            (digga.lib.importExportableModules ./modules/darwin)
+          ];
           modules = [
             { lib.our = self.lib; }
             home.darwinModules.home-manager
