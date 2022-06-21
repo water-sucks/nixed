@@ -176,7 +176,7 @@ in
       ${leftwm-command} "LoadTheme $SCRIPTPATH/theme.toml"
 
       if [ -x "$(command -v feh)" ]; then
-        ${feh} --bg-scale ${./woah.jpg}
+        ${feh} --bg-scale ${self}/assets/woah.jpg
       fi
       # systemctl --user restart polybar # Won't show unless restarted
     '';

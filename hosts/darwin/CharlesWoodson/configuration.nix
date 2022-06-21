@@ -6,5 +6,7 @@
 
   networking.hostName = "CharlesWoodson";
 
+  system.defaults.SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
+
   system.stateVersion = 4;
 }
