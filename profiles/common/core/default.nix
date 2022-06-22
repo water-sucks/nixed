@@ -30,11 +30,13 @@ in
       skim
       tealdeer
       tokei
+      tree
       whois
       zoxide
     ] ++ (lib.optionals isLinux [
       gptfdisk
       iputils
+      file
       procs
       usbutils
       utillinux
