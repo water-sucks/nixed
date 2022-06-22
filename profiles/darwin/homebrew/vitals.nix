@@ -5,4 +5,8 @@
     "firefox"
     "kitty"
   ];
+
+  homebrew.brews = [
+    "fileicon"
+  ];
 }
