@@ -11,10 +11,6 @@
     digga.inputs.home-manager.follows = "home";
     digga.inputs.deploy.follows = "deploy";
 
-    bud.url = "github:divnix/bud";
-    bud.inputs.nixpkgs.follows = "nixos";
-    bud.inputs.devshell.follows = "digga/devshell";
-
     home.url = "github:nix-community/home-manager";
     home.inputs.nixpkgs.follows = "nixos";
 
@@ -29,31 +25,31 @@
 
     leftwm.url = "github:leftwm/leftwm";
     leftwm.inputs.nixpkgs.follows = "nixos";
+
+    nixpkgs.follows = "nixos";
   };
 
   outputs =
     { self
     , digga
-    , bud
     , nixos
     , home
     , agenix
     , deploy
-    , leftwm
     , ...
     }@inputs:
     digga.lib.mkFlake {
       inherit self inputs;
 
-      channelsConfig = { allowUnfree = true; };
+      channelsConfig.allowUnfree = true;
 
       channels = {
         nixos = {
-          imports = [ (digga.lib.importOverlays ./overlays) ];
+          imports = [
+            (digga.lib.importOverlays ./overlays)
+          ];
           overlays = [
-            agenix.overlay
-            leftwm.overlay
-            ./pkgs/default.nix
+            inputs.leftwm.overlay
           ];
         };
         latest = { };
@@ -68,27 +64,36 @@
             our = self.lib;
           });
         })
+
+        agenix.overlay
+        (import ./pkgs)
       ];
 
       nixos = {
         hostDefaults = {
           system = "x86_64-linux";
           channelName = "nixos";
-          imports = [ (digga.lib.importExportableModules ./modules) ];
+          imports = [
+            (digga.lib.importExportableModules ./modules/common)
+            # (digga.lib.importExportableModules ./modules/nixos) No modules yet
+          ];
           modules = [
             { lib.our = self.lib; }
             digga.nixosModules.bootstrapIso
             digga.nixosModules.nixConfig
             home.nixosModules.home-manager
             agenix.nixosModules.age
-            bud.nixosModules.bud
           ];
         };
 
-        imports = [ (digga.lib.importHosts ./hosts) ];
-        hosts = { };
+        imports = [ (digga.lib.importHosts ./hosts/nixos) ];
+        hosts = {
+          DerekCarr = { };
+          HunterRenfrow = { };
+        };
         importables = rec {
-          profiles = digga.lib.rakeLeaves ./profiles // {
+          profiles = digga.lib.rakeLeaves ./profiles/common //
+            digga.lib.rakeLeaves ./profiles/nixos // {
             users = digga.lib.rakeLeaves ./users;
           };
           suites = with profiles; rec {
@@ -96,9 +101,9 @@
               nix
               core
               cachix
-              starship
               pam
               fonts
+              fontconfig
               kmscon
               users.common
             ];
@@ -119,6 +124,51 @@
         };
       };
 
+      darwin = {
+        hostDefaults = {
+          system = "x86_64-darwin";
+          channelName = "nixos";
+          imports = [
+            (digga.lib.importExportableModules ./modules/common)
+            (digga.lib.importExportableModules ./modules/darwin)
+          ];
+          modules = [
+            { lib.our = self.lib; }
+            home.darwinModules.home-manager
+            agenix.nixosModules.age
+          ];
+        };
+
+        imports = [ (digga.lib.importHosts ./hosts/darwin) ];
+        hosts = {
+          CharlesWoodson = { };
+          SebastianJanikowski = { };
+        };
+        importables = rec {
+          profiles = digga.lib.rakeLeaves ./profiles/common //
+            digga.lib.rakeLeaves ./profiles/darwin // {
+            users = digga.lib.rakeLeaves ./users;
+          };
+          suites = with profiles; rec {
+            base = [
+              nix
+              core
+              cachix
+              fonts
+              defaults
+            ];
+            brew = with homebrew; [
+              homebrew.brew
+              vitals
+              security
+              dev
+              multimedia
+              messaging
+            ];
+          };
+        };
+      };
+
       home = {
         imports = [ (digga.lib.importExportableModules ./users/modules) ];
         modules = [ ];
@@ -126,18 +176,24 @@
           profiles = digga.lib.rakeLeaves ./users/profiles;
           suites = with profiles; rec {
             base = [
-              direnv
-              git
               zsh
               nerdfetch
+              starship
+              fuck
+              exa
+              bat
+              zoxide
               nvim
             ];
             dev = [
+              direnv
+              git
               tmux
               go
             ];
+            # Linux only!
             graphical = [
-              profiles.leftwm
+              leftwm
               xdg
               gtk
               dconf
@@ -151,9 +207,9 @@
             ];
             apps = [
               kitty
-              zathura
               firefox
               chromium
+              zathura
               music
               messaging
               passwords
