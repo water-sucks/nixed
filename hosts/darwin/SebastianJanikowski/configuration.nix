@@ -6,5 +6,7 @@
 
   networking.hostName = "SebastianJanikowski";
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   system.stateVersion = 4;
 }
