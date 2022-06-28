@@ -33,18 +33,27 @@ packer.startup({
       end,
     })
     use({
-      "ms-jpq/coq_nvim",
-      branch = "coq",
-      run = function()
-        if vim.fn.empty(vim.fn.glob(vim.fn.stdpath("data") .. "/coqrt")) > 0 then
-          require("coq").deps()
-        end
-      end,
+      {
+        "ms-jpq/coq_nvim",
+        branch = "coq",
+        run = function()
+          if vim.fn.empty(vim.fn.glob(vim.fn.stdpath("data") .. "/coqrt")) > 0 then
+            require("coq").deps()
+          end
+        end,
+      },
+      {
+        "ms-jpq/coq.artifacts",
+        branch = "artifacts",
+      },
+      {
+        "ms-jpq/coq.thirdparty",
+        branch = "3p",
+      },
     })
-    use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
-    use({ "ms-jpq/coq.thirdparty", branch = "3p" })
     use({
       "tami5/lspsaga.nvim",
+      event = "CursorHold",
       config = function()
         require("config.saga")
       end,
@@ -67,6 +76,7 @@ packer.startup({
     -- Specialized windows
     use({
       "kyazdani42/nvim-tree.lua",
+      event = "CursorHold",
       requires = {
         "kyazdani42/nvim-web-devicons",
         "projekt0n/circles.nvim",
@@ -77,6 +87,7 @@ packer.startup({
     })
     use({
       "nvim-telescope/telescope.nvim",
+      event = "CursorHold",
       requires = { "nvim-lua/plenary.nvim" },
       config = function()
         require("config.telescope")
@@ -84,64 +95,104 @@ packer.startup({
     })
     use({
       "sidebar-nvim/sidebar.nvim",
+      cmd = {
+        "SidebarNvimToggle",
+        "SidebarNvimOpen",
+      },
       config = function()
         require("config.sidebar")
       end,
     })
     use({
       "folke/trouble.nvim",
+      cmd = {
+        "Trouble",
+        "TroubleToggle",
+      },
       config = function()
         require("trouble").setup({})
       end,
     })
-    use("voldikss/vim-floaterm")
+    use({
+      "voldikss/vim-floaterm",
+      cmd = {
+        "FloatermNew",
+        "FloatermToggle",
+      },
+    })
 
     -- Text editing assistance/annotations
-    use("tpope/vim-sleuth")
-    use("tpope/vim-surround")
-    use("tpope/vim-repeat")
-    use("gpanders/editorconfig.nvim")
+    use({
+      "tpope/vim-sleuth",
+      event = "BufRead",
+    })
+    use({
+      "tpope/vim-surround",
+      event = "CursorHold",
+    })
+    use({
+      "tpope/vim-repeat",
+      event = "CursorHold",
+    })
+    use({
+      "gpanders/editorconfig.nvim",
+      event = "BufRead",
+    })
     use({
       "Pocco81/HighStr.nvim",
+      event = "CursorHold",
       config = function()
         require("config.highstr")
       end,
     })
     use({
       "numToStr/Comment.nvim",
+      event = "CursorHold",
       config = function()
         require("config.comment")
       end,
     })
     use({
       "windwp/nvim-autopairs",
+      event = "InsertEnter",
       config = function()
         require("config.autopairs")
       end,
     })
     use({
       "Pocco81/AutoSave.nvim",
+      cmd = "ASToggle",
       config = function()
         require("config.autosave")
       end,
     })
     use({
       "monaqa/dial.nvim",
+      event = "CursorHold",
       config = function()
         require("config.dial")
       end,
     })
 
     -- UNIX/Git commands
-    use("tpope/vim-eunuch")
+    use({
+      "tpope/vim-eunuch",
+      event = "CmdlineEnter",
+    })
     use({
       "lewis6991/gitsigns.nvim",
+      event = "BufRead",
       config = function()
         require("config.gitsigns")
       end,
     })
     use({
       "sindrets/diffview.nvim",
+      cmd = {
+        "DiffviewFileHistory",
+        "DiffviewToggleFiles",
+        "DiffviewOpen",
+      },
       config = function()
         require("diffview").setup({})
       end,
@@ -149,12 +200,19 @@ packer.startup({
 
     -- Appearance/Theming
     use({
-      "nvim-treesitter/nvim-treesitter",
-      config = function()
-        require("config.treesitter")
-      end,
+      {
+        "nvim-treesitter/nvim-treesitter",
+        event = "BufRead",
+        config = function()
+          require("config.treesitter")
+        end,
+      },
+      { "nvim-treesitter/playground", after = "nvim-treesitter" },
+      { "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
+      { "nvim-treesitter/nvim-treesitter-refactor", after = "nvim-treesitter" },
+      { "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
+      { "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" },
     })
-    use("nvim-treesitter/playground")
     use({
       "projekt0n/github-nvim-theme",
       config = function()
@@ -163,14 +221,24 @@ packer.startup({
     })
     use({
       "nvim-lualine/lualine.nvim",
+      after = "github-nvim-theme",
+      event = "BufEnter",
       config = function()
         require("config.lualine")
       end,
     })
     use({
       "akinsho/bufferline.nvim",
+      event = "BufEnter",
       config = function()
         require("config.bufferline")
+      end,
+    })
+    use({
+      "tiagovla/scope.nvim",
+      after = "bufferline.nvim",
+      config = function()
+        require("scope").setup()
       end,
     })
     use({
@@ -188,6 +256,7 @@ packer.startup({
     })
     use({
       "folke/zen-mode.nvim",
+      event = "CursorHold",
       requires = "twilight.nvim",
       config = function()
         require("config.zen")
@@ -195,14 +264,23 @@ packer.startup({
     })
     use({
       "folke/twilight.nvim",
+      event = "CursorHold",
       config = function()
         require("config.twilight")
       end,
     })
     use({
       "lukas-reineke/indent-blankline.nvim",
+      event = "BufRead",
       config = function()
         require("config.indent-blankline")
+      end,
+    })
+    use({
+      "norcalli/nvim-colorizer.lua",
+      event = "CursorHold",
+      config = function()
+        require("colorizer").setup()
       end,
     })
 
@@ -215,6 +293,7 @@ packer.startup({
     })
     use({
       "alec-gibson/nvim-tetris",
+      cmd = "Tetris",
     })
     use({
       "nvim-neorg/neorg",
@@ -230,6 +309,7 @@ packer.startup({
     -- Language-specific plugins
     use({
       "akinsho/flutter-tools.nvim",
+      event = "BufRead",
       requires = "nvim-lua/plenary.nvim",
       config = function()
         require("config.flutter")
@@ -237,12 +317,14 @@ packer.startup({
     })
     use({
       "simrat39/rust-tools.nvim",
+      event = "BufRead",
       config = function()
         require("rust-tools").setup({})
       end,
     })
     use({
       "lervag/vimtex",
+      event = "BufRead",
       config = function()
         require("config.tex")
       end,
