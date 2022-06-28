@@ -69,7 +69,7 @@ packer.startup({
       "jose-elias-alvarez/null-ls.nvim",
       requires = { "lukas-reineke/lsp-format.nvim" },
       config = function()
-        require("config.null-ls")
+        require("config.lsp.null-ls")
       end,
     })
 
@@ -154,7 +154,7 @@ packer.startup({
     })
     use({
       "windwp/nvim-autopairs",
-      event = "InsertEnter",
+      event = "BufEnter",
       config = function()
         require("config.autopairs")
       end,
@@ -303,6 +303,12 @@ packer.startup({
       },
       config = function()
         require("config.neorg")
+      end,
+    })
+    use({
+      "folke/which-key.nvim",
+      config = function()
+        require("config.which-key")
       end,
     })
 
