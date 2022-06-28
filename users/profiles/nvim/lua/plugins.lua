@@ -306,6 +306,21 @@ packer.startup({
       end,
     })
 
+    -- Debugging
+    use({
+      "rcarriga/nvim-dap-ui",
+      requires = "mfussenegger/nvim-dap",
+      config = function()
+        require("config.dap.ui")
+      end,
+    })
+    use({
+      "theHamsta/nvim-dap-virtual-text",
+      config = function()
+        require("nvim-dap-virtual-text").setup()
+      end,
+    })
+
     -- Language-specific plugins
     use({
       "akinsho/flutter-tools.nvim",
