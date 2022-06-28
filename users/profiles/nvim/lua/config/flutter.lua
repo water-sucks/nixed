@@ -40,4 +40,12 @@ require("flutter-tools").setup({
     autostart = true,
     auto_open_browser = true,
   },
+  debugger = {
+    enabled = true,
+    run_via_dap = true,
+    register_configurations = function(_)
+      require("dap").configurations.dart = {}
+      require("dap.ext.vscode").load_launchjs()
+    end,
+  },
 })
