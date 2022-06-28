@@ -20,12 +20,6 @@ map("n", "<A-p>", ":<C-w><S-w>", { silent = true, noremap = true })
 -- Esc to exit terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 
--- coq.nvim
-map("i", "<esc>", [[pumvisible() ? "<c-e><esc>" : "<esc>"]], { expr = true, noremap = true })
-map("i", "<c-c>", [[pumvisible() ? "<c-e><c-c>" : "<c-c>"]], { expr = true, noremap = true })
-map("i", "<tab>", [[pumvisible() ? "<c-n>" : "<tab>"]], { expr = true, noremap = true })
-map("i", "<s-tab>", [[pumvisible() ? "<c-p>" : "<bs>"]], { expr = true, noremap = true })
-
 -- LSP/LSPsaga keymappings defined in lua/config/lsp.lua for buffers
 
 -- nvim-autopairs defined only if plugin can be setup due to autocmds
