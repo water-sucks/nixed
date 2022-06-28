@@ -6,9 +6,14 @@ require("nvim-tree").setup({
   open_on_tab = true,
   hijack_cursor = false,
   update_cwd = false,
-  update_to_buf_dir = {
+  hijack_directories = {
     enable = true,
     auto_open = false,
+  },
+  actions = {
+    open_file = {
+      resize_window = true,
+    },
   },
   diagnostics = {
     enable = false,
@@ -51,6 +56,5 @@ require("nvim-tree").setup({
     height = 30,
     hide_root_folder = false,
     side = "left",
-    auto_resize = true,
   },
 })
