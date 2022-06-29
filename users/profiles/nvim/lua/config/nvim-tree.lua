@@ -58,3 +58,11 @@ require("nvim-tree").setup({
     side = "left",
   },
 })
+
+require("which-key").register({
+  ["<C-n>"] = { ":NvimTreeToggle<CR>", "Toggle nvim-tree" },
+}, {
+  mode = "n",
+  silent = true,
+  noremap = true,
+})
