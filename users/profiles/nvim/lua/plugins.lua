@@ -95,30 +95,24 @@ packer.startup({
     })
     use({
       "sidebar-nvim/sidebar.nvim",
-      cmd = {
-        "SidebarNvimToggle",
-        "SidebarNvimOpen",
-      },
+      event = "CursorHold",
       config = function()
         require("config.sidebar")
       end,
     })
     use({
       "folke/trouble.nvim",
-      cmd = {
-        "Trouble",
-        "TroubleToggle",
-      },
+      event = "CursorHold",
       config = function()
-        require("trouble").setup({})
+        require("config.trouble")
       end,
     })
     use({
       "voldikss/vim-floaterm",
-      cmd = {
-        "FloatermNew",
-        "FloatermToggle",
-      },
+      event = "CursorHold",
+      config = function()
+        require("config.floaterm")
+      end,
     })
 
     -- Text editing assistance/annotations
@@ -161,7 +155,7 @@ packer.startup({
     })
     use({
       "Pocco81/AutoSave.nvim",
-      cmd = "ASToggle",
+      event = "CursorHold",
       config = function()
         require("config.autosave")
       end,
@@ -188,13 +182,9 @@ packer.startup({
     })
     use({
       "sindrets/diffview.nvim",
-      cmd = {
-        "DiffviewFileHistory",
-        "DiffviewToggleFiles",
-        "DiffviewOpen",
-      },
+      event = "CursorHold",
       config = function()
-        require("diffview").setup({})
+        require("config.diffview")
       end,
     })
 
@@ -359,6 +349,3 @@ packer.startup({
     },
   },
 })
-
--- add neorg
--- mapper

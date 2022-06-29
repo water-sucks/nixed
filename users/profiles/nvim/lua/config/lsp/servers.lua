@@ -15,6 +15,7 @@ local on_attach = function(client, bufnr)
 
   local keymaps = {
     g = {
+      name = "LSP",
       D = { vim.lsp.buf.declaration, "Go to declaration" },
       d = { vim.lsp.buf.definition, "Go to definition" },
       i = { vim.lsp.buf.implementation, "Go to implementation" },
@@ -54,7 +55,10 @@ local on_attach = function(client, bufnr)
   })
 
   wk.register({
-    g = { x = { ":<c-u>Lspsaga range_code_action<CR>", "Show code actions over range" } },
+    g = {
+      name = "LSP",
+      x = { ":<c-u>Lspsaga range_code_action<CR>", "Show code actions over range" },
+    },
   }, {
     mode = "x",
     silent = true,
