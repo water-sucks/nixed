@@ -1,5 +1,6 @@
 local augend = require("dial.augend")
-local map = vim.keymap.set
+local wk = require("which-key")
+-- local map = vim.keymap.set
 
 require("dial.config").augends:register_group({
   default = {
@@ -16,7 +17,20 @@ require("dial.config").augends:register_group({
   },
 })
 
-map("n", "<C-a>", require("dial.map").inc_normal(), { noremap = true })
-map("n", "<C-x>", require("dial.map").dec_normal(), { noremap = true })
-map("v", "<C-a>", require("dial.map").inc_visual(), { noremap = true })
-map("v", "<C-x>", require("dial.map").dec_visual(), { noremap = true })
+wk.register({
+  ["["] = { require("dial.map").inc_normal(), "Increment" },
+  ["]"] = { require("dial.map").dec_normal(), "Decrement" },
+}, {
+  mode = "n",
+  prefix = "<Leader>",
+  noremap = true,
+})
+
+wk.register({
+  ["["] = { require("dial.map").inc_visual(), "Increment" },
+  ["]"] = { require("dial.map").dec_visual(), "Decrement" },
+}, {
+  mode = "x",
+  prefix = "<Leader>",
+  noremap = true,
+})
