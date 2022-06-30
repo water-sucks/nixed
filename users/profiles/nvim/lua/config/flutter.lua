@@ -1,5 +1,3 @@
-local lsp_format = require("lsp-format")
-
 require("flutter-tools").setup({
   lsp = {
     cmd = (function()
@@ -13,10 +11,11 @@ require("flutter-tools").setup({
         return nil
       end
     end)(),
-    on_attach = function(client)
-      client.resolved_capabilities.document_formatting = false
-      lsp_format.on_attach(client)
-    end,
+    -- on_attach = function(client)
+    --   client.resolved_capabilities.document_formatting = false
+    --   lsp_format.on_attach(client)
+    -- end,
+    on_attach = require("config.lsp.on_attach"),
     color = {
       enabled = false,
       background = false,

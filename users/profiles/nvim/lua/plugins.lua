@@ -22,8 +22,11 @@ packer.startup({
     use("wbthomason/packer.nvim")
     use("lewis6991/impatient.nvim")
     use("nvim-lua/plenary.nvim")
-    use("dstein64/vim-startuptime")
     use("nathom/filetype.nvim")
+    use({
+      "dstein64/vim-startuptime",
+      event = "CursorHold",
+    })
 
     -- Editor tooling
     use({
@@ -34,21 +37,37 @@ packer.startup({
     })
     use({
       {
-        "ms-jpq/coq_nvim",
-        branch = "coq",
-        run = function()
-          if vim.fn.empty(vim.fn.glob(vim.fn.stdpath("data") .. "/coqrt")) > 0 then
-            require("coq").deps()
-          end
+        "Shougo/ddc.vim",
+        event = "InsertEnter",
+        requires = "vim-denops/denops.vim",
+        config = function()
+          require("config.lsp.ddc")
         end,
       },
+
+      -- Menu
+      "Shougo/pum.vim",
+      "tani/ddc-fuzzy",
+      "matsui54/denops-popup-preview.vim",
+
+      -- Sources
+      "Shougo/ddc-omni",
+      "Shougo/ddc-around",
+      "Shougo/ddc-nvim-lsp",
+      "matsui54/ddc-buffer",
+
+      -- Snippets
       {
-        "ms-jpq/coq.artifacts",
-        branch = "artifacts",
+        "hrsh7th/vim-vsnip",
+        event = "CursorHold",
       },
       {
-        "ms-jpq/coq.thirdparty",
-        branch = "3p",
+        "rafamadriz/friendly-snippets",
+        event = "CursorHold",
+      },
+      {
+        "hrsh7th/vim-vsnip-integ",
+        event = "CursorHold",
       },
     })
     use({
@@ -72,6 +91,7 @@ packer.startup({
         require("config.lsp.null-ls")
       end,
     })
+    use("ray-x/lsp_signature.nvim")
 
     -- Specialized windows
     use({
@@ -323,7 +343,6 @@ packer.startup({
     -- Language-specific plugins
     use({
       "akinsho/flutter-tools.nvim",
-      event = "BufRead",
       requires = "nvim-lua/plenary.nvim",
       config = function()
         require("config.flutter")
@@ -331,9 +350,8 @@ packer.startup({
     })
     use({
       "simrat39/rust-tools.nvim",
-      event = "BufRead",
       config = function()
-        require("rust-tools").setup({})
+        require("config.rust")
       end,
     })
     use({
@@ -344,6 +362,7 @@ packer.startup({
       end,
       ft = "tex",
     })
+    use("barreiroleo/ltex_extra.nvim")
   end,
 
   config = {

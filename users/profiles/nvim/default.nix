@@ -62,7 +62,6 @@ in
       nodePackages.alex
       nodePackages.prettier
       nodePackages.markdownlint-cli
-      proselint
       python3Packages.flake8
       shellcheck
       shellharden
@@ -72,6 +71,7 @@ in
       vim-vint
 
       # Other stuff
+      deno
       bc
       cowsay
     ];
