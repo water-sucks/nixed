@@ -123,6 +123,9 @@ packer.startup({
     use({
       "tpope/vim-surround",
       event = "CursorHold",
+      config = function()
+        require("config.surround")
+      end,
     })
     use({
       "tpope/vim-repeat",
