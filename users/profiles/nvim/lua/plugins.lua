@@ -52,7 +52,7 @@ packer.startup({
       },
     })
     use({
-      "tami5/lspsaga.nvim",
+      "glepnir/lspsaga.nvim",
       event = "CursorHold",
       config = function()
         require("config.saga")
