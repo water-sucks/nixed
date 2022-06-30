@@ -2,7 +2,9 @@ local null_ls = require("null-ls")
 local lsp_format = require("lsp-format")
 
 null_ls.setup({
-  on_attach = lsp_format.on_attach,
+  on_attach = function(client)
+    lsp_format.on_attach(client)
+  end,
   sources = {
     null_ls.builtins.completion.spell,
 
@@ -43,13 +45,11 @@ null_ls.setup({
     null_ls.builtins.diagnostics.gitlint,
     null_ls.builtins.diagnostics.markdownlint,
     null_ls.builtins.diagnostics.mypy,
-    null_ls.builtins.diagnostics.proselint,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.statix,
     null_ls.builtins.diagnostics.vint,
 
     null_ls.builtins.code_actions.gitsigns,
-    null_ls.builtins.code_actions.proselint,
     null_ls.builtins.code_actions.shellcheck,
     null_ls.builtins.code_actions.statix,
   },
