@@ -3,25 +3,24 @@
 let
   sources = pkgs.callPackage _sources/generated.nix { };
 
-  buildTreesitterGrammar = pkgs.callPackage ./grammars.nix { };
+  treesitter = pkgs.tree-sitter.override {
+    extraGrammars = {
+      tree-sitter-dart = {
+        src = pkgs.fetchFromGitHub {
+          repo = "tree-sitter-dart";
+          owner = "UserNobody14";
+          rev = "f95876f0ed3ef207bbd3c5c41987bc2e9cecfc97";
+          sha256 = "sha256-8bBsKmkJw8BPdK6sk7i+GwqbaIsWKNrpbkekX94ZSkU=";
+        };
+      };
 
-  tree-sitter-norg = buildTreesitterGrammar {
-    language = "norg";
-    source = sources.tree-sitter-norg.src;
-    inherit (pkgs.tree-sitter) version;
-  };
-
-  tree-sitter-norg-meta = buildTreesitterGrammar {
-    language = "norg-meta";
-    source = sources.tree-sitter-norg-meta.src;
-    inherit (pkgs.tree-sitter) version;
-  };
-
-  grammars = { inherit tree-sitter-norg tree-sitter-norg-meta; };
-
-  tree-sitter = pkgs.tree-sitter // {
-    allGrammars = (lib.lists.remove pkgs.tree-sitter.builtGrammars.tree-sitter-norg pkgs.tree-sitter.allGrammars) ++ builtins.attrValues grammars;
-    builtGrammars = pkgs.tree-sitter.builtGrammars // grammars;
+      tree-sitter-norg = {
+        inherit (sources.tree-sitter-norg) src;
+      };
+      tree-sitter-norg-meta = {
+        inherit (sources.tree-sitter-norg-meta) src;
+      };
+    };
   };
 in
 {
@@ -92,7 +91,7 @@ in
       recursive = true;
     };
     "nvim/parser" = {
-      source = "${tree-sitter.withPlugins(_: tree-sitter.allGrammars)}";
+      source = "${treesitter.withPlugins(_: treesitter.allGrammars)}";
       recursive = true;
     };
   };

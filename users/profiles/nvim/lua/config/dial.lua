@@ -1,6 +1,5 @@
 local augend = require("dial.augend")
 local wk = require("which-key")
--- local map = vim.keymap.set
 
 require("dial.config").augends:register_group({
   default = {
