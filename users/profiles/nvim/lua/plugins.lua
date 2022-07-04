@@ -36,48 +36,6 @@ packer.startup({
       end,
     })
     use({
-      {
-        "Shougo/ddc.vim",
-        event = "InsertEnter",
-        requires = "vim-denops/denops.vim",
-        config = function()
-          require("config.lsp.ddc")
-        end,
-      },
-
-      -- Menu
-      "Shougo/pum.vim",
-      "tani/ddc-fuzzy",
-      "matsui54/denops-popup-preview.vim",
-
-      -- Sources
-      "Shougo/ddc-omni",
-      "Shougo/ddc-around",
-      "Shougo/ddc-nvim-lsp",
-      "matsui54/ddc-buffer",
-
-      -- Snippets
-      {
-        "hrsh7th/vim-vsnip",
-        event = "CursorHold",
-      },
-      {
-        "rafamadriz/friendly-snippets",
-        event = "CursorHold",
-      },
-      {
-        "hrsh7th/vim-vsnip-integ",
-        event = "CursorHold",
-      },
-    })
-    use({
-      "glepnir/lspsaga.nvim",
-      event = "CursorHold",
-      config = function()
-        require("config.saga")
-      end,
-    })
-    use({
       "lukas-reineke/lsp-format.nvim",
       config = function()
         require("lsp-format").setup({})
@@ -86,14 +44,57 @@ packer.startup({
     })
     use({
       "jose-elias-alvarez/null-ls.nvim",
+      event = "CursorHold",
       requires = { "lukas-reineke/lsp-format.nvim" },
       config = function()
         require("config.lsp.null-ls")
       end,
     })
-    use("ray-x/lsp_signature.nvim")
+    use({
+      "ray-x/lsp_signature.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.lsp.signature")
+      end,
+    })
+
+    -- Completion
+    use({
+      {
+        "Shougo/ddc.vim",
+        event = "InsertEnter",
+        config = function()
+          require("config.lsp.ddc")
+        end,
+      },
+
+      { "vim-denops/denops.vim", event = "CursorHold" },
+
+      -- Menu
+      { "Shougo/pum.vim", event = "CursorHold" },
+      { "tani/ddc-fuzzy", event = "CursorHold" },
+      { "matsui54/denops-popup-preview.vim", event = "CursorHold" },
+
+      -- Sources
+      { "Shougo/ddc-omni", event = "CursorHold" },
+      { "Shougo/ddc-around", event = "CursorHold" },
+      { "Shougo/ddc-nvim-lsp", event = "CursorHold" },
+      { "matsui54/ddc-buffer", event = "CursorHold" },
+
+      -- Snippets
+      { "hrsh7th/vim-vsnip", event = "CursorHold" },
+      { "rafamadriz/friendly-snippets", event = "CursorHold" },
+      { "hrsh7th/vim-vsnip-integ", event = "CursorHold" },
+    })
 
     -- Specialized windows
+    use({
+      "stevearc/dressing.nvim",
+      event = "CursorHold",
+      config = function()
+        require("dressing").setup()
+      end,
+    })
     use({
       "kyazdani42/nvim-tree.lua",
       event = "CursorHold",
@@ -134,6 +135,10 @@ packer.startup({
         require("config.floaterm")
       end,
     })
+    use({
+      "weilbith/nvim-code-action-menu",
+      cmd = "CodeActionMenu",
+    })
 
     -- Text editing assistance/annotations
     use({
@@ -171,7 +176,7 @@ packer.startup({
     })
     use({
       "windwp/nvim-autopairs",
-      event = "BufEnter",
+      event = "CursorHold",
       config = function()
         require("config.autopairs")
       end,
@@ -215,7 +220,7 @@ packer.startup({
     use({
       {
         "nvim-treesitter/nvim-treesitter",
-        event = "BufRead",
+        -- event = "BufRead",
         config = function()
           require("config.treesitter")
         end,
@@ -234,7 +239,6 @@ packer.startup({
     })
     use({
       "nvim-lualine/lualine.nvim",
-      after = "github-nvim-theme",
       event = "BufEnter",
       config = function()
         require("config.lualine")
@@ -262,7 +266,7 @@ packer.startup({
     })
     use({
       "projekt0n/circles.nvim",
-      requires = { "kyazdani42/nvim-web-devicons" },
+      requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("circles").setup({})
       end,
@@ -290,6 +294,13 @@ packer.startup({
       end,
     })
     use({
+      "kosayoda/nvim-lightbulb",
+      event = "BufRead",
+      config = function()
+        require("config.lightbulb")
+      end,
+    })
+    use({
       "norcalli/nvim-colorizer.lua",
       event = "CursorHold",
       config = function()
@@ -301,7 +312,7 @@ packer.startup({
     use({
       "andweeb/presence.nvim",
       config = function()
-        require("config.presence")
+        require("presence"):setup({})
       end,
     })
     use({
@@ -309,32 +320,40 @@ packer.startup({
       cmd = "Tetris",
     })
     use({
-      "nvim-neorg/neorg",
-      after = { "nvim-treesitter", "telescope.nvim" },
-      requires = {
-        "nvim-neorg/neorg-telescope",
+      {
+        "nvim-neorg/neorg",
+        after = "nvim-treesitter",
+        config = function()
+          require("config.neorg")
+        end,
       },
-      config = function()
-        require("config.neorg")
-      end,
+      {
+        "nvim-neorg/neorg-telescope",
+        after = { "neorg", "telescope.nvim" },
+      },
     })
     use({
       "folke/which-key.nvim",
       config = function()
-        require("config.which-key")
+        require("config.which_key")
       end,
     })
 
     -- Debugging
     use({
+      "mfussenegger/nvim-dap",
+      event = "CursorHold",
+    })
+    use({
       "rcarriga/nvim-dap-ui",
-      requires = "mfussenegger/nvim-dap",
+      after = "nvim-dap",
       config = function()
         require("config.dap.ui")
       end,
     })
     use({
       "theHamsta/nvim-dap-virtual-text",
+      event = "CursorHold",
       config = function()
         require("nvim-dap-virtual-text").setup()
       end,
@@ -343,6 +362,7 @@ packer.startup({
     -- Language-specific plugins
     use({
       "akinsho/flutter-tools.nvim",
+      after = "nvim-lspconfig",
       requires = "nvim-lua/plenary.nvim",
       config = function()
         require("config.flutter")
@@ -350,19 +370,23 @@ packer.startup({
     })
     use({
       "simrat39/rust-tools.nvim",
+      after = "nvim-lspconfig",
       config = function()
         require("config.rust")
       end,
     })
     use({
       "lervag/vimtex",
-      event = "BufRead",
+      after = "nvim-lspconfig",
       config = function()
         require("config.tex")
       end,
       ft = "tex",
     })
-    use("barreiroleo/ltex_extra.nvim")
+    use({
+      "barreiroleo/ltex_extra.nvim",
+      module = "ltex_extra",
+    })
   end,
 
   config = {

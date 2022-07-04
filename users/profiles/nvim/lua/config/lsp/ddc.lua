@@ -64,3 +64,5 @@ map("i", "<S-TAB>", [[ddc#map#pum_visible() ? "<C-p>" : "<C-h>"]], { expr = true
 -- Enable on startup
 call("popup_preview#enable")
 call("ddc#enable")
+
+vim.cmd("set completeopt-=preview")

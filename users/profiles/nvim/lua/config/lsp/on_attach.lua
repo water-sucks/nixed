@@ -20,11 +20,6 @@ local on_attach = function(client, bufnr)
 
   lsp_format.on_attach(client)
 
-  require("lsp_signature").on_attach({
-    bind = true,
-    toggle_key = "K",
-  }, bufnr)
-
   local keymaps = {
     g = {
       name = "LSP",
@@ -32,29 +27,13 @@ local on_attach = function(client, bufnr)
       d = { vim.lsp.buf.definition, "Go to definition" },
       i = { vim.lsp.buf.implementation, "Go to implementation" },
 
-      r = { ":Lspsaga rename<CR>", "Rename" },
-      x = { ":Lspsaga code_action<CR>", "Show code actions" },
+      r = { vim.lsp.buf.rename, "Rename" },
 
-      o = { ":Lspsaga show_line_diagnostics<CR>", "Show diagnostics for line" },
-      j = { ":Lspsaga diagnostic_jump_next<CR>", "Jump to next diagnostic" },
-      k = { ":Lspsaga diagnostic_jump_prev<CR>", "Jump to last diagnostic " },
+      o = { vim.diagnostic.open_float, "Show diagnostics for line" },
+      j = { vim.diagnostic.goto_next, "Jump to next diagnostic" },
+      k = { vim.diagnostic.goto_prev, "Jump to last diagnostic " },
 
-      h = { ":Lspsaga lsp_finder<CR>", "LSP finder", bufnr = nil },
-    },
-
-    ["<C-u>"] = {
-      function()
-        require("lspsaga.action").smart_scroll_with_saga(-1, "<C-u>")
-      end,
-      "Smart scroll up",
-      bufnr = nil,
-    },
-    ["<C-d>"] = {
-      function()
-        require("lspsaga.action").smart_scroll_with_saga(1, "<C-d>")
-      end,
-      "Smart scroll down",
-      bufnr = nil,
+      x = { ":CodeActionMenu<CR>", "Show code actions" },
     },
   }
 
