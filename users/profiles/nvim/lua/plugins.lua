@@ -56,6 +56,10 @@ packer.startup({
         require("config.lsp.signature")
       end,
     })
+    use({
+      "nanotee/zoxide.vim",
+      event = "CursorHold",
+    })
 
     -- Completion
     use({
@@ -356,6 +360,14 @@ packer.startup({
       "folke/which-key.nvim",
       config = function()
         require("config.which_key")
+      end,
+    })
+    use({
+      "ahmedkhalf/project.nvim",
+      after = "telescope.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.project")
       end,
     })
 
