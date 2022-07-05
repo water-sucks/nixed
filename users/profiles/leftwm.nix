@@ -28,7 +28,7 @@ let
   switchTag = tag: transform: (bind [ mod ] (toString (transform tag)) "GotoTag" (toString tag));
   moveTag = tag: transform: (bind [ mod shift ] (toString (transform tag)) "MoveToTag" (toString tag));
 
-  powerMenu = import ../polybar/power-menu.nix pkgs;
+  powerMenu = import ./polybar/power-menu.nix pkgs;
   screenshot = pkgs.writeShellScript "take-screenshot.sh" ''
     if [ "$1" == "-s" ]; then
       cmd="${maim} -s"
