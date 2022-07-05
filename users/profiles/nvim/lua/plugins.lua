@@ -1,5 +1,4 @@
 local ok, packer = pcall(require, "packer")
-
 if not ok then
   return
 end
@@ -193,6 +192,27 @@ packer.startup({
       event = "CursorHold",
       config = function()
         require("config.dial")
+      end,
+    })
+    use({
+      "sQVe/sort.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.sort")
+      end,
+    })
+    use({
+      "booperlv/nvim-gomove",
+      event = "CursorHold",
+      config = function()
+        require("config.go-move")
+      end,
+    })
+    use({
+      "David-Kunz/treesitter-unit",
+      event = "CursorHold",
+      config = function()
+        require("config.treesitter_unit")
       end,
     })
 
