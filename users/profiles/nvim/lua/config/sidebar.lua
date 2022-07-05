@@ -17,7 +17,7 @@ require("sidebar-nvim").setup({
 })
 
 require("which-key").register({
-  s = {
+  b = {
     name = "Sidebar",
     t = { ":SidebarNvimToggle<CR>", "Toggle sidebar" },
     r = { ":SidebarNvimUpdate<CR>", "Refresh sidebar" },
