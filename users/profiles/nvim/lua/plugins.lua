@@ -367,6 +367,7 @@ packer.startup({
       config = function()
         require("config.flutter")
       end,
+      ft = "dart",
     })
     use({
       "simrat39/rust-tools.nvim",
@@ -374,6 +375,7 @@ packer.startup({
       config = function()
         require("config.rust")
       end,
+      ft = "rust",
     })
     use({
       "lervag/vimtex",
@@ -386,6 +388,7 @@ packer.startup({
     use({
       "barreiroleo/ltex_extra.nvim",
       module = "ltex_extra",
+      ft = "tex",
     })
   end,
 
