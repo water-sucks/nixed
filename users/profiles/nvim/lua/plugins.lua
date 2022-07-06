@@ -142,6 +142,13 @@ packer.startup({
       "weilbith/nvim-code-action-menu",
       cmd = "CodeActionMenu",
     })
+    use({
+      "stevearc/aerial.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.aerial")
+      end,
+    })
 
     -- Text editing assistance/annotations
     use({
