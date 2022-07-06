@@ -7,6 +7,10 @@ require("github-theme").setup({
     bg_sidebar = "#050505",
     hint = "orange",
     error = "#ff0000",
+
+    syntax = {
+      string = "#cc61a1",
+    },
   },
   overrides = function(_)
     return {
