@@ -226,6 +226,13 @@ packer.startup({
         require("config.treesitter_unit")
       end,
     })
+    use({
+      "ggandor/leap.nvim",
+      event = "CursorHold",
+      config = function()
+        require("leap").set_default_keymaps()
+      end,
+    })
 
     -- UNIX/Git commands
     use({
