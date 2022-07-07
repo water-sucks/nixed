@@ -44,6 +44,7 @@ in
       gopls
       ltex-ls
       nodePackages.bash-language-server
+      nodePackages.graphql-language-service-cli
       sumneko-lua-language-server
       rnix-lsp
 
