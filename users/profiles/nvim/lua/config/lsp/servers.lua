@@ -10,7 +10,9 @@ local servers = {
   "bashls",
   "sumneko_lua",
   "elixirls",
+  "graphql",
   "ltex",
+  "hls",
   "rnix",
 }
 
