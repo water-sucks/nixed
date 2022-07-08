@@ -9,6 +9,7 @@ local servers = {
   "gopls",
   "bashls",
   "sumneko_lua",
+  "fsautocomplete",
   "elixirls",
   "graphql",
   "ltex",
@@ -58,6 +59,18 @@ local server_configs = {
         disabledRules = {},
         hiddenFalsePositives = {},
       },
+    },
+  },
+  fsautocomplete = {
+    cmd = {
+      "dotnet",
+      "tool",
+      "run",
+      "fsautocomplete",
+      "--background-service-enabled",
+    },
+    init_options = {
+      AutomaticWorkspaceInit = true,
     },
   },
 }

@@ -424,6 +424,14 @@ packer.startup({
       ft = "rust",
     })
     use({
+      "ionide/Ionide-vim",
+      after = "nvim-lspconfig",
+      setup = function()
+        require("config.ionide")
+      end,
+      ft = { "fsharp" },
+    })
+    use({
       "lervag/vimtex",
       after = "nvim-lspconfig",
       config = function()
