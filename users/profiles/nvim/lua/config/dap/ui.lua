@@ -1,4 +1,8 @@
-require("dapui").setup({
+local dap = require("dap")
+local dapui = require("dapui")
+local wk = require("which-key")
+
+dapui.setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     expand = { "<CR>", "<2-LeftMouse>" },
@@ -11,18 +15,17 @@ require("dapui").setup({
   layouts = {
     {
       elements = {
-        { id = "scopes", size = 0.25 },
         "breakpoints",
         "stacks",
-        "watches",
+        "scopes",
       },
-      size = 40, -- 40 columns
+      size = 0.30,
       position = "left",
     },
     {
       elements = {
         "repl",
-        "console",
+        "watches",
       },
       size = 0.25,
       position = "bottom",
@@ -37,4 +40,42 @@ require("dapui").setup({
     },
   },
   windows = { indent = 1 },
+})
+
+dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+dap.listeners.before.event_terminated["dapui_config"] = dapui.close
+dap.listeners.before.event_exited["dapui_config"] = dapui.close
+
+wk.register({
+  d = {
+    name = "Debug",
+    E = {
+      function()
+        dapui.eval(vim.fn.input("[Expression] > "))
+      end,
+      "Evaluate input",
+    },
+    e = { dapui.eval, "Evaluate" },
+    U = { dapui.toggle, "Toggle UI" },
+    W = {
+      function()
+        dapui.open({ reset = true })
+      end,
+      "Reset UI layout",
+    },
+  },
+}, {
+  mode = "n",
+  prefix = "<Leader>",
+  silent = true,
+  noremap = true,
+})
+
+wk.register({
+  e = { dapui.eval, "Evaluate" },
+}, {
+  mode = "v",
+  prefix = "<Leader>",
+  silent = true,
+  noremap = true,
 })
