@@ -389,6 +389,9 @@ packer.startup({
     use({
       "mfussenegger/nvim-dap",
       event = "CursorHold",
+      config = function()
+        require("config.dap")
+      end,
     })
     use({
       "rcarriga/nvim-dap-ui",
