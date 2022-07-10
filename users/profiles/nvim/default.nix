@@ -70,6 +70,9 @@ in
       stylua
       vim-vint
 
+      # DAP servers
+      delve
+
       # Other stuff
       deno
       bc
