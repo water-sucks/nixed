@@ -407,8 +407,21 @@ packer.startup({
         require("nvim-dap-virtual-text").setup()
       end,
     })
+    use({
+      "jbyuki/one-small-step-for-vimkind",
+      after = "nvim-dap",
+      config = function()
+        require("config.dap.nlua")
+      end,
+      ft = "lua",
+    })
 
     -- Language-specific plugins
+    use({
+      "folke/lua-dev.nvim",
+      module = "lua-dev",
+      ft = "lua",
+    })
     use({
       "akinsho/flutter-tools.nvim",
       after = "nvim-lspconfig",

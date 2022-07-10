@@ -18,19 +18,9 @@ local servers = {
 }
 
 local server_configs = {
-  sumneko_lua = {
-    cmd = { "lua-language-server" },
-    settings = {
-      Lua = {
-        runtime = {
-          version = "LuaJIT",
-        },
-        diagnostics = {
-          globals = { "vim" },
-        },
-      },
-    },
-  },
+  sumneko_lua = require("lua-dev").setup({
+    runtime_path = true,
+  }),
   elixirls = {
     cmd = {
       (function()
