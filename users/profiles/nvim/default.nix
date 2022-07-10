@@ -99,4 +99,11 @@ in
       recursive = true;
     };
   };
+
+  xdg.dataFile = {
+    "nvim/vscode-lldb" = {
+      source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+      recursive = true;
+    };
+  };
 }
