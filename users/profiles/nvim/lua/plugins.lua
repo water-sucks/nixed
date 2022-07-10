@@ -415,6 +415,14 @@ packer.startup({
       end,
       ft = "lua",
     })
+    use({
+      "leoluz/nvim-dap-go",
+      after = "nvim-dap",
+      config = function()
+        require("dap-go").setup()
+      end,
+      ft = "go",
+    })
 
     -- Language-specific plugins
     use({
