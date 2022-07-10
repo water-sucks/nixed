@@ -423,6 +423,14 @@ packer.startup({
       end,
       ft = "go",
     })
+    use({
+      "mfussenegger/nvim-dap-python",
+      after = "nvim-dap",
+      config = function()
+        require("config.dap.python")
+      end,
+      ft = "python",
+    })
 
     -- Language-specific plugins
     use({
