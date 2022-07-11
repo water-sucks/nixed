@@ -43,3 +43,10 @@ require("which-key").register({
   silent = true,
   noremap = true,
 })
+
+-- Source DAP configs for filetypes without specific DAP plugins
+local files = { "c" }
+
+for _, file in ipairs(files) do
+  require("config.dap." .. file)
+end
