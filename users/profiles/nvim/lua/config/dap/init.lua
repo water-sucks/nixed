@@ -45,7 +45,7 @@ require("which-key").register({
 })
 
 -- Source DAP configs for filetypes without specific DAP plugins
-local files = { "c", "elixir" }
+local files = { "c", "haskell", "elixir" }
 
 for _, file in ipairs(files) do
   require("config.dap." .. file)
