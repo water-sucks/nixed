@@ -15,3 +15,16 @@ require("sidebar-nvim").setup({
   datetime = { format = "%a %b %d, %H:%M", clocks = { { name = "local" } } },
   todos = { ignored_paths = { "~" } },
 })
+
+require("which-key").register({
+  b = {
+    name = "Sidebar",
+    t = { ":SidebarNvimToggle<CR>", "Toggle sidebar" },
+    r = { ":SidebarNvimUpdate<CR>", "Refresh sidebar" },
+  },
+}, {
+  mode = "n",
+  prefix = "<Leader>",
+  silent = true,
+  noremap = true,
+})
