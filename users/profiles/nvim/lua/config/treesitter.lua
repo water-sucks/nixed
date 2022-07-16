@@ -5,6 +5,7 @@ require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
   },
+  ensure_installed = { "norg", "norg_meta" },
   playground = {
     enable = true,
   },

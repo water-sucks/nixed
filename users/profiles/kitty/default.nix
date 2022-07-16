@@ -22,6 +22,9 @@ lib.mkMerge [
         package = pkgs.nerdfonts.override { fonts = [ "IBMPlexMono" ]; };
         size = 10;
       };
+      settings = {
+        macos_option_as_alt = "both";
+      };
       extraConfig = ''
         ${builtins.readFile ./theme.conf}
       '';

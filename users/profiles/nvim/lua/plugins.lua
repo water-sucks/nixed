@@ -1,5 +1,4 @@
 local ok, packer = pcall(require, "packer")
-
 if not ok then
   return
 end
@@ -22,31 +21,17 @@ packer.startup({
     use("wbthomason/packer.nvim")
     use("lewis6991/impatient.nvim")
     use("nvim-lua/plenary.nvim")
-    use("dstein64/vim-startuptime")
     use("nathom/filetype.nvim")
+    use({
+      "dstein64/vim-startuptime",
+      event = "CursorHold",
+    })
 
     -- Editor tooling
     use({
       "neovim/nvim-lspconfig",
       config = function()
         require("config.lsp")
-      end,
-    })
-    use({
-      "ms-jpq/coq_nvim",
-      branch = "coq",
-      run = function()
-        if vim.fn.empty(vim.fn.glob(vim.fn.stdpath("data") .. "/coqrt")) > 0 then
-          require("coq").deps()
-        end
-      end,
-    })
-    use({ "ms-jpq/coq.artifacts", branch = "artifacts" })
-    use({ "ms-jpq/coq.thirdparty", branch = "3p" })
-    use({
-      "tami5/lspsaga.nvim",
-      config = function()
-        require("config.saga")
       end,
     })
     use({
@@ -58,15 +43,64 @@ packer.startup({
     })
     use({
       "jose-elias-alvarez/null-ls.nvim",
+      event = "CursorHold",
       requires = { "lukas-reineke/lsp-format.nvim" },
       config = function()
-        require("config.null-ls")
+        require("config.lsp.null-ls")
       end,
+    })
+    use({
+      "ray-x/lsp_signature.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.lsp.signature")
+      end,
+    })
+    use({
+      "nanotee/zoxide.vim",
+      event = "CursorHold",
+    })
+
+    -- Completion
+    use({
+      {
+        "Shougo/ddc.vim",
+        event = "InsertEnter",
+        config = function()
+          require("config.lsp.ddc")
+        end,
+      },
+
+      { "vim-denops/denops.vim", event = "CursorHold" },
+
+      -- Menu
+      { "Shougo/pum.vim", event = "CursorHold" },
+      { "tani/ddc-fuzzy", event = "CursorHold" },
+      { "matsui54/denops-popup-preview.vim", event = "CursorHold" },
+
+      -- Sources
+      { "Shougo/ddc-omni", event = "CursorHold" },
+      { "Shougo/ddc-around", event = "CursorHold" },
+      { "Shougo/ddc-nvim-lsp", event = "CursorHold" },
+      { "matsui54/ddc-buffer", event = "CursorHold" },
+
+      -- Snippets
+      { "hrsh7th/vim-vsnip", event = "CursorHold" },
+      { "rafamadriz/friendly-snippets", event = "CursorHold" },
+      { "hrsh7th/vim-vsnip-integ", event = "CursorHold" },
     })
 
     -- Specialized windows
     use({
+      "stevearc/dressing.nvim",
+      event = "CursorHold",
+      config = function()
+        require("dressing").setup()
+      end,
+    })
+    use({
       "kyazdani42/nvim-tree.lua",
+      event = "CursorHold",
       requires = {
         "kyazdani42/nvim-web-devicons",
         "projekt0n/circles.nvim",
@@ -77,6 +111,7 @@ packer.startup({
     })
     use({
       "nvim-telescope/telescope.nvim",
+      event = "CursorHold",
       requires = { "nvim-lua/plenary.nvim" },
       config = function()
         require("config.telescope")
@@ -84,77 +119,156 @@ packer.startup({
     })
     use({
       "sidebar-nvim/sidebar.nvim",
+      event = "CursorHold",
       config = function()
         require("config.sidebar")
       end,
     })
     use({
       "folke/trouble.nvim",
+      event = "CursorHold",
       config = function()
-        require("trouble").setup({})
+        require("config.trouble")
       end,
     })
-    use("voldikss/vim-floaterm")
+    use({
+      "voldikss/vim-floaterm",
+      event = "CursorHold",
+      config = function()
+        require("config.floaterm")
+      end,
+    })
+    use({
+      "weilbith/nvim-code-action-menu",
+      cmd = "CodeActionMenu",
+    })
+    use({
+      "stevearc/aerial.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.aerial")
+      end,
+    })
 
     -- Text editing assistance/annotations
-    use("tpope/vim-sleuth")
-    use("tpope/vim-surround")
-    use("tpope/vim-repeat")
-    use("gpanders/editorconfig.nvim")
+    use({
+      "tpope/vim-sleuth",
+      event = "BufRead",
+    })
+    use({
+      "tpope/vim-surround",
+      event = "CursorHold",
+      config = function()
+        require("config.surround")
+      end,
+    })
+    use({
+      "tpope/vim-repeat",
+      event = "CursorHold",
+    })
+    use({
+      "gpanders/editorconfig.nvim",
+      event = "BufRead",
+    })
     use({
       "Pocco81/HighStr.nvim",
+      event = "CursorHold",
       config = function()
         require("config.highstr")
       end,
     })
     use({
       "numToStr/Comment.nvim",
+      event = "CursorHold",
       config = function()
         require("config.comment")
       end,
     })
     use({
       "windwp/nvim-autopairs",
+      event = "CursorHold",
       config = function()
         require("config.autopairs")
       end,
     })
     use({
       "Pocco81/AutoSave.nvim",
+      event = "CursorHold",
       config = function()
         require("config.autosave")
       end,
     })
     use({
       "monaqa/dial.nvim",
+      event = "CursorHold",
       config = function()
         require("config.dial")
       end,
     })
+    use({
+      "sQVe/sort.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.sort")
+      end,
+    })
+    use({
+      "booperlv/nvim-gomove",
+      event = "CursorHold",
+      config = function()
+        require("config.go-move")
+      end,
+    })
+    use({
+      "David-Kunz/treesitter-unit",
+      event = "CursorHold",
+      config = function()
+        require("config.treesitter_unit")
+      end,
+    })
+    use({
+      "ggandor/leap.nvim",
+      event = "CursorHold",
+      config = function()
+        require("leap").set_default_keymaps()
+      end,
+    })
 
     -- UNIX/Git commands
-    use("tpope/vim-eunuch")
+    use({
+      "tpope/vim-eunuch",
+      event = "CmdlineEnter",
+    })
     use({
       "lewis6991/gitsigns.nvim",
+      event = "BufRead",
       config = function()
         require("config.gitsigns")
       end,
     })
     use({
       "sindrets/diffview.nvim",
+      event = "CursorHold",
       config = function()
-        require("diffview").setup({})
+        require("config.diffview")
       end,
     })
 
     -- Appearance/Theming
     use({
-      "nvim-treesitter/nvim-treesitter",
-      config = function()
-        require("config.treesitter")
-      end,
+      {
+        "nvim-treesitter/nvim-treesitter",
+        -- event = "BufRead",
+        config = function()
+          require("config.treesitter")
+        end,
+      },
+      { "nvim-treesitter/playground", after = "nvim-treesitter" },
+      { "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
+      { "nvim-treesitter/nvim-treesitter-refactor", after = "nvim-treesitter" },
+      { "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
+      { "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" },
     })
-    use("nvim-treesitter/playground")
     use({
       "projekt0n/github-nvim-theme",
       config = function()
@@ -163,14 +277,23 @@ packer.startup({
     })
     use({
       "nvim-lualine/lualine.nvim",
+      event = "BufEnter",
       config = function()
         require("config.lualine")
       end,
     })
     use({
       "akinsho/bufferline.nvim",
+      event = "BufEnter",
       config = function()
         require("config.bufferline")
+      end,
+    })
+    use({
+      "tiagovla/scope.nvim",
+      after = "bufferline.nvim",
+      config = function()
+        require("scope").setup()
       end,
     })
     use({
@@ -181,13 +304,14 @@ packer.startup({
     })
     use({
       "projekt0n/circles.nvim",
-      requires = { "kyazdani42/nvim-web-devicons" },
+      requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("circles").setup({})
       end,
     })
     use({
       "folke/zen-mode.nvim",
+      event = "CursorHold",
       requires = "twilight.nvim",
       config = function()
         require("config.zen")
@@ -195,14 +319,30 @@ packer.startup({
     })
     use({
       "folke/twilight.nvim",
+      event = "CursorHold",
       config = function()
         require("config.twilight")
       end,
     })
     use({
       "lukas-reineke/indent-blankline.nvim",
+      event = "BufRead",
       config = function()
         require("config.indent-blankline")
+      end,
+    })
+    use({
+      "kosayoda/nvim-lightbulb",
+      event = "BufRead",
+      config = function()
+        require("config.lightbulb")
+      end,
+    })
+    use({
+      "norcalli/nvim-colorizer.lua",
+      event = "CursorHold",
+      config = function()
+        require("colorizer").setup()
       end,
     })
 
@@ -210,42 +350,135 @@ packer.startup({
     use({
       "andweeb/presence.nvim",
       config = function()
-        require("config.presence")
+        require("presence"):setup({})
       end,
     })
     use({
       "alec-gibson/nvim-tetris",
+      cmd = "Tetris",
     })
     use({
-      "nvim-neorg/neorg",
-      after = { "nvim-treesitter", "telescope.nvim" },
-      requires = {
-        "nvim-neorg/neorg-telescope",
+      {
+        "nvim-neorg/neorg",
+        after = "nvim-treesitter",
+        config = function()
+          require("config.neorg")
+        end,
       },
+      {
+        "nvim-neorg/neorg-telescope",
+        after = { "neorg", "telescope.nvim" },
+      },
+    })
+    use({
+      "folke/which-key.nvim",
       config = function()
-        require("config.neorg")
+        require("config.which_key")
       end,
+    })
+    use({
+      "ahmedkhalf/project.nvim",
+      after = "telescope.nvim",
+      event = "CursorHold",
+      config = function()
+        require("config.project")
+      end,
+    })
+
+    -- Debugging
+    use({
+      "mfussenegger/nvim-dap",
+      event = "CursorHold",
+      config = function()
+        require("config.dap")
+      end,
+    })
+    use({
+      "rcarriga/nvim-dap-ui",
+      after = "nvim-dap",
+      config = function()
+        require("config.dap.ui")
+      end,
+    })
+    use({
+      "theHamsta/nvim-dap-virtual-text",
+      event = "CursorHold",
+      config = function()
+        require("nvim-dap-virtual-text").setup()
+      end,
+    })
+    use({
+      "jbyuki/one-small-step-for-vimkind",
+      after = "nvim-dap",
+      config = function()
+        require("config.dap.nlua")
+      end,
+      ft = "lua",
+    })
+    use({
+      "leoluz/nvim-dap-go",
+      after = "nvim-dap",
+      config = function()
+        require("dap-go").setup()
+      end,
+      ft = "go",
+    })
+    use({
+      "mfussenegger/nvim-dap-python",
+      after = "nvim-dap",
+      config = function()
+        require("config.dap.python")
+      end,
+      ft = "python",
     })
 
     -- Language-specific plugins
     use({
+      "folke/lua-dev.nvim",
+      module = "lua-dev",
+      ft = "lua",
+    })
+    use({
       "akinsho/flutter-tools.nvim",
+      after = "nvim-lspconfig",
       requires = "nvim-lua/plenary.nvim",
       config = function()
         require("config.flutter")
       end,
+      ft = "dart",
     })
     use({
       "simrat39/rust-tools.nvim",
+      after = "nvim-lspconfig",
       config = function()
-        require("rust-tools").setup({})
+        require("config.rust")
       end,
+      ft = "rust",
+    })
+    -- use({
+    --   "ionide/Ionide-vim",
+    --   after = "nvim-lspconfig",
+    --   setup = function()
+    --     require("config.ionide")
+    --   end,
+    --   ft = { "fsharp" },
+    -- })
+    use({
+      "adelarsq/neofsharp.vim",
+      after = "nvim-lspconfig",
+      ft = { "fsharp", "fsharp_project" },
     })
     use({
       "lervag/vimtex",
+      after = "nvim-lspconfig",
       config = function()
         require("config.tex")
       end,
+      ft = "tex",
+    })
+    use({
+      "barreiroleo/ltex_extra.nvim",
+      module = "ltex_extra",
       ft = "tex",
     })
   end,
@@ -256,6 +489,3 @@ packer.startup({
     },
   },
 })
-
--- add neorg
--- mapper

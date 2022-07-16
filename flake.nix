@@ -190,6 +190,7 @@
               git
               tmux
               go
+              python
             ];
             # Linux only!
             graphical = [

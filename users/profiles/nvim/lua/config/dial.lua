@@ -1,4 +1,6 @@
 local augend = require("dial.augend")
+local wk = require("which-key")
+
 require("dial.config").augends:register_group({
   default = {
     augend.integer.alias.decimal_int,
@@ -12,4 +14,22 @@ require("dial.config").augends:register_group({
     augend.date.alias["%H:%M:%S"],
     augend.semver.alias.semver,
   },
+})
+
+wk.register({
+  ["["] = { require("dial.map").inc_normal(), "Increment" },
+  ["]"] = { require("dial.map").dec_normal(), "Decrement" },
+}, {
+  mode = "n",
+  prefix = "<Leader>",
+  noremap = true,
+})
+
+wk.register({
+  ["["] = { require("dial.map").inc_visual(), "Increment" },
+  ["]"] = { require("dial.map").dec_visual(), "Decrement" },
+}, {
+  mode = "x",
+  prefix = "<Leader>",
+  noremap = true,
 })

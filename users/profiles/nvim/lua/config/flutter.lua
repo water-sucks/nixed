@@ -1,5 +1,3 @@
-local lsp_format = require("lsp-format")
-
 require("flutter-tools").setup({
   lsp = {
     cmd = (function()
@@ -13,10 +11,7 @@ require("flutter-tools").setup({
         return nil
       end
     end)(),
-    on_attach = function(client)
-      client.resolved_capabilities.document_formatting = false
-      lsp_format.on_attach(client)
-    end,
+    on_attach = require("config.lsp.on_attach"),
     color = {
       enabled = false,
       background = false,
@@ -33,11 +28,22 @@ require("flutter-tools").setup({
   },
   closing_tags = {
     highlight = "ErrorMsg",
-    prefix = ">|",
+    prefix = ">| ",
     enabled = true,
   },
   dev_tools = {
     autostart = true,
-    auto_open_browser = true,
+    auto_open_browser = false,
+  },
+  dev_log = {
+    enabled = false,
+  },
+  debugger = {
+    enabled = true,
+    run_via_dap = true,
+    register_configurations = function(_)
+      require("dap").configurations.dart = {}
+      require("dap.ext.vscode").load_launchjs()
+    end,
   },
 })
