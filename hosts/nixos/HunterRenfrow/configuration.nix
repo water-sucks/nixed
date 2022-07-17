@@ -18,11 +18,6 @@
     };
   };
 
-  services.openssh = {
-    enable = true;
-    openFirewall = true;
-  };
-
   age.secrets.varun-user-HunterRenfrow.file = "${self}/secrets/varun-user-HunterRenfrow.age";
   users.users.varun.passwordFile = "/run/agenix/varun-user-HunterRenfrow";
 
@@ -38,4 +33,3 @@
 
   system.stateVersion = "22.05";
 }
-

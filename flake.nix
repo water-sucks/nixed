@@ -105,6 +105,7 @@
               nix
               core
               cachix
+              ssh
               pam
               fonts
               fontconfig
@@ -191,6 +192,7 @@
             ];
             dev = [
               direnv
+              ssh
               git
               tmux
               go

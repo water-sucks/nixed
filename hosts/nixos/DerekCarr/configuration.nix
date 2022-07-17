@@ -20,11 +20,6 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.openssh = {
-    enable = true;
-    openFirewall = true;
-  };
-
   age.secrets.varun-user-TheBeastNix.file = "${self}/secrets/varun-user-TheBeastNix.age";
   users.users.varun.passwordFile = "/run/agenix/varun-user-TheBeastNix";
 
@@ -42,4 +37,3 @@
 
   system.stateVersion = "21.11";
 }
-
