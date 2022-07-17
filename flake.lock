@@ -157,6 +157,26 @@
         "type": "github"
       }
     },
+    "discord": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos"
+        ]
+      },
+      "locked": {
+        "lastModified": 1657841423,
+        "narHash": "sha256-kjZ1t4ZTI+oCniiUszrl4gggGYlAoqDaNnDtLedoO3I=",
+        "owner": "InternetUnexplorer",
+        "repo": "discord-overlay",
+        "rev": "e41f604e76e98c62ae501b0168e4d581753dbf54",
+        "type": "github"
+      },
+      "original": {
+        "owner": "InternetUnexplorer",
+        "repo": "discord-overlay",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -482,6 +502,7 @@
         "darwin": "darwin",
         "deploy": "deploy",
         "digga": "digga",
+        "discord": "discord",
         "home": "home",
         "latest": "latest_2",
         "leftwm": "leftwm",
