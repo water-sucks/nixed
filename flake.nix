@@ -26,6 +26,9 @@
     leftwm.url = "github:leftwm/leftwm";
     leftwm.inputs.nixpkgs.follows = "nixos";
 
+    discord.url = "github:InternetUnexplorer/discord-overlay";
+    discord.inputs.nixpkgs.follows = "nixos";
+
     nixpkgs.follows = "nixos";
   };
 
@@ -48,8 +51,9 @@
           imports = [
             (digga.lib.importOverlays ./overlays)
           ];
-          overlays = [
-            inputs.leftwm.overlay
+          overlays = with inputs; [
+            leftwm.overlay
+            discord.overlay
           ];
         };
         latest = { };
