@@ -3,6 +3,7 @@
 {
   homebrew.casks = [
     "firefox"
+    "brave-browser"
     "kitty"
   ];
 

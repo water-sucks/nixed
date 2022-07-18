@@ -1,11 +1,19 @@
 { self, config, pkgs, lib, ... }:
 
-lib.mkIf pkgs.stdenv.isLinux {
+{
   programs.chromium = {
     enable = true;
-    package = pkgs.ungoogled-chromium;
+    package = with pkgs;
+      if stdenv.isLinux then
+        brave
+      else
+        runCommand "brave-0.0.0" { } "mkdir $out";
     extensions = [
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
+      "bkdgflcldnnnapblkhphbgpggdiikppg" # DuckDuckGo Privacy Essentials
+      "hipekcciheckooncpjeljhnekcoolahp" # Tabliss
+      "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
     ];
   };
 }
