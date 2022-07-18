@@ -113,6 +113,7 @@
               users.common
             ];
             graphical = [
+              dot # I only need DoT privacy on machines with GUI environments
               wm-helper
               gdm
               sound
