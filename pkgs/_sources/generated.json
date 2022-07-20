@@ -1,4 +1,18 @@
 {
+    "filen-desktop": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "filen-desktop",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-SLF5gjdK+FgjPNQPziMHpmgy8+ZzCSYJDqE6xg83BTs=",
+            "type": "url",
+            "url": "https://github.com/FilenCloudDienste/filen-desktop/releases/download/1.6.2/filen-setup.AppImage"
+        },
+        "version": "1.6.2"
+    },
     "manix": {
         "cargoLocks": null,
         "extract": null,

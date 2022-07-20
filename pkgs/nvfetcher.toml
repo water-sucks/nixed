@@ -9,3 +9,7 @@ fetch.github = "ibhagwan/picom"
 [simplefox-theme]
 src.git = "https://github.com/migueravila/SimpleFox"
 fetch.github = "migueravila/SimpleFox"
+
+[filen-desktop]
+src.github = "FilenCloudDienste/filen-desktop"
+fetch.url = "https://github.com/FilenCloudDienste/filen-desktop/releases/download/$ver/filen-setup.AppImage"
