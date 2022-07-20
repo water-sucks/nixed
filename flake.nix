@@ -220,6 +220,7 @@
               zathura
               music
               messaging
+              filen
               passwords
               insomnia
             ];
