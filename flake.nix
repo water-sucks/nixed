@@ -217,6 +217,7 @@
               firefox
               chromium
               tor
+              protonvpn
               zathura
               music
               messaging
