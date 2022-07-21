@@ -1,0 +1,22 @@
+{
+    "simplefox-theme": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "simplefox-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "migueravila",
+            "repo": "SimpleFox",
+            "rev": "a4c1ec7d2af121047f09da4a572960e032ca29a6",
+            "sha256": "sha256-iNILXnOZYbzy2/HcUpyiq6VOLA2C6fogAAwSWsTun1U=",
+            "type": "github"
+        },
+        "version": "a4c1ec7d2af121047f09da4a572960e032ca29a6"
+    }
+}
+

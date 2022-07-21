@@ -31,17 +31,6 @@
       sha256 = "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=";
     });
   };
-  simplefox-theme = {
-    pname = "simplefox-theme";
-    version = "a4c1ec7d2af121047f09da4a572960e032ca29a6";
-    src = fetchFromGitHub ({
-      owner = "migueravila";
-      repo = "SimpleFox";
-      rev = "a4c1ec7d2af121047f09da4a572960e032ca29a6";
-      fetchSubmodules = false;
-      sha256 = "sha256-iNILXnOZYbzy2/HcUpyiq6VOLA2C6fogAAwSWsTun1U=";
-    });
-  };
   tidal-hifi = {
     pname = "tidal-hifi";
     version = "4.0.1";
