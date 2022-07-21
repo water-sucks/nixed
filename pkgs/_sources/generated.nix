@@ -31,6 +31,21 @@
       sha256 = "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=";
     });
   };
+  rescrobbled = {
+    pname = "rescrobbled";
+    version = "v0.6.0";
+    src = fetchFromGitHub ({
+      owner = "InputUsername";
+      repo = "rescrobbled";
+      rev = "v0.6.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-RzqufEucBwhTW+ZjhlLgEZwYZ9QSgMtBd9A62JhqW94=";
+    });
+    cargoLock."./Cargo.lock" = {
+      lockFile = ./rescrobbled-v0.6.0/./Cargo.lock;
+      outputHashes = { };
+    };
+  };
   tidal-hifi = {
     pname = "tidal-hifi";
     version = "4.0.1";

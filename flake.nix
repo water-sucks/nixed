@@ -109,6 +109,7 @@
               pam
               fonts
               kmscon
+              secrets
               users.common
             ];
             graphical = [
