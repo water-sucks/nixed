@@ -4,5 +4,6 @@
   homebrew.casks = [
     "bitwarden"
     "protonvpn"
+    "tor-browser"
   ];
 }
