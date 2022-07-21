@@ -1,19 +1,15 @@
-{ stdenv
-, lib
-, appimageTools
-, fetchurl
-, makeDesktopItem
-}:
+{ sources, lib, appimageTools, fetchurl, makeDesktopItem }:
 
 let
-  pname = "tidal-hifi";
-  version = "3.1.0";
+  # pname = "tidal-hifi";
+  # version = "3.1.0";
+  inherit (sources.tidal-hifi) pname version src;
   name = "${pname}-${version}";
 
-  src = fetchurl {
-    url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/${version}/tidal-hifi-${version}.AppImage";
-    sha256 = "sha256-A7jKj0u6dYkrYdlGjlwyLXnUZT8tPjk+7ESEtXtt8Sg=";
-  };
+  # src = fetchurl {
+  #   url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/${version}/tidal-hifi-${version}.AppImage";
+  #   sha256 = "sha256-A7jKj0u6dYkrYdlGjlwyLXnUZT8tPjk+7ESEtXtt8Sg=";
+  # };
 
   contents = appimageTools.extractType2 {
     inherit name src;
