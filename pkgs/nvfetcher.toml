@@ -13,3 +13,7 @@ fetch.github = "migueravila/SimpleFox"
 [filen-desktop]
 src.github = "FilenCloudDienste/filen-desktop"
 fetch.url = "https://github.com/FilenCloudDienste/filen-desktop/releases/download/$ver/filen-setup.AppImage"
+
+[tidal-hifi]
+src.github = "Mastermindzh/tidal-hifi"
+fetch.url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/$ver/tidal-hifi-$ver.AppImage"

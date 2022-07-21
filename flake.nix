@@ -104,11 +104,10 @@
             base = [
               nix
               core
-              cachix
+              caches
               ssh
               pam
               fonts
-              fontconfig
               kmscon
               users.common
             ];
@@ -159,7 +158,7 @@
             base = [
               nix
               core
-              cachix
+              caches
               fonts
               defaults
             ];
