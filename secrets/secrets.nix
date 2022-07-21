@@ -6,6 +6,8 @@ let
   system-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhZpIZCXJn6B1I5rixjK0LTlSjMohcYo4v0fxEZjedx root@HunterRenfrow";
   varun-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILSq96xhwCGipQD19sVnrhHMIIqAOGq0jOYdspl/3KdC varun@HunterRenfrow";
   HunterRenfrowKeys = [ system-HunterRenfrow varun-HunterRenfrow ];
+
+  allKeys = TheBeastNixKeys ++ HunterRenfrowKeys;
 in
 {
   "varun-user-TheBeastNix.age".publicKeys = TheBeastNixKeys;
@@ -13,4 +15,6 @@ in
 
   "varun-user-HunterRenfrow.age".publicKeys = HunterRenfrowKeys;
   "root-user-HunterRenfrow.age".publicKeys = [ system-HunterRenfrow ];
+
+  "lastfm-rescrobbled-config.age".publicKeys = allKeys;
 }

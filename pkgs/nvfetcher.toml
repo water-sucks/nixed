@@ -13,3 +13,8 @@ fetch.url = "https://github.com/FilenCloudDienste/filen-desktop/releases/downloa
 [tidal-hifi]
 src.github = "Mastermindzh/tidal-hifi"
 fetch.url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/$ver/tidal-hifi-$ver.AppImage"
+
+[rescrobbled]
+src.github = "InputUsername/rescrobbled"
+fetch.github = "InputUsername/rescrobbled"
+cargo_locks = [ "./Cargo.lock" ]

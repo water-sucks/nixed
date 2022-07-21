@@ -51,6 +51,30 @@
         },
         "version": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a"
     },
+    "rescrobbled": {
+        "cargoLocks": {
+            "./Cargo.lock": [
+                "./rescrobbled-v0.6.0/./Cargo.lock",
+                {}
+            ]
+        },
+        "extract": null,
+        "name": "rescrobbled",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "InputUsername",
+            "repo": "rescrobbled",
+            "rev": "v0.6.0",
+            "sha256": "sha256-RzqufEucBwhTW+ZjhlLgEZwYZ9QSgMtBd9A62JhqW94=",
+            "type": "github"
+        },
+        "version": "v0.6.0"
+    },
     "tidal-hifi": {
         "cargoLocks": null,
         "extract": null,
