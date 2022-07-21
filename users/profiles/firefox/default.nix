@@ -12,6 +12,7 @@ lib.mkMerge [
     programs.firefox = {
       enable = true;
       profiles."default" = {
+        id = 0;
         isDefault = true;
         userContent = builtins.readFile "${simplefox}/chrome/userContent.css";
         userChrome = builtins.readFile "${simplefox}/chrome/userChrome.css";

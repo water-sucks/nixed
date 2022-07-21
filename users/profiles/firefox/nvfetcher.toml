@@ -1,3 +1,7 @@
 [simplefox-theme]
 src.git = "https://github.com/migueravila/SimpleFox"
 fetch.github = "migueravila/SimpleFox"
+
+[i2p-profile]
+src.git = "https://github.com/i2p/i2p.firefox"
+fetch.github = "i2p/i2p.firefox"

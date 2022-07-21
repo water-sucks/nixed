@@ -217,6 +217,7 @@
               firefox
               chromium
               tor
+              i2p
               protonvpn
               zathura
               music
