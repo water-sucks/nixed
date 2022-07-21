@@ -216,6 +216,7 @@
               kitty
               firefox
               chromium
+              tor
               zathura
               music
               messaging
