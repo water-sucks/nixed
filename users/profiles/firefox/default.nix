@@ -2,6 +2,10 @@
 
 let
   inherit (pkgs.stdenv) isLinux isDarwin;
+
+  sources = pkgs.callPackage _sources/generated.nix { };
+
+  simplefox = sources.simplefox-theme.src;
 in
 lib.mkMerge [
   {
@@ -9,14 +13,12 @@ lib.mkMerge [
       enable = true;
       profiles."default" = {
         isDefault = true;
-        userContent = builtins.readFile "${pkgs.simplefox-theme}/chrome/userContent.css";
-        userChrome = builtins.readFile "${pkgs.simplefox-theme}/chrome/userChrome.css";
+        userContent = builtins.readFile "${simplefox}/chrome/userContent.css";
+        userChrome = builtins.readFile "${simplefox}/chrome/userChrome.css";
         extraConfig = builtins.readFile ./user.js;
       };
     };
   }
-  # Doing this separately to avoid Home Manager complaining about package
-  # when default `pkgs.firefox` is explicitly specified
   (lib.mkIf isDarwin {
     programs.firefox.package = pkgs.runCommand "firefox-0.0.0" { } "mkdir $out";
   })
