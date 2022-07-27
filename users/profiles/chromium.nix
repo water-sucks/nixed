@@ -1,10 +1,4 @@
-{
-  self,
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   programs.chromium = {
     enable = true;
     package = with pkgs;

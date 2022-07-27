@@ -1,10 +1,4 @@
-{
-  self,
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{pkgs, ...}: let
   sources = pkgs.callPackage _sources/generated.nix {};
 
   treesitter = pkgs.tree-sitter.override {

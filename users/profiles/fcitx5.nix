@@ -1,8 +1,6 @@
 {
-  self,
-  config,
-  lib,
   pkgs,
+  lib,
   ...
 }: {
   i18n.inputMethod = {

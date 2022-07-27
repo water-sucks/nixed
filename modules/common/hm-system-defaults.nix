@@ -1,12 +1,4 @@
 {
-  inputs,
-  config,
-  pkgs,
-  ...
-}: let
-  inherit (pkgs.stdenv) system;
-  homeManagerPackage = inputs.home-manager.packages.${system}.default;
-in {
   home-manager.sharedModules = [
     {
       programs.home-manager.enable = true;

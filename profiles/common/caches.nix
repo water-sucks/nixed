@@ -1,10 +1,4 @@
-{
-  self,
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
+{lib, ...}: let
   caches = [
     "https://nix-community.cachix.org"
   ];
