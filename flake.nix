@@ -3,7 +3,6 @@
 
   inputs = {
     nixos.url = "github:nixos/nixpkgs/nixos-unstable";
-    latest.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     digga.url = "github:divnix/digga";
     digga.inputs.nixpkgs.follows = "nixos";
@@ -56,7 +55,6 @@
             discord.overlay
           ];
         };
-        latest = { };
       };
 
       lib = import ./lib { lib = digga.lib // nixos.lib; };
@@ -83,8 +81,6 @@
           ];
           modules = [
             { lib.our = self.lib; }
-            digga.nixosModules.bootstrapIso
-            digga.nixosModules.nixConfig
             home.nixosModules.home-manager
             agenix.nixosModules.age
           ];
@@ -108,6 +104,7 @@
               ssh
               pam
               fonts
+              fontconfig
               kmscon
               secrets
               users.common
