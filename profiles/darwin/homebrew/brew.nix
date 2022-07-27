@@ -1,9 +1,4 @@
 {
-  self,
-  config,
-  pkgs,
-  ...
-}: {
   homebrew = {
     enable = true;
     autoUpdate = true;

@@ -1,9 +1,4 @@
-{
-  self,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   fonts = {
     fonts = with pkgs; [
       ibm-plex

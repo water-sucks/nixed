@@ -1,9 +1,4 @@
-{
-  self,
-  config,
-  lib,
-  ...
-}: {
+{lib, ...}: {
   networking = {
     nameservers = lib.mkForce ["127.0.0.1" "::1"];
     # If using dhcpcd:

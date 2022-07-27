@@ -1,8 +1,4 @@
-{
-  lib,
-  stdenv,
-  ...
-}:
+{stdenv, ...}:
 stdenv.mkDerivation {
   pname = "plymouth-spinning-watch-theme";
   version = "unstable-2020-04-30";

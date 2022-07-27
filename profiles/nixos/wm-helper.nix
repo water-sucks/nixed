@@ -1,10 +1,4 @@
-{
-  self,
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Graphics support
   hardware.opengl = {
     enable = true;

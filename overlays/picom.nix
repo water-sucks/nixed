@@ -1,5 +1,5 @@
-final: prev: {
-  picom = prev.picom.overrideAttrs (o: rec {
+_final: prev: {
+  picom = prev.picom.overrideAttrs (_: rec {
     inherit (prev.sources.picom) pname version src;
 
     patches = [

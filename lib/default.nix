@@ -1,2 +1,2 @@
 {lib, ...}:
-lib.makeExtensible (self: {})
+lib.makeExtensible (_self: {})

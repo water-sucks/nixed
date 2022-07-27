@@ -1,9 +1,4 @@
 {
-  self,
-  config,
-  pkgs,
-  ...
-}: {
   services.polybar.config = {
     "global/wm" = {
       margin-top = 10;

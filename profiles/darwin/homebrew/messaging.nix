@@ -1,9 +1,4 @@
 {
-  self,
-  config,
-  pkgs,
-  ...
-}: {
   homebrew.casks = [
     "betterdiscord-installer"
     "discord"

@@ -1,9 +1,4 @@
 {
-  self,
-  config,
-  pkgs,
-  ...
-}: {
   homebrew.casks = [
     "firefox"
     "brave-browser"

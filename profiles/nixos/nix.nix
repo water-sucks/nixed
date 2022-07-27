@@ -1,8 +1,4 @@
 {
-  self,
-  config,
-  ...
-}: {
   imports = [
     ../common/nix.nix
   ];

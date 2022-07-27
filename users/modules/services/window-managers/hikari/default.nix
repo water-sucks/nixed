@@ -89,7 +89,7 @@ with lib; let
   };
 
   keyboardSection = with types;
-    submodule ({keyboard, ...}: {
+    submodule (_: {
       options = {
         xkb = mkOption {
           type = submodule {
@@ -179,7 +179,7 @@ with lib; let
   };
 
   outputSection = with types;
-    submodule ({output, ...}: {
+    submodule (_: {
       options = {
         background = mkOption {
           type =
@@ -212,7 +212,7 @@ with lib; let
     });
 
   pointerSection = with types;
-    submodule ({input, ...}: {
+    submodule (_: {
       options = {
         accel = mkOption {
           type = float;

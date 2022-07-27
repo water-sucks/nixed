@@ -1,9 +1,4 @@
-{
-  self,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./colors.nix
     ./modules.nix
