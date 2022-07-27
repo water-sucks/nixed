@@ -1,6 +1,8 @@
-{ self, config, ... }:
-
 {
+  self,
+  config,
+  ...
+}: {
   nix = {
     gc.automatic = true;
     extraOptions = ''

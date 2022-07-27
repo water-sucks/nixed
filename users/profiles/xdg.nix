@@ -1,5 +1,8 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   xdg.mimeApps.enable = true;
 }

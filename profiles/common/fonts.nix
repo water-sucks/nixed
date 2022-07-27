@@ -1,10 +1,13 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   fonts = {
     fonts = with pkgs; [
       ibm-plex
-      (nerdfonts.override { fonts = [ "IBMPlexMono" ]; })
+      (nerdfonts.override {fonts = ["IBMPlexMono"];})
       font-awesome
     ];
     fontDir.enable = true;

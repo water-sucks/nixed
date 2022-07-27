@@ -1,18 +1,21 @@
-{ inputs, pkgs, lib, extraModulesPath, ... }:
-
-let
+{
+  inputs,
+  pkgs,
+  lib,
+  extraModulesPath,
+  ...
+}: let
   hooks = import ./hooks;
   inherit (pkgs.stdenv) isLinux isDarwin;
 
-  pkgWithCategory = category: package: { inherit package category; };
+  pkgWithCategory = category: package: {inherit package category;};
   linter = pkgWithCategory "linter";
   nixed = pkgWithCategory "nixed";
-in
-{
+in {
   _file = toString ./.;
 
-  imports = [ "${extraModulesPath}/git/hooks.nix" ];
-  git = { inherit hooks; };
+  imports = ["${extraModulesPath}/git/hooks.nix"];
+  git = {inherit hooks;};
 
   devshell.startup.load_profiles = pkgs.lib.mkForce (pkgs.lib.noDepEntry ''
     # PATH is devshell's exorbitant privilege:
@@ -31,11 +34,12 @@ in
   commands = with pkgs; [
     (nixed nix)
     (nixed agenix)
+    (nixed cachix)
     (nixed nvfetcher)
     (nixed inputs.deploy.packages.${pkgs.system}.deploy-rs)
 
     (linter stylua)
-    (linter nixpkgs-fmt)
+    (linter alejandra)
     (linter editorconfig-checker)
 
     {
@@ -53,10 +57,5 @@ in
         fi
       '';
     }
-  ]
-
-  ++ lib.optional
-    (system != "i686-linux")
-    (nixed cachix)
-  ;
+  ];
 }

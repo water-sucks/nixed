@@ -1,6 +1,9 @@
-{ config, self, pkgs, ... }:
-
 {
+  config,
+  self,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     xss-lock
     xscreensaver

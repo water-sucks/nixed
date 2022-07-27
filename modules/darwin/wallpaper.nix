@@ -1,11 +1,11 @@
-{ config, lib, ... }:
-
-with lib;
-
-let
-  cfg = config.system.defaults.wallpaper;
-in
 {
+  config,
+  lib,
+  ...
+}:
+with lib; let
+  cfg = config.system.defaults.wallpaper;
+in {
   options = {
     system.defaults.wallpaper.file = mkOption {
       type = with types; nullOr path;

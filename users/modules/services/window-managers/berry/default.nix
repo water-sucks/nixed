@@ -1,11 +1,12 @@
-{ config, lib, pkgs, ... }:
-
-with lib;
-
-let
-  cfg = config.xsession.windowManager.berry;
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
+  cfg = config.xsession.windowManager.berry;
+in {
   options.xsession.windowManager.berry = {
     enable = mkEnableOption "berry window manager";
 

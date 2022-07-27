@@ -1,5 +1,12 @@
-{ sources, lib, stdenv, rustPlatform, pkg-config, dbus, openssl }:
-
+{
+  sources,
+  lib,
+  stdenv,
+  rustPlatform,
+  pkg-config,
+  dbus,
+  openssl,
+}:
 rustPlatform.buildRustPackage rec {
   inherit (sources.rescrobbled) pname version src;
 
@@ -9,9 +16,9 @@ rustPlatform.buildRustPackage rec {
     substituteInPlace src/filter.rs --replace '#!/usr/bin/bash' '#!${stdenv.shell}'
   '';
 
-  nativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [pkg-config];
 
-  buildInputs = [ dbus openssl ];
+  buildInputs = [dbus openssl];
 
   meta = with lib; {
     description = "MPRIS music scrobbler daemon";

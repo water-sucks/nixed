@@ -1,11 +1,17 @@
-{ lib, stdenv, ... }:
-
+{
+  lib,
+  stdenv,
+  ...
+}:
 stdenv.mkDerivation {
   pname = "plymouth-spinning-watch-theme";
   version = "unstable-2020-04-30";
-  src = builtins.path { path = ./.; name = "plymouth-spinning-watch-theme"; };
+  src = builtins.path {
+    path = ./.;
+    name = "plymouth-spinning-watch-theme";
+  };
 
-  buildInputs = [ ];
+  buildInputs = [];
 
   configurePhase = "mkdir -pv $out/share/plymouth/themes";
 

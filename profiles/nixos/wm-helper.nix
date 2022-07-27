@@ -1,6 +1,10 @@
-{ self, config, lib, pkgs, ... }:
-
 {
+  self,
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # Graphics support
   hardware.opengl = {
     enable = true;
@@ -10,11 +14,11 @@
 
   # Theming helpers
   programs.dconf.enable = true;
-  services.dbus.packages = with pkgs; [ dconf ];
+  services.dbus.packages = with pkgs; [dconf];
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "modesetting" ]; # Base, all hosts should set accordingly
+    videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
     layout = "us";
     libinput.enable = true;
     windowManager.leftwm.enable = true;

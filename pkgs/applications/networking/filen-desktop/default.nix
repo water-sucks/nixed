@@ -1,6 +1,9 @@
-{ sources, lib, appimageTools, makeDesktopItem }:
-
-let
+{
+  sources,
+  lib,
+  appimageTools,
+  makeDesktopItem,
+}: let
   inherit (sources.filen-desktop) pname version src;
   name = "${pname}-${version}";
 
@@ -16,23 +19,23 @@ let
     icon = "filen-desktop-client";
   };
 in
-appimageTools.wrapType2 rec {
-  inherit name src;
+  appimageTools.wrapType2 rec {
+    inherit name src;
 
-  extraPkgs = appimageTools.defaultFhsEnvArgs.multiPkgs;
+    extraPkgs = appimageTools.defaultFhsEnvArgs.multiPkgs;
 
-  extraInstallCommands = ''
-    mv $out/bin/{${name},${pname}}
+    extraInstallCommands = ''
+      mv $out/bin/{${name},${pname}}
 
-    mkdir -p $out/share
-    cp -rt $out/share ${desktopItem}/share/applications ${contents}/usr/share/icons
-    chmod -R +w $out/share
-  '';
+      mkdir -p $out/share
+      cp -rt $out/share ${desktopItem}/share/applications ${contents}/usr/share/icons
+      chmod -R +w $out/share
+    '';
 
-  meta = with lib; {
-    description = "Desktop client for filen.io";
-    homepage = "filen.io";
-    license = licenses.agpl3Only;
-    platforms = [ "x86_64-linux" ];
-  };
-}
+    meta = with lib; {
+      description = "Desktop client for filen.io";
+      homepage = "filen.io";
+      license = licenses.agpl3Only;
+      platforms = ["x86_64-linux"];
+    };
+  }

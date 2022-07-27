@@ -1,6 +1,9 @@
-{ self, config, pkgs, ... }:
-
-let
+{
+  self,
+  config,
+  pkgs,
+  ...
+}: let
   leftwm-state = "${pkgs.leftwm}/bin/leftwm-state";
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
@@ -39,8 +42,7 @@ let
   '';
 
   power-menu = import ./power-menu.nix pkgs;
-in
-{
+in {
   services.polybar.config = {
     "module/launcher" = {
       type = "custom/text";

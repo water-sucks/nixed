@@ -1,9 +1,11 @@
-{ self, config, pkgs, ... }:
-
-let
-  inherit (config.lib.formats.rasi) mkLiteral;
-in
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: let
+  inherit (config.lib.formats.rasi) mkLiteral;
+in {
   programs.rofi = {
     enable = true;
     font = "IBM Plex Mono 11";
@@ -83,7 +85,7 @@ in
         spacing = mkLiteral "0px";
         text-color = mkLiteral "@fg";
         padding = mkLiteral "1px";
-        children = map mkLiteral [ "prompt" "textbox-prompt-colon" "entry" "case-indicator" ];
+        children = map mkLiteral ["prompt" "textbox-prompt-colon" "entry" "case-indicator"];
       };
 
       mainbox = {

@@ -1,6 +1,10 @@
-{ self, config, pkgs, lib, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   users.users.varun.home = "/Users/varun";
   users.users.varun.isHidden = false;
 

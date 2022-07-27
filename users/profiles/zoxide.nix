@@ -1,6 +1,8 @@
-{ self, config, ... }:
-
 {
+  self,
+  config,
+  ...
+}: {
   programs.zoxide = {
     enable = true;
   };
