@@ -324,11 +324,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1658238241,
-        "narHash": "sha256-naoSta79MYYRtVnIZhzq+YWgTOBhWE1Sr1AIhG7ZA9g=",
+        "lastModified": 1658751516,
+        "narHash": "sha256-Y/3dHoTjbvYBtWd+TTBQJUIgDPO9d+Gqt05C5dyR7E4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "70d5929885ccec8dde8585894dd3ebe606e75f41",
+        "rev": "dbed4c794d20d51027fc1107f063ec5be027dafc",
         "type": "github"
       },
       "original": {
@@ -353,22 +353,6 @@
         "type": "github"
       }
     },
-    "latest_2": {
-      "locked": {
-        "lastModified": 1658311025,
-        "narHash": "sha256-GqagY5YmaZB3YaO41kKcQhe5RcpS83wnsW8iCu5Znqo=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "cd8d1784506a7c7eb0796772b73437e0b82fad57",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "leftwm": {
       "inputs": {
         "fenix": "fenix_2",
@@ -379,11 +363,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1658306061,
-        "narHash": "sha256-bQ8POkTW3IZwcczJAeHhnjnpbF5VhsNQCZus8Bbeaj8=",
+        "lastModified": 1658835460,
+        "narHash": "sha256-jHmqFv8Ycbn/ITCrffOcNnUgyxZgkgelRGgJ0gQXniU=",
         "owner": "leftwm",
         "repo": "leftwm",
-        "rev": "fbcb2f1274f9a908c0d101e10d64c68d45b823df",
+        "rev": "43e31e7ab305e4c67e42bb5048f97ffa50d07182",
         "type": "github"
       },
       "original": {
@@ -415,11 +399,11 @@
     },
     "nixos": {
       "locked": {
-        "lastModified": 1658290795,
-        "narHash": "sha256-t9hCidaSxPmzUimcSn51bjqcjjGsoQi6JLrAzJq0dz4=",
+        "lastModified": 1658737577,
+        "narHash": "sha256-xosJ5nJT9HX+b6UWsSX6R+ap4AdZOCrl/r+IKFp2ASQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "614a842b74b7a1497e8cfca7c61bec38f51911b3",
+        "rev": "5a0e0d73b944157328d54c4ded1cf2f0146a86a5",
         "type": "github"
       },
       "original": {
@@ -453,7 +437,6 @@
         "digga": "digga",
         "discord": "discord",
         "home": "home",
-        "latest": "latest_2",
         "leftwm": "leftwm",
         "nixos": "nixos",
         "nixpkgs": [
