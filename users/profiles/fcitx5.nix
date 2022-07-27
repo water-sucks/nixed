@@ -1,6 +1,10 @@
-{ self, config, lib, pkgs, ... }:
-
 {
+  self,
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
@@ -81,7 +85,7 @@
   # according to the Home Manager manual, but I'm doing it it
   # anyway because fuck the rules. Also I'm lazy.
   home.activation = {
-    delete-existing-fcitx5-files = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+    delete-existing-fcitx5-files = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
       rm $VERBOSE_ARG -rf $HOME/.config/fcitx5/* ~/.local/share/fcitx5/*
     '';
   };

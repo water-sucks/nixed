@@ -1,6 +1,8 @@
-{ self, config, ... }:
-
 {
+  self,
+  config,
+  ...
+}: {
   services.openssh = {
     enable = true;
     openFirewall = true;

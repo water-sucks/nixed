@@ -1,5 +1,8 @@
-{ stdenv, substituteAll, ... }:
-
+{
+  stdenv,
+  substituteAll,
+  ...
+}:
 stdenv.mkDerivation {
   name = "nerdfetch";
 

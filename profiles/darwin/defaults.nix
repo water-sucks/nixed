@@ -1,9 +1,11 @@
-{ self, config, lib, ... }:
-
-let
-  inherit (lib) mkDefault;
-in
 {
+  self,
+  config,
+  lib,
+  ...
+}: let
+  inherit (lib) mkDefault;
+in {
   services = {
     nix-daemon.enable = mkDefault true;
     activate-system.enable = mkDefault true;

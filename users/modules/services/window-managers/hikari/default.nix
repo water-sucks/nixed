@@ -1,42 +1,43 @@
-{ config, lib, pkgs, ... }:
-
-with lib;
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
   cfg = config.wayland.windowManager.hikari;
 
-  jsonFormat = pkgs.formats.json { };
+  jsonFormat = pkgs.formats.json {};
 
   pow = base: exp: foldl' (a: x: x * a) 1 (genList (_: base) exp);
-  hexToDec = v:
-    let
-      hexToInt = {
-        "0" = 0;
-        "1" = 1;
-        "2" = 2;
-        "3" = 3;
-        "4" = 4;
-        "5" = 5;
-        "6" = 6;
-        "7" = 7;
-        "8" = 8;
-        "9" = 9;
-        "a" = 10;
-        "b" = 11;
-        "c" = 12;
-        "d" = 13;
-        "e" = 14;
-        "f" = 15;
-      };
-      chars = sublist 2 ((stringLength v) - 2) (stringToCharacters (toLower v));
-      charsLen = (stringLength v) - 2;
-    in
+  hexToDec = v: let
+    hexToInt = {
+      "0" = 0;
+      "1" = 1;
+      "2" = 2;
+      "3" = 3;
+      "4" = 4;
+      "5" = 5;
+      "6" = 6;
+      "7" = 7;
+      "8" = 8;
+      "9" = 9;
+      "a" = 10;
+      "b" = 11;
+      "c" = 12;
+      "d" = 13;
+      "e" = 14;
+      "f" = 15;
+    };
+    chars = sublist 2 ((stringLength v) - 2) (stringToCharacters (toLower v));
+    charsLen = (stringLength v) - 2;
+  in
     foldl
-      (a: v: a + v)
-      0
-      (imap0
-        (k: v: hexToInt."${v}" * (pow 16 (charsLen - k - 1)))
-        chars);
+    (a: v: a + v)
+    0
+    (imap0
+      (k: v: hexToInt."${v}" * (pow 16 (charsLen - k - 1)))
+      chars);
 
   beginEnd = with types;
     submodule {
@@ -56,30 +57,31 @@ let
     };
 
   position = mkOption {
-    type = with types; submodule {
-      options = {
-        x = mkOption {
-          type = int;
-          default = 0;
-          example = 1680;
-          description = "X coordinate of position";
-        };
+    type = with types;
+      submodule {
+        options = {
+          x = mkOption {
+            type = int;
+            default = 0;
+            example = 1680;
+            description = "X coordinate of position";
+          };
 
-        y = mkOption {
-          type = int;
-          default = 0;
-          example = 920;
-          description = "Y coordinate of position";
+          y = mkOption {
+            type = int;
+            default = 0;
+            example = 920;
+            description = "Y coordinate of position";
+          };
         };
       };
-    };
-    default = { };
+    default = {};
     description = "Coordinates for position";
   };
 
   actionsSection = mkOption {
     type = with types; attrsOf str;
-    default = { };
+    default = {};
     example = {
       terminal = "$TERMINAL";
     };
@@ -87,7 +89,7 @@ let
   };
 
   keyboardSection = with types;
-    submodule ({ keyboard, ... }: {
+    submodule ({keyboard, ...}: {
       options = {
         xkb = mkOption {
           type = submodule {
@@ -128,7 +130,7 @@ let
               };
             };
           };
-          default = { };
+          default = {};
           description = "XKB keyboard configuration";
         };
 
@@ -150,7 +152,7 @@ let
 
   marksSection = mkOption {
     type = with types; attrsOf str;
-    default = { };
+    default = {};
     example = {
       "s" = "sakura";
     };
@@ -162,7 +164,7 @@ let
   # https://github.com/nix-community/home-manager/issues/2519
   layoutsSection = mkOption {
     type = types.attrs;
-    default = { };
+    default = {};
     example = {
       "s" = {
         "scale" = {
@@ -177,10 +179,11 @@ let
   };
 
   outputSection = with types;
-    submodule ({ output, ... }: {
+    submodule ({output, ...}: {
       options = {
         background = mkOption {
-          type = either
+          type =
+            either
             str
             (submodule {
               options = {
@@ -192,7 +195,7 @@ let
                 };
 
                 fit = mkOption {
-                  type = enum [ "stretch" "center" "tile" ];
+                  type = enum ["stretch" "center" "tile"];
                   default = "stretch";
                   example = "fit";
                   description = "Method to display background image with";
@@ -209,7 +212,7 @@ let
     });
 
   pointerSection = with types;
-    submodule ({ input, ... }: {
+    submodule ({input, ...}: {
       options = {
         accel = mkOption {
           type = float;
@@ -219,7 +222,7 @@ let
         };
 
         accel-profile = mkOption {
-          type = enum [ "none" "flat" "adaptive" ];
+          type = enum ["none" "flat" "adaptive"];
           default = "adaptive";
           example = "flat";
           description = "Acceleration profile for pointer";
@@ -247,14 +250,14 @@ let
         };
 
         scroll-button = mkOption {
-          type = enum [ "right" "middle" "left" "side" "extra" "forward" "back" "task" ];
+          type = enum ["right" "middle" "left" "side" "extra" "forward" "back" "task"];
           default = "middle";
           example = "right";
           description = "Pointer scroll button";
         };
 
         scroll-method = mkOption {
-          type = enum [ "no-scroll" "on-button-down" ];
+          type = enum ["no-scroll" "on-button-down"];
           default = "on-button-down";
           example = "right";
           description = "Pointer scroll method";
@@ -390,14 +393,14 @@ let
               };
             };
           };
-          default = { };
+          default = {};
           description = "Hikari colorscheme";
         };
       };
     };
 
   viewSection = with types;
-    submodule ({ view, ... }: {
+    submodule ({view, ...}: {
       options = {
         floating = mkOption {
           type = bool;
@@ -469,20 +472,21 @@ let
         });
 
         "inherit" = mkOption {
-          type = listOf (either
+          type = listOf (
+            either
             enum [
-            "floating"
-            "focus"
-            "invisible"
-            "public"
-            "group"
-            "mark"
-            "position"
-          ]
+              "floating"
+              "focus"
+              "invisible"
+              "public"
+              "group"
+              "mark"
+              "position"
+            ]
             oneOf
             viewSection
           );
-          default = [ ];
+          default = [];
           example = [
             "group"
             "sheet"
@@ -506,7 +510,7 @@ let
             options = {
               keyboard = mkOption {
                 type = attrsOf (nullOr (either str beginEnd));
-                default = { };
+                default = {};
                 example = {
                   "L+0" = "workspace-switch-to-sheet-0";
                   "L+t" = {
@@ -519,7 +523,7 @@ let
 
               mouse = mkOption {
                 type = attrsOf (nullOr (either str beginEnd));
-                default = { };
+                default = {};
                 example = {
                   "L+left" = "mode-enter-move";
                   "L+right" = "mode-enter-resize";
@@ -528,7 +532,7 @@ let
               };
             };
           };
-          default = { };
+          default = {};
           description = "Bindings for builtin and user-defined actions";
         };
 
@@ -538,13 +542,13 @@ let
 
         views = mkOption {
           type = attrsOf viewSection;
-          default = { };
+          default = {};
           description = "View configuration section";
         };
 
         ui = mkOption {
           type = uiSection;
-          default = { };
+          default = {};
           description = "UI configuration section";
         };
 
@@ -553,19 +557,19 @@ let
             options = {
               keyboards = mkOption {
                 type = attrsOf keyboardSection;
-                default = { "*" = { }; };
+                default = {"*" = {};};
                 description = "Keyboard inputs configuration section";
               };
 
               pointers = mkOption {
                 type = attrsOf pointerSection;
-                default = { "*" = { }; };
+                default = {"*" = {};};
                 description = "Pointer inputs configuration section";
               };
 
               switches = mkOption {
                 type = attrsOf str;
-                default = { };
+                default = {};
                 example = {
                   "Control Method Lid Switch" = "lock";
                 };
@@ -573,19 +577,18 @@ let
               };
             };
           };
-          default = { };
+          default = {};
           description = "Inputs configuration section";
         };
 
         outputs = mkOption {
           type = attrsOf outputSection;
-          default = { "*" = { }; };
+          default = {"*" = {};};
           description = "Outputs configuration section";
         };
       };
     };
-in
-{
+in {
   options.wayland.windowManager.hikari = {
     enable = mkEnableOption "Hikari Wayland compositor";
 
@@ -609,31 +612,32 @@ in
 
     settings = mkOption {
       type = settingsSchema;
-      default = { };
+      default = {};
       description = "Nix-style settings configuration for Hikari";
     };
   };
 
-  config =
-    let
-      sturcturedConfig = jsonFormat.generate "hikari.conf" cfg.settings;
-      rawConfig = writeTextFile {
-        name = "hikari.conf";
-        text = cfg.config;
-      };
+  config = let
+    sturcturedConfig = jsonFormat.generate "hikari.conf" cfg.settings;
+    rawConfig = writeTextFile {
+      name = "hikari.conf";
+      text = cfg.config;
+    };
 
-      hikariPackage =
-        if cfg.debug then
-          pkgs.hikari.overrideAttrs
-            (o: rec {
-              makeFlags = o.makeFlags ++ [ "DEBUG=YES" ];
-            })
-        else
-          pkgs.hikari;
-    in
+    hikariPackage =
+      if cfg.debug
+      then
+        pkgs.hikari.overrideAttrs
+        (o: rec {
+          makeFlags = o.makeFlags ++ ["DEBUG=YES"];
+        })
+      else pkgs.hikari;
+  in
     mkIf cfg.enable {
       xdg.configFile."hikari/hikari.conf".source =
-        if stringLength cfg.config > 0 then rawConfig else sturcturedConfig;
+        if stringLength cfg.config > 0
+        then rawConfig
+        else sturcturedConfig;
       xdg.configFile."hikari/autostart".text = cfg.autostart;
 
       home.packages = [

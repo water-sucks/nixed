@@ -1,6 +1,9 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   services.picom = {
     enable = true;
     backend = "glx";
@@ -16,7 +19,7 @@
     # ];
     fade = true;
     fadeDelta = 16;
-    fadeSteps = [ 0.07 0.07 ];
+    fadeSteps = [0.07 0.07];
     fadeExclude = [
       "class_g = 'slop'"
     ];

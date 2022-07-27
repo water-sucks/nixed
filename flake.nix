@@ -4,6 +4,9 @@
   inputs = {
     nixos.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    utils.url = "github:numtide/flake-utils";
+    utils.inputs.nipxkgs.follows = "nixos";
+
     digga.url = "github:divnix/digga";
     digga.inputs.nixpkgs.follows = "nixos";
     digga.inputs.nixlib.follows = "nixos";
@@ -19,6 +22,9 @@
     deploy.url = "github:input-output-hk/deploy-rs";
     deploy.inputs.nixpkgs.follows = "nixos";
 
+    alejandra.url = "github:kamadorueda/alejandra";
+    alejandra.inputs.nixpkgs.follows = "nixos";
+
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixos";
 
@@ -31,16 +37,22 @@
     nixpkgs.follows = "nixos";
   };
 
-  outputs =
-    { self
-    , digga
-    , nixos
-    , home
-    , agenix
-    , deploy
-    , ...
-    }@inputs:
-    digga.lib.mkFlake {
+  outputs = {
+    self,
+    digga,
+    nixos,
+    utils,
+    home,
+    agenix,
+    deploy,
+    ...
+  } @ inputs: let
+    supportedSystems = [
+      "x86_64-darwin"
+      "x86_64-linux"
+    ];
+  in
+    (digga.lib.mkFlake {
       inherit self inputs;
 
       channelsConfig.allowUnfree = true;
@@ -53,11 +65,12 @@
           overlays = with inputs; [
             leftwm.overlay
             discord.overlay
+            alejandra.overlay
           ];
         };
       };
 
-      lib = import ./lib { lib = digga.lib // nixos.lib; };
+      lib = import ./lib {lib = digga.lib // nixos.lib;};
 
       sharedOverlays = [
         (_final: prev: {
@@ -80,22 +93,24 @@
             # (digga.lib.importExportableModules ./modules/nixos) No modules yet
           ];
           modules = [
-            { lib.our = self.lib; }
+            {lib.our = self.lib;}
             home.nixosModules.home-manager
             agenix.nixosModules.age
           ];
         };
 
-        imports = [ (digga.lib.importHosts ./hosts/nixos) ];
+        imports = [(digga.lib.importHosts ./hosts/nixos)];
         hosts = {
-          DerekCarr = { };
-          HunterRenfrow = { };
+          DerekCarr = {};
+          HunterRenfrow = {};
         };
         importables = rec {
-          profiles = digga.lib.rakeLeaves ./profiles/common //
-            digga.lib.rakeLeaves ./profiles/nixos // {
-            users = digga.lib.rakeLeaves ./users;
-          };
+          profiles =
+            digga.lib.rakeLeaves ./profiles/common
+            // digga.lib.rakeLeaves ./profiles/nixos
+            // {
+              users = digga.lib.rakeLeaves ./users;
+            };
           suites = with profiles; rec {
             base = [
               nix
@@ -136,22 +151,24 @@
             (digga.lib.importExportableModules ./modules/darwin)
           ];
           modules = [
-            { lib.our = self.lib; }
+            {lib.our = self.lib;}
             home.darwinModules.home-manager
             agenix.nixosModules.age
           ];
         };
 
-        imports = [ (digga.lib.importHosts ./hosts/darwin) ];
+        imports = [(digga.lib.importHosts ./hosts/darwin)];
         hosts = {
-          CharlesWoodson = { };
-          SebastianJanikowski = { };
+          CharlesWoodson = {};
+          SebastianJanikowski = {};
         };
         importables = rec {
-          profiles = digga.lib.rakeLeaves ./profiles/common //
-            digga.lib.rakeLeaves ./profiles/darwin // {
-            users = digga.lib.rakeLeaves ./users;
-          };
+          profiles =
+            digga.lib.rakeLeaves ./profiles/common
+            // digga.lib.rakeLeaves ./profiles/darwin
+            // {
+              users = digga.lib.rakeLeaves ./users;
+            };
           suites = with profiles; rec {
             base = [
               nix
@@ -173,8 +190,8 @@
       };
 
       home = {
-        imports = [ (digga.lib.importExportableModules ./users/modules) ];
-        modules = [ ];
+        imports = [(digga.lib.importExportableModules ./users/modules)];
+        modules = [];
         importables = rec {
           profiles = digga.lib.rakeLeaves ./users/profiles;
           suites = with profiles; rec {
@@ -226,14 +243,16 @@
             ];
           };
         };
-        users = { };
+        users = {};
       };
 
       devshell = ./shell;
 
       homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
 
-      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations { };
-    }
-  ;
+      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {};
+    })
+    // utils.lib.eachSystem supportedSystems (system: {
+      formatter = inputs.alejandra.defaultPackage.${system};
+    });
 }

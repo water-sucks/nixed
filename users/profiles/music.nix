@@ -1,5 +1,10 @@
-{ self, config, pkgs, lib, ... }:
-
+{
+  self,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
     tidal-hifi
@@ -16,11 +21,11 @@ lib.mkIf pkgs.stdenv.isLinux {
     Unit = {
       Description = "An MPRIS scrobbler";
       Documentation = "https://github.com/InputUsername/rescrobbled";
-      After = [ "graphical-session-pre.target" ];
-      PartOf = [ "graphical-session.target" ];
+      After = ["graphical-session-pre.target"];
+      PartOf = ["graphical-session.target"];
     };
 
-    Install = { WantedBy = [ "graphical-session.target" ]; };
+    Install = {WantedBy = ["graphical-session.target"];};
 
     Service = {
       ExecStart = "${pkgs.rescrobbled}/bin/rescrobbled";

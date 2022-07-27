@@ -1,6 +1,9 @@
-{ config, self, pkgs, ... }:
-
 {
+  config,
+  self,
+  pkgs,
+  ...
+}: {
   dconf.settings = {
     # God, I fucking hate these system sounds.
     # They're so grating.

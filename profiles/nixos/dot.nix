@@ -1,8 +1,11 @@
-{ self, config, lib, ... }:
-
 {
+  self,
+  config,
+  lib,
+  ...
+}: {
   networking = {
-    nameservers = lib.mkForce [ "127.0.0.1" "::1" ];
+    nameservers = lib.mkForce ["127.0.0.1" "::1"];
     # If using dhcpcd:
     dhcpcd.extraConfig = lib.mkForce "nohook resolv.conf";
     # If using NetworkManager:

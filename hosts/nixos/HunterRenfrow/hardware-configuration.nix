@@ -1,6 +1,10 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}: {
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
 
@@ -26,13 +30,13 @@
       secrets = {
         "keyfile-swap.bin" = "/etc/secrets/initrd/keyfile-swap.bin";
       };
-      availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu" ];
-      kernelModules = [ "amdgpu" ];
+      availableKernelModules = ["nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu"];
+      kernelModules = ["amdgpu"];
       systemd.enable = true;
       verbose = false;
     };
 
-    kernelModules = [ "kvm-amd" "mt7921e" "amdgpu" "uinput" ];
+    kernelModules = ["kvm-amd" "mt7921e" "amdgpu" "uinput"];
     kernelParams = [
       "quiet"
       "splash"
@@ -55,21 +59,19 @@
     };
   };
 
-  fileSystems."/" =
-    {
-      device = " /dev/disk/by-uuid/ba74bdff-8fb8-4217-8ae0-d45bb2386acb ";
-      fsType = "btrfs";
-      options = [ "subvol=nixos" ];
-    };
+  fileSystems."/" = {
+    device = " /dev/disk/by-uuid/ba74bdff-8fb8-4217-8ae0-d45bb2386acb ";
+    fsType = "btrfs";
+    options = ["subvol=nixos"];
+  };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/5F4A-2418";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/5F4A-2418";
+    fsType = "vfat";
+  };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/87c43d12-3fdd-492e-9db2-6312c5b48e3e"; }
+    {device = "/dev/disk/by-uuid/87c43d12-3fdd-492e-9db2-6312c5b48e3e";}
   ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -1,13 +1,15 @@
-{ self, config, ... }:
-
 {
+  self,
+  config,
+  ...
+}: {
   programs.ssh = {
     enable = true;
     forwardAgent = false;
     serverAliveInterval = 300;
     serverAliveCountMax = 2;
 
-    includes = [ "~/.config/ssh/config.local" ];
+    includes = ["~/.config/ssh/config.local"];
 
     matchBlocks = {
       "*" = {

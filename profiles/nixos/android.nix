@@ -1,5 +1,8 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   programs.adb.enable = true;
 }

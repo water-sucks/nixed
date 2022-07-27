@@ -1,7 +1,11 @@
-{ self, config, pkgs, lib, ... }:
-
-let
-  sources = pkgs.callPackage _sources/generated.nix { };
+{
+  self,
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  sources = pkgs.callPackage _sources/generated.nix {};
 
   treesitter = pkgs.tree-sitter.override {
     extraGrammars = {
@@ -22,8 +26,7 @@ let
       };
     };
   };
-in
-{
+in {
   home.packages = with pkgs; [
     neovim-remote
   ];
@@ -49,6 +52,7 @@ in
       rnix-lsp
 
       # null-ls sources
+      alejandra
       asmfmt
       black
       codespell
@@ -56,7 +60,6 @@ in
       deadnix
       editorconfig-checker
       gofumpt
-      nixpkgs-fmt
       gitlint
       mypy
       nodePackages.alex
@@ -95,7 +98,7 @@ in
       recursive = true;
     };
     "nvim/parser" = {
-      source = "${treesitter.withPlugins(_: treesitter.allGrammars)}";
+      source = "${treesitter.withPlugins (_: treesitter.allGrammars)}";
       recursive = true;
     };
   };

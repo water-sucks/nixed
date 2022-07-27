@@ -1,6 +1,9 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   i18n = {
     defaultLocale = "en_US.UTF-8";
     supportedLocales = [
@@ -9,7 +12,7 @@
     ];
     inputMethod = {
       enabled = "fcitx5";
-      fcitx5.addons = with pkgs; [ fcitx5-mozc ];
+      fcitx5.addons = with pkgs; [fcitx5-mozc];
     };
   };
 }

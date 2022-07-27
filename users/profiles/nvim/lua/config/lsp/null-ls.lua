@@ -26,10 +26,11 @@ null_ls.setup({
         }
       end,
     }),
+    null_ls.builtins.formatting.alejandra,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.mix,
-    null_ls.builtins.formatting.nixpkgs_fmt,
+    -- null_ls.builtins.formatting.nixpkgs_fmt,
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.shfmt,

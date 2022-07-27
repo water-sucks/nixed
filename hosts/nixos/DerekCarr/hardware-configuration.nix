@@ -1,6 +1,10 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     efibootmgr
     refind
@@ -32,13 +36,13 @@
       secrets = {
         "keyfile.bin" = "/etc/secrets/initrd/keyfile.bin";
       };
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-      kernelModules = [ "dm-snapshot" "amdgpu" ];
+      availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
+      kernelModules = ["dm-snapshot" "amdgpu"];
       systemd.enable = true;
       verbose = false;
     };
 
-    kernelModules = [ "amdgpu" "kvm-amd" "wl" ];
+    kernelModules = ["amdgpu" "kvm-amd" "wl"];
     kernelParams = [
       "quiet"
       "splash"
@@ -60,24 +64,21 @@
     };
   };
 
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/f034ca9e-be8d-4631-b9b5-ad9d04cafc9b";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/f034ca9e-be8d-4631-b9b5-ad9d04cafc9b";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot/efi" =
-    {
-      device = "/dev/disk/by-uuid/8ECC-2ED9";
-      fsType = "vfat";
-    };
+  fileSystems."/boot/efi" = {
+    device = "/dev/disk/by-uuid/8ECC-2ED9";
+    fsType = "vfat";
+  };
 
-  swapDevices =
-    [{ device = "/dev/disk/by-uuid/c859b4eb-d5c6-47bc-bec1-9c8a85bcff5c"; }];
+  swapDevices = [{device = "/dev/disk/by-uuid/c859b4eb-d5c6-47bc-bec1-9c8a85bcff5c";}];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   systemd.services.systemd-udev-settle.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;

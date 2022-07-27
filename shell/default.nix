@@ -1,8 +1,5 @@
-_:
-
-{
+_: {
   exportedModules = [
     ./nixed.nix
   ];
 }
-

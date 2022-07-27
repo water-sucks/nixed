@@ -1,6 +1,9 @@
-{ self, config, pkgs, ... }:
-
 {
+  self,
+  config,
+  pkgs,
+  ...
+}: {
   home.sessionVariables = {
     GTK_THEME = "Orchis:dark";
   };

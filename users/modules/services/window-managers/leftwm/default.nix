@@ -1,25 +1,27 @@
-{ self, config, pkgs, lib, ... }:
-
-with lib;
-
-let
+{
+  self,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+with lib; let
   cfg = config.xsession.windowManager.leftwm;
 
-  tomlFormat = pkgs.formats.toml { };
-in
-{
+  tomlFormat = pkgs.formats.toml {};
+in {
   options.xsession.windowManager.leftwm = {
     enable = mkEnableOption "LeftWM window manager";
 
     settings = mkOption {
       inherit (tomlFormat) type;
-      default = { };
+      default = {};
       description = "Nixified LeftWM configuration (not validated)";
     };
 
     theme = mkOption {
       inherit (tomlFormat) type;
-      default = { };
+      default = {};
       description = "Nixified LeftWM theme configuration (not validated)";
     };
 
@@ -37,13 +39,13 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = [ pkgs.leftwm ];
+    home.packages = [pkgs.leftwm];
 
     xdg.configFile = {
-      "leftwm/config.toml" = mkIf (cfg.settings != { }) {
+      "leftwm/config.toml" = mkIf (cfg.settings != {}) {
         source = tomlFormat.generate "leftwm-config" cfg.settings;
       };
-      "leftwm/themes/current/theme.toml" = mkIf (cfg.settings != { }) {
+      "leftwm/themes/current/theme.toml" = mkIf (cfg.settings != {}) {
         source = tomlFormat.generate "leftwm-theme" cfg.theme;
       };
 
