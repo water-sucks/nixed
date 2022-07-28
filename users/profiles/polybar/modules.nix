@@ -7,11 +7,13 @@
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
   theme = "GTK_THEME=${config.home.sessionVariables.GTK_THEME}";
+  kitty = "${pkgs.kitty}/bin/kitty";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
-  blueberry = "${theme} ${pkgs.blueberry}/bin/blueberry";
+  # blueberry = "${theme} ${pkgs.blueberry}/bin/blueberry";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
-  nmgui = "GTK_THEME=Orchis\\:dark ${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
+  # nmgui = "GTK_THEME=Orchis\\:dark ${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
+  nmtui = "${pkgs.networkmanager}/bin/nmtui";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
   wc = "${pkgs.coreutils}/bin/wc";
@@ -165,7 +167,7 @@ in {
       exec = "${bluetooth-status}";
       interval = 2;
       click-left = "${toggle-bluetooth}";
-      click-right = "${blueberry}";
+      click-right = "${kitty} -e ${bluetoothctl}";
     };
 
     "module/wlan" = {
@@ -177,8 +179,8 @@ in {
       format-disconnected = "<label-disconnected>";
       format-connected-padding = 0;
 
-      label-connected = "%{A1:${toggle-wifi}:}%{A3:${nmgui}:}直%{A}%{A}";
-      label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${nmgui}:}睊%{A}%{A}";
+      label-connected = "%{A1:${toggle-wifi}:}%{A3:${kitty} -e ${nmtui}:}直%{A}%{A}";
+      label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${kitty} -e ${nmtui}:}睊%{A}%{A}";
 
       label-disconnected-foreground = "\${colors.deactivated}";
     };
