@@ -90,7 +90,7 @@
           channelName = "nixos";
           imports = [
             (digga.lib.importExportableModules ./modules/common)
-            # (digga.lib.importExportableModules ./modules/nixos) No modules yet
+            (digga.lib.importExportableModules ./modules/nixos)
           ];
           modules = [
             {lib.our = self.lib;}
@@ -127,7 +127,7 @@
             graphical = [
               dot # I only need DoT privacy on machines with GUI environments
               wm-helper
-              gdm
+              lightdm
               sound
               bluetooth
               i18n

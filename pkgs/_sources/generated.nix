@@ -12,6 +12,17 @@
       sha256 = "sha256-SLF5gjdK+FgjPNQPziMHpmgy8+ZzCSYJDqE6xg83BTs=";
     };
   };
+  lightdm-slick-greeter = {
+    pname = "lightdm-slick-greeter";
+    version = "master.lmde4";
+    src = fetchFromGitHub {
+      owner = "linuxmint";
+      repo = "slick-greeter";
+      rev = "master.lmde4";
+      fetchSubmodules = false;
+      sha256 = "sha256-FfqZOdg8ADKp61WG4ohpoBB/7m7I1gMqYW3bE/B4iRg=";
+    };
+  };
   manix = {
     pname = "manix";
     version = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
@@ -46,7 +57,8 @@
     };
     cargoLock."./Cargo.lock" = {
       lockFile = ./rescrobbled-v0.6.0/./Cargo.lock;
-      outputHashes = {};
+      outputHashes = {
+      };
     };
   };
   tidal-hifi = {
