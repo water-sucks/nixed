@@ -14,9 +14,13 @@
     enable = true;
     videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
     layout = "us";
+
     libinput.enable = true;
-    windowManager.leftwm.enable = true;
+
     desktopManager.xterm.enable = false;
+
+    windowManager.leftwm.enable = true;
+    displayManager.defaultSession = "none+leftwm";
   };
 
   environment.variables = {
