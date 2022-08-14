@@ -10,6 +10,8 @@ local disable_format_cap = {
   "elixirls",
 }
 
+-- This is a function;
+-- I guess?
 local on_attach = function(client, bufnr)
   for _, v in pairs(disable_format_cap) do
     if v == client.name then
@@ -26,6 +28,7 @@ local on_attach = function(client, bufnr)
       D = { vim.lsp.buf.declaration, "Go to declaration" },
       d = { vim.lsp.buf.definition, "Go to definition" },
       i = { vim.lsp.buf.implementation, "Go to implementation" },
+      h = { vim.lsp.buf.hover, "Hover docs" },
 
       r = { vim.lsp.buf.rename, "Rename" },
 

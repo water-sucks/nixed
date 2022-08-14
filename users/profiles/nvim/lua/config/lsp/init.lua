@@ -1,4 +1,5 @@
 local files = {
+  "coq",
   "servers",
   "handlers",
 }
