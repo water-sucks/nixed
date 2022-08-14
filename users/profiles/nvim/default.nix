@@ -71,7 +71,6 @@ in {
       delve
 
       # Other stuff
-      deno
       bc
       cowsay
     ];

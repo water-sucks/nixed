@@ -64,30 +64,16 @@ packer.startup({
     -- Completion
     use({
       {
-        "Shougo/ddc.vim",
-        event = "InsertEnter",
-        config = function()
-          require("config.lsp.ddc")
+        "ms-jpq/coq_nvim",
+        branch = "coq",
+        run = function()
+          if not vim.fn.isdirectory(vim.fn.stdpath("data") .. "/coqrt") then
+            require("coq").deps()
+          end
         end,
       },
-
-      { "vim-denops/denops.vim", event = "CursorHold" },
-
-      -- Menu
-      { "Shougo/pum.vim", event = "CursorHold" },
-      { "tani/ddc-fuzzy", event = "CursorHold" },
-      { "matsui54/denops-popup-preview.vim", event = "CursorHold" },
-
-      -- Sources
-      { "Shougo/ddc-omni", event = "CursorHold" },
-      { "Shougo/ddc-around", event = "CursorHold" },
-      { "Shougo/ddc-nvim-lsp", event = "CursorHold" },
-      { "matsui54/ddc-buffer", event = "CursorHold" },
-
-      -- Snippets
-      { "hrsh7th/vim-vsnip", event = "CursorHold" },
-      { "rafamadriz/friendly-snippets", event = "CursorHold" },
-      { "hrsh7th/vim-vsnip-integ", event = "CursorHold" },
+      { "ms-jpq/coq.artifacts", branch = "artifacts" },
+      { "ms-jpq/coq.thirdparty", branch = "3p" },
     })
 
     -- Specialized windows
@@ -192,7 +178,7 @@ packer.startup({
       end,
     })
     use({
-      "Pocco81/AutoSave.nvim",
+      "Pocco81/auto-save.nvim",
       event = "CursorHold",
       config = function()
         require("config.autosave")
@@ -454,19 +440,6 @@ packer.startup({
         require("config.rust")
       end,
       ft = "rust",
-    })
-    -- use({
-    --   "ionide/Ionide-vim",
-    --   after = "nvim-lspconfig",
-    --   setup = function()
-    --     require("config.ionide")
-    --   end,
-    --   ft = { "fsharp" },
-    -- })
-    use({
-      "adelarsq/neofsharp.vim",
-      after = "nvim-lspconfig",
-      ft = { "fsharp", "fsharp_project" },
     })
     use({
       "lervag/vimtex",

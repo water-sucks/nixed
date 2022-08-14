@@ -4,7 +4,7 @@ require("which-key").register({
   c = {
     name = "Diffview",
     o = { ":DiffviewOpen<CR>", "Open diffview" },
-    c = { ":DiffviewOpen<CR>", "Close diffview" },
+    c = { ":DiffviewClose<CR>", "Close diffview" },
     h = { ":DiffviewFileHistory<CR>", "Show file history" },
   },
 }, {

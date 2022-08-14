@@ -1,5 +1,6 @@
 local lsp = require("lspconfig")
 local on_attach = require("config.lsp.on_attach")
+local coq = require("coq")
 
 -- Rust/Flutter/LTeX are configured in
 -- their respective plugins.
@@ -9,7 +10,6 @@ local servers = {
   "gopls",
   "bashls",
   "sumneko_lua",
-  "fsautocomplete",
   "elixirls",
   "graphql",
   "ltex",
@@ -39,28 +39,19 @@ local server_configs = {
       require("ltex_extra").setup({
         load_langs = { "en-US" },
         init_check = true,
+        path = vim.fn.stdpath("config") .. "/spell/custom-dict/",
       })
     end,
     filetypes = { "latex", "tex", "bib", "markdown" },
     settings = {
       ltex = {
-        -- Required to specify these.
-        dictionary = {},
-        disabledRules = {},
-        hiddenFalsePositives = {},
+        -- Currently not working, probably due to ltex_extra.nvim.
+        -- Let's figure this out later, just don't use any
+        -- cursewords in prose! Shouldn't be too hard (for now).
+        -- disabledRules = {
+        --   ["en-US"] = { "PROFANITY" },
+        -- },
       },
-    },
-  },
-  fsautocomplete = {
-    cmd = {
-      "dotnet",
-      "tool",
-      "run",
-      "fsautocomplete",
-      "--background-service-enabled",
-    },
-    init_options = {
-      AutomaticWorkspaceInit = true,
     },
   },
 }
@@ -76,5 +67,5 @@ for _, server in pairs(servers) do
     end
   end
 
-  lsp[server].setup(config)
+  lsp[server].setup(coq.lsp_ensure_capabilities(config))
 end
