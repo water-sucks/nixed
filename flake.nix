@@ -2,45 +2,44 @@
   description = "I've nixed any chance I have at human interaction by building this config.";
 
   inputs = {
-    nixos.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-22.05";
 
     utils.url = "github:numtide/flake-utils";
-    utils.inputs.nipxkgs.follows = "nixos";
+    utils.inputs.nipxkgs.follows = "nixpkgs";
 
     digga.url = "github:divnix/digga";
-    digga.inputs.nixpkgs.follows = "nixos";
-    digga.inputs.nixlib.follows = "nixos";
+    digga.inputs.nixpkgs.follows = "nixpkgs";
+    digga.inputs.nixlib.follows = "nixpkgs";
     digga.inputs.home-manager.follows = "home";
     digga.inputs.deploy.follows = "deploy";
 
     home.url = "github:nix-community/home-manager";
-    home.inputs.nixpkgs.follows = "nixos";
+    home.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixos";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     deploy.url = "github:input-output-hk/deploy-rs";
-    deploy.inputs.nixpkgs.follows = "nixos";
+    deploy.inputs.nixpkgs.follows = "nixpkgs";
 
     alejandra.url = "github:kamadorueda/alejandra";
-    alejandra.inputs.nixpkgs.follows = "nixos";
+    alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
     agenix.url = "github:ryantm/agenix";
-    agenix.inputs.nixpkgs.follows = "nixos";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
 
     leftwm.url = "github:leftwm/leftwm";
-    leftwm.inputs.nixpkgs.follows = "nixos";
+    leftwm.inputs.nixpkgs.follows = "nixpkgs";
 
     discord.url = "github:InternetUnexplorer/discord-overlay";
-    discord.inputs.nixpkgs.follows = "nixos";
-
-    nixpkgs.follows = "nixos";
+    discord.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     digga,
-    nixos,
+    nixpkgs,
     utils,
     home,
     agenix,
@@ -58,7 +57,7 @@
       channelsConfig.allowUnfree = true;
 
       channels = {
-        nixos = {
+        nixpkgs = {
           imports = [
             (digga.lib.importOverlays ./overlays)
           ];
@@ -70,7 +69,7 @@
         };
       };
 
-      lib = import ./lib {lib = digga.lib // nixos.lib;};
+      lib = import ./lib {lib = digga.lib // nixpkgs.lib;};
 
       sharedOverlays = [
         (_final: prev: {
@@ -87,7 +86,7 @@
       nixos = {
         hostDefaults = {
           system = "x86_64-linux";
-          channelName = "nixos";
+          channelName = "nixpkgs";
           imports = [
             (digga.lib.importExportableModules ./modules/common)
             (digga.lib.importExportableModules ./modules/nixos)
@@ -145,7 +144,7 @@
       darwin = {
         hostDefaults = {
           system = "x86_64-darwin";
-          channelName = "nixos";
+          channelName = "nixpkgs";
           imports = [
             (digga.lib.importExportableModules ./modules/common)
             (digga.lib.importExportableModules ./modules/darwin)
