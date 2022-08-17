@@ -1,5 +1,5 @@
 let
-  inherit (default.inputs.nixos) lib;
+  inherit (default.inputs.nixpkgs) lib;
 
   default = (import ./lib/compat).defaultNix;
 
