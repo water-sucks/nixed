@@ -6,8 +6,6 @@ null_ls.setup({
     lsp_format.on_attach(client)
   end,
   sources = {
-    null_ls.builtins.completion.spell,
-
     null_ls.builtins.formatting.asmfmt,
     null_ls.builtins.formatting.black,
     null_ls.builtins.formatting.dart_format.with({

@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   sources = pkgs.callPackage _sources/generated.nix {};
 
   treesitter = pkgs.tree-sitter.override {
@@ -20,6 +24,8 @@
       };
     };
   };
+
+  nil = inputs.nil.packages.${pkgs.system}.default;
 in {
   home.packages = with pkgs; [
     neovim-remote
@@ -43,7 +49,7 @@ in {
       nodePackages.bash-language-server
       nodePackages.graphql-language-service-cli
       sumneko-lua-language-server
-      rnix-lsp
+      nil
 
       # null-ls sources
       alejandra

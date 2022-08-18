@@ -54,6 +54,9 @@ local server_configs = {
       },
     },
   },
+  rnix = {
+    cmd = { "nil" }, -- Yes, this hijacks rnix-lsp
+  },
 }
 
 for _, server in pairs(servers) do

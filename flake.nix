@@ -34,6 +34,9 @@
 
     discord.url = "github:InternetUnexplorer/discord-overlay";
     discord.inputs.nixpkgs.follows = "nixpkgs";
+
+    nil.url = "github:oxalica/nil";
+    nil.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
