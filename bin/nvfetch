@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=2251 # Disables annoying check for skipping errexit
+
+# Fetch all inputs specified in all nvfetcher.toml files.
+
+set -euo pipefail
+set -o noclobber
+shopt -s globstar
+
+help() {
+  cat <<EOF
+Usage: nvfetch [options]
+
+Options:
+    -c, --continue-on-fail: Continue fetching other files' inputs if one fails
+    -i, --interactive:      Press key to start fetching for each file
+    -h, --help:             Show this help menu
+EOF
+}
+
+cd_to_root() {
+  cd "$(git rev-parse --show-toplevel)" || exit 2
+}
+
+fetch() {
+  cd "$(dirname "$1")" || exit 2
+
+  if ! nvfetcher; then
+    echo "error: nvfetcher unable to run in $(dirname "$PWD")"
+  fi
+}
+
+confirm() {
+  read -n 1 -s -r -p "Press any key to start: "
+  echo ""
+}
+
+! getopt --test >/dev/null
+if [[ ${PIPESTATUS[0]} -ne 4 ]]; then
+  echo "error: getopt --test failed in this environment"
+  exit 1
+fi
+
+LONGOPTS=help,interactive,continue-on-fail
+OPTIONS=hic
+
+! PARSED=$(getopt --options="$OPTIONS" --longoptions="$LONGOPTS" --name "$0" -- "$@")
+if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
+  exit 2
+fi
+
+eval set -- "$PARSED"
+
+continue=false
+interactive=false
+
+while true; do
+  case "$1" in
+  -h | --help)
+    help
+    exit 0
+    ;;
+  -c | --continue-on-fail)
+    continue=true
+    shift
+    ;;
+  -i | --interactive)
+    interactive=true
+    shift
+    ;;
+  --)
+    shift
+    break
+    ;;
+  *)
+    echo "error: invalid state"
+    exit 3
+    ;;
+  esac
+done
+
+cd_to_root
+
+for file in **/nvfetcher.toml; do
+  cd "$PRJ_ROOT/$(dirname "$file")" || exit 2
+
+  if "$interactive"; then
+    echo "Now fetching for $file..."
+    confirm
+  fi
+
+  if ! nvfetcher; then
+    printf "error: unable to run nvfetcher in %s\n\n" "$(dirname "$file")"
+
+    if ! "$continue"; then
+      exit 1
+    fi
+  fi
+done
+
+echo "Formatting generated Nix files..."
+
+cd_to_root
+
+for file in **/_sources/generated.nix; do
+  alejandra -q "$file"
+done

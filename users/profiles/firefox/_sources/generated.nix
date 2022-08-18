@@ -6,13 +6,13 @@
 }: {
   i2p-profile = {
     pname = "i2p-profile";
-    version = "6c33b34a4048b6400cdd2771f457bbc40e083e7f";
+    version = "50b00c6c885572399b81047294d54627a1858020";
     src = fetchFromGitHub {
       owner = "i2p";
       repo = "i2p.firefox";
-      rev = "6c33b34a4048b6400cdd2771f457bbc40e083e7f";
+      rev = "50b00c6c885572399b81047294d54627a1858020";
       fetchSubmodules = false;
-      sha256 = "sha256-1C0p/xMgBhp/B0DYgcphomFTxYsU43q4c5ICXr0BpYY=";
+      sha256 = "sha256-FXfORFqrHKC+gQ8QNcy5kksoBFrLktuaBSJ3+bO1qCI=";
     };
   };
   simplefox-theme = {

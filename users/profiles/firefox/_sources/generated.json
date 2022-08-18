@@ -12,11 +12,11 @@
             "name": null,
             "owner": "i2p",
             "repo": "i2p.firefox",
-            "rev": "6c33b34a4048b6400cdd2771f457bbc40e083e7f",
-            "sha256": "sha256-1C0p/xMgBhp/B0DYgcphomFTxYsU43q4c5ICXr0BpYY=",
+            "rev": "50b00c6c885572399b81047294d54627a1858020",
+            "sha256": "sha256-FXfORFqrHKC+gQ8QNcy5kksoBFrLktuaBSJ3+bO1qCI=",
             "type": "github"
         },
-        "version": "6c33b34a4048b6400cdd2771f457bbc40e083e7f"
+        "version": "50b00c6c885572399b81047294d54627a1858020"
     },
     "simplefox-theme": {
         "cargoLocks": null,

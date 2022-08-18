@@ -63,10 +63,10 @@
   };
   tidal-hifi = {
     pname = "tidal-hifi";
-    version = "4.0.1";
+    version = "4.1.0";
     src = fetchurl {
-      url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/4.0.1/tidal-hifi-4.0.1.AppImage";
-      sha256 = "sha256-CWlmtowvzPlKGJF2H8hzD/s3DLkcb8O+S9j7kZkaVXA=";
+      url = "https://github.com/Mastermindzh/tidal-hifi/releases/download/4.1.0/tidal-hifi-4.1.0.AppImage";
+      sha256 = "sha256-zepH4KTOiVStura+jKSse/cyL5HSExTdOG0XS96Ii7Y=";
     };
   };
 }
