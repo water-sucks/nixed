@@ -24,11 +24,19 @@ null_ls.setup({
         }
       end,
     }),
-    null_ls.builtins.formatting.alejandra,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.mix,
-    -- null_ls.builtins.formatting.nixpkgs_fmt,
+    -- I prefer using alejandra for my own code, but also
+    -- use nixpkgs-fmt in some codebases and in nixpkgs,
+    -- so I switch it based on an environment variable.
+    (function()
+      if vim.env.USE_NIXPKGS_FMT == "1" then
+        return null_ls.builtins.formatting.nixpkgs_fmt
+      else
+        return null_ls.builtins.formatting.alejandra
+      end
+    end)(),
     null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.shfmt,
