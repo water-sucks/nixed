@@ -57,5 +57,12 @@ in {
         fi
       '';
     }
+
+    {
+      category = "nixed";
+      name = "nvfetch";
+      help = "Fetch all nvfetcher inputs";
+      command = "$PRJ_ROOT/bin/nvfetch $@";
+    }
   ];
 }
