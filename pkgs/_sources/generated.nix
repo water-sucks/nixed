@@ -23,17 +23,6 @@
       sha256 = "sha256-FfqZOdg8ADKp61WG4ohpoBB/7m7I1gMqYW3bE/B4iRg=";
     };
   };
-  manix = {
-    pname = "manix";
-    version = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
-    src = fetchFromGitHub {
-      owner = "mlvzk";
-      repo = "manix";
-      rev = "d08e7ca185445b929f097f8bfb1243a8ef3e10e4";
-      fetchSubmodules = false;
-      sha256 = "sha256-GqPuYscLhkR5E2HnSFV4R48hCWvtM3C++3zlJhiK/aw=";
-    };
-  };
   picom = {
     pname = "picom";
     version = "c4107bb6cc17773fdc6c48bb2e475ef957513c7a";
