@@ -1,7 +1,3 @@
-[manix]
-src.git = "https://github.com/mlvzk/manix"
-fetch.github = "mlvzk/manix"
-
 [lightdm-slick-greeter]
 src.github = "linuxmint/slick-greeter"
 fetch.github = "linuxmint/slick-greeter"
