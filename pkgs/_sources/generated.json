@@ -93,19 +93,5 @@
             "type": "github"
         },
         "version": "v0.6.0"
-    },
-    "tidal-hifi": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "tidal-hifi",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-zepH4KTOiVStura+jKSse/cyL5HSExTdOG0XS96Ii7Y=",
-            "type": "url",
-            "url": "https://github.com/Mastermindzh/tidal-hifi/releases/download/4.1.0/tidal-hifi-4.1.0.AppImage"
-        },
-        "version": "4.1.0"
     }
 }
