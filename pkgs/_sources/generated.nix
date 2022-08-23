@@ -12,17 +12,6 @@
       sha256 = "sha256-SLF5gjdK+FgjPNQPziMHpmgy8+ZzCSYJDqE6xg83BTs=";
     };
   };
-  lightdm-slick-greeter = {
-    pname = "lightdm-slick-greeter";
-    version = "master.lmde4";
-    src = fetchFromGitHub {
-      owner = "linuxmint";
-      repo = "slick-greeter";
-      rev = "master.lmde4";
-      fetchSubmodules = false;
-      sha256 = "sha256-FfqZOdg8ADKp61WG4ohpoBB/7m7I1gMqYW3bE/B4iRg=";
-    };
-  };
   picom = {
     pname = "picom";
     version = "c4107bb6cc17773fdc6c48bb2e475ef957513c7a";
