@@ -10,12 +10,6 @@
 
       greeters.slick = {
         enable = true;
-        showHostname = true;
-        showPower = true;
-        showAccessibility = false;
-        showKeyboard = true;
-        showClock = true;
-        showQuit = true;
         theme = {
           name = "Orchis-dark";
           package = pkgs.orchis-theme;
@@ -24,7 +18,10 @@
           name = "Orchis-dark";
           package = pkgs.orchis-theme;
         };
-        clockFormat = "%H:%M:%S";
+        extraConfig = ''
+          show-a11y=false
+          clock-format=%H:%M:%S
+        '';
       };
     };
   };

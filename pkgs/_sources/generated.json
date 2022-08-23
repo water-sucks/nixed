@@ -13,25 +13,6 @@
         },
         "version": "1.6.2"
     },
-    "lightdm-slick-greeter": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "lightdm-slick-greeter",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "linuxmint",
-            "repo": "slick-greeter",
-            "rev": "master.lmde4",
-            "sha256": "sha256-FfqZOdg8ADKp61WG4ohpoBB/7m7I1gMqYW3bE/B4iRg=",
-            "type": "github"
-        },
-        "version": "master.lmde4"
-    },
     "picom": {
         "cargoLocks": null,
         "extract": null,

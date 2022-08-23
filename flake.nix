@@ -92,7 +92,7 @@
           channelName = "nixpkgs";
           imports = [
             (digga.lib.importExportableModules ./modules/common)
-            (digga.lib.importExportableModules ./modules/nixos)
+            # (digga.lib.importExportableModules ./modules/nixos)
           ];
           modules = [
             {lib.our = self.lib;}
