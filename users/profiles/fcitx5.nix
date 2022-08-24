@@ -81,7 +81,7 @@
   # after auto-writes to them from fcitx5's exit routines.
   # Scripts are explicitly not supposed to be called like this
   # according to the Home Manager manual, but I'm doing it it
-  # anyway because fuck the rules. Also I'm lazy.
+  # anyway because it's more convenient. Also I'm lazy.
   home.activation = {
     delete-existing-fcitx5-files = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
       rm $VERBOSE_ARG -rf $HOME/.config/fcitx5/* ~/.local/share/fcitx5/*
