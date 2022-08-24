@@ -7,14 +7,14 @@
 
   treesitter = pkgs.tree-sitter.override {
     extraGrammars = {
-      tree-sitter-dart = {
-        src = pkgs.fetchFromGitHub {
-          repo = "tree-sitter-dart";
-          owner = "UserNobody14";
-          rev = "f95876f0ed3ef207bbd3c5c41987bc2e9cecfc97";
-          sha256 = "sha256-8bBsKmkJw8BPdK6sk7i+GwqbaIsWKNrpbkekX94ZSkU=";
-        };
-      };
+      # tree-sitter-dart = {
+      # src = pkgs.fetchFromGitHub {
+      #   repo = "tree-sitter-dart";
+      #   owner = "UserNobody14";
+      #   rev = "f95876f0ed3ef207bbd3c5c41987bc2e9cecfc97";
+      #   sha256 = "sha256-8bBsKmkJw8BPdK6sk7i+GwqbaIsWKNrpbkekX94ZSkU=";
+      # };
+      # };
 
       tree-sitter-norg = {
         inherit (sources.tree-sitter-norg) src;
