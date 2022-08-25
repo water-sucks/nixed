@@ -5,6 +5,7 @@
       name = "Orchis-dark";
       package = pkgs.orchis-theme;
     };
+    waylandDisplay = "wayland-1";
     settings = {
       global = {
         monitor = 0;
@@ -67,5 +68,11 @@
         timeout = 0;
       };
     };
+  };
+
+  # The graphical-session.target dependency
+  # is not correctly configured for dunst.
+  systemd.user.services.dunst = {
+    Install.WantedBy = ["graphical-session.target"];
   };
 }

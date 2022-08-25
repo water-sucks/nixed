@@ -18,9 +18,6 @@
     libinput.enable = true;
 
     desktopManager.xterm.enable = false;
-
-    windowManager.leftwm.enable = true;
-    displayManager.defaultSession = "none+leftwm";
   };
 
   environment.variables = {
