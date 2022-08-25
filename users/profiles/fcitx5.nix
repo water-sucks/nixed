@@ -20,10 +20,10 @@
   };
 
   xdg.dataFile."fcitx5/themes".source = pkgs.fetchFromGitHub {
-    owner = "icy-thought";
-    repo = "fcitx5-catppuccin";
-    rev = "3b699870fb2806404e305fe34a3d2541d8ed5ef5";
-    sha256 = "hOAcjgj6jDWtCGMs4Gd49sAAOsovGXm++TKU3NhZt8w=";
+    owner = "catppuccin";
+    repo = "fcitx5";
+    rev = "dfaa7da33f35516d07dd31b0f5ad35b1ed0a5449";
+    sha256 = "sha256-nAh+1hW5qnj84k2tMfu0MTURpqu5hy2u236hEkMbsmI=";
   };
 
   # Configuring input engines here directly.
