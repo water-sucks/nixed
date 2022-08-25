@@ -14,7 +14,7 @@ end
 
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if not fn.isdirectory(install_path) then
+if fn.isdirectory(install_path) < 1 then
   print("Cloning packer ..")
 
   fn.system({
