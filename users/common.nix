@@ -4,5 +4,5 @@
   ...
 }:
 lib.mkIf pkgs.stdenv.isLinux {
-  users.mutableUsers = false;
+  users.mutableUsers = true;
 }
