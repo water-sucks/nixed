@@ -8,32 +8,19 @@
   hardware.enableRedistributableFirmware = true;
 
   boot = {
-    loader = {
-      timeout = lib.mkDefault 0;
-      efi.canTouchEfiVariables = true;
-      grub.enable = false;
-      systemd-boot = {
-        enable = true;
-        editor = false;
-        configurationLimit = 100;
-      };
-    };
-
     initrd = {
-      luks.devices."nixos".device = "/dev/disk/by-uuid/cc3ec9fa-ac2b-449c-a314-c734ef29fcd1";
-      luks.devices."swap" = {
-        device = "/dev/disk/by-uuid/63005784-e8b6-4d72-91d3-a9ac5281be6a";
-        keyFile = "/keyfile-swap.bin";
+      luks.devices.root = {
+        device = "/dev/disk/by-uuid/648f819e-c365-402a-b766-20f7f340b8d7";
+        preLVM = true;
         allowDiscards = true;
       };
-      secrets = {
-        "keyfile-swap.bin" = "/etc/secrets/initrd/keyfile-swap.bin";
-      };
       availableKernelModules = ["nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" "amdgpu"];
-      kernelModules = ["amdgpu"];
+      kernelModules = ["dm-snapshot" "amdgpu"];
       systemd.enable = true;
       verbose = false;
     };
+
+    supportedFilesystems = ["zfs"];
 
     kernelModules = ["kvm-amd" "mt7921e" "amdgpu" "uinput"];
     kernelParams = [
@@ -59,18 +46,22 @@
   };
 
   fileSystems."/" = {
-    device = " /dev/disk/by-uuid/ba74bdff-8fb8-4217-8ae0-d45bb2386acb ";
-    fsType = "btrfs";
-    options = ["subvol=nixos"];
+    device = "locker/root/nixos";
+    fsType = "zfs";
+  };
+
+  fileSystems."/home" = {
+    device = "locker/home";
+    fsType = "zfs";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/5F4A-2418";
+    device = "/dev/disk/by-uuid/845A-9EA0";
     fsType = "vfat";
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/87c43d12-3fdd-492e-9db2-6312c5b48e3e";}
+    {device = "/dev/disk/by-uuid/86cdd137-8957-4844-919b-23845735c7e6";}
   ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

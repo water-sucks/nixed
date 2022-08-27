@@ -11,6 +11,7 @@
 
   networking = {
     hostName = "DerekCarr";
+    hostId = "8e004b0f";
     useDHCP = false;
     networkmanager = {
       enable = true;
@@ -20,11 +21,11 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  age.secrets.varun-user-TheBeastNix.file = "${self}/secrets/varun-user-TheBeastNix.age";
-  users.users.varun.passwordFile = "/run/agenix/varun-user-TheBeastNix";
+  age.secrets.varun-user-DerekCarr.file = "${self}/secrets/varun-user-DerekCarr.age";
+  users.users.varun.passwordFile = "/run/agenix/varun-user-DerekCarr";
 
-  age.secrets.root-user-TheBeastNix.file = "${self}/secrets/root-user-TheBeastNix.age";
-  users.users.root.passwordFile = "/run/agenix/root-user-TheBeastNix";
+  age.secrets.root-user-DerekCarr.file = "${self}/secrets/root-user-DerekCarr.age";
+  users.users.root.passwordFile = "/run/agenix/root-user-DerekCarr";
 
   home-manager.sharedModules = [
     {

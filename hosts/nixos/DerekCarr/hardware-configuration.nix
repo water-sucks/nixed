@@ -10,36 +10,19 @@
   ];
 
   boot = {
-    loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-
-      grub = {
-        enable = true;
-        device = "nodev";
-        version = 2;
-        efiSupport = true;
-        enableCryptodisk = true;
-      };
-    };
-
     initrd = {
-      luks.devices."root" = {
-        device = "/dev/disk/by-uuid/201c36cc-a740-4d8e-8956-b63784c9d475";
+      luks.devices.root = {
+        device = "/dev/disk/by-uuid/f2bf3c59-b764-43d7-b48f-8163f7219387";
         preLVM = true;
-        keyFile = "/keyfile.bin";
         allowDiscards = true;
-      };
-      secrets = {
-        "keyfile.bin" = "/etc/secrets/initrd/keyfile.bin";
       };
       availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
       kernelModules = ["dm-snapshot" "amdgpu"];
       systemd.enable = true;
       verbose = false;
     };
+
+    supportedFilesystems = ["zfs"];
 
     kernelModules = ["amdgpu" "kvm-amd" "wl"];
     kernelParams = [
@@ -64,16 +47,21 @@
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/f034ca9e-be8d-4631-b9b5-ad9d04cafc9b";
-    fsType = "ext4";
+    device = "locker/root/nixos";
+    fsType = "zfs";
   };
 
-  fileSystems."/boot/efi" = {
+  fileSystems."/home" = {
+    device = "locker/home";
+    fsType = "zfs";
+  };
+
+  fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/8ECC-2ED9";
     fsType = "vfat";
   };
 
-  swapDevices = [{device = "/dev/disk/by-uuid/c859b4eb-d5c6-47bc-bec1-9c8a85bcff5c";}];
+  swapDevices = [{device = "/dev/disk/by-uuid/02e3a0c7-b170-48e4-a66d-5f0390ae09dc";}];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
