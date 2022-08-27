@@ -11,6 +11,7 @@
 
   networking = {
     hostName = "HunterRenfrow";
+    hostId = "7effc63b";
     useDHCP = false;
     usePredictableInterfaceNames = false;
     networkmanager = {
