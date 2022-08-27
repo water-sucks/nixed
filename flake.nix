@@ -117,6 +117,7 @@
             base = [
               nix
               core
+              boot
               caches
               ssh
               pam

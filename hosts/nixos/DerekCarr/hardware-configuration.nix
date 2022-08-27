@@ -10,18 +10,6 @@
   ];
 
   boot = {
-    loader = {
-      efi.canTouchEfiVariables = true;
-
-      grub = {
-        enable = true;
-        device = "nodev";
-        version = 2;
-        efiSupport = true;
-        enableCryptodisk = true;
-      };
-    };
-
     initrd = {
       luks.devices.root = {
         device = "/dev/disk/by-uuid/f2bf3c59-b764-43d7-b48f-8163f7219387";

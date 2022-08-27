@@ -8,18 +8,6 @@
   hardware.enableRedistributableFirmware = true;
 
   boot = {
-    loader = {
-      efi.canTouchEfiVariables = true;
-
-      grub = {
-        enable = true;
-        device = "nodev";
-        version = 2;
-        efiSupport = true;
-        enableCryptodisk = true;
-      };
-    };
-
     initrd = {
       luks.devices.root = {
         device = "/dev/disk/by-uuid/648f819e-c365-402a-b766-20f7f340b8d7";
