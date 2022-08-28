@@ -50,6 +50,17 @@
       sha256 = "sha256-Q4eu4PleVXqJPvmJePcKO0bE1ro37xfXhqaLZb7QRuw=";
     };
   };
+  waylock = {
+    pname = "waylock";
+    version = "v0.4.1";
+    src = fetchFromGitHub {
+      owner = "ifreund";
+      repo = "waylock";
+      rev = "v0.4.1";
+      fetchSubmodules = true;
+      sha256 = "sha256-bV2wHuLxRP478Lap8cB3pYI/98DlxknYFgqgG4S44gY=";
+    };
+  };
   wlroots = {
     pname = "wlroots";
     version = "96ebf7426096f4d4ca08934377195def706c8243";
