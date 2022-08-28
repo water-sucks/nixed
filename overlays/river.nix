@@ -1,5 +1,7 @@
 _final: prev: {
   river = prev.river.overrideAttrs (_: {
+    patches = [./change-default-color.patch];
+
     inherit (prev.sources.river) pname version src;
   });
 

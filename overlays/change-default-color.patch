@@ -1,0 +1,13 @@
+diff --git a/river/Config.zig b/river/Config.zig
+index 7916621..58032da 100644
+--- a/river/Config.zig
++++ b/river/Config.zig
+@@ -44,7 +44,7 @@ pub const HideCursorWhenTypingMode = enum {
+ };
+ 
+ /// Color of background in RGBA (alpha should only affect nested sessions)
+-background_color: [4]f32 = [_]f32{ 0.0, 0.16862745, 0.21176471, 1.0 }, // Solarized base03
++background_color: [4]f32 = [_]f32{ 0.04705882, 0.04705882, 0.04705882, 1.0 }, // Solarized base03
+ 
+ /// Width of borders in pixels
+ border_width: u32 = 2,
