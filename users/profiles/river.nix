@@ -54,6 +54,10 @@
   '';
   powerMenu = import ./power-menu.nix pkgs;
 in {
+  home.packages = with pkgs; [
+    waylock
+  ];
+
   wayland.windowManager.river = {
     enable = true;
 

@@ -1,3 +1,14 @@
+[wlroots]
+src.git = "https://gitlab.freedesktop.org/ifreund/wlroots"
+src.branch = "session-lock-0.15"
+fetch.git = "https://gitlab.freedesktop.org/ifreund/wlroots"
+
+[river]
+src.git = "https://github.com/riverwm/river"
+src.branch = "session-lock"
+fetch.github = "riverwm/river"
+git.fetchSubmodules = true
+
 [picom]
 src.git = "https://github.com/ibhagwan/picom"
 fetch.github = "ibhagwan/picom"
