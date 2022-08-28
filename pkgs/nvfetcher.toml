@@ -9,6 +9,11 @@ src.branch = "session-lock"
 fetch.github = "riverwm/river"
 git.fetchSubmodules = true
 
+[waylock]
+src.github_tag = "ifreund/waylock"
+fetch.github = "ifreund/waylock"
+git.fetchSubmodules = true
+
 [picom]
 src.git = "https://github.com/ibhagwan/picom"
 fetch.github = "ibhagwan/picom"

@@ -40,6 +40,11 @@
   slurp = "${pkgs.slurp}/bin/slurp";
   grim = "${pkgs.grim}/bin/grim";
   dunstify = "${pkgs.dunst}/bin/dunstify";
+  swayidle = "${pkgs.swayidle}/bin/swayidle";
+  waylockWrapper =
+    pkgs.writeShellScriptBin "waylock"
+    "${pkgs.waylock}/bin/waylock -init-color 0x121212 -input-color 0x732735 -fail-color 0x8a0801 $@";
+  waylockCommand = "${waylockWrapper}/bin/waylock";
 
   screenshot = pkgs.writeShellScript "take-screenshot.sh" ''
     if [ "$1" == "-s" ]; then
@@ -54,9 +59,7 @@
   '';
   powerMenu = import ./power-menu.nix pkgs;
 in {
-  home.packages = with pkgs; [
-    waylock
-  ];
+  home.packages = [waylockWrapper];
 
   wayland.windowManager.river = {
     enable = true;
@@ -120,10 +123,10 @@ in {
         (let
           rivertile = command: ''send-layout-cmd rivertile "${command}"'';
         in [
-          (nmap (bind [mod] "h" (rivertile "main-ratio -0.05")))
-          (nmap (bind [mod] "l" (rivertile "main-ratio +0.05")))
-          (nmap (bind [mod shift] "h" (rivertile "main-count +1")))
-          (nmap (bind [mod shift] "l" (rivertile "main-count -1")))
+          (nmap (bind [mod shift] "h" (rivertile "main-ratio -0.05")))
+          (nmap (bind [mod shift] "l" (rivertile "main-ratio +0.05")))
+          (nmap (bind [mod ctrl] "h" (rivertile "main-count +1")))
+          (nmap (bind [mod ctrl] "l" (rivertile "main-count -1")))
           (nmap (bind [mod] "Up" (rivertile "main-location top")))
           (nmap (bind [mod] "Right" (rivertile "main-location right")))
           (nmap (bind [mod] "Down" (rivertile "main-location bottom")))
@@ -137,7 +140,7 @@ in {
         (nmap (exec [] "Print" "${screenshot}"))
         (nmap (exec [mod] "Print" "${screenshot} -s"))
         (nmap (exec [ctrl alt] "Delete" "${powerMenu}"))
-        # TODO: add Waylock command
+        (nmap (exec [mod] "l" "${waylockCommand}"))
 
         # Media buttons (also work in locked mode)
         (map (f: [
@@ -186,6 +189,26 @@ in {
       RestartSec = 1;
     };
 
+    Install.WantedBy = ["graphical-session.target"];
+  };
+
+  systemd.user.services.river-autolock = {
+    Unit = {
+      PartOf = ["graphical-session.target"];
+      Description = "Lock screen automatically after 15 minutes";
+    };
+    Service = {
+      ExecStart = ''
+        ${swayidle} \
+          -w timeout 900 ${waylockCommand} \
+          before-sleep ${waylockCommand} \
+          timeout 915 "${light} -O; ${light} -S 0" \
+          resume "${light} -I" \
+          lock ${waylockCommand}
+      '';
+      Restart = "on-failure";
+      RestartSec = 1;
+    };
     Install.WantedBy = ["graphical-session.target"];
   };
 }

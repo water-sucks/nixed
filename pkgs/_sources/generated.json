@@ -75,6 +75,25 @@
         },
         "version": "4ba7f80f8dc29b799859c0a32eb407c232636943"
     },
+    "waylock": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "waylock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ifreund",
+            "repo": "waylock",
+            "rev": "v0.4.1",
+            "sha256": "sha256-bV2wHuLxRP478Lap8cB3pYI/98DlxknYFgqgG4S44gY=",
+            "type": "github"
+        },
+        "version": "v0.4.1"
+    },
     "wlroots": {
         "cargoLocks": null,
         "extract": null,
