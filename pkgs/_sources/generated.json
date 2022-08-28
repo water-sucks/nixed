@@ -55,5 +55,42 @@
             "type": "github"
         },
         "version": "v0.6.0"
+    },
+    "river": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "river",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "riverwm",
+            "repo": "river",
+            "rev": "4ba7f80f8dc29b799859c0a32eb407c232636943",
+            "sha256": "sha256-Q4eu4PleVXqJPvmJePcKO0bE1ro37xfXhqaLZb7QRuw=",
+            "type": "github"
+        },
+        "version": "4ba7f80f8dc29b799859c0a32eb407c232636943"
+    },
+    "wlroots": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "wlroots",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "96ebf7426096f4d4ca08934377195def706c8243",
+            "sha256": "sha256-cDt45vkgl1cq5avyMuZ94zdWyWmKWtUQ6/VzuSpP4y4=",
+            "type": "git",
+            "url": "https://gitlab.freedesktop.org/ifreund/wlroots"
+        },
+        "version": "96ebf7426096f4d4ca08934377195def706c8243"
     }
 }

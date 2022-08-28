@@ -39,4 +39,27 @@
       };
     };
   };
+  river = {
+    pname = "river";
+    version = "4ba7f80f8dc29b799859c0a32eb407c232636943";
+    src = fetchFromGitHub {
+      owner = "riverwm";
+      repo = "river";
+      rev = "4ba7f80f8dc29b799859c0a32eb407c232636943";
+      fetchSubmodules = true;
+      sha256 = "sha256-Q4eu4PleVXqJPvmJePcKO0bE1ro37xfXhqaLZb7QRuw=";
+    };
+  };
+  wlroots = {
+    pname = "wlroots";
+    version = "96ebf7426096f4d4ca08934377195def706c8243";
+    src = fetchgit {
+      url = "https://gitlab.freedesktop.org/ifreund/wlroots";
+      rev = "96ebf7426096f4d4ca08934377195def706c8243";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-cDt45vkgl1cq5avyMuZ94zdWyWmKWtUQ6/VzuSpP4y4=";
+    };
+  };
 }
