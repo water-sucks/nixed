@@ -29,8 +29,13 @@
 
   home-manager.sharedModules = [
     {
-      services.polybar.config."module/wlan".interface = lib.mkForce "wlp6s0";
-      services.polybar.config."bar/oofbar".modules-right = lib.mkForce "input dot storage dot cpu dot mem dot audio dot bluetooth dot wlan dot date spacer launcher";
+      services.polybar.config = {
+        "module/wlan".interface = lib.mkForce "wlp6s0";
+        "bar/oofbar".modules-right = lib.mkForce "input dot storage dot cpu dot mem dot audio dot bluetooth dot wlan dot date spacer launcher";
+      };
+    }
+    {
+      programs.waybar.settings.topbar.network.interface = "wlp6s0";
     }
   ];
 

@@ -1,0 +1,124 @@
+@define-color bg #111111;
+@define-color bg2 #222222;
+@define-color bg3 #333333;
+@define-color text #999999;
+@define-color focused #b4b4b4;
+@define-color primary #732735;
+@define-color secondary #9f1122;
+
+* {
+  color: @text;
+  border: 0;
+  border-radius: 0;
+  font-family: "monospace", "IBM Plex Sans JP";
+  font-size: 11px;
+  min-height: 0px;
+  min-width: 0px;
+  margin: 1px 0;
+}
+
+#window {
+  padding: 7px;
+}
+
+window#waybar {
+  background: rgba(11, 11, 11, 0.69);
+  color: @text;
+}
+
+#battery.charging {
+  color: @primary;
+}
+
+#battery.warning {
+  color: @secondary;
+}
+
+#battery.critical {
+  color: #ff0000;
+}
+
+#tags button {
+  margin: 2px 0;
+  padding: 5px 0;
+  border-left: 2px solid @primary;
+  color: @text;
+}
+
+#tags button:hover {
+  background: @bg2;
+}
+
+#tags button.focused {
+  color: #666666;
+  background: @bg3;
+  border-left: 2px solid @focused;
+}
+
+#tags button.urgent {
+  border-left: 2px solid @secondary;
+}
+
+#tray {
+  margin: 5px;
+  padding: 3px;
+}
+
+#tray menu {
+  background: @bg3;
+  margin: 1px;
+  padding: 1px;
+}
+
+#taskbar button {
+  margin: 2px 0;
+  padding: 5px 0;
+  border-left: 2px solid @primary;
+}
+
+#taskbar button:hover {
+  background: @bg3;
+}
+
+#taskbar button.active {
+  background: @bg3;
+  border-left: 2px solid @focused;
+}
+
+#tray,
+#custom-explorer,
+#custom-powermenu {
+  margin: 5px;
+  padding: 3px;
+}
+
+#backlight,
+#battery,
+#bluetooth,
+#cpu,
+#disk,
+#memory,
+#network,
+#pulseaudio
+#custom-active-window,
+#custom-dunst,
+#custom-waybar-mpris {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 3px 5px;
+}
+
+#custom-dunst,
+#custom-explorer,
+#custom-powermenu {
+  font-size: 13px;
+  background: @bg2;
+}
+
+#custom-active-window {
+  margin-left: 8px;
+}
+
+#custom-dunst {
+  margin-right: 8px;
+}

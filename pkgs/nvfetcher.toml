@@ -14,6 +14,18 @@ src.github_tag = "ifreund/waylock"
 fetch.github = "ifreund/waylock"
 git.fetchSubmodules = true
 
+[waybar]
+src.git = "https://github.com/Alexays/Waybar"
+fetch.github = "Alexays/Waybar"
+
+[lswt]
+src.git = "https://git.sr.ht/~leon_plickat/lswt"
+fetch.git = "https://git.sr.ht/~leon_plickat/lswt"
+
+[waybar-mpris]
+src.git = "https://github.com/b10n/waybar-mpris"
+fetch.github = "b10n/waybar-mpris"
+
 [picom]
 src.git = "https://github.com/ibhagwan/picom"
 fetch.github = "ibhagwan/picom"
