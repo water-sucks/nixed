@@ -173,7 +173,7 @@ in {
       ${riverctl} float-filter-add app-id Rofi
 
       ${riverctl} default-layout rivertile
-      ${rivertile} -view-padding 6 -outer-padding 6
+      ${rivertile} -view-padding 10 -outer-padding 10
     '';
   };
 

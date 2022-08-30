@@ -13,6 +13,24 @@
         },
         "version": "2.0.3"
     },
+    "lswt": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "lswt",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60",
+            "sha256": "sha256-Tiua9M2CJsYfmtmRXgR9ofmhwP8pRiYGbJdlBThWKMM=",
+            "type": "git",
+            "url": "https://git.sr.ht/~leon_plickat/lswt"
+        },
+        "version": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60"
+    },
     "picom": {
         "cargoLocks": null,
         "extract": null,
@@ -74,6 +92,44 @@
             "type": "github"
         },
         "version": "4ba7f80f8dc29b799859c0a32eb407c232636943"
+    },
+    "waybar": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "waybar",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Alexays",
+            "repo": "Waybar",
+            "rev": "4deb6d812d6a34c84b3d4b053c1d9673bc2864d7",
+            "sha256": "sha256-nYxRKO7oHpiCH7DgSHDxnrPi5y2CRXpegSer1dQOLTo=",
+            "type": "github"
+        },
+        "version": "4deb6d812d6a34c84b3d4b053c1d9673bc2864d7"
+    },
+    "waybar-mpris": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "waybar-mpris",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "b10n",
+            "repo": "waybar-mpris",
+            "rev": "1233aa9f90d75ec2bbd82afde757309fd9abab3a",
+            "sha256": "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=",
+            "type": "github"
+        },
+        "version": "1233aa9f90d75ec2bbd82afde757309fd9abab3a"
     },
     "waylock": {
         "cargoLocks": null,

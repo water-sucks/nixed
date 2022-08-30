@@ -12,6 +12,18 @@
       sha256 = "sha256-k4CpISmTXYp0mVLPX2ep4dKr3KIaqJql2vNmUCmlBJs=";
     };
   };
+  lswt = {
+    pname = "lswt";
+    version = "ed1ae054d9af3c345f9f2c2003d179932c0c6b60";
+    src = fetchgit {
+      url = "https://git.sr.ht/~leon_plickat/lswt";
+      rev = "ed1ae054d9af3c345f9f2c2003d179932c0c6b60";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "sha256-Tiua9M2CJsYfmtmRXgR9ofmhwP8pRiYGbJdlBThWKMM=";
+    };
+  };
   picom = {
     pname = "picom";
     version = "c4107bb6cc17773fdc6c48bb2e475ef957513c7a";
@@ -48,6 +60,28 @@
       rev = "4ba7f80f8dc29b799859c0a32eb407c232636943";
       fetchSubmodules = true;
       sha256 = "sha256-Q4eu4PleVXqJPvmJePcKO0bE1ro37xfXhqaLZb7QRuw=";
+    };
+  };
+  waybar = {
+    pname = "waybar";
+    version = "4deb6d812d6a34c84b3d4b053c1d9673bc2864d7";
+    src = fetchFromGitHub {
+      owner = "Alexays";
+      repo = "Waybar";
+      rev = "4deb6d812d6a34c84b3d4b053c1d9673bc2864d7";
+      fetchSubmodules = false;
+      sha256 = "sha256-nYxRKO7oHpiCH7DgSHDxnrPi5y2CRXpegSer1dQOLTo=";
+    };
+  };
+  waybar-mpris = {
+    pname = "waybar-mpris";
+    version = "1233aa9f90d75ec2bbd82afde757309fd9abab3a";
+    src = fetchFromGitHub {
+      owner = "b10n";
+      repo = "waybar-mpris";
+      rev = "1233aa9f90d75ec2bbd82afde757309fd9abab3a";
+      fetchSubmodules = false;
+      sha256 = "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=";
     };
   };
   waylock = {

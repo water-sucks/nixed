@@ -226,6 +226,7 @@
 
               # Wayland
               river
+              waybar
 
               # Other
               xdg
