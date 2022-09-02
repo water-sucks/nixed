@@ -6,7 +6,6 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-22.05";
 
     utils.url = "github:numtide/flake-utils";
-    utils.inputs.nipxkgs.follows = "nixpkgs";
 
     digga.url = "github:divnix/digga";
     digga.inputs.nixpkgs.follows = "nixpkgs";
