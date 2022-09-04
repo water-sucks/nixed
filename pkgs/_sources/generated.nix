@@ -6,10 +6,10 @@
 }: {
   filen-desktop = {
     pname = "filen-desktop";
-    version = "1.6.2";
+    version = "2.0.3";
     src = fetchurl {
-      url = "https://github.com/FilenCloudDienste/filen-desktop/releases/download/1.6.2/filen-setup.AppImage";
-      sha256 = "sha256-SLF5gjdK+FgjPNQPziMHpmgy8+ZzCSYJDqE6xg83BTs=";
+      url = "https://cdn.filen.io/desktop/release/2.0.3/filen_x86_64.AppImage";
+      sha256 = "sha256-k4CpISmTXYp0mVLPX2ep4dKr3KIaqJql2vNmUCmlBJs=";
     };
   };
   picom = {
