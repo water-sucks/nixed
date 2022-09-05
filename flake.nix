@@ -129,7 +129,7 @@
             graphical = [
               dot # I only need DoT privacy on machines with GUI environments
               wm-helper
-              lightdm
+              greetd
               sound
               bluetooth
               i18n
@@ -217,17 +217,25 @@
             ];
             # Linux only!
             graphical = [
-              leftwm
+              # X11 (not using)
+              # leftwm
+              # picom
+              # polybar
+              # feh
+              # xsecurelock
+
+              # Wayland
+              river
+              waybar
+              wob
+
+              # Other
               xdg
               gtk
               dconf
               fcitx5
-              picom
-              polybar
               rofi
               dunst
-              feh
-              xsecurelock
             ];
             apps = [
               kitty
