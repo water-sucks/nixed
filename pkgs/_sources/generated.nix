@@ -107,4 +107,15 @@
       sha256 = "sha256-cDt45vkgl1cq5avyMuZ94zdWyWmKWtUQ6/VzuSpP4y4=";
     };
   };
+  wob = {
+    pname = "wob";
+    version = "dcf9bcf73cdc5204c6fc2a08f60ed64ebac38980";
+    src = fetchFromGitHub {
+      owner = "francma";
+      repo = "wob";
+      rev = "dcf9bcf73cdc5204c6fc2a08f60ed64ebac38980";
+      fetchSubmodules = false;
+      sha256 = "sha256-3O2RdoL8FjOgO2SZG5j1S8Qq82CN3owCLkqCk/0w2ks=";
+    };
+  };
 }

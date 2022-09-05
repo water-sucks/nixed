@@ -26,6 +26,10 @@ fetch.git = "https://git.sr.ht/~leon_plickat/lswt"
 src.git = "https://github.com/b10n/waybar-mpris"
 fetch.github = "b10n/waybar-mpris"
 
+[wob]
+src.git = "https://github.com/francma/wob"
+fetch.github = "francma/wob"
+
 [picom]
 src.git = "https://github.com/ibhagwan/picom"
 fetch.github = "ibhagwan/picom"

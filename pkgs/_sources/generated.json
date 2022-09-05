@@ -167,5 +167,24 @@
             "url": "https://gitlab.freedesktop.org/ifreund/wlroots"
         },
         "version": "96ebf7426096f4d4ca08934377195def706c8243"
+    },
+    "wob": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "wob",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "francma",
+            "repo": "wob",
+            "rev": "dcf9bcf73cdc5204c6fc2a08f60ed64ebac38980",
+            "sha256": "sha256-3O2RdoL8FjOgO2SZG5j1S8Qq82CN3owCLkqCk/0w2ks=",
+            "type": "github"
+        },
+        "version": "dcf9bcf73cdc5204c6fc2a08f60ed64ebac38980"
     }
 }

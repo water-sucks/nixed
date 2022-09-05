@@ -33,6 +33,7 @@
   alt = "Alt";
   return = "Return";
 
+  sed = "${pkgs.gnused}/bin/sed";
   kitty = "${pkgs.kitty}/bin/kitty";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
@@ -45,6 +46,7 @@
     pkgs.writeShellScriptBin "waylock"
     "${pkgs.waylock}/bin/waylock -init-color 0x121212 -input-color 0x732735 -fail-color 0x8a0801 $@";
   waylockCommand = "${waylockWrapper}/bin/waylock";
+  wobSocket = "$XDG_RUNTIME_DIR/wob.sock";
 
   screenshot = pkgs.writeShellScript "take-screenshot.sh" ''
     if [ "$1" == "-s" ]; then
@@ -144,16 +146,16 @@ in {
 
         # Media buttons (also work in locked mode)
         (map (f: [
-          (f (exec [] "XF86AudioRaiseVolume" "${amixer} sset Master 1%+"))
-          (f (exec [] "XF86AudioLowerVolume" "${amixer} sset Master 1%-"))
-          (f (exec [] "XF86AudioMute" "${amixer} sset Master toggle"))
+          (f (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 1%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
+          (f (exec [] "XF86AudioLowerVolume" ''${amixer} sset Master 1%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
+          (f (exec [] "XF86AudioMute" ''${amixer} sset Master toggle | ${sed} -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > ${wobSocket}''))
           (f (exec [] "XF86AudioMicMute" "${amixer} sset Capture toggle"))
           (f (exec [] "XF86AudioMedia" "${playerctl} play-pause"))
           (f (exec [] "XF86AudioPlay" "${playerctl} play-pause"))
           (f (exec [] "XF86AudioPrev" "${playerctl} previous"))
           (f (exec [] "XF86AudioNext" "${playerctl} next"))
-          (f (exec [] "XF86MonBrightnessUp" "${light} -A 5"))
-          (f (exec [] "XF86MonBrightnessDown" "${light} -U 5"))
+          (f (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}"))
+          (f (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}"))
           (f (exec [] "XF86Calculator" "rofi -modi calc -show calc"))
         ]) [nmap lmap])
       ];
@@ -165,6 +167,7 @@ in {
       dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
       systemctl --user import-environment DISPLAY WAYLAND_DISPLAY
       systemctl --user restart graphical-session.target
+      systemctl --user restart wob.socket
 
       ${lib.concatStringsSep "\n" bindings}
 
