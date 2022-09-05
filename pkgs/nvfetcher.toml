@@ -1,3 +1,35 @@
+[wlroots]
+src.git = "https://gitlab.freedesktop.org/ifreund/wlroots"
+src.branch = "session-lock-0.15"
+fetch.git = "https://gitlab.freedesktop.org/ifreund/wlroots"
+
+[river]
+src.git = "https://github.com/riverwm/river"
+src.branch = "session-lock"
+fetch.github = "riverwm/river"
+git.fetchSubmodules = true
+
+[waylock]
+src.github_tag = "ifreund/waylock"
+fetch.github = "ifreund/waylock"
+git.fetchSubmodules = true
+
+[waybar]
+src.git = "https://github.com/Alexays/Waybar"
+fetch.github = "Alexays/Waybar"
+
+[lswt]
+src.git = "https://git.sr.ht/~leon_plickat/lswt"
+fetch.git = "https://git.sr.ht/~leon_plickat/lswt"
+
+[waybar-mpris]
+src.git = "https://github.com/b10n/waybar-mpris"
+fetch.github = "b10n/waybar-mpris"
+
+[wob]
+src.git = "https://github.com/francma/wob"
+fetch.github = "francma/wob"
+
 [picom]
 src.git = "https://github.com/ibhagwan/picom"
 fetch.github = "ibhagwan/picom"

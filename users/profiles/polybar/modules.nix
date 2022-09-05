@@ -42,7 +42,7 @@
     ${nmcli} radio wifi "$(${nmcli} r wifi | ${grep} enabled -c | ${sed} -e "s/1/off/" | ${sed} -e "s/0/on/")"
   '';
 
-  power-menu = import ./power-menu.nix pkgs;
+  power-menu = import ../power-menu.nix pkgs;
 in {
   services.polybar.config = {
     "module/launcher" = {

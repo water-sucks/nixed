@@ -11,6 +11,10 @@ lib.mkIf pkgs.stdenv.isLinux {
     rescrobbled
   ];
 
+  xdg.mimeApps.defaultApplications = {
+    "x-scheme-handler/tidal" = ["tidal-hifi.desktop"];
+  };
+
   services.playerctld.enable = true;
 
   xdg.configFile."rescrobbled/config.toml".source =

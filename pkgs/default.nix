@@ -6,4 +6,7 @@ final: prev: {
   plymouth-spinning-watch-theme = final.callPackage ./applications/misc/plymouth-spinning-watch-theme {};
   filen-desktop = final.callPackage ./applications/networking/filen-desktop {};
   rescrobbled = final.callPackage ./tools/audio/rescrobbled {};
+  waylock = final.callPackage ./misc/screensavers/waylock {};
+  lswt = final.callPackage ./tools/wayland/lswt {};
+  waybar-mpris = final.callPackage ./misc/waybar-mpris {};
 }
