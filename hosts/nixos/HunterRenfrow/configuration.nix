@@ -20,6 +20,8 @@
     };
   };
 
+  xdg.portal.wlr.settings.screencast.output_name = "eDP-1";
+
   age.secrets.varun-user-HunterRenfrow.file = "${self}/secrets/varun-user-HunterRenfrow.age";
   users.users.varun.passwordFile = "/run/agenix/varun-user-HunterRenfrow";
 
