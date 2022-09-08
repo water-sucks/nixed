@@ -21,6 +21,8 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+  xdg.portal.wlr.settings.screencast.output_name = "HDMI-A-1";
+
   age.secrets.varun-user-DerekCarr.file = "${self}/secrets/varun-user-DerekCarr.age";
   users.users.varun.passwordFile = "/run/agenix/varun-user-DerekCarr";
 
