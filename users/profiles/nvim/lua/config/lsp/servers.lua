@@ -72,3 +72,15 @@ for _, server in pairs(servers) do
 
   lsp[server].setup(coq.lsp_ensure_capabilities(config))
 end
+
+-- I got very annoyed by the ccls message about offset encodings,
+-- and decided to silence it. It's a legitimate issue that needs
+-- to be fixed upstream, though, so I'm following it.
+local notify = vim.notify
+vim.notify = function(msg, ...)
+  if msg:match("warning: multiple different client offset_encodings") then
+    return
+  end
+
+  notify(msg, ...)
+end
