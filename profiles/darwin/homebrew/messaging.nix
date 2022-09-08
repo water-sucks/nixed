@@ -8,5 +8,6 @@
     "slack"
     "whatsapp"
     "zoom"
+    "microsoft-teams"
   ];
 }
