@@ -18,4 +18,8 @@
       polybar oofbar &
     '';
   };
+
+  systemd.user.services.polybar = {
+    Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+  };
 }

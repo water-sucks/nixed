@@ -189,6 +189,7 @@ in {
       Description = "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
       PartOf = ["graphical-session.target"];
       After = ["graphical-session-pre.target"];
+      ConditionPathExistsGlob = ["%t/wayland-*"];
     };
 
     Install.WantedBy = ["graphical-session.target"];

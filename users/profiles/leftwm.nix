@@ -17,7 +17,6 @@
   alt = "Alt";
   return = "Return";
 
-  leftwm = "${pkgs.leftwm}/bin/leftwm";
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
   feh = "${pkgs.feh}/bin/feh";
   kitty = "${pkgs.kitty}/bin/kitty";
@@ -49,7 +48,15 @@ in {
     pkgs.maim
   ];
 
-  xsession.enable = true;
+  xsession = {
+    enable = true;
+    initExtra = ''
+      # Causes problems for xss-lock and other services that
+      # use this to test for Wayland.
+      systemctl --user unset-environment WAYLAND_DISPLAY
+      ${xset} s 300 50
+    '';
+  };
 
   xsession.windowManager.leftwm = {
     enable = true;

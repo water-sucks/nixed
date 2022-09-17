@@ -13,7 +13,7 @@ in {
     enable = mkEnableOption "Wayland overlay bar";
 
     # I'm lazy, so I'm just going to specify the global
-    # sectioninside my config.
+    # section inside my config.
     settings = mkOption {
       type = types.attrs;
       default = {};
@@ -29,6 +29,7 @@ in {
         Description = "Wayland overlay bar";
         PartOf = ["graphical-session.target"];
         After = ["graphical-session-pre.target"];
+        ConditionPathExistsGlob = ["%t/wayland-*"];
       };
 
       Install.WantedBy = ["graphical-session.target"];
@@ -45,6 +46,7 @@ in {
       Socket = {
         ListenFIFO = "%t/wob.sock";
         SocketMode = 0600;
+        ConditionPathExistsGlob = ["%t/wayland-*"];
       };
 
       Install.WantedBy = ["sockets.target" "graphical-session.target"];

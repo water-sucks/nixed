@@ -112,7 +112,7 @@
             // {
               users = digga.lib.rakeLeaves ./users;
             };
-          suites = with profiles; rec {
+          suites = with profiles; {
             base = [
               nix
               core
@@ -129,7 +129,7 @@
             graphical = [
               dot # I only need DoT privacy on machines with GUI environments
               wm-helper
-              greetd
+              lightdm
               sound
               bluetooth
               i18n
@@ -171,7 +171,7 @@
             // {
               users = digga.lib.rakeLeaves ./users;
             };
-          suites = with profiles; rec {
+          suites = with profiles; {
             base = [
               nix
               core
@@ -196,7 +196,7 @@
         modules = [];
         importables = rec {
           profiles = digga.lib.rakeLeaves ./users/profiles;
-          suites = with profiles; rec {
+          suites = with profiles; {
             base = [
               zsh
               nerdfetch
@@ -217,12 +217,12 @@
             ];
             # Linux only!
             graphical = [
-              # X11 (not using)
-              # leftwm
-              # picom
-              # polybar
-              # feh
-              # xsecurelock
+              # X11
+              leftwm
+              picom
+              polybar
+              feh
+              xsecurelock
 
               # Wayland
               river

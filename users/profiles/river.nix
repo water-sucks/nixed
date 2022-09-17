@@ -185,6 +185,7 @@ in {
       PartOf = ["graphical-session.target"];
       After = ["graphical-session-pre.target"];
       Description = "Set wallpaper";
+      ConditionPathExistsGlob = ["%t/wayland-*"];
     };
     Service = {
       ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${self}/assets/woah.jpg";
@@ -199,6 +200,7 @@ in {
     Unit = {
       PartOf = ["graphical-session.target"];
       Description = "Lock screen automatically after 15 minutes";
+      ConditionPathExistsGlob = ["%t/wayland-*"];
     };
     Service = {
       ExecStart = ''

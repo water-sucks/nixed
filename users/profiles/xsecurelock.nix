@@ -1,9 +1,4 @@
-{
-  config,
-  self,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     xss-lock
     xscreensaver
@@ -19,5 +14,14 @@
       "-n ${pkgs.xsecurelock}/libexec/xsecurelock/dimmer"
       "-l"
     ];
+  };
+
+  systemd.user.services = {
+    xss-lock = {
+      Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+    };
+    xautolock-session = {
+      Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+    };
   };
 }

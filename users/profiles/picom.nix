@@ -75,4 +75,8 @@
     };
     experimentalBackends = true;
   };
+
+  systemd.user.services.picom = {
+    Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+  };
 }

@@ -6,7 +6,7 @@
   services.xserver = {
     displayManager.lightdm = {
       enable = true;
-      background = "${self}/assets/cool.jpg";
+      background = "${self}/assets/cube.jpg";
 
       greeters.slick = {
         enable = true;

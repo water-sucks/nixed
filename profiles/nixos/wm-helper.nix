@@ -18,11 +18,19 @@
     libinput.enable = true;
 
     desktopManager.xterm.enable = false;
+
+    displayManager.sessionPackages = with pkgs; [river];
+    displayManager.defaultSession = "river";
+    windowManager.leftwm.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [river];
 
   environment.variables = {
     GTK_THEME = "Orchis:dark";
   };
+
+  security.rtkit.enable = true; # To stop xdg-desktop-portal from complaining about it
 
   xdg = {
     sounds.enable = false;
