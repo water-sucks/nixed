@@ -12,11 +12,11 @@
             "name": null,
             "owner": "nvim-neorg",
             "repo": "tree-sitter-norg",
-            "rev": "17d61df817c1e0a9cdef8d915d4e4c556b7cf68c",
-            "sha256": "sha256-kM1Y1TpeXgkWk/N81vmtVS8SGw+U/fkYJQ467+6sN5g=",
+            "rev": "31990db6340084cf7770fdadcb3c1d6a438f263a",
+            "sha256": "sha256-RbFuZjoj5SEQlan8O6v+8ZyIyz2nMTdK/tkVoiSuvCU=",
             "type": "github"
         },
-        "version": "17d61df817c1e0a9cdef8d915d4e4c556b7cf68c"
+        "version": "31990db6340084cf7770fdadcb3c1d6a438f263a"
     },
     "tree-sitter-norg-meta": {
         "cargoLocks": null,
@@ -55,5 +55,24 @@
             "type": "github"
         },
         "version": "f354ea343b8803948e6e1df36eb586e31c529900"
+    },
+    "tree-sitter-vala": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "tree-sitter-vala",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "vala-lang",
+            "repo": "tree-sitter-vala",
+            "rev": "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b",
+            "sha256": "sha256-YZTE3PkBPCEkMXnLC0HSQ86v5+3/J7/ETDQp8eguFW8=",
+            "type": "github"
+        },
+        "version": "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b"
     }
 }

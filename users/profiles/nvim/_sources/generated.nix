@@ -6,13 +6,13 @@
 }: {
   tree-sitter-norg = {
     pname = "tree-sitter-norg";
-    version = "17d61df817c1e0a9cdef8d915d4e4c556b7cf68c";
+    version = "31990db6340084cf7770fdadcb3c1d6a438f263a";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "tree-sitter-norg";
-      rev = "17d61df817c1e0a9cdef8d915d4e4c556b7cf68c";
+      rev = "31990db6340084cf7770fdadcb3c1d6a438f263a";
       fetchSubmodules = false;
-      sha256 = "sha256-kM1Y1TpeXgkWk/N81vmtVS8SGw+U/fkYJQ467+6sN5g=";
+      sha256 = "sha256-RbFuZjoj5SEQlan8O6v+8ZyIyz2nMTdK/tkVoiSuvCU=";
     };
   };
   tree-sitter-norg-meta = {
@@ -35,6 +35,17 @@
       rev = "f354ea343b8803948e6e1df36eb586e31c529900";
       fetchSubmodules = false;
       sha256 = "sha256-xTH4LmqhtfyN9JGQdquJLQz1McZQItdEY5HpJxbuYC0=";
+    };
+  };
+  tree-sitter-vala = {
+    pname = "tree-sitter-vala";
+    version = "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b";
+    src = fetchFromGitHub {
+      owner = "vala-lang";
+      repo = "tree-sitter-vala";
+      rev = "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b";
+      fetchSubmodules = false;
+      sha256 = "sha256-YZTE3PkBPCEkMXnLC0HSQ86v5+3/J7/ETDQp8eguFW8=";
     };
   };
 }

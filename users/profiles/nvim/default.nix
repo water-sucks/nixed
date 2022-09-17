@@ -13,6 +13,9 @@
       tree-sitter-norg-meta = {
         inherit (sources.tree-sitter-norg-meta) src;
       };
+      tree-sitter-vala = {
+        inherit (sources.tree-sitter-vala) src;
+      };
     };
   };
 

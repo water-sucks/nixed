@@ -9,3 +9,7 @@ fetch.github = "nvim-neorg/tree-sitter-norg-meta"
 [tree-sitter-norg-table]
 src.git = "https://github.com/nvim-neorg/tree-sitter-norg-table"
 fetch.github = "nvim-neorg/tree-sitter-norg-table"
+
+[tree-sitter-vala]
+src.git = "https://github.com/vala-lang/tree-sitter-vala"
+fetch.github = "vala-lang/tree-sitter-vala"
