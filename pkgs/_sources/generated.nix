@@ -53,24 +53,24 @@
   };
   river = {
     pname = "river";
-    version = "4ba7f80f8dc29b799859c0a32eb407c232636943";
+    version = "8d43028277091687b853c59f20ced5d04dfc15dc";
     src = fetchFromGitHub {
       owner = "riverwm";
       repo = "river";
-      rev = "4ba7f80f8dc29b799859c0a32eb407c232636943";
+      rev = "8d43028277091687b853c59f20ced5d04dfc15dc";
       fetchSubmodules = true;
-      sha256 = "sha256-Q4eu4PleVXqJPvmJePcKO0bE1ro37xfXhqaLZb7QRuw=";
+      sha256 = "sha256-8SjfQKlELSSmIHmOAAwkr8q8Ddx/kNcCLSHhVhcnuaY=";
     };
   };
   waybar = {
     pname = "waybar";
-    version = "4deb6d812d6a34c84b3d4b053c1d9673bc2864d7";
+    version = "710f89599e87114857d1510625c503dd9de36af1";
     src = fetchFromGitHub {
       owner = "Alexays";
       repo = "Waybar";
-      rev = "4deb6d812d6a34c84b3d4b053c1d9673bc2864d7";
+      rev = "710f89599e87114857d1510625c503dd9de36af1";
       fetchSubmodules = false;
-      sha256 = "sha256-nYxRKO7oHpiCH7DgSHDxnrPi5y2CRXpegSer1dQOLTo=";
+      sha256 = "sha256-kHkFRQwFPen4QbMdXODr8o+Ms0Ee3OGzqTTDjvel4xA=";
     };
   };
   waybar-mpris = {
