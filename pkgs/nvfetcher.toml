@@ -36,7 +36,7 @@ fetch.github = "ibhagwan/picom"
 
 [filen-desktop]
 # src.github = "FilenCloudDienste/filen-desktop"
-src.manual = "2.0.3" # Pinning source for now, because it's not provided on the CDN
+src.manual = "2.0.4" # Pinning source for now, because it's not provided on the CDN
 fetch.url = "https://cdn.filen.io/desktop/release/$ver/filen_x86_64.AppImage"
 
 [rescrobbled]
