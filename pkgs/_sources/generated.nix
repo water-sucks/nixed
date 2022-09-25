@@ -6,10 +6,10 @@
 }: {
   filen-desktop = {
     pname = "filen-desktop";
-    version = "2.0.3";
+    version = "2.0.4";
     src = fetchurl {
-      url = "https://cdn.filen.io/desktop/release/2.0.3/filen_x86_64.AppImage";
-      sha256 = "sha256-k4CpISmTXYp0mVLPX2ep4dKr3KIaqJql2vNmUCmlBJs=";
+      url = "https://cdn.filen.io/desktop/release/2.0.4/filen_x86_64.AppImage";
+      sha256 = "sha256-WvMYMafUxaktJP0cSSkqIe2Hi6mkDH0PiFA9UVqzDM0=";
     };
   };
   lswt = {
@@ -45,8 +45,8 @@
       fetchSubmodules = false;
       sha256 = "sha256-RzqufEucBwhTW+ZjhlLgEZwYZ9QSgMtBd9A62JhqW94=";
     };
-    cargoLock."./Cargo.lock" = {
-      lockFile = ./rescrobbled-v0.6.0/./Cargo.lock;
+    cargoLock."Cargo.lock" = {
+      lockFile = ./rescrobbled-v0.6.0/Cargo.lock;
       outputHashes = {
       };
     };
@@ -67,7 +67,7 @@
     version = "710f89599e87114857d1510625c503dd9de36af1";
     src = fetchFromGitHub {
       owner = "Alexays";
-      repo = "Waybar";
+      repo = "waybar";
       rev = "710f89599e87114857d1510625c503dd9de36af1";
       fetchSubmodules = false;
       sha256 = "sha256-kHkFRQwFPen4QbMdXODr8o+Ms0Ee3OGzqTTDjvel4xA=";

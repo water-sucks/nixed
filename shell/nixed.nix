@@ -30,12 +30,18 @@ in {
     export PATH=''${_PATH}
     unset _PATH
   '');
+  packages = with pkgs; [
+    haskell-language-server
+    nix-prefetch
+    nvchecker
+    (haskellPackages.ghcWithPackages (p: [p.nvfetcher]))
+  ];
 
   commands = with pkgs; [
     (nixed nix)
     (nixed agenix)
     (nixed cachix)
-    (nixed nvfetcher)
+    # (nixed nvfetcher)
     (nixed inputs.deploy.packages.${pkgs.system}.deploy-rs)
 
     (linter stylua)

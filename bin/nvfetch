@@ -23,14 +23,6 @@ cd_to_root() {
   cd "$(git rev-parse --show-toplevel)" || exit 2
 }
 
-fetch() {
-  cd "$(dirname "$1")" || exit 2
-
-  if ! nvfetcher; then
-    echo "error: nvfetcher unable to run in $(dirname "$PWD")"
-  fi
-}
-
 confirm() {
   read -n 1 -s -r -p "Press any key to start: "
   echo ""
@@ -82,7 +74,7 @@ done
 
 cd_to_root
 
-for file in **/nvfetcher.toml; do
+for file in **/Fetch.hs; do
   cd "$PRJ_ROOT/$(dirname "$file")" || exit 2
 
   if "$interactive"; then
@@ -90,7 +82,7 @@ for file in **/nvfetcher.toml; do
     confirm
   fi
 
-  if ! nvfetcher; then
+  if ! runghc "$(basename "$file")"; then
     printf "error: unable to run nvfetcher in %s\n\n" "$(dirname "$file")"
 
     if ! "$continue"; then

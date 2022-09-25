@@ -7,10 +7,10 @@
   dbus,
   openssl,
 }:
-rustPlatform.buildRustPackage rec {
+rustPlatform.buildRustPackage {
   inherit (sources.rescrobbled) pname version src;
 
-  cargoLock = sources.rescrobbled.cargoLock."./Cargo.lock";
+  cargoLock = sources.rescrobbled.cargoLock."Cargo.lock";
 
   postPatch = ''
     substituteInPlace src/filter.rs --replace '#!/usr/bin/bash' '#!${stdenv.shell}'
