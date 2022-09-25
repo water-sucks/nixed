@@ -7,11 +7,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-k4CpISmTXYp0mVLPX2ep4dKr3KIaqJql2vNmUCmlBJs=",
+            "sha256": "sha256-WvMYMafUxaktJP0cSSkqIe2Hi6mkDH0PiFA9UVqzDM0=",
             "type": "url",
-            "url": "https://cdn.filen.io/desktop/release/2.0.3/filen_x86_64.AppImage"
+            "url": "https://cdn.filen.io/desktop/release/2.0.4/filen_x86_64.AppImage"
         },
-        "version": "2.0.3"
+        "version": "2.0.4"
     },
     "lswt": {
         "cargoLocks": null,
@@ -52,8 +52,8 @@
     },
     "rescrobbled": {
         "cargoLocks": {
-            "./Cargo.lock": [
-                "./rescrobbled-v0.6.0/./Cargo.lock",
+            "Cargo.lock": [
+                "./rescrobbled-v0.6.0/Cargo.lock",
                 {}
             ]
         },
@@ -105,7 +105,7 @@
             "leaveDotGit": false,
             "name": null,
             "owner": "Alexays",
-            "repo": "Waybar",
+            "repo": "waybar",
             "rev": "710f89599e87114857d1510625c503dd9de36af1",
             "sha256": "sha256-kHkFRQwFPen4QbMdXODr8o+Ms0Ee3OGzqTTDjvel4xA=",
             "type": "github"

@@ -22,6 +22,9 @@
     deploy.url = "github:input-output-hk/deploy-rs";
     deploy.inputs.nixpkgs.follows = "nixpkgs";
 
+    nvfetcher.url = "github:berberman/nvfetcher/0.5.0";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+
     alejandra.url = "github:kamadorueda/alejandra";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -67,6 +70,7 @@
             leftwm.overlay
             discord.overlay
             alejandra.overlay
+            nvfetcher.overlay
           ];
         };
       };
