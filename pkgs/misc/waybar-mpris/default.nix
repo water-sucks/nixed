@@ -2,7 +2,6 @@
   sources,
   lib,
   buildGoModule,
-  jack2,
 }:
 buildGoModule {
   inherit (sources.waybar-mpris) pname version src;
