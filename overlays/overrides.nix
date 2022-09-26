@@ -1,4 +1,4 @@
-channels: final: prev: {
+channels: _final: prev: {
   __dontExport = true;
   sumneko-lua-language-server =
     if prev.stdenv.isDarwin

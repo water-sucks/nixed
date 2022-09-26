@@ -1,8 +1,4 @@
 {
-  self,
-  config,
-  ...
-}: {
   programs.ssh = {
     enable = true;
     forwardAgent = false;
