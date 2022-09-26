@@ -43,9 +43,10 @@
     fi
   '';
 in {
-  home.packages = [
+  home.packages = with pkgs; [
     pkgs.slop
     pkgs.maim
+    xclip
   ];
 
   xsession = {

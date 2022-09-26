@@ -61,7 +61,7 @@
   '';
   powerMenu = import ./power-menu.nix pkgs;
 in {
-  home.packages = with pkgs; [waylockWrapper pavucontrol];
+  home.packages = with pkgs; [waylockWrapper wl-clipboard pavucontrol];
 
   wayland.windowManager.river = {
     enable = true;
