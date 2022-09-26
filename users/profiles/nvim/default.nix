@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: let
   sources = pkgs.callPackage _sources/generated.nix {};
@@ -20,6 +21,29 @@
   };
 
   nil = inputs.nil.packages.${pkgs.system}.default;
+
+  generatedPluginSources = with lib;
+    mapAttrs' (n: nameValuePair (removePrefix "'plugin-" (removeSuffix "'" n))) (filterAttrs (n: _: hasPrefix "'plugin-" n) sources);
+
+  buildPlugin = source:
+    pkgs.vimUtils.buildVimPluginFrom2Nix {
+      inherit (source) pname version src;
+    };
+
+  generatedPlugins = with lib; mapAttrs (_: buildPlugin) generatedPluginSources;
+
+  plugins =
+    generatedPlugins
+    // {
+      # Use nvim-treesitter plugins from nixpkgs so
+      # Treesitter queries are synced with libraries
+      inherit
+        (pkgs.vimPlugins)
+        nvim-treesitter
+        nvim-treesitter-textobjects
+        nvim-treesitter-refactor
+        ;
+    };
 in {
   home.packages = with pkgs; [
     neovim-remote
@@ -92,10 +116,18 @@ in {
     };
   };
 
-  xdg.dataFile = {
-    "nvim/vscode-lldb" = {
-      source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
-      recursive = true;
-    };
-  };
+  xdg.dataFile =
+    {
+      "nvim/vscode-lldb" = {
+        source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+        recursive = true;
+      };
+    }
+    // (with lib;
+      mapAttrs' (n: v:
+        nameValuePair "nvim/plugins/${n}" {
+          source = "${v}";
+          recursive = true;
+        })
+      plugins);
 }

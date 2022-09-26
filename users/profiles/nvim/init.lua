@@ -3,7 +3,7 @@ if ok then
   impatient.enable_profile()
 end
 
-local modules = { "options", "autocmds", "mappings", "commands" }
+local modules = { "options", "autocmds", "mappings", "commands", "plugins" }
 
 for _, module in ipairs(modules) do
   ok = pcall(require, module)
@@ -12,25 +12,25 @@ for _, module in ipairs(modules) do
   end
 end
 
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.isdirectory(install_path) < 1 then
-  print("Cloning packer ..")
+-- local fn = vim.fn
+-- local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+-- if fn.isdirectory(install_path) < 1 then
+--   print("Cloning packer ..")
+--
+--   fn.system({
+--     "git",
+--     "clone",
+--     "--depth",
+--     "1",
+--     "https://github.com/wbthomason/packer.nvim",
+--     install_path,
+--   })
+--
+--   print("Packer cloned successfully!")
+--
+--   vim.cmd("packadd packer.nvim")
+--   require("plugins")
+--   require("packer").sync()
+-- end
 
-  fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
-
-  print("Packer cloned successfully!")
-
-  vim.cmd("packadd packer.nvim")
-  require("plugins")
-  require("packer").sync()
-end
-
-require("plugins")
+-- require("plugins")

@@ -3,6 +3,15 @@ if not ok then
   return
 end
 
+local function generated(name)
+  local plugin_name = name:match("[^/]+$")
+  local plugin_dir = vim.fn.stdpath("data") .. "/plugins/" .. plugin_name
+  if vim.fn.isdirectory(plugin_dir) then
+    return plugin_dir
+  end
+  return name
+end
+
 packer.init({
   auto_clean = true,
   compile_on_sync = true,
@@ -18,31 +27,31 @@ packer.init({
 packer.startup({
   function(use)
     -- Vitals
-    use("wbthomason/packer.nvim")
-    use("lewis6991/impatient.nvim")
-    use("nvim-lua/plenary.nvim")
-    use("nathom/filetype.nvim")
+    use(generated("wbthomason/packer.nvim"))
+    use(generated("lewis6991/impatient.nvim"))
+    use(generated("nvim-lua/plenary.nvim"))
+    use(generated("nathom/filetype.nvim"))
     use({
-      "dstein64/vim-startuptime",
+      generated("dstein64/vim-startuptime"),
       event = "CursorHold",
     })
 
     -- Editor tooling
     use({
-      "neovim/nvim-lspconfig",
+      generated("neovim/nvim-lspconfig"),
       config = function()
         require("config.lsp")
       end,
     })
     use({
-      "lukas-reineke/lsp-format.nvim",
+      generated("lukas-reineke/lsp-format.nvim"),
       config = function()
         require("lsp-format").setup({})
         vim.cmd([[cabbrev wq execute "Format sync" <bar> wq]])
       end,
     })
     use({
-      "jose-elias-alvarez/null-ls.nvim",
+      generated("jose-elias-alvarez/null-ls.nvim"),
       event = "CursorHold",
       requires = { "lukas-reineke/lsp-format.nvim" },
       config = function()
@@ -50,21 +59,21 @@ packer.startup({
       end,
     })
     use({
-      "ray-x/lsp_signature.nvim",
+      generated("ray-x/lsp_signature.nvim"),
       event = "CursorHold",
       config = function()
         require("config.lsp.signature")
       end,
     })
     use({
-      "nanotee/zoxide.vim",
+      generated("nanotee/zoxide.vim"),
       event = "CursorHold",
     })
 
     -- Completion
     use({
       {
-        "ms-jpq/coq_nvim",
+        generated("ms-jpq/coq_nvim"),
         branch = "coq",
         run = function()
           if not vim.fn.isdirectory(vim.fn.stdpath("data") .. "/coqrt") then
@@ -72,20 +81,20 @@ packer.startup({
           end
         end,
       },
-      { "ms-jpq/coq.artifacts", branch = "artifacts" },
-      { "ms-jpq/coq.thirdparty", branch = "3p" },
+      { generated("ms-jpq/coq.artifacts") },
+      { generated("ms-jpq/coq.thirdparty") },
     })
 
     -- Specialized windows
     use({
-      "stevearc/dressing.nvim",
+      generated("stevearc/dressing.nvim"),
       event = "CursorHold",
       config = function()
         require("dressing").setup()
       end,
     })
     use({
-      "kyazdani42/nvim-tree.lua",
+      generated("kyazdani42/nvim-tree.lua"),
       event = "CursorHold",
       requires = {
         "kyazdani42/nvim-web-devicons",
@@ -96,7 +105,7 @@ packer.startup({
       end,
     })
     use({
-      "nvim-telescope/telescope.nvim",
+      generated("nvim-telescope/telescope.nvim"),
       event = "CursorHold",
       requires = { "nvim-lua/plenary.nvim" },
       config = function()
@@ -104,32 +113,32 @@ packer.startup({
       end,
     })
     use({
-      "sidebar-nvim/sidebar.nvim",
+      generated("sidebar-nvim/sidebar.nvim"),
       event = "CursorHold",
       config = function()
         require("config.sidebar")
       end,
     })
     use({
-      "folke/trouble.nvim",
+      generated("folke/trouble.nvim"),
       event = "CursorHold",
       config = function()
         require("config.trouble")
       end,
     })
     use({
-      "voldikss/vim-floaterm",
+      generated("voldikss/vim-floaterm"),
       event = "CursorHold",
       config = function()
         require("config.floaterm")
       end,
     })
     use({
-      "weilbith/nvim-code-action-menu",
+      generated("weilbith/nvim-code-action-menu"),
       cmd = "CodeActionMenu",
     })
     use({
-      "stevearc/aerial.nvim",
+      generated("stevearc/aerial.nvim"),
       event = "CursorHold",
       config = function()
         require("config.aerial")
@@ -138,82 +147,82 @@ packer.startup({
 
     -- Text editing assistance/annotations
     use({
-      "tpope/vim-sleuth",
+      generated("tpope/vim-sleuth"),
       event = "BufRead",
     })
     use({
-      "tpope/vim-surround",
+      generated("tpope/vim-surround"),
       event = "CursorHold",
       config = function()
         require("config.surround")
       end,
     })
     use({
-      "tpope/vim-repeat",
+      generated("tpope/vim-repeat"),
       event = "CursorHold",
     })
     use({
-      "gpanders/editorconfig.nvim",
+      generated("gpanders/editorconfig.nvim"),
       event = "BufRead",
     })
     use({
-      "Pocco81/HighStr.nvim",
+      generated("Pocco81/HighStr.nvim"),
       event = "CursorHold",
       config = function()
         require("config.highstr")
       end,
     })
     use({
-      "numToStr/Comment.nvim",
+      generated("numToStr/Comment.nvim"),
       event = "CursorHold",
       config = function()
         require("config.comment")
       end,
     })
     use({
-      "windwp/nvim-autopairs",
+      generated("windwp/nvim-autopairs"),
       event = "CursorHold",
       config = function()
         require("config.autopairs")
       end,
     })
     use({
-      "Pocco81/auto-save.nvim",
+      generated("Pocco81/auto-save.nvim"),
       event = "CursorHold",
       config = function()
         require("config.autosave")
       end,
     })
     use({
-      "monaqa/dial.nvim",
+      generated("monaqa/dial.nvim"),
       event = "CursorHold",
       config = function()
         require("config.dial")
       end,
     })
     use({
-      "sQVe/sort.nvim",
+      generated("sQVe/sort.nvim"),
       event = "CursorHold",
       config = function()
         require("config.sort")
       end,
     })
     use({
-      "booperlv/nvim-gomove",
+      generated("booperlv/nvim-gomove"),
       event = "CursorHold",
       config = function()
         require("config.go-move")
       end,
     })
     use({
-      "David-Kunz/treesitter-unit",
+      generated("David-Kunz/treesitter-unit"),
       event = "CursorHold",
       config = function()
         require("config.treesitter_unit")
       end,
     })
     use({
-      "ggandor/leap.nvim",
+      generated("ggandor/leap.nvim"),
       event = "CursorHold",
       config = function()
         require("leap").set_default_keymaps()
@@ -222,18 +231,18 @@ packer.startup({
 
     -- UNIX/Git commands
     use({
-      "tpope/vim-eunuch",
+      generated("tpope/vim-eunuch"),
       event = "CmdlineEnter",
     })
     use({
-      "lewis6991/gitsigns.nvim",
+      generated("lewis6991/gitsigns.nvim"),
       event = "BufRead",
       config = function()
         require("config.gitsigns")
       end,
     })
     use({
-      "sindrets/diffview.nvim",
+      generated("sindrets/diffview.nvim"),
       event = "CursorHold",
       config = function()
         require("config.diffview")
@@ -243,60 +252,60 @@ packer.startup({
     -- Appearance/Theming
     use({
       {
-        "nvim-treesitter/nvim-treesitter",
+        generated("nvim-treesitter/nvim-treesitter"),
         -- event = "BufRead",
         config = function()
           require("config.treesitter")
         end,
       },
-      { "nvim-treesitter/playground", after = "nvim-treesitter" },
-      { "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
-      { "nvim-treesitter/nvim-treesitter-refactor", after = "nvim-treesitter" },
-      { "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
-      { "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" },
+      { generated("nvim-treesitter/playground"), after = "nvim-treesitter" },
+      { generated("nvim-treesitter/nvim-treesitter-textobjects"), after = "nvim-treesitter" },
+      { generated("nvim-treesitter/nvim-treesitter-refactor"), after = "nvim-treesitter" },
+      { generated("windwp/nvim-ts-autotag"), after = "nvim-treesitter" },
+      { generated("JoosepAlviste/nvim-ts-context-commentstring"), after = "nvim-treesitter" },
     })
     use({
-      "projekt0n/github-nvim-theme",
+      generated("projekt0n/github-nvim-theme"),
       config = function()
         require("config.colors")
       end,
     })
     use({
-      "nvim-lualine/lualine.nvim",
+      generated("nvim-lualine/lualine.nvim"),
       event = "BufEnter",
       config = function()
         require("config.lualine")
       end,
     })
     use({
-      "akinsho/bufferline.nvim",
+      generated("akinsho/bufferline.nvim"),
       event = "BufEnter",
       config = function()
         require("config.bufferline")
       end,
     })
     use({
-      "tiagovla/scope.nvim",
+      generated("tiagovla/scope.nvim"),
       after = "bufferline.nvim",
       config = function()
         require("scope").setup()
       end,
     })
     use({
-      "kyazdani42/nvim-web-devicons",
+      generated("kyazdani42/nvim-web-devicons"),
       config = function()
         require("nvim-web-devicons").setup({})
       end,
     })
     use({
-      "projekt0n/circles.nvim",
+      generated("projekt0n/circles.nvim"),
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
         require("circles").setup({})
       end,
     })
     use({
-      "folke/zen-mode.nvim",
+      generated("folke/zen-mode.nvim"),
       event = "CursorHold",
       requires = "twilight.nvim",
       config = function()
@@ -304,28 +313,28 @@ packer.startup({
       end,
     })
     use({
-      "folke/twilight.nvim",
+      generated("folke/twilight.nvim"),
       event = "CursorHold",
       config = function()
         require("config.twilight")
       end,
     })
     use({
-      "lukas-reineke/indent-blankline.nvim",
+      generated("lukas-reineke/indent-blankline.nvim"),
       event = "BufRead",
       config = function()
         require("config.indent-blankline")
       end,
     })
     use({
-      "kosayoda/nvim-lightbulb",
+      generated("kosayoda/nvim-lightbulb"),
       event = "BufRead",
       config = function()
         require("config.lightbulb")
       end,
     })
     use({
-      "norcalli/nvim-colorizer.lua",
+      generated("norcalli/nvim-colorizer.lua"),
       event = "CursorHold",
       config = function()
         require("colorizer").setup()
@@ -334,36 +343,36 @@ packer.startup({
 
     -- Special Neovim sauce
     use({
-      "andweeb/presence.nvim",
+      generated("andweeb/presence.nvim"),
       config = function()
         require("presence"):setup({})
       end,
     })
     use({
-      "alec-gibson/nvim-tetris",
+      generated("alec-gibson/nvim-tetris"),
       cmd = "Tetris",
     })
     use({
       {
-        "nvim-neorg/neorg",
+        generated("nvim-neorg/neorg"),
         after = "nvim-treesitter",
         config = function()
           require("config.neorg")
         end,
       },
       {
-        "nvim-neorg/neorg-telescope",
+        generated("nvim-neorg/neorg-telescope"),
         after = { "neorg", "telescope.nvim" },
       },
     })
     use({
-      "folke/which-key.nvim",
+      generated("folke/which-key.nvim"),
       config = function()
         require("config.which_key")
       end,
     })
     use({
-      "ahmedkhalf/project.nvim",
+      generated("ahmedkhalf/project.nvim"),
       after = "telescope.nvim",
       event = "CursorHold",
       config = function()
@@ -373,28 +382,28 @@ packer.startup({
 
     -- Debugging
     use({
-      "mfussenegger/nvim-dap",
+      generated("mfussenegger/nvim-dap"),
       event = "CursorHold",
       config = function()
         require("config.dap")
       end,
     })
     use({
-      "rcarriga/nvim-dap-ui",
+      generated("rcarriga/nvim-dap-ui"),
       after = "nvim-dap",
       config = function()
         require("config.dap.ui")
       end,
     })
     use({
-      "theHamsta/nvim-dap-virtual-text",
+      generated("theHamsta/nvim-dap-virtual-text"),
       event = "CursorHold",
       config = function()
         require("nvim-dap-virtual-text").setup()
       end,
     })
     use({
-      "jbyuki/one-small-step-for-vimkind",
+      generated("jbyuki/one-small-step-for-vimkind"),
       after = "nvim-dap",
       config = function()
         require("config.dap.nlua")
@@ -402,7 +411,7 @@ packer.startup({
       ft = "lua",
     })
     use({
-      "leoluz/nvim-dap-go",
+      generated("leoluz/nvim-dap-go"),
       after = "nvim-dap",
       config = function()
         require("dap-go").setup()
@@ -410,7 +419,7 @@ packer.startup({
       ft = "go",
     })
     use({
-      "mfussenegger/nvim-dap-python",
+      generated("mfussenegger/nvim-dap-python"),
       after = "nvim-dap",
       config = function()
         require("config.dap.python")
@@ -420,12 +429,12 @@ packer.startup({
 
     -- Language-specific plugins
     use({
-      "folke/lua-dev.nvim",
+      generated("folke/lua-dev.nvim"),
       module = "lua-dev",
       ft = "lua",
     })
     use({
-      "akinsho/flutter-tools.nvim",
+      generated("akinsho/flutter-tools.nvim"),
       after = "nvim-lspconfig",
       requires = "nvim-lua/plenary.nvim",
       config = function()
@@ -434,7 +443,7 @@ packer.startup({
       ft = "dart",
     })
     use({
-      "simrat39/rust-tools.nvim",
+      generated("simrat39/rust-tools.nvim"),
       after = "nvim-lspconfig",
       config = function()
         require("config.rust")
@@ -442,7 +451,7 @@ packer.startup({
       ft = "rust",
     })
     use({
-      "lervag/vimtex",
+      generated("lervag/vimtex"),
       after = "nvim-lspconfig",
       config = function()
         require("config.tex")
@@ -450,7 +459,7 @@ packer.startup({
       ft = "tex",
     })
     use({
-      "barreiroleo/ltex_extra.nvim",
+      generated("barreiroleo/ltex_extra.nvim"),
       module = "ltex_extra",
       ft = "tex",
     })
