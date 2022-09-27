@@ -42,7 +42,6 @@ in {
     (nixed agenix)
     (nixed cachix)
     # (nixed nvfetcher)
-    (nixed inputs.deploy.packages.${pkgs.system}.deploy-rs)
 
     (linter stylua)
     (linter alejandra)

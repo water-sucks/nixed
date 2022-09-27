@@ -11,16 +11,12 @@
     digga.inputs.nixpkgs.follows = "nixpkgs";
     digga.inputs.nixlib.follows = "nixpkgs";
     digga.inputs.home-manager.follows = "home";
-    digga.inputs.deploy.follows = "deploy";
 
     home.url = "github:nix-community/home-manager";
     home.inputs.nixpkgs.follows = "nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    deploy.url = "github:input-output-hk/deploy-rs";
-    deploy.inputs.nixpkgs.follows = "nixpkgs";
 
     nvfetcher.url = "github:berberman/nvfetcher/0.5.0";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
@@ -48,7 +44,6 @@
     utils,
     home,
     agenix,
-    deploy,
     ...
   } @ inputs: let
     supportedSystems = [
@@ -263,8 +258,6 @@
       devshell = ./shell;
 
       homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
-
-      deploy.nodes = digga.lib.mkDeployNodes self.nixosConfigurations {};
     })
     // utils.lib.eachSystem supportedSystems (system: {
       formatter = inputs.alejandra.defaultPackage.${system};
