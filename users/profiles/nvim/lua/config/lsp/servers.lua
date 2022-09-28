@@ -19,9 +19,6 @@ local servers = {
 }
 
 local server_configs = {
-  sumneko_lua = require("lua-dev").setup({
-    runtime_path = true,
-  }),
   elixirls = {
     cmd = {
       (function()
@@ -59,6 +56,10 @@ local server_configs = {
     cmd = { "nil" }, -- Yes, this hijacks rnix-lsp
   },
 }
+
+require("lua-dev").setup({
+  runtime_path = true,
+})
 
 for _, server in pairs(servers) do
   local config = {

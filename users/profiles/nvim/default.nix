@@ -127,7 +127,6 @@ in {
       mapAttrs' (n: v:
         nameValuePair "nvim/plugins/${n}" {
           source = "${v}";
-          recursive = true;
         })
       plugins);
 }
