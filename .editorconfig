@@ -27,6 +27,9 @@ indent_size = unset
 [*.py]
 indent_size = 4
 
+[*.hs]
+indent_size = unset
+
 [*.md]
 max_line_length = 80
 indent_size = 2

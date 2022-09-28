@@ -11,14 +11,14 @@ main = runNvFetcher packageSet
 
 packageSet :: PackageSet ()
 packageSet = do
-  define $
-    package "fast-syntax-highlighting"
-      `fromGitHubTag` ("zdharma-continuum", "fast-syntax-highlighting", id)
+    define $
+        package "fast-syntax-highlighting"
+            `fromGitHubTag` ("zdharma-continuum", "fast-syntax-highlighting", id)
 
-  define $
-    package "zsh-autosuggestions"
-      `fromGitHubTag` ("zsh-users", "zsh-autosuggestions", id)
+    define $
+        package "zsh-autosuggestions"
+            `fromGitHubTag` ("zsh-users", "zsh-autosuggestions", id)
 
-  define $
-    package "nix-shell"
-      `fromGitHub` ("chisui", "zsh-nix-shell")
+    define $
+        package "nix-shell"
+            `fromGitHub` ("chisui", "zsh-nix-shell")

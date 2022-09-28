@@ -8,6 +8,8 @@ set -euo pipefail
 set -o noclobber
 shopt -s globstar
 
+root="$(git rev-parse --show-toplevel)"
+
 help() {
   cat <<EOF
 Usage: nvfetch [options]
@@ -20,7 +22,7 @@ EOF
 }
 
 cd_to_root() {
-  cd "$(git rev-parse --show-toplevel)" || exit 2
+  cd "$root" || exit 2
 }
 
 confirm() {
@@ -75,7 +77,7 @@ done
 cd_to_root
 
 for file in **/Fetch.hs; do
-  cd "$PRJ_ROOT/$(dirname "$file")" || exit 2
+  cd "$root/$(dirname "$file")" || exit 2
 
   if "$interactive"; then
     echo "Now fetching for $file..."

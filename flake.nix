@@ -27,6 +27,9 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
+    pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
+
     leftwm.url = "github:leftwm/leftwm";
     leftwm.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -42,8 +45,6 @@
     digga,
     nixpkgs,
     utils,
-    home,
-    agenix,
     ...
   } @ inputs: let
     supportedSystems = [
@@ -72,7 +73,7 @@
 
       lib = import ./lib {lib = digga.lib // nixpkgs.lib;};
 
-      sharedOverlays = [
+      sharedOverlays = with inputs; [
         (_final: prev: {
           __dontExport = true;
           lib = prev.lib.extend (_lfinal: _lprev: {
@@ -92,7 +93,7 @@
             (digga.lib.importExportableModules ./modules/common)
             # (digga.lib.importExportableModules ./modules/nixos)
           ];
-          modules = [
+          modules = with inputs; [
             {lib.our = self.lib;}
             home.nixosModules.home-manager
             agenix.nixosModules.age
@@ -151,7 +152,7 @@
             (digga.lib.importExportableModules ./modules/common)
             (digga.lib.importExportableModules ./modules/darwin)
           ];
-          modules = [
+          modules = with inputs; [
             {lib.our = self.lib;}
             home.darwinModules.home-manager
             agenix.nixosModules.age
@@ -255,11 +256,26 @@
         users = {};
       };
 
-      devshell = ./shell;
-
       homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
     })
-    // utils.lib.eachSystem supportedSystems (system: {
+    // utils.lib.eachSystem supportedSystems (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = with inputs; [
+          agenix.overlay
+          leftwm.overlay
+          discord.overlay
+          alejandra.overlay
+          nvfetcher.overlay
+          (import ./pkgs)
+        ];
+      };
+    in {
       formatter = inputs.alejandra.defaultPackage.${system};
+
+      checks = import ./checks.nix {inherit inputs pkgs;};
+
+      devShells.default = import ./shell.nix {inherit self pkgs;};
     });
 }

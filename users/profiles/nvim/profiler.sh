@@ -18,3 +18,4 @@ done
 
 average=$(echo "$total" / "$iterations" | bc -l)
 echo "$average"
+exit 0

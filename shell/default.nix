@@ -1,5 +1,0 @@
-_: {
-  exportedModules = [
-    ./nixed.nix
-  ];
-}
