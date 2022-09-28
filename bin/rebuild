@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=2251 # Disables annoying check for skipping errexit
+
+# Fetch all inputs specified in all nvfetcher.toml files.
+
+set -euo pipefail
+set -o noclobber
+
+cd "$(git rev-parse --show-toplevel)"
+
+KERNEL_NAME="$( uname -s | tr '[:upper:]' '[:lower:]')"
+
+case "${KERNEL_NAME}" in
+  linux)
+    sudo nixos-rebuild --flake ".#$(hostname)" "$@" ;;
+  darwin)
+    TERM=xterm-256color darwin-rebuild --flake ".#$(hostname)" "$@" ;;
+  *)
+    echo "Uh oh! Unknown system detected."
+    exit 1
+    ;;
+esac

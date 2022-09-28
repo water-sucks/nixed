@@ -1,10 +1,4 @@
 result
 .direnv
 doc/index.html
-
-# Result of bud commands
-vm
-iso
-doi
-
-**/.shake*
+.pre-commit-config.yaml

@@ -1,0 +1,17 @@
+[formatter.nix]
+command = "alejandra"
+includes = ["*.nix"]
+
+[formatter.lua]
+command = "stylua"
+includes = ["*.lua"]
+
+[formatter.haskell]
+command = "fourmolu"
+options = ["-m", "inplace"]
+includes = ["*.hs"]
+
+[formatter.shell]
+command = "shfmt"
+options = ["-s"]
+includes = ["*.sh"]

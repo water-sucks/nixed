@@ -5,4 +5,8 @@
       enable = true;
     };
   };
+
+  home.sessionVariables = {
+    DIRENV_HIDE_DIFF = 1;
+  };
 }
