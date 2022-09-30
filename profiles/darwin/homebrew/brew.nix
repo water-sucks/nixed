@@ -9,7 +9,6 @@
     taps = [
       "homebrew/cask"
       "homebrew/cask-versions"
-      "water-sucks/filen"
     ];
   };
 }
