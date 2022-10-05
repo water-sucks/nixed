@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   ...
@@ -19,8 +18,6 @@
       };
     };
   };
-
-  nil = inputs.nil.packages.${pkgs.system}.default;
 
   generatedPluginSources = with lib;
     mapAttrs' (n: nameValuePair (removePrefix "'plugin-" (removeSuffix "'" n))) (filterAttrs (n: _: hasPrefix "'plugin-" n) sources);
