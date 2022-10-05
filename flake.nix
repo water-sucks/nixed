@@ -18,26 +18,14 @@
     darwin.url = "github:LnL7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    nvfetcher.url = "github:berberman/nvfetcher/0.5.0";
-    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
-
-    alejandra.url = "github:kamadorueda/alejandra";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
-
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
-    leftwm.url = "github:leftwm/leftwm";
-    leftwm.inputs.nixpkgs.follows = "nixpkgs";
-
     discord.url = "github:InternetUnexplorer/discord-overlay";
     discord.inputs.nixpkgs.follows = "nixpkgs";
-
-    nil.url = "github:oxalica/nil";
-    nil.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -63,10 +51,7 @@
             (digga.lib.importOverlays ./overlays)
           ];
           overlays = with inputs; [
-            leftwm.overlay
             discord.overlay
-            alejandra.overlay
-            nvfetcher.overlay
           ];
         };
       };
@@ -264,15 +249,12 @@
         config.allowUnfree = true;
         overlays = with inputs; [
           agenix.overlay
-          leftwm.overlay
           discord.overlay
-          alejandra.overlay
-          nvfetcher.overlay
           (import ./pkgs)
         ];
       };
     in {
-      formatter = inputs.alejandra.defaultPackage.${system};
+      formatter = pkgs.alejandra;
 
       checks = import ./checks.nix {inherit inputs pkgs;};
 
