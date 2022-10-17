@@ -1,4 +1,8 @@
-_: {
+{pkgs, lib, ...}: {
+  assertions = with lib; [
+    (hm.assertions.assertPlatform "dconf" pkgs platforms.linux)
+  ];
+
   dconf.settings = {
     # I hate system sounds; they're so grating.
     "org/gnome/desktop/sound" = {

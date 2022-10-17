@@ -1,4 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  assertions = with lib; [
+    (hm.assertions.assertPlatform "dunst" pkgs platforms.linux)
+  ];
+
   services.dunst = {
     enable = true;
     iconTheme = {
