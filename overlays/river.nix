@@ -1,6 +1,6 @@
 _final: prev: {
   river = prev.river.overrideAttrs (_: {
-    patches = [./change-default-color.patch];
+    patches = [./patches/change-default-color.patch];
 
     postFixup = let
       launcher = prev.writeShellScript "river-launcher.sh" ''

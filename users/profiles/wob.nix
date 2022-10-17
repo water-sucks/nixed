@@ -1,4 +1,4 @@
-{
+_: {
   programs.wob = {
     enable = true;
     settings = {

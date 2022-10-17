@@ -10,7 +10,7 @@ in {
     activate-system.enable = mkDefault true;
   };
 
-  users.nix.configureBuildUsers = mkDefault true;
+  nix.configureBuildUsers = mkDefault true;
 
   system.defaults = {
     alf = {
@@ -25,7 +25,7 @@ in {
       autohide = false;
       dashboard-in-overlay = false;
       enable-spring-load-actions-on-all-items = true;
-      expose-animation-duration = "0.1";
+      expose-animation-duration = 0.1;
       expose-group-by-app = false;
       launchanim = true;
       mineffect = "genie";
@@ -73,7 +73,7 @@ in {
       NSTableViewDefaultSizeMode = 1;
       NSTextShowsControlCharacters = true;
 
-      NSWindowResizeTime = "0.001";
+      NSWindowResizeTime = 0.001;
       PMPrintingExpandedStateForPrint = true;
       PMPrintingExpandedStateForPrint2 = true;
 
@@ -81,11 +81,11 @@ in {
 
       "com.apple.keyboard.fnState" = false;
       "com.apple.sound.beep.feedback" = 0;
-      "com.apple.springing.delay" = "0.1";
+      "com.apple.springing.delay" = 0.1;
       "com.apple.springing.enabled" = true;
       "com.apple.swipescrolldirection" = false;
       "com.apple.trackpad.enableSecondaryClick" = true;
-      "com.apple.trackpad.scaling" = "1.5";
+      "com.apple.trackpad.scaling" = 1.5;
       "com.apple.trackpad.trackpadCornerClickBehavior" = null;
     };
 

@@ -1,10 +1,7 @@
-{
-  channel,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   nix.nixPath = [
-    "nixpkgs=${channel.input}"
+    "nixpkgs=${inputs.nixpkgs}"
+    "nixpkgs-stable=${inputs.nixpkgs-stable}"
     "home-manager=${inputs.home}"
   ];
 }

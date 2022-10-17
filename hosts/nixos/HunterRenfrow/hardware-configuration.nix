@@ -6,6 +6,7 @@
 }: {
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
 
   boot = {
     initrd = {
@@ -24,25 +25,9 @@
 
     kernelModules = ["kvm-amd" "mt7921e" "amdgpu" "uinput"];
     kernelParams = [
-      "quiet"
-      "splash"
-      "rd.systemd_show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
       "acpi_backlight=vendor"
       "mem_sleep_default=deep"
-      "boot.shell_on_fail"
     ];
-
-    consoleLogLevel = 0;
-    plymouth = {
-      enable = true;
-      font = "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexSans-Text.otf";
-      theme = "spinning-watch";
-      themePackages = with pkgs; [
-        plymouth-spinning-watch-theme
-      ];
-    };
   };
 
   fileSystems."/" = {
@@ -63,8 +48,6 @@
   swapDevices = [
     {device = "/dev/disk/by-uuid/86cdd137-8957-4844-919b-23845735c7e6";}
   ];
-
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   powerManagement = {
     enable = true;

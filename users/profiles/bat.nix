@@ -1,4 +1,4 @@
-{
+_: {
   programs.bat = {
     enable = true;
     config = {

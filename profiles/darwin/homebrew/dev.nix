@@ -1,4 +1,4 @@
-{
+_: {
   homebrew.casks = [
     "insomnia"
     "jetbrains-toolbox"

@@ -59,7 +59,6 @@
       ${dunstify} -u low "Screenshot taken" "at $(date +%r)"
     fi
   '';
-  powerMenu = import ./power-menu.nix pkgs;
 in {
   home.packages = with pkgs; [waylockWrapper wl-clipboard pavucontrol];
 
@@ -141,7 +140,7 @@ in {
         (nmap (exec [mod shift] return "rofi -show combi -combi-modi 'drun,window,run,ssh' -modi combi"))
         (nmap (exec [] "Print" "${screenshot}"))
         (nmap (exec [mod] "Print" "${screenshot} -s"))
-        (nmap (exec [ctrl alt] "Delete" "${powerMenu}"))
+        (nmap (exec [ctrl alt] "Delete" "rofi-power-menu"))
         (nmap (exec [mod] "l" "${waylockCommand}"))
 
         # Media buttons (also work in locked mode)

@@ -1,12 +1,14 @@
-{
+_: {
   boot.loader = {
     efi.canTouchEfiVariables = true;
 
-    timeout = 0;
-    systemd-boot = {
+    grub = {
       enable = true;
-      editor = false;
-      configurationLimit = 100;
+      efiSupport = true;
+      device = "nodev";
+      zfsSupport = true;
+      enableCryptodisk = true;
+      splashImage = null;
     };
   };
 }

@@ -30,7 +30,7 @@
   switchTag = tag: transform: (bind [mod] (toString (transform tag)) "GotoTag" (toString tag));
   moveTag = tag: transform: (bind [mod shift] (toString (transform tag)) "MoveToTag" (toString tag));
 
-  powerMenu = import ./power-menu.nix pkgs;
+  # powerMenu = import ./power-menu.nix pkgs;
   screenshot = pkgs.writeShellScript "take-screenshot.sh" ''
     if [ "$1" == "-s" ]; then
       cmd="${maim} -s"
@@ -149,7 +149,7 @@ in {
         (execute [] "XF86XK_MonBrightnessUp" "${light} -A 5")
         (execute [] "XF86XK_MonBrightnessDown" "${light} -U 5")
         (execute [] "XF86XK_Calculator" "rofi -modi calc -show calc")
-        (execute [ctrl alt] "Delete" "${powerMenu}")
+        (execute [ctrl alt] "Delete" "rofi-power-menu")
       ];
 
       scratchpad = [
