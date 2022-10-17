@@ -1,4 +1,12 @@
-_: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  assertions = with lib; [
+    (hm.assertions.assertPlatform "picom" pkgs platforms.linux)
+  ];
+
   services.picom = {
     enable = true;
     backend = "glx";

@@ -1,4 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  assertions = with lib; [
+    (hm.assertions.assertPlatform "gtk" pkgs platforms.linux)
+  ];
+
   home.sessionVariables = {
     GTK_THEME = "Orchis:dark";
   };
