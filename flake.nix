@@ -5,12 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-22.05";
 
-    utils.url = "github:numtide/flake-utils";
-
-    digga.url = "github:divnix/digga";
-    digga.inputs.nixpkgs.follows = "nixpkgs";
-    digga.inputs.nixlib.follows = "nixpkgs";
-    digga.inputs.home-manager.follows = "home";
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
     home.url = "github:nix-community/home-manager";
     home.inputs.nixpkgs.follows = "nixpkgs";
@@ -30,234 +25,125 @@
 
   outputs = {
     self,
-    digga,
     nixpkgs,
-    utils,
+    flake-parts,
     ...
   } @ inputs: let
-    supportedSystems = [
-      "x86_64-darwin"
-      "x86_64-linux"
-    ];
+    lib = import ./lib inputs;
   in
-    (digga.lib.mkFlake {
-      inherit self inputs;
+    flake-parts.lib.mkFlake {inherit self;} ({withSystem, ...}: {
+      imports = [];
 
-      channelsConfig.allowUnfree = true;
+      systems = ["x86_64-linux" "x86_64-darwin"];
 
-      channels = {
-        nixpkgs = {
-          imports = [
-            (digga.lib.importOverlays ./overlays)
-          ];
-          overlays = with inputs; [
+      perSystem = {
+        pkgs,
+        system,
+        ...
+      }: let
+        overlays = with inputs;
+          [
+            agenix.overlay
             discord.overlay
-          ];
-        };
-      };
-
-      lib = import ./lib {lib = digga.lib // nixpkgs.lib;};
-
-      sharedOverlays = with inputs; [
-        (_final: prev: {
-          __dontExport = true;
-          lib = prev.lib.extend (_lfinal: _lprev: {
-            our = self.lib;
-          });
-        })
-
-        agenix.overlay
-        (import ./pkgs)
-      ];
-
-      nixos = {
-        hostDefaults = {
-          system = "x86_64-linux";
-          channelName = "nixpkgs";
-          imports = [
-            (digga.lib.importExportableModules ./modules/common)
-            # (digga.lib.importExportableModules ./modules/nixos)
-          ];
-          modules = with inputs; [
-            {lib.our = self.lib;}
-            home.nixosModules.home-manager
-            agenix.nixosModules.age
-          ];
-        };
-
-        imports = [(digga.lib.importHosts ./hosts/nixos)];
-        hosts = {
-          DerekCarr = {};
-          HunterRenfrow = {};
-        };
-        importables = rec {
-          profiles =
-            digga.lib.rakeLeaves ./profiles/common
-            // digga.lib.rakeLeaves ./profiles/nixos
-            // {
-              users = digga.lib.rakeLeaves ./users;
-            };
-          suites = with profiles; {
-            base = [
-              nix
-              core
-              boot
-              caches
-              ssh
-              pam
-              fonts
-              fontconfig
-              kmscon
-              secrets
-              users.common
-            ];
-            graphical = [
-              dot # I only need DoT privacy on machines with GUI environments
-              wm-helper
-              lightdm
-              sound
-              bluetooth
-              i18n
-            ];
-            dev = [
-              android
-            ];
-            virt = [
-              kvm
-            ];
+            (_final: _prev: {
+              stable = import nixpkgs-stable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+            })
+            (import ./pkgs)
+          ]
+          ++ (map import (with lib; attrValues (flattenTree (rakeLeaves ./overlays))));
+      in {
+        _module.args = {
+          inherit self inputs lib;
+          pkgs = import nixpkgs {
+            inherit system overlays;
+            config.allowUnfree = true;
           };
         };
+
+        formatter = pkgs.alejandra;
+
+        checks = import ./checks.nix {inherit inputs pkgs;};
+
+        devShells.default = import ./shell.nix {inherit self pkgs;};
       };
 
-      darwin = {
-        hostDefaults = {
-          system = "x86_64-darwin";
-          channelName = "nixpkgs";
-          imports = [
-            (digga.lib.importExportableModules ./modules/common)
-            (digga.lib.importExportableModules ./modules/darwin)
-          ];
-          modules = with inputs; [
-            {lib.our = self.lib;}
-            home.darwinModules.home-manager
-            agenix.nixosModules.age
-          ];
-        };
+      flake = let
+        mkNixOS = system: hostname: configuration:
+          withSystem system ({
+            pkgs,
+            lib,
+            system,
+            ...
+          }:
+            lib.nixosSystem {
+              inherit system;
+              specialArgs = {
+                inherit self inputs lib pkgs;
+              };
+              modules = with inputs; [
+                agenix.nixosModules.age
+                home.nixosModules.home-manager
+                (import configuration)
+                {
+                  networking.hostName = hostname;
+                  users.mutableUsers = false;
+                  # I don't like having to manually set this, but the _module.args
+                  # pkgs is not being passed properly for some reason; I'll look
+                  # into this later.
+                  nixpkgs = {
+                    inherit pkgs;
+                    config.allowUnfree = true;
+                  };
+                }
+                (args: {
+                  imports =
+                    (with lib; genModules args "profiles" ./profiles/common)
+                    ++ (with lib; genModules args "profiles" ./profiles/nixos)
+                    ++ (with lib; genModules args "users" ./users/users)
+                    ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/common)));
+                })
+              ];
+            });
 
-        imports = [(digga.lib.importHosts ./hosts/darwin)];
-        hosts = {
-          CharlesWoodson = {};
-          SebastianJanikowski = {};
-        };
-        importables = rec {
-          profiles =
-            digga.lib.rakeLeaves ./profiles/common
-            // digga.lib.rakeLeaves ./profiles/darwin
-            // {
-              users = digga.lib.rakeLeaves ./users;
-            };
-          suites = with profiles; {
-            base = [
-              nix
-              core
-              caches
-              fonts
-              defaults
-            ];
-            brew = with homebrew; [
-              homebrew.brew
-              vitals
-              security
-              dev
-              multimedia
-              messaging
-            ];
-          };
-        };
+        mkDarwin = system: hostname: configuration:
+          withSystem system (ctx @ {
+            pkgs,
+            lib,
+            system,
+            ...
+          }:
+            inputs.darwin.lib.darwinSystem {
+              inherit system;
+              specialArgs = {
+                inherit self inputs lib pkgs;
+              };
+              modules = with inputs;
+                [
+                  agenix.nixosModules.age
+                  home.darwinModules.home-manager
+                  (import configuration)
+                  {
+                    networking.hostName = hostname;
+                    nixpkgs.config.allowUnfree = true;
+                  }
+                ]
+                ++ (with lib; genModules ctx "profiles" ./profiles/common)
+                ++ (with lib; genModules ctx "profiles" ./profiles/darwin)
+                ++ (with lib; genModules ctx "users" ./users/users)
+                ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/common)))
+                ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/darwin)));
+            });
+
+        genHosts = builder: hosts: with lib; mapAttrs builder (rakeLeaves hosts);
+      in {
+        inherit lib;
+
+        nixosConfigurations = genHosts (mkNixOS "x86_64-linux") ./hosts/nixos;
+
+        darwinConfigurations = genHosts (mkDarwin "x86_64-darwin") ./hosts/darwin;
       };
-
-      home = {
-        imports = [(digga.lib.importExportableModules ./users/modules)];
-        modules = [];
-        importables = rec {
-          profiles = digga.lib.rakeLeaves ./users/profiles;
-          suites = with profiles; {
-            base = [
-              zsh
-              nerdfetch
-              starship
-              fuck
-              exa
-              bat
-              zoxide
-              nvim
-            ];
-            dev = [
-              direnv
-              ssh
-              git
-              tmux
-              go
-              python
-            ];
-            # Linux only!
-            graphical = [
-              # X11
-              leftwm
-              picom
-              polybar
-              feh
-              xsecurelock
-
-              # Wayland
-              river
-              waybar
-              wob
-
-              # Other
-              xdg
-              gtk
-              dconf
-              fcitx5
-              rofi
-              dunst
-            ];
-            apps = [
-              kitty
-              firefox
-              chromium
-              tor
-              i2p
-              protonvpn
-              zathura
-              music
-              messaging
-              filen
-              passwords
-              insomnia
-            ];
-          };
-        };
-        users = {};
-      };
-
-      homeConfigurations = digga.lib.mkHomeConfigurations self.nixosConfigurations;
-    })
-    // utils.lib.eachSystem supportedSystems (system: let
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = with inputs; [
-          agenix.overlay
-          discord.overlay
-          (import ./pkgs)
-        ];
-      };
-    in {
-      formatter = pkgs.alejandra;
-
-      checks = import ./checks.nix {inherit inputs pkgs;};
-
-      devShells.default = import ./shell.nix {inherit self pkgs;};
     });
 }

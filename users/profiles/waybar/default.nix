@@ -177,7 +177,7 @@ in {
         };
         "custom/powermenu" = {
           format = "拉";
-          on-click = "${powerMenu}";
+          on-click = "rofi-power-menu";
         };
       };
     };

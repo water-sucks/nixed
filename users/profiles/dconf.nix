@@ -1,4 +1,4 @@
-{
+_: {
   dconf.settings = {
     # I hate system sounds; they're so grating.
     "org/gnome/desktop/sound" = {

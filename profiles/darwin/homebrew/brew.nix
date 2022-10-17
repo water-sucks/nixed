@@ -1,10 +1,12 @@
-{
+_: {
   homebrew = {
     enable = true;
-    autoUpdate = true;
     global = {
       brewfile = true;
-      noLock = true;
+    };
+    onActivation = {
+      autoUpdate = true;
+      upgrade = true;
     };
     taps = [
       "homebrew/cask"

@@ -1,13 +1,11 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     efibootmgr
     refind
   ];
+
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
 
   boot = {
     initrd = {
@@ -16,7 +14,7 @@
         preLVM = true;
         allowDiscards = true;
       };
-      availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
+      availableKernelModules = ["amdgpu" "dm-snapshot" "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
       kernelModules = ["dm-snapshot" "amdgpu"];
       systemd.enable = true;
       verbose = false;
@@ -25,25 +23,6 @@
     supportedFilesystems = ["zfs"];
 
     kernelModules = ["amdgpu" "kvm-amd" "wl"];
-    kernelParams = [
-      "quiet"
-      "splash"
-      "loglevel=1"
-      "rd.systemd_show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
-      "boot.shell_on_fail"
-    ];
-
-    consoleLogLevel = 0;
-    plymouth = {
-      enable = true;
-      theme = "spinning-watch";
-      font = "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexSans-Text.otf";
-      themePackages = with pkgs; [
-        plymouth-spinning-watch-theme
-      ];
-    };
   };
 
   fileSystems."/" = {
@@ -62,8 +41,6 @@
   };
 
   swapDevices = [{device = "/dev/disk/by-uuid/02e3a0c7-b170-48e4-a66d-5f0390ae09dc";}];
-
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   services.xserver.videoDrivers = ["amdgpu"];
 
