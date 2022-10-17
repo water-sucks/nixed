@@ -102,7 +102,7 @@
                   imports =
                     (with lib; genModules args "profiles" ./profiles/common)
                     ++ (with lib; genModules args "profiles" ./profiles/nixos)
-                    ++ (with lib; genModules args "users" ./users/users)
+                    ++ (with lib; genModules args "users" ./users)
                     ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/common)));
                 })
               ];
@@ -132,7 +132,7 @@
                 ]
                 ++ (with lib; genModules ctx "profiles" ./profiles/common)
                 ++ (with lib; genModules ctx "profiles" ./profiles/darwin)
-                ++ (with lib; genModules ctx "users" ./users/users)
+                ++ (with lib; genModules ctx "users" ./users)
                 ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/common)))
                 ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/darwin)));
             });

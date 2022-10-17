@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   assertions = with lib; [
     (hm.assertions.assertPlatform "dconf" pkgs platforms.linux)
   ];
