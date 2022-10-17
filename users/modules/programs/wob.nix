@@ -22,6 +22,10 @@ in {
   };
 
   config = mkIf cfg.enable {
+    assertions = with lib; [
+      (hm.assertions.assertPlatform "programs.wob" pkgs platforms.linux)
+    ];
+
     xdg.configFile."wob/wob.ini".text = generate cfg.settings;
 
     systemd.user.services.wob = {

@@ -54,6 +54,10 @@ in {
       else pkgs.hikari;
   in
     mkIf cfg.enable {
+      assertions = with lib; [
+        (hm.assertions.assertPlatform "wayland.windowManager.hikari" pkgs platforms.linux)
+      ];
+
       xdg.configFile."hikari/hikari.conf".source =
         if stringLength cfg.config > 0
         then rawConfig
