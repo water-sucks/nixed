@@ -18,6 +18,10 @@ in {
   };
 
   config = mkIf cfg.enable {
+    assertions = with lib; [
+      (hm.assertions.assertPlatform "xsession.windowManager.hikari" pkgs platforms.linux)
+    ];
+
     xdg.configFile."berry/autostart".text = cfg.autostart;
 
     home.packages = [
