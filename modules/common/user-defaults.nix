@@ -17,9 +17,9 @@
         news.display = "show";
         home.stateVersion = "21.11";
       }
-      (with lib; attrValues (flattenTree (rakeLeaves ../../users/modules)))
+      (with lib; attrValues (flattenTree (rakeLeaves ../../home/modules)))
       (args: {
-        imports = lib.genModules args "profiles" ../../users/profiles;
+        imports = lib.genModules args "profiles" ../../home/profiles;
       })
     ];
   };
