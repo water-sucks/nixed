@@ -53,7 +53,7 @@
             })
             (import ./pkgs)
           ]
-          ++ (map import (with lib; attrValues (flattenTree (rakeLeaves ./overlays))));
+          ++ (map import (with lib; attrValues (flattenTree (rakeLeaves ./overrides))));
       in {
         _module.args = {
           inherit self inputs lib;
