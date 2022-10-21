@@ -24,64 +24,17 @@
       }
       {
         profiles = {
-          base = {
-            zsh = true;
-            nerdfetch = true;
-            starship = true;
-            fuck = true;
-            exa = true;
-            bat = true;
-            zoxide = true;
-            nvim = true;
-          };
-
-          dev = {
-            direnv = true;
-            ssh = true;
-            git = true;
-            tmux = true;
-            go = true;
-            python = true;
-          };
-
-          apps = {
-            kitty = true;
-            firefox = true;
-            chromium = true;
-            tor = true;
-            i2p = true;
-            protonvpn = true;
-            zathura = true;
-            music = true;
-            messaging = true;
-            filen = true;
-            passwords = true;
-            insomnia = true;
-          };
+          base.enable = true;
+          dev.enable = true;
+          apps.enable = true;
         };
       }
       (lib.mkIf pkgs.stdenv.isLinux {
         profiles = {
           graphical = {
-            xdg = true;
-            gtk = true;
-            dconf = true;
-            fcitx5 = true;
-            rofi = true;
-            power-menu = true;
-            dunst = true;
-            x11 = {
-              leftwm = true;
-              picom = true;
-              polybar = true;
-              feh = true;
-              xsecurelock = true;
-            };
-            wayland = {
-              river = true;
-              waybar = true;
-              wob = true;
-            };
+            enable = true;
+            x11.enable = true;
+            wayland.enable = true;
           };
         };
       })

@@ -4,23 +4,16 @@
   ];
 
   profiles = {
-    nix = true;
-    core = true;
-    caches = true;
-    fonts = true;
+    nix.enable = true;
+    core.enable = true;
+    caches.enable = true;
+    fonts.enable = true;
 
-    defaults = true;
-    homebrew = {
-      brew = true;
-      vitals = true;
-      dev = true;
-      security = true;
-      multimedia = true;
-      messaging = true;
-    };
+    defaults.enable = true;
+    homebrew.enable = true;
   };
 
   users = {
-    varun = true;
+    varun.enable = true;
   };
 }
