@@ -40,7 +40,10 @@ lib: rec {
         else rakeLeaves path;
     };
 
-    files = lib.filterAttrs seive (builtins.readDir directory);
+    files =
+      if builtins.pathExists directory
+      then lib.filterAttrs seive (builtins.readDir directory)
+      else {};
   in
     lib.filterAttrs (_: v: v != {}) (lib.mapAttrs' collect files);
 }
