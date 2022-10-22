@@ -9,25 +9,7 @@ lib: let
     in
       concatStringsSep "."
       (take ((length components) - 1) components);
-in rec {
-  genModules = with lib;
-    args: prefix: directory: let
-      tree = rakeLeaves directory;
-      leaves' = flattenTree tree;
-      leaves = mapAttrs' (n: nameValuePair "${prefix}.${n}") leaves';
 
-      groupNames =
-        map
-        (n: "${prefix}.${n}")
-        (unique
-          (mapAttrsToList
-            (n: _: removeProfileName n)
-            (filterAttrs (n: _: hasInfix "." n) leaves')));
-    in
-      mapAttrsToList (genProfileOption args) leaves
-      ++ (map (n: genGroupOption n tree) groupNames);
-
-  # Move to let expression later.
   genProfileOption = with lib;
     args: location: profile: let
       path = splitString "." location;
@@ -66,4 +48,23 @@ in rec {
               (_: _: {enable = mkDefault true;})
               (getAttrFromPath pathWithoutPrefix tree)));
       };
+in {
+  genModules = with lib;
+    args: prefix: directory: let
+      tree = rakeLeaves directory;
+      leaves' = flattenTree tree;
+      leaves = mapAttrs' (n: nameValuePair "${prefix}.${n}") leaves';
+
+      groupNames =
+        map
+        (n: "${prefix}.${n}")
+        (unique
+          (mapAttrsToList
+            (n: _: removeProfileName n)
+            (filterAttrs (n: _: hasInfix "." n) leaves')));
+    in
+      mapAttrsToList (genProfileOption args) leaves
+      ++ (map (n: genGroupOption n tree) groupNames);
+
+  genHosts = builder: hosts: with lib; mapAttrs builder (rakeLeaves hosts);
 }

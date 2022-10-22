@@ -10,7 +10,6 @@
   time.timeZone = "America/Los_Angeles";
 
   networking = {
-    hostName = "DerekCarr";
     hostId = "8e004b0f";
     useDHCP = false;
     networkmanager = {

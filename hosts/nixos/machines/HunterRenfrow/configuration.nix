@@ -10,7 +10,6 @@
   time.timeZone = "America/Los_Angeles";
 
   networking = {
-    hostName = "HunterRenfrow";
     hostId = "7effc63b";
     useDHCP = false;
     usePredictableInterfaceNames = false;

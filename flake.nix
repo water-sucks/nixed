@@ -31,8 +31,11 @@
   } @ inputs: let
     lib = import ./lib inputs;
   in
-    flake-parts.lib.mkFlake {inherit self;} ({withSystem, ...}: {
-      imports = [];
+    flake-parts.lib.mkFlake {inherit self;} {
+      imports = [
+        ./hosts/nixos
+        ./hosts/darwin
+      ];
 
       systems = ["x86_64-linux" "x86_64-darwin"];
 
@@ -70,80 +73,8 @@
         devShells.default = import ./shell.nix {inherit self pkgs;};
       };
 
-      flake = let
-        mkNixOS = system: hostname: configuration:
-          withSystem system ({
-            pkgs,
-            lib,
-            system,
-            ...
-          }:
-            lib.nixosSystem {
-              inherit system;
-              specialArgs = {
-                inherit self inputs lib pkgs;
-              };
-              modules = with inputs; [
-                agenix.nixosModules.age
-                home.nixosModules.home-manager
-                (import configuration)
-                {
-                  networking.hostName = hostname;
-                  users.mutableUsers = false;
-                  # I don't like having to manually set this, but the _module.args
-                  # pkgs is not being passed properly for some reason; I'll look
-                  # into this later.
-                  nixpkgs = {
-                    inherit pkgs;
-                    config.allowUnfree = true;
-                  };
-                }
-                (args: {
-                  imports =
-                    (with lib; genModules args "profiles" ./profiles/common)
-                    ++ (with lib; genModules args "profiles" ./profiles/nixos)
-                    ++ (with lib; genModules args "users" ./users)
-                    ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/common)));
-                })
-              ];
-            });
-
-        mkDarwin = system: hostname: configuration:
-          withSystem system (ctx @ {
-            pkgs,
-            lib,
-            system,
-            ...
-          }:
-            inputs.darwin.lib.darwinSystem {
-              inherit system;
-              specialArgs = {
-                inherit self inputs lib pkgs;
-              };
-              modules = with inputs;
-                [
-                  agenix.nixosModules.age
-                  home.darwinModules.home-manager
-                  (import configuration)
-                  {
-                    networking.hostName = hostname;
-                    nixpkgs.config.allowUnfree = true;
-                  }
-                ]
-                ++ (with lib; genModules ctx "profiles" ./profiles/common)
-                ++ (with lib; genModules ctx "profiles" ./profiles/darwin)
-                ++ (with lib; genModules ctx "users" ./users)
-                ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/common)))
-                ++ (with lib; attrValues (flattenTree (rakeLeaves ./modules/darwin)));
-            });
-
-        genHosts = builder: hosts: with lib; mapAttrs builder (rakeLeaves hosts);
-      in {
+      flake = {
         inherit lib;
-
-        nixosConfigurations = genHosts (mkNixOS "x86_64-linux") ./hosts/nixos;
-
-        darwinConfigurations = genHosts (mkDarwin "x86_64-darwin") ./hosts/darwin;
       };
-    });
+    };
 }
