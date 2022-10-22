@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=1091
+
 # A stripped-down, modified version of nerdfetch
 # that fits in with the darkrose colorscheme.
 # This is much faster and only works for bash
@@ -117,7 +119,7 @@ EOF
 esac
 memstat="$mem_used/$mem_full MB"
 if which expr >/dev/null 2>&1; then
-  mempercent="($(expr "$(expr "$mem_used" \* 100 / "$mem_full")")%)"
+  mempercent="($(("$(("$mem_used" * 100 / "$mem_full"))"))%)"
 fi
 
 ## COLORS
