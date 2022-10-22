@@ -25,6 +25,11 @@ in {
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
     };
+    nixPath = [
+      "nixpkgs=${inputs.nixpkgs}"
+      "nixpkgs-stable=${inputs.nixpkgs-stable}"
+      "home-manager=${inputs.home}"
+    ];
     extraOptions = ''
       experimental-features = nix-command flakes
       min-free = 536870912

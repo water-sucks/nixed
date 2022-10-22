@@ -9,15 +9,17 @@ set -o noclobber
 
 cd "$(git rev-parse --show-toplevel)"
 
-KERNEL_NAME="$( uname -s | tr '[:upper:]' '[:lower:]')"
+KERNEL_NAME="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
-case "${KERNEL_NAME}" in
-  linux)
-    sudo nixos-rebuild --flake ".#$(hostname)" "$@" ;;
-  darwin)
-    TERM=xterm-256color darwin-rebuild --flake ".#$(hostname)" "$@" ;;
-  *)
-    echo "Uh oh! Unknown system detected."
-    exit 1
-    ;;
+case "$KERNEL_NAME" in
+linux)
+  sudo nixos-rebuild --flake ".#$(hostname)" "$@"
+  ;;
+darwin)
+  TERM=xterm-256color darwin-rebuild --flake ".#$(hostname)" "$@"
+  ;;
+*)
+  echo "Uh oh! Unknown system detected."
+  exit 1
+  ;;
 esac
