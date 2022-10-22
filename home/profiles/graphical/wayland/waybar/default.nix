@@ -12,7 +12,6 @@
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
-  powerMenu = import ../power-menu.nix pkgs;
   waybarMpris = "${pkgs.waybar-mpris}/bin/waybar-mpris";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
