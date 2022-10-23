@@ -90,7 +90,5 @@ in {
     };
 
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = mkDefault true;
-
-    wallpaper.file = "${self}/assets/woah.jpg";
   };
 }

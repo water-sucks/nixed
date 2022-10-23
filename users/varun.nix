@@ -2,7 +2,9 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  inherit (pkgs.stdenv) isLinux isDarwin;
+in {
   users.users.varun =
     {
       uid = 1000;
@@ -29,12 +31,21 @@
           apps.enable = true;
         };
       }
-      (lib.mkIf pkgs.stdenv.isLinux {
+      (lib.mkIf isLinux {
         profiles = {
           graphical = {
             enable = true;
+            darwin-wallpaper.enable = false;
             x11.enable = true;
             wayland.enable = true;
+          };
+        };
+      })
+      (lib.mkIf isDarwin {
+        profiles = {
+          graphical = {
+            enable = false;
+            darwin-wallpaper.enable = true;
           };
         };
       })
