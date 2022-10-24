@@ -429,8 +429,8 @@ packer.startup({
 
     -- Language-specific plugins
     use({
-      generated("folke/lua-dev.nvim"),
-      module = "lua-dev",
+      generated("folke/neodev.nvim"),
+      module = "neodev",
       ft = "lua",
     })
     use({

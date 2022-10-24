@@ -122,7 +122,7 @@ in {
   xdg.dataFile =
     {
       "nvim/vscode-lldb" = {
-        source = "${pkgs.stable.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+        source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
         recursive = true;
       };
     }
