@@ -82,7 +82,7 @@ packageSet = do
     -- Special Neovim sauce
     plugin ("andweeb", "presence.nvim")
     plugin ("alec-gibson", "nvim-tetris")
-    plugin'' ("nvim-neorg", "neorg") "8bfb827f010ad1efb0da4852287a6f057653d6c7"
+    plugin ("nvim-neorg", "neorg")
     plugin ("nvim-neorg", "neorg-telescope")
     plugin ("folke", "which-key.nvim")
     plugin ("ahmedkhalf", "project.nvim")
@@ -96,7 +96,7 @@ packageSet = do
     plugin ("mfussenegger", "nvim-dap-python")
 
     -- Language-specific plugins
-    plugin ("folke", "lua-dev.nvim")
+    plugin ("folke", "neodev.nvim")
     plugin ("akinsho", "flutter-tools.nvim")
     plugin ("simrat39", "rust-tools.nvim")
     plugin ("lervag", "vimtex")

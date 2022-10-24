@@ -1,8 +1,7 @@
+local map = vim.api.nvim_set_keymap
 local autopairs = require("nvim-autopairs")
-local map = vim.keymap.set
 
 autopairs.setup({
-  disable_filetype = { "TelescopePrompt", "vim" },
   map_bs = false,
   map_cr = false,
 })

@@ -56,6 +56,10 @@ packageSet = do
             `hasCargoLocks` ["Cargo.lock"]
 
     define $
+        package "catch2"
+            `fromGitHub` ("catchorg", "Catch2")
+
+    define $
         package "filen-desktop"
             `sourceManual` "2.0.4"
             `fetchUrl` url

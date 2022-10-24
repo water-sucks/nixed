@@ -15,8 +15,3 @@ packageSet = do
         package "simplefox-theme"
             `sourceGit` "https://github.com/migueravila/SimpleFox"
             `fetchGitHub` ("migueravila", "SimpleFox")
-
-    define $
-        package "i2p-profile"
-            `sourceGit` "https://github.com/i2p/i2p.firefox"
-            `fetchGitHub` ("i2p", "i2p.firefox")

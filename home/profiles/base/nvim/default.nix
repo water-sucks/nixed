@@ -20,14 +20,20 @@
   };
 
   generatedPluginSources = with lib;
-    mapAttrs' (n: nameValuePair (removePrefix "'plugin-" (removeSuffix "'" n))) (filterAttrs (n: _: hasPrefix "'plugin-" n) sources);
+    mapAttrs'
+    (n:
+      nameValuePair
+      (removePrefix "'plugin-" (removeSuffix "'" n)))
+    (filterAttrs (n: _: hasPrefix "'plugin-" n)
+      sources);
 
   buildPlugin = source:
     pkgs.vimUtils.buildVimPluginFrom2Nix {
       inherit (source) pname version src;
     };
 
-  generatedPlugins = with lib; mapAttrs (_: buildPlugin) generatedPluginSources;
+  generatedPlugins = with lib;
+    mapAttrs (_: buildPlugin) generatedPluginSources;
 
   plugins =
     generatedPlugins
