@@ -52,12 +52,19 @@ local server_configs = {
       },
     },
   },
+  hls = {
+    settings = {
+      haskell = {
+        formattingProvider = vim.fn.executable("fourmolu") and "formolu" or "ormolu",
+      },
+    },
+  },
   rnix = {
     cmd = { "nil" }, -- Yes, this hijacks rnix-lsp
   },
 }
 
-require("lua-dev").setup({
+require("neodev").setup({
   runtime_path = true,
 })
 

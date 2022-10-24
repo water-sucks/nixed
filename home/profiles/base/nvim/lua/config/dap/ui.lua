@@ -24,7 +24,7 @@ dapui.setup({
     },
     {
       elements = {
-        "repl",
+        "console",
         "watches",
       },
       size = 0.25,
