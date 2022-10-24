@@ -1,23 +1,4 @@
 {
-    "i2p-profile": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "i2p-profile",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "i2p",
-            "repo": "i2p.firefox",
-            "rev": "c11f9820882a7bc8e1e0be5841974d759ea5fc60",
-            "sha256": "sha256-N6uWZnkqNw84SAandkzVXmLTVfdFSC6imDdUcx7yOhM=",
-            "type": "github"
-        },
-        "version": "c11f9820882a7bc8e1e0be5841974d759ea5fc60"
-    },
     "simplefox-theme": {
         "cargoLocks": null,
         "extract": null,

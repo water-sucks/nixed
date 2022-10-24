@@ -4,17 +4,6 @@
   fetchurl,
   fetchFromGitHub,
 }: {
-  i2p-profile = {
-    pname = "i2p-profile";
-    version = "c11f9820882a7bc8e1e0be5841974d759ea5fc60";
-    src = fetchFromGitHub {
-      owner = "i2p";
-      repo = "i2p.firefox";
-      rev = "c11f9820882a7bc8e1e0be5841974d759ea5fc60";
-      fetchSubmodules = false;
-      sha256 = "sha256-N6uWZnkqNw84SAandkzVXmLTVfdFSC6imDdUcx7yOhM=";
-    };
-  };
   simplefox-theme = {
     pname = "simplefox-theme";
     version = "a4c1ec7d2af121047f09da4a572960e032ca29a6";

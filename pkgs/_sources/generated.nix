@@ -4,6 +4,17 @@
   fetchurl,
   fetchFromGitHub,
 }: {
+  catch2 = {
+    pname = "catch2";
+    version = "v3.1.1";
+    src = fetchFromGitHub {
+      owner = "catchorg";
+      repo = "Catch2";
+      rev = "v3.1.1";
+      fetchSubmodules = false;
+      sha256 = "sha256-l/bqW32c1vAzE3jN01VystZXuH2ZiOQGgXkh/Mcq2eI=";
+    };
+  };
   filen-desktop = {
     pname = "filen-desktop";
     version = "2.0.4";
@@ -37,16 +48,16 @@
   };
   rescrobbled = {
     pname = "rescrobbled";
-    version = "v0.6.0";
+    version = "v0.6.1";
     src = fetchFromGitHub {
       owner = "InputUsername";
       repo = "rescrobbled";
-      rev = "v0.6.0";
+      rev = "v0.6.1";
       fetchSubmodules = false;
-      sha256 = "sha256-RzqufEucBwhTW+ZjhlLgEZwYZ9QSgMtBd9A62JhqW94=";
+      sha256 = "sha256-rAInYKXpOwmpwW5Q5tkQ6KTTi71/uOIdMRKP4zdanxM=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./rescrobbled-v0.6.0/Cargo.lock;
+      lockFile = ./rescrobbled-v0.6.1/Cargo.lock;
       outputHashes = {
       };
     };
@@ -64,13 +75,13 @@
   };
   waybar = {
     pname = "waybar";
-    version = "710f89599e87114857d1510625c503dd9de36af1";
+    version = "1374b0fce40f283b113e051f0558564fa1d9ad22";
     src = fetchFromGitHub {
       owner = "Alexays";
       repo = "waybar";
-      rev = "710f89599e87114857d1510625c503dd9de36af1";
+      rev = "1374b0fce40f283b113e051f0558564fa1d9ad22";
       fetchSubmodules = false;
-      sha256 = "sha256-kHkFRQwFPen4QbMdXODr8o+Ms0Ee3OGzqTTDjvel4xA=";
+      sha256 = "sha256-UG233AXx7xU9O3/hs5mIXun7PCYibJvlDL1tQhB5gxE=";
     };
   };
   waybar-mpris = {
@@ -86,13 +97,13 @@
   };
   waylock = {
     pname = "waylock";
-    version = "v0.4.1";
+    version = "v0.4.2";
     src = fetchFromGitHub {
       owner = "ifreund";
       repo = "waylock";
-      rev = "v0.4.1";
+      rev = "v0.4.2";
       fetchSubmodules = true;
-      sha256 = "sha256-bV2wHuLxRP478Lap8cB3pYI/98DlxknYFgqgG4S44gY=";
+      sha256 = "sha256-yWjWcnGa4a+Dpc82H65yr8H7v88g/tDq0FSguubhbEI=";
     };
   };
   wlroots = {

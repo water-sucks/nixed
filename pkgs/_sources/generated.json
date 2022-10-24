@@ -1,4 +1,23 @@
 {
+    "catch2": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "catch2",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "catchorg",
+            "repo": "Catch2",
+            "rev": "v3.1.1",
+            "sha256": "sha256-l/bqW32c1vAzE3jN01VystZXuH2ZiOQGgXkh/Mcq2eI=",
+            "type": "github"
+        },
+        "version": "v3.1.1"
+    },
     "filen-desktop": {
         "cargoLocks": null,
         "extract": null,
@@ -53,7 +72,7 @@
     "rescrobbled": {
         "cargoLocks": {
             "Cargo.lock": [
-                "./rescrobbled-v0.6.0/Cargo.lock",
+                "./rescrobbled-v0.6.1/Cargo.lock",
                 {}
             ]
         },
@@ -68,11 +87,11 @@
             "name": null,
             "owner": "InputUsername",
             "repo": "rescrobbled",
-            "rev": "v0.6.0",
-            "sha256": "sha256-RzqufEucBwhTW+ZjhlLgEZwYZ9QSgMtBd9A62JhqW94=",
+            "rev": "v0.6.1",
+            "sha256": "sha256-rAInYKXpOwmpwW5Q5tkQ6KTTi71/uOIdMRKP4zdanxM=",
             "type": "github"
         },
-        "version": "v0.6.0"
+        "version": "v0.6.1"
     },
     "river": {
         "cargoLocks": null,
@@ -106,11 +125,11 @@
             "name": null,
             "owner": "Alexays",
             "repo": "waybar",
-            "rev": "710f89599e87114857d1510625c503dd9de36af1",
-            "sha256": "sha256-kHkFRQwFPen4QbMdXODr8o+Ms0Ee3OGzqTTDjvel4xA=",
+            "rev": "1374b0fce40f283b113e051f0558564fa1d9ad22",
+            "sha256": "sha256-UG233AXx7xU9O3/hs5mIXun7PCYibJvlDL1tQhB5gxE=",
             "type": "github"
         },
-        "version": "710f89599e87114857d1510625c503dd9de36af1"
+        "version": "1374b0fce40f283b113e051f0558564fa1d9ad22"
     },
     "waybar-mpris": {
         "cargoLocks": null,
@@ -144,11 +163,11 @@
             "name": null,
             "owner": "ifreund",
             "repo": "waylock",
-            "rev": "v0.4.1",
-            "sha256": "sha256-bV2wHuLxRP478Lap8cB3pYI/98DlxknYFgqgG4S44gY=",
+            "rev": "v0.4.2",
+            "sha256": "sha256-yWjWcnGa4a+Dpc82H65yr8H7v88g/tDq0FSguubhbEI=",
             "type": "github"
         },
-        "version": "v0.4.1"
+        "version": "v0.4.2"
     },
     "wlroots": {
         "cargoLocks": null,
