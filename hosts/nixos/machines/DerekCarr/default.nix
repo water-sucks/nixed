@@ -14,6 +14,7 @@
     fontconfig.enable = true;
     kmscon.enable = true;
     secrets.enable = true;
+    nitrokey.enable = true;
 
     plymouth.enable = true;
     dot.enable = true;
