@@ -62,6 +62,4 @@ packageSet = do
     define $
         package "filen-desktop"
             `sourceManual` "2.0.4"
-            `fetchUrl` url
-  where
-    url (Version v) = "https://cdn.filen.io/desktop/release/" <> v <> "/filen_x86_64.AppImage"
+            `fetchUrl` (\(Version v) -> "https://cdn.filen.io/desktop/release/" <> v <> "/filen_x86_64.AppImage")
