@@ -6,7 +6,7 @@ end
 local function generated(name)
   local plugin_name = name:match("[^/]+$")
   local plugin_dir = vim.fn.stdpath("data") .. "/plugins/" .. plugin_name
-  if vim.fn.isdirectory(plugin_dir) then
+  if vim.fn.isdirectory(plugin_dir) > 0 then
     return plugin_dir
   end
   return name
