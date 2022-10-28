@@ -1,4 +1,18 @@
 {
+    "airtame": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "airtame",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-H4sVs8xEAduDjIngy92c+q149e6lCbzWXkFgA1GpMMU=",
+            "type": "url",
+            "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.5.2.deb"
+        },
+        "version": "4.5.2"
+    },
     "catch2": {
         "cargoLocks": null,
         "extract": null,
