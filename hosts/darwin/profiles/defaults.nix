@@ -12,6 +12,10 @@ in {
 
   nix.configureBuildUsers = mkDefault true;
 
+  documentation = {
+    enable = false;
+  };
+
   system.defaults = {
     alf = {
       allowdownloadsignedenabled = 0;
