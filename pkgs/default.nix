@@ -9,4 +9,5 @@ final: prev: {
   waylock = final.callPackage ./misc/screensavers/waylock {};
   lswt = final.callPackage ./tools/wayland/lswt {};
   waybar-mpris = final.callPackage ./misc/waybar-mpris {};
+  airtame = final.callPackage ./applications/misc/airtame {};
 }

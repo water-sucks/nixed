@@ -63,3 +63,8 @@ packageSet = do
         package "filen-desktop"
             `sourceManual` "2.0.4"
             `fetchUrl` (\(Version v) -> "https://cdn.filen.io/desktop/release/" <> v <> "/filen_x86_64.AppImage")
+
+    define $
+        package "airtame"
+            `sourceAur` "airtame-application"
+            `fetchUrl` (\(Version v) -> "https://downloads.airtame.com/app/latest/linux/Airtame-" <> v <> ".deb")
