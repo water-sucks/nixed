@@ -34,7 +34,7 @@ in
         ];
         oh-my-zsh = {
           enable = true;
-          plugins = ["git" "sudo" "dirhistory" "thefuck"];
+          plugins = ["git" "sudo" "dirhistory" "thefuck" "ssh-agent"];
           theme = ""; # Using starship for theme
         };
         initExtraFirst = ''
