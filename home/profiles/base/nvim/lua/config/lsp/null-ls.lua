@@ -43,7 +43,6 @@ null_ls.setup({
     null_ls.builtins.formatting.stylua,
 
     null_ls.builtins.diagnostics.alex,
-    null_ls.builtins.diagnostics.codespell,
     null_ls.builtins.diagnostics.cppcheck,
     null_ls.builtins.diagnostics.credo,
     null_ls.builtins.diagnostics.deadnix,
