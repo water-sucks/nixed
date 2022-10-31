@@ -76,7 +76,6 @@ in {
       alejandra
       asmfmt
       black
-      codespell
       cppcheck
       deadnix
       editorconfig-checker
