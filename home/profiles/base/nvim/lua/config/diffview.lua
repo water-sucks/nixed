@@ -3,9 +3,9 @@ require("diffview").setup()
 require("which-key").register({
   c = {
     name = "Diffview",
-    o = { ":DiffviewOpen<CR>", "Open diffview" },
-    c = { ":DiffviewClose<CR>", "Close diffview" },
-    h = { ":DiffviewFileHistory<CR>", "Show file history" },
+    o = { "<cmd>DiffviewOpen<CR>", "Open diffview" },
+    c = { "<cmd>DiffviewClose<CR>", "Close diffview" },
+    h = { "<cmd>DiffviewFileHistory<CR>", "Show file history" },
   },
 }, {
   mode = "n",

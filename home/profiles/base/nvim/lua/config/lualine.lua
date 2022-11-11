@@ -1,130 +1,187 @@
+local lualine = require("lualine")
+
 local colors = {
+  bg = "#121212",
+  fg = "#bbc2cf",
+  blue = "#008080",
+  green = "#1E6327",
+  orange = "#FF8800",
+  violet = "#cc61a1",
   red = "#6D0011",
-  grey = "#a0a1a7",
-  black = "#383a42",
-  white = "#f3f3f3",
-  orange = "#B35101",
-  purple = "#7A0045",
 }
 
-local theme = {
-  normal = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.white },
-    z = { fg = colors.white, bg = colors.black },
-  },
-  insert = { a = { fg = colors.white, bg = colors.red } },
-  visual = { a = { fg = colors.white, bg = colors.purple } },
-  replace = { a = { fg = colors.white, bg = colors.orange } },
+local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
+  end,
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > 80
+  end,
+  check_git_workspace = function()
+    local filepath = vim.fn.expand("%:p:h")
+    local gitdir = vim.fn.finddir(".git", filepath .. ";")
+    return gitdir and #gitdir > 0 and #gitdir < #filepath
+  end,
 }
 
-local empty = require("lualine.component"):extend()
-function empty:draw(default_highlight)
-  self.status = ""
-  self.applied_separator = ""
-  self:apply_highlights(default_highlight)
-  self:apply_section_separators()
-  return self.status
-end
-
--- Put proper separators and gaps between components in sections
-local function process_sections(sections)
-  for name, section in pairs(sections) do
-    local left = name:sub(9, 10) < "x"
-    for pos = 1, name ~= "lualine_z" and #section or #section - 1 do
-      table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = colors.white } })
-    end
-    for id, comp in ipairs(section) do
-      if type(comp) ~= "table" then
-        comp = { comp }
-        section[id] = comp
-      end
-      comp.separator = left and { right = "" } or { left = "" }
-    end
-  end
-  return sections
-end
-
-local function search_result()
-  if vim.v.hlsearch == 0 then
-    return ""
-  end
-  local last_search = vim.fn.getreg("/")
-  if not last_search or last_search == "" then
-    return ""
-  end
-  local searchcount = vim.fn.searchcount({ maxcount = 9999 })
-  return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
-end
-
-local function modified()
-  if vim.bo.modified then
-    return "+"
-  elseif vim.bo.modifiable == false or vim.bo.readonly == true then
-    return "-"
-  end
-  return ""
-end
-
-require("lualine").setup({
+-- Config
+local config = {
   options = {
-    theme = theme,
+    -- Disable sections and component separators
     component_separators = "",
-    section_separators = { left = "", right = "" },
-  },
-  sections = process_sections({
-    lualine_a = { "mode" },
-    lualine_b = {
-      "branch",
-      {
-        "diff",
-        diff_color = {
-          added = { bg = colors.grey, fg = "#196C2E" },
-          removed = { bg = colors.grey, fg = "#B62324" },
-          modified = { bg = colors.grey, fg = "#9E6A03" },
-        },
-      },
-      {
-        "diagnostics",
-        source = { "nvim" },
-        sections = { "error" },
-        diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
-      },
-      {
-        "diagnostics",
-        source = { "nvim" },
-        sections = { "warn" },
-        diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
-      },
-      { "filename", file_status = false, path = 1 },
-      { modified, color = { bg = colors.red } },
-      {
-        "%w",
-        cond = function()
-          return vim.wo.previewwindow
-        end,
-      },
-      {
-        "%r",
-        cond = function()
-          return vim.bo.readonly
-        end,
-      },
-      {
-        "%q",
-        cond = function()
-          return vim.bo.buftype == "quickfix"
-        end,
-      },
+    section_separators = "",
+    theme = {
+      -- We are going to use lualine_c an lualine_x as the left
+      -- and right sections. Both are highlighted by c theme.
+      normal = { c = { fg = colors.fg, bg = colors.bg } },
+      inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
+  },
+  sections = {
+    -- these are to remove the defaults
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    -- These will be filled later
     lualine_c = {},
     lualine_x = {},
-    lualine_y = { search_result, "filetype" },
-    lualine_z = { "%l:%c", "%p%%/%L" },
-  }),
+  },
   inactive_sections = {
-    lualine_c = { "%f %y %m" },
+    -- these are to remove the defaults
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    lualine_c = {},
     lualine_x = {},
   },
+}
+
+-- Inserts a component in lualine_c at left section
+local function left(component)
+  table.insert(config.sections.lualine_c, component)
+end
+
+-- Inserts a component in lualine_x ot right section
+local function right(component)
+  table.insert(config.sections.lualine_x, component)
+end
+
+left({
+  function()
+    return "▊"
+  end,
+  color = { fg = colors.red },
+  padding = { left = 0, right = 1 },
 })
+
+left({
+  function()
+    -- return ""
+    return ""
+  end,
+  color = function()
+    local mode_color = {
+      n = colors.red,
+      i = colors.orange,
+      v = colors.blue,
+      [""] = colors.blue,
+      V = colors.blue,
+      c = colors.violet,
+      no = colors.red,
+      s = colors.orange,
+      S = colors.orange,
+      [""] = colors.orange,
+      ic = colors.orange,
+      R = colors.violet,
+      Rv = colors.violet,
+      cv = colors.red,
+      ce = colors.red,
+      r = colors.green,
+      rm = colors.green,
+      ["r?"] = colors.green,
+      ["!"] = colors.red,
+      t = colors.red,
+    }
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+  padding = { right = 1 },
+})
+
+left({
+  "filename",
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.violet, gui = "bold" },
+})
+
+left({ "location" })
+
+left({
+  function()
+    local cur = vim.fn.line(".")
+    local total = vim.fn.line("$")
+    return math.floor(cur / total * 100) .. "%%"
+  end,
+  color = { fg = colors.fg, gui = "bold" },
+})
+
+left({
+  "diagnostics",
+  sources = { "nvim_diagnostic" },
+  symbols = { error = " ", warn = " ", info = " ", hint = " " },
+  diagnostics_color = {
+    error = { fg = colors.red },
+    warn = { fg = colors.orange },
+    info = { fg = colors.green },
+    hint = { fg = colors.blue },
+  },
+})
+
+right({ "filetype" })
+
+right({
+  "filesize",
+  cond = conditions.buffer_not_empty,
+})
+
+right({
+  "o:encoding",
+  fmt = string.upper,
+  cond = conditions.hide_in_width,
+  color = { fg = colors.green, gui = "bold" },
+})
+
+right({
+  "fileformat",
+  fmt = string.upper,
+  icons_enabled = false,
+  color = { fg = colors.green, gui = "bold" },
+})
+
+right({
+  "branch",
+  icon = "",
+  color = { fg = colors.blue, gui = "bold" },
+})
+
+right({
+  "diff",
+  symbols = { added = "+", modified = "~", removed = "-" },
+  diff_color = {
+    added = { fg = colors.green },
+    modified = { fg = colors.orange },
+    removed = { fg = colors.red },
+  },
+  cond = conditions.hide_in_width,
+})
+
+right({
+  function()
+    return "▊"
+  end,
+  color = { fg = colors.red },
+  padding = { left = 1 },
+})
+
+lualine.setup(config)

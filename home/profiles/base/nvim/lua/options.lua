@@ -1,6 +1,7 @@
 vim.g.did_load_filetypes = 0
 vim.g.do_filetype_lua = 1
 
+vim.o.cmdheight = 0
 vim.o.laststatus = 3
 vim.o.termguicolors = true
 vim.o.hidden = true

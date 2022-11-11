@@ -53,8 +53,8 @@ require("gitsigns").setup({
 })
 
 wk.register({
-  ["[c"] = { ":Gitsigns next_hunk<CR>", "Move to next hunk" },
-  ["]c"] = { ":Gitsigns next_hunk<CR>", "Move to previous hunk" },
+  ["[c"] = { "<cmd>Gitsigns next_hunk<CR>", "Move to next hunk" },
+  ["]c"] = { "<cmd>Gitsigns next_hunk<CR>", "Move to previous hunk" },
 }, {
   mode = "n",
   silent = true,
@@ -64,13 +64,13 @@ wk.register({
 wk.register({
   h = {
     name = "Gitsigns",
-    s = { ":Gitsigns stage_hunk<CR>", "Stage hunk" },
-    u = { ":Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
-    r = { ":Gitsigns reset_hunk<CR>", "Reset hunk" },
-    p = { ":Gitsigns preview_hunk<CR>", "Preview hunk" },
-    S = { ":Gitsigns stage_buffer<CR>", "Stage buffer" },
-    R = { ":Gitsigns reset_buffer_index<CR>", "Unstage buffer" },
-    U = { ":Gitsigns reset_buffer<CR>", "Reset buffer" },
+    s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
+    u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
+    r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
+    p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview hunk" },
+    S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage buffer" },
+    R = { "<cmd>Gitsigns reset_buffer_index<CR>", "Unstage buffer" },
+    U = { "<cmd>Gitsigns reset_buffer<CR>", "Reset buffer" },
   },
 }, {
   mode = "n",
@@ -84,9 +84,9 @@ wk.register({
 wk.register({
   h = {
     name = "Gitsigns",
-    s = { ":Gitsigns stage_hunk<CR>", "Stage hunk" },
-    u = { ":Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
-    r = { ":Gitsigns reset_hunk<CR>", "Reset hunk" },
+    s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
+    u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
+    r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
   },
 }, {
   mode = "v",
@@ -96,7 +96,7 @@ wk.register({
 })
 
 wk.register({
-  ih = { ":Gitsigns select_hunk<CR>", "Select hunk" },
+  ih = { "<cmd>Gitsigns select_hunk<CR>", "Select hunk" },
 }, {
   mode = "o",
   silent = true,
@@ -104,7 +104,7 @@ wk.register({
 })
 
 wk.register({
-  ih = { ":Gitsigns select_hunk<CR>", "Select hunk" },
+  ih = { "<cmd>Gitsigns select_hunk<CR>", "Select hunk" },
 }, {
   mode = "x",
   silent = true,

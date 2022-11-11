@@ -15,7 +15,7 @@ require("zen-mode").setup({
 })
 
 require("which-key").register({
-  z = { ":ZenMode<CR>", "Toggle zen-mode" },
+  z = { "<cmd>ZenMode<CR>", "Toggle zen-mode" },
 }, {
   mode = "n",
   prefix = "<Leader>",

@@ -3,8 +3,8 @@ require("trouble").setup({})
 require("which-key").register({
   x = {
     name = "Trouble",
-    x = { ":TroubleToggle<CR>", "Toggle diagnostics" },
-    q = { ":TroubleToggle quickfix<CR>", "Toggle quickfixes" },
+    x = { "<cmd>TroubleToggle<CR>", "Toggle diagnostics" },
+    q = { "<cmd>TroubleToggle quickfix<CR>", "Toggle quickfixes" },
   },
 }, {
   mode = "n",

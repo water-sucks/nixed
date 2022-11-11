@@ -5,7 +5,7 @@ require("sort").setup({})
 wk.register({
   s = {
     name = "Sort",
-    o = { ":Sort<CR>", "Sort line" },
+    o = { "<cmd>Sort<CR>", "Sort line" },
     ['"'] = { 'vi"<Esc>:Sort<CR>', 'Sort until "' },
     ["'"] = { "vi'<Esc>:Sort<CR>", "Sort until '" },
     ["("] = { "vi(<Esc>:Sort<CR>", "Sort block inside ()" },
@@ -21,7 +21,7 @@ wk.register({
 })
 
 wk.register({
-  s = { ":Sort<CR>", "Sort selection" },
+  s = { "<cmd>Sort<CR>", "Sort selection" },
 }, {
   mode = "x",
   prefix = "<Leader>",
