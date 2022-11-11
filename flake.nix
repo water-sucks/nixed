@@ -53,6 +53,17 @@
                 inherit system;
                 config.allowUnfree = true;
               };
+              pr195816 = let
+                nixpkgs' = (import nixpkgs {inherit system;}).applyPatches {
+                  name = "nixpkgs-patched-195816";
+                  src = nixpkgs;
+                  patches = [./overrides/patches/nitropy-update.patch];
+                };
+              in
+                import nixpkgs' {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
             })
             (import ./pkgs)
           ]
@@ -60,17 +71,10 @@
       in {
         _module.args = {
           inherit self inputs lib;
-          pkgs = let
-            patched-nixpkgs = (import nixpkgs {inherit system;}).applyPatches {
-              name = "nixpkgs-patched-195816";
-              src = nixpkgs;
-              patches = [./overrides/patches/nitropy-update.patch];
-            };
-          in
-            import patched-nixpkgs {
-              inherit system overlays;
-              config.allowUnfree = true;
-            };
+          pkgs = import nixpkgs {
+            inherit system overlays;
+            config.allowUnfree = true;
+          };
         };
 
         formatter = pkgs.alejandra;
