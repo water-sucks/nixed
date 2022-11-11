@@ -2,6 +2,6 @@
   hardware.nitrokey.enable = true;
 
   environment.systemPackages = with pkgs; [
-    pynitrokey
+    pr195816.pynitrokey
   ];
 }
