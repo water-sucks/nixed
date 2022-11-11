@@ -36,7 +36,7 @@ local on_attach = function(client, bufnr)
       j = { vim.diagnostic.goto_next, "Jump to next diagnostic" },
       k = { vim.diagnostic.goto_prev, "Jump to last diagnostic " },
 
-      x = { ":CodeActionMenu<CR>", "Show code actions" },
+      x = { "<cmd>CodeActionMenu<CR>", "Show code actions" },
     },
   }
 
@@ -50,7 +50,7 @@ local on_attach = function(client, bufnr)
   wk.register({
     g = {
       name = "LSP",
-      x = { ":<c-u>Lspsaga range_code_action<CR>", "Show code actions over range" },
+      x = { "<cmd><c-u>Lspsaga range_code_action<CR>", "Show code actions over range" },
     },
   }, {
     mode = "x",

@@ -7,11 +7,11 @@ vim.g.floaterm_keymap_toggle = "<F12>"
 require("which-key").register({
   t = {
     name = "Floaterm",
-    t = { ":FloatermToggle<CR>", "Toggle terminal" },
-    n = { ":FloatermNext<CR>", "Move to next terminal" },
-    p = { ":FloatermPrev<CR>", "Move to previous terminal" },
-    N = { ":FloatermNew<CR>", "Create new terminal" },
-    k = { ":FloatermKill<CR>", "Kill terminal" },
+    t = { "<cmd>FloatermToggle<CR>", "Toggle terminal" },
+    n = { "<cmd>FloatermNext<CR>", "Move to next terminal" },
+    p = { "<cmd>FloatermPrev<CR>", "Move to previous terminal" },
+    N = { "<cmd>FloatermNew<CR>", "Create new terminal" },
+    k = { "<cmd>FloatermKill<CR>", "Kill terminal" },
   },
 }, {
   mode = "n",

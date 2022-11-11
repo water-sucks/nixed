@@ -10,9 +10,9 @@ require("aerial").setup({
     require("which-key").register({
       o = {
         name = "Outline",
-        t = { ":AerialToggle<CR>", "Toggle outline" },
-        o = { ":AerialOpen<CR>", "Open outline" },
-        c = { ":AerialClose<CR>", "Close outline" },
+        t = { "<cmd>AerialToggle<CR>", "Toggle outline" },
+        o = { "<cmd>AerialOpen<CR>", "Open outline" },
+        c = { "<cmd>AerialClose<CR>", "Close outline" },
       },
     }, {
       mode = "n",

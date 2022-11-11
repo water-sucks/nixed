@@ -60,7 +60,7 @@ require("nvim-tree").setup({
 })
 
 require("which-key").register({
-  ["<C-n>"] = { ":NvimTreeToggle<CR>", "Toggle nvim-tree" },
+  ["<C-n>"] = { "<cmd>NvimTreeToggle<CR>", "Toggle nvim-tree" },
 }, {
   mode = "n",
   silent = true,
