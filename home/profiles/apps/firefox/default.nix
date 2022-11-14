@@ -16,9 +16,18 @@ in
         profiles."default" = {
           id = 0;
           isDefault = true;
-          userContent = builtins.readFile "${simplefox}/chrome/userContent.css";
-          userChrome = builtins.readFile "${simplefox}/chrome/userChrome.css";
           extraConfig = builtins.readFile ./user.js;
+        };
+      };
+
+      home.file = {
+        "simplefox-assets" = {
+          source = "${simplefox}/assets";
+          target = ".mozilla/firefox/default/assets";
+        };
+        "simplefox-chrome" = {
+          source = "${simplefox}/chrome";
+          target = ".mozilla/firefox/default/chrome";
         };
       };
     }
