@@ -112,7 +112,6 @@ packageSet = do
     grammar ("vala-lang", "tree-sitter-vala")
 
     grammar ("tree-sitter", "tree-sitter-bash")
-    grammar ("tree-sitter", "tree-sitter-rust")
     grammar ("derekstride", "tree-sitter-sql")
     grammar ("fwcd", "tree-sitter-kotlin")
 
