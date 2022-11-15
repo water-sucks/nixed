@@ -6,29 +6,7 @@
   sources = pkgs.callPackage _sources/generated.nix {};
 
   treesitter = pkgs.tree-sitter.override {
-    extraGrammars = {
-      tree-sitter-bash = {
-        inherit (sources.tree-sitter-bash) src;
-      };
-
-      tree-sitter-kotlin = {
-        inherit (sources.tree-sitter-kotlin) src;
-      };
-
-      tree-sitter-sql = {
-        inherit (sources.tree-sitter-sql) src;
-      };
-
-      tree-sitter-norg = {
-        inherit (sources.tree-sitter-norg) src;
-      };
-      tree-sitter-norg-meta = {
-        inherit (sources.tree-sitter-norg-meta) src;
-      };
-      tree-sitter-vala = {
-        inherit (sources.tree-sitter-vala) src;
-      };
-    };
+    extraGrammars = with lib; filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources;
   };
 
   generatedPluginSources = with lib;
@@ -50,14 +28,7 @@
   plugins =
     generatedPlugins
     // {
-      # Use nvim-treesitter plugins from nixpkgs so
-      # Treesitter queries are synced with libraries
-      # inherit
-      #   (pkgs.vimPlugins)
-      #   nvim-treesitter
-      #   nvim-treesitter-textobjects
-      #   nvim-treesitter-refactor
-      #   ;
+      # Add plugins you want synced with nixpkgs here.
     };
 in {
   home.packages = with pkgs; [

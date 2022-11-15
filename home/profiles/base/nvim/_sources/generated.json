@@ -1443,25 +1443,6 @@
         },
         "version": "f354ea343b8803948e6e1df36eb586e31c529900"
     },
-    "tree-sitter-rust": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "tree-sitter-rust",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "tree-sitter",
-            "repo": "tree-sitter-rust",
-            "rev": "0431a2c60828731f27491ee9fdefe25e250ce9c9",
-            "sha256": "sha256-DnUq8TwLGPtN1GXw0AV2t+tj7UKrU4kU32rjGoCHMpE=",
-            "type": "github"
-        },
-        "version": "0431a2c60828731f27491ee9fdefe25e250ce9c9"
-    },
     "tree-sitter-sql": {
         "cargoLocks": null,
         "extract": null,

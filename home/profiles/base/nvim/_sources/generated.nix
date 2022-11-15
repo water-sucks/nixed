@@ -840,17 +840,6 @@
       sha256 = "sha256-xTH4LmqhtfyN9JGQdquJLQz1McZQItdEY5HpJxbuYC0=";
     };
   };
-  tree-sitter-rust = {
-    pname = "tree-sitter-rust";
-    version = "0431a2c60828731f27491ee9fdefe25e250ce9c9";
-    src = fetchFromGitHub {
-      owner = "tree-sitter";
-      repo = "tree-sitter-rust";
-      rev = "0431a2c60828731f27491ee9fdefe25e250ce9c9";
-      fetchSubmodules = false;
-      sha256 = "sha256-DnUq8TwLGPtN1GXw0AV2t+tj7UKrU4kU32rjGoCHMpE=";
-    };
-  };
   tree-sitter-sql = {
     pname = "tree-sitter-sql";
     version = "70c50264ae022193adb364ffa7a767d765ed9857";
