@@ -21,6 +21,9 @@
 
     discord.url = "github:InternetUnexplorer/discord-overlay";
     discord.inputs.nixpkgs.follows = "nixpkgs";
+
+    leftwm.url = "github:leftwm/leftwm/0.4.0";
+    leftwm.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -48,6 +51,7 @@
           [
             agenix.overlay
             discord.overlay
+            leftwm.overlay
             (_final: _prev: {
               stable = import nixpkgs-stable {
                 inherit system;
