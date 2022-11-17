@@ -7,19 +7,19 @@
 with lib; let
   cfg = config.xsession.windowManager.leftwm;
 
-  tomlFormat = pkgs.formats.toml {};
+  ronFormat = pkgs.formats.ron {extensions = ["#![enable(implicit_some)]"];};
 in {
   options.xsession.windowManager.leftwm = {
     enable = mkEnableOption "LeftWM window manager";
 
     settings = mkOption {
-      inherit (tomlFormat) type;
+      inherit (ronFormat) type;
       default = {};
       description = "Nixified LeftWM configuration (not validated)";
     };
 
     theme = mkOption {
-      inherit (tomlFormat) type;
+      inherit (ronFormat) type;
       default = {};
       description = "Nixified LeftWM theme configuration (not validated)";
     };
@@ -45,11 +45,11 @@ in {
     home.packages = [pkgs.leftwm];
 
     xdg.configFile = {
-      "leftwm/config.toml" = mkIf (cfg.settings != {}) {
-        source = tomlFormat.generate "leftwm-config" cfg.settings;
+      "leftwm/config.ron" = mkIf (cfg.settings != {}) {
+        source = ronFormat.generate "leftwm-config" cfg.settings;
       };
-      "leftwm/themes/current/theme.toml" = mkIf (cfg.settings != {}) {
-        source = tomlFormat.generate "leftwm-theme" cfg.theme;
+      "leftwm/themes/current/theme.ron" = mkIf (cfg.settings != {}) {
+        source = ronFormat.generate "leftwm-theme" cfg.theme;
       };
 
       # Manually written so that shebang can pass through
