@@ -9,7 +9,5 @@ lib.mkIf pkgs.stdenv.isLinux {
     element-desktop
     signal-desktop
     slack
-    skypeforlinux
-    teams
   ];
 }

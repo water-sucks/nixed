@@ -4,10 +4,8 @@ _: {
     "discord"
     "element"
     "signal"
-    "skype"
     "slack"
     "whatsapp"
     "zoom"
-    "microsoft-teams"
   ];
 }
