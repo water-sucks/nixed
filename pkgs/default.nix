@@ -10,4 +10,6 @@ final: prev: {
   lswt = final.callPackage ./tools/wayland/lswt {};
   waybar-mpris = final.callPackage ./misc/waybar-mpris {};
   airtame = final.callPackage ./applications/misc/airtame {};
+
+  formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
 }
