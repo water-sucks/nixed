@@ -82,7 +82,9 @@
           };
         };
 
-        formatter = pkgs.alejandra;
+        formatter = pkgs.writeShellScriptBin "alejandra-quiet" ''
+          exec ${pkgs.alejandra}/bin/alejandra -q $@;
+        '';
 
         checks = import ./checks.nix {inherit inputs pkgs;};
 
