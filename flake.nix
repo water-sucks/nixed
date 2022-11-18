@@ -38,6 +38,7 @@
       imports = [
         ./hosts/nixos
         ./hosts/darwin
+        ./home
       ];
 
       systems = ["x86_64-linux" "x86_64-darwin"];
