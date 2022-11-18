@@ -83,30 +83,17 @@ in {
       bc
       cowsay
     ];
-    extraConfig = ''
-      lua << EOF
-      ${builtins.readFile ./init.lua}
-      EOF
-    '';
   };
 
   xdg.configFile = {
-    "nvim/lua" = {
-      source = ./lua;
-      recursive = true;
-    };
-    "nvim/parser" = {
-      source = "${treesitter.withPlugins (_: treesitter.allGrammars)}";
-      recursive = true;
-    };
+    "nvim/init.lua".source = ./init.lua;
+    "nvim/lua".source = ./lua;
+    "nvim/parser".source = "${treesitter.withPlugins (_: treesitter.allGrammars)}";
   };
 
   xdg.dataFile =
     {
-      "nvim/vscode-lldb" = {
-        source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
-        recursive = true;
-      };
+      "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
     }
     // (with lib;
       mapAttrs' (n: v:
