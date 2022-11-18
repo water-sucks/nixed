@@ -1,4 +1,4 @@
-_final: prev: {
+final: prev: {
   river = prev.river.overrideAttrs (_: {
     patches = [./patches/change-default-color.patch];
 
@@ -22,7 +22,23 @@ _final: prev: {
     inherit (prev.sources.river) pname version src;
   });
 
-  wlroots = prev.wlroots.overrideAttrs (_: {
+  wlroots = prev.wlroots.overrideAttrs (o: let
+    hwdata = prev.hwdata.overrideAttrs (_: rec {
+      version = "0.363";
+
+      src = prev.fetchFromGitHub {
+        owner = "vcrhonek";
+        repo = "hwdata";
+        rev = "v${version}";
+        sha256 = "sha256-A6GNrHc/t2SVyAyJWmzQTa+pD9wGESsz7DNruW2kH4s=";
+      };
+
+      outputHashMode = null;
+      outputHash = null;
+    });
+  in {
     inherit (prev.sources.wlroots) pname version src;
+
+    buildInputs = o.buildInputs ++ [hwdata];
   });
 }
