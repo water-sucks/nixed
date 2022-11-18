@@ -4,6 +4,12 @@
   lib,
   ...
 }: let
+  waybar = pkgs.waybar.override {
+    swaySupport = false;
+    mpdSupport = false;
+    sndioSupport = false;
+  };
+
   sed = "${pkgs.gnused}/bin/sed";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
@@ -29,11 +35,8 @@
 in {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.override {
-      swaySupport = false;
-      mpdSupport = false;
-      sndioSupport = false;
-    };
+    package = waybar;
+    systemd.enable = true;
     settings = {
       topbar = {
         name = "topbar";
@@ -185,18 +188,7 @@ in {
 
   systemd.user.services.waybar = {
     Unit = {
-      Description = "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
-      PartOf = ["graphical-session.target"];
-      After = ["graphical-session-pre.target"];
       ConditionPathExistsGlob = ["%t/wayland-*"];
-    };
-
-    Install.WantedBy = ["graphical-session.target"];
-
-    Service = {
-      ExecStart = "${pkgs.waybar}/bin/waybar";
-      Restart = "on-failure";
-      RestartSec = 2;
     };
   };
 }

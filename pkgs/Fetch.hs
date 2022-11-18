@@ -13,22 +13,17 @@ packageSet :: PackageSet ()
 packageSet = do
     define $
         package "wlroots"
-            `sourceGit'` ("https://gitlab.freedesktop.org/ifreund/wlroots", "session-lock-0.15")
-            `fetchGit` "https://gitlab.freedesktop.org/ifreund/wlroots"
+            `sourceManual` "0.16.0"
+            `fetchGit` "https://gitlab.freedesktop.org/wlroots/wlroots"
 
     define $
         package "river"
-            `sourceGit'` ("https://github.com/riverwm/river", "session-lock")
+            `sourceGit` "https://github.com/riverwm/river"
             `fetchGitHub'` ("riverwm", "river", fetchSubmodules .~ True)
 
     define $
         package "waylock"
             `fromGitHubTag'` ("ifreund", "waylock", includeRegex ?~ ".*", fetchSubmodules .~ True)
-
-    define $
-        package "waybar"
-            `sourceGit` "https://github.com/Alexays/waybar"
-            `fetchGitHub` ("Alexays", "waybar")
 
     define $
         package "lswt"
@@ -54,10 +49,6 @@ packageSet = do
         package "rescrobbled"
             `fromGitHub` ("InputUsername", "rescrobbled")
             `hasCargoLocks` ["Cargo.lock"]
-
-    define $
-        package "catch2"
-            `fromGitHub` ("catchorg", "Catch2")
 
     define $
         package "filen-desktop"
