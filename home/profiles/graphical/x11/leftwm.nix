@@ -177,39 +177,42 @@ in {
       ];
     };
 
-    theme = struct {
-      border_width = 1;
-      margin = 10;
-      default_border_color = "#333333";
-      floating_border_color = "#333333";
-      focused_border_color = "#732735";
+    themes = {
+      # I literally don't know what to name this.
+      oof = {
+        theme = struct {
+          border_width = 1;
+          margin = 10;
+          default_border_color = "#333333";
+          floating_border_color = "#333333";
+          focused_border_color = "#732735";
+        };
+
+        up = ''
+          export SCRIPTPATH="$(cd "$(dirname "$0")"; pwd -P)"
+
+          if [ -f "/tmp/leftwm-theme-down" ]; then
+              /tmp/leftwm-theme-down
+              rm /tmp/leftwm-theme-down
+          fi
+
+          ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
+
+          ${leftwm-command} "LoadTheme $SCRIPTPATH/theme.ron"
+
+          if [ -x "$(command -v feh)" ]; then
+            ${feh} --bg-scale ${self}/assets/woah.jpg
+          fi
+        '';
+
+        down = ''
+          export SCRIPTPATH="$(cd "$(dirname "$0")"; pwd -P)"
+
+          ${leftwm-command} "UnloadTheme"
+        '';
+      };
     };
 
-    up = ''
-      #!/usr/bin/env bash
-
-      export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-
-      if [ -f "/tmp/leftwm-theme-down" ]; then
-          /tmp/leftwm-theme-down
-          rm /tmp/leftwm-theme-down
-      fi
-      ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
-
-      ${leftwm-command} "LoadTheme $SCRIPTPATH/theme.toml"
-
-      if [ -x "$(command -v feh)" ]; then
-        ${feh} --bg-scale ${self}/assets/woah.jpg
-      fi
-      # systemctl --user restart polybar # Won't show unless restarted
-    '';
-
-    down = ''
-      #!/usr/bin/env bash
-
-      export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-
-      ${leftwm-command} "UnloadTheme"
-    '';
+    theme = "oof";
   };
 }
