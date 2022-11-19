@@ -1,15 +1,40 @@
-final: prev: {
-  # keep sources this first
-  sources = prev.callPackage (import ./_sources/generated.nix) {};
-  # then, call packages with `final.callPackage`
-  nerdfetch = final.callPackage ./applications/misc/nerdfetch {};
-  plymouth-spinning-watch-theme = final.callPackage ./applications/misc/plymouth-spinning-watch-theme {};
-  filen-desktop = final.callPackage ./applications/networking/filen-desktop {};
-  rescrobbled = final.callPackage ./tools/audio/rescrobbled {};
-  waylock = final.callPackage ./misc/screensavers/waylock {};
-  lswt = final.callPackage ./tools/wayland/lswt {};
-  waybar-mpris = final.callPackage ./misc/waybar-mpris {};
-  airtame = final.callPackage ./applications/misc/airtame {};
+{
+  self,
+  lib,
+  ...
+}: let
+  callPackage = pkgs: path: args: let
+    sources = pkgs.callPackage _sources/generated.nix {};
+  in
+    pkgs.callPackage path ({inherit sources;} // args);
 
-  formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
+  packages' = {
+    airtame = ./applications/misc/airtame;
+
+    filen-desktop = ./applications/networking/filen-desktop;
+
+    lswt = ./tools/wayland/lswt;
+
+    nerdfetch = ./applications/misc/nerdfetch;
+
+    plymouth-spinning-watch-theme = ./applications/misc/plymouth-spinning-watch-theme;
+
+    rescrobbled = ./tools/audio/rescrobbled;
+
+    waybar-mpris = ./misc/waybar-mpris;
+
+    waylock = ./misc/screensavers/waylock;
+  };
+in {
+  perSystem = {pkgs, ...}: {
+    packages = lib.mapAttrs (n: v: callPackage pkgs v {}) packages';
+  };
+
+  flake.overlays = {
+    default = final: prev:
+      (lib.mapAttrs (n: v: callPackage prev v {}) packages')
+      // {
+        formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
+      };
+  };
 }
