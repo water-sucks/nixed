@@ -106,13 +106,13 @@
   };
   wob = {
     pname = "wob";
-    version = "dcf9bcf73cdc5204c6fc2a08f60ed64ebac38980";
+    version = "200eac7d664ba7b5e5642b26ef823c07b17fe92f";
     src = fetchFromGitHub {
       owner = "francma";
       repo = "wob";
-      rev = "dcf9bcf73cdc5204c6fc2a08f60ed64ebac38980";
+      rev = "200eac7d664ba7b5e5642b26ef823c07b17fe92f";
       fetchSubmodules = false;
-      sha256 = "sha256-3O2RdoL8FjOgO2SZG5j1S8Qq82CN3owCLkqCk/0w2ks=";
+      sha256 = "sha256-707QBcyowTSObvkcw6UhRes2IlRqxp15ujlU1EQz5G0=";
     };
   };
 }

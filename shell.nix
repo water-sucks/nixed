@@ -3,7 +3,7 @@
   pkgs,
 }:
 pkgs.mkShell {
-  name = "nixed-env";
+  name = "nixed-shell";
   packages = with pkgs; [
     # Miscallaneous stuff
     agenix
