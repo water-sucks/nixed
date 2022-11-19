@@ -9,10 +9,6 @@ in
     {
       programs.zathura = {
         enable = true;
-        package = with pkgs;
-          if isLinux
-          then zathura
-          else runCommand "zathura-0.0.0" {} "mkdir $out";
         options = {
           selection-clipboard = "clipboard";
         };
