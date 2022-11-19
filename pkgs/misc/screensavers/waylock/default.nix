@@ -47,8 +47,8 @@ stdenv.mkDerivation {
   installFlags = ["DESTDIR=$(out)"];
 
   meta = with lib; {
-    homepage = "https://github.com/ifreund/river";
-    description = "A dynamic tiling wayland compositor";
+    homepage = "https://github.com/ifreund/waylock";
+    description = "A small screen locker for Wayland compositors.";
     license = licenses.isc;
     platforms = platforms.linux;
     maintainers = with maintainers; [water-sucks];

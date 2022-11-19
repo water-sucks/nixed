@@ -10,9 +10,98 @@ files structured in yet another way. Is it good? Maybe; that's up to your
 discretion. If you think it's not, it can always be improved! Send me a message
 or open an issue, and I'd love to talk about it.
 
+## Packages/Modules
+
+I have a few custom packages and modules, some of which I do want to contribute
+upstream to nixpkgs and home-manager in the future. However, I'm keeping them
+around in here to make sure they can work reliably before doing so. If you want
+to use them, feel free! Here's a rundown of what they are:
+
+### Packages
+
+| Name                            | Description                                |
+| ------------------------------- | ------------------------------------------ |
+| airtame                         | Screen streaming application               |
+| filen-desktop                   | Desktop client for filen.io                |
+| lswt                            | List Wayland toplevels                     |
+| nerdfetch\*                     | Modified version of nerdfetch              |
+| plymouth-spinning-watch-theme\* | Spinning watch theme for Plymouth          |
+| rescrobbled                     | MPRIS music scrobbler daemon               |
+| waybar-mpris                    | Waybar component for seeing MPRIS players  |
+| waylock                         | Small screenlocker for Wayland compositors |
+
+\* - Probably don't use this package, this is tailored for my own config.
+
+To add them to your flake, you can use the provided overlay:
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
+    nixed.url = "github:water-sucks/nixed";
+  };
+
+  outputs = {self, nixpkgs, nixed, ...}: let
+    pkgs = import nixpkgs {
+      system = "x86_64-linux";
+      overlays = [
+        nixed.overlays.default
+      ];
+    };
+  in {
+    # Whatever you want to do with my packages...
+  };
+}
+```
+
+### home-manager Modules
+
+| Name             | Description                               |
+| ---------------- | ----------------------------------------- |
+| berry            | Berry WM configuration                    |
+| darwin-wallpaper | Configure wallpaper on macOS              |
+| hikari           | Hikari Wayland compositor configuration   |
+| leftwm           | LeftWM configuration                      |
+| river            | River configuration                       |
+| wob              | Wayland overlay bar configuration/service |
+
+To use these modules, you can use the provided `homeModules` attribute:
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
+    home.url = "github:nix-community/home-manager";
+    nixed.url = "github:water-sucks/nixed";
+  };
+
+  outputs = {self, nixpkgs, home-manager, nixed, ... }: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    homeConfigurations.jdoe =
+      home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        # Adds all modules to configuration
+        modules = [
+          # Whatver other modules you want
+        ] ++ builtins.attrValues (nixed.homeModules);
+
+      };
+  };
+}
+```
+
+To see possible options, check their definitions out in
+[home/modules](./home/modules).
+
+Note: I don't use berry or Hikari actively anymore, but since their modules are
+pretty uncomplicated, I still keep them in the tree.
+
 ## Roster
 
-I name all of my machines after my favorite players from the Las Vegas Raiders
+I name all of my machines after my favorite players from the Las Vegas Raiders.
 It's a time-honored thing for me; I've always done that with my personal
 machines. Let's see the lineup!
 
@@ -26,18 +115,10 @@ machines. Let's see the lineup!
   - AMD Ryzen 9 3950X (16 cores, 3.8 GHz OC)
   - G.SKILL Trident RGB (64 GB DDR4-3600)
   - AMD Radeon RX 5500 XT
-  - Sabrent Rocket 4.0 (1 TB)
+  - Sabrent Rocket 4.0 x2 (1 TB, 2 TB)
 
-He's no Kenny Stabler (yet!), but Derek Carr has been ol' reliable for quite a
-long time now; since 2014, Carr has led us to countless wins, has been a
-phenomenal leader, and also is a great man to be around. Look at his
-last run to clinch a playoff spot in the midst of hellish circumstances during
-the 2021 season! My workstation has served me quite well; while it doesn't move
-around in the pocket a lot (it stays in my home, after all), it manages to be an
-extremely fast machine and doesn't consume too much power unless it's under
-extreme workloads. When it needs to run, it runs, and it does so fast! It's
-like when Carr does when he finds an open area to rush for the first down; you
-never expect it.
+My daily driver workstation; it's served me well throughout the years, and
+doesn't take too much power, even when overclocked.
 
 ### HunterRenfrow
 
@@ -45,21 +126,8 @@ never expect it.
 - Operating system: NixOS
 - Model: Lenovo IdeaPad Flex 5
 
-Hunter Renfrow is a beast. He may not look the part at first glance; but he will
-always find endless ways to shock you. 3rd down? He's
-[gotcha](https://www.youtube.com/watch?v=Nv4McRkkpOQ). Critical throw that can
-cost a season if dropped? He's
-[gotcha](https://www.youtube.com/watch?v=9AsuslXha9Y)
-there as well! Block a rare fake punt and force an incredible turnover on downs
-with flawless technique? You know the answer; He's
-[gotcha](https://www.youtube.com/watch?v=eLzgg5iavEs) there too!! What's there
-that he can't do??? My primary laptop is very similar; it not only has a great
-battery life (like Hunter's stamina), but it also is a great laptop to take
-on the go; it's as mobile as Hunter is on the field! I use it very often to
-catch passes from Derek Carr (I SSH into my home workstation a lot; provided I
-have an internet connection, Hunter does so with no problems). It's very
-versatile, and I can use it for many things. He's one of my favorite current
-players, and this laptop is definitely my favorite laptop; it all checks out!
+My primary laptop; I take it everywhere, it's very mobile (quite a lot like its
+namesake!).
 
 ### CharlesWoodson
 
@@ -67,20 +135,8 @@ players, and this laptop is definitely my favorite laptop; it all checks out!
 - Operating system: macOS (with nix-darwin)
 - Specs: (same as DerekCarr)
 
-You need no introduction if you're a Raiders fan; Charles Woodson, aka CWood, is
-a legend. He was a beacon of light in our darkest years. Year after year of
-miserable seasons, yet he kept up a legendary performance. My situation with
-this OS is similar. Before I used Linux, I wanted to develop for Apple quite a
-lot, and much preferred the feel of macOS to Windows. I could never afford a
-real Mac though, so I had to go the way of the Hackintosh. I did this for a few
-years with nothing other than Homebrew for package management, but I ended up
-doing clean installations for upgrades. Years of rebuilding configurations by
-hand, and I reached a limit. When I found `nix-darwin`, though, I was ecstatic;
-it was as if I was Bill Belichick and I had found Tom Brady. Even during the
-dark years before I used Nix, my Hackintosh served me quite well; it now does so
-even better with Nix. CWood is a legend, and will be in my heart forever, even
-when Hackintoshing meets its inevitable end (Damn you, Apple!). I might need to
-buy a powerful Mac soon; CWood will follow it and be installed there.
+Hackintosh nix-darwin setup that is dual-booted with DerekCarr; primarily used
+for iOS development and to run other Apple-exclusive software.
 
 ### SebastianJanikowski
 
@@ -88,16 +144,11 @@ buy a powerful Mac soon; CWood will follow it and be installed there.
 - Operating system: macOS (with nix-darwin)
 - Model: MacBook Pro 2017 (base model)
 
-Sebastian Janikowsi; he was a legendary kicker. You know someone is phenomenal
-if they have a rating of 99 in _Madden NFL_. He not only had it multiple times,
-but did so _consecutively_. Seabass was a monster stats-wise, but he did start
-to decline after going at it so hard for over 10 years. This was the very first
-laptop I ever received; it served me well, but it's now a toaster that's hot
-enough to cook eggs on. It's past its time, and it needs to retire soon. I do
-commend it for its extraordinary achievements while it was my daily driver, and
-it was quite the ride.
+A legit MacBook, but sadly declining; it's hot enough to cook some bacon on. I
+rarely use it anymore unless I need access to an Apple environment and can't
+use CharlesWoodson.
 
-There will be more to come in the future, such as Bo Jackson. Stay tuned!
+More to come in the future, such as Bo Jackson. Stay tuned!
 
 ## Notes
 
@@ -111,7 +162,7 @@ I did like the way that `digga` structured profiles vs. modules, but I did not
 like the "suites" metaphor at all; it felt like a misuse of `specialArgs`. Due
 to this, I spent a lot of time trying to figure out a way to keep the profiles
 vs. modules distinction, and eventually came up with a way to dynamically
-generate modules; it's rather hacky, and does rely a lot on the module system
+generate modules; it's rather hackish, and does rely a lot on the module system
 to pass arguments properly, but it works quite well right now. In the future,
 I might create a template using this structure as an alternative to `digga`,
 but this is still rather complicated, and does not have some bells and whistles
@@ -131,6 +182,6 @@ in the future.
   a super practical configuration can look like. Mine is nowhere near as complex
   as his, but you'll see a lot of similarities and (maybe) blatant ripoffs.
 - [viperML/dotfiles](https://github.com/viperML/dotfiles) :: for giving me some
-  insight on how `flake-parts` works
+  insight on how `flake-parts` works.
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles) :: for some naming
   ideas and how to properly export a `lib` attribute.
