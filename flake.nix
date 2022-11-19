@@ -39,6 +39,7 @@
         ./hosts/nixos
         ./hosts/darwin
         ./home
+        ./pkgs
       ];
 
       systems = ["x86_64-linux" "x86_64-darwin"];
@@ -53,6 +54,12 @@
             agenix.overlay
             discord.overlay
             leftwm.overlay
+            self.overlays.default
+            # Keeping this out of the exposed overlay, I don't want to
+            # expose nvfetcher-generated stuff, that's annoying.
+            (_final: _prev: {
+              sources = pkgs.callPackage ./pkgs/_sources/generated.nix {};
+            })
             (_final: _prev: {
               stable = import nixpkgs-stable {
                 inherit system;
@@ -70,7 +77,6 @@
                   config.allowUnfree = true;
                 };
             })
-            (import ./pkgs)
           ]
           ++ (map import (with lib; attrValues (flattenTree (rakeLeaves ./overrides))));
       in {
