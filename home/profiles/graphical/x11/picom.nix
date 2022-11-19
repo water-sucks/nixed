@@ -81,7 +81,6 @@
       no-fading-destroyed-argb = false;
       inactive-opacity-override = false;
     };
-    experimentalBackends = true;
   };
 
   systemd.user.services.picom = {
