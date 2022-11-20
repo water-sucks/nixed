@@ -1,4 +1,5 @@
 {
+  lib,
   stdenv,
   substituteAll,
   ...
@@ -14,5 +15,12 @@ stdenv.mkDerivation {
     src = ./nerdfetch;
     isExecutable = true;
     inherit (stdenv) shell;
+  };
+
+  meta = with lib; {
+    description = "Modified version of nerdfetch";
+    homepage = "https://github.com/ThatOneCalculator/NerdFetch";
+    license = licenses.mit;
+    platforms = platforms.unix;
   };
 }
