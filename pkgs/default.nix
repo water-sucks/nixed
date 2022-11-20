@@ -3,6 +3,8 @@
   lib,
   ...
 }: let
+  inherit (self.lib) filterPackages;
+
   callPackage = pkgs: path: args: let
     sources = pkgs.callPackage _sources/generated.nix {};
   in
@@ -26,13 +28,17 @@
     waylock = ./misc/screensavers/waylock;
   };
 in {
-  perSystem = {pkgs, ...}: {
-    packages = lib.mapAttrs (n: v: callPackage pkgs v {}) packages';
+  perSystem = {
+    pkgs,
+    system,
+    ...
+  }: {
+    packages = filterPackages system (lib.mapAttrs (_: v: callPackage pkgs v {}) packages');
   };
 
   flake.overlays = {
-    default = final: prev:
-      (lib.mapAttrs (n: v: callPackage prev v {}) packages')
+    default = _final: prev:
+      (lib.mapAttrs (_: v: callPackage prev v {}) packages')
       // {
         formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
       };
