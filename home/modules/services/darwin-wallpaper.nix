@@ -17,7 +17,7 @@ in {
 
   config = mkIf (cfg.file != null) {
     assertions = with lib; [
-      (hm.assertions.assertPlatform "programs.wob" pkgs platforms.darwin)
+      (hm.assertions.assertPlatform "services.darwin-wallpaper" pkgs platforms.darwin)
     ];
 
     home.activation = {

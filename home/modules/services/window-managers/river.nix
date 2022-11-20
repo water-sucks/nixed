@@ -19,7 +19,7 @@ in {
 
   config = mkIf cfg.enable {
     assertions = with lib; [
-      (hm.assertions.assertPlatform "wayland.windowManager.hikari" pkgs platforms.linux)
+      (hm.assertions.assertPlatform "wayland.windowManager.river" pkgs platforms.linux)
     ];
 
     home.packages = with pkgs; [
