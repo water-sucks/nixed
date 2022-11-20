@@ -12,16 +12,16 @@ in {
   options.wayland.windowManager.hikari = {
     enable = mkEnableOption "Hikari Wayland compositor";
 
+    package = mkOption {
+      type = types.package;
+      default = pkgs.hikari;
+      description = "Package to use for Hikari";
+    };
+
     autostart = mkOption {
       type = types.lines;
       default = "";
       description = "Autostart script ran on Hikari startup";
-    };
-
-    debug = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Run Hikari in debug mode";
     };
 
     config = mkOption {
@@ -43,15 +43,6 @@ in {
       name = "hikari.conf";
       text = cfg.config;
     };
-
-    hikariPackage =
-      if cfg.debug
-      then
-        pkgs.hikari.overrideAttrs
-        (o: {
-          makeFlags = o.makeFlags ++ ["DEBUG=YES"];
-        })
-      else pkgs.hikari;
   in
     mkIf cfg.enable {
       assertions = with lib; [
@@ -65,7 +56,7 @@ in {
       xdg.configFile."hikari/autostart".text = cfg.autostart;
 
       home.packages = [
-        hikariPackage
+        cfg.package
       ];
     };
 }
