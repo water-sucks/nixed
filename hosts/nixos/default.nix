@@ -4,7 +4,7 @@
   withSystem,
   ...
 }: let
-  inherit (self.lib) flattenTree rakeLeaves genModules genHosts;
+  inherit (self.lib) collectLeaves genModules genHosts;
 
   mkNixOS = hostname: configuration: {system ? "x86_64-linux", ...}:
     withSystem system ({
@@ -38,8 +38,8 @@
               (genModules args "profiles" ../profiles) # Common profiles
               ++ (genModules args "profiles" ./profiles) # NixOS profiles
               ++ (genModules args "users" ../../users) # Users
-              ++ (lib.attrValues (flattenTree (rakeLeaves ../modules))) # Common modules
-              ++ (lib.attrValues (flattenTree (rakeLeaves ./modules))); # NixOS modules
+              ++ (collectLeaves ../modules) # Common modules
+              ++ (collectLeaves ./modules); # NixOS modules
           })
         ];
       });
