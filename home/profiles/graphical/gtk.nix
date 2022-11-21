@@ -25,5 +25,10 @@
       name = "Orchis-dark";
       package = pkgs.orchis-theme;
     };
+    gtk3.extraCss = ''
+      decoration, window, window.background, window.titlebar, * {
+        border-radius: 0px;
+      }
+    '';
   };
 }
