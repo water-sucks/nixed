@@ -1,10 +1,10 @@
-name: flake-updater
+name: flake-update
 
 on:
   workflow_dispatch:
   schedule:
-    # Every Saturday @ 4:00 AM PST
-    - cron: "0 12 * * 6"
+    # Every day @ 4:00 AM PST
+    - cron: "0 12 * * *"
 
 jobs:
   # Update flake inputs
