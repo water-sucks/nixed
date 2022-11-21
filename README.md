@@ -185,3 +185,5 @@ in the future.
   insight on how `flake-parts` works.
 - [fufexan/dotfiles](https://github.com/fufexan/dotfiles) :: for some naming
   ideas and how to properly export a `lib` attribute.
+- [NobbZ/nixos-config](https://github.com/NobbZ/nixos-config) :: for a great way
+  to auto-update my flake using GitHub Actions
