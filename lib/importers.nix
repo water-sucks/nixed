@@ -46,4 +46,6 @@ lib: rec {
       else {};
   in
     lib.filterAttrs (_: v: v != {}) (lib.mapAttrs' collect files);
+
+  collectLeaves = directory: lib.attrValues (flattenTree (rakeLeaves directory));
 }

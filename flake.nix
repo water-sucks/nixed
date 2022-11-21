@@ -78,7 +78,7 @@
                 };
             })
           ]
-          ++ (map import (with lib; attrValues (flattenTree (rakeLeaves ./overrides))));
+          ++ (map import (with lib; collectLeaves ./overrides));
       in {
         _module.args = {
           inherit self inputs lib;

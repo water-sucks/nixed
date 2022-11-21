@@ -4,7 +4,7 @@
   withSystem,
   ...
 }: let
-  inherit (self.lib) flattenTree rakeLeaves genModules genHosts;
+  inherit (self.lib) collectLeaves genModules genHosts;
 
   mkDarwin = hostname: configuration: {system ? "x86_64-darwin", ...}:
     withSystem system ({
@@ -31,8 +31,8 @@
               (genModules args "profiles" ../profiles) # Common profiles
               ++ (genModules args "profiles" ./profiles) # nix-darwin profiles
               ++ (genModules args "users" ../../users) # Users
-              ++ (lib.attrValues (flattenTree (rakeLeaves ../modules))) # Common modules
-              ++ (lib.attrValues (flattenTree (rakeLeaves ./modules))); # nix-darwin modules
+              ++ (collectLeaves ../modules) # Common modules
+              ++ (collectLeaves ./modules); # nix-darwin modules
           })
         ];
       });
