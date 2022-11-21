@@ -61,13 +61,13 @@
   };
   river = {
     pname = "river";
-    version = "5dc591fe2d1fd681888adc12b9cfb94aa012c33a";
+    version = "3ed71c51e262990d7c4b8cf513f157d463a61fac";
     src = fetchFromGitHub {
       owner = "riverwm";
       repo = "river";
-      rev = "5dc591fe2d1fd681888adc12b9cfb94aa012c33a";
+      rev = "3ed71c51e262990d7c4b8cf513f157d463a61fac";
       fetchSubmodules = true;
-      sha256 = "sha256-F23V1BITptHVz/6UDD4KIM/KgP+8ln7+eBlTr4mv3DU=";
+      sha256 = "sha256-JUgp1ehntydM5qTdONRESAc1FY+D9pqemeeURhZjQ/8=";
     };
   };
   waybar-mpris = {
@@ -106,13 +106,13 @@
   };
   wob = {
     pname = "wob";
-    version = "54875105ab3e4f419485765c539e1480f64a2f3e";
+    version = "19318a308033ee5ea626ba61068af408392a6251";
     src = fetchFromGitHub {
       owner = "francma";
       repo = "wob";
-      rev = "54875105ab3e4f419485765c539e1480f64a2f3e";
+      rev = "19318a308033ee5ea626ba61068af408392a6251";
       fetchSubmodules = false;
-      sha256 = "sha256-lZlzWXZwmuD8G/PUC94HhJsRBM17O+f8ffOD6s1mHXI=";
+      sha256 = "sha256-u4jLVLGcMTgDEgN8jW5d59m3GorJX7Z6+qKhzvbON3k=";
     };
   };
 }
