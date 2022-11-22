@@ -64,6 +64,25 @@
         },
         "version": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a"
     },
+    "polybar": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "polybar",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": true,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "polybar",
+            "repo": "polybar",
+            "rev": "d5498c8a8a4b2c332eaa7855eb88f3e3432edaed",
+            "sha256": "sha256-hULLHRVFWPP114PWW8z2LRobDTe+NZnaR9ow6yN7ez8=",
+            "type": "github"
+        },
+        "version": "d5498c8a8a4b2c332eaa7855eb88f3e3432edaed"
+    },
     "rescrobbled": {
         "cargoLocks": {
             "Cargo.lock": [
