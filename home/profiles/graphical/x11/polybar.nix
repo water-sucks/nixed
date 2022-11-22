@@ -69,8 +69,6 @@ in {
 
       "settings" = {
         screenchange-reload = true;
-        throttle-output = 5;
-        throttle-output-for = 10;
         compositing-background = "source";
         compositing-foreground = "over";
         compositing-overline = "over";
@@ -81,7 +79,7 @@ in {
 
       "bar/oofbar" = {
         modules-left = "powermenu spacer ewmh spacer layout";
-        modules-right = "input dot battery dot storage dot cpu dot mem dot brightness dot audio dot bluetooth dot wlan dot date spacer launcher";
+        modules-right = "battery dot storage dot cpu dot mem dot brightness dot audio dot bluetooth dot wlan spacer tray launcher";
         width = "100%";
         offset-x = 0;
         offset-y = 0;
@@ -97,21 +95,20 @@ in {
         module-margin-right = 0;
         separator = "";
         font-0 = "BlexMono Nerd Font:size=8;3";
-        border-bottom = 2;
+        border-bottom-size = 2;
         border-color = "\${colors.primary}";
         cursor-click = "pointer";
         cursor-scroll = "ns-resize";
         line-size = 2;
         line-color = "\${colors.primary}";
-        tray-position = "none";
       };
 
       "module/launcher" = {
         type = "custom/text";
-        content = "";
-        content-padding = 2;
-        content-foreground = "\${colors.text}";
-        content-background = "\${colors.primary}";
+        format = "";
+        format-padding = 2;
+        format-foreground = "\${colors.text}";
+        format-background = "\${colors.primary}";
         click-left = ''${rofi} -show combi -combi-modi "drun,window,run,ssh" -modi combi'';
       };
 
@@ -141,12 +138,6 @@ in {
         tail = true;
         click-left = "${leftwm-command} NextLayout";
         click-right = "${leftwm-command} PreviousLayout";
-      };
-
-      "module/input" = {
-        type = "custom/script";
-        interval = 0;
-        exec = "${pkgs.dbus}/bin/dbus-send --session --print-reply --dest=org.fcitx.Fcitx5 /controller org.fcitx.Fcitx.Controller1.CurrentInputMethod | ${grep} -Po '(?<=\")[^\"]+' | ${sed} 's/keyboard-//g' | ${sed} 's/mozc/jp/g'"; # Stupid oneliner to get input method between English or Japanese
       };
 
       "module/battery" = {
@@ -184,7 +175,7 @@ in {
         mount-0 = "/";
         label-mounted = "  %used%";
         label-unmounted = "%mountpoint% not mounted";
-        label-unmounted-foreground = "\${colors.disabled}";
+        label-unmounted-foreground = "\${colors.deactivated}";
       };
 
       "module/cpu" = {
@@ -257,22 +248,27 @@ in {
 
       "module/powermenu" = {
         type = "custom/text";
-        content = "襤";
-        content-padding = "2";
-        content-foreground = "\${colors.text}";
-        content-background = "\${colors.primary}";
+        format = "襤";
+        format-padding = "2";
+        format-foreground = "\${colors.text}";
+        format-background = "\${colors.primary}";
         click-left = "rofi-power-menu";
+      };
+
+      "module/tray" = {
+        type = "internal/tray";
+        format = " <tray> ";
       };
 
       "module/spacer" = {
         type = "custom/text";
-        content = " ";
+        format = " ";
       };
 
       "module/dot" = {
         type = "custom/text";
-        content-foreground = "\${colors.grey}";
-        content = " · ";
+        format-foreground = "\${colors.grey}";
+        format = " · ";
       };
     };
   };

@@ -59,3 +59,8 @@ packageSet = do
         package "airtame"
             `sourceAur` "airtame-application"
             `fetchUrl` (\(Version v) -> "https://downloads.airtame.com/app/latest/linux/Airtame-" <> v <> ".deb")
+
+    define $
+        package "polybar"
+            `sourceGit` "https://github.com/polybar/polybar"
+            `fetchGitHub'` ("polybar", "polybar", fetchSubmodules .~ True)
