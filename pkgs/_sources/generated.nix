@@ -43,6 +43,17 @@
       sha256 = "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=";
     };
   };
+  polybar = {
+    pname = "polybar";
+    version = "d5498c8a8a4b2c332eaa7855eb88f3e3432edaed";
+    src = fetchFromGitHub {
+      owner = "polybar";
+      repo = "polybar";
+      rev = "d5498c8a8a4b2c332eaa7855eb88f3e3432edaed";
+      fetchSubmodules = true;
+      sha256 = "sha256-hULLHRVFWPP114PWW8z2LRobDTe+NZnaR9ow6yN7ez8=";
+    };
+  };
   rescrobbled = {
     pname = "rescrobbled";
     version = "v0.6.2";
