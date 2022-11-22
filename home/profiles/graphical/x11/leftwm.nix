@@ -181,7 +181,7 @@ in {
       # I literally don't know what to name this.
       oof = {
         theme = struct {
-          border_width = 1;
+          border_width = 2;
           margin = 10;
           default_border_color = "#333333";
           floating_border_color = "#333333";
