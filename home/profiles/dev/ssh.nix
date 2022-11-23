@@ -18,7 +18,7 @@ _: {
         extraOptions = {
           AddKeysToAgent = "yes";
           ChallengeResponseAuthentication = "no";
-          PasswordAuthentication = "no";
+          PasswordAuthentication = "yes";
           StrictHostKeyChecking = "ask";
           VerifyHostKeyDNS = "yes";
           VisualHostKey = "yes";
