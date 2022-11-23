@@ -19,6 +19,13 @@ require("github-theme").setup({
 
       TSField = {},
 
+      IndentBlanklineIndent1 = { fg = c.fg_dark },
+      IndentBlanklineIndent2 = { fg = c.fg_dark },
+      IndentBlanklineIndent3 = { fg = c.fg_dark },
+      IndentBlanklineIndent4 = { fg = c.fg_dark },
+      IndentBlanklineIndent5 = { fg = c.fg_dark },
+      IndentBlanklineIndent6 = { fg = c.fg_dark },
+
       debugPC = { bg = c.bg_visual_selection },
 
       DapUIVariable = { fg = c.syntax.variable },
