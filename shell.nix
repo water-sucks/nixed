@@ -1,30 +1,32 @@
 {
   self,
   pkgs,
-}:
-pkgs.mkShell {
-  name = "nixed-shell";
-  packages = with pkgs; [
-    # Miscallaneous stuff
-    agenix
-    cachix
+  ci ? false,
+}: let
+  inherit (pkgs) lib;
+in
+  pkgs.mkShell {
+    name = "nixed-shell";
+    packages = with pkgs;
+      [
+        alejandra
+        nix-prefetch
+        nvchecker
+        (haskellPackages.ghcWithPackages (p: [p.nvfetcher]))
+      ]
+      ++ (lib.optionals (!ci) [
+        agenix
 
-    # Formatters/linters
-    treefmt
-    stylua
-    alejandra
-    shellcheck
-    shfmt
-    editorconfig-checker
+        treefmt
+        stylua
+        shellcheck
+        shfmt
+        editorconfig-checker
 
-    # nvfetcher stuff
-    haskell-language-server
-    nix-prefetch
-    nvchecker
-    haskellPackages.fourmolu
-    (haskellPackages.ghcWithPackages (p: [p.nvfetcher]))
-  ];
-  shellHook = ''
-    ${self.checks.${pkgs.system}.pre-commit-check.shellHook}
-  '';
-}
+        haskell-language-server
+        haskellPackages.fourmolu
+      ]);
+    shellHook = lib.optionalString (!ci) ''
+      ${self.checks.${pkgs.system}.pre-commit-check.shellHook}
+    '';
+  }

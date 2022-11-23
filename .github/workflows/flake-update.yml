@@ -64,7 +64,7 @@ jobs:
         with:
           name: flake_lock
       - name: Update all nvfetcher sources
-        run: nix develop -c bin/nvfetch
+        run: nix develop ".#ci" -c bin/nvfetch
       - name: Generate patch
         run: |
           git restore flake.lock
