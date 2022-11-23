@@ -94,7 +94,15 @@
 
         checks = import ./checks.nix {inherit inputs pkgs;};
 
-        devShells.default = import ./shell.nix {inherit self pkgs;};
+        devShells = let
+          shell = import ./shell.nix;
+        in {
+          default = shell {inherit self pkgs;};
+          ci = shell {
+            inherit self pkgs;
+            ci = true;
+          };
+        };
       };
 
       flake = {
