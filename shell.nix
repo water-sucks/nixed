@@ -9,7 +9,6 @@ in
     name = "nixed-shell";
     packages = with pkgs;
       [
-        alejandra
         nix-prefetch
         nvchecker
         (haskellPackages.ghcWithPackages (p: [p.nvfetcher]))
@@ -17,11 +16,12 @@ in
       ++ (lib.optionals (!ci) [
         agenix
 
-        treefmt
-        stylua
+        alejandra
+        editorconfig-checker
         shellcheck
         shfmt
-        editorconfig-checker
+        stylua
+        treefmt
 
         haskell-language-server
         haskellPackages.fourmolu

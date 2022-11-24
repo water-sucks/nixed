@@ -36,6 +36,7 @@ in {
       keep-outputs = true
       keep-derivations = true
       fallback = true
+      warn-dirty = false
     '';
   };
 }
