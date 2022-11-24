@@ -21,11 +21,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-WvMYMafUxaktJP0cSSkqIe2Hi6mkDH0PiFA9UVqzDM0=",
+            "sha256": "sha256-OuoHwCA3htOfI6HgHDcoD7Qf9s7Dd0XSGTrszeXwa/8=",
             "type": "url",
-            "url": "https://cdn.filen.io/desktop/release/2.0.4/filen_x86_64.AppImage"
+            "url": "https://cdn.filen.io/desktop/release/2.0.7/filen_x86_64.AppImage"
         },
-        "version": "2.0.4"
+        "version": "2.0.7"
     },
     "lswt": {
         "cargoLocks": null,
