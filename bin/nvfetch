@@ -97,6 +97,4 @@ echo "Formatting generated Nix files..."
 
 cd_to_root
 
-for file in **/_sources/generated.nix; do
-  alejandra -q "$file"
-done
+nix fmt ./**/_sources/generated.nix
