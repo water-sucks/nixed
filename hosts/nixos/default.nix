@@ -5,7 +5,7 @@
   withSystem,
   ...
 }: let
-  inherit (self.lib) flattenTree rakeLeaves collectLeaves genModules genHosts;
+  inherit (self.lib) importModules collectLeaves genModules genHosts;
 
   mkNixOS = hostname: configuration: {system ? "x86_64-linux", ...}:
     withSystem system ({
@@ -53,12 +53,6 @@ in {
       HunterRenfrow = HunterRenfrow {};
     };
 
-    nixosModules = with lib; let
-      moduleName = name: let
-        path = splitString "." name;
-      in
-        last path;
-    in
-      mapAttrs' (n: nameValuePair (moduleName n)) (flattenTree (rakeLeaves ./modules));
+    nixosModules = importModules ./modules;
   };
 }

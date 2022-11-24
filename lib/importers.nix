@@ -48,4 +48,13 @@ lib: rec {
     lib.filterAttrs (_: v: v != {}) (lib.mapAttrs' collect files);
 
   collectLeaves = directory: lib.attrValues (flattenTree (rakeLeaves directory));
+
+  importModules = directory:
+    with lib; let
+      moduleName = name: let
+        path = splitString "." name;
+      in
+        last path;
+    in
+      mapAttrs' (n: nameValuePair (moduleName n)) (flattenTree (rakeLeaves directory));
 }
