@@ -26,7 +26,7 @@ jobs:
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
       - name: Configure Git
         run: |
-          git config user.email autumnwind@cvte.org
+          git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
       - name: Update flake.lock
         run: nix flake update
@@ -57,7 +57,7 @@ jobs:
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
       - name: Configure Git
         run: |
-          git config user.email autumnwind@cvte.org
+          git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
       - name: Restore flake.lock
         uses: actions/download-artifact@v3
@@ -86,7 +86,7 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Configure Git
         run: |
-          git config user.email autumnwind@cvte.org
+          git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
       - name: Restore flake.lock
         uses: actions/download-artifact@v3
