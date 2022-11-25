@@ -20,7 +20,7 @@ in {
     lib.mkMerge [
       {
         programs.git = {
-          userEmail = "varun@cvte.org";
+          userEmail = "varun@snare.dev";
           userName = "Varun Narravula";
         };
       }
