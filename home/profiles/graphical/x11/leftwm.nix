@@ -33,7 +33,7 @@
 
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
   feh = "${pkgs.feh}/bin/feh";
-  kitty = "${pkgs.kitty}/bin/kitty";
+  wezterm = "${pkgs.wezterm}/bin/wezterm";
   rofi = "${pkgs.rofi}/bin/rofi";
   xset = "${pkgs.xorg.xset}/bin/xset";
   maim = "${pkgs.maim}/bin/maim";
@@ -148,7 +148,7 @@ in {
         (bind [mod shift] "t" "MoveWindowTop")
 
         # External
-        (execute [mod] return kitty)
+        (execute [mod] return wezterm)
         (execute [mod] "space" "${rofi} -show drun")
         (execute [mod shift] "Return" ''${rofi} -show combi -combi-modi "drun,window,run,ssh" -modi combi'')
         (execute [mod] "l" "${xset} s activate")
@@ -168,7 +168,7 @@ in {
       scratchpad = map struct [
         {
           name = "Terminal";
-          value = "${pkgs.kitty}/bin/kitty";
+          value = "${wezterm}";
           x = 0.25;
           y = 0.25;
           height = 0.5;

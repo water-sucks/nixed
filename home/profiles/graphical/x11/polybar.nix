@@ -7,7 +7,8 @@
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
   theme = "GTK_THEME=${config.home.sessionVariables.GTK_THEME}";
-  kitty = "${pkgs.kitty}/bin/kitty";
+  wezterm = "${pkgs.wezterm}/bin/wezterm";
+  termLaunch = "${wezterm} start --";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
@@ -219,7 +220,7 @@ in {
         exec = "${bluetooth-status}";
         interval = 2;
         click-left = "${toggle-bluetooth}";
-        click-right = "${kitty} -e ${bluetoothctl}";
+        click-right = "${termLaunch} ${bluetoothctl}";
       };
 
       "module/wlan" = {
@@ -231,8 +232,8 @@ in {
         format-disconnected = "<label-disconnected>";
         format-connected-padding = 0;
 
-        label-connected = "%{A1:${toggle-wifi}:}%{A3:${kitty} -e ${nmtui}:}直%{A}%{A}";
-        label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${kitty} -e ${nmtui}:}睊%{A}%{A}";
+        label-connected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}直%{A}%{A}";
+        label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}睊%{A}%{A}";
 
         label-disconnected-foreground = "\${colors.deactivated}";
       };

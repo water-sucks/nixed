@@ -34,7 +34,7 @@
   return = "Return";
 
   sed = "${pkgs.gnused}/bin/sed";
-  kitty = "${pkgs.kitty}/bin/kitty";
+  wezterm = "${pkgs.wezterm}/bin/wezterm";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   light = "${pkgs.light}/bin/light";
@@ -135,7 +135,7 @@ in {
         ])
 
         # Commands
-        (nmap (exec [mod] return "${kitty}"))
+        (nmap (exec [mod] return "${wezterm}"))
         (nmap (exec [mod] "space" "rofi -show drun"))
         (nmap (exec [mod shift] return "rofi -show combi -combi-modi 'drun,window,run,ssh' -modi combi"))
         (nmap (exec [] "Print" "${screenshot}"))

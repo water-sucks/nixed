@@ -13,7 +13,8 @@
   sed = "${pkgs.gnused}/bin/sed";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
-  kitty = "${pkgs.kitty}/bin/kitty";
+  wezterm = "${pkgs.wezterm}/bin/wezterm";
+  termLaunch = "${wezterm} start --";
   theme = "GTK_THEME=${config.home.sessionVariables.GTK_THEME}";
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
@@ -78,7 +79,7 @@ in {
           format-off = "";
           format-on = ":";
           format-connected = " {device_alias}";
-          on-click = "${kitty} ${bluetoothctl}";
+          on-click = "${termLaunch} ${bluetoothctl}";
           tooltip-format = "{controller_alias}\t{controller_address}";
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
@@ -109,7 +110,7 @@ in {
           format-wifi = "  {essid}";
           format-ethernet = " {ipaddr}";
           format-disconnected = "睊 ";
-          on-click = "${kitty} ${nmtui}";
+          on-click = "${termLaunch} ${nmtui}";
           on-click-right = ''${nmcli} radio wifi "$(${nmcli} r wifi | ${grep} enabled -c | ${sed} -e "s/1/off/" | ${sed} -e "s/0/on/")"'';
           tooltip-format-wifi = " {essid} ({signalStrength}%)";
           tooltip-format-ethernet = " {ifname}";

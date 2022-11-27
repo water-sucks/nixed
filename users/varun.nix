@@ -47,7 +47,6 @@ in {
       (lib.mkIf isDarwin {
         profiles = {
           graphical = {
-            enable = false;
             darwin-wallpaper.enable = true;
           };
         };

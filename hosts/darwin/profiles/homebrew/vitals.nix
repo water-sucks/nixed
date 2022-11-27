@@ -2,7 +2,7 @@ _: {
   homebrew.casks = [
     "firefox"
     "brave-browser"
-    "kitty"
+    "wezterm"
     "filen"
   ];
 
