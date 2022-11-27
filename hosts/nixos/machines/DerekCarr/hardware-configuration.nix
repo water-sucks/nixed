@@ -8,6 +8,8 @@
   hardware.cpu.amd.updateMicrocode = true;
 
   boot = {
+    loader.grub.gfxmodeEfi = "2560x1440";
+
     initrd = {
       luks.devices.root = {
         device = "/dev/disk/by-uuid/f2bf3c59-b764-43d7-b48f-8163f7219387";
