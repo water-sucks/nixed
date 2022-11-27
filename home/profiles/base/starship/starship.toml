@@ -82,17 +82,17 @@ symbol = " "
 style = "bold fg:250"
 
 [git_status]
-format = '([「$all_status$ahead_behind」]($style) )'
+format = '([「 $all_status$ahead_behind 」]($style) )'
 conflicted = " "
-ahead = "⟫${count} "
-behind = "⟪${count}"
-diverged = "  "
-untracked = " "
-stashed = "↪ "
-modified = "𝚫 "
-staged = "✔ "
-renamed = "⇆ "
-deleted = "✘ "
+ahead = "${count} "
+behind = "${count} "
+diverged = "ﬕ "
+untracked = " "
+stashed = " "
+modified = "δ "
+staged = " "
+renamed = " "
+deleted = " "
 style = "bold fg:250"
 
 [golang]
@@ -114,8 +114,8 @@ symbol = " "
 [nix_shell]
 format = '[$symbol$state]($style) '
 symbol = " "
-pure_msg = "λ"
-impure_msg = "⎔"
+pure_msg = "λ "
+impure_msg = "Ψ "
 
 [package]
 symbol = " "
