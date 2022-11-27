@@ -21,15 +21,16 @@
   waybarMpris = "${pkgs.waybar-mpris}/bin/waybar-mpris";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
+  getAppname = "${pkgs.get-appname}/bin/get-appname";
   activeWindowAppName = with pkgs;
     writeShellScript "river-active-window" ''
       while true; do
-        name=$(${lswt}/bin/lswt -j | ${jq}/bin/jq -r ".[] | (if .activated then . else empty end) | .app_id")
-        case $name in
-          tidal-hifi) name="TIDAL" ;;
-          "") name="River" ;;
-        esac
-        echo ''${name^}
+        app_id=$(${lswt}/bin/lswt -j | ${jq}/bin/jq -r ".[] | (if .activated then . else empty end) | .app_id")
+        if name=$(${getAppname} $app_id); then
+          echo $name
+        else
+          echo "River"
+        fi
       done
     '';
 in {

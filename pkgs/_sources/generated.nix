@@ -20,6 +20,17 @@
       sha256 = "sha256-OuoHwCA3htOfI6HgHDcoD7Qf9s7Dd0XSGTrszeXwa/8=";
     };
   };
+  get-appname = {
+    pname = "get-appname";
+    version = "b41b4e791c2382c2f00f4a1633eecb5771838f19";
+    src = fetchFromGitHub {
+      owner = "water-sucks";
+      repo = "get-appname";
+      rev = "b41b4e791c2382c2f00f4a1633eecb5771838f19";
+      fetchSubmodules = false;
+      sha256 = "sha256-6hqgN0gafw/BT/Gwqc/CO8J/Su83jcdG9FrD9fCzGC8=";
+    };
+  };
   lswt = {
     pname = "lswt";
     version = "ed1ae054d9af3c345f9f2c2003d179932c0c6b60";

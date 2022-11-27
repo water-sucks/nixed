@@ -64,3 +64,8 @@ packageSet = do
         package "polybar"
             `sourceGit` "https://github.com/polybar/polybar"
             `fetchGitHub'` ("polybar", "polybar", fetchSubmodules .~ True)
+
+    define $
+        package "get-appname"
+            `sourceGit` "https://github.com/water-sucks/get-appname"
+            `fetchGitHub` ("water-sucks", "get-appname")

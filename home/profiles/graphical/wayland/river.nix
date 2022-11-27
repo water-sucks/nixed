@@ -164,7 +164,7 @@ in {
       ${riverctl} border-color-unfocused 0x333333
 
       dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
-      systemctl --user import-environment DISPLAY WAYLAND_DISPLAY
+      systemctl --user import-environment DISPLAY WAYLAND_DISPLAY PATH
       systemctl --user restart graphical-session.target
       systemctl --user restart wob.socket
 
