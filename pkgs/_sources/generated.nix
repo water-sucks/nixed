@@ -114,18 +114,6 @@
       sha256 = "sha256-yWjWcnGa4a+Dpc82H65yr8H7v88g/tDq0FSguubhbEI=";
     };
   };
-  wlroots = {
-    pname = "wlroots";
-    version = "0.16.0";
-    src = fetchgit {
-      url = "https://gitlab.freedesktop.org/wlroots/wlroots";
-      rev = "0.16.0";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "sha256-k7BFx1xvvsdCXNWX0XeZYwv8H/myk4p42i2Y6vjILqM=";
-    };
-  };
   wob = {
     pname = "wob";
     version = "8de310ee2a0c4311b11d65be5aed091d8d06f5b6";

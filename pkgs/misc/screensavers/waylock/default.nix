@@ -5,7 +5,7 @@
   zig,
   wayland,
   wayland-protocols,
-  wlroots,
+  wlroots_0_16,
   libxkbcommon,
   linux-pam,
   udev,
@@ -23,7 +23,7 @@ stdenv.mkDerivation {
 
   buildInputs = [
     wayland-protocols
-    wlroots
+    wlroots_0_16
     libxkbcommon
     linux-pam
     udev

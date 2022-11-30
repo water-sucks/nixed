@@ -12,11 +12,6 @@ main = runNvFetcher packageSet
 packageSet :: PackageSet ()
 packageSet = do
     define $
-        package "wlroots"
-            `sourceManual` "0.16.0"
-            `fetchGit` "https://gitlab.freedesktop.org/wlroots/wlroots"
-
-    define $
         package "river"
             `sourceGit` "https://github.com/riverwm/river"
             `fetchGitHub'` ("riverwm", "river", fetchSubmodules .~ True)

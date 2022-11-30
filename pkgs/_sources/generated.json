@@ -183,24 +183,6 @@
         },
         "version": "v0.4.2"
     },
-    "wlroots": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "wlroots",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "0.16.0",
-            "sha256": "sha256-k7BFx1xvvsdCXNWX0XeZYwv8H/myk4p42i2Y6vjILqM=",
-            "type": "git",
-            "url": "https://gitlab.freedesktop.org/wlroots/wlroots"
-        },
-        "version": "0.16.0"
-    },
     "wob": {
         "cargoLocks": null,
         "extract": null,
