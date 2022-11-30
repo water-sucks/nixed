@@ -24,6 +24,7 @@ in {
     };
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
+      nixpkgs-stable.flake = inputs.nixpkgs-stable;
     };
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
