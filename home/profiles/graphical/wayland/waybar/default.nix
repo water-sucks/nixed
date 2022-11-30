@@ -19,21 +19,25 @@
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
-  waybarMpris = "${pkgs.waybar-mpris}/bin/waybar-mpris";
+  playerctl = "${pkgs.playerctl}/bin/playerctl";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
-  getAppname = "${pkgs.get-appname}/bin/get-appname";
   activeWindowAppName = with pkgs;
     writeShellScript "river-active-window" ''
       while true; do
         app_id=$(${lswt}/bin/lswt -j | ${jq}/bin/jq -r ".[] | (if .activated then . else empty end) | .app_id")
-        if name=$(${getAppname} $app_id); then
+        if name=$(${pkgs.get-appname}/bin/get-appname $app_id); then
           echo $name
         else
           echo "River"
         fi
       done
     '';
+  playerctlFollow = pkgs.writeShellScript "manual-playerctl-follow" ''
+    while true; do
+      ${playerctl} -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}} ({{duration(position)}}/{{duration(mpris:length)}})", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}'
+    done
+  '';
 in {
   programs.waybar = {
     enable = true;
@@ -45,7 +49,7 @@ in {
         position = "top";
         height = 36;
         spacing = 8;
-        modules-left = ["custom/active-window" "custom/waybar-mpris"];
+        modules-left = ["custom/active-window" "custom/media"];
         modules-center = ["clock"];
         modules-right = [
           "battery"
@@ -138,12 +142,16 @@ in {
           exec = "${activeWindowAppName}";
           format = "{}";
         };
-        "custom/waybar-mpris" = {
+        "custom/media" = {
+          format = "{icon}{}";
           return-type = "json";
-          max-length = 150;
-          exec = ''${waybarMpris} --order "SYMBOL:ARTIST:TITLE:POSITION" --position'';
-          on-click = "${waybarMpris} --send toggle";
-          escape = true;
+          format-icons = {
+            Playing = "契 ";
+            Paused = "  ";
+          };
+          max-length = 70;
+          on-click = "${playerctl} play-pause";
+          exec = "${playerctlFollow}";
         };
         "custom/dunst" = {
           format = "Δ";
