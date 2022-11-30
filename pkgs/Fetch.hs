@@ -32,8 +32,7 @@ packageSet = do
 
     define $
         package "wob"
-            `sourceGit` "https://github.com/francma/wob"
-            `fetchGitHub` ("francma", "wob")
+            `fromGitHub` ("francma", "wob")
 
     define $
         package "picom"
