@@ -136,6 +136,17 @@
       sha256 = "sha256-gR+cvJztRhkQ+vGhZ1JYgyEZA2TjNaJ1aGkeTA3yiMs=";
     };
   };
+  "'plugin-duck.nvim'" = {
+    pname = "'plugin-duck.nvim'";
+    version = "7159cdc240b5e6e5131daff267764ca3e28d3dfa";
+    src = fetchFromGitHub {
+      owner = "tamton-aquib";
+      repo = "duck.nvim";
+      rev = "7159cdc240b5e6e5131daff267764ca3e28d3dfa";
+      fetchSubmodules = false;
+      sha256 = "sha256-H/Ptuuorc6I7AwdmgCSk8TAbaRNCACX9uOGelLo+g/E=";
+    };
+  };
   "'plugin-editorconfig.nvim'" = {
     pname = "'plugin-editorconfig.nvim'";
     version = "2af880947129f1ab776b732a4eecb92528472ef5";

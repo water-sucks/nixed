@@ -227,6 +227,25 @@
         },
         "version": "7894d5bc504deacf37f0a479a53fa4746fe30a45"
     },
+    "'plugin-duck.nvim'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-duck.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tamton-aquib",
+            "repo": "duck.nvim",
+            "rev": "7159cdc240b5e6e5131daff267764ca3e28d3dfa",
+            "sha256": "sha256-H/Ptuuorc6I7AwdmgCSk8TAbaRNCACX9uOGelLo+g/E=",
+            "type": "github"
+        },
+        "version": "7159cdc240b5e6e5131daff267764ca3e28d3dfa"
+    },
     "'plugin-editorconfig.nvim'": {
         "cargoLocks": null,
         "extract": null,

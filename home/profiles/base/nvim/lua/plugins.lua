@@ -379,6 +379,13 @@ packer.startup({
         require("config.project")
       end,
     })
+    use({
+      generated("tamton-aquib/duck.nvim"),
+      event = "CursorHold",
+      config = function()
+        require("config.duck")
+      end,
+    })
 
     -- Debugging
     use({

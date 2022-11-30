@@ -89,6 +89,7 @@ packageSet = do
     plugin ("nvim-neorg", "neorg-telescope")
     plugin ("folke", "which-key.nvim")
     plugin ("ahmedkhalf", "project.nvim")
+    plugin ("tamton-aquib", "duck.nvim")
 
     -- Debugging
     plugin ("mfussenegger", "nvim-dap")
