@@ -17,10 +17,6 @@ packageSet = do
             `fetchGitHub'` ("riverwm", "river", fetchSubmodules .~ True)
 
     define $
-        package "waylock"
-            `fromGitHubTag'` ("ifreund", "waylock", includeRegex ?~ ".*", fetchSubmodules .~ True)
-
-    define $
         package "lswt"
             `sourceGit` "https://git.sr.ht/~leon_plickat/lswt"
             `fetchGit` "https://git.sr.ht/~leon_plickat/lswt"

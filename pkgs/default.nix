@@ -25,8 +25,6 @@
 
     waybar-mpris = ./misc/waybar-mpris;
 
-    waylock = ./misc/screensavers/waylock;
-
     get-appname = ./tools/get-appname;
   };
 in {

@@ -103,17 +103,6 @@
       sha256 = "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=";
     };
   };
-  waylock = {
-    pname = "waylock";
-    version = "v0.4.2";
-    src = fetchFromGitHub {
-      owner = "ifreund";
-      repo = "waylock";
-      rev = "v0.4.2";
-      fetchSubmodules = true;
-      sha256 = "sha256-yWjWcnGa4a+Dpc82H65yr8H7v88g/tDq0FSguubhbEI=";
-    };
-  };
   wob = {
     pname = "wob";
     version = "0.14.2";
