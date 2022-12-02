@@ -53,35 +53,6 @@ To add them to your flake, you can use the provided overlay:
 }
 ```
 
-### NixOS Modules
-
-| Name    | Description                      |
-| ------- | -------------------------------- |
-| openrgb | Open source RGB lighting control |
-
-To use these modules, you can use the provided `nixosModules` attribute:
-
-```nix
-{
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
-    home.url = "github:nix-community/home-manager";
-    nixed.url = "github:water-sucks/nixed";
-  };
-
-  outputs = {self, nixpkgs, home-manager, nixed, ... }: {
-    nixosConfigurations.machine = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-
-      # Adds all modules to configuration
-      modules = [
-        # Whatver other modules you want
-      ] ++ (builtins.attrValues nixed.nixosModules);
-    };
-  };
-}
-```
-
 ### home-manager Modules
 
 | Name             | Description                               |
