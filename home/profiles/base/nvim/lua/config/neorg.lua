@@ -22,6 +22,11 @@ require("neorg").setup({
         strategy = "nested",
       },
     },
-    -- ["core.norg.concealer"] = {}, -- Wait until this is more stable
+    ["core.norg.news"] = {
+      config = {
+        check_news = false,
+      },
+    },
+    ["core.norg.concealer"] = {}, -- Wait until this is more stable
   },
 })
