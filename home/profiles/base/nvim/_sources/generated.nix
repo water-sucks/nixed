@@ -851,17 +851,6 @@
       sha256 = "sha256-r668hZtAMs5+wG/bfzuskBcXXuOdMtSw4siamlGq4yw=";
     };
   };
-  tree-sitter-sql = {
-    pname = "tree-sitter-sql";
-    version = "a6d6d0799f2c9091436b5b587b451b10e710f9cb";
-    src = fetchFromGitHub {
-      owner = "derekstride";
-      repo = "tree-sitter-sql";
-      rev = "a6d6d0799f2c9091436b5b587b451b10e710f9cb";
-      fetchSubmodules = false;
-      sha256 = "sha256-UW5C79SjvbajoMSTfLgjmcx+ArHLDbj3OPMjFwqH0bE=";
-    };
-  };
   tree-sitter-vala = {
     pname = "tree-sitter-vala";
     version = "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b";
