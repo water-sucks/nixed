@@ -1462,25 +1462,6 @@
         },
         "version": "d931ad0900a3bb9141a2b709c6053c5adf09a0b9"
     },
-    "tree-sitter-sql": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "tree-sitter-sql",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "derekstride",
-            "repo": "tree-sitter-sql",
-            "rev": "a6d6d0799f2c9091436b5b587b451b10e710f9cb",
-            "sha256": "sha256-UW5C79SjvbajoMSTfLgjmcx+ArHLDbj3OPMjFwqH0bE=",
-            "type": "github"
-        },
-        "version": "a6d6d0799f2c9091436b5b587b451b10e710f9cb"
-    },
     "tree-sitter-vala": {
         "cargoLocks": null,
         "extract": null,

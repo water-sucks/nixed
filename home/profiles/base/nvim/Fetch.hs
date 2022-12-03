@@ -113,7 +113,6 @@ packageSet = do
     grammar ("vala-lang", "tree-sitter-vala")
 
     grammar ("tree-sitter", "tree-sitter-bash")
-    grammar ("derekstride", "tree-sitter-sql")
     grammar ("fwcd", "tree-sitter-kotlin")
 
 {- | Define a Neovim plugin fetching the latest rev.
