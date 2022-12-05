@@ -72,35 +72,35 @@
   };
   "'plugin-coq.artifacts'" = {
     pname = "'plugin-coq.artifacts'";
-    version = "bd8c057a08e6ff3c9270b55a953d83a898f7c833";
+    version = "cb04cc0af7adbf6d8b63b14a4b4a36e7cc815186";
     src = fetchFromGitHub {
       owner = "ms-jpq";
       repo = "coq.artifacts";
-      rev = "bd8c057a08e6ff3c9270b55a953d83a898f7c833";
+      rev = "cb04cc0af7adbf6d8b63b14a4b4a36e7cc815186";
       fetchSubmodules = false;
-      sha256 = "sha256-OtF1a9YMNAUC24OrBhYrd82U9BM77SyWp4Zy+zpQKY4=";
+      sha256 = "sha256-ynTqfXIX1jV7Uvunj9wJQGYZ229lnGNKKwUefPXDU3o=";
     };
   };
   "'plugin-coq.thirdparty'" = {
     pname = "'plugin-coq.thirdparty'";
-    version = "de333e878e25d303092a2ecc84357cddd9b8a65b";
+    version = "35e685dffa70d3d4d59512321cb2ac232adae797";
     src = fetchFromGitHub {
       owner = "ms-jpq";
       repo = "coq.thirdparty";
-      rev = "de333e878e25d303092a2ecc84357cddd9b8a65b";
+      rev = "35e685dffa70d3d4d59512321cb2ac232adae797";
       fetchSubmodules = false;
-      sha256 = "sha256-3n0N3geTEjELSjB/B946lcC5RlGJwfrDEBP29dUHvMU=";
+      sha256 = "sha256-nkrdIyjkZra+jpald1RLsCUyb0e/KP4/nKl9Hr4SAbo=";
     };
   };
   "'plugin-coq_nvim'" = {
     pname = "'plugin-coq_nvim'";
-    version = "fda97791e962dfd4c135d4ddba794fc1e261e303";
+    version = "d2882d59b585f4f04c5fe97c87a0b0c39e17168d";
     src = fetchFromGitHub {
       owner = "ms-jpq";
       repo = "coq_nvim";
-      rev = "fda97791e962dfd4c135d4ddba794fc1e261e303";
+      rev = "d2882d59b585f4f04c5fe97c87a0b0c39e17168d";
       fetchSubmodules = false;
-      sha256 = "sha256-DRjQ0LndeWBkczVkgn2lEeeOuXTZFF3521nhdVZTbA8=";
+      sha256 = "sha256-sGw4SBgSgDVuwY7VJ+X3zFybviWadfxim/m/xyHFxfs=";
     };
   };
   "'plugin-dial.nvim'" = {
@@ -127,13 +127,13 @@
   };
   "'plugin-dressing.nvim'" = {
     pname = "'plugin-dressing.nvim'";
-    version = "872cc4e5ea32295eb1102141a444d6d83b8f9c25";
+    version = "ed44aa798ab07dc298f43f35c8e0c93a1b335abb";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "dressing.nvim";
-      rev = "872cc4e5ea32295eb1102141a444d6d83b8f9c25";
+      rev = "ed44aa798ab07dc298f43f35c8e0c93a1b335abb";
       fetchSubmodules = false;
-      sha256 = "sha256-9+biuC6bRLcEo3y3a0f4NWxd1kIOORvXbLtuu80BMig=";
+      sha256 = "sha256-JqzbNEZ/dLqOYWqFhkvV0By3M12IcyR3wsjGIjBnJTY=";
     };
   };
   "'plugin-duck.nvim'" = {
@@ -435,13 +435,13 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "ac132be91a6a8170788e7139964288e673b31c5e";
+    version = "e96f639b608a596aa1ea8abb7e5b799cedbb0b1a";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "ac132be91a6a8170788e7139964288e673b31c5e";
+      rev = "e96f639b608a596aa1ea8abb7e5b799cedbb0b1a";
       fetchSubmodules = false;
-      sha256 = "sha256-aGm92vw9lDcGLFOsNAyYrrzIfga13fWVrXuFiOqXuUQ=";
+      sha256 = "sha256-kfhBOGh5iuBfCiefMslcKB+5IeJ6skz5vpAB3/0Y4/k=";
     };
   };
   "'plugin-nvim-tetris'" = {
@@ -468,13 +468,13 @@
   };
   "'plugin-nvim-treesitter'" = {
     pname = "'plugin-nvim-treesitter'";
-    version = "e71dfc1e7a3e7a7782a3c5e62e7de5993149a261";
+    version = "29d8e7646593a98d151223c0bf034490cf2d22c0";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "e71dfc1e7a3e7a7782a3c5e62e7de5993149a261";
+      rev = "29d8e7646593a98d151223c0bf034490cf2d22c0";
       fetchSubmodules = false;
-      sha256 = "sha256-pkLtMvqRm6q5dOrawb7bKZCpoVBcEbFh/joMEJujyyY=";
+      sha256 = "sha256-TcsCqZ5eWiIKZc7eUVTDRfwJKvh86WIz6jJwLzmOrAo=";
     };
   };
   "'plugin-nvim-treesitter-refactor'" = {
@@ -545,13 +545,13 @@
   };
   "'plugin-packer.nvim'" = {
     pname = "'plugin-packer.nvim'";
-    version = "dcd2f380bb49ec2dfe208f186236dd366434a4d5";
+    version = "502a89f72ee5db3907dd0c7ee36287d49cfa56a0";
     src = fetchFromGitHub {
       owner = "wbthomason";
       repo = "packer.nvim";
-      rev = "dcd2f380bb49ec2dfe208f186236dd366434a4d5";
+      rev = "502a89f72ee5db3907dd0c7ee36287d49cfa56a0";
       fetchSubmodules = false;
-      sha256 = "sha256-8cZ801PYmZvmGtIE9IjBckjTfusOK4xZOZ/Tc59VOQc=";
+      sha256 = "sha256-6zNFg0NrolW1rufZv1euH+oPNm3kc5JpC85REVLBnpI=";
     };
   };
   "'plugin-playground'" = {
@@ -754,13 +754,13 @@
   };
   "'plugin-vimtex'" = {
     pname = "'plugin-vimtex'";
-    version = "6e6e865371a3ea358abada2736ba04ab6fbb8068";
+    version = "8184c78a2e32d14b5955f8e2422ec64abb772b2d";
     src = fetchFromGitHub {
       owner = "lervag";
       repo = "vimtex";
-      rev = "6e6e865371a3ea358abada2736ba04ab6fbb8068";
+      rev = "8184c78a2e32d14b5955f8e2422ec64abb772b2d";
       fetchSubmodules = false;
-      sha256 = "sha256-7g0jtqqROjmbijbA9iXQ/rNehlyUH1juibF4iu4mfeY=";
+      sha256 = "sha256-QO69cN0BfFnKCrvSPIVAzjvNUOo5nGFaQ0rb9QMYWwM=";
     };
   };
   "'plugin-which-key.nvim'" = {
