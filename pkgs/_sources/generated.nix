@@ -6,10 +6,10 @@
 }: {
   airtame = {
     pname = "airtame";
-    version = "4.5.2";
+    version = "4.5.3";
     src = fetchurl {
-      url = "https://downloads.airtame.com/app/latest/linux/Airtame-4.5.2.deb";
-      sha256 = "sha256-H4sVs8xEAduDjIngy92c+q149e6lCbzWXkFgA1GpMMU=";
+      url = "https://downloads.airtame.com/app/latest/linux/Airtame-4.5.3.deb";
+      sha256 = "sha256-QZBDjzecWoOXa9giBkeg7Vr9VtqnwdpcI8ZpV4NC8yk=";
     };
   };
   filen-desktop = {
