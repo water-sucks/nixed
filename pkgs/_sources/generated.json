@@ -7,11 +7,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-H4sVs8xEAduDjIngy92c+q149e6lCbzWXkFgA1GpMMU=",
+            "sha256": "sha256-QZBDjzecWoOXa9giBkeg7Vr9VtqnwdpcI8ZpV4NC8yk=",
             "type": "url",
-            "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.5.2.deb"
+            "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.5.3.deb"
         },
-        "version": "4.5.2"
+        "version": "4.5.3"
     },
     "filen-desktop": {
         "cargoLocks": null,
