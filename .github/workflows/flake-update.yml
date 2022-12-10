@@ -10,6 +10,9 @@ jobs:
   # Update flake inputs
   update_flake:
     runs-on: ubuntu-latest
+    outputs:
+      branch: ${{ steps.find-branch.outputs.branch }}
+      pr-number: ${{ steps.find-branch.outputs.pr-number }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -28,6 +31,25 @@ jobs:
         run: |
           git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
+      - name: Find branch to create update on
+        id: find-branch
+        run: |
+          request="$(gh pr list --json headRefName --json number -q '.[] | "\(.headRefName) \(.number)"')"
+          filtered="$(echo "$request" | grep -E "update-[0-9]{4}-[0-9]{2}-[0-9]{2}" | head -1)"
+
+          if [ "$filtered" != "" ]; then
+            read -r branch number <<<"$filtered"
+            gh pr checkout "$number"
+          else
+            number=""
+            branch="update-$(date -I)"
+            git checkout -b "$branch"
+          fi
+
+          echo "branch=$branch" >> $GITHUB_OUTPUT
+          echo "pr-number=$number" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update flake.lock
         run: nix flake update
       - name: Store flake.lock
@@ -59,6 +81,18 @@ jobs:
         run: |
           git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
+      - name: Find branch to create update on
+        run: |
+          number=${{needs.update_flake.outputs.pr-number}}
+          branch=${{needs.update_flake.outputs.branch}}
+
+          if [ "$number" != "" ]; then
+            gh pr checkout "$number"
+          else
+            git checkout -b "$branch"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Restore flake.lock
         uses: actions/download-artifact@v3
         with:
@@ -88,6 +122,18 @@ jobs:
         run: |
           git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
+      - name: Find branch to create update on
+        run: |
+          number=${{needs.update_flake.outputs.pr-number}}
+          branch=${{needs.update_flake.outputs.branch}}
+
+          if [ "$number" != "" ]; then
+            gh pr checkout "$number"
+          else
+            git checkout -b "$branch"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Restore flake.lock
         uses: actions/download-artifact@v3
         with:
@@ -96,9 +142,11 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: nvfetcher_updates_patch
-      - name: Commit all updates and make a PR
+      - name: Commit all updates and make a PR if needed
         run: |
-          git switch -c "update-$(date -I)"
+          number=${{needs.update_flake.outputs.pr-number}}
+          branch=${{needs.update_flake.outputs.branch}}
+
           git add flake.lock
           git commit -m "chore: update flake inputs"
 
@@ -106,13 +154,16 @@ jobs:
           rm nvfetcher-updates.patch
           git commit -am "chore: update nvfetcher sources" || true
 
-          git push -u origin "update-$(date -I)"
-          gh pr create \
-            --assignee water-sucks \
-            --base main \
-            --body "Automatic updates to flake inputs and nvfetcher sources on $(date -I)" \
-            --fill \
-            --label bot \
-            --title "Automatic updates on $(date -I)"
+          git push -u origin "$branch"
+
+          if [ "$number" == "" ]; then
+            gh pr create \
+              --assignee water-sucks \
+              --base main \
+              --body "Automatic updates to flake inputs and nvfetcher sources on $(date -I)" \
+              --fill \
+              --label bot \
+              --title "Automatic updates on $(date -I)"
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
