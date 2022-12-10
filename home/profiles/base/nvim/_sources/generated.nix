@@ -314,13 +314,13 @@
   };
   "'plugin-null-ls.nvim'" = {
     pname = "'plugin-null-ls.nvim'";
-    version = "a0acd495f5edce6d4d5d3c6bd63d2319ccded9ed";
+    version = "adaa799264c92eea42d500c8b98e19caf32c14dc";
     src = fetchFromGitHub {
       owner = "jose-elias-alvarez";
       repo = "null-ls.nvim";
-      rev = "a0acd495f5edce6d4d5d3c6bd63d2319ccded9ed";
+      rev = "adaa799264c92eea42d500c8b98e19caf32c14dc";
       fetchSubmodules = false;
-      sha256 = "sha256-8ILtBsYlNDO8tGm9hSVbUSJpTtszpy67+9ptQO9avrQ=";
+      sha256 = "sha256-xp3f69jDogjIzoz/h4hwCElDEEWCIQjnvKgIVw+wKe4=";
     };
   };
   "'plugin-nvim-autopairs'" = {
