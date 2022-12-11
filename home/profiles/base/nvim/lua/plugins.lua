@@ -340,6 +340,13 @@ packer.startup({
         require("colorizer").setup()
       end,
     })
+    use({
+      generated("gen740/SmoothCursor.nvim"),
+      event = "CursorHold",
+      config = function()
+        require("config.cursor")
+      end,
+    })
 
     -- Special Neovim sauce
     use({

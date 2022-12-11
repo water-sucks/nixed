@@ -81,6 +81,7 @@ packageSet = do
     plugin ("lukas-reineke", "indent-blankline.nvim")
     plugin ("kosayoda", "nvim-lightbulb")
     plugin ("norcalli", "nvim-colorizer.lua")
+    plugin ("gen740", "SmoothCursor.nvim")
 
     -- Special Neovim sauce
     plugin ("andweeb", "presence.nvim")

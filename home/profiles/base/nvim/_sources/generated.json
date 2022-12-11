@@ -37,6 +37,25 @@
         },
         "version": "1cb5e030bb16df52c8428b53dc235466a4eb1d01"
     },
+    "'plugin-SmoothCursor.nvim'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-SmoothCursor.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "gen740",
+            "repo": "SmoothCursor.nvim",
+            "rev": "cdec4c0ca2b07142b96b7e8466d4c4f8f16a8048",
+            "sha256": "sha256-OsD3NQi9qvbcdp5OmcwqQ0OXeJGfYmbVHxOj/4v7naA=",
+            "type": "github"
+        },
+        "version": "cdec4c0ca2b07142b96b7e8466d4c4f8f16a8048"
+    },
     "'plugin-aerial.nvim'": {
         "cargoLocks": null,
         "extract": null,

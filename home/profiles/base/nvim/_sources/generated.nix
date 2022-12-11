@@ -26,6 +26,17 @@
       sha256 = "sha256-oyCCYgFckG3F9OKOeajLrLsby2Z+4zJ1RtwEzJo9JIk=";
     };
   };
+  "'plugin-SmoothCursor.nvim'" = {
+    pname = "'plugin-SmoothCursor.nvim'";
+    version = "cdec4c0ca2b07142b96b7e8466d4c4f8f16a8048";
+    src = fetchFromGitHub {
+      owner = "gen740";
+      repo = "SmoothCursor.nvim";
+      rev = "cdec4c0ca2b07142b96b7e8466d4c4f8f16a8048";
+      fetchSubmodules = false;
+      sha256 = "sha256-OsD3NQi9qvbcdp5OmcwqQ0OXeJGfYmbVHxOj/4v7naA=";
+    };
+  };
   "'plugin-aerial.nvim'" = {
     pname = "'plugin-aerial.nvim'";
     version = "50d28ad4e3e1ff89b5fc1bff985760c19c2fa782";

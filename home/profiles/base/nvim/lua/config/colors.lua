@@ -26,6 +26,8 @@ require("github-theme").setup({
       IndentBlanklineIndent5 = { fg = c.fg_dark },
       IndentBlanklineIndent6 = { fg = c.fg_dark },
 
+      SmoothCursor = { fg = c.fg_dark },
+
       debugPC = { bg = c.bg_visual_selection },
 
       DapUIVariable = { fg = c.syntax.variable },
