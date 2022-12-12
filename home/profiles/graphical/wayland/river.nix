@@ -187,7 +187,7 @@ in {
       ConditionPathExistsGlob = ["%t/wayland-*"];
     };
     Service = {
-      ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${self}/assets/woah.jpg";
+      ExecStart = "${pkgs.swaybg}/bin/swaybg -i ${self}/assets/wolf.jpg";
       Restart = "on-failure";
       RestartSec = 1;
     };
