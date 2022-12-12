@@ -94,17 +94,6 @@ packer.startup({
       end,
     })
     use({
-      generated("kyazdani42/nvim-tree.lua"),
-      event = "CursorHold",
-      requires = {
-        "kyazdani42/nvim-web-devicons",
-        "projekt0n/circles.nvim",
-      },
-      config = function()
-        require("config.nvim-tree")
-      end,
-    })
-    use({
       generated("nvim-telescope/telescope.nvim"),
       event = "CursorHold",
       requires = { "nvim-lua/plenary.nvim" },
