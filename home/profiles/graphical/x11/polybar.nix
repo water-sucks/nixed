@@ -68,7 +68,7 @@ in {
         margin-bottom = 10;
       };
 
-      "settings" = {
+      settings = {
         screenchange-reload = true;
         compositing-background = "source";
         compositing-foreground = "over";

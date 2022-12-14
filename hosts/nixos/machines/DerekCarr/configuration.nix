@@ -32,7 +32,7 @@
     {
       services.polybar.config = {
         "module/wlan".interface = lib.mkForce "wlp6s0";
-        "bar/oofbar".modules-right = lib.mkForce "input dot storage dot cpu dot mem dot audio dot bluetooth dot wlan dot date spacer launcher";
+        "bar/oofbar".modules-right = lib.mkForce "storage dot cpu dot mem dot audio dot bluetooth dot wlan dot date spacer tray launcher";
       };
     }
     {
