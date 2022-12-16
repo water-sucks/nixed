@@ -6,4 +6,11 @@ require("smoothcursor").setup({
   fancy = {
     enable = false, -- enable fancy mode
   },
+  disabled_filetypes = {
+    "NvimTree",
+    "Searchbox",
+    "SidebarNvim",
+    "floaterm",
+    "terminal",
+  },
 })
