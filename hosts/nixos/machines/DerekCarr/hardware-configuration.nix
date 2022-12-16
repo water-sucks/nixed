@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     efibootmgr
     refind
@@ -6,6 +10,10 @@
 
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
+
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.v4l2loopback.out
+  ];
 
   boot = {
     loader.grub.gfxmodeEfi = "2560x1440";
@@ -16,6 +24,7 @@
         preLVM = true;
         allowDiscards = true;
       };
+
       availableKernelModules = ["amdgpu" "dm-snapshot" "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
       kernelModules = ["dm-snapshot" "amdgpu"];
       systemd.enable = true;
@@ -24,7 +33,7 @@
 
     supportedFilesystems = ["zfs"];
 
-    kernelModules = ["amdgpu" "kvm-amd" "wl"];
+    kernelModules = ["amdgpu" "kvm-amd" "wl" "v412loopback"];
   };
 
   fileSystems."/" = {
