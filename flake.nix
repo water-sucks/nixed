@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-22.11";
+    nixpkgs-pr195816.url = "github:jojosch/nixpkgs/fix-pynitrokey";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
@@ -65,17 +66,10 @@
                 inherit system;
                 config.allowUnfree = true;
               };
-              pr195816 = let
-                nixpkgs' = (import nixpkgs {inherit system;}).applyPatches {
-                  name = "nixpkgs-patched-195816";
-                  src = nixpkgs;
-                  patches = [./overrides/patches/nitropy-update.patch];
-                };
-              in
-                import nixpkgs' {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
+              pr195816 = import nixpkgs-pr195816 {
+                inherit system;
+                config.allowUnfree = true;
+              };
             })
           ]
           ++ (map import (with lib; collectLeaves ./overrides));

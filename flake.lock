@@ -267,6 +267,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-pr195816": {
+      "locked": {
+        "lastModified": 1670144167,
+        "narHash": "sha256-y42S/dnY54VDaZmpgcVg+7B8MLyuaZBNVEYle2BlLLE=",
+        "owner": "jojosch",
+        "repo": "nixpkgs",
+        "rev": "a4d8341a4820862ef3a1d50a48fd017f05287310",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jojosch",
+        "ref": "fix-pynitrokey",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1671139475,
@@ -332,6 +348,7 @@
         "home": "home",
         "leftwm": "leftwm",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-pr195816": "nixpkgs-pr195816",
         "nixpkgs-stable": "nixpkgs-stable",
         "pre-commit-hooks": "pre-commit-hooks"
       }
