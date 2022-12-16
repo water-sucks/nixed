@@ -12,7 +12,7 @@
     pam.enable = true;
     fonts.enable = true;
     fontconfig.enable = true;
-    kmscon.enable = true;
+    kmscon.enable = false;
     secrets.enable = true;
     nitrokey.enable = true;
 
