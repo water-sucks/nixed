@@ -42,7 +42,7 @@ packageSet = do
 
     define $
         package "filen-desktop"
-            `sourceManual` "2.0.7"
+            `sourceManual` "2.0.11"
             `fetchUrl` (\(Version v) -> "https://cdn.filen.io/desktop/release/" <> v <> "/filen_x86_64.AppImage")
 
     define $
