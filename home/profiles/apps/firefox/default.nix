@@ -20,14 +20,19 @@ in
         };
       };
 
-      home.file = {
+      home.file = let
+        prefix =
+          if isDarwin
+          then "Library/Application Support/Firefox/Profiles/default"
+          else ".mozilla/firefox/default";
+      in {
         "simplefox-assets" = {
           source = "${simplefox}/assets";
-          target = ".mozilla/firefox/default/assets";
+          target = "${prefix}/assets";
         };
         "simplefox-chrome" = {
           source = "${simplefox}/chrome";
-          target = ".mozilla/firefox/default/chrome";
+          target = "${prefix}/chrome";
         };
       };
     }
