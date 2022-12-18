@@ -35,7 +35,7 @@
   } @ inputs: let
     lib = import ./lib inputs;
   in
-    flake-parts.lib.mkFlake {inherit self;} {
+    flake-parts.lib.mkFlake {inherit inputs;} {
       imports = [
         ./hosts/nixos
         ./hosts/darwin
