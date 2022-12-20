@@ -631,17 +631,6 @@
       sha256 = "sha256-5UgCqnDs4iubnq7gER1wC8Mk9UZuo8cWqDB8ZbyGCRI=";
     };
   };
-  "'plugin-treesitter-unit'" = {
-    pname = "'plugin-treesitter-unit'";
-    version = "89968a1f8c72427691088e6d09d26a52c2ddc6f4";
-    src = fetchFromGitHub {
-      owner = "David-Kunz";
-      repo = "treesitter-unit";
-      rev = "89968a1f8c72427691088e6d09d26a52c2ddc6f4";
-      fetchSubmodules = false;
-      sha256 = "sha256-ahIar02sDhMbRpXVTBQSn134PLmMiubPUOg8Chq7gsk=";
-    };
-  };
   "'plugin-trouble.nvim'" = {
     pname = "'plugin-trouble.nvim'";
     version = "897542f90050c3230856bc6e45de58b94c700bbf";

@@ -183,13 +183,6 @@ packer.startup({
       end,
     })
     use({
-      generated("David-Kunz/treesitter-unit"),
-      event = "CursorHold",
-      config = function()
-        require("config.treesitter_unit")
-      end,
-    })
-    use({
       generated("ggandor/leap.nvim"),
       event = "CursorHold",
       config = function()

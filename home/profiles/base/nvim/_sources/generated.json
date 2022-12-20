@@ -1082,25 +1082,6 @@
         },
         "version": "cabf991b1d3996fa6f3232327fc649bbdf676496"
     },
-    "'plugin-treesitter-unit'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-treesitter-unit'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "David-Kunz",
-            "repo": "treesitter-unit",
-            "rev": "89968a1f8c72427691088e6d09d26a52c2ddc6f4",
-            "sha256": "sha256-ahIar02sDhMbRpXVTBQSn134PLmMiubPUOg8Chq7gsk=",
-            "type": "github"
-        },
-        "version": "89968a1f8c72427691088e6d09d26a52c2ddc6f4"
-    },
     "'plugin-trouble.nvim'": {
         "cargoLocks": null,
         "extract": null,

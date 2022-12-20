@@ -3,7 +3,7 @@ local wk = require("which-key")
 require("sort").setup({})
 
 wk.register({
-  s = {
+  ["1"] = {
     name = "Sort",
     o = { "<cmd>Sort<CR>", "Sort line" },
     ['"'] = { 'vi"<Esc>:Sort<CR>', 'Sort until "' },

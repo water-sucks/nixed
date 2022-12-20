@@ -51,7 +51,6 @@ packageSet = do
     plugin ("monaqa", "dial.nvim")
     plugin ("sQVe", "sort.nvim")
     plugin ("booperlv", "nvim-gomove")
-    plugin ("David-Kunz", "treesitter-unit")
     plugin ("ggandor", "leap.nvim")
 
     -- UNIX/Git commands

@@ -10,8 +10,6 @@ local disable_format_cap = {
   "elixirls",
 }
 
--- This is a function;
--- I guess?
 local on_attach = function(client, bufnr)
   for _, v in pairs(disable_format_cap) do
     if v == client.name then
@@ -43,17 +41,6 @@ local on_attach = function(client, bufnr)
   wk.register(keymaps, {
     mode = "n",
     buffer = bufnr,
-    silent = true,
-    noremap = true,
-  })
-
-  wk.register({
-    g = {
-      name = "LSP",
-      x = { "<cmd><c-u>Lspsaga range_code_action<CR>", "Show code actions over range" },
-    },
-  }, {
-    mode = "x",
     silent = true,
     noremap = true,
   })
