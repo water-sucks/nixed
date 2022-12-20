@@ -15,17 +15,6 @@
       sha256 = "sha256-po1MyuuOH3e8yJTAtkxnusFSJuNpQnjpe+zfWPoO62E=";
     };
   };
-  "'plugin-HighStr.nvim'" = {
-    pname = "'plugin-HighStr.nvim'";
-    version = "1cb5e030bb16df52c8428b53dc235466a4eb1d01";
-    src = fetchFromGitHub {
-      owner = "Pocco81";
-      repo = "HighStr.nvim";
-      rev = "1cb5e030bb16df52c8428b53dc235466a4eb1d01";
-      fetchSubmodules = false;
-      sha256 = "sha256-oyCCYgFckG3F9OKOeajLrLsby2Z+4zJ1RtwEzJo9JIk=";
-    };
-  };
   "'plugin-SmoothCursor.nvim'" = {
     pname = "'plugin-SmoothCursor.nvim'";
     version = "255035d1c58e7a51db83e4b22d22627540c1b87c";
@@ -35,17 +24,6 @@
       rev = "255035d1c58e7a51db83e4b22d22627540c1b87c";
       fetchSubmodules = false;
       sha256 = "sha256-w2XxQWDox5FxyXEOF3m4kJuDOM35S5JPgYEEd1WD18E=";
-    };
-  };
-  "'plugin-aerial.nvim'" = {
-    pname = "'plugin-aerial.nvim'";
-    version = "086e1904e51fc559673598afbc59842db7981501";
-    src = fetchFromGitHub {
-      owner = "stevearc";
-      repo = "aerial.nvim";
-      rev = "086e1904e51fc559673598afbc59842db7981501";
-      fetchSubmodules = false;
-      sha256 = "sha256-s7f4N6jReHcA4GtQcpvDd91khkYcFkh5c+5bQfUf9Kg=";
     };
   };
   "'plugin-auto-save.nvim'" = {
@@ -629,17 +607,6 @@
       rev = "2db6d31de8e3a98d2b41c0f0d1f5dc299ee76875";
       fetchSubmodules = false;
       sha256 = "sha256-BdX+C5KBHZcFgDG2fXvhMl2Gp/6ffJWEBvA/JvVWh4I=";
-    };
-  };
-  "'plugin-sidebar.nvim'" = {
-    pname = "'plugin-sidebar.nvim'";
-    version = "990ce5f562c9125283ccac5473235b1a56fea6dc";
-    src = fetchFromGitHub {
-      owner = "sidebar-nvim";
-      repo = "sidebar.nvim";
-      rev = "990ce5f562c9125283ccac5473235b1a56fea6dc";
-      fetchSubmodules = false;
-      sha256 = "sha256-/6q/W7fWXlJ2B9o4v+0gg2QjhzRC/Iws+Ez6yyL1bqI=";
     };
   };
   "'plugin-sort.nvim'" = {

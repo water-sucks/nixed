@@ -18,25 +18,6 @@
         },
         "version": "5f01c1a89adafc52bf34e3bf690f80d9d726715d"
     },
-    "'plugin-HighStr.nvim'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-HighStr.nvim'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Pocco81",
-            "repo": "HighStr.nvim",
-            "rev": "1cb5e030bb16df52c8428b53dc235466a4eb1d01",
-            "sha256": "sha256-oyCCYgFckG3F9OKOeajLrLsby2Z+4zJ1RtwEzJo9JIk=",
-            "type": "github"
-        },
-        "version": "1cb5e030bb16df52c8428b53dc235466a4eb1d01"
-    },
     "'plugin-SmoothCursor.nvim'": {
         "cargoLocks": null,
         "extract": null,
@@ -55,25 +36,6 @@
             "type": "github"
         },
         "version": "255035d1c58e7a51db83e4b22d22627540c1b87c"
-    },
-    "'plugin-aerial.nvim'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-aerial.nvim'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "stevearc",
-            "repo": "aerial.nvim",
-            "rev": "086e1904e51fc559673598afbc59842db7981501",
-            "sha256": "sha256-s7f4N6jReHcA4GtQcpvDd91khkYcFkh5c+5bQfUf9Kg=",
-            "type": "github"
-        },
-        "version": "086e1904e51fc559673598afbc59842db7981501"
     },
     "'plugin-auto-save.nvim'": {
         "cargoLocks": null,
@@ -1081,25 +1043,6 @@
             "type": "github"
         },
         "version": "2db6d31de8e3a98d2b41c0f0d1f5dc299ee76875"
-    },
-    "'plugin-sidebar.nvim'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-sidebar.nvim'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "sidebar-nvim",
-            "repo": "sidebar.nvim",
-            "rev": "990ce5f562c9125283ccac5473235b1a56fea6dc",
-            "sha256": "sha256-/6q/W7fWXlJ2B9o4v+0gg2QjhzRC/Iws+Ez6yyL1bqI=",
-            "type": "github"
-        },
-        "version": "990ce5f562c9125283ccac5473235b1a56fea6dc"
     },
     "'plugin-sort.nvim'": {
         "cargoLocks": null,

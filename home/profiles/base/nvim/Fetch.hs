@@ -36,18 +36,15 @@ packageSet = do
     plugin ("stevearc", "dressing.nvim")
     plugin ("kyazdani42", "nvim-tree.lua")
     plugin ("nvim-telescope", "telescope.nvim")
-    plugin ("sidebar-nvim", "sidebar.nvim")
     plugin ("folke", "trouble.nvim")
     plugin ("voldikss", "vim-floaterm")
     plugin ("weilbith", "nvim-code-action-menu")
-    plugin ("stevearc", "aerial.nvim")
 
     -- Text editing assistance/annotations
     plugin ("tpope", "vim-sleuth")
     plugin ("tpope", "vim-surround")
     plugin ("tpope", "vim-repeat")
     plugin ("gpanders", "editorconfig.nvim")
-    plugin ("Pocco81", "HighStr.nvim")
     plugin ("numToStr", "Comment.nvim")
     plugin ("windwp", "nvim-autopairs")
     plugin ("Pocco81", "auto-save.nvim")

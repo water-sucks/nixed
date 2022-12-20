@@ -102,13 +102,6 @@ packer.startup({
       end,
     })
     use({
-      generated("sidebar-nvim/sidebar.nvim"),
-      event = "CursorHold",
-      config = function()
-        require("config.sidebar")
-      end,
-    })
-    use({
       generated("folke/trouble.nvim"),
       event = "CursorHold",
       config = function()
@@ -125,13 +118,6 @@ packer.startup({
     use({
       generated("weilbith/nvim-code-action-menu"),
       cmd = "CodeActionMenu",
-    })
-    use({
-      generated("stevearc/aerial.nvim"),
-      event = "CursorHold",
-      config = function()
-        require("config.aerial")
-      end,
     })
 
     -- Text editing assistance/annotations
@@ -153,13 +139,6 @@ packer.startup({
     use({
       generated("gpanders/editorconfig.nvim"),
       event = "BufRead",
-    })
-    use({
-      generated("Pocco81/HighStr.nvim"),
-      event = "CursorHold",
-      config = function()
-        require("config.highstr")
-      end,
     })
     use({
       generated("numToStr/Comment.nvim"),
