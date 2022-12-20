@@ -18,7 +18,3 @@ packageSet = do
     define $
         package "zsh-autosuggestions"
             `fromGitHubTag` ("zsh-users", "zsh-autosuggestions", id)
-
-    define $
-        package "nix-shell"
-            `fromGitHub` ("chisui", "zsh-nix-shell")

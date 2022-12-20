@@ -20,10 +20,6 @@ in
         };
         plugins = [
           {
-            name = "nix-shell";
-            inherit (sources.nix-shell) src;
-          }
-          {
             name = "zsh-autosuggestions";
             inherit (sources.zsh-autosuggestions) src;
           }

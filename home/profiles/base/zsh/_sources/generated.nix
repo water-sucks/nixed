@@ -15,17 +15,6 @@
       sha256 = "sha256-DWVFBoICroKaKgByLmDEo4O+xo6eA8YO792g8t8R7kA=";
     };
   };
-  nix-shell = {
-    pname = "nix-shell";
-    version = "v0.5.0";
-    src = fetchFromGitHub {
-      owner = "chisui";
-      repo = "zsh-nix-shell";
-      rev = "v0.5.0";
-      fetchSubmodules = false;
-      sha256 = "sha256-IT3wpfw8zhiNQsrw59lbSWYh0NQ1CUdUtFzRzHlURH0=";
-    };
-  };
   zsh-autosuggestions = {
     pname = "zsh-autosuggestions";
     version = "v0.7.0";

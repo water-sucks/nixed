@@ -18,25 +18,6 @@
         },
         "version": "v1.55"
     },
-    "nix-shell": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "nix-shell",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "chisui",
-            "repo": "zsh-nix-shell",
-            "rev": "v0.5.0",
-            "sha256": "sha256-IT3wpfw8zhiNQsrw59lbSWYh0NQ1CUdUtFzRzHlURH0=",
-            "type": "github"
-        },
-        "version": "v0.5.0"
-    },
     "zsh-autosuggestions": {
         "cargoLocks": null,
         "extract": null,
