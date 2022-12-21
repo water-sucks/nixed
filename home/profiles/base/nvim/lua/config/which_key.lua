@@ -11,7 +11,7 @@ require("which-key").setup({
       windows = true,
       nav = true,
       z = true,
-      g = true,
+      g = false,
     },
   },
 })

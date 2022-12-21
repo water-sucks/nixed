@@ -85,6 +85,27 @@ require("nvim-treesitter.configs").setup({
       },
     },
   },
+
+  refactor = {
+    highlight_definitions = {
+      enable = true,
+      clear_on_cursor_move = false,
+    },
+    highlight_current_scope = {
+      enable = true,
+    },
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition_lsp_fallback = "gd",
+        goto_definition = "<nop>",
+        list_definitions = "glD",
+        list_definitions_toc = "glO",
+        goto_next_usage = "gn",
+        goto_previous_usage = "gp",
+      },
+    },
+  },
 })
 
 wk.register({
@@ -94,4 +115,21 @@ wk.register({
 }, {
   mode = "n",
   prefix = "<Leader>",
+})
+
+wk.register({
+  g = {
+    d = "Go to definition",
+    n = "Jump to next usage",
+    p = "Jump to previous usage",
+    l = {
+      name = "List",
+      D = "List definitions",
+      O = "List definitions TOC",
+    },
+  },
+}, {
+  mode = "n",
+  silent = true,
+  noremap = true,
 })
