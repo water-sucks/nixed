@@ -1,13 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  environment.systemPackages = with pkgs; [
-    efibootmgr
-    refind
-  ];
-
+{config, ...}: {
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
 
@@ -16,7 +7,24 @@
   ];
 
   boot = {
-    loader.grub.gfxmodeEfi = "2560x1440";
+    loader.grub = {
+      default = "saved";
+      gfxmodeEfi = "2560x1440";
+      extraEntriesBeforeNixOS = true;
+      extraEntries = ''
+        menuentry "Windows 10" --class windows --class os {
+          search --no-floppy --set=root --fs-uuid 860D-8749
+          chainloader /efi/Microsoft/Boot/bootmgfw.efi
+          boot
+        }
+
+        menuentry "macOS Ventura" --class macos --class os {
+          search --no-floppy --set=root --fs-uuid 860D-8749
+          chainloader /efi/oc/bootx64.efi
+          boot
+        }
+      '';
+    };
 
     initrd = {
       luks.devices.root = {

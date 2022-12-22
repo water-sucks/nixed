@@ -1,4 +1,6 @@
-_: {
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [efibootmgr];
+
   boot.loader = {
     efi.canTouchEfiVariables = true;
 
