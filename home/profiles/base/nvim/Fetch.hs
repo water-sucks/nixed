@@ -16,8 +16,7 @@ main = runNvFetcher packageSet
 packageSet :: PackageSet ()
 packageSet = do
     -- Vitals
-    plugin ("wbthomason", "packer.nvim")
-    plugin ("lewis6991", "impatient.nvim")
+    plugin ("folke", "lazy.nvim")
     plugin ("nvim-lua", "plenary.nvim")
     plugin ("nathom", "filetype.nvim")
     plugin ("dstein64", "vim-startuptime")

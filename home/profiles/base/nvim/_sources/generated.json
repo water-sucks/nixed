@@ -322,25 +322,6 @@
         },
         "version": "71644a2907adc076f1c5e712f59d897f5197d5d6"
     },
-    "'plugin-impatient.nvim'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-impatient.nvim'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "lewis6991",
-            "repo": "impatient.nvim",
-            "rev": "9f7eed8133d62457f7ad2ca250eb9b837a4adeb7",
-            "sha256": "sha256-kjXO1DiGnuNLaDSaIb+73Do5/uQbxGDrUjKrFheG708=",
-            "type": "github"
-        },
-        "version": "9f7eed8133d62457f7ad2ca250eb9b837a4adeb7"
-    },
     "'plugin-indent-blankline.nvim'": {
         "cargoLocks": null,
         "extract": null,
@@ -359,6 +340,25 @@
             "type": "github"
         },
         "version": "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7"
+    },
+    "'plugin-lazy.nvim'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-lazy.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "folke",
+            "repo": "lazy.nvim",
+            "rev": "7f6f31d66f2aba99fad86a64789b7d5d3e61a2cb",
+            "sha256": "sha256-AI1dF3z78g8/O3CQ/jtFhCqfSNBxdD8NCs1+Dh7J41U=",
+            "type": "github"
+        },
+        "version": "7f6f31d66f2aba99fad86a64789b7d5d3e61a2cb"
     },
     "'plugin-leap.nvim'": {
         "cargoLocks": null,
@@ -910,25 +910,6 @@
             "type": "github"
         },
         "version": "4ca4df5533da67e136fce4a906e33634889d6d76"
-    },
-    "'plugin-packer.nvim'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-packer.nvim'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "wbthomason",
-            "repo": "packer.nvim",
-            "rev": "dac4088c70f4337c6c40d1a2751266a324765797",
-            "sha256": "sha256-IIokssVOGFf5/pZQ4gRCPV5ktWPDfCCKJb5Ux1DrKok=",
-            "type": "github"
-        },
-        "version": "dac4088c70f4337c6c40d1a2751266a324765797"
     },
     "'plugin-playground'": {
         "cargoLocks": null,

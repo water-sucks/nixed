@@ -1,36 +1,54 @@
-local ok, impatient = pcall(require, "impatient")
-if ok then
-  impatient.enable_profile()
-end
-
 local modules = { "options", "autocmds", "mappings", "commands" }
 
 for _, module in ipairs(modules) do
-  ok = pcall(require, module)
+  local ok = pcall(require, module)
   if not ok then
     print("Uh oh! The " .. module .. " module failed to load.")
   end
 end
 
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.isdirectory(install_path) < 1 then
-  print("Cloning packer ..")
-
-  fn.system({
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if vim.fn.isdirectory(lazypath) == 0 then
+  vim.fn.system({
     "git",
     "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
+    "--filter=blob:none",
+    "--single-branch",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
   })
-
-  print("Packer cloned successfully!")
-
-  vim.cmd("packadd packer.nvim")
-  require("plugins")
-  require("packer").sync()
 end
+vim.opt.runtimepath:prepend(lazypath)
 
-require("plugins")
+require("lazy").setup("plugins", {
+  performance = {
+    cache = {
+      enabled = true,
+    },
+    rtp = {
+      disabled_plugins = {
+        "2html_plugin",
+        "getscript",
+        "getscriptPlugin",
+        "gzip",
+        "logipat",
+        "netrw",
+        "netrwPlugin",
+        "netrwSettings",
+        "netrwFileHandlers",
+        "matchit",
+        "tar",
+        "tarPlugin",
+        "tutor",
+        "rrhelper",
+        "spellfile_plugin",
+        "vimball",
+        "vimballPlugin",
+        "zip",
+        "zipPlugin",
+        "matchparen",
+        "fzf",
+      },
+    },
+  },
+})
