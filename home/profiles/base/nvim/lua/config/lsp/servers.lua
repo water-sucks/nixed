@@ -15,7 +15,6 @@ local servers = {
   "elixirls",
   "graphql",
   "ltex",
-  "hls",
   "rnix",
   "vala_ls",
 }
@@ -71,13 +70,6 @@ local server_configs = {
         -- disabledRules = {
         --   ["en-US"] = { "PROFANITY" },
         -- },
-      },
-    },
-  },
-  hls = {
-    settings = {
-      haskell = {
-        formattingProvider = vim.fn.executable("fourmolu") and "formolu" or "ormolu",
       },
     },
   },
