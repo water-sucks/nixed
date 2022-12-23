@@ -24,6 +24,7 @@ null_ls.setup({
         }
       end,
     }),
+    null_ls.builtins.formatting.fourmolu,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.mix,

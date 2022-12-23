@@ -363,6 +363,17 @@ return {
     end,
     ft = "rust",
   }),
+  use("MrcJkb/haskell-tools.nvim", {
+    dependencies = {
+      use("neovim/nvim-lspconfig"),
+      use("nvim-lua/plenary.nvim"),
+      use("nvim-telescope/telescope.nvim"),
+    },
+    config = function()
+      require("config.haskell")
+    end,
+    ft = "haskell",
+  }),
   use("lervag/vimtex", {
     dependencies = { use("neovim/nvim-lspconfig") },
     config = function()
