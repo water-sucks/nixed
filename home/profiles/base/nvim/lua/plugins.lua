@@ -75,6 +75,12 @@ return {
       require("config.telescope")
     end,
   }),
+  use("SidOfc/carbon.nvim", {
+    event = "CursorHold",
+    config = function()
+      require("config.carbon")
+    end,
+  }),
   use("folke/trouble.nvim", {
     event = "CursorHold",
     config = function()

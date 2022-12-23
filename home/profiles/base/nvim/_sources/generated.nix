@@ -48,6 +48,17 @@
       sha256 = "sha256-qGl1jwBaMFWsrth7F20KrfJpyVENF8GEOJsVBBcSTVA=";
     };
   };
+  "'plugin-carbon.nvim'" = {
+    pname = "'plugin-carbon.nvim'";
+    version = "834c4494f031517e52e9b767ce22a18a6a3705be";
+    src = fetchFromGitHub {
+      owner = "SidOfc";
+      repo = "carbon.nvim";
+      rev = "834c4494f031517e52e9b767ce22a18a6a3705be";
+      fetchSubmodules = false;
+      sha256 = "sha256-fjmAY5nafLcmLLsU2PhW2lEi7/5HdyN/7kfOHZ1gfAI=";
+    };
+  };
   "'plugin-circles.nvim'" = {
     pname = "'plugin-circles.nvim'";
     version = "91ae7e0ddf95e1984528cf3129879f4841bcbc82";

@@ -35,6 +35,7 @@ packageSet = do
     plugin ("stevearc", "dressing.nvim")
     plugin ("kyazdani42", "nvim-tree.lua")
     plugin ("nvim-telescope", "telescope.nvim")
+    plugin ("SidOfc", "carbon.nvim")
     plugin ("folke", "trouble.nvim")
     plugin ("voldikss", "vim-floaterm")
     plugin ("weilbith", "nvim-code-action-menu")

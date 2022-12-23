@@ -74,7 +74,7 @@ for _, server in pairs(servers) do
   }
 
   if server_configs[server] ~= nil then
-    for key, value in pairs(server_configs[server]) do
+    for key, value in ipairs(server_configs[server]) do
       config[key] = value
     end
   end

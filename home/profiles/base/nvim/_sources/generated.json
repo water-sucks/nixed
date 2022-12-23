@@ -75,6 +75,25 @@
         },
         "version": "4ecfa81e470a589e74adcde3d5bb1727dd407363"
     },
+    "'plugin-carbon.nvim'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-carbon.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "SidOfc",
+            "repo": "carbon.nvim",
+            "rev": "834c4494f031517e52e9b767ce22a18a6a3705be",
+            "sha256": "sha256-fjmAY5nafLcmLLsU2PhW2lEi7/5HdyN/7kfOHZ1gfAI=",
+            "type": "github"
+        },
+        "version": "834c4494f031517e52e9b767ce22a18a6a3705be"
+    },
     "'plugin-circles.nvim'": {
         "cargoLocks": null,
         "extract": null,
