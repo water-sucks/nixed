@@ -24,7 +24,6 @@ return {
 
   -- Editor tooling
   use("neovim/nvim-lspconfig", {
-    event = "BufReadPre",
     config = function()
       require("config.lsp")
     end,

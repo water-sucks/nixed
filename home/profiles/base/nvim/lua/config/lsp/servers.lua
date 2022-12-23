@@ -10,6 +10,8 @@ local servers = {
   "gopls",
   "bashls",
   "sumneko_lua",
+  "html",
+  "cssls",
   "elixirls",
   "graphql",
   "ltex",
@@ -19,6 +21,26 @@ local servers = {
 }
 
 local server_configs = {
+  html = {
+    capabilities = (function()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      return capabilities
+    end)(),
+    settings = {
+      html = {
+        format = {
+          templating = true,
+          wrapLineLength = 120,
+          wrapAttributes = "auto",
+        },
+        hover = {
+          documentation = true,
+          references = true,
+        },
+      },
+    },
+  },
   elixirls = {
     cmd = {
       (function()
@@ -74,7 +96,7 @@ for _, server in pairs(servers) do
   }
 
   if server_configs[server] ~= nil then
-    for key, value in ipairs(server_configs[server]) do
+    for key, value in pairs(server_configs[server]) do
       config[key] = value
     end
   end
