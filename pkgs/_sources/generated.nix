@@ -83,13 +83,13 @@
   };
   river = {
     pname = "river";
-    version = "e603c5460a27bdc8ce6c32c8ee5e53fb789bc10b";
+    version = "096e175ceca0b0ce313da58cd2d00b189f5ac458";
     src = fetchFromGitHub {
       owner = "riverwm";
       repo = "river";
-      rev = "e603c5460a27bdc8ce6c32c8ee5e53fb789bc10b";
+      rev = "096e175ceca0b0ce313da58cd2d00b189f5ac458";
       fetchSubmodules = true;
-      sha256 = "sha256-x971VRWp72uNRNcBTU2H81EiqWa5kg0E5n7tK8ypaQM=";
+      sha256 = "sha256-kJakPdgtPMd35mhqHx4Eve9Qbr56Tro+huZXdz2tuvI=";
     };
   };
   waybar-mpris = {
