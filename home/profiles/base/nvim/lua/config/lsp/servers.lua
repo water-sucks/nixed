@@ -12,6 +12,7 @@ local servers = {
   "sumneko_lua",
   "html",
   "cssls",
+  "emmet_ls",
   "elixirls",
   "graphql",
   "ltex",
@@ -38,6 +39,9 @@ local server_configs = {
           references = true,
         },
       },
+    },
+    init_options = {
+      provideFormatter = false,
     },
   },
   elixirls = {

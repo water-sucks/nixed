@@ -37,10 +37,16 @@ in {
   };
 
   flake.overlays = {
-    default = _final: prev:
+    default = _final: prev: let
+      nodePkgs = prev.callPackage ./development/node-packages {};
+    in
       (lib.mapAttrs (_: v: callPackage prev v {}) packages')
       // {
         formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
+
+        inherit (nodePkgs) emmet-ls;
+
+        tailwind-ls = nodePkgs."@tailwindcss/language-server";
       };
   };
 }

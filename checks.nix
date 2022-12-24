@@ -26,5 +26,11 @@ in {
         entry = "${pkgs.editorconfig-checker}/bin/editorconfig-checker";
       };
     };
+    settings = {
+      statix.ignore = [
+        "pkgs/development/node-packages/node-env.nix"
+        "pkgs/development/node-packages/node-packages.nix"
+      ];
+    };
   };
 }

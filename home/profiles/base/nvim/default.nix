@@ -50,11 +50,12 @@ in {
       ccls
       gopls
       ltex-ls
+      emmet-ls
       nodePackages.bash-language-server
       nodePackages.graphql-language-service-cli
+      nodePackages.vscode-langservers-extracted
       sumneko-lua-language-server
       nil
-      nodePackages.vscode-langservers-extracted
 
       # null-ls sources
       alejandra

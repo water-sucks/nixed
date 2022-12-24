@@ -9,6 +9,7 @@ in
     name = "nixed-shell";
     packages = with pkgs;
       [
+        node2nix
         nix-prefetch
         nvchecker
         (haskellPackages.ghcWithPackages (p: [p.nvfetcher]))
