@@ -280,7 +280,7 @@ return {
       use("nvim-neorg/neorg-telescope"),
     },
     config = function()
-      require("config.neorg")
+      require("config.langs.neorg")
     end,
     ft = "norg",
   }),
@@ -352,14 +352,14 @@ return {
   use("akinsho/flutter-tools.nvim", {
     dependencies = { use("nvim-lua/plenary.nvim") },
     config = function()
-      require("config.flutter")
+      require("config.langs.flutter")
     end,
     ft = "dart",
   }),
   use("simrat39/rust-tools.nvim", {
     dependencies = { use("neovim/nvim-lspconfig") },
     config = function()
-      require("config.rust")
+      require("config.langs.rust")
     end,
     ft = "rust",
   }),
@@ -370,14 +370,14 @@ return {
       use("nvim-telescope/telescope.nvim"),
     },
     config = function()
-      require("config.haskell")
+      require("config.langs.haskell")
     end,
     ft = "haskell",
   }),
   use("lervag/vimtex", {
     dependencies = { use("neovim/nvim-lspconfig") },
     config = function()
-      require("config.tex")
+      require("config.langs.tex")
     end,
     ft = "tex",
   }),
