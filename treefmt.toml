@@ -11,6 +11,11 @@ command = "fourmolu"
 options = ["-m", "inplace"]
 includes = ["*.hs"]
 
+[formatter.prettier]
+command = "prettier"
+options = ["-w"]
+includes = ["*.md", "*.css"]
+
 [formatter.shell]
 command = "shfmt"
 options = ["-s"]

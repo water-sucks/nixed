@@ -19,6 +19,7 @@ in
 
         alejandra
         editorconfig-checker
+        nodePackages.prettier
         shellcheck
         shfmt
         stylua
