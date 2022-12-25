@@ -100,6 +100,7 @@ packageSet = do
     plugin ("folke", "neodev.nvim")
     plugin ("akinsho", "flutter-tools.nvim")
     plugin ("simrat39", "rust-tools.nvim")
+    plugin ("MrcJkb", "haskell-tools.nvim")
     plugin ("lervag", "vimtex")
     plugin ("barreiroleo", "ltex_extra.nvim")
 

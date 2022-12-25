@@ -202,6 +202,17 @@
       sha256 = "sha256-QsG4gYeHyabrb2XxwagHydXXA9C+5phRS52R0nJlRY4=";
     };
   };
+  "'plugin-haskell-tools.nvim'" = {
+    pname = "'plugin-haskell-tools.nvim'";
+    version = "7d771612036ffded31a80e34daa048e060566f9d";
+    src = fetchFromGitHub {
+      owner = "MrcJkb";
+      repo = "haskell-tools.nvim";
+      rev = "7d771612036ffded31a80e34daa048e060566f9d";
+      fetchSubmodules = false;
+      sha256 = "sha256-col7kTDxQ8cupvOlpflEDimM6YrjNKWK95IuJLxm6ec=";
+    };
+  };
   "'plugin-indent-blankline.nvim'" = {
     pname = "'plugin-indent-blankline.nvim'";
     version = "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7";
