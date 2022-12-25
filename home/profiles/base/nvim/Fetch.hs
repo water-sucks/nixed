@@ -104,9 +104,8 @@ packageSet = do
     plugin ("barreiroleo", "ltex_extra.nvim")
 
     -- Treesitter grammars
-    grammar ("nvim-neorg", "tree-sitter-norg")
+    grammar' ("nvim-neorg", "tree-sitter-norg") (Just "dev")
     grammar ("nvim-neorg", "tree-sitter-norg-meta")
-    grammar ("nvim-neorg", "tree-sitter-norg-table")
     grammar ("vala-lang", "tree-sitter-vala")
 
     grammar ("tree-sitter", "tree-sitter-bash")
@@ -142,10 +141,17 @@ plugin'' (owner, repo) rev =
   where
     p = package (mconcat ["'plugin-", repo, "'"])
 
--- | Define a Treesitter grammar.
 grammar :: (Text, Text) -> PackageSet ()
-grammar (owner, repo) =
+grammar (owner, repo) = grammar' (owner, repo) Nothing
+
+-- | Define a Treesitter grammar.
+grammar' :: (Text, Text) -> Maybe Branch -> PackageSet ()
+grammar' (owner, repo) branch =
     define $
-        package repo
-            `sourceGit` mconcat ["https://github.com/", owner, "/", repo]
-            `fetchGitHub` (owner, repo)
+        fetchGitHub src (owner, repo)
+  where
+    p = package repo
+    url = mconcat ["https://github.com/", owner, "/", repo]
+    src = case branch of
+        Nothing -> sourceGit p url
+        Just b -> sourceGit' p (url, b)

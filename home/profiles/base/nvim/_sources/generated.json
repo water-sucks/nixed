@@ -1361,11 +1361,11 @@
             "name": null,
             "owner": "nvim-neorg",
             "repo": "tree-sitter-norg",
-            "rev": "8ad20059c6f128861c4506fff866150ffee1d6f4",
-            "sha256": "sha256-1cKH3k/nbZhZleINZ91M+glG1m2SlBJR/AP7mz/SAvI=",
+            "rev": "600874e0825a62c3822ff04e5d0efbac8d7e380c",
+            "sha256": "sha256-ndyBxfhk0IGaiKIb95wHdd++hAQBxYG7chG6ftoHQNA=",
             "type": "github"
         },
-        "version": "8ad20059c6f128861c4506fff866150ffee1d6f4"
+        "version": "600874e0825a62c3822ff04e5d0efbac8d7e380c"
     },
     "tree-sitter-norg-meta": {
         "cargoLocks": null,
@@ -1385,25 +1385,6 @@
             "type": "github"
         },
         "version": "8e1a9008eb9492e95eb9a65ab0ec0419cfa9c4c7"
-    },
-    "tree-sitter-norg-table": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "tree-sitter-norg-table",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-neorg",
-            "repo": "tree-sitter-norg-table",
-            "rev": "d931ad0900a3bb9141a2b709c6053c5adf09a0b9",
-            "sha256": "sha256-r668hZtAMs5+wG/bfzuskBcXXuOdMtSw4siamlGq4yw=",
-            "type": "github"
-        },
-        "version": "d931ad0900a3bb9141a2b709c6053c5adf09a0b9"
     },
     "tree-sitter-vala": {
         "cargoLocks": null,
