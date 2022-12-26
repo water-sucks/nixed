@@ -31,7 +31,7 @@
         inherit (builtins) isAttrs;
         isDerivation = x: isAttrs x && x ? type && x.type == "derivation";
         isBroken = meta.broken or false;
-        platforms = meta.platforms or [];
+        platforms = meta.platforms or (abort "meta.plaforms is not defined for ${n}");
         badPlatforms = meta.badPlatforms or [];
       in
         # check for isDerivation, so this is independently useful of

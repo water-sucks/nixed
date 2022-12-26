@@ -27,26 +27,35 @@
 
     get-appname = ./tools/get-appname;
   };
+
+  nodePkgs' = pkgs: let
+    nodePkgs = pkgs.callPackage ./development/node-packages {};
+  in {
+    inherit (nodePkgs) emmet-ls;
+
+    tailwind-ls = nodePkgs."@tailwindcss/language-server";
+  };
 in {
   perSystem = {
     pkgs,
     system,
     ...
-  }: {
-    packages = filterPackages system (lib.mapAttrs (_: v: callPackage pkgs v {}) packages');
+  }: let
+    nodePkgs = nodePkgs' pkgs;
+  in {
+    packages =
+      filterPackages system ((lib.mapAttrs (_: v: callPackage pkgs v {}) packages')
+        // nodePkgs);
   };
 
   flake.overlays = {
     default = _final: prev: let
-      nodePkgs = prev.callPackage ./development/node-packages {};
+      nodePkgs = nodePkgs' prev;
     in
       (lib.mapAttrs (_: v: callPackage prev v {}) packages')
       // {
         formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
-
-        inherit (nodePkgs) emmet-ls;
-
-        tailwind-ls = nodePkgs."@tailwindcss/language-server";
-      };
+      }
+      // nodePkgs;
   };
 }
