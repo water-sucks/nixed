@@ -493,6 +493,25 @@
         },
         "version": "fffbcb829288c3ca366f17cdb8d46aefb5c1d6f3"
     },
+    "'plugin-lush.nvim'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-lush.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rktjmp",
+            "repo": "lush.nvim",
+            "rev": "4cc81a12731fbefce1582a940b755691eb3eb6d1",
+            "sha256": "sha256-Hct/DNJ8OPBil+qHSyyBK7sxoVTuuMaAmClPVVFLi38=",
+            "type": "github"
+        },
+        "version": "4cc81a12731fbefce1582a940b755691eb3eb6d1"
+    },
     "'plugin-neodev.nvim'": {
         "cargoLocks": null,
         "extract": null,
