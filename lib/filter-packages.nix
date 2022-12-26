@@ -1,5 +1,13 @@
 {
-  # Taken from flake-utils
+  /*
+  Filter package derivations based on their `meta.platforms` attribute.
+
+  This is a function taken from flake-utils.
+
+  @param  system   system for which to filter for
+  @param  packages attrset of package derivations
+  @return          attrset of all derivations for given system
+  */
   filterPackages = system: packages: let
     inherit (builtins) listToAttrs concatMap attrNames;
     nameValuePair = name: value: {inherit name value;};
