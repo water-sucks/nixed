@@ -265,6 +265,9 @@ return {
       require("config.cursor")
     end,
   }),
+  use("rktjmp/lush.nvim", {
+    event = "CursorHold",
+  }),
 
   -- Special Neovim sauce
   use("andweeb/presence.nvim", {
