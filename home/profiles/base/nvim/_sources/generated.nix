@@ -290,6 +290,17 @@
       sha256 = "sha256-uyKNl6y+wI8QDpC+jM6mxhmb0NTv3dnIVOjd4s0l3yM=";
     };
   };
+  "'plugin-lush.nvim'" = {
+    pname = "'plugin-lush.nvim'";
+    version = "4cc81a12731fbefce1582a940b755691eb3eb6d1";
+    src = fetchFromGitHub {
+      owner = "rktjmp";
+      repo = "lush.nvim";
+      rev = "4cc81a12731fbefce1582a940b755691eb3eb6d1";
+      fetchSubmodules = false;
+      sha256 = "sha256-Hct/DNJ8OPBil+qHSyyBK7sxoVTuuMaAmClPVVFLi38=";
+    };
+  };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
     version = "c5f0a814abf89b5b1e3cfed95322813939bdc0c5";

@@ -78,6 +78,7 @@ packageSet = do
     plugin ("kosayoda", "nvim-lightbulb")
     plugin ("norcalli", "nvim-colorizer.lua")
     plugin ("gen740", "SmoothCursor.nvim")
+    plugin ("rktjmp", "lush.nvim")
 
     -- Special Neovim sauce
     plugin ("andweeb", "presence.nvim")
