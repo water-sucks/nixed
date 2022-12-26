@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+_: {
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
@@ -125,6 +121,9 @@
       };
       java = {
         symbol = " ";
+      };
+      lua = {
+        symbol = " ";
       };
       memory_usage = {
         disabled = false;
