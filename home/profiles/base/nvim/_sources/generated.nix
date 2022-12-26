@@ -226,13 +226,13 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "434b7d3edd3f9dd485a97edb5b8411e4e7109aea";
+    version = "1d3da277da31ced9db941d215854b3217ee566c4";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "434b7d3edd3f9dd485a97edb5b8411e4e7109aea";
+      rev = "1d3da277da31ced9db941d215854b3217ee566c4";
       fetchSubmodules = false;
-      sha256 = "sha256-IbtB6u+xDIZPUpoXOVBJAg96Bp1dN7C3M5JoF3jxxOA=";
+      sha256 = "sha256-T4cXG5nYoWAk0pMO8PQ4VHo19K7UFncg4l4FyfskxQo=";
     };
   };
   "'plugin-leap.nvim'" = {
@@ -479,13 +479,13 @@
   };
   "'plugin-nvim-treesitter'" = {
     pname = "'plugin-nvim-treesitter'";
-    version = "48a3da710369688df80beb2847dabbbd02e2180e";
+    version = "a2d7e78b0714a0dc066416100b7398d3f0941c23";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "48a3da710369688df80beb2847dabbbd02e2180e";
+      rev = "a2d7e78b0714a0dc066416100b7398d3f0941c23";
       fetchSubmodules = false;
-      sha256 = "sha256-OTbwn9j4jjtOM4Ky8LRKVDsi3KhTM5TXPNk7UjrbMEM=";
+      sha256 = "sha256-TSrXDZerLxaaAtlogDkV8QX9I/STigp7gZb7fwKBux4=";
     };
   };
   "'plugin-nvim-treesitter-refactor'" = {
@@ -501,13 +501,13 @@
   };
   "'plugin-nvim-treesitter-textobjects'" = {
     pname = "'plugin-nvim-treesitter-textobjects'";
-    version = "b062311ea6da061756ebb591d30f61c9e5b44141";
+    version = "83a494a6f93675beff7bbd320c04c87433b1462f";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-textobjects";
-      rev = "b062311ea6da061756ebb591d30f61c9e5b44141";
+      rev = "83a494a6f93675beff7bbd320c04c87433b1462f";
       fetchSubmodules = false;
-      sha256 = "sha256-Tb0Rw9F4F2qmmdqgpMt7C1Ld20+cgo5GC/lygqtOp/U=";
+      sha256 = "sha256-UdNHA1YluCPSDs+XGEQk35171KE707llynnkVuc4EWI=";
     };
   };
   "'plugin-nvim-ts-autotag'" = {
@@ -732,13 +732,13 @@
   };
   "'plugin-vimtex'" = {
     pname = "'plugin-vimtex'";
-    version = "265cb5b8e23e125713e3d331d2c89383ca72cc09";
+    version = "5e03d9052de30c8e4c2f4907600783112454028a";
     src = fetchFromGitHub {
       owner = "lervag";
       repo = "vimtex";
-      rev = "265cb5b8e23e125713e3d331d2c89383ca72cc09";
+      rev = "5e03d9052de30c8e4c2f4907600783112454028a";
       fetchSubmodules = false;
-      sha256 = "sha256-kaRRk1THjz1HyEPfWvBCxwq4Npnpn1tK1uybhIC+xvs=";
+      sha256 = "sha256-h5CNput0PfFvwRMmIETOq8FMs2nxeP1l4TwafvJPp9s=";
     };
   };
   "'plugin-which-key.nvim'" = {
