@@ -835,63 +835,6 @@
         },
         "version": "9e4c39572f631bb60ee15cb9d46e1daa9927a45e"
     },
-    "'plugin-nvim-treesitter'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-nvim-treesitter'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-treesitter",
-            "repo": "nvim-treesitter",
-            "rev": "a2d7e78b0714a0dc066416100b7398d3f0941c23",
-            "sha256": "sha256-TSrXDZerLxaaAtlogDkV8QX9I/STigp7gZb7fwKBux4=",
-            "type": "github"
-        },
-        "version": "a2d7e78b0714a0dc066416100b7398d3f0941c23"
-    },
-    "'plugin-nvim-treesitter-refactor'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-nvim-treesitter-refactor'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-treesitter",
-            "repo": "nvim-treesitter-refactor",
-            "rev": "75f5895cc662d61eb919da8050b7a0124400d589",
-            "sha256": "sha256-8iAwtoMqh+2ef8qooxBFzm1eAm+P+8IKjjepV4n/+vI=",
-            "type": "github"
-        },
-        "version": "75f5895cc662d61eb919da8050b7a0124400d589"
-    },
-    "'plugin-nvim-treesitter-textobjects'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-nvim-treesitter-textobjects'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "nvim-treesitter",
-            "repo": "nvim-treesitter-textobjects",
-            "rev": "83a494a6f93675beff7bbd320c04c87433b1462f",
-            "sha256": "sha256-UdNHA1YluCPSDs+XGEQk35171KE707llynnkVuc4EWI=",
-            "type": "github"
-        },
-        "version": "83a494a6f93675beff7bbd320c04c87433b1462f"
-    },
     "'plugin-nvim-ts-autotag'": {
         "cargoLocks": null,
         "extract": null,
@@ -1348,44 +1291,6 @@
         },
         "version": "7add42b0474b07c206c94d1693997e52d25c5fec"
     },
-    "tree-sitter-bash": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "tree-sitter-bash",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "tree-sitter",
-            "repo": "tree-sitter-bash",
-            "rev": "4488aa41406547e478636a4fcfd24f5bbc3f2f74",
-            "sha256": "sha256-QkH5rI9/7x6L7e3YIwDMdSbBHOGhhC6LTHfasS7wX9U=",
-            "type": "github"
-        },
-        "version": "4488aa41406547e478636a4fcfd24f5bbc3f2f74"
-    },
-    "tree-sitter-kotlin": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "tree-sitter-kotlin",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "fwcd",
-            "repo": "tree-sitter-kotlin",
-            "rev": "b953dbdd05257fcb2b64bc4d9c1578fac12e3c28",
-            "sha256": "sha256-xTbRn7bDN6FR9UOzw43RVHIahI/DFjwLGQj3cYoPurY=",
-            "type": "github"
-        },
-        "version": "b953dbdd05257fcb2b64bc4d9c1578fac12e3c28"
-    },
     "tree-sitter-norg": {
         "cargoLocks": null,
         "extract": null,
@@ -1423,24 +1328,5 @@
             "type": "github"
         },
         "version": "8e1a9008eb9492e95eb9a65ab0ec0419cfa9c4c7"
-    },
-    "tree-sitter-vala": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "tree-sitter-vala",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "vala-lang",
-            "repo": "tree-sitter-vala",
-            "rev": "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b",
-            "sha256": "sha256-YZTE3PkBPCEkMXnLC0HSQ86v5+3/J7/ETDQp8eguFW8=",
-            "type": "github"
-        },
-        "version": "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b"
     }
 }

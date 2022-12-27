@@ -488,39 +488,6 @@
       sha256 = "sha256-oOw9gDI4ojQV73z1eFFyA74J9JJHMBWgy1vw+yViiDs=";
     };
   };
-  "'plugin-nvim-treesitter'" = {
-    pname = "'plugin-nvim-treesitter'";
-    version = "a2d7e78b0714a0dc066416100b7398d3f0941c23";
-    src = fetchFromGitHub {
-      owner = "nvim-treesitter";
-      repo = "nvim-treesitter";
-      rev = "a2d7e78b0714a0dc066416100b7398d3f0941c23";
-      fetchSubmodules = false;
-      sha256 = "sha256-TSrXDZerLxaaAtlogDkV8QX9I/STigp7gZb7fwKBux4=";
-    };
-  };
-  "'plugin-nvim-treesitter-refactor'" = {
-    pname = "'plugin-nvim-treesitter-refactor'";
-    version = "75f5895cc662d61eb919da8050b7a0124400d589";
-    src = fetchFromGitHub {
-      owner = "nvim-treesitter";
-      repo = "nvim-treesitter-refactor";
-      rev = "75f5895cc662d61eb919da8050b7a0124400d589";
-      fetchSubmodules = false;
-      sha256 = "sha256-8iAwtoMqh+2ef8qooxBFzm1eAm+P+8IKjjepV4n/+vI=";
-    };
-  };
-  "'plugin-nvim-treesitter-textobjects'" = {
-    pname = "'plugin-nvim-treesitter-textobjects'";
-    version = "83a494a6f93675beff7bbd320c04c87433b1462f";
-    src = fetchFromGitHub {
-      owner = "nvim-treesitter";
-      repo = "nvim-treesitter-textobjects";
-      rev = "83a494a6f93675beff7bbd320c04c87433b1462f";
-      fetchSubmodules = false;
-      sha256 = "sha256-UdNHA1YluCPSDs+XGEQk35171KE707llynnkVuc4EWI=";
-    };
-  };
   "'plugin-nvim-ts-autotag'" = {
     pname = "'plugin-nvim-ts-autotag'";
     version = "fdefe46c6807441460f11f11a167a2baf8e4534b";
@@ -785,28 +752,6 @@
       sha256 = "sha256-GZZIBCQyfLLz7iBXhTH++LGSHz/NOgOB4svb5MgkWbM=";
     };
   };
-  tree-sitter-bash = {
-    pname = "tree-sitter-bash";
-    version = "4488aa41406547e478636a4fcfd24f5bbc3f2f74";
-    src = fetchFromGitHub {
-      owner = "tree-sitter";
-      repo = "tree-sitter-bash";
-      rev = "4488aa41406547e478636a4fcfd24f5bbc3f2f74";
-      fetchSubmodules = false;
-      sha256 = "sha256-QkH5rI9/7x6L7e3YIwDMdSbBHOGhhC6LTHfasS7wX9U=";
-    };
-  };
-  tree-sitter-kotlin = {
-    pname = "tree-sitter-kotlin";
-    version = "b953dbdd05257fcb2b64bc4d9c1578fac12e3c28";
-    src = fetchFromGitHub {
-      owner = "fwcd";
-      repo = "tree-sitter-kotlin";
-      rev = "b953dbdd05257fcb2b64bc4d9c1578fac12e3c28";
-      fetchSubmodules = false;
-      sha256 = "sha256-xTbRn7bDN6FR9UOzw43RVHIahI/DFjwLGQj3cYoPurY=";
-    };
-  };
   tree-sitter-norg = {
     pname = "tree-sitter-norg";
     version = "600874e0825a62c3822ff04e5d0efbac8d7e380c";
@@ -827,17 +772,6 @@
       rev = "8e1a9008eb9492e95eb9a65ab0ec0419cfa9c4c7";
       fetchSubmodules = false;
       sha256 = "sha256-1gOTQdqB/TpaJ2ClNY+/Gqsj7TkCgv9CNiX97oF8PGo=";
-    };
-  };
-  tree-sitter-vala = {
-    pname = "tree-sitter-vala";
-    version = "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b";
-    src = fetchFromGitHub {
-      owner = "vala-lang";
-      repo = "tree-sitter-vala";
-      rev = "8f690bfa639f2b83d1fb938ed3dd98a7ba453e8b";
-      fetchSubmodules = false;
-      sha256 = "sha256-YZTE3PkBPCEkMXnLC0HSQ86v5+3/J7/ETDQp8eguFW8=";
     };
   };
 }

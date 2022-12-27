@@ -60,9 +60,6 @@ packageSet = do
 
     -- Appearance/Theming
     -- Treesitter queries will be synced with the nixpkgs treesitter input
-    plugin ("nvim-treesitter", "nvim-treesitter-textobjects")
-    plugin ("nvim-treesitter", "nvim-treesitter-refactor")
-    plugin ("nvim-treesitter", "nvim-treesitter")
     plugin ("nvim-treesitter", "playground")
     plugin ("windwp", "nvim-ts-autotag")
     plugin ("JoosepAlviste", "nvim-ts-context-commentstring")
@@ -108,10 +105,6 @@ packageSet = do
     -- Treesitter grammars
     grammar' ("nvim-neorg", "tree-sitter-norg") (Just "dev")
     grammar ("nvim-neorg", "tree-sitter-norg-meta")
-    grammar ("vala-lang", "tree-sitter-vala")
-
-    grammar ("tree-sitter", "tree-sitter-bash")
-    grammar ("fwcd", "tree-sitter-kotlin")
 
 {- | Define a Neovim plugin fetching the latest rev.
 

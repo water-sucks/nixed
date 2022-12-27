@@ -4,6 +4,18 @@ lib: let
   inherit (importers) flattenTree rakeLeaves;
 in rec {
   /*
+  Generate an attrset by mapping a function over a list of attribute values.
+
+  Do not confuse this with `genAttrs` from nixpkgs; this function applies `f`
+  to the value, rather than the name.
+
+  @param  values list of values in the resultant attrset
+  @param  f      function that creates a name for the attribute
+  @return        attrset with generated names mapped to provided values
+  */
+  genAttrs' = values: f: with lib; listToAttrs (map (v: nameValuePair (f v) v) values);
+
+  /*
   Generate an enable option for a Nix module file with a given path; all
   generated enable options are `false` by default.
 

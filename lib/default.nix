@@ -5,4 +5,4 @@ inputs: let
   generators = import ./generators.nix lib;
   filter-packages = import ./filter-packages.nix;
 in
-  lib // importers // generators // filter-packages
+  lib.extend (_: _: importers // generators // filter-packages)

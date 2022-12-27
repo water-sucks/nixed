@@ -1,13 +1,49 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
 }: let
   sources = pkgs.callPackage _sources/generated.nix {};
 
-  treesitter = pkgs.tree-sitter.override {
-    extraGrammars = with lib; filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources;
-  };
+  # Grammar builder function
+  buildGrammar = pkgs.callPackage "${inputs.nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" {};
+
+  # Build grammars that were fetched using nvfetcher
+  generatedGrammars = with lib;
+    mapAttrs (n: v:
+      buildGrammar {
+        language = removePrefix "tree-sitter-" n;
+        inherit (v) version;
+        source = v.src;
+      }) (filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources);
+
+  # Attrset of grammars built using nvim-treesitter's lockfile
+  grammars' = with lib;
+    genAttrs' pkgs.vimPlugins.nvim-treesitter.withAllGrammars.passthru.dependencies
+    (v: (replaceStrings ["nvim-treesitter-"] ["tree-sitter-"] (removeSuffix "-grammar" v.name)));
+  grammars = grammars' // generatedGrammars;
+
+  parserDir = with lib;
+    pkgs.linkFarm
+    "treesitter-parsers"
+    (mapAttrsToList
+      (n: v: let
+        name = "${replaceStrings ["-"] ["_"] (removePrefix "tree-sitter-" n)}.so";
+      in {
+        inherit name;
+        path =
+          # nvim-treesitter's grammars are inside a "parser" directory, which sucks
+          if hasPrefix "nvim-treesitter" v.name
+          then "${v}/parser/${name}"
+          else "${v}/parser";
+      })
+      grammars);
+
+  buildPlugin = source:
+    pkgs.vimUtils.buildVimPluginFrom2Nix {
+      inherit (source) pname version src;
+    };
 
   generatedPluginSources = with lib;
     mapAttrs'
@@ -17,11 +53,6 @@
     (filterAttrs (n: _: hasPrefix "'plugin-" n)
       sources);
 
-  buildPlugin = source:
-    pkgs.vimUtils.buildVimPluginFrom2Nix {
-      inherit (source) pname version src;
-    };
-
   generatedPlugins = with lib;
     mapAttrs (_: buildPlugin) generatedPluginSources;
 
@@ -29,6 +60,7 @@
     generatedPlugins
     // {
       # Add plugins you want synced with nixpkgs here.
+      inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
     };
 in {
   home.packages = with pkgs; [
@@ -90,7 +122,7 @@ in {
   xdg.configFile = {
     "nvim/init.lua".source = ./init.lua;
     "nvim/lua".source = ./lua;
-    "nvim/parser".source = "${treesitter.withPlugins (_: treesitter.allGrammars)}";
+    "nvim/parser".source = "${parserDir}";
   };
 
   xdg.dataFile =
