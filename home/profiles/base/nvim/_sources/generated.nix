@@ -226,13 +226,13 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "1d3da277da31ced9db941d215854b3217ee566c4";
+    version = "e183601763efbacc0604a549081cc0afd0fccd41";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "1d3da277da31ced9db941d215854b3217ee566c4";
+      rev = "e183601763efbacc0604a549081cc0afd0fccd41";
       fetchSubmodules = false;
-      sha256 = "sha256-T4cXG5nYoWAk0pMO8PQ4VHo19K7UFncg4l4FyfskxQo=";
+      sha256 = "sha256-Nf+HXT+ihV0OXMf/moUdPkLm88vg5+UpCk00Z3jB1LU=";
     };
   };
   "'plugin-leap.nvim'" = {
@@ -303,13 +303,13 @@
   };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
-    version = "c5f0a814abf89b5b1e3cfed95322813939bdc0c5";
+    version = "f6ee1a7651280ac476403c0b70bbfb419fa720ab";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neodev.nvim";
-      rev = "c5f0a814abf89b5b1e3cfed95322813939bdc0c5";
+      rev = "f6ee1a7651280ac476403c0b70bbfb419fa720ab";
       fetchSubmodules = false;
-      sha256 = "sha256-yoDqitpkntN5PlmpYEH29xFpg+OlN2mQSLZmwQ5CUSo=";
+      sha256 = "sha256-xk12ibGIeZ+xUEXq3TSyBuinOpiyl8hhtW7tHqOjO5A=";
     };
   };
   "'plugin-neorg'" = {
@@ -457,13 +457,13 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "212b99bc12a5416df8b2a610711ba399e2fc388a";
+    version = "42ca8ce0f2252be795da4789fadfa91f6c3f7464";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "212b99bc12a5416df8b2a610711ba399e2fc388a";
+      rev = "42ca8ce0f2252be795da4789fadfa91f6c3f7464";
       fetchSubmodules = false;
-      sha256 = "sha256-KfgRREgs9WSziZhiW0tNXp9xlZFwaylGU48pVXAc0fs=";
+      sha256 = "sha256-Zla8Rooi5bpikl5MHZH2A18WGe38xrkYmsK8InjADI4=";
     };
   };
   "'plugin-nvim-tetris'" = {
@@ -534,13 +534,13 @@
   };
   "'plugin-playground'" = {
     pname = "'plugin-playground'";
-    version = "3421bbbfec25a7c54ee041ffb9cb226b69b2b995";
+    version = "8a887bcf66017bd775a0fb19c9d8b7a4d6759c48";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "playground";
-      rev = "3421bbbfec25a7c54ee041ffb9cb226b69b2b995";
+      rev = "8a887bcf66017bd775a0fb19c9d8b7a4d6759c48";
       fetchSubmodules = false;
-      sha256 = "sha256-/d2DoDy3JhnZGyPkAzc+xdE2m9iw1vAAd8UUsC7nif0=";
+      sha256 = "sha256-uBSSGdlpj3g2wEYYaZCvPz+gHlwxjJP+C0ES8JcKPrA=";
     };
   };
   "'plugin-plenary.nvim'" = {
