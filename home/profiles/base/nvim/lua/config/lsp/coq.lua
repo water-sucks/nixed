@@ -57,6 +57,8 @@ require("coq_3p")({
   -- Neorg as a source would be nice
   { src = "bc", short_name = "CALC", precision = 7 },
   { src = "cow", trigger = "!cow" },
+  { src = "figlet", short_name = "FIG", trigger = "!fig" },
+  { src = "dap" },
 })
 
 map("i", "<esc>", [[pumvisible() ? "<c-e><esc>" : "<esc>"]], { expr = true, noremap = true })

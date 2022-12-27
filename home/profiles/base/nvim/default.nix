@@ -116,6 +116,7 @@ in {
       # Other stuff
       bc
       cowsay
+      figlet
     ];
   };
 

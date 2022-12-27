@@ -1,5 +1,14 @@
 # Nixed
 
+```raw
+d8b   db d888888b db    db d88888b d8888b.
+888o  88   `88'   `8b  d8' 88'     88  `8D
+88V8o 88    88     `8bd8'  88ooooo 88   88
+88 V8o88    88     .dPYb.  88~~~~~ 88   88
+88  V888   .88.   .8P  Y8. 88.     88  .8D
+VP   V8P Y888888P YP    YP Y88888P Y8888D'
+```
+
 I spend too much time making this config. It has been nixed, sent to the void.
 There is no getting back the hours of debugging the abject horrors of
 `error: infinite recursion, at undefined position`.
