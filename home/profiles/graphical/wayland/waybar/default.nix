@@ -13,8 +13,8 @@
   sed = "${pkgs.gnused}/bin/sed";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
-  wezterm = "${pkgs.wezterm}/bin/wezterm";
-  termLaunch = "${wezterm} start --";
+  kitty = "${pkgs.kitty}/bin/kitty";
+  termLaunch = "${kitty} -e";
   theme = "GTK_THEME=${config.home.sessionVariables.GTK_THEME}";
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";

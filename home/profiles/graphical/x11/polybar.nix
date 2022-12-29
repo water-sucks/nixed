@@ -7,8 +7,8 @@
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
   theme = "GTK_THEME=${config.home.sessionVariables.GTK_THEME}";
-  wezterm = "${pkgs.wezterm}/bin/wezterm";
-  termLaunch = "${wezterm} start --";
+  kitty = "${pkgs.kitty}/bin/kitty";
+  termLaunch = "${kitty} start --";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
