@@ -2,9 +2,9 @@ require("smoothcursor").setup({
   autostart = true,
   cursor = "",
   texthl = "SmoothCursor",
-  type = "default", -- define cursor movement calculate function, "default" or "exp" (exponential).
+  type = "default",
   fancy = {
-    enable = false, -- enable fancy mode
+    enable = false,
   },
   disabled_filetypes = {
     "NvimTree",
@@ -12,5 +12,6 @@ require("smoothcursor").setup({
     "SidebarNvim",
     "floaterm",
     "terminal",
+    "",
   },
 })

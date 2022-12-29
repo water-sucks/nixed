@@ -1,4 +1,4 @@
-vim.g.floaterm_autoinsert = true
+vim.g.floaterm_autoinsert = false
 vim.g.floaterm_keymap_new = "<F7>"
 vim.g.floaterm_keymap_prev = "<F8>"
 vim.g.floaterm_keymap_next = "<F9>"
