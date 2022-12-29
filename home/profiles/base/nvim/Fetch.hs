@@ -37,7 +37,7 @@ packageSet = do
     plugin ("nvim-telescope", "telescope.nvim")
     plugin ("SidOfc", "carbon.nvim")
     plugin ("folke", "trouble.nvim")
-    plugin ("voldikss", "vim-floaterm")
+    plugin ("numToStr", "FTerm.nvim")
     plugin ("weilbith", "nvim-code-action-menu")
 
     -- Text editing assistance/annotations

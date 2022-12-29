@@ -4,7 +4,7 @@ require("indent_blankline").setup({
     "NvimTree",
     "Searchbox",
     "SidebarNvim",
-    "floaterm",
+    "FTerm",
     "terminal",
   },
   buftype_exclude = {

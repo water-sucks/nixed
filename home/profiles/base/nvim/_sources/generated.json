@@ -18,6 +18,25 @@
         },
         "version": "45dc21a71ad1450606f5e98261badb28db59d74c"
     },
+    "'plugin-FTerm.nvim'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-FTerm.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "numToStr",
+            "repo": "FTerm.nvim",
+            "rev": "d1320892cc2ebab472935242d9d992a2c9570180",
+            "sha256": "sha256-fCtAs6qsvWOYRp2Z1AwQa2ByUZcUCMKfuYBoNTP7EeY=",
+            "type": "github"
+        },
+        "version": "d1320892cc2ebab472935242d9d992a2c9570180"
+    },
     "'plugin-SmoothCursor.nvim'": {
         "cargoLocks": null,
         "extract": null,
@@ -1138,25 +1157,6 @@
             "type": "github"
         },
         "version": "291ef1f8c8996ca7715df1032a35a27b12d7b5cf"
-    },
-    "'plugin-vim-floaterm'": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "'plugin-vim-floaterm'",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "voldikss",
-            "repo": "vim-floaterm",
-            "rev": "280b34a0760801168a67f952542b6c49292aa5f3",
-            "sha256": "sha256-nI0p1bwGuWqf6S7xr7aX8kXDY5xGP1Ip8jiaOfFCC6Y=",
-            "type": "github"
-        },
-        "version": "280b34a0760801168a67f952542b6c49292aa5f3"
     },
     "'plugin-vim-repeat'": {
         "cargoLocks": null,

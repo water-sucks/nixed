@@ -15,6 +15,17 @@
       sha256 = "sha256-vx6wVWQ6KQtQD6BPTu2UrtKm9wlKzEG3PqdyLMhCRxQ=";
     };
   };
+  "'plugin-FTerm.nvim'" = {
+    pname = "'plugin-FTerm.nvim'";
+    version = "d1320892cc2ebab472935242d9d992a2c9570180";
+    src = fetchFromGitHub {
+      owner = "numToStr";
+      repo = "FTerm.nvim";
+      rev = "d1320892cc2ebab472935242d9d992a2c9570180";
+      fetchSubmodules = false;
+      sha256 = "sha256-fCtAs6qsvWOYRp2Z1AwQa2ByUZcUCMKfuYBoNTP7EeY=";
+    };
+  };
   "'plugin-SmoothCursor.nvim'" = {
     pname = "'plugin-SmoothCursor.nvim'";
     version = "a05a65981754c3202c7cad2e3304969ed188d161";
@@ -662,17 +673,6 @@
       rev = "291ef1f8c8996ca7715df1032a35a27b12d7b5cf";
       fetchSubmodules = false;
       sha256 = "sha256-t7D6vkEmhVDKdxqvHQ6811FENu/qM6MkrLl8lGADxDs=";
-    };
-  };
-  "'plugin-vim-floaterm'" = {
-    pname = "'plugin-vim-floaterm'";
-    version = "280b34a0760801168a67f952542b6c49292aa5f3";
-    src = fetchFromGitHub {
-      owner = "voldikss";
-      repo = "vim-floaterm";
-      rev = "280b34a0760801168a67f952542b6c49292aa5f3";
-      fetchSubmodules = false;
-      sha256 = "sha256-nI0p1bwGuWqf6S7xr7aX8kXDY5xGP1Ip8jiaOfFCC6Y=";
     };
   };
   "'plugin-vim-repeat'" = {

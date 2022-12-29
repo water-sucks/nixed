@@ -19,9 +19,9 @@ au("CmdlineLeave", {
 })
 
 -- Remove terminal decorations
-augroup("TerminalIndentBlanklineDisable", { clear = true })
+augroup("TerminalSignsToggle", { clear = true })
 au("TermOpen", {
-  group = "TerminalIndentBlanklineDisable",
+  group = "TerminalSignsToggle",
   pattern = "term://*",
   callback = function()
     vim.opt.number = false
@@ -29,15 +29,15 @@ au("TermOpen", {
   end,
 })
 au("FileType", {
-  group = "TerminalIndentBlanklineDisable",
-  pattern = "floaterm",
+  group = "TerminalSignsToggle",
+  pattern = "FTerm",
   callback = function()
     vim.opt.number = false
     vim.opt.signcolumn = "no"
   end,
 })
 au("TermClose", {
-  group = "TerminalIndentBlanklineDisable",
+  group = "TerminalSignsToggle",
   pattern = "term://*",
   callback = function()
     vim.opt.number = true

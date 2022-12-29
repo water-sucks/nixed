@@ -86,10 +86,10 @@ return {
       require("config.trouble")
     end,
   }),
-  use("voldikss/vim-floaterm", {
+  use("numToStr/FTerm.nvim", {
     event = "CursorHold",
     config = function()
-      require("config.floaterm")
+      require("config.fterm")
     end,
   }),
   use("weilbith/nvim-code-action-menu", {

@@ -10,7 +10,7 @@ require("smoothcursor").setup({
     "NvimTree",
     "Searchbox",
     "SidebarNvim",
-    "floaterm",
+    "FTerm",
     "terminal",
     "",
   },
