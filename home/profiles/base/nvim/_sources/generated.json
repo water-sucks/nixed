@@ -911,6 +911,25 @@
         },
         "version": "32d9627123321db65a4f158b72b757bcaef1a3f4"
     },
+    "'plugin-nvim-unception'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-nvim-unception'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "samjwill",
+            "repo": "nvim-unception",
+            "rev": "a8e96acb8bf3be5d96680efefd3f2f4021e4e8cd",
+            "sha256": "sha256-xskmShtEIH9D7TxN85AQwJBwxXpMMeM0IxTYUMmBVsI=",
+            "type": "github"
+        },
+        "version": "a8e96acb8bf3be5d96680efefd3f2f4021e4e8cd"
+    },
     "'plugin-nvim-web-devicons'": {
         "cargoLocks": null,
         "extract": null,

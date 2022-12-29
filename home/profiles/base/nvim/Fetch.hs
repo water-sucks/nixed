@@ -86,6 +86,7 @@ packageSet = do
     plugin ("folke", "which-key.nvim")
     plugin ("ahmedkhalf", "project.nvim")
     plugin ("tamton-aquib", "duck.nvim")
+    plugin ("samjwill", "nvim-unception")
 
     -- Debugging
     plugin ("mfussenegger", "nvim-dap")

@@ -532,6 +532,17 @@
       sha256 = "sha256-l7T8D+JSwvdmrnX9LNJJMtsDeZwU2gG7k5q1PoHFzZw=";
     };
   };
+  "'plugin-nvim-unception'" = {
+    pname = "'plugin-nvim-unception'";
+    version = "a8e96acb8bf3be5d96680efefd3f2f4021e4e8cd";
+    src = fetchFromGitHub {
+      owner = "samjwill";
+      repo = "nvim-unception";
+      rev = "a8e96acb8bf3be5d96680efefd3f2f4021e4e8cd";
+      fetchSubmodules = false;
+      sha256 = "sha256-xskmShtEIH9D7TxN85AQwJBwxXpMMeM0IxTYUMmBVsI=";
+    };
+  };
   "'plugin-nvim-web-devicons'" = {
     pname = "'plugin-nvim-web-devicons'";
     version = "05e1072f63f6c194ac6e867b567e6b437d3d4622";

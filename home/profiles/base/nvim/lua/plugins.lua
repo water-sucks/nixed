@@ -311,6 +311,11 @@ return {
       require("config.duck")
     end,
   }),
+  use("samjwill/nvim-unception", {
+    config = function()
+      require("config.unception")
+    end,
+  }),
 
   -- Debugging
   use("mfussenegger/nvim-dap", {
