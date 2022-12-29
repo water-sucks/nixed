@@ -213,6 +213,17 @@
       sha256 = "sha256-ekBGHTJVJxdZxG0jKCQ2riUqike6aXEU3+eb154Up2s=";
     };
   };
+  "'plugin-highlight-current-n.nvim'" = {
+    pname = "'plugin-highlight-current-n.nvim'";
+    version = "bac803d821d06d5f1e58b31af1cf2e5f9a5fb4ad";
+    src = fetchFromGitHub {
+      owner = "rktjmp";
+      repo = "highlight-current-n.nvim";
+      rev = "bac803d821d06d5f1e58b31af1cf2e5f9a5fb4ad";
+      fetchSubmodules = false;
+      sha256 = "sha256-XE9tpjxU20Lhyp5rOsudLcpRkRHzY/d/FNbn02afXdQ=";
+    };
+  };
   "'plugin-indent-blankline.nvim'" = {
     pname = "'plugin-indent-blankline.nvim'";
     version = "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7";

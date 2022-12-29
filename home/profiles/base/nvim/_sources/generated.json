@@ -360,6 +360,25 @@
         },
         "version": "98f90c1dcc489a236c551795df70f8da4fab0f5c"
     },
+    "'plugin-highlight-current-n.nvim'": {
+        "cargoLocks": null,
+        "extract": null,
+        "name": "'plugin-highlight-current-n.nvim'",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "rktjmp",
+            "repo": "highlight-current-n.nvim",
+            "rev": "bac803d821d06d5f1e58b31af1cf2e5f9a5fb4ad",
+            "sha256": "sha256-XE9tpjxU20Lhyp5rOsudLcpRkRHzY/d/FNbn02afXdQ=",
+            "type": "github"
+        },
+        "version": "bac803d821d06d5f1e58b31af1cf2e5f9a5fb4ad"
+    },
     "'plugin-indent-blankline.nvim'": {
         "cargoLocks": null,
         "extract": null,

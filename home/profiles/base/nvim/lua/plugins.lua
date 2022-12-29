@@ -268,6 +268,12 @@ return {
   use("rktjmp/lush.nvim", {
     event = "CursorHold",
   }),
+  use("rktjmp/highlight-current-n.nvim", {
+    event = "CursorHold",
+    config = function()
+      require("config.highlight-current-n")
+    end,
+  }),
 
   -- Special Neovim sauce
   use("andweeb/presence.nvim", {
