@@ -6,13 +6,13 @@
 }: {
   "'plugin-Comment.nvim'" = {
     pname = "'plugin-Comment.nvim'";
-    version = "45dc21a71ad1450606f5e98261badb28db59d74c";
+    version = "7bb563ff2d811a63b207e9de63e3e9c0877cb6d5";
     src = fetchFromGitHub {
       owner = "numToStr";
       repo = "Comment.nvim";
-      rev = "45dc21a71ad1450606f5e98261badb28db59d74c";
+      rev = "7bb563ff2d811a63b207e9de63e3e9c0877cb6d5";
       fetchSubmodules = false;
-      sha256 = "sha256-vx6wVWQ6KQtQD6BPTu2UrtKm9wlKzEG3PqdyLMhCRxQ=";
+      sha256 = "sha256-PTVCbpeoagO8BiX63Zbsw0mvFIdR4+pqOsw23wfXUjg=";
     };
   };
   "'plugin-FTerm.nvim'" = {
@@ -248,13 +248,13 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "c7122d64cdf16766433588486adcee67571de6d0";
+    version = "a2f5c515deda2e5af6b17e00990e47485daed34d";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "c7122d64cdf16766433588486adcee67571de6d0";
+      rev = "a2f5c515deda2e5af6b17e00990e47485daed34d";
       fetchSubmodules = false;
-      sha256 = "sha256-fMNDr3u0jUy3HEfWU6uwDEKp7WPZL4ZxWzulx1FLBq0=";
+      sha256 = "sha256-L/+ZcP9hOQ4STF74AfKfbRxzs5CjvPaGQK7LaynbHRs=";
     };
   };
   "'plugin-leap.nvim'" = {
@@ -413,13 +413,13 @@
   };
   "'plugin-nvim-dap-go'" = {
     pname = "'plugin-nvim-dap-go'";
-    version = "8aa9e7ef317182b33fc3e04651041e8d367cc73a";
+    version = "8f10f347b3332d1f783a209813bf9b61f517256f";
     src = fetchFromGitHub {
       owner = "leoluz";
       repo = "nvim-dap-go";
-      rev = "8aa9e7ef317182b33fc3e04651041e8d367cc73a";
+      rev = "8f10f347b3332d1f783a209813bf9b61f517256f";
       fetchSubmodules = false;
-      sha256 = "sha256-AziKVEyf+FEBrsDpMteGpi+bjKBrmDeM0Cb3PY6cLio=";
+      sha256 = "sha256-HFqWZffrwIoDThkbwq7ya0vlN8iPkqWXWtjlk3ayh3c=";
     };
   };
   "'plugin-nvim-dap-python'" = {
@@ -479,13 +479,13 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "d066a47be7713dba46736aece1792a4e13aaf1de";
+    version = "9c73b57ed03ad0a906e2cdc2fc348bf86ae53e3a";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "d066a47be7713dba46736aece1792a4e13aaf1de";
+      rev = "9c73b57ed03ad0a906e2cdc2fc348bf86ae53e3a";
       fetchSubmodules = false;
-      sha256 = "sha256-FmrNIUE/LDzNjOK3svMui+kbD/0OK1hAyyJvQO5rTlM=";
+      sha256 = "sha256-ralCj7X59iqsfO3C4rUpX4fFL15IGibW6IZA2v0gZfA=";
     };
   };
   "'plugin-nvim-tetris'" = {
