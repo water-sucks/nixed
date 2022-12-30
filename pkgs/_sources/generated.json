@@ -139,11 +139,11 @@
             "name": null,
             "owner": "riverwm",
             "repo": "river",
-            "rev": "e18d0d5e1cccb1aff321cc3a8a2a262685e918b9",
-            "sha256": "sha256-hc0lLCD9n30uvG4W+Wz41egITHgTS5RNEeMijLSJuDk=",
+            "rev": "8f8d94aa45968c31ab9216c399635ee3fdee6772",
+            "sha256": "sha256-NlPgM64ORrPVhy9FC3Butw1BwEX6PcWkf4MBFDlr6E0=",
             "type": "github"
         },
-        "version": "e18d0d5e1cccb1aff321cc3a8a2a262685e918b9"
+        "version": "8f8d94aa45968c31ab9216c399635ee3fdee6772"
     },
     "waybar-mpris": {
         "cargoLocks": null,
