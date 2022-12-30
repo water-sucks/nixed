@@ -4,6 +4,7 @@ includes = ["*.nix"]
 
 [formatter.lua]
 command = "stylua"
+options = ["-f", "./home/profiles/base/nvim/.stylua.toml"]
 includes = ["*.lua"]
 
 [formatter.haskell]
