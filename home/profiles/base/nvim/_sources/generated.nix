@@ -248,13 +248,13 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "a2f5c515deda2e5af6b17e00990e47485daed34d";
+    version = "d6b5d6e756a596304fd4acbc46f9fa553ea880a2";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "a2f5c515deda2e5af6b17e00990e47485daed34d";
+      rev = "d6b5d6e756a596304fd4acbc46f9fa553ea880a2";
       fetchSubmodules = false;
-      sha256 = "sha256-L/+ZcP9hOQ4STF74AfKfbRxzs5CjvPaGQK7LaynbHRs=";
+      sha256 = "sha256-38VwH/pg8PdWgPfSa2OhDjoxtIMxC2Beet8MPDrchwQ=";
     };
   };
   "'plugin-leap.nvim'" = {
@@ -479,13 +479,13 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "9c73b57ed03ad0a906e2cdc2fc348bf86ae53e3a";
+    version = "6b43ce561d97412cc512b569db6938e44529293e";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "9c73b57ed03ad0a906e2cdc2fc348bf86ae53e3a";
+      rev = "6b43ce561d97412cc512b569db6938e44529293e";
       fetchSubmodules = false;
-      sha256 = "sha256-ralCj7X59iqsfO3C4rUpX4fFL15IGibW6IZA2v0gZfA=";
+      sha256 = "sha256-oYRaTJ1/d8pxBXuLlTUt7pjlQJjRbRwH0JeWYddFOxM=";
     };
   };
   "'plugin-nvim-tetris'" = {
@@ -501,13 +501,13 @@
   };
   "'plugin-nvim-tree.lua'" = {
     pname = "'plugin-nvim-tree.lua'";
-    version = "9e4c39572f631bb60ee15cb9d46e1daa9927a45e";
+    version = "dcc344cc72a617ff01db950aedfd3b3430ba5b59";
     src = fetchFromGitHub {
       owner = "kyazdani42";
       repo = "nvim-tree.lua";
-      rev = "9e4c39572f631bb60ee15cb9d46e1daa9927a45e";
+      rev = "dcc344cc72a617ff01db950aedfd3b3430ba5b59";
       fetchSubmodules = false;
-      sha256 = "sha256-oOw9gDI4ojQV73z1eFFyA74J9JJHMBWgy1vw+yViiDs=";
+      sha256 = "sha256-8S5mPEi5fdGJOfjmjOgiqkqtJfc+zJVo2t/iktjlv9A=";
     };
   };
   "'plugin-nvim-ts-autotag'" = {
@@ -523,13 +523,13 @@
   };
   "'plugin-nvim-ts-context-commentstring'" = {
     pname = "'plugin-nvim-ts-context-commentstring'";
-    version = "32d9627123321db65a4f158b72b757bcaef1a3f4";
+    version = "4a42b30376c1bd625ab5016c2079631d531d797a";
     src = fetchFromGitHub {
       owner = "JoosepAlviste";
       repo = "nvim-ts-context-commentstring";
-      rev = "32d9627123321db65a4f158b72b757bcaef1a3f4";
+      rev = "4a42b30376c1bd625ab5016c2079631d531d797a";
       fetchSubmodules = false;
-      sha256 = "sha256-l7T8D+JSwvdmrnX9LNJJMtsDeZwU2gG7k5q1PoHFzZw=";
+      sha256 = "sha256-ug2cKT25FWnPgaRFX61/EM6C56YVUMP8UIlfGpyzEb8=";
     };
   };
   "'plugin-nvim-unception'" = {
