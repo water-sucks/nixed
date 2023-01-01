@@ -215,13 +215,13 @@
   };
   "'plugin-haskell-tools.nvim'" = {
     pname = "'plugin-haskell-tools.nvim'";
-    version = "98f90c1dcc489a236c551795df70f8da4fab0f5c";
+    version = "ad0f38f8c1a2cabc155ef9c7f6065578150edbe8";
     src = fetchFromGitHub {
       owner = "MrcJkb";
       repo = "haskell-tools.nvim";
-      rev = "98f90c1dcc489a236c551795df70f8da4fab0f5c";
+      rev = "ad0f38f8c1a2cabc155ef9c7f6065578150edbe8";
       fetchSubmodules = false;
-      sha256 = "sha256-ekBGHTJVJxdZxG0jKCQ2riUqike6aXEU3+eb154Up2s=";
+      sha256 = "sha256-aNIL8cr2zDH8+OPEkd5+Kv/280caxs5mOlBD96+NEdw=";
     };
   };
   "'plugin-highlight-current-n.nvim'" = {
@@ -248,13 +248,13 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "d6b5d6e756a596304fd4acbc46f9fa553ea880a2";
+    version = "1edd1b8945ee91cdfd61654af96c427dce285a9d";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "d6b5d6e756a596304fd4acbc46f9fa553ea880a2";
+      rev = "1edd1b8945ee91cdfd61654af96c427dce285a9d";
       fetchSubmodules = false;
-      sha256 = "sha256-38VwH/pg8PdWgPfSa2OhDjoxtIMxC2Beet8MPDrchwQ=";
+      sha256 = "sha256-ndF9dYSartcEwQaXN84moodNy1ANIXnhQe3n+lgX8gA=";
     };
   };
   "'plugin-leap.nvim'" = {
@@ -402,13 +402,13 @@
   };
   "'plugin-nvim-dap'" = {
     pname = "'plugin-nvim-dap'";
-    version = "6f2ea9e33b48a51849ec93c6c38148a5372018e4";
+    version = "69b7c684cd42e60b48875c580e616a70bccfdbe7";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "6f2ea9e33b48a51849ec93c6c38148a5372018e4";
+      rev = "69b7c684cd42e60b48875c580e616a70bccfdbe7";
       fetchSubmodules = false;
-      sha256 = "sha256-Ffco2880tH8NaoQcvvJj5qDeMCNT6tFvHvYU2zfHXy4=";
+      sha256 = "sha256-xKVtOnIv2gV2+i38fSJXWEBp4TcZtj1DqAfOoVNOW48=";
     };
   };
   "'plugin-nvim-dap-go'" = {
@@ -501,13 +501,13 @@
   };
   "'plugin-nvim-tree.lua'" = {
     pname = "'plugin-nvim-tree.lua'";
-    version = "dcc344cc72a617ff01db950aedfd3b3430ba5b59";
+    version = "e322fbb80b0be5e885268c91ab29cbfe0143cd5b";
     src = fetchFromGitHub {
       owner = "kyazdani42";
       repo = "nvim-tree.lua";
-      rev = "dcc344cc72a617ff01db950aedfd3b3430ba5b59";
+      rev = "e322fbb80b0be5e885268c91ab29cbfe0143cd5b";
       fetchSubmodules = false;
-      sha256 = "sha256-8S5mPEi5fdGJOfjmjOgiqkqtJfc+zJVo2t/iktjlv9A=";
+      sha256 = "sha256-VZNUCq+dBLzyhl0ijBE1VR9V6sR/yJ66uGXyABPXJYU=";
     };
   };
   "'plugin-nvim-ts-autotag'" = {
