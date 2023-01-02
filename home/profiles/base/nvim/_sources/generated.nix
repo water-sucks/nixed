@@ -61,13 +61,13 @@
   };
   "'plugin-carbon.nvim'" = {
     pname = "'plugin-carbon.nvim'";
-    version = "11d6fc3b128ef181842d9e0453621c9b0784bfec";
+    version = "502e026dfc552393acbb3c5d6064b27db21b5c4d";
     src = fetchFromGitHub {
       owner = "SidOfc";
       repo = "carbon.nvim";
-      rev = "11d6fc3b128ef181842d9e0453621c9b0784bfec";
+      rev = "502e026dfc552393acbb3c5d6064b27db21b5c4d";
       fetchSubmodules = false;
-      sha256 = "sha256-JLP0YRsLmrZibGMzJiIig0Qr+zMNcgH5EodvWs0QnFw=";
+      sha256 = "sha256-96e/KBnS1XN2sFOybJW1SzNTqcFvYexwqGgqdM35lAM=";
     };
   };
   "'plugin-circles.nvim'" = {
@@ -182,13 +182,13 @@
   };
   "'plugin-flutter-tools.nvim'" = {
     pname = "'plugin-flutter-tools.nvim'";
-    version = "b666a057108c7655882cbc64217222228aad68da";
+    version = "ae0be3cef35c0cb41d6c7f814a19b3402d50fd7a";
     src = fetchFromGitHub {
       owner = "akinsho";
       repo = "flutter-tools.nvim";
-      rev = "b666a057108c7655882cbc64217222228aad68da";
+      rev = "ae0be3cef35c0cb41d6c7f814a19b3402d50fd7a";
       fetchSubmodules = false;
-      sha256 = "sha256-/9+6znJ5YA/yTNp5nZlusG5+FF4Ogz0QluuPbdmtX1Q=";
+      sha256 = "sha256-O7t8ySnDwGqRTioG1uffDwlbJTM2c1HZVXlV+H5s0Xo=";
     };
   };
   "'plugin-github-nvim-theme'" = {
@@ -248,13 +248,13 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "1edd1b8945ee91cdfd61654af96c427dce285a9d";
+    version = "3974a6cbe38f7958c2e4f41c6f0d9a6c001a723d";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "1edd1b8945ee91cdfd61654af96c427dce285a9d";
+      rev = "3974a6cbe38f7958c2e4f41c6f0d9a6c001a723d";
       fetchSubmodules = false;
-      sha256 = "sha256-ndF9dYSartcEwQaXN84moodNy1ANIXnhQe3n+lgX8gA=";
+      sha256 = "sha256-pu/DTmHcROzq1m6tQz/Zu4varrtf5Rjju/tNW4P/t8U=";
     };
   };
   "'plugin-leap.nvim'" = {
@@ -325,13 +325,13 @@
   };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
-    version = "8e06acf88e0621badd9499cfcafbce5ca97dfe8e";
+    version = "c045c0fe93b1f9c78443d0f3b88660fffbcf64a7";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neodev.nvim";
-      rev = "8e06acf88e0621badd9499cfcafbce5ca97dfe8e";
+      rev = "c045c0fe93b1f9c78443d0f3b88660fffbcf64a7";
       fetchSubmodules = false;
-      sha256 = "sha256-H0rlQ5jjRV4Wt/MPeFs5rwIrGsIz62PzZAAVQEuLCeg=";
+      sha256 = "sha256-jBdRnaLy+pNGklWlvca/XEuw8ZpPEbnCpsxK5j7Uh/8=";
     };
   };
   "'plugin-neorg'" = {
@@ -358,13 +358,13 @@
   };
   "'plugin-null-ls.nvim'" = {
     pname = "'plugin-null-ls.nvim'";
-    version = "647a1eeeefc43ce15d941972642210637c370471";
+    version = "d09d7d82cc26d63673cef85cb62895dd68aab6d8";
     src = fetchFromGitHub {
       owner = "jose-elias-alvarez";
       repo = "null-ls.nvim";
-      rev = "647a1eeeefc43ce15d941972642210637c370471";
+      rev = "d09d7d82cc26d63673cef85cb62895dd68aab6d8";
       fetchSubmodules = false;
-      sha256 = "sha256-IsHNr40aOc8R0x4ba/93VyM+LeybYHGUKIkxiC7e8/4=";
+      sha256 = "sha256-H06sT0c9PYDGFJGCYhCbQHAea9IvxdlgQumVJbCwcvM=";
     };
   };
   "'plugin-nvim-autopairs'" = {
@@ -501,13 +501,13 @@
   };
   "'plugin-nvim-tree.lua'" = {
     pname = "'plugin-nvim-tree.lua'";
-    version = "e322fbb80b0be5e885268c91ab29cbfe0143cd5b";
+    version = "951b6e7e55da8aee9566cc0b17c11f9451cec349";
     src = fetchFromGitHub {
       owner = "kyazdani42";
       repo = "nvim-tree.lua";
-      rev = "e322fbb80b0be5e885268c91ab29cbfe0143cd5b";
+      rev = "951b6e7e55da8aee9566cc0b17c11f9451cec349";
       fetchSubmodules = false;
-      sha256 = "sha256-VZNUCq+dBLzyhl0ijBE1VR9V6sR/yJ66uGXyABPXJYU=";
+      sha256 = "sha256-GydrADcNKkQ5VXguCjv9d2FlmUQ4Taa6kUC+VQKqwYU=";
     };
   };
   "'plugin-nvim-ts-autotag'" = {
@@ -776,13 +776,13 @@
   };
   tree-sitter-norg = {
     pname = "tree-sitter-norg";
-    version = "600874e0825a62c3822ff04e5d0efbac8d7e380c";
+    version = "d7a466e182a532065a559dbfc7a847271d5e9c29";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "tree-sitter-norg";
-      rev = "600874e0825a62c3822ff04e5d0efbac8d7e380c";
+      rev = "d7a466e182a532065a559dbfc7a847271d5e9c29";
       fetchSubmodules = false;
-      sha256 = "sha256-ndyBxfhk0IGaiKIb95wHdd++hAQBxYG7chG6ftoHQNA=";
+      sha256 = "sha256-kv3UiJUqMSF1qd3r4OCWomVTHTYjwX/EBRWm8mOSdwg=";
     };
   };
   tree-sitter-norg-meta = {

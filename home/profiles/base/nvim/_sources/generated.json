@@ -107,11 +107,11 @@
             "name": null,
             "owner": "SidOfc",
             "repo": "carbon.nvim",
-            "rev": "11d6fc3b128ef181842d9e0453621c9b0784bfec",
-            "sha256": "sha256-JLP0YRsLmrZibGMzJiIig0Qr+zMNcgH5EodvWs0QnFw=",
+            "rev": "502e026dfc552393acbb3c5d6064b27db21b5c4d",
+            "sha256": "sha256-96e/KBnS1XN2sFOybJW1SzNTqcFvYexwqGgqdM35lAM=",
             "type": "github"
         },
-        "version": "11d6fc3b128ef181842d9e0453621c9b0784bfec"
+        "version": "502e026dfc552393acbb3c5d6064b27db21b5c4d"
     },
     "'plugin-circles.nvim'": {
         "cargoLocks": null,
@@ -316,11 +316,11 @@
             "name": null,
             "owner": "akinsho",
             "repo": "flutter-tools.nvim",
-            "rev": "b666a057108c7655882cbc64217222228aad68da",
-            "sha256": "sha256-/9+6znJ5YA/yTNp5nZlusG5+FF4Ogz0QluuPbdmtX1Q=",
+            "rev": "ae0be3cef35c0cb41d6c7f814a19b3402d50fd7a",
+            "sha256": "sha256-O7t8ySnDwGqRTioG1uffDwlbJTM2c1HZVXlV+H5s0Xo=",
             "type": "github"
         },
-        "version": "b666a057108c7655882cbc64217222228aad68da"
+        "version": "ae0be3cef35c0cb41d6c7f814a19b3402d50fd7a"
     },
     "'plugin-github-nvim-theme'": {
         "cargoLocks": null,
@@ -430,11 +430,11 @@
             "name": null,
             "owner": "folke",
             "repo": "lazy.nvim",
-            "rev": "1edd1b8945ee91cdfd61654af96c427dce285a9d",
-            "sha256": "sha256-ndF9dYSartcEwQaXN84moodNy1ANIXnhQe3n+lgX8gA=",
+            "rev": "3974a6cbe38f7958c2e4f41c6f0d9a6c001a723d",
+            "sha256": "sha256-pu/DTmHcROzq1m6tQz/Zu4varrtf5Rjju/tNW4P/t8U=",
             "type": "github"
         },
-        "version": "1edd1b8945ee91cdfd61654af96c427dce285a9d"
+        "version": "3974a6cbe38f7958c2e4f41c6f0d9a6c001a723d"
     },
     "'plugin-leap.nvim'": {
         "cargoLocks": null,
@@ -563,11 +563,11 @@
             "name": null,
             "owner": "folke",
             "repo": "neodev.nvim",
-            "rev": "8e06acf88e0621badd9499cfcafbce5ca97dfe8e",
-            "sha256": "sha256-H0rlQ5jjRV4Wt/MPeFs5rwIrGsIz62PzZAAVQEuLCeg=",
+            "rev": "c045c0fe93b1f9c78443d0f3b88660fffbcf64a7",
+            "sha256": "sha256-jBdRnaLy+pNGklWlvca/XEuw8ZpPEbnCpsxK5j7Uh/8=",
             "type": "github"
         },
-        "version": "8e06acf88e0621badd9499cfcafbce5ca97dfe8e"
+        "version": "c045c0fe93b1f9c78443d0f3b88660fffbcf64a7"
     },
     "'plugin-neorg'": {
         "cargoLocks": null,
@@ -620,11 +620,11 @@
             "name": null,
             "owner": "jose-elias-alvarez",
             "repo": "null-ls.nvim",
-            "rev": "647a1eeeefc43ce15d941972642210637c370471",
-            "sha256": "sha256-IsHNr40aOc8R0x4ba/93VyM+LeybYHGUKIkxiC7e8/4=",
+            "rev": "d09d7d82cc26d63673cef85cb62895dd68aab6d8",
+            "sha256": "sha256-H06sT0c9PYDGFJGCYhCbQHAea9IvxdlgQumVJbCwcvM=",
             "type": "github"
         },
-        "version": "647a1eeeefc43ce15d941972642210637c370471"
+        "version": "d09d7d82cc26d63673cef85cb62895dd68aab6d8"
     },
     "'plugin-nvim-autopairs'": {
         "cargoLocks": null,
@@ -867,11 +867,11 @@
             "name": null,
             "owner": "kyazdani42",
             "repo": "nvim-tree.lua",
-            "rev": "e322fbb80b0be5e885268c91ab29cbfe0143cd5b",
-            "sha256": "sha256-VZNUCq+dBLzyhl0ijBE1VR9V6sR/yJ66uGXyABPXJYU=",
+            "rev": "951b6e7e55da8aee9566cc0b17c11f9451cec349",
+            "sha256": "sha256-GydrADcNKkQ5VXguCjv9d2FlmUQ4Taa6kUC+VQKqwYU=",
             "type": "github"
         },
-        "version": "e322fbb80b0be5e885268c91ab29cbfe0143cd5b"
+        "version": "951b6e7e55da8aee9566cc0b17c11f9451cec349"
     },
     "'plugin-nvim-ts-autotag'": {
         "cargoLocks": null,
@@ -1342,11 +1342,11 @@
             "name": null,
             "owner": "nvim-neorg",
             "repo": "tree-sitter-norg",
-            "rev": "600874e0825a62c3822ff04e5d0efbac8d7e380c",
-            "sha256": "sha256-ndyBxfhk0IGaiKIb95wHdd++hAQBxYG7chG6ftoHQNA=",
+            "rev": "d7a466e182a532065a559dbfc7a847271d5e9c29",
+            "sha256": "sha256-kv3UiJUqMSF1qd3r4OCWomVTHTYjwX/EBRWm8mOSdwg=",
             "type": "github"
         },
-        "version": "600874e0825a62c3822ff04e5d0efbac8d7e380c"
+        "version": "d7a466e182a532065a559dbfc7a847271d5e9c29"
     },
     "tree-sitter-norg-meta": {
         "cargoLocks": null,
