@@ -7,7 +7,7 @@ for _, module in ipairs(modules) do
   end
 end
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath("data") .. "/plugins/lazy.nvim"
 if vim.fn.isdirectory(lazypath) == 0 then
   vim.fn.system({
     "git",

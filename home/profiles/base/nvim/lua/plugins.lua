@@ -15,6 +15,9 @@ end
 
 return {
   -- Vitals
+  use("folke/lazy.nvim", {
+    enabled = false,
+  }),
   use("nvim-lua/plenary.nvim"),
   use("nathom/filetype.nvim"),
   use("dstein64/vim-startuptime", {
