@@ -18,6 +18,7 @@ local servers = {
   "ltex",
   "rnix",
   "vala_ls",
+  "zls",
 }
 
 local server_configs = {
