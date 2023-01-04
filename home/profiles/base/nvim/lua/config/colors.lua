@@ -17,7 +17,8 @@ require("github-theme").setup({
     return {
       DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
 
-      TSField = {},
+      ["@constructor.lua"] = { fg = c.syntax.variable },
+      ["@field"] = { fg = c.syntax.variable },
 
       IndentBlanklineIndent1 = { fg = c.fg_dark },
       IndentBlanklineIndent2 = { fg = c.fg_dark },
