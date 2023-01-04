@@ -1,5 +1,5 @@
 {
-  self,
+  config,
   pkgs,
   ci ? false,
 }: let
@@ -29,6 +29,6 @@ in
         haskellPackages.fourmolu
       ]);
     shellHook = lib.optionalString (!ci) ''
-      ${self.checks.${pkgs.system}.pre-commit-check.shellHook}
+      ${config.pre-commit.installationScript}
     '';
   }

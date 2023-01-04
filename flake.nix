@@ -36,7 +36,10 @@
     lib = import ./lib inputs;
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [
+      imports = with inputs; [
+        pre-commit-hooks.flakeModule
+        ./hooks.nix
+
         ./hosts/nixos
         ./hosts/darwin
         ./home
@@ -46,6 +49,7 @@
       systems = ["x86_64-linux" "x86_64-darwin"];
 
       perSystem = {
+        config,
         pkgs,
         system,
         ...
@@ -86,14 +90,12 @@
           exec ${pkgs.alejandra}/bin/alejandra -q $@;
         '';
 
-        checks = import ./checks.nix {inherit inputs pkgs;};
-
         devShells = let
           shell = import ./shell.nix;
         in {
-          default = shell {inherit self pkgs;};
+          default = shell {inherit config pkgs;};
           ci = shell {
-            inherit self pkgs;
+            inherit config pkgs;
             ci = true;
           };
         };
