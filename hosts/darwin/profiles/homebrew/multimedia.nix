@@ -3,5 +3,6 @@ _: {
     "obs"
     "qbittorrent"
     "tidal"
+    "sioyek"
   ];
 }
