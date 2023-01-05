@@ -98,3 +98,4 @@ echo "Formatting generated Nix files..."
 cd_to_root
 
 alejandra -q ./**/_sources/generated.nix
+prettier -w ./**/_sources/generated.json

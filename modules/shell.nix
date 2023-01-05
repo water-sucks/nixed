@@ -14,6 +14,7 @@
               node2nix
               nix-prefetch
               nvchecker
+              nodePackages.prettier
               (haskellPackages.ghcWithPackages (p: [p.nvfetcher]))
             ]
             ++ (lib.optionals (!ci) [
