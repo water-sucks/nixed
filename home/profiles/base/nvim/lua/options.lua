@@ -14,6 +14,7 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.timeoutlen = 400
+vim.o.pumheight = 10
 
 vim.opt.number = true
 vim.opt.ignorecase = true

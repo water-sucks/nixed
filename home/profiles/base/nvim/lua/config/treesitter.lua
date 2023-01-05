@@ -11,6 +11,11 @@ require("nvim-treesitter.configs").setup({
 
   highlight = {
     enable = true,
+    disable = { "latex" },
+  },
+
+  indent = {
+    enable = true,
   },
 
   playground = {
@@ -65,24 +70,24 @@ require("nvim-treesitter.configs").setup({
     },
 
     move = {
-      enable = true,
+      enable = false,
       set_jumps = true,
-      goto_next_start = {
-        ["]m"] = { query = "@function.outer", desc = "Next function start" },
-        ["]]"] = { query = "@class.outer", desc = "Next class start" },
-      },
-      goto_next_end = {
-        ["]M"] = { query = "@function.outer", desc = "Next function end" },
-        ["]["] = { query = "@class.outer", desc = "Next class end" },
-      },
-      goto_previous_start = {
-        ["[m"] = { query = "@function.outer", desc = "Previous function start" },
-        ["[["] = { query = "@class.outer", desc = "Previous class start" },
-      },
-      goto_previous_end = {
-        ["[M"] = { query = "@function.outer", desc = "Previous function end" },
-        ["[]"] = { query = "@class.outer", desc = "Previous class end" },
-      },
+      -- goto_next_start = {
+      --   ["]m"] = { query = "@function.outer", desc = "Next function start" },
+      --   ["]]"] = { query = "@class.outer", desc = "Next class start" },
+      -- },
+      -- goto_next_end = {
+      --   ["]M"] = { query = "@function.outer", desc = "Next function end" },
+      --   ["]["] = { query = "@class.outer", desc = "Next class end" },
+      -- },
+      -- goto_previous_start = {
+      --   ["[m"] = { query = "@function.outer", desc = "Previous function start" },
+      --   ["[["] = { query = "@class.outer", desc = "Previous class start" },
+      -- },
+      -- goto_previous_end = {
+      --   ["[M"] = { query = "@function.outer", desc = "Previous function end" },
+      --   ["[]"] = { query = "@class.outer", desc = "Previous class end" },
+      -- },
     },
   },
 

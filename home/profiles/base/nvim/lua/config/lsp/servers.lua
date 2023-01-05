@@ -1,6 +1,5 @@
 local lsp = require("lspconfig")
 local on_attach = require("config.lsp.on_attach")
-local coq = require("coq")
 
 -- Rust/Flutter/LTeX are configured in
 -- their respective plugins.
@@ -23,11 +22,6 @@ local servers = {
 
 local server_configs = {
   html = {
-    capabilities = (function()
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
-      return capabilities
-    end)(),
     settings = {
       html = {
         format = {
@@ -90,6 +84,7 @@ require("neodev").setup({
 for _, server in pairs(servers) do
   local config = {
     on_attach = on_attach,
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
   }
 
   if server_configs[server] ~= nil then
@@ -98,7 +93,7 @@ for _, server in pairs(servers) do
     end
   end
 
-  lsp[server].setup(coq.lsp_ensure_capabilities(config))
+  lsp[server].setup(config)
 end
 
 -- I got very annoyed by the ccls message about offset encodings,

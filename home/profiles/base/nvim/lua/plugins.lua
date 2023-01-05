@@ -54,12 +54,26 @@ return {
     event = "CursorHold",
   }),
 
-  -- Completion
-  use("ms-jpq/coq_nvim", {
-    event = "InsertEnter",
+  use("hrsh7th/nvim-cmp", {
+    event = { "InsertEnter", "CmdlineEnter" },
+    config = function()
+      require("config.lsp.cmp")
+    end,
     dependencies = {
-      use("ms-jpq/coq.artifacts"),
-      use("ms-jpq/coq.thirdparty"),
+      use("L3MON4D3/LuaSnip"),
+      use("hrsh7th/cmp-nvim-lsp"),
+      use("hrsh7th/cmp-path"),
+      use("hrsh7th/cmp-omni"),
+      use("hrsh7th/cmp-calc"),
+      use("hrsh7th/cmp-buffer"),
+      use("hrsh7th/cmp-cmdline"),
+      use("rcarriga/cmp-dap"),
+      use("saadparwaiz1/cmp_luasnip"),
+      use("rafamadriz/friendly-snippets"),
+      use("iurimateus/luasnip-latex-snippets.nvim", {
+        ft = "tex",
+      }),
+      use("onsails/lspkind-nvim"),
     },
   }),
 
