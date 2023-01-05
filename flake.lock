@@ -350,7 +350,8 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-pr195816": "nixpkgs-pr195816",
         "nixpkgs-stable": "nixpkgs-stable",
-        "pre-commit-hooks": "pre-commit-hooks"
+        "pre-commit-hooks": "pre-commit-hooks",
+        "treefmt": "treefmt"
       }
     },
     "rust-analyzer-src": {
@@ -367,6 +368,21 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "treefmt": {
+      "locked": {
+        "lastModified": 1672770284,
+        "narHash": "sha256-jLwnD4gWGtcQvioCrQZs0rIlu7Zcnk21G6DdCxc8CWs=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "10920dbc79435b25349377e799dd98bcee652b83",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
         "type": "github"
       }
     },

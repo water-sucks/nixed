@@ -20,6 +20,8 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
+    treefmt.url = "github:numtide/treefmt-nix";
+
     discord.url = "github:InternetUnexplorer/discord-overlay";
     discord.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -36,15 +38,17 @@
     lib = import ./lib inputs;
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = with inputs; [
-        pre-commit-hooks.flakeModule
-        ./hooks.nix
+      imports = with inputs;
+        [
+          pre-commit-hooks.flakeModule
+          treefmt.flakeModule
 
-        ./hosts/nixos
-        ./hosts/darwin
-        ./home
-        ./pkgs
-      ];
+          ./hosts/nixos
+          ./hosts/darwin
+          ./home
+          ./pkgs
+        ]
+        ++ (lib.collectLeaves ./modules);
 
       systems = ["x86_64-linux" "x86_64-darwin"];
 
@@ -85,10 +89,6 @@
             config.allowUnfree = true;
           };
         };
-
-        formatter = pkgs.writeShellScriptBin "alejandra-quiet" ''
-          exec ${pkgs.alejandra}/bin/alejandra -q $@;
-        '';
 
         devShells = let
           shell = import ./shell.nix;

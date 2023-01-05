@@ -1,5 +1,5 @@
 {
-  perSystem = {pkgs, ...}: {
+  perSystem = {config, ...}: {
     pre-commit = {
       check.enable = true;
       settings = {
@@ -9,8 +9,8 @@
             enable = true;
             description = "One CLI to format the code tree.";
             types = ["file"];
-            pass_filenames = true;
-            entry = "${pkgs.treefmt}/bin/treefmt";
+            pass_filenames = false;
+            entry = "${config.treefmt.build.wrapper}/bin/treefmt";
           };
           statix.enable = true;
           shellcheck.enable = true;

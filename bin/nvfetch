@@ -2,7 +2,7 @@
 
 # shellcheck disable=2251 # Disables annoying check for skipping errexit
 
-# Fetch all inputs specified in all nvfetcher.toml files.
+# Fetch all inputs specified in all Fetch.hs files.
 
 set -euo pipefail
 set -o noclobber
@@ -97,4 +97,4 @@ echo "Formatting generated Nix files..."
 
 cd_to_root
 
-nix fmt ./**/_sources/generated.nix
+alejandra -q ./**/_sources/generated.nix

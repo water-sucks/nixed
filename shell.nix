@@ -9,25 +9,21 @@ in
     name = "nixed-shell";
     packages = with pkgs;
       [
+        alejandra
         node2nix
         nix-prefetch
         nvchecker
         (haskellPackages.ghcWithPackages (p: [p.nvfetcher]))
       ]
       ++ (lib.optionals (!ci) [
-        agenix
+          agenix
 
-        alejandra
-        editorconfig-checker
-        nodePackages.prettier
-        shellcheck
-        shfmt
-        stylua
-        treefmt
+          config.treefmt.build.wrapper
 
-        haskell-language-server
-        haskellPackages.fourmolu
-      ]);
+          haskell-language-server
+          haskellPackages.fourmolu
+        ]
+        ++ (builtins.attrValues config.treefmt.build.programs));
     shellHook = lib.optionalString (!ci) ''
       ${config.pre-commit.installationScript}
     '';

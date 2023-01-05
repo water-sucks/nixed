@@ -1,186 +1,183 @@
 {
-    "airtame": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "airtame",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-QZBDjzecWoOXa9giBkeg7Vr9VtqnwdpcI8ZpV4NC8yk=",
-            "type": "url",
-            "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.5.3.deb"
-        },
-        "version": "4.5.3"
+  "airtame": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "airtame",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-QZBDjzecWoOXa9giBkeg7Vr9VtqnwdpcI8ZpV4NC8yk=",
+      "type": "url",
+      "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.5.3.deb"
     },
-    "filen-desktop": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "filen-desktop",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-zdubw896w+9hBQPT3yuIHLFnvxIGNqF+qnIZaYAYZx0=",
-            "type": "url",
-            "url": "https://cdn.filen.io/desktop/release/2.0.11/filen_x86_64.AppImage"
-        },
-        "version": "2.0.11"
+    "version": "4.5.3"
+  },
+  "filen-desktop": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "filen-desktop",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-zdubw896w+9hBQPT3yuIHLFnvxIGNqF+qnIZaYAYZx0=",
+      "type": "url",
+      "url": "https://cdn.filen.io/desktop/release/2.0.11/filen_x86_64.AppImage"
     },
-    "get-appname": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "get-appname",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "water-sucks",
-            "repo": "get-appname",
-            "rev": "b41b4e791c2382c2f00f4a1633eecb5771838f19",
-            "sha256": "sha256-6hqgN0gafw/BT/Gwqc/CO8J/Su83jcdG9FrD9fCzGC8=",
-            "type": "github"
-        },
-        "version": "b41b4e791c2382c2f00f4a1633eecb5771838f19"
+    "version": "2.0.11"
+  },
+  "get-appname": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "get-appname",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "water-sucks",
+      "repo": "get-appname",
+      "rev": "b41b4e791c2382c2f00f4a1633eecb5771838f19",
+      "sha256": "sha256-6hqgN0gafw/BT/Gwqc/CO8J/Su83jcdG9FrD9fCzGC8=",
+      "type": "github"
     },
-    "lswt": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "lswt",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60",
-            "sha256": "sha256-Tiua9M2CJsYfmtmRXgR9ofmhwP8pRiYGbJdlBThWKMM=",
-            "type": "git",
-            "url": "https://git.sr.ht/~leon_plickat/lswt"
-        },
-        "version": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60"
+    "version": "b41b4e791c2382c2f00f4a1633eecb5771838f19"
+  },
+  "lswt": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "lswt",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "rev": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60",
+      "sha256": "sha256-Tiua9M2CJsYfmtmRXgR9ofmhwP8pRiYGbJdlBThWKMM=",
+      "type": "git",
+      "url": "https://git.sr.ht/~leon_plickat/lswt"
     },
-    "picom": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "picom",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "ibhagwan",
-            "repo": "picom",
-            "rev": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a",
-            "sha256": "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=",
-            "type": "github"
-        },
-        "version": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a"
+    "version": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60"
+  },
+  "picom": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "picom",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "ibhagwan",
+      "repo": "picom",
+      "rev": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a",
+      "sha256": "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=",
+      "type": "github"
     },
-    "polybar": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "polybar",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "polybar",
-            "repo": "polybar",
-            "rev": "edf37385cb2e0e4d3c848d188473e48df618ed1a",
-            "sha256": "sha256-bY05yK0Z6LILl1HkKjqEq7lvGpFYlaroIqNx0OWjEcs=",
-            "type": "github"
-        },
-        "version": "edf37385cb2e0e4d3c848d188473e48df618ed1a"
+    "version": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a"
+  },
+  "polybar": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "polybar",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": true,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "polybar",
+      "repo": "polybar",
+      "rev": "edf37385cb2e0e4d3c848d188473e48df618ed1a",
+      "sha256": "sha256-bY05yK0Z6LILl1HkKjqEq7lvGpFYlaroIqNx0OWjEcs=",
+      "type": "github"
     },
-    "rescrobbled": {
-        "cargoLocks": {
-            "Cargo.lock": [
-                "./rescrobbled-v0.6.2/Cargo.lock",
-                {}
-            ]
-        },
-        "extract": null,
-        "name": "rescrobbled",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "InputUsername",
-            "repo": "rescrobbled",
-            "rev": "v0.6.2",
-            "sha256": "sha256-g6YGqphXB3dI3gnxw7MtTs1c5mIf6CFdfg2KjEVJhDU=",
-            "type": "github"
-        },
-        "version": "v0.6.2"
+    "version": "edf37385cb2e0e4d3c848d188473e48df618ed1a"
+  },
+  "rescrobbled": {
+    "cargoLocks": {
+      "Cargo.lock": ["./rescrobbled-v0.6.2/Cargo.lock", {}]
     },
-    "river": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "river",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": true,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "riverwm",
-            "repo": "river",
-            "rev": "e49db7682c982f92d5f780e01f5fd4c952d8112f",
-            "sha256": "sha256-BALKU8wuIjSsFPpEzmcI3IebFMgQKsHCrsJBcbBN6wk=",
-            "type": "github"
-        },
-        "version": "e49db7682c982f92d5f780e01f5fd4c952d8112f"
+    "extract": null,
+    "name": "rescrobbled",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "InputUsername",
+      "repo": "rescrobbled",
+      "rev": "v0.6.2",
+      "sha256": "sha256-g6YGqphXB3dI3gnxw7MtTs1c5mIf6CFdfg2KjEVJhDU=",
+      "type": "github"
     },
-    "waybar-mpris": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "waybar-mpris",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "b10n",
-            "repo": "waybar-mpris",
-            "rev": "1233aa9f90d75ec2bbd82afde757309fd9abab3a",
-            "sha256": "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=",
-            "type": "github"
-        },
-        "version": "1233aa9f90d75ec2bbd82afde757309fd9abab3a"
+    "version": "v0.6.2"
+  },
+  "river": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "river",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": true,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "riverwm",
+      "repo": "river",
+      "rev": "e49db7682c982f92d5f780e01f5fd4c952d8112f",
+      "sha256": "sha256-BALKU8wuIjSsFPpEzmcI3IebFMgQKsHCrsJBcbBN6wk=",
+      "type": "github"
     },
-    "wob": {
-        "cargoLocks": null,
-        "extract": null,
-        "name": "wob",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "francma",
-            "repo": "wob",
-            "rev": "0.14.2",
-            "sha256": "sha256-u4jLVLGcMTgDEgN8jW5d59m3GorJX7Z6+qKhzvbON3k=",
-            "type": "github"
-        },
-        "version": "0.14.2"
-    }
+    "version": "e49db7682c982f92d5f780e01f5fd4c952d8112f"
+  },
+  "waybar-mpris": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "waybar-mpris",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "b10n",
+      "repo": "waybar-mpris",
+      "rev": "1233aa9f90d75ec2bbd82afde757309fd9abab3a",
+      "sha256": "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=",
+      "type": "github"
+    },
+    "version": "1233aa9f90d75ec2bbd82afde757309fd9abab3a"
+  },
+  "wob": {
+    "cargoLocks": null,
+    "extract": null,
+    "name": "wob",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "francma",
+      "repo": "wob",
+      "rev": "0.14.2",
+      "sha256": "sha256-u4jLVLGcMTgDEgN8jW5d59m3GorJX7Z6+qKhzvbON3k=",
+      "type": "github"
+    },
+    "version": "0.14.2"
+  }
 }
