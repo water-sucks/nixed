@@ -89,16 +89,6 @@
             config.allowUnfree = true;
           };
         };
-
-        devShells = let
-          shell = import ./shell.nix;
-        in {
-          default = shell {inherit config pkgs;};
-          ci = shell {
-            inherit config pkgs;
-            ci = true;
-          };
-        };
       };
 
       flake = {
