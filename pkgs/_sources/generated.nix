@@ -56,13 +56,13 @@
   };
   polybar = {
     pname = "polybar";
-    version = "edf37385cb2e0e4d3c848d188473e48df618ed1a";
+    version = "fc423c092143464062f77b83f78328e8ca96694a";
     src = fetchFromGitHub {
       owner = "polybar";
       repo = "polybar";
-      rev = "edf37385cb2e0e4d3c848d188473e48df618ed1a";
+      rev = "fc423c092143464062f77b83f78328e8ca96694a";
       fetchSubmodules = true;
-      sha256 = "sha256-bY05yK0Z6LILl1HkKjqEq7lvGpFYlaroIqNx0OWjEcs=";
+      sha256 = "sha256-HXtnnfkMX79Mf498Oq9qYYVJyRLFT8O65V0WSMbEyXs=";
     };
   };
   rescrobbled = {
@@ -83,13 +83,13 @@
   };
   river = {
     pname = "river";
-    version = "e49db7682c982f92d5f780e01f5fd4c952d8112f";
+    version = "df2fc30238fe445cf04aaf64d0b906195129f726";
     src = fetchFromGitHub {
       owner = "riverwm";
       repo = "river";
-      rev = "e49db7682c982f92d5f780e01f5fd4c952d8112f";
+      rev = "df2fc30238fe445cf04aaf64d0b906195129f726";
       fetchSubmodules = true;
-      sha256 = "sha256-BALKU8wuIjSsFPpEzmcI3IebFMgQKsHCrsJBcbBN6wk=";
+      sha256 = "sha256-Djn2sev20lP8He+2lMd9wgCXicGcmyNZUEoqy2FHRFY=";
     };
   };
   waybar-mpris = {
