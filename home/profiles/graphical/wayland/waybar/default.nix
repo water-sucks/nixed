@@ -28,7 +28,11 @@
       while true; do
         app_id=$(${lswt}/bin/lswt -j | ${jq}/bin/jq -r ".[] | (if .activated then . else empty end) | .app_id")
         if name=$(${getAppname} $app_id); then
-          echo $name
+          if [ "$name" == "mpv Media Player" ]; then
+            echo "mpv"
+          else
+            echo $name
+          fi
         else
           echo "River"
         fi
