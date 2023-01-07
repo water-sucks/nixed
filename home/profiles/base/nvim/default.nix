@@ -112,11 +112,6 @@ in {
 
       # DAP servers
       delve
-
-      # Other stuff
-      bc
-      cowsay
-      figlet
     ];
   };
 

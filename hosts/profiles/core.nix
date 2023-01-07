@@ -9,6 +9,7 @@
     systemPackages = with pkgs;
       [
         bat
+        bc
         binutils
         coreutils
         curl
