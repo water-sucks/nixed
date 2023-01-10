@@ -49,25 +49,6 @@
     },
     "version": "b41b4e791c2382c2f00f4a1633eecb5771838f19"
   },
-  "lswt": {
-    "cargoLocks": null,
-    "date": "2022-02-18",
-    "extract": null,
-    "name": "lswt",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "rev": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60",
-      "sha256": "sha256-Tiua9M2CJsYfmtmRXgR9ofmhwP8pRiYGbJdlBThWKMM=",
-      "type": "git",
-      "url": "https://git.sr.ht/~leon_plickat/lswt"
-    },
-    "version": "ed1ae054d9af3c345f9f2c2003d179932c0c6b60"
-  },
   "picom": {
     "cargoLocks": null,
     "date": "2021-11-03",
@@ -132,7 +113,7 @@
   },
   "river": {
     "cargoLocks": null,
-    "date": "2023-01-09",
+    "date": "2023-01-07",
     "extract": null,
     "name": "river",
     "passthru": null,

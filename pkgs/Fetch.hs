@@ -17,11 +17,6 @@ packageSet = do
             `fetchGitHub'` ("riverwm", "river", fetchSubmodules .~ True)
 
     define $
-        package "lswt"
-            `sourceGit` "https://git.sr.ht/~leon_plickat/lswt"
-            `fetchGit` "https://git.sr.ht/~leon_plickat/lswt"
-
-    define $
         package "waybar-mpris"
             `sourceGit` "https://github.com/b10n/waybar-mpris"
             `fetchGitHub` ("b10n", "waybar-mpris")

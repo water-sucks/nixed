@@ -33,19 +33,6 @@
     };
     date = "2022-11-26";
   };
-  lswt = {
-    pname = "lswt";
-    version = "ed1ae054d9af3c345f9f2c2003d179932c0c6b60";
-    src = fetchgit {
-      url = "https://git.sr.ht/~leon_plickat/lswt";
-      rev = "ed1ae054d9af3c345f9f2c2003d179932c0c6b60";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sha256 = "sha256-Tiua9M2CJsYfmtmRXgR9ofmhwP8pRiYGbJdlBThWKMM=";
-    };
-    date = "2022-02-18";
-  };
   picom = {
     pname = "picom";
     version = "c4107bb6cc17773fdc6c48bb2e475ef957513c7a";
@@ -96,7 +83,7 @@
       fetchSubmodules = true;
       sha256 = "sha256-uvm+5ZFadVKEXp6MYFZWwaJfU3DrA2PVnq4HQTI2LxY=";
     };
-    date = "2023-01-09";
+    date = "2023-01-07";
   };
   waybar-mpris = {
     pname = "waybar-mpris";

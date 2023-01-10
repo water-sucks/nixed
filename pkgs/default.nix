@@ -15,8 +15,6 @@
 
     filen-desktop = ./applications/networking/filen-desktop;
 
-    lswt = ./tools/wayland/lswt;
-
     nerdfetch = ./applications/misc/nerdfetch;
 
     plymouth-spinning-watch-theme = ./applications/misc/plymouth-spinning-watch-theme;

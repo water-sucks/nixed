@@ -32,7 +32,6 @@ to use them, feel free! Here's a rundown of what they are:
 | ------------------------------- | ----------------------------------------- |
 | airtame                         | Screen streaming application              |
 | filen-desktop                   | Desktop client for filen.io               |
-| lswt                            | List Wayland toplevels                    |
 | nerdfetch\*                     | Modified version of nerdfetch             |
 | plymouth-spinning-watch-theme\* | Spinning watch theme for Plymouth         |
 | rescrobbled                     | MPRIS music scrobbler daemon              |
