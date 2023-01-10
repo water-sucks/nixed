@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=2005
 
 # shellcheck disable=2251 # Disables annoying check for skipping errexit
 
@@ -17,6 +18,7 @@ Usage: nvfetch [options]
 Options:
     -c, --continue-on-fail: Continue fetching other files' inputs if one fails
     -i, --interactive:      Press key to start fetching for each file
+    -k, --keyfile           Keyfile to pass to nvchecker
     -h, --help:             Show this help menu
 EOF
 }
@@ -36,8 +38,8 @@ if [[ ${PIPESTATUS[0]} -ne 4 ]]; then
   exit 1
 fi
 
-LONGOPTS=help,interactive,continue-on-fail
-OPTIONS=hic
+LONGOPTS=help,interactive,continue-on-fail,keyfile:
+OPTIONS=hick:
 
 ! PARSED=$(getopt --options="$OPTIONS" --longoptions="$LONGOPTS" --name "$0" -- "$@")
 if [[ ${PIPESTATUS[0]} -ne 0 ]]; then
@@ -55,13 +57,17 @@ while true; do
     help
     exit 0
     ;;
+  -i | --interactive)
+    interactive=true
+    shift
+    ;;
   -c | --continue-on-fail)
     continue=true
     shift
     ;;
-  -i | --interactive)
-    interactive=true
-    shift
+  -k | --keyfile)
+    keyfile="$(readlink -f "$2")"
+    shift 2
     ;;
   --)
     shift
@@ -84,7 +90,9 @@ for file in **/Fetch.hs; do
     confirm
   fi
 
-  if ! runghc "$(basename "$file")"; then
+  cmd="runghc $(basename "$file") ${keyfile+"-k $keyfile"}"
+
+  if ! eval "$cmd"; then
     printf "error: unable to run nvfetcher in %s\n\n" "$(dirname "$file")"
 
     if ! "$continue"; then
