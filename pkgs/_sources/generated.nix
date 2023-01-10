@@ -3,6 +3,7 @@
   fetchgit,
   fetchurl,
   fetchFromGitHub,
+  dockerTools,
 }: {
   airtame = {
     pname = "airtame";
@@ -30,6 +31,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-6hqgN0gafw/BT/Gwqc/CO8J/Su83jcdG9FrD9fCzGC8=";
     };
+    date = "2022-11-26";
   };
   lswt = {
     pname = "lswt";
@@ -42,6 +44,7 @@
       leaveDotGit = false;
       sha256 = "sha256-Tiua9M2CJsYfmtmRXgR9ofmhwP8pRiYGbJdlBThWKMM=";
     };
+    date = "2022-02-18";
   };
   picom = {
     pname = "picom";
@@ -53,6 +56,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=";
     };
+    date = "2021-11-03";
   };
   polybar = {
     pname = "polybar";
@@ -64,6 +68,7 @@
       fetchSubmodules = true;
       sha256 = "sha256-HXtnnfkMX79Mf498Oq9qYYVJyRLFT8O65V0WSMbEyXs=";
     };
+    date = "2023-01-05";
   };
   rescrobbled = {
     pname = "rescrobbled";
@@ -91,6 +96,7 @@
       fetchSubmodules = true;
       sha256 = "sha256-uvm+5ZFadVKEXp6MYFZWwaJfU3DrA2PVnq4HQTI2LxY=";
     };
+    date = "2023-01-09";
   };
   waybar-mpris = {
     pname = "waybar-mpris";
@@ -102,6 +108,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=";
     };
+    date = "2022-01-09";
   };
   wob = {
     pname = "wob";

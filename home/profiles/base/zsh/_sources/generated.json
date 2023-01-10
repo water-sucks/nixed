@@ -1,6 +1,7 @@
 {
   "fast-syntax-highlighting": {
     "cargoLocks": null,
+    "date": null,
     "extract": null,
     "name": "fast-syntax-highlighting",
     "passthru": null,
@@ -20,6 +21,7 @@
   },
   "zsh-autosuggestions": {
     "cargoLocks": null,
+    "date": null,
     "extract": null,
     "name": "zsh-autosuggestions",
     "passthru": null,
