@@ -488,17 +488,6 @@
       sha256 = "sha256-3zPU7WsCow4t0LcG5AGOPEEtVyRZDvo6epzVc9MOGZ0=";
     };
   };
-  "'plugin-nvim-code-action-menu'" = {
-    pname = "'plugin-nvim-code-action-menu'";
-    version = "e4399dbaf6eabff998d3d5f1cbcd8d9933710027";
-    src = fetchFromGitHub {
-      owner = "weilbith";
-      repo = "nvim-code-action-menu";
-      rev = "e4399dbaf6eabff998d3d5f1cbcd8d9933710027";
-      fetchSubmodules = false;
-      sha256 = "sha256-7szx+Me6WhrANbmfQ6C6gfSVB2owd02b3iZYhz7K6wY=";
-    };
-  };
   "'plugin-nvim-colorizer.lua'" = {
     pname = "'plugin-nvim-colorizer.lua'";
     version = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6";

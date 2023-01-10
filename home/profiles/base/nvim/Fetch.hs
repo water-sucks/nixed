@@ -48,7 +48,6 @@ packageSet = do
     plugin ("SidOfc", "carbon.nvim")
     plugin ("folke", "trouble.nvim")
     plugin ("numToStr", "FTerm.nvim")
-    plugin ("weilbith", "nvim-code-action-menu")
 
     -- Text editing assistance/annotations
     plugin ("tpope", "vim-sleuth")

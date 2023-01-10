@@ -29,12 +29,11 @@ local on_attach = function(client, bufnr)
       h = { vim.lsp.buf.hover, "Hover docs" },
 
       r = { vim.lsp.buf.rename, "Rename" },
+      x = { vim.lsp.buf.code_action, "Show code actions" },
 
       o = { vim.diagnostic.open_float, "Show diagnostics for line" },
       j = { vim.diagnostic.goto_next, "Jump to next diagnostic" },
       k = { vim.diagnostic.goto_prev, "Jump to last diagnostic " },
-
-      x = { "<cmd>CodeActionMenu<CR>", "Show code actions" },
     },
   }
 

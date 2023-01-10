@@ -81,7 +81,7 @@ return {
   use("stevearc/dressing.nvim", {
     event = "CursorHold",
     config = function()
-      require("dressing").setup()
+      require("config.dressing")
     end,
   }),
   use("nvim-telescope/telescope.nvim", {
@@ -107,9 +107,6 @@ return {
     config = function()
       require("config.fterm")
     end,
-  }),
-  use("weilbith/nvim-code-action-menu", {
-    cmd = "CodeActionMenu",
   }),
 
   -- Text editing assistance/annotations

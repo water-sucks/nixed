@@ -835,25 +835,6 @@
     },
     "version": "11a95792a5be0f5a40bab5fc5b670e5b1399a939"
   },
-  "'plugin-nvim-code-action-menu'": {
-    "cargoLocks": null,
-    "extract": null,
-    "name": "'plugin-nvim-code-action-menu'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "weilbith",
-      "repo": "nvim-code-action-menu",
-      "rev": "e4399dbaf6eabff998d3d5f1cbcd8d9933710027",
-      "sha256": "sha256-7szx+Me6WhrANbmfQ6C6gfSVB2owd02b3iZYhz7K6wY=",
-      "type": "github"
-    },
-    "version": "e4399dbaf6eabff998d3d5f1cbcd8d9933710027"
-  },
   "'plugin-nvim-colorizer.lua'": {
     "cargoLocks": null,
     "extract": null,

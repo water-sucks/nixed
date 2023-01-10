@@ -40,15 +40,7 @@ local server_configs = {
     },
   },
   elixirls = {
-    cmd = {
-      (function()
-        if vim.fn.executable("elixir-ls") then
-          return vim.fn.exepath("elixir-ls")
-        else
-          return ""
-        end
-      end)(),
-    },
+    cmd = { vim.fn.exepath("elixir-ls") or "" },
     dialyzerEnabled = false,
   },
   ltex = {
@@ -66,9 +58,9 @@ local server_configs = {
         -- Currently not working, probably due to ltex_extra.nvim.
         -- Let's figure this out later, just don't use any
         -- cursewords in prose! Shouldn't be too hard (for now).
-        -- disabledRules = {
-        --   ["en-US"] = { "PROFANITY" },
-        -- },
+        disabledRules = {
+          ["en-US"] = { "PROFANITY" },
+        },
       },
     },
   },
