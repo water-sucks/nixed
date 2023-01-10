@@ -3,6 +3,7 @@
   fetchgit,
   fetchurl,
   fetchFromGitHub,
+  dockerTools,
 }: {
   fast-syntax-highlighting = {
     pname = "fast-syntax-highlighting";

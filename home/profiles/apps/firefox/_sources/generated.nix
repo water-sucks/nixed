@@ -3,6 +3,7 @@
   fetchgit,
   fetchurl,
   fetchFromGitHub,
+  dockerTools,
 }: {
   simplefox-theme = {
     pname = "simplefox-theme";
@@ -14,5 +15,6 @@
       fetchSubmodules = false;
       sha256 = "sha256-iNILXnOZYbzy2/HcUpyiq6VOLA2C6fogAAwSWsTun1U=";
     };
+    date = "2021-12-22";
   };
 }

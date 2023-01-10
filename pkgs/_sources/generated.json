@@ -1,6 +1,7 @@
 {
   "airtame": {
     "cargoLocks": null,
+    "date": null,
     "extract": null,
     "name": "airtame",
     "passthru": null,
@@ -15,6 +16,7 @@
   },
   "filen-desktop": {
     "cargoLocks": null,
+    "date": null,
     "extract": null,
     "name": "filen-desktop",
     "passthru": null,
@@ -29,6 +31,7 @@
   },
   "get-appname": {
     "cargoLocks": null,
+    "date": "2022-11-26",
     "extract": null,
     "name": "get-appname",
     "passthru": null,
@@ -48,6 +51,7 @@
   },
   "lswt": {
     "cargoLocks": null,
+    "date": "2022-02-18",
     "extract": null,
     "name": "lswt",
     "passthru": null,
@@ -66,6 +70,7 @@
   },
   "picom": {
     "cargoLocks": null,
+    "date": "2021-11-03",
     "extract": null,
     "name": "picom",
     "passthru": null,
@@ -85,6 +90,7 @@
   },
   "polybar": {
     "cargoLocks": null,
+    "date": "2023-01-05",
     "extract": null,
     "name": "polybar",
     "passthru": null,
@@ -106,6 +112,7 @@
     "cargoLocks": {
       "Cargo.lock": ["./rescrobbled-v0.6.2/Cargo.lock", {}]
     },
+    "date": null,
     "extract": null,
     "name": "rescrobbled",
     "passthru": null,
@@ -125,6 +132,7 @@
   },
   "river": {
     "cargoLocks": null,
+    "date": "2023-01-09",
     "extract": null,
     "name": "river",
     "passthru": null,
@@ -144,6 +152,7 @@
   },
   "waybar-mpris": {
     "cargoLocks": null,
+    "date": "2022-01-09",
     "extract": null,
     "name": "waybar-mpris",
     "passthru": null,
@@ -163,6 +172,7 @@
   },
   "wob": {
     "cargoLocks": null,
+    "date": null,
     "extract": null,
     "name": "wob",
     "passthru": null,
