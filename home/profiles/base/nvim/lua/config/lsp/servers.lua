@@ -67,7 +67,13 @@ local server_configs = {
 }
 
 require("neodev").setup({
-  runtime_path = true,
+  library = {
+    enabled = true,
+    runtime = true,
+    types = true,
+    plugins = true,
+  },
+  lspconfig = true,
 })
 
 for _, server in pairs(servers) do
