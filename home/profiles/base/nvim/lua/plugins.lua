@@ -304,7 +304,7 @@ return {
     config = function()
       require("config.langs.neorg")
     end,
-    ft = "norg",
+    -- ft = "norg",
   }),
   use("folke/which-key.nvim", {
     config = function()

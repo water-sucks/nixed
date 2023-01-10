@@ -1,6 +1,3 @@
-vim.g.did_load_filetypes = 0
-vim.g.do_filetype_lua = 1
-
 vim.o.cmdheight = 0
 vim.o.laststatus = 3
 vim.o.termguicolors = true
@@ -19,3 +16,5 @@ vim.o.pumheight = 10
 vim.opt.number = true
 vim.opt.ignorecase = true
 vim.opt.signcolumn = "yes"
+
+vim.g.maplocalleader = ","
