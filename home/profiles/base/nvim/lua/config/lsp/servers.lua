@@ -15,7 +15,7 @@ local servers = {
   "elixirls",
   "graphql",
   "ltex",
-  "rnix",
+  "nil_ls",
   "vala_ls",
   "zls",
 }
@@ -57,7 +57,7 @@ local server_configs = {
       require("ltex_extra").setup({
         load_langs = { "en-US" },
         init_check = true,
-        path = vim.fn.stdpath("config") .. "/spell/custom-dict/",
+        path = vim.fn.stdpath("cache") .. "/spell/custom-dict",
       })
     end,
     filetypes = { "latex", "tex", "bib", "markdown" },
@@ -71,9 +71,6 @@ local server_configs = {
         -- },
       },
     },
-  },
-  rnix = {
-    cmd = { "nil" }, -- Yes, this hijacks rnix-lsp
   },
 }
 
