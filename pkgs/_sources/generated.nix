@@ -75,15 +75,15 @@
   };
   river = {
     pname = "river";
-    version = "4dd02358d92050ad55f7b3c095d8a2ea0f94f607";
+    version = "f20692e329d41baec321a2b022e3279c8a1c6772";
     src = fetchFromGitHub {
       owner = "riverwm";
       repo = "river";
-      rev = "4dd02358d92050ad55f7b3c095d8a2ea0f94f607";
+      rev = "f20692e329d41baec321a2b022e3279c8a1c6772";
       fetchSubmodules = true;
-      sha256 = "sha256-uvm+5ZFadVKEXp6MYFZWwaJfU3DrA2PVnq4HQTI2LxY=";
+      sha256 = "sha256-7E7JasiMsuYsay0bH30HsfYRVxDs/mqz2JnlEV/+5Mo=";
     };
-    date = "2023-01-07";
+    date = "2023-01-09";
   };
   waybar-mpris = {
     pname = "waybar-mpris";
