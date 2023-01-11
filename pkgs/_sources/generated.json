@@ -113,7 +113,7 @@
   },
   "river": {
     "cargoLocks": null,
-    "date": "2023-01-09",
+    "date": null,
     "extract": null,
     "name": "river",
     "passthru": null,
@@ -125,11 +125,11 @@
       "name": null,
       "owner": "riverwm",
       "repo": "river",
-      "rev": "f20692e329d41baec321a2b022e3279c8a1c6772",
-      "sha256": "sha256-7E7JasiMsuYsay0bH30HsfYRVxDs/mqz2JnlEV/+5Mo=",
+      "rev": "v0.2.1",
+      "sha256": "sha256-eIW8NNhacAM/7gZCUHCmiySANLenfcaCRTUkoJUZRPQ=",
       "type": "github"
     },
-    "version": "f20692e329d41baec321a2b022e3279c8a1c6772"
+    "version": "v0.2.1"
   },
   "waybar-mpris": {
     "cargoLocks": null,
