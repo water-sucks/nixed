@@ -13,7 +13,7 @@ packageSet :: PackageSet ()
 packageSet = do
     define $
         package "river"
-            `sourceGit` "https://github.com/riverwm/river"
+            `sourceManual` "v0.2.1"
             `fetchGitHub'` ("riverwm", "river", fetchSubmodules .~ True)
 
     define $
