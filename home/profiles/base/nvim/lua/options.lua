@@ -17,4 +17,4 @@ vim.opt.number = true
 vim.opt.ignorecase = true
 vim.opt.signcolumn = "yes"
 
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = ";"

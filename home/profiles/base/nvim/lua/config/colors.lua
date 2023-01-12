@@ -15,6 +15,7 @@ require("github-theme").setup({
   dev = true, -- Needed to add additional plugins' highlight groups
   overrides = function(c)
     return {
+      NonText = { fg = c.black },
       DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
 
       ["@constructor.lua"] = { fg = c.syntax.variable },

@@ -31,6 +31,7 @@ require("telescope").setup({
 require("which-key").register({
   f = {
     name = "Telescope",
+    c = { "<cmd>Telescope highlights<CR>", "Find highlights" },
     f = { "<cmd>Telescope find_files<CR>", "Find files" },
     i = { "<cmd>Telescope live_grep<CR>", "Find with ripgrep" },
     b = { "<cmd>Telescope buffers<CR>", "Find buffers" },

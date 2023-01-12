@@ -50,6 +50,23 @@ neorg.setup({
         check_news = false,
       },
     },
+    ["core.highlights"] = {
+      config = {
+        highlights = {
+          markup = {
+            bold = {
+              [""] = "cterm=bold gui=bold",
+            },
+            italic = {
+              [""] = "cterm=italic gui=italic",
+            },
+            verbatim = {
+              [""] = "+@comment",
+            },
+          },
+        },
+      },
+    },
     ["core.norg.concealer"] = {
       config = {
         icons = {
