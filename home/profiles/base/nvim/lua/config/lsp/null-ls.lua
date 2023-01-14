@@ -26,8 +26,11 @@ null_ls.setup({
     }),
     null_ls.builtins.formatting.fourmolu,
     null_ls.builtins.formatting.gofumpt,
-    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.latexindent.with({
+      args = { "-l", "-" },
+    }),
     null_ls.builtins.formatting.mix,
+    null_ls.builtins.formatting.prettier,
     -- I prefer using alejandra for my own code, but also
     -- use nixpkgs-fmt in some codebases and in nixpkgs,
     -- so I switch it based on an environment variable.
@@ -44,6 +47,7 @@ null_ls.setup({
     null_ls.builtins.formatting.stylua,
 
     null_ls.builtins.diagnostics.alex,
+    null_ls.builtins.diagnostics.chktex,
     null_ls.builtins.diagnostics.cppcheck,
     null_ls.builtins.diagnostics.credo,
     null_ls.builtins.diagnostics.deadnix,

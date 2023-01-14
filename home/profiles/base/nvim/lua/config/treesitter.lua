@@ -25,6 +25,7 @@ require("nvim-treesitter.configs").setup({
   textobjects = {
     select = {
       enable = true,
+      disable = { "latex" },
       lookahead = true,
       keymaps = {
         ["ib"] = { query = "@block.inner", desc = "Inner block region" },
@@ -55,6 +56,7 @@ require("nvim-treesitter.configs").setup({
 
     swap = {
       enable = true,
+      disable = { "latex" },
       swap_next = {
         ["<Leader>sc"] = { query = "@class.outer", desc = "Next class" },
         ["<Leader>sf"] = { query = "@function.outer", desc = "Next function" },
@@ -71,23 +73,24 @@ require("nvim-treesitter.configs").setup({
 
     move = {
       enable = false,
+      disable = { "latex" },
       set_jumps = true,
-      -- goto_next_start = {
-      --   ["]m"] = { query = "@function.outer", desc = "Next function start" },
-      --   ["]]"] = { query = "@class.outer", desc = "Next class start" },
-      -- },
-      -- goto_next_end = {
-      --   ["]M"] = { query = "@function.outer", desc = "Next function end" },
-      --   ["]["] = { query = "@class.outer", desc = "Next class end" },
-      -- },
-      -- goto_previous_start = {
-      --   ["[m"] = { query = "@function.outer", desc = "Previous function start" },
-      --   ["[["] = { query = "@class.outer", desc = "Previous class start" },
-      -- },
-      -- goto_previous_end = {
-      --   ["[M"] = { query = "@function.outer", desc = "Previous function end" },
-      --   ["[]"] = { query = "@class.outer", desc = "Previous class end" },
-      -- },
+      goto_next_start = {
+        ["]m"] = { query = "@function.outer", desc = "Next function start" },
+        ["]]"] = { query = "@class.outer", desc = "Next class start" },
+      },
+      goto_next_end = {
+        ["]M"] = { query = "@function.outer", desc = "Next function end" },
+        ["]["] = { query = "@class.outer", desc = "Next class end" },
+      },
+      goto_previous_start = {
+        ["[m"] = { query = "@function.outer", desc = "Previous function start" },
+        ["[["] = { query = "@class.outer", desc = "Previous class start" },
+      },
+      goto_previous_end = {
+        ["[M"] = { query = "@function.outer", desc = "Previous function end" },
+        ["[]"] = { query = "@class.outer", desc = "Previous class end" },
+      },
     },
   },
 
