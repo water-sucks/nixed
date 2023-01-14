@@ -72,7 +72,7 @@ require("nvim-treesitter.configs").setup({
     },
 
     move = {
-      enable = false,
+      enable = true,
       disable = { "latex" },
       set_jumps = true,
       goto_next_start = {
@@ -125,7 +125,6 @@ wk.register({
     name = "Swap",
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
 })
 
@@ -140,8 +139,4 @@ wk.register({
       O = "List definitions TOC",
     },
   },
-}, {
-  mode = "n",
-  silent = true,
-  noremap = true,
-})
+}, {})

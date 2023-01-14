@@ -8,8 +8,5 @@ require("which-key").register({
     h = { "<cmd>DiffviewFileHistory<CR>", "Show file history" },
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  silent = true,
-  noremap = true,
 })

@@ -1,7 +1,7 @@
 require("github-theme").setup({
   theme_style = "dark_default",
   function_style = "italic",
-  sidebars = { "terminal", "FTerm", "packer", "NvimTree" },
+  sidebars = { "terminal", "FTerm" },
   colors = {
     bg = "#050505",
     bg_sidebar = "#050505",

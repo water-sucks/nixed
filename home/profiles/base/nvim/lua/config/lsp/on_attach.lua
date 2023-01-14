@@ -38,10 +38,7 @@ local on_attach = function(client, bufnr)
   }
 
   wk.register(keymaps, {
-    mode = "n",
     buffer = bufnr,
-    silent = true,
-    noremap = true,
   })
 end
 

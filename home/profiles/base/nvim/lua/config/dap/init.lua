@@ -32,16 +32,19 @@ require("which-key").register({
     R = { dap.run_to_cursor, "Run to cursor" },
     B = {
       function()
-        dap.set_breakpoint(vim.fn.input("[Condition] > "))
+        local condition = ""
+        vim.ui.select({
+          prompt = "[Condition] > ",
+        }, function(input)
+          condition = input
+        end)
+        dap.set_breakpoint(condition)
       end,
       "Conditional breakpoint",
     },
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  silent = true,
-  noremap = true,
 })
 
 -- Source DAP configs for filetypes without specific DAP plugins

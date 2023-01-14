@@ -49,8 +49,5 @@ require("which-key").register({
     },
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  silent = true,
-  noremap = true,
 })

@@ -77,6 +77,7 @@ require("neodev").setup({
 })
 
 for _, server in pairs(servers) do
+  ---@type table<string, boolean|function|table>
   local config = {
     on_attach = on_attach,
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
@@ -94,11 +95,11 @@ end
 -- I got very annoyed by the ccls message about offset encodings,
 -- and decided to silence it. It's a legitimate issue that needs
 -- to be fixed upstream, though, so I'm following it.
-local notify = vim.notify
-vim.notify = function(msg, ...)
-  if msg:match("warning: multiple different client offset_encodings") then
-    return
-  end
-
-  notify(msg, ...)
-end
+-- local notify = vim.notify
+-- vim.notify = function(msg, ...)
+--   if msg:match("warning: multiple different client offset_encodings") then
+--     return
+--   end
+--
+--   notify(msg, ...)
+-- end

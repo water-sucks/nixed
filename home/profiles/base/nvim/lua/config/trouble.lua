@@ -7,8 +7,5 @@ require("which-key").register({
     q = { "<cmd>TroubleToggle quickfix<CR>", "Toggle quickfixes" },
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  silent = true,
-  noremap = true,
 })

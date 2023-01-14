@@ -51,7 +51,13 @@ wk.register({
     name = "Debug",
     E = {
       function()
-        dapui.eval(vim.fn.input("[Expression] > "))
+        local expression = ""
+        vim.ui.input({
+          prompt = "[Expression] > ",
+        }, function(input)
+          expression = input
+        end)
+        dapui.eval(expression)
       end,
       "Evaluate input",
     },
@@ -65,10 +71,7 @@ wk.register({
     },
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  silent = true,
-  noremap = true,
 })
 
 wk.register({
@@ -76,6 +79,4 @@ wk.register({
 }, {
   mode = "v",
   prefix = "<Leader>",
-  silent = true,
-  noremap = true,
 })

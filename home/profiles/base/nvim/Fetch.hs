@@ -18,8 +18,6 @@ packageSet = do
     -- Vitals
     plugin ("folke", "lazy.nvim")
     plugin ("nvim-lua", "plenary.nvim")
-    plugin ("nathom", "filetype.nvim")
-    plugin ("dstein64", "vim-startuptime")
 
     -- Editor tooling
     plugin ("neovim", "nvim-lspconfig")

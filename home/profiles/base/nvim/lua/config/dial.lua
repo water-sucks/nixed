@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local augend = require("dial.augend")
 local wk = require("which-key")
 
@@ -20,20 +20,18 @@ require("dial.config").augends:register_group({
   },
 })
 
-map("n", "<C-a>", require("dial.map").inc_normal(), { silent = true, noremap = true })
-map("n", "<C-x>", require("dial.map").dec_normal(), { silent = true, noremap = true })
-map("v", "<C-a>", require("dial.map").inc_visual(), { silent = true, noremap = true })
-map("v", "<C-x>", require("dial.map").dec_visual(), { silent = true, noremap = true })
-map("v", "g<C-a>", require("dial.map").inc_gvisual(), { silent = true, noremap = true })
-map("v", "g<C-x>", require("dial.map").dec_gvisual(), { silent = true, noremap = true })
+map("n", "<C-a>", require("dial.map").inc_normal(), { silent = true })
+map("n", "<C-x>", require("dial.map").dec_normal(), { silent = true })
+map("v", "<C-a>", require("dial.map").inc_visual(), { silent = true })
+map("v", "<C-x>", require("dial.map").dec_visual(), { silent = true })
+map("v", "g<C-a>", require("dial.map").inc_gvisual(), { silent = true })
+map("v", "g<C-x>", require("dial.map").dec_gvisual(), { silent = true })
 
 wk.register({
   ["["] = { require("dial.map").inc_normal(), "Increment" },
   ["]"] = { require("dial.map").dec_normal(), "Decrement" },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  noremap = true,
 })
 
 wk.register({
@@ -42,5 +40,4 @@ wk.register({
 }, {
   mode = "x",
   prefix = "<Leader>",
-  noremap = true,
 })

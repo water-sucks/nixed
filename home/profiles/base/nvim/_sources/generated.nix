@@ -257,18 +257,6 @@
     };
     date = "2023-01-10";
   };
-  "'plugin-filetype.nvim'" = {
-    pname = "'plugin-filetype.nvim'";
-    version = "b522628a45a17d58fc0073ffd64f9dc9530a8027";
-    src = fetchFromGitHub {
-      owner = "nathom";
-      repo = "filetype.nvim";
-      rev = "b522628a45a17d58fc0073ffd64f9dc9530a8027";
-      fetchSubmodules = false;
-      sha256 = "sha256-B+VvgQj8akiKe+MX/dV2/mdaaqF8s2INW3phdPJ5TFA=";
-    };
-    date = "2022-06-02";
-  };
   "'plugin-flutter-tools.nvim'" = {
     pname = "'plugin-flutter-tools.nvim'";
     version = "ae0be3cef35c0cb41d6c7f814a19b3402d50fd7a";
@@ -880,18 +868,6 @@
       sha256 = "sha256-764rtPxcdSs5j0yo4atPNqduEe4GvryOmaIJtCqxVJU=";
     };
     date = "2022-10-06";
-  };
-  "'plugin-vim-startuptime'" = {
-    pname = "'plugin-vim-startuptime'";
-    version = "cb4c112b9e0f224236ee4eab6bf5153406b3f88b";
-    src = fetchFromGitHub {
-      owner = "dstein64";
-      repo = "vim-startuptime";
-      rev = "cb4c112b9e0f224236ee4eab6bf5153406b3f88b";
-      fetchSubmodules = false;
-      sha256 = "sha256-XFgRF0ndBf/OHlYCAZFOAvr3MF2gAeQSIzMyvPcRNdg=";
-    };
-    date = "2022-12-12";
   };
   "'plugin-vim-surround'" = {
     pname = "'plugin-vim-surround'";

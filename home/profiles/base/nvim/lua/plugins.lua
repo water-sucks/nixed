@@ -19,13 +19,10 @@ return {
     enabled = false,
   }),
   use("nvim-lua/plenary.nvim"),
-  use("nathom/filetype.nvim"),
-  use("dstein64/vim-startuptime", {
-    cmd = "StartupTime",
-  }),
 
   -- Editor tooling
   use("neovim/nvim-lspconfig", {
+    event = "BufRead",
     config = function()
       require("config.lsp")
     end,
@@ -47,7 +44,11 @@ return {
   use("ray-x/lsp_signature.nvim", {
     event = "CursorHold",
     config = function()
-      require("config.lsp.signature")
+      require("lsp_signature").setup({
+        bind = true,
+        fix_pos = true,
+        toggle_key = "<C-x>",
+      })
     end,
   }),
   use("nanotee/zoxide.vim", {
@@ -116,7 +117,16 @@ return {
   use("tpope/vim-surround", {
     event = "CursorHold",
     config = function()
-      require("config.surround")
+      require("which-key").register({
+        cs = "Change surrounds",
+        cS = "Change surrounds \n",
+        ds = "Delete surrounds",
+        ys = "Insert surrounds",
+        yS = "Insert surrounds (\\n)",
+        yss = "Insert surrounds (l)",
+        ySs = "Insert surrounds (l/\\n)",
+        ySS = "Insert surrounds (l/\\n)",
+      }, {})
     end,
   }),
   use("tpope/vim-repeat", {
@@ -187,25 +197,17 @@ return {
 
   -- Appearance/Theming
   use("nvim-treesitter/nvim-treesitter", {
+    dependencies = {
+      use("nvim-treesitter/nvim-treesitter-textobjects", {}),
+      use("nvim-treesitter/nvim-treesitter-refactor", {}),
+      use("windwp/nvim-ts-autotag", {}),
+      use("JoosepAlviste/nvim-ts-context-commentstring", {}),
+      use("nvim-treesitter/playground", {}),
+    },
     event = "BufReadPost",
     config = function()
       require("config.treesitter")
     end,
-  }),
-  use("nvim-treesitter/nvim-treesitter-textobjects", {
-    dependencies = { use("nvim-treesitter/nvim-treesitter") },
-  }),
-  use("nvim-treesitter/nvim-treesitter-refactor", {
-    dependencies = { use("nvim-treesitter/nvim-treesitter") },
-  }),
-  use("windwp/nvim-ts-autotag", {
-    dependencies = { use("nvim-treesitter/nvim-treesitter") },
-  }),
-  use("JoosepAlviste/nvim-ts-context-commentstring", {
-    dependencies = { use("nvim-treesitter/nvim-treesitter") },
-  }),
-  use("nvim-treesitter/playground", {
-    dependencies = { use("nvim-treesitter/nvim-treesitter") },
   }),
   use("projekt0n/github-nvim-theme", {
     config = function()
@@ -221,21 +223,29 @@ return {
   use("akinsho/bufferline.nvim", {
     event = "BufEnter",
     config = function()
-      require("config.bufferline")
+      require("bufferline").setup({
+        options = {
+          numbers = "ordinal",
+          offsets = { { filetype = "carbon.explorer", text = "File Explorer" } },
+        },
+      })
     end,
   }),
   use("tiagovla/scope.nvim", {
+    event = "CursorHold",
     dependencies = { use("akinsho/bufferline.nvim") },
     config = function()
       require("scope").setup()
     end,
   }),
   use("kyazdani42/nvim-web-devicons", {
+    event = "BufEnter",
     config = function()
       require("nvim-web-devicons").setup({})
     end,
   }),
   use("projekt0n/circles.nvim", {
+    event = "BufEnter",
     dependencies = { use("kyazdani42/nvim-web-devicons") },
     config = function()
       require("circles").setup({})
@@ -251,7 +261,9 @@ return {
   use("folke/twilight.nvim", {
     event = "CursorHold",
     config = function()
-      require("config.twilight")
+      require("twilight").setup({
+        context = 20,
+      })
     end,
   }),
   use("lukas-reineke/indent-blankline.nvim", {
@@ -290,6 +302,7 @@ return {
 
   -- Special Neovim sauce
   use("andweeb/presence.nvim", {
+    event = "BufRead",
     config = function()
       require("presence"):setup({})
     end,
@@ -304,18 +317,28 @@ return {
     config = function()
       require("config.langs.neorg")
     end,
-    -- ft = "norg",
+    ft = "norg",
   }),
   use("folke/which-key.nvim", {
     config = function()
-      require("config.which_key")
+      require("which-key").setup({
+        plugins = {
+          presets = {
+            g = false,
+          },
+        },
+      })
     end,
   }),
   use("ahmedkhalf/project.nvim", {
     dependencies = { use("nvim-telescope/telescope.nvim") },
     event = "CursorHold",
     config = function()
-      require("config.project")
+      require("project_nvim").setup({
+        manual_mode = true,
+        silent_chdir = false,
+      })
+      require("telescope").load_extension("projects")
     end,
   }),
   use("tamton-aquib/duck.nvim", {
@@ -326,7 +349,14 @@ return {
   }),
   use("samjwill/nvim-unception", {
     config = function()
-      require("config.unception")
+      vim.g.unception_open_buffer_in_new_tab = true
+
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "UnceptionEditRequestReceived",
+        callback = function()
+          require("FTerm").close()
+        end,
+      })
     end,
   }),
 
@@ -338,6 +368,7 @@ return {
     end,
   }),
   use("rcarriga/nvim-dap-ui", {
+    event = "CursorHold",
     dependencies = { use("mfussenegger/nvim-dap") },
     config = function()
       require("config.dap.ui")
@@ -350,6 +381,7 @@ return {
     end,
   }),
   use("jbyuki/one-small-step-for-vimkind", {
+    event = "CursorHold",
     dependencies = { use("mfussenegger/nvim-dap") },
     config = function()
       require("config.dap.nlua")
@@ -357,6 +389,7 @@ return {
     ft = "lua",
   }),
   use("leoluz/nvim-dap-go", {
+    event = "CursorHold",
     dependencies = { use("mfussenegger/nvim-dap") },
     config = function()
       require("dap-go").setup()
@@ -364,9 +397,12 @@ return {
     ft = "go",
   }),
   use("mfussenegger/nvim-dap-python", {
+    event = "CursorHold",
     dependencies = { use("mfussenegger/nvim-dap") },
     config = function()
-      require("config.dap.python")
+      if vim.fn.executable("python3") then
+        require("dap-python").setup(vim.fn.exepath("python3"))
+      end
     end,
     ft = "python",
   }),
@@ -377,6 +413,7 @@ return {
     ft = "lua",
   }),
   use("akinsho/flutter-tools.nvim", {
+    event = "BufRead",
     dependencies = { use("nvim-lua/plenary.nvim") },
     config = function()
       require("config.langs.flutter")
@@ -384,6 +421,7 @@ return {
     ft = "dart",
   }),
   use("simrat39/rust-tools.nvim", {
+    event = "BufRead",
     dependencies = { use("neovim/nvim-lspconfig") },
     config = function()
       require("config.langs.rust")
@@ -391,6 +429,7 @@ return {
     ft = "rust",
   }),
   use("MrcJkb/haskell-tools.nvim", {
+    event = "BufRead",
     dependencies = {
       use("neovim/nvim-lspconfig"),
       use("nvim-lua/plenary.nvim"),
@@ -402,6 +441,7 @@ return {
     ft = "haskell",
   }),
   use("lervag/vimtex", {
+    event = "BufRead",
     dependencies = { use("neovim/nvim-lspconfig") },
     config = function()
       require("config.langs.tex")

@@ -7,9 +7,6 @@ require("smoothcursor").setup({
     enable = false,
   },
   disabled_filetypes = {
-    "NvimTree",
-    "Searchbox",
-    "SidebarNvim",
     "FTerm",
     "terminal",
     "",

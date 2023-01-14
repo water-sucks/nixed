@@ -419,26 +419,6 @@
     },
     "version": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf"
   },
-  "'plugin-filetype.nvim'": {
-    "cargoLocks": null,
-    "date": "2022-06-02",
-    "extract": null,
-    "name": "'plugin-filetype.nvim'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nathom",
-      "repo": "filetype.nvim",
-      "rev": "b522628a45a17d58fc0073ffd64f9dc9530a8027",
-      "sha256": "sha256-B+VvgQj8akiKe+MX/dV2/mdaaqF8s2INW3phdPJ5TFA=",
-      "type": "github"
-    },
-    "version": "b522628a45a17d58fc0073ffd64f9dc9530a8027"
-  },
   "'plugin-flutter-tools.nvim'": {
     "cargoLocks": null,
     "date": "2023-01-01",
@@ -1458,26 +1438,6 @@
       "type": "github"
     },
     "version": "8332f123a63c739c870c96907d987cc3ff719d24"
-  },
-  "'plugin-vim-startuptime'": {
-    "cargoLocks": null,
-    "date": "2022-12-12",
-    "extract": null,
-    "name": "'plugin-vim-startuptime'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "dstein64",
-      "repo": "vim-startuptime",
-      "rev": "cb4c112b9e0f224236ee4eab6bf5153406b3f88b",
-      "sha256": "sha256-XFgRF0ndBf/OHlYCAZFOAvr3MF2gAeQSIzMyvPcRNdg=",
-      "type": "github"
-    },
-    "version": "cb4c112b9e0f224236ee4eab6bf5153406b3f88b"
   },
   "'plugin-vim-surround'": {
     "cargoLocks": null,

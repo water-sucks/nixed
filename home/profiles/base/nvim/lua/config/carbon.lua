@@ -8,8 +8,5 @@ require("which-key").register({
     l = { "<cmd>Lcarbon<CR>", "Show files in floating window" },
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  silent = true,
-  noremap = true,
 })

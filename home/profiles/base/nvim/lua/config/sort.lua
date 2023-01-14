@@ -14,10 +14,7 @@ wk.register({
     ["p"] = { "vip<Esc>:Sort<CR>", "Sort block inside paragraph" },
   },
 }, {
-  mode = "n",
   prefix = "<Leader>",
-  noremap = true,
-  silent = true,
 })
 
 wk.register({
@@ -25,6 +22,4 @@ wk.register({
 }, {
   mode = "x",
   prefix = "<Leader>",
-  noremap = true,
-  silent = true,
 })
