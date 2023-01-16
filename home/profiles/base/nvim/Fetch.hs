@@ -49,7 +49,7 @@ packageSet = do
 
     -- Text editing assistance/annotations
     plugin ("NMAC427", "guess-indent.nvim")
-    plugin ("tpope", "vim-surround")
+    plugin ("echasnovski", "mini.nvim")
     plugin ("tpope", "vim-repeat")
     plugin ("gpanders", "editorconfig.nvim")
     plugin ("numToStr", "Comment.nvim")

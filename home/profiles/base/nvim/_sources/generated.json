@@ -759,6 +759,26 @@
     },
     "version": "b1e8eb1da3fee95ef31515a73c9eff9bf251088d"
   },
+  "'plugin-mini.nvim'": {
+    "cargoLocks": null,
+    "date": "2023-01-16",
+    "extract": null,
+    "name": "'plugin-mini.nvim'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "echasnovski",
+      "repo": "mini.nvim",
+      "rev": "305debd01d486f94a9f6ecfec90321ea98dc5dd9",
+      "sha256": "sha256-bMcTW4+vBPkGv0whRavSSoBWqD1lhxDiiPIylIjau1Q=",
+      "type": "github"
+    },
+    "version": "305debd01d486f94a9f6ecfec90321ea98dc5dd9"
+  },
   "'plugin-neodev.nvim'": {
     "cargoLocks": null,
     "date": "2023-01-15",
@@ -1438,26 +1458,6 @@
       "type": "github"
     },
     "version": "24afe922e6a05891756ecf331f39a1f6743d3d5a"
-  },
-  "'plugin-vim-surround'": {
-    "cargoLocks": null,
-    "date": "2022-10-25",
-    "extract": null,
-    "name": "'plugin-vim-surround'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "tpope",
-      "repo": "vim-surround",
-      "rev": "3d188ed2113431cf8dac77be61b842acb64433d9",
-      "sha256": "sha256-DZE5tkmnT+lAvx/RQHaDEgEJXRKsy56KJY919xiH1lE=",
-      "type": "github"
-    },
-    "version": "3d188ed2113431cf8dac77be61b842acb64433d9"
   },
   "'plugin-vimtex'": {
     "cargoLocks": null,

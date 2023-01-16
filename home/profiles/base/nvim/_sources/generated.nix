@@ -461,6 +461,18 @@
     };
     date = "2023-01-03";
   };
+  "'plugin-mini.nvim'" = {
+    pname = "'plugin-mini.nvim'";
+    version = "305debd01d486f94a9f6ecfec90321ea98dc5dd9";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.nvim";
+      rev = "305debd01d486f94a9f6ecfec90321ea98dc5dd9";
+      fetchSubmodules = false;
+      sha256 = "sha256-bMcTW4+vBPkGv0whRavSSoBWqD1lhxDiiPIylIjau1Q=";
+    };
+    date = "2023-01-16";
+  };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
     version = "a587f5eeb826c10063d0b961d21a541e7868faf3";
@@ -868,18 +880,6 @@
       sha256 = "sha256-8rfZa3uKXB3TRCqaDHZ6DfzNbm7WaYnLvmTNzYtnKHg=";
     };
     date = "2021-01-24";
-  };
-  "'plugin-vim-surround'" = {
-    pname = "'plugin-vim-surround'";
-    version = "3d188ed2113431cf8dac77be61b842acb64433d9";
-    src = fetchFromGitHub {
-      owner = "tpope";
-      repo = "vim-surround";
-      rev = "3d188ed2113431cf8dac77be61b842acb64433d9";
-      fetchSubmodules = false;
-      sha256 = "sha256-DZE5tkmnT+lAvx/RQHaDEgEJXRKsy56KJY919xiH1lE=";
-    };
-    date = "2022-10-25";
   };
   "'plugin-vimtex'" = {
     pname = "'plugin-vimtex'";

@@ -120,19 +120,10 @@ return {
       })
     end,
   }),
-  use("tpope/vim-surround", {
+  use("echasnovski/mini.surround", {
     event = "CursorHold",
     config = function()
-      require("which-key").register({
-        cs = "Change surrounds",
-        cS = "Change surrounds \n",
-        ds = "Delete surrounds",
-        ys = "Insert surrounds",
-        yS = "Insert surrounds (\\n)",
-        yss = "Insert surrounds (l)",
-        ySs = "Insert surrounds (l/\\n)",
-        ySS = "Insert surrounds (l/\\n)",
-      }, {})
+      require("mini.surround").setup()
     end,
   }),
   use("tpope/vim-repeat", {
@@ -180,7 +171,7 @@ return {
   use("ggandor/leap.nvim", {
     event = "CursorHold",
     config = function()
-      require("leap").set_default_keymaps()
+      require("config.leap")
     end,
   }),
 
