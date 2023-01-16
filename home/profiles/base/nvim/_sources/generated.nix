@@ -305,6 +305,18 @@
     };
     date = "2023-01-12";
   };
+  "'plugin-guess-indent.nvim'" = {
+    pname = "'plugin-guess-indent.nvim'";
+    version = "c37467baa1a51b74ed767cbe0540fce44e03d828";
+    src = fetchFromGitHub {
+      owner = "NMAC427";
+      repo = "guess-indent.nvim";
+      rev = "c37467baa1a51b74ed767cbe0540fce44e03d828";
+      fetchSubmodules = false;
+      sha256 = "sha256-K+9gW3SIYHKtJkSvbHeT1frFGHk9zNP0oc8nrHRPy4U=";
+    };
+    date = "2022-07-17";
+  };
   "'plugin-haskell-tools.nvim'" = {
     pname = "'plugin-haskell-tools.nvim'";
     version = "e0b6eec6b7adc5e4a1b8b8a920f8c0983e823083";
@@ -856,18 +868,6 @@
       sha256 = "sha256-8rfZa3uKXB3TRCqaDHZ6DfzNbm7WaYnLvmTNzYtnKHg=";
     };
     date = "2021-01-24";
-  };
-  "'plugin-vim-sleuth'" = {
-    pname = "'plugin-vim-sleuth'";
-    version = "8332f123a63c739c870c96907d987cc3ff719d24";
-    src = fetchFromGitHub {
-      owner = "tpope";
-      repo = "vim-sleuth";
-      rev = "8332f123a63c739c870c96907d987cc3ff719d24";
-      fetchSubmodules = false;
-      sha256 = "sha256-764rtPxcdSs5j0yo4atPNqduEe4GvryOmaIJtCqxVJU=";
-    };
-    date = "2022-10-06";
   };
   "'plugin-vim-surround'" = {
     pname = "'plugin-vim-surround'";

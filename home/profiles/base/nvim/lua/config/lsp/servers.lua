@@ -17,7 +17,6 @@ local servers = {
   "ltex",
   "nil_ls",
   "vala_ls",
-  "zls",
 }
 
 local server_configs = {
@@ -96,10 +95,11 @@ end
 -- and decided to silence it. It's a legitimate issue that needs
 -- to be fixed upstream, though, so I'm following it.
 -- local notify = vim.notify
--- vim.notify = function(msg, ...)
---   if msg:match("warning: multiple different client offset_encodings") then
---     return
---   end
---
---   notify(msg, ...)
--- end
+---@diagnostic disable-next-line: duplicate-set-field
+vim.notify = function(msg, ...)
+  if msg:match("warning: multiple different client offset_encodings") then
+    return
+  end
+
+  vim.notify(msg, ...)
+end

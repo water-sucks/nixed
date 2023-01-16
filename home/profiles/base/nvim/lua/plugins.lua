@@ -22,7 +22,6 @@ return {
 
   -- Editor tooling
   use("neovim/nvim-lspconfig", {
-    event = "BufRead",
     config = function()
       require("config.lsp")
     end,
@@ -111,8 +110,15 @@ return {
   }),
 
   -- Text editing assistance/annotations
-  use("tpope/vim-sleuth", {
-    event = "BufRead",
+  use("NMAC427/guess-indent.nvim", {
+    config = function()
+      require("guess-indent").setup({
+        filetype_exclude = {
+          "carbon.explorer",
+          "FTerm",
+        },
+      })
+    end,
   }),
   use("tpope/vim-surround", {
     event = "CursorHold",
@@ -142,7 +148,7 @@ return {
     end,
   }),
   use("windwp/nvim-autopairs", {
-    event = "CursorHold",
+    event = "InsertEnter",
     config = function()
       require("config.autopairs")
     end,

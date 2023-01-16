@@ -48,7 +48,7 @@ packageSet = do
     plugin ("numToStr", "FTerm.nvim")
 
     -- Text editing assistance/annotations
-    plugin ("tpope", "vim-sleuth")
+    plugin ("NMAC427", "guess-indent.nvim")
     plugin ("tpope", "vim-surround")
     plugin ("tpope", "vim-repeat")
     plugin ("gpanders", "editorconfig.nvim")

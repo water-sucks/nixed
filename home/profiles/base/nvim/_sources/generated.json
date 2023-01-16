@@ -499,6 +499,26 @@
     },
     "version": "addd6e174a85fc1c4007ab0b65d77e6555b417bf"
   },
+  "'plugin-guess-indent.nvim'": {
+    "cargoLocks": null,
+    "date": "2022-07-17",
+    "extract": null,
+    "name": "'plugin-guess-indent.nvim'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "NMAC427",
+      "repo": "guess-indent.nvim",
+      "rev": "c37467baa1a51b74ed767cbe0540fce44e03d828",
+      "sha256": "sha256-K+9gW3SIYHKtJkSvbHeT1frFGHk9zNP0oc8nrHRPy4U=",
+      "type": "github"
+    },
+    "version": "c37467baa1a51b74ed767cbe0540fce44e03d828"
+  },
   "'plugin-haskell-tools.nvim'": {
     "cargoLocks": null,
     "date": "2023-01-14",
@@ -1418,26 +1438,6 @@
       "type": "github"
     },
     "version": "24afe922e6a05891756ecf331f39a1f6743d3d5a"
-  },
-  "'plugin-vim-sleuth'": {
-    "cargoLocks": null,
-    "date": "2022-10-06",
-    "extract": null,
-    "name": "'plugin-vim-sleuth'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "tpope",
-      "repo": "vim-sleuth",
-      "rev": "8332f123a63c739c870c96907d987cc3ff719d24",
-      "sha256": "sha256-764rtPxcdSs5j0yo4atPNqduEe4GvryOmaIJtCqxVJU=",
-      "type": "github"
-    },
-    "version": "8332f123a63c739c870c96907d987cc3ff719d24"
   },
   "'plugin-vim-surround'": {
     "cargoLocks": null,

@@ -19,7 +19,7 @@ MUtils.CR = function()
     return autopairs.autopairs_cr()
   end
 end
-map("i", "<cr>", "v:lua.MUtils.CR()", { expr = true })
+map("i", "<cr>", "v:lua.MUtils.CR()", { expr = true, noremap = true })
 
 MUtils.BS = function()
   if vim.fn.pumvisible() ~= 0 and vim.fn.complete_info({ "mode" }).mode == "eval" then
@@ -28,4 +28,4 @@ MUtils.BS = function()
     return autopairs.autopairs_bs()
   end
 end
-map("i", "<bs>", "v:lua.MUtils.BS()", { expr = true })
+map("i", "<bs>", "v:lua.MUtils.BS()", { expr = true, noremap = true })
