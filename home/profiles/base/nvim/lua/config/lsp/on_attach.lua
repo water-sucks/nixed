@@ -8,6 +8,7 @@ local disable_format_cap = {
   "rnix",
   "gopls",
   "elixirls",
+  "zls",
 }
 
 local on_attach = function(client, bufnr)

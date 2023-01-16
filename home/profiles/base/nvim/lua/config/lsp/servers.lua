@@ -17,6 +17,7 @@ local servers = {
   "ltex",
   "nil_ls",
   "vala_ls",
+  "zls",
 }
 
 local server_configs = {

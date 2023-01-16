@@ -45,6 +45,7 @@ null_ls.setup({
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.zigfmt,
 
     null_ls.builtins.diagnostics.alex,
     null_ls.builtins.diagnostics.chktex,
