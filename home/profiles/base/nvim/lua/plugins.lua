@@ -317,9 +317,7 @@ return {
     cmd = "Tetris",
   }),
   use("nvim-neorg/neorg", {
-    dependencies = {
-      use("nvim-neorg/neorg-telescope"),
-    },
+    dependencies = { use("nvim-neorg/neorg-telescope") },
     config = function()
       require("config.langs.neorg")
     end,
@@ -387,7 +385,6 @@ return {
     end,
   }),
   use("jbyuki/one-small-step-for-vimkind", {
-    event = "CursorHold",
     dependencies = { use("mfussenegger/nvim-dap") },
     config = function()
       require("config.dap.nlua")
@@ -395,7 +392,6 @@ return {
     ft = "lua",
   }),
   use("leoluz/nvim-dap-go", {
-    event = "CursorHold",
     dependencies = { use("mfussenegger/nvim-dap") },
     config = function()
       require("dap-go").setup()
@@ -403,7 +399,6 @@ return {
     ft = "go",
   }),
   use("mfussenegger/nvim-dap-python", {
-    event = "CursorHold",
     dependencies = { use("mfussenegger/nvim-dap") },
     config = function()
       if vim.fn.executable("python3") then
@@ -419,7 +414,6 @@ return {
     ft = "lua",
   }),
   use("akinsho/flutter-tools.nvim", {
-    event = "BufRead",
     dependencies = { use("nvim-lua/plenary.nvim") },
     config = function()
       require("config.langs.flutter")
@@ -427,7 +421,6 @@ return {
     ft = "dart",
   }),
   use("simrat39/rust-tools.nvim", {
-    event = "BufRead",
     dependencies = { use("neovim/nvim-lspconfig") },
     config = function()
       require("config.langs.rust")
@@ -435,7 +428,6 @@ return {
     ft = "rust",
   }),
   use("MrcJkb/haskell-tools.nvim", {
-    event = "BufRead",
     dependencies = {
       use("neovim/nvim-lspconfig"),
       use("nvim-lua/plenary.nvim"),
@@ -447,7 +439,6 @@ return {
     ft = "haskell",
   }),
   use("lervag/vimtex", {
-    event = "BufRead",
     dependencies = { use("neovim/nvim-lspconfig") },
     config = function()
       require("config.langs.tex")
