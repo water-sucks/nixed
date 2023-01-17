@@ -55,16 +55,20 @@ require("nvim-treesitter.configs").setup({
       enable = true,
       disable = { "latex" },
       swap_next = {
+        ["<Leader>sb"] = { query = "@block.outer", desc = "Next block" },
         ["<Leader>sc"] = { query = "@class.outer", desc = "Next class" },
         ["<Leader>sf"] = { query = "@function.outer", desc = "Next function" },
         ["<Leader>si"] = { query = "@conditional.outer", desc = "Next conditional" },
         ["<Leader>sp"] = { query = "@parameter.inner", desc = "Next parameter" },
+        ["<Leader>ss"] = { query = "@statement.outer", desc = "Next statement" },
       },
       swap_previous = {
+        ["<Leader>sB"] = { query = "@block.outer", desc = "Previous block" },
         ["<Leader>sC"] = { query = "@class.outer", desc = "Previous class" },
         ["<Leader>sF"] = { query = "@function.outer", desc = "Previous function" },
         ["<Leader>sI"] = { query = "@conditional.outer", desc = "Previous conditional" },
         ["<Leader>sP"] = { query = "@parameter.inner", desc = "Previous parameter" },
+        ["<Leader>sS"] = { query = "@statement.outer", desc = "Previous statement" },
       },
     },
 
