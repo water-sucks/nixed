@@ -1,8 +1,5 @@
 local wk = require("which-key")
 
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-
 require("nvim-treesitter.configs").setup({
   -- This directory doesn't actually have any parsers in it;
   -- it's just to prevent the plugin from getting fussy because
@@ -28,29 +25,29 @@ require("nvim-treesitter.configs").setup({
       disable = { "latex" },
       lookahead = true,
       keymaps = {
-        ["ib"] = { query = "@block.inner", desc = "Inner block region" },
-        ["ab"] = { query = "@block.outer", desc = "Outer block region" },
+        ib = { query = "@block.inner", desc = "Inner block region" },
+        ab = { query = "@block.outer", desc = "Outer block region" },
 
-        ["ic"] = { query = "@class.inner", desc = "Inner class region" },
-        ["ac"] = { query = "@class.outer", desc = "Outer class region" },
+        ic = { query = "@class.inner", desc = "Inner class region" },
+        ac = { query = "@class.outer", desc = "Outer class region" },
 
         ["if"] = { query = "@function.inner", desc = "Inner function region" },
-        ["af"] = { query = "@function.outer", desc = "Outer function region" },
+        af = { query = "@function.outer", desc = "Outer function region" },
 
-        ["ii"] = { query = "@conditional.inner", desc = "Inner conditional region" },
-        ["ai"] = { query = "@conditional.outer", desc = "Outer conditional region" },
+        ii = { query = "@conditional.inner", desc = "Inner conditional region" },
+        ai = { query = "@conditional.outer", desc = "Outer conditional region" },
 
-        ["il"] = { query = "@loop.inner", desc = "Inner loop region" },
-        ["al"] = { query = "@loop.outer", desc = "Outer loop region" },
+        il = { query = "@loop.inner", desc = "Inner loop region" },
+        al = { query = "@loop.outer", desc = "Outer loop region" },
 
-        ["ip"] = { query = "@parameter.inner", desc = "Inner parameter region" },
-        ["ap"] = { query = "@parameter.outer", desc = "Outer parameter region" },
+        ip = { query = "@parameter.inner", desc = "Inner parameter region" },
+        ap = { query = "@parameter.outer", desc = "Outer parameter region" },
 
-        ["iz"] = { query = "@call.inner", desc = "Inner call region" },
-        ["az"] = { query = "@call.inner", desc = "Outer call region" },
+        az = { query = "@call.inner", desc = "Outer call region" },
+        iz = { query = "@call.inner", desc = "Inner call region" },
 
         c = { query = "@comment.outer", desc = "Comment" },
-        s = { query = "@statement.outer", desc = "Statement" },
+        L = { query = "@statement.outer", desc = "Statement" },
       },
     },
 

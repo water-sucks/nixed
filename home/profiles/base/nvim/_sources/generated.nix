@@ -701,6 +701,18 @@
     };
     date = "2023-01-16";
   };
+  "'plugin-nvim-ufo'" = {
+    pname = "'plugin-nvim-ufo'";
+    version = "e3528c9b7ca20e9e0d69d588037f484257f0d652";
+    src = fetchFromGitHub {
+      owner = "kevinhwang91";
+      repo = "nvim-ufo";
+      rev = "e3528c9b7ca20e9e0d69d588037f484257f0d652";
+      fetchSubmodules = false;
+      sha256 = "sha256-5WdqZJlEzcHsK34fS+stC2c+izyR92YbpLPgBmRH19w=";
+    };
+    date = "2023-01-13";
+  };
   "'plugin-nvim-unception'" = {
     pname = "'plugin-nvim-unception'";
     version = "fbf73e1ad089741b5ff146f902cc5ebcdf19b7b6";
@@ -784,6 +796,18 @@
       sha256 = "sha256-fW4ztvYpeXTC0DbkZS4usG/KENiMJG/sWVTD4e8k42g=";
     };
     date = "2022-10-29";
+  };
+  "'plugin-promise-async'" = {
+    pname = "'plugin-promise-async'";
+    version = "842dca33e6b1af7bedcefc72cffbc807d54dbfca";
+    src = fetchFromGitHub {
+      owner = "kevinhwang91";
+      repo = "promise-async";
+      rev = "842dca33e6b1af7bedcefc72cffbc807d54dbfca";
+      fetchSubmodules = false;
+      sha256 = "sha256-SHARnaeYPTVZEzhaOpbRhApelvx6zGCM5oCJCPk4Kd8=";
+    };
+    date = "2023-01-05";
   };
   "'plugin-rust-tools.nvim'" = {
     pname = "'plugin-rust-tools.nvim'";

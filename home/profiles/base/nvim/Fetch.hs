@@ -84,6 +84,8 @@ packageSet = do
     plugin ("gen740", "SmoothCursor.nvim")
     plugin ("rktjmp", "lush.nvim")
     plugin ("rktjmp", "highlight-current-n.nvim")
+    plugin ("kevinhwang91", "nvim-ufo")
+    plugin ("kevinhwang91", "promise-async")
 
     -- Special Neovim sauce
     plugin ("andweeb", "presence.nvim")

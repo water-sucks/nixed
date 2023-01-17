@@ -1159,6 +1159,26 @@
     },
     "version": "a0f89563ba36b3bacd62cf967b46beb4c2c29e52"
   },
+  "'plugin-nvim-ufo'": {
+    "cargoLocks": null,
+    "date": "2023-01-13",
+    "extract": null,
+    "name": "'plugin-nvim-ufo'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "kevinhwang91",
+      "repo": "nvim-ufo",
+      "rev": "e3528c9b7ca20e9e0d69d588037f484257f0d652",
+      "sha256": "sha256-5WdqZJlEzcHsK34fS+stC2c+izyR92YbpLPgBmRH19w=",
+      "type": "github"
+    },
+    "version": "e3528c9b7ca20e9e0d69d588037f484257f0d652"
+  },
   "'plugin-nvim-unception'": {
     "cargoLocks": null,
     "date": "2023-01-03",
@@ -1298,6 +1318,26 @@
       "type": "github"
     },
     "version": "685bc8e3890d2feb07ccf919522c97f7d33b94e4"
+  },
+  "'plugin-promise-async'": {
+    "cargoLocks": null,
+    "date": "2023-01-05",
+    "extract": null,
+    "name": "'plugin-promise-async'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "kevinhwang91",
+      "repo": "promise-async",
+      "rev": "842dca33e6b1af7bedcefc72cffbc807d54dbfca",
+      "sha256": "sha256-SHARnaeYPTVZEzhaOpbRhApelvx6zGCM5oCJCPk4Kd8=",
+      "type": "github"
+    },
+    "version": "842dca33e6b1af7bedcefc72cffbc807d54dbfca"
   },
   "'plugin-rust-tools.nvim'": {
     "cargoLocks": null,

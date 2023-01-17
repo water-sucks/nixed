@@ -296,6 +296,13 @@ return {
       require("config.highlight-current-n")
     end,
   }),
+  use("kevinhwang91/nvim-ufo", {
+    event = "CursorHold",
+    dependencies = { use("kevinhwang91/promise-async") },
+    config = function()
+      require("config.ufo")
+    end,
+  }),
 
   -- Special Neovim sauce
   use("andweeb/presence.nvim", {
