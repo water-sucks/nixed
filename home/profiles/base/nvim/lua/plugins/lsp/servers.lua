@@ -16,6 +16,7 @@ local servers = {
   "graphql",
   "ltex",
   "nil_ls",
+  "nickel_ls",
   "vala_ls",
   "zls",
 }

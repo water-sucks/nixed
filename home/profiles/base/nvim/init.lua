@@ -1,4 +1,4 @@
-local modules = { "options", "autocmds", "mappings", "commands" }
+local modules = { "options", "autocmds", "mappings", "commands", "filetypes" }
 
 for _, module in ipairs(modules) do
   local ok = pcall(require, "config." .. module)
