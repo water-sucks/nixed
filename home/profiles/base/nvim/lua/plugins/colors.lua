@@ -23,6 +23,8 @@ colorscheme_spec.config = function()
         NonText = { fg = c.black },
         DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },
 
+        ["@text.diff.add"] = { link = "DiffAdd" },
+        ["@text.diff.delete"] = { link = "DiffDelete" },
         ["@constructor.lua"] = { fg = c.syntax.variable },
         ["@field"] = { fg = c.syntax.variable },
 
