@@ -1,7 +1,7 @@
 local modules = { "options", "autocmds", "mappings", "commands" }
 
 for _, module in ipairs(modules) do
-  local ok = pcall(require, module)
+  local ok = pcall(require, "config." .. module)
   if not ok then
     print("Uh oh! The " .. module .. " module failed to load.")
   end
@@ -39,7 +39,6 @@ require("lazy").setup("plugins", {
         "matchit",
         "tar",
         "tarPlugin",
-        "tutor",
         "rrhelper",
         "spellfile_plugin",
         "vimball",
