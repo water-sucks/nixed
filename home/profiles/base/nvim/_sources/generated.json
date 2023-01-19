@@ -759,11 +759,11 @@
     },
     "version": "b1e8eb1da3fee95ef31515a73c9eff9bf251088d"
   },
-  "'plugin-mini.nvim'": {
+  "'plugin-mini.surround'": {
     "cargoLocks": null,
-    "date": "2023-01-16",
+    "date": "2023-01-05",
     "extract": null,
-    "name": "'plugin-mini.nvim'",
+    "name": "'plugin-mini.surround'",
     "passthru": null,
     "pinned": false,
     "src": {
@@ -772,12 +772,12 @@
       "leaveDotGit": false,
       "name": null,
       "owner": "echasnovski",
-      "repo": "mini.nvim",
-      "rev": "305debd01d486f94a9f6ecfec90321ea98dc5dd9",
-      "sha256": "sha256-bMcTW4+vBPkGv0whRavSSoBWqD1lhxDiiPIylIjau1Q=",
+      "repo": "mini.surround",
+      "rev": "aeeb1c4ce4d1c66211bdc74b131c11b8fcbae65e",
+      "sha256": "sha256-1Q1PlknNhkl9gpwTVMSqCQ9LlaRRge+1Yb/iBwbWlH8=",
       "type": "github"
     },
-    "version": "305debd01d486f94a9f6ecfec90321ea98dc5dd9"
+    "version": "aeeb1c4ce4d1c66211bdc74b131c11b8fcbae65e"
   },
   "'plugin-neodev.nvim'": {
     "cargoLocks": null,

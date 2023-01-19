@@ -461,17 +461,17 @@
     };
     date = "2023-01-03";
   };
-  "'plugin-mini.nvim'" = {
-    pname = "'plugin-mini.nvim'";
-    version = "305debd01d486f94a9f6ecfec90321ea98dc5dd9";
+  "'plugin-mini.surround'" = {
+    pname = "'plugin-mini.surround'";
+    version = "aeeb1c4ce4d1c66211bdc74b131c11b8fcbae65e";
     src = fetchFromGitHub {
       owner = "echasnovski";
-      repo = "mini.nvim";
-      rev = "305debd01d486f94a9f6ecfec90321ea98dc5dd9";
+      repo = "mini.surround";
+      rev = "aeeb1c4ce4d1c66211bdc74b131c11b8fcbae65e";
       fetchSubmodules = false;
-      sha256 = "sha256-bMcTW4+vBPkGv0whRavSSoBWqD1lhxDiiPIylIjau1Q=";
+      sha256 = "sha256-1Q1PlknNhkl9gpwTVMSqCQ9LlaRRge+1Yb/iBwbWlH8=";
     };
-    date = "2023-01-16";
+    date = "2023-01-05";
   };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
