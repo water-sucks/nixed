@@ -13,5 +13,8 @@ lib.mkMerge [
     home.packages = with pkgs; [
       filen-desktop
     ];
+
+    xdg.configFile."autostart/filen-desktop.desktop".source =
+      pkgs.filen-desktop + "/share/applications/filen-desktop.desktop";
   })
 ]

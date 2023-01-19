@@ -174,6 +174,8 @@ in {
 
       ${riverctl} float-filter-add app-id Rofi
 
+      ${riverctl} spawn "${pkgs.dex}/bin/dex -a -s $HOME/.config/autostart/"
+
       ${riverctl} default-layout rivertile
       ${rivertile} -view-padding 10 -outer-padding 10
     '';
