@@ -15,10 +15,10 @@
   };
   filen-desktop = {
     pname = "filen-desktop";
-    version = "2.0.11";
+    version = "2.0.14";
     src = fetchurl {
-      url = "https://cdn.filen.io/desktop/release/2.0.11/filen_x86_64.AppImage";
-      sha256 = "sha256-zdubw896w+9hBQPT3yuIHLFnvxIGNqF+qnIZaYAYZx0=";
+      url = "https://cdn.filen.io/desktop/release/2.0.14/filen_x86_64.AppImage";
+      sha256 = "sha256-UA39m5jYQqCo47et/woStjBGq3hQ8fVav2qZKI391S4=";
     };
   };
   get-appname = {
