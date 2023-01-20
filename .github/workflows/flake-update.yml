@@ -110,7 +110,9 @@ jobs:
       - name: Generate patch
         run: |
           git restore flake.lock
-          git diff -p > nvfetcher-updates.patch
+          git add .
+          git stash --include-untracked
+          git stash show -p stash@\{0\} > nvfetcher-updates.patch
       - name: Store nvfetcher patch
         uses: actions/upload-artifact@v3
         with:
