@@ -59,16 +59,16 @@
   };
   rescrobbled = {
     pname = "rescrobbled";
-    version = "v0.6.2";
+    version = "v0.7.0";
     src = fetchFromGitHub {
       owner = "InputUsername";
       repo = "rescrobbled";
-      rev = "v0.6.2";
+      rev = "v0.7.0";
       fetchSubmodules = false;
-      sha256 = "sha256-g6YGqphXB3dI3gnxw7MtTs1c5mIf6CFdfg2KjEVJhDU=";
+      sha256 = "sha256-+/EuzkO+ZrnUzmX49N7xEYzQN2hRQEtsN7Ttb8yV4UQ=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./rescrobbled-v0.6.2/Cargo.lock;
+      lockFile = ./rescrobbled-v0.7.0/Cargo.lock;
       outputHashes = {
       };
     };

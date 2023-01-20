@@ -355,27 +355,27 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "4739c2d95af17acb786ed33445f59b7b13671417";
+    version = "75dcd5741d76e09b1a41c771fbc8b010a109b5cb";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "4739c2d95af17acb786ed33445f59b7b13671417";
+      rev = "75dcd5741d76e09b1a41c771fbc8b010a109b5cb";
       fetchSubmodules = false;
-      sha256 = "sha256-8rtWy6Ws5nEjB1mD4P65IaYlIjFGqq98zp4t2E3fb1c=";
+      sha256 = "sha256-z6Pb+NPa+tfkgEczM4C6rwcTSaNiaqn32aOD/i1vEVw=";
     };
     date = "2023-01-19";
   };
   "'plugin-leap.nvim'" = {
     pname = "'plugin-leap.nvim'";
-    version = "a968ab4250840dc879e805f918b4f3b892310a12";
+    version = "ff4c3663e5a0a0ecbb3fffbc8318825def35d2aa";
     src = fetchFromGitHub {
       owner = "ggandor";
       repo = "leap.nvim";
-      rev = "a968ab4250840dc879e805f918b4f3b892310a12";
+      rev = "ff4c3663e5a0a0ecbb3fffbc8318825def35d2aa";
       fetchSubmodules = false;
-      sha256 = "sha256-TcNjuFFRiBLT6oxOPqSl06oUS2NOCnBlldf65b2GOfo=";
+      sha256 = "sha256-3wRX/U4noqyliamwbdjHcuGdI7ZOsqJbXbvizMYKtd8=";
     };
-    date = "2023-01-03";
+    date = "2023-01-19";
   };
   "'plugin-lsp-format.nvim'" = {
     pname = "'plugin-lsp-format.nvim'";
@@ -475,15 +475,15 @@
   };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
-    version = "15e9e7c1daa22ce83757cf1c304a038f0549cf47";
+    version = "e905fb76f78fa19500ca3b9fac256b057aad535a";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neodev.nvim";
-      rev = "15e9e7c1daa22ce83757cf1c304a038f0549cf47";
+      rev = "e905fb76f78fa19500ca3b9fac256b057aad535a";
       fetchSubmodules = false;
-      sha256 = "sha256-Y0SfLln7WqIF8riru67NH2Q8L4QLLZJDFTfuZ/O685w=";
+      sha256 = "sha256-3IwUMHRotIjtbqYxEoNnbnGl87V0+8h6F9cXeHENFu4=";
     };
-    date = "2023-01-18";
+    date = "2023-01-20";
   };
   "'plugin-neorg'" = {
     pname = "'plugin-neorg'";
@@ -511,15 +511,15 @@
   };
   "'plugin-null-ls.nvim'" = {
     pname = "'plugin-null-ls.nvim'";
-    version = "7bd74a821d991057ca1c0ca569d8252c4f89f860";
+    version = "ef3d4a438f96865e3ae018e33ed30156a955ed00";
     src = fetchFromGitHub {
       owner = "jose-elias-alvarez";
       repo = "null-ls.nvim";
-      rev = "7bd74a821d991057ca1c0ca569d8252c4f89f860";
+      rev = "ef3d4a438f96865e3ae018e33ed30156a955ed00";
       fetchSubmodules = false;
-      sha256 = "sha256-Ik8gIHLC/vqmNbIfL/SjDJSQ5A9/+fCZypoaxZ7GPzs=";
+      sha256 = "sha256-4+AZQVDcn/k7qTjBIAsNAsBkLW5OVIwFDCN+qxvhBCs=";
     };
-    date = "2023-01-17";
+    date = "2023-01-19";
   };
   "'plugin-nvim-autopairs'" = {
     pname = "'plugin-nvim-autopairs'";
