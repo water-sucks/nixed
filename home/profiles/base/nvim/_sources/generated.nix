@@ -197,6 +197,18 @@
     };
     date = "2022-10-28";
   };
+  "'plugin-colorful-winsep.nvim'" = {
+    pname = "'plugin-colorful-winsep.nvim'";
+    version = "956d65c9a31ce81b7873bef1682c72eb00d9affb";
+    src = fetchFromGitHub {
+      owner = "nvim-zh";
+      repo = "colorful-winsep.nvim";
+      rev = "956d65c9a31ce81b7873bef1682c72eb00d9affb";
+      fetchSubmodules = false;
+      sha256 = "sha256-4HfqR7z2NOc2HwayIYUBs2MIf+LvWYJGAc18xvLWAPo=";
+    };
+    date = "2023-01-14";
+  };
   "'plugin-dial.nvim'" = {
     pname = "'plugin-dial.nvim'";
     version = "dbcfd4510d31884d444ec33a4453d0f06ad4a5eb";

@@ -64,6 +64,17 @@ colorscheme_spec.config = function()
   })
 end
 
+local colorfulwinsep_spec = use("nvim-zh/colorful-winsep.nvim", {
+  event = "BufEnter",
+  config = function()
+    require("colorful-winsep").setup({
+      highlight = {
+        fg = "#732735",
+      },
+    })
+  end,
+})
+
 local colorizer_spec = use("norcalli/nvim-colorizer.lua", {
   event = "CursorHold",
   config = function()
@@ -108,6 +119,7 @@ local lush_spec = use("rktjmp/lush.nvim", {
 
 return {
   colorscheme_spec,
+  colorfulwinsep_spec,
   colorizer_spec,
   highlight_current_n_spec,
   lush_spec,

@@ -80,6 +80,7 @@ packageSet = do
     plugin ("folke", "twilight.nvim")
     plugin ("lukas-reineke", "indent-blankline.nvim")
     plugin ("kosayoda", "nvim-lightbulb")
+    plugin ("nvim-zh", "colorful-winsep.nvim")
     plugin ("norcalli", "nvim-colorizer.lua")
     plugin ("gen740", "SmoothCursor.nvim")
     plugin ("rktjmp", "lush.nvim")
