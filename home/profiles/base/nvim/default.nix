@@ -14,8 +14,7 @@
     mapAttrs (n: v:
       buildGrammar {
         language = removePrefix "tree-sitter-" n;
-        inherit (v) version;
-        source = v.src;
+        inherit (v) version src;
       }) (filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources);
 
   # Attrset of grammars built using nvim-treesitter's lockfile
