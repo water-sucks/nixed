@@ -1,25 +1,5 @@
 local use = require("utils").use
 
-local cursor_spec = use("gen740/SmoothCursor.nvim", {
-  event = "CursorHold",
-  config = function()
-    require("smoothcursor").setup({
-      autostart = true,
-      cursor = "",
-      texthl = "SmoothCursor",
-      type = "default",
-      fancy = {
-        enable = false,
-      },
-      disabled_filetypes = {
-        "FTerm",
-        "terminal",
-        "",
-      },
-    })
-  end,
-})
-
 local devicons_spec = use("kyazdani42/nvim-web-devicons", {
   event = "BufEnter",
   config = function()
@@ -74,7 +54,6 @@ local lightbulb_spec = use("kosayoda/nvim-lightbulb", {
 })
 
 return {
-  cursor_spec,
   devicons_spec,
   circles_spec,
   indent_blankline_spec,

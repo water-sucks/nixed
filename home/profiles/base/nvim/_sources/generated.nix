@@ -41,18 +41,6 @@
     };
     date = "2023-01-27";
   };
-  "'plugin-SmoothCursor.nvim'" = {
-    pname = "'plugin-SmoothCursor.nvim'";
-    version = "79f02173317a76ab406d182ac89b20b59f5e34fe";
-    src = fetchFromGitHub {
-      owner = "gen740";
-      repo = "SmoothCursor.nvim";
-      rev = "79f02173317a76ab406d182ac89b20b59f5e34fe";
-      fetchSubmodules = false;
-      sha256 = "sha256-5WQUqgG23tXBJKYYID+WFoXT9vhOjE8tlyyZqkAbTLk=";
-    };
-    date = "2023-01-24";
-  };
   "'plugin-auto-save.nvim'" = {
     pname = "'plugin-auto-save.nvim'";
     version = "979b6c82f60cfa80f4cf437d77446d0ded0addf0";
