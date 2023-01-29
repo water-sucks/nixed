@@ -547,15 +547,15 @@
   };
   "'plugin-nvim-colorizer.lua'" = {
     pname = "'plugin-nvim-colorizer.lua'";
-    version = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6";
+    version = "760e27df4dd966607e8fb7fd8b6b93e3c7d2e193";
     src = fetchFromGitHub {
-      owner = "norcalli";
+      owner = "NvChad";
       repo = "nvim-colorizer.lua";
-      rev = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6";
+      rev = "760e27df4dd966607e8fb7fd8b6b93e3c7d2e193";
       fetchSubmodules = false;
-      sha256 = "sha256-6YrnItxExL2C8pNIdLd+hXCjsB2MbZANwWkah6dreD8=";
+      sha256 = "sha256-toNEfgZn2RNwyjI5FOyRU9Bdu6jFDZbSb1SjiY9sHH8=";
     };
-    date = "2020-06-11";
+    date = "2022-10-29";
   };
   "'plugin-nvim-dap'" = {
     pname = "'plugin-nvim-dap'";
