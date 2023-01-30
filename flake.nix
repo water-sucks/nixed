@@ -60,8 +60,8 @@
       }: let
         overlays = with inputs;
           [
-            agenix.overlay
-            discord.overlay
+            agenix.overlays.default
+            discord.overlays.default
             leftwm.overlay
             self.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
