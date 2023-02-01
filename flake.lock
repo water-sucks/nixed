@@ -2,16 +2,17 @@
   "nodes": {
     "agenix": {
       "inputs": {
+        "darwin": "darwin",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1675030834,
-        "narHash": "sha256-e1/7Z7rVRqy2NuEOxrRm560wc/Kn8NU7gz8CDfmu9F0=",
+        "lastModified": 1675176355,
+        "narHash": "sha256-Qjxh5cmN56siY97mzmBLI1+cdjXSPqmfPVsKxBvHmwI=",
         "owner": "ryantm",
         "repo": "agenix",
-        "rev": "49798e535ebc07fec82256b283d35be36d8c6c9a",
+        "rev": "b7ffcfe77f817d9ee992640ba1f270718d197f28",
         "type": "github"
       },
       "original": {
@@ -21,6 +22,28 @@
       }
     },
     "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "agenix",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1673295039,
+        "narHash": "sha256-AsdYgE8/GPwcelGgrntlijMg4t3hLFJFCRF3tL5WVjA=",
+        "owner": "lnl7",
+        "repo": "nix-darwin",
+        "rev": "87b9d090ad39b25b2400029c64825fc2a8868943",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lnl7",
+        "ref": "master",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "darwin_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -175,11 +198,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1674928308,
-        "narHash": "sha256-elVU4NUZEl11BdT4gC+lrpLYM8Ccxqxs19Ix84HTI9o=",
+        "lastModified": 1675247113,
+        "narHash": "sha256-+YcXjfCP4hNu8A68b/UoXFCTDwKLuLV+x/7dQnM5U/o=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "08a778d80308353f4f65c9dcd3790b5da02d6306",
+        "rev": "782cb855b2f23c485011a196c593e2d7e4fce746",
         "type": "github"
       },
       "original": {
@@ -285,11 +308,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1675164305,
-        "narHash": "sha256-BbEErgLaFB8poZseSG2Otps7mR0aalaY05E23FGmEog=",
+        "lastModified": 1675237434,
+        "narHash": "sha256-YoFR0vyEa1HXufLNIFgOGhIFMRnY6aZ0IepZF5cYemo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1c02dbee4726f9cde21cd103cc1e56dd2b20d72e",
+        "rev": "285b3ff0660640575186a4086e1f8dc0df2874b5",
         "type": "github"
       },
       "original": {
@@ -326,11 +349,11 @@
         "nixpkgs-stable": "nixpkgs-stable_2"
       },
       "locked": {
-        "lastModified": 1674761200,
-        "narHash": "sha256-v0ypL0eDhFWmgd3f5nnbffaMA5BUoOnYUiEso7fk+q0=",
+        "lastModified": 1675169698,
+        "narHash": "sha256-C1wFiyJ+4SRvIsFkdMIN1Fa+58APmyTGKWpX9EKOehM=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "8539119ba0b17b15e60de60da0348d8c73bbfdf2",
+        "rev": "ce4efeec34c6eb35ba07b8fceaae87d6b46c1c5f",
         "type": "github"
       },
       "original": {
@@ -342,7 +365,7 @@
     "root": {
       "inputs": {
         "agenix": "agenix",
-        "darwin": "darwin",
+        "darwin": "darwin_2",
         "discord": "discord",
         "flake-parts": "flake-parts",
         "home": "home",
