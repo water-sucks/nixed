@@ -141,16 +141,16 @@ neorg_spec.config = function()
                 icon = " ",
               },
               level_3 = {
-                icon = " ",
+                icon = "  ",
               },
               level_4 = {
-                icon = " ",
+                icon = "   ",
               },
               level_5 = {
-                icon = " ",
+                icon = "    ",
               },
               level_6 = {
-                icon = " ",
+                icon = "     ",
               },
             },
             marker = {
