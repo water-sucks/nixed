@@ -75,7 +75,7 @@ local colorfulwinsep_spec = use("nvim-zh/colorful-winsep.nvim", {
   end,
 })
 
-local colorizer_spec = use("norcalli/nvim-colorizer.lua", {
+local colorizer_spec = use("NvChad/nvim-colorizer.lua", {
   event = "CursorHold",
   config = function()
     require("colorizer").setup()
