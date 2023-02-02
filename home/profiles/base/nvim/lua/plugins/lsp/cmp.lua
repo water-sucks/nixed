@@ -13,7 +13,10 @@ cmp.setup({
     if vim.api.nvim_get_mode().mode == "c" then
       return true
     end
-    if vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer() then
+    if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
+      return false
+    end
+    if require("cmp_dap").is_dap_buffer() then
       return true
     end
     return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
