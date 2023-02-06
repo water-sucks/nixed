@@ -18,7 +18,5 @@ _final: prev: {
     '';
 
     passthru.providedSessions = ["river"];
-
-    inherit (prev.sources.river) pname version src;
   });
 }
