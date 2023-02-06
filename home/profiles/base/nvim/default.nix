@@ -86,7 +86,7 @@ in {
       nodePackages.graphql-language-service-cli
       nodePackages.vscode-langservers-extracted
       sumneko-lua-language-server
-      nil
+      stable.nil
 
       # null-ls sources
       alejandra
