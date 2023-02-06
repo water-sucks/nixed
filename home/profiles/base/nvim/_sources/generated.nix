@@ -65,18 +65,6 @@
     };
     date = "2022-12-24";
   };
-  "'plugin-carbon.nvim'" = {
-    pname = "'plugin-carbon.nvim'";
-    version = "ed16e9872a3ae7e0827d895798503b92a7ab1bfa";
-    src = fetchFromGitHub {
-      owner = "SidOfc";
-      repo = "carbon.nvim";
-      rev = "ed16e9872a3ae7e0827d895798503b92a7ab1bfa";
-      fetchSubmodules = false;
-      sha256 = "sha256-kSgv7otwLOVp3VmtFdEMEUcsmI6/wY1QSfSzh6WtJ/w=";
-    };
-    date = "2023-01-14";
-  };
   "'plugin-cmp-buffer'" = {
     pname = "'plugin-cmp-buffer'";
     version = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
@@ -657,7 +645,7 @@
     pname = "'plugin-nvim-tree.lua'";
     version = "02fdc262eba188198a7deb2117b3b996e6763d65";
     src = fetchFromGitHub {
-      owner = "kyazdani42";
+      owner = "nvim-tree";
       repo = "nvim-tree.lua";
       rev = "02fdc262eba188198a7deb2117b3b996e6763d65";
       fetchSubmodules = false;

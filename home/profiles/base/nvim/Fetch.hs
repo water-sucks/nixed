@@ -41,9 +41,8 @@ packageSet = do
 
     -- Specialized windows
     plugin ("stevearc", "dressing.nvim")
-    plugin ("kyazdani42", "nvim-tree.lua")
+    plugin ("nvim-tree", "nvim-tree.lua")
     plugin ("nvim-telescope", "telescope.nvim")
-    plugin ("SidOfc", "carbon.nvim")
     plugin ("folke", "trouble.nvim")
     plugin ("numToStr", "FTerm.nvim")
 

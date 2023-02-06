@@ -99,26 +99,6 @@
     },
     "version": "c7492a76ce8218e3335f027af44930576b561013"
   },
-  "'plugin-carbon.nvim'": {
-    "cargoLocks": null,
-    "date": "2023-01-14",
-    "extract": null,
-    "name": "'plugin-carbon.nvim'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "SidOfc",
-      "repo": "carbon.nvim",
-      "rev": "ed16e9872a3ae7e0827d895798503b92a7ab1bfa",
-      "sha256": "sha256-kSgv7otwLOVp3VmtFdEMEUcsmI6/wY1QSfSzh6WtJ/w=",
-      "type": "github"
-    },
-    "version": "ed16e9872a3ae7e0827d895798503b92a7ab1bfa"
-  },
   "'plugin-cmp-buffer'": {
     "cargoLocks": null,
     "date": "2022-08-10",
@@ -1091,7 +1071,7 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "owner": "kyazdani42",
+      "owner": "nvim-tree",
       "repo": "nvim-tree.lua",
       "rev": "02fdc262eba188198a7deb2117b3b996e6763d65",
       "sha256": "sha256-d9c4T++6LnaqUsJAMmJGSLQYz+frjl7QhBJONJOvb2E=",

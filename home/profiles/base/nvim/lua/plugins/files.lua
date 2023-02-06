@@ -1,22 +1,42 @@
 local use = require("utils").use
 
-local carbon_spec = use("SidOfc/carbon.nvim", {
+local nvim_tree_spec = use("nvim-tree/nvim-tree.lua", {
   event = "CursorHold",
-  config = function()
-    require("carbon").setup({})
-
-    require("which-key").register({
-      l = {
-        name = "List files",
-        c = { "<cmd>Carbon<CR>", "Show files in this buffer" },
-        f = { "<cmd>Fcarbon<CR>", "Show files on left" },
-        l = { "<cmd>Lcarbon<CR>", "Show files in floating window" },
-      },
-    }, {
-      prefix = "<Leader>",
-    })
-  end,
 })
+nvim_tree_spec.config = function()
+  local api = require("nvim-tree.api")
+  local event = api.events.Event
+
+  require("nvim-tree").setup({
+    renderer = {
+      icons = {
+        git_placement = "after",
+        glyphs = {
+          git = {
+            deleted = "",
+            ignored = "",
+            staged = "",
+            unmerged = "󰽜",
+            unstaged = "",
+            untracked = "",
+          },
+        },
+      },
+    },
+    sort_by = "case_sensitive",
+  })
+
+  -- Clear fill characters in NvimTree buffer
+  api.events.subscribe(event.TreeOpen, function()
+    vim.opt_local.fillchars = "eob: "
+  end)
+
+  require("which-key").register({
+    l = { "<cmd>NvimTreeToggle<CR>", "Show files" },
+  }, {
+    prefix = "<Leader>",
+  })
+end
 
 local eunuch_spec = use("tpope/vim-eunuch", {
   event = "CmdlineEnter",
@@ -39,7 +59,7 @@ local zoxide_spec = use("nanotee/zoxide.vim", {
 })
 
 return {
-  carbon_spec,
+  nvim_tree_spec,
   eunuch_spec,
   project_spec,
   zoxide_spec,
