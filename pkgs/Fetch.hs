@@ -12,11 +12,6 @@ main = runNvFetcher packageSet
 packageSet :: PackageSet ()
 packageSet = do
     define $
-        package "river"
-            `sourceManual` "v0.2.1"
-            `fetchGitHub'` ("riverwm", "river", fetchSubmodules .~ True)
-
-    define $
         package "waybar-mpris"
             `sourceGit` "https://github.com/b10n/waybar-mpris"
             `fetchGitHub` ("b10n", "waybar-mpris")
