@@ -119,26 +119,6 @@
     },
     "version": "ed16e9872a3ae7e0827d895798503b92a7ab1bfa"
   },
-  "'plugin-circles.nvim'": {
-    "cargoLocks": null,
-    "date": "2023-02-01",
-    "extract": null,
-    "name": "'plugin-circles.nvim'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "projekt0n",
-      "repo": "circles.nvim",
-      "rev": "06357817f6944de132f0a58ee5c1486e4dcc6dda",
-      "sha256": "sha256-AdtCB98YyeU1Seqw3HAOkxmS2/8W+vRa0bJuAWr6a+c=",
-      "type": "github"
-    },
-    "version": "06357817f6944de132f0a58ee5c1486e4dcc6dda"
-  },
   "'plugin-cmp-buffer'": {
     "cargoLocks": null,
     "date": "2022-08-10",
@@ -1211,7 +1191,7 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "owner": "kyazdani42",
+      "owner": "nvim-tree",
       "repo": "nvim-web-devicons",
       "rev": "2b96193abe4372e18e4f4533895a42a466d53c17",
       "sha256": "sha256-bbce2CpzCY8/Y6egWJWthZ9t1IkODCt+467S728vcKM=",

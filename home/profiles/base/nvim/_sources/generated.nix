@@ -77,18 +77,6 @@
     };
     date = "2023-01-14";
   };
-  "'plugin-circles.nvim'" = {
-    pname = "'plugin-circles.nvim'";
-    version = "06357817f6944de132f0a58ee5c1486e4dcc6dda";
-    src = fetchFromGitHub {
-      owner = "projekt0n";
-      repo = "circles.nvim";
-      rev = "06357817f6944de132f0a58ee5c1486e4dcc6dda";
-      fetchSubmodules = false;
-      sha256 = "sha256-AdtCB98YyeU1Seqw3HAOkxmS2/8W+vRa0bJuAWr6a+c=";
-    };
-    date = "2023-02-01";
-  };
   "'plugin-cmp-buffer'" = {
     pname = "'plugin-cmp-buffer'";
     version = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
@@ -729,7 +717,7 @@
     pname = "'plugin-nvim-web-devicons'";
     version = "2b96193abe4372e18e4f4533895a42a466d53c17";
     src = fetchFromGitHub {
-      owner = "kyazdani42";
+      owner = "nvim-tree";
       repo = "nvim-web-devicons";
       rev = "2b96193abe4372e18e4f4533895a42a466d53c17";
       fetchSubmodules = false;

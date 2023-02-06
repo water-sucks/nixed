@@ -1,17 +1,11 @@
 local use = require("utils").use
 
-local devicons_spec = use("kyazdani42/nvim-web-devicons", {
-  event = "BufEnter",
+local devicons_spec = use("nvim-tree/nvim-web-devicons", {
+  -- event = "BufEnter",
   config = function()
-    require("nvim-web-devicons").setup({})
-  end,
-})
-
-local circles_spec = use("projekt0n/circles.nvim", {
-  event = "BufEnter",
-  dependencies = { devicons_spec },
-  config = function()
-    require("circles").setup({})
+    require("nvim-web-devicons").setup({
+      -- color_icons = false,
+    })
   end,
 })
 
@@ -65,7 +59,6 @@ local lightbulb_spec = use("kosayoda/nvim-lightbulb", {
 
 return {
   devicons_spec,
-  circles_spec,
   indent_blankline_spec,
   lightbulb_spec,
 }
