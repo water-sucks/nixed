@@ -63,26 +63,6 @@
         "type": "github"
       }
     },
-    "discord": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1675725550,
-        "narHash": "sha256-UToG9Phwj3I/D5DjXQc6jPesG5oeusfA7ptBYduhnZ4=",
-        "owner": "InternetUnexplorer",
-        "repo": "discord-overlay",
-        "rev": "3aa87aa67e830a5874f95d35b14252ef2bb3759b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "InternetUnexplorer",
-        "repo": "discord-overlay",
-        "type": "github"
-      }
-    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -382,7 +362,6 @@
       "inputs": {
         "agenix": "agenix",
         "darwin": "darwin_2",
-        "discord": "discord",
         "flake-parts": "flake-parts",
         "home": "home",
         "leftwm": "leftwm",

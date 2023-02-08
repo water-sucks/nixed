@@ -22,9 +22,6 @@
 
     treefmt.url = "github:numtide/treefmt-nix";
 
-    discord.url = "github:InternetUnexplorer/discord-overlay";
-    discord.inputs.nixpkgs.follows = "nixpkgs";
-
     leftwm.url = "github:leftwm/leftwm/0.4.0";
     leftwm.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -61,7 +58,6 @@
         overlays = with inputs;
           [
             agenix.overlays.default
-            discord.overlays.default
             leftwm.overlay
             self.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
