@@ -28,6 +28,7 @@
 
   environment.variables = {
     GTK_THEME = "Orchis:dark";
+    NIXOS_OZONE_WL = "1";
   };
 
   security.rtkit.enable = true; # To stop xdg-desktop-portal from complaining about it
