@@ -1,10 +1,7 @@
 local null_ls = require("null-ls")
-local lsp_format = require("lsp-format")
 
 null_ls.setup({
-  on_attach = function(client)
-    lsp_format.on_attach(client)
-  end,
+  on_attach = require("plugins.lsp.on_attach"),
   sources = {
     null_ls.builtins.formatting.asmfmt,
     null_ls.builtins.formatting.black,
@@ -29,7 +26,7 @@ null_ls.setup({
     null_ls.builtins.formatting.latexindent.with({
       args = { "-l", "-" },
     }),
-    null_ls.builtins.formatting.mix,
+    -- null_ls.builtins.formatting.mix,
     null_ls.builtins.formatting.prettier,
     -- I prefer using alejandra for my own code, but also
     -- use nixpkgs-fmt in some codebases and in nixpkgs,
@@ -41,7 +38,6 @@ null_ls.setup({
         return null_ls.builtins.formatting.alejandra
       end
     end)(),
-    null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,

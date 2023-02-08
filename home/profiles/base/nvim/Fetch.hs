@@ -21,7 +21,6 @@ packageSet = do
 
     -- Editor tooling
     plugin ("neovim", "nvim-lspconfig")
-    plugin ("lukas-reineke", "lsp-format.nvim")
     plugin ("jose-elias-alvarez", "null-ls.nvim")
     plugin ("ray-x", "lsp_signature.nvim")
     plugin ("nanotee", "zoxide.vim")

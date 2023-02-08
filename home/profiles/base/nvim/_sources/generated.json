@@ -579,26 +579,6 @@
     },
     "version": "f565a9c4d92245d8b619235bebeaa73cc38aa40e"
   },
-  "'plugin-lsp-format.nvim'": {
-    "cargoLocks": null,
-    "date": "2022-11-25",
-    "extract": null,
-    "name": "'plugin-lsp-format.nvim'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "lukas-reineke",
-      "repo": "lsp-format.nvim",
-      "rev": "ca0df5c8544e51517209ea7b86ecc522c98d4f0a",
-      "sha256": "sha256-UeeM+rHDjsZS27L2Orh+doB6eo6YNV8gb0yLs0PjkLA=",
-      "type": "github"
-    },
-    "version": "ca0df5c8544e51517209ea7b86ecc522c98d4f0a"
-  },
   "'plugin-lsp_signature.nvim'": {
     "cargoLocks": null,
     "date": "2023-02-03",

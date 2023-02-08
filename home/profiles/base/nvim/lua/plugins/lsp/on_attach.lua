@@ -1,25 +1,45 @@
-local lsp_format = require("lsp-format")
 local wk = require("which-key")
 
 local disable_format_cap = {
+  "pyright",
   "dartls",
   "sumneko_lua",
-  "rust_analyzer",
   "rnix",
   "gopls",
-  "elixirls",
   "zls",
 }
 
-local on_attach = function(client, bufnr)
-  for _, v in pairs(disable_format_cap) do
-    if v == client.name then
-      client.server_capabilities.document_formatting = false
-      break
-    end
-  end
+local lsp_formatting = function(bufnr)
+  vim.lsp.buf.format({
+    filter = function(client)
+      if client.name ~= "null-ls" then
+        for _, name in ipairs(disable_format_cap) do
+          if name == client.name then
+            return false
+          end
+        end
+      end
 
-  lsp_format.on_attach(client)
+      return true
+    end,
+    bufnr = bufnr,
+    async = true,
+  })
+end
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+local on_attach = function(client, bufnr)
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        lsp_formatting(bufnr)
+      end,
+    })
+  end
 
   local keymaps = {
     g = {

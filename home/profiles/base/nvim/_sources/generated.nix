@@ -353,18 +353,6 @@
     };
     date = "2023-02-04";
   };
-  "'plugin-lsp-format.nvim'" = {
-    pname = "'plugin-lsp-format.nvim'";
-    version = "ca0df5c8544e51517209ea7b86ecc522c98d4f0a";
-    src = fetchFromGitHub {
-      owner = "lukas-reineke";
-      repo = "lsp-format.nvim";
-      rev = "ca0df5c8544e51517209ea7b86ecc522c98d4f0a";
-      fetchSubmodules = false;
-      sha256 = "sha256-UeeM+rHDjsZS27L2Orh+doB6eo6YNV8gb0yLs0PjkLA=";
-    };
-    date = "2022-11-25";
-  };
   "'plugin-lsp_signature.nvim'" = {
     pname = "'plugin-lsp_signature.nvim'";
     version = "6f6252f63b0baf0f2224c4caea33819a27f3f550";
