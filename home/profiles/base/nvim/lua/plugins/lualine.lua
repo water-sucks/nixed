@@ -1,4 +1,5 @@
 local use = require("utils").use
+local c = require("darkrose.colors").get()
 
 local lualine_spec = use("nvim-lualine/lualine.nvim", {
   event = "BufEnter",
@@ -9,12 +10,12 @@ lualine_spec.config = function()
 
   local colors = {
     bg = "#121212",
-    fg = "#bbc2cf",
-    blue = "#008080",
-    green = "#1E6327",
-    orange = "#FF8800",
-    violet = "#cc61a1",
-    red = "#6D0011",
+    fg = c.fg,
+    blue = c.blue,
+    green = c.green,
+    orange = c.dark_orange,
+    magenta = c.magenta,
+    red = c.dark_red,
   }
 
   local conditions = {
@@ -95,14 +96,14 @@ lualine_spec.config = function()
         v = colors.blue,
         [""] = colors.blue,
         V = colors.blue,
-        c = colors.violet,
+        c = colors.magenta,
         no = colors.red,
         s = colors.orange,
         S = colors.orange,
         [""] = colors.orange,
         ic = colors.orange,
-        R = colors.violet,
-        Rv = colors.violet,
+        R = colors.magenta,
+        Rv = colors.magenta,
         cv = colors.red,
         ce = colors.red,
         r = colors.green,
@@ -119,7 +120,7 @@ lualine_spec.config = function()
   left({
     "filename",
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.violet, gui = "bold" },
+    color = { fg = colors.magenta, gui = "bold" },
   })
 
   left({ "location" })

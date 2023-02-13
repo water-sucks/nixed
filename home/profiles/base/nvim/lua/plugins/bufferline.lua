@@ -8,6 +8,7 @@ local bufferline_spec = use("akinsho/bufferline.nvim", {
         numbers = "ordinal",
         offsets = { { filetype = "carbon.explorer", text = "File Explorer" } },
       },
+      highlights = require("darkrose.groups.plugins.bufferline")(),
     })
   end,
 })

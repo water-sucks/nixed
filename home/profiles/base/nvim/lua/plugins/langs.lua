@@ -123,8 +123,8 @@ vimtex_spec.config = function()
   vim.g.vimtex_view_reverse_search_edit_cmd = "nvr --remote-silent %f -c %l"
 
   -- Using Treesitter requires these settings
-  -- vim.g.vimtex_syntax_enabled = 0
-  -- vim.g.vimtex_syntax_conceal_disable = 1
+  vim.g.vimtex_syntax_enabled = 0
+  vim.g.vimtex_syntax_conceal_disable = 1
 
   vim.g.vimtex_compiler_silent = 1
   vim.g.vimtex_complete_bib = {

@@ -22,7 +22,6 @@ treesitter_spec.config = function()
 
     highlight = {
       enable = true,
-      disable = { "latex" },
     },
 
     indent = {

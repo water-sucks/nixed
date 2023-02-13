@@ -68,7 +68,7 @@ packageSet = do
     plugin ("nvim-treesitter", "playground")
     plugin ("windwp", "nvim-ts-autotag")
     plugin ("JoosepAlviste", "nvim-ts-context-commentstring")
-    plugin ("projekt0n", "github-nvim-theme")
+    plugin ("water-sucks", "darkrose.nvim")
     plugin ("nvim-lualine", "lualine.nvim")
     plugin ("akinsho", "bufferline.nvim")
     plugin ("tiagovla", "scope.nvim")

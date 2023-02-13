@@ -27,7 +27,7 @@ in
           macos_option_as_alt = "both";
 
           cursor = "#FF7979";
-          cursor_text_color = "#111111";
+          cursor_text_color = "#C9D1D9";
 
           active_tab_foreground = "#FFFAFA";
           active_tab_background = "#B1003C";
@@ -47,26 +47,35 @@ in
           selection_foreground = "#FFFAFA";
           selection_background = "#231624";
 
-          url_color = "#FF7979";
+          url_color = "#1A8A97";
 
-          color0 = "#181818";
-          color8 = "#333333";
-          color1 = "#960042";
-          color9 = "#870300";
-          color2 = "#FF0000";
-          color10 = "#690000";
-          color3 = "#FF5D05";
-          color11 = "#6F2700";
-          color4 = "#FF2044";
-          color5 = "#FFEDCF";
-          color12 = "#333333";
-          color13 = "#FFFFB5";
-          color6 = "#6F0027";
-          color14 = "#F50056";
-          color7 = "#FFDAF1";
-          color15 = "#FFE6DA";
+          background = "#000000";
+          foreground = "#D9D9D9";
 
-          background = "#050505";
+          # black
+          color0 = "#101010";
+          color8 = "#242424";
+          # red
+          color1 = "#6D0011";
+          color9 = "#AA4B42";
+          # green
+          color2 = "#F85149";
+          color10 = "#F6ACA7";
+          # yellow
+          color3 = "#A26B35";
+          color11 = "#F08838";
+          # blue
+          color4 = "#8B2950";
+          color12 = "#242424";
+          # magenta
+          color5 = "#8B2950";
+          color13 = "#CF578A";
+          # cyan (substituted with gray instead)
+          color6 = "#4D5566";
+          color14 = "#61697A";
+          # white
+          color7 = "#8B8B8B";
+          color15 = "#C5C5C5";
         };
       };
     }

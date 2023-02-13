@@ -173,6 +173,18 @@
     };
     date = "2023-01-14";
   };
+  "'plugin-darkrose.nvim'" = {
+    pname = "'plugin-darkrose.nvim'";
+    version = "79f9eb5e76232b58b58b2dc9c051c6ace5c24339";
+    src = fetchFromGitHub {
+      owner = "water-sucks";
+      repo = "darkrose.nvim";
+      rev = "79f9eb5e76232b58b58b2dc9c051c6ace5c24339";
+      fetchSubmodules = false;
+      sha256 = "sha256-RIaDc8Sr3M/9JHhB+LVEgW6Cuke5/HVN59LZuZwGo5w=";
+    };
+    date = "2023-02-13";
+  };
   "'plugin-dial.nvim'" = {
     pname = "'plugin-dial.nvim'";
     version = "5020da900cc5dfd7067f181ee2ebd872ca7c84e8";
@@ -256,18 +268,6 @@
       sha256 = "sha256-JrAwvaptayPy+pVZpJb6JKJe3NSltbZao5UuSB7KhOc=";
     };
     date = "2023-01-27";
-  };
-  "'plugin-github-nvim-theme'" = {
-    pname = "'plugin-github-nvim-theme'";
-    version = "a93fc4cd3c16b91cf29a1387015e6e925c416efb";
-    src = fetchFromGitHub {
-      owner = "projekt0n";
-      repo = "github-nvim-theme";
-      rev = "a93fc4cd3c16b91cf29a1387015e6e925c416efb";
-      fetchSubmodules = false;
-      sha256 = "sha256-9//7g2LMqOBqvcvaRRRXIfOvA+g5uljwb3qKvXA7r34=";
-    };
-    date = "2023-01-21";
   };
   "'plugin-gitsigns.nvim'" = {
     pname = "'plugin-gitsigns.nvim'";
