@@ -3,7 +3,7 @@ local wk = require("which-key")
 local disable_format_cap = {
   "pyright",
   "dartls",
-  "sumneko_lua",
+  "lua_ls",
   "rnix",
   "gopls",
   "zls",

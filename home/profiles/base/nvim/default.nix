@@ -82,10 +82,10 @@ in {
       gopls
       ltex-ls
       emmet-ls
+      lua-language-server
       nodePackages.bash-language-server
       nodePackages.graphql-language-service-cli
       nodePackages.vscode-langservers-extracted
-      sumneko-lua-language-server
       stable.nil
 
       # null-ls sources
