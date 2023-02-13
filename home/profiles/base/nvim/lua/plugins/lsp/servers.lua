@@ -8,7 +8,7 @@ local servers = {
   "ccls",
   "gopls",
   "bashls",
-  "sumneko_lua",
+  "lua_ls",
   "html",
   "cssls",
   "emmet_ls",
