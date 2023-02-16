@@ -68,7 +68,7 @@ local haskell_tools_spec = use("MrcJkb/haskell-tools.nvim", {
         on_attach = require("plugins.lsp.on_attach"),
         settings = {
           haskell = {
-            formattingProvider = "none", -- Somehow this doesn't technically work?
+            formattingProvider = "fourmolu",
             checkProject = true,
           },
         },

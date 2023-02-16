@@ -21,7 +21,6 @@ null_ls.setup({
         }
       end,
     }),
-    null_ls.builtins.formatting.fourmolu,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.latexindent.with({
       args = { "-l", "-" },
