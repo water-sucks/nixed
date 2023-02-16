@@ -16,15 +16,7 @@ local configurations = {
     type = "codelldb",
     request = "launch",
     program = function()
-      local input = ""
-      vim.ui.input({
-        prompt = "Path to executable: ",
-        default = vim.fn.getcwd() .. "/",
-        completion = "file",
-      }, function(uinput)
-        input = uinput
-      end)
-      return input
+      return vim.fn.input({ prompt = "Path to executable: ", default = vim.fn.getcwd() .. "/", completion = "file" })
     end,
     cwd = "${workspaceFolder}",
     terminal = "integrated",
@@ -33,3 +25,4 @@ local configurations = {
 
 dap.configurations.cpp = configurations
 dap.configurations.c = configurations
+dap.configurations.zig = configurations

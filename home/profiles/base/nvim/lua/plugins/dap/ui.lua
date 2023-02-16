@@ -51,12 +51,7 @@ wk.register({
     name = "Debug",
     E = {
       function()
-        local expression = ""
-        vim.ui.input({
-          prompt = "[Expression] > ",
-        }, function(input)
-          expression = input
-        end)
+        local expression = vim.fn.input({ prompt = "[Expression] > " })
         dapui.eval(expression)
       end,
       "Evaluate input",
