@@ -53,6 +53,9 @@ in {
       HunterRenfrow = HunterRenfrow {};
     };
 
-    nixosModules = importModules ./modules;
+    nixosModules = let
+      allModules = importModules ./modules;
+    in
+      builtins.removeAttrs allModules ["user-defaults"];
   };
 }

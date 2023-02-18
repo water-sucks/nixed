@@ -43,6 +43,20 @@ in {
             wayland.enable = true;
           };
         };
+
+        home.persistence."/persist/home/varun" = {
+          directories = [
+            ".nixed"
+            "Code"
+            "Documents"
+            "Downloads"
+            "Music"
+            "Pictures"
+            "Videos"
+            "VMs"
+          ];
+          allowOther = true;
+        };
       })
       (lib.mkIf isDarwin {
         profiles = {
