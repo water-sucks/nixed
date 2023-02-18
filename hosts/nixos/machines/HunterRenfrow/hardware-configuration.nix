@@ -30,14 +30,21 @@
     fsType = "zfs";
   };
 
-  fileSystems."/home" = {
-    device = "locker/home";
+  fileSystems."/persist" = {
+    device = "locker/persist";
     fsType = "zfs";
+    neededForBoot = true;
   };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/845A-9EA0";
     fsType = "vfat";
+  };
+
+  fileSystems."/home/varun" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = ["size=4G" "mode=777"];
   };
 
   swapDevices = [
