@@ -14,6 +14,12 @@ lib.mkMerge [
       filen-desktop
     ];
 
+    home.persistence."/persist/home/${config.home.username}" = {
+      directories = [
+        ".config/filen-desktop"
+      ];
+    };
+
     xdg.configFile."autostart/filen-desktop.desktop".source =
       pkgs.filen-desktop + "/share/applications/filen-desktop.desktop";
   })

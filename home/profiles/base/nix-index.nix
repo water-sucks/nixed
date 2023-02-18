@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -46,6 +47,12 @@ in
         };
 
         Install.WantedBy = ["timers.target"];
+      };
+
+      home.persistence."/persist/home/${config.home.username}" = {
+        directories = [
+          ".cache/nix-index"
+        ];
       };
     })
     (lib.mkIf isDarwin {

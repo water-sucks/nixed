@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -51,6 +52,12 @@ in
         "application/xhtml+xml" = ["firefox.desktop"];
         "application/x-extension-xhtml" = ["firefox.desktop"];
         "application/x-extension-xht" = ["firefox.desktop"];
+      };
+
+      home.persistence."/persist/home/${config.home.username}" = {
+        directories = [
+          ".mozilla"
+        ];
       };
     })
   ]
