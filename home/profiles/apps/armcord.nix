@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -7,6 +8,12 @@ lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
     armcord
   ];
+
+  home.persistence."/persist/home/${config.home.username}" = {
+    directories = [
+      ".config/ArmCord"
+    ];
+  };
 
   xdg.configFile = {
     "ArmCord/themes/DarkDiscord/DarkDiscord.css".text = ''

@@ -6,13 +6,12 @@
 }:
 lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
-    protonvpn-gui
-    protonvpn-cli
+    bitwarden
   ];
 
   home.persistence."/persist/home/${config.home.username}" = {
     directories = [
-      ".config/protonvpn"
+      ".config/Bitwarden"
     ];
   };
 }

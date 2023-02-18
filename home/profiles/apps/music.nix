@@ -11,6 +11,13 @@ lib.mkIf pkgs.stdenv.isLinux {
     rescrobbled
   ];
 
+  home.persistence."/persist/home/${config.home.username}" = {
+    directories = [
+      ".config/tidal-hifi"
+      ".config/pulse"
+    ];
+  };
+
   xdg.mimeApps.defaultApplications = {
     "x-scheme-handler/tidal" = ["tidal-hifi.desktop"];
   };
