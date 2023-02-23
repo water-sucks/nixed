@@ -23,15 +23,15 @@
   };
   get-appname = {
     pname = "get-appname";
-    version = "b41b4e791c2382c2f00f4a1633eecb5771838f19";
+    version = "df5166cab236b4220ec01edf5527c9c6a4487a8f";
     src = fetchFromGitHub {
       owner = "water-sucks";
       repo = "get-appname";
-      rev = "b41b4e791c2382c2f00f4a1633eecb5771838f19";
+      rev = "df5166cab236b4220ec01edf5527c9c6a4487a8f";
       fetchSubmodules = false;
-      sha256 = "sha256-6hqgN0gafw/BT/Gwqc/CO8J/Su83jcdG9FrD9fCzGC8=";
+      sha256 = "sha256-MTTbuNJTs4m7TM2LIKIWd1j7c95Mea2tZwoxcrQLrzw=";
     };
-    date = "2022-11-26";
+    date = "2023-02-23";
   };
   picom = {
     pname = "picom";
