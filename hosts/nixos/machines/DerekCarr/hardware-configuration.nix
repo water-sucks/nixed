@@ -2,10 +2,6 @@
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.amd.updateMicrocode = true;
 
-  boot.extraModulePackages = [
-    config.boot.kernelPackages.v4l2loopback.out
-  ];
-
   boot = {
     loader.grub = {
       default = "saved";
@@ -42,6 +38,11 @@
     supportedFilesystems = ["zfs"];
 
     kernelModules = ["amdgpu" "kvm-amd" "wl" "v412loopback"];
+    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+
+    extraModulePackages = [
+      config.boot.kernelPackages.v4l2loopback.out
+    ];
   };
 
   fileSystems."/" = {
