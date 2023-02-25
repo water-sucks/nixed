@@ -21,7 +21,6 @@
     kernelModules = ["kvm-amd" "mt7921e" "amdgpu" "uinput"];
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     kernelParams = [
-      "acpi_backlight=vendor"
       "mem_sleep_default=deep"
     ];
   };
