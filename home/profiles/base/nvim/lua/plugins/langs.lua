@@ -34,8 +34,8 @@ flutter_tools_spec.config = function()
       enabled = true,
     },
     closing_tags = {
-      highlight = "ErrorMsg",
-      prefix = ">| ",
+      highlight = "Comment",
+      prefix = " |> ",
       enabled = true,
     },
     dev_tools = {
