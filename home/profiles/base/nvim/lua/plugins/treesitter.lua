@@ -14,6 +14,9 @@ local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
 treesitter_spec.config = function()
   local wk = require("which-key")
 
+  local parser_mapping = require("nvim-treesitter.parsers").filetype_to_parsername
+  parser_mapping.xml = "html"
+
   require("nvim-treesitter.configs").setup({
     -- This directory doesn't actually have any parsers in it;
     -- it's just to prevent the plugin from getting fussy because
