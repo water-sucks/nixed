@@ -233,18 +233,6 @@
     };
     date = "2022-11-30";
   };
-  "'plugin-editorconfig.nvim'" = {
-    pname = "'plugin-editorconfig.nvim'";
-    version = "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf";
-    src = fetchFromGitHub {
-      owner = "gpanders";
-      repo = "editorconfig.nvim";
-      rev = "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf";
-      fetchSubmodules = false;
-      sha256 = "sha256-pR57tITdVGF4luEmmRYv/XFb35E3KDfcgYRijkPAc+Y=";
-    };
-    date = "2023-01-10";
-  };
   "'plugin-flutter-tools.nvim'" = {
     pname = "'plugin-flutter-tools.nvim'";
     version = "d67caa7dd17eccb89bfda1c0657d0723e339ef60";

@@ -17,7 +17,7 @@ null_ls.setup({
         return {
           "format",
           "-l",
-          vim.b[params.bufnr]["editorconfig"].line_size or 80,
+          vim.b[params.bufnr]["editorconfig"].max_line_length or 80,
         }
       end,
     }),

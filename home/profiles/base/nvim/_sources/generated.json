@@ -379,26 +379,6 @@
     },
     "version": "b1a3b4e52eec886bf4ce5ed692a2162d504d9632"
   },
-  "'plugin-editorconfig.nvim'": {
-    "cargoLocks": null,
-    "date": "2023-01-10",
-    "extract": null,
-    "name": "'plugin-editorconfig.nvim'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "gpanders",
-      "repo": "editorconfig.nvim",
-      "rev": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf",
-      "sha256": "sha256-pR57tITdVGF4luEmmRYv/XFb35E3KDfcgYRijkPAc+Y=",
-      "type": "github"
-    },
-    "version": "5b9e303e1d6f7abfe616ce4cc8d3fffc554790bf"
-  },
   "'plugin-flutter-tools.nvim'": {
     "cargoLocks": null,
     "date": "2023-02-05",

@@ -49,7 +49,6 @@ packageSet = do
     plugin ("NMAC427", "guess-indent.nvim")
     plugin ("echasnovski", "mini.surround")
     plugin ("tpope", "vim-repeat")
-    plugin ("gpanders", "editorconfig.nvim")
     plugin ("numToStr", "Comment.nvim")
     plugin ("windwp", "nvim-autopairs")
     plugin ("Pocco81", "auto-save.nvim")

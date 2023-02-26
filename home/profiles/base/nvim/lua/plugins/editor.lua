@@ -20,10 +20,6 @@ local autosave_spec = use("Pocco81/auto-save.nvim", {
   end,
 })
 
-local editorconfig_spec = use("gpanders/editorconfig.nvim", {
-  event = "BufRead",
-})
-
 local guess_indent_spec = use("NMAC427/guess-indent.nvim", {
   config = function()
     require("guess-indent").setup({
@@ -37,6 +33,5 @@ local guess_indent_spec = use("NMAC427/guess-indent.nvim", {
 
 return {
   autosave_spec,
-  editorconfig_spec,
   guess_indent_spec,
 }
