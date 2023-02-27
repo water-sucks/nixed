@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local dressing_spec = use("stevearc/dressing.nvim", {
   event = "CursorHold",
 })

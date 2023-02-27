@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local diffview_spec = use("sindrets/diffview.nvim", {
   event = "CursorHold",
 })

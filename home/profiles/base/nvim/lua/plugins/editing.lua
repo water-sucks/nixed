@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local autopairs_spec = use("windwp/nvim-autopairs", {
   event = "InsertEnter",
 })

@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local twilight_spec = use("folke/twilight.nvim", {
   event = "CursorHold",
   config = function()

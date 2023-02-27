@@ -1,4 +1,10 @@
-local modules = { "options", "autocmds", "mappings", "commands", "filetypes" }
+local modules = {
+  "options",
+  "autocmds",
+  "mappings",
+  "commands",
+  "filetypes",
+}
 
 for _, module in ipairs(modules) do
   local ok = pcall(require, "config." .. module)
@@ -6,6 +12,8 @@ for _, module in ipairs(modules) do
     print("Uh oh! The " .. module .. " module failed to load.")
   end
 end
+
+require("utils")
 
 local lazypath = vim.fn.stdpath("data") .. "/plugins/lazy.nvim"
 if vim.fn.isdirectory(lazypath) == 0 then
@@ -21,6 +29,11 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup("plugins", {
+  dev = {
+    path = vim.env.HOME .. "/Code/NeovimPlugins",
+    patterns = { "water-sucks" },
+    fallback = false,
+  },
   performance = {
     cache = {
       enabled = true,

@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local duck_spec = use("tamton-aquib/duck.nvim", {
   event = "CursorHold",
   config = function()

@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local dap_spec = use("mfussenegger/nvim-dap", {
   event = "CursorHold",
   config = function()

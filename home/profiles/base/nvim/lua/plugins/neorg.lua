@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local neorg_spec = use("nvim-neorg/neorg", {
   dependencies = { use("nvim-neorg/neorg-telescope") },
   ft = "norg",

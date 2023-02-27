@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local fterm_spec = use("numToStr/FTerm.nvim", {
   event = "CursorHold",
   config = function()

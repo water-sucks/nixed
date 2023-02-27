@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local flutter_tools_spec = use("akinsho/flutter-tools.nvim", {
   dependencies = { use("nvim-lua/plenary.nvim") },
   ft = "dart",

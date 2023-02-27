@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local lspconfig_spec = use("neovim/nvim-lspconfig", {
   config = function()
     for _, file in ipairs({ "servers", "handlers" }) do

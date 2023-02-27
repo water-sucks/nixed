@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
   dependencies = {
     use("nvim-treesitter/nvim-treesitter-textobjects", {}),

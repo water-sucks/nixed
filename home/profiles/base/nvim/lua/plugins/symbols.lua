@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local devicons_spec = use("nvim-tree/nvim-web-devicons", {
   event = "BufEnter",
   config = function()

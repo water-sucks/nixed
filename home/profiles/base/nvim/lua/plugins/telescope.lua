@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local telescope_spec = use("nvim-telescope/telescope.nvim", {
   event = "CursorHold",
 })

@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local ufo_spec = use("kevinhwang91/nvim-ufo", {
   event = "CursorHold",
   dependencies = { use("kevinhwang91/promise-async") },

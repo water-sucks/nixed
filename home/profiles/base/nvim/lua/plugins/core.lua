@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 return {
   use("folke/lazy.nvim", {
     enabled = false,

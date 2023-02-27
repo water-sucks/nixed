@@ -1,4 +1,3 @@
-local use = require("utils").use
 local c = require("darkrose.colors").get()
 
 local lualine_spec = use("nvim-lualine/lualine.nvim", {
@@ -9,13 +8,13 @@ lualine_spec.config = function()
   local lualine = require("lualine")
 
   local colors = {
-    bg = "#121212",
+    bg = c.bg_float_bright,
     fg = c.fg,
     blue = c.blue,
     green = c.green,
     orange = c.dark_orange,
     magenta = c.magenta,
-    red = c.dark_red,
+    red = c.red,
   }
 
   local conditions = {

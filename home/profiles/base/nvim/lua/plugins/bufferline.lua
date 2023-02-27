@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local bufferline_spec = use("akinsho/bufferline.nvim", {
   event = "BufEnter",
   config = function()

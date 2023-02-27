@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local autosave_spec = use("Pocco81/auto-save.nvim", {
   event = "CursorHold",
   config = function()

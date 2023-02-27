@@ -1,6 +1,5 @@
-local use = require("utils").use
-
 local colorscheme_spec = use("water-sucks/darkrose.nvim", {
+  dev = true,
   config = function()
     require("darkrose").setup({})
   end,
@@ -11,7 +10,7 @@ local colorfulwinsep_spec = use("nvim-zh/colorful-winsep.nvim", {
   config = function()
     require("colorful-winsep").setup({
       highlight = {
-        fg = "#732735",
+        fg = require("darkrose.colors").get().magenta,
       },
     })
   end,

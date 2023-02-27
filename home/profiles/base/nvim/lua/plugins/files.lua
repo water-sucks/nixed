@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local nvim_tree_spec = use("nvim-tree/nvim-tree.lua", {
   event = "CursorHold",
 })

@@ -1,5 +1,3 @@
-local use = require("utils").use
-
 local trouble_spec = use("folke/trouble.nvim", {
   event = "CursorHold",
 })
