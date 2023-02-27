@@ -20,7 +20,19 @@ local colorfulwinsep_spec = use("nvim-zh/colorful-winsep.nvim", {
 local colorizer_spec = use("NvChad/nvim-colorizer.lua", {
   event = "CursorHold",
   config = function()
-    require("colorizer").setup()
+    require("colorizer").setup({
+      user_default_options = {
+        RGB = true,
+        RRGGBB = true,
+        names = false,
+        RRGGBBAA = true,
+        AARRGGBB = true,
+        rgb_fn = true,
+        hsl_fn = true,
+        mode = "background",
+        tailwind = true,
+      },
+    })
   end,
 })
 
