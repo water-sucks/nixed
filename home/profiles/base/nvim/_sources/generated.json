@@ -259,26 +259,6 @@
     },
     "version": "18095520391186d634a0045dacaa346291096566"
   },
-  "'plugin-colorful-winsep.nvim'": {
-    "cargoLocks": null,
-    "date": "2023-01-14",
-    "extract": null,
-    "name": "'plugin-colorful-winsep.nvim'",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nvim-zh",
-      "repo": "colorful-winsep.nvim",
-      "rev": "956d65c9a31ce81b7873bef1682c72eb00d9affb",
-      "sha256": "sha256-4HfqR7z2NOc2HwayIYUBs2MIf+LvWYJGAc18xvLWAPo=",
-      "type": "github"
-    },
-    "version": "956d65c9a31ce81b7873bef1682c72eb00d9affb"
-  },
   "'plugin-darkrose.nvim'": {
     "cargoLocks": null,
     "date": "2023-02-16",

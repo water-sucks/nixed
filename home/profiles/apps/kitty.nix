@@ -26,56 +26,58 @@ in
         settings = {
           macos_option_as_alt = "both";
 
-          cursor = "#FF7979";
-          cursor_text_color = "#C9D1D9";
+          allow_remote_control = "yes";
 
-          active_tab_foreground = "#FFFAFA";
-          active_tab_background = "#B1003C";
+          cursor = "#FF7979";
+          cursor_text_color = "#C9C1C9";
+
+          active_tab_foreground = "#C9C1C9";
+          active_tab_background = "#B76E79";
           active_tab_font_style = "bold";
-          inactive_tab_foreground = "#B1003C";
-          inactive_tab_background = "#FFFAFA";
+          inactive_tab_foreground = "#B76E79";
+          inactive_tab_background = "#281C2B";
           tab_bar_margin_color = "none";
 
-          mark1_foreground = "#FFFAFA";
-          mark1_background = "#870300";
+          mark1_foreground = "#C9C1C9";
+          mark1_background = "#9E4244";
 
-          active_border_color = "#FFFAFA";
-          inactive_border_color = "#870300";
-          bell_border_color = "#870300";
+          active_border_color = "#C9C1C9";
+          inactive_border_color = "#9E4244";
+          bell_border_color = "#9E4244";
           visual_bell_color = "none";
 
-          selection_foreground = "#FFFAFA";
-          selection_background = "#231624";
+          selection_foreground = "#C9C1C9";
+          selection_background = "#281C2B";
 
-          url_color = "#1A8A97";
+          url_color = "#FF7979";
 
           background = "#000000";
-          foreground = "#D9D9D9";
+          foreground = "#C9C1C9";
 
           # black
           color0 = "#101010";
-          color8 = "#242424";
+          color8 = "#281C2B";
           # red
-          color1 = "#6D0011";
-          color9 = "#AA4B42";
+          color1 = "#9E4244";
+          color9 = "#F85149";
           # green
-          color2 = "#F85149";
+          color2 = "#FF7979";
           color10 = "#F6ACA7";
           # yellow
           color3 = "#A26B35";
           color11 = "#F08838";
           # blue
-          color4 = "#8B2950";
-          color12 = "#242424";
+          color4 = "#B76E79";
+          color12 = "#281C2B";
           # magenta
           color5 = "#8B2950";
-          color13 = "#CF578A";
+          color13 = "#EB6F92";
           # cyan (substituted with gray instead)
           color6 = "#4D5566";
-          color14 = "#61697A";
+          color14 = "#8A95A2";
           # white
           color7 = "#8B8B8B";
-          color15 = "#C5C5C5";
+          color15 = "#C9C1C9";
         };
       };
     }

@@ -7,15 +7,7 @@ local lualine_spec = use("nvim-lualine/lualine.nvim", {
 lualine_spec.config = function()
   local lualine = require("lualine")
 
-  local colors = {
-    bg = c.bg_float_bright,
-    fg = c.fg,
-    blue = c.blue,
-    green = c.green,
-    orange = c.dark_orange,
-    magenta = c.magenta,
-    red = c.red,
-  }
+  local bg = c.bg_float_bright
 
   local conditions = {
     buffer_not_empty = function()
@@ -40,8 +32,8 @@ lualine_spec.config = function()
       theme = {
         -- We are going to use lualine_c an lualine_x as the left
         -- and right sections. Both are highlighted by c theme.
-        normal = { c = { fg = colors.fg, bg = colors.bg } },
-        inactive = { c = { fg = colors.fg, bg = colors.bg } },
+        normal = { c = { fg = c.fg, bg = bg } },
+        inactive = { c = { fg = c.fg, bg = bg } },
       },
     },
     sections = {
@@ -79,37 +71,35 @@ lualine_spec.config = function()
     function()
       return "▊"
     end,
-    color = { fg = colors.red },
+    color = { fg = c.gray },
     padding = { left = 0, right = 1 },
   })
 
   left({
     function()
-      -- return ""
       return ""
     end,
     color = function()
       local mode_color = {
-        n = colors.red,
-        i = colors.orange,
-        v = colors.blue,
-        [""] = colors.blue,
-        V = colors.blue,
-        c = colors.magenta,
-        no = colors.red,
-        s = colors.orange,
-        S = colors.orange,
-        [""] = colors.orange,
-        ic = colors.orange,
-        R = colors.magenta,
-        Rv = colors.magenta,
-        cv = colors.red,
-        ce = colors.red,
-        r = colors.green,
-        rm = colors.green,
-        ["r?"] = colors.green,
-        ["!"] = colors.red,
-        t = colors.red,
+        n = c.red, -- Normal
+        i = c.orange, -- Insert
+        ic = c.orange, -- Completion insert
+        no = c.red, -- Operator-pending
+        c = c.dark_pink, -- Command-line
+        v = c.magenta, -- Visual
+        V = c.magenta, -- Line-wise visual
+        [""] = c.magenta, --  Block-wise visual
+        s = c.magenta, -- Select
+        S = c.magenta, -- Line-wise visual
+        [""] = c.magenta, -- Block-wise visual
+        R = c.light_pink, -- Replace
+        Rv = c.light_pink, -- Virtual replace
+        cv = c.dark_pink, -- Ex
+        r = c.red, -- Hit-enter
+        rm = c.red, -- More prompt
+        ["r?"] = c.red, -- :confirm
+        ["!"] = c.red, -- Shell command
+        t = c.red, -- Terminal
       }
       return { fg = mode_color[vim.fn.mode()] }
     end,
@@ -119,7 +109,7 @@ lualine_spec.config = function()
   left({
     "filename",
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.magenta, gui = "bold" },
+    color = { fg = c.dark_pink, gui = "bold" },
   })
 
   left({ "location" })
@@ -130,7 +120,7 @@ lualine_spec.config = function()
       local total = vim.fn.line("$")
       return math.floor(cur / total * 100) .. "%%"
     end,
-    color = { fg = colors.fg, gui = "bold" },
+    color = { fg = c.fg, gui = "bold" },
   })
 
   left({
@@ -138,10 +128,10 @@ lualine_spec.config = function()
     sources = { "nvim_diagnostic" },
     symbols = { error = " ", warn = " ", info = " ", hint = " " },
     diagnostics_color = {
-      error = { fg = colors.red },
-      warn = { fg = colors.orange },
-      info = { fg = colors.green },
-      hint = { fg = colors.blue },
+      error = { fg = c.error },
+      warn = { fg = c.warning },
+      info = { fg = c.info },
+      hint = { fg = c.hint },
     },
   })
 
@@ -170,29 +160,29 @@ lualine_spec.config = function()
     "o:encoding",
     fmt = string.upper,
     cond = conditions.hide_in_width,
-    color = { fg = colors.green, gui = "bold" },
+    color = { fg = c.red, gui = "bold" },
   })
 
   right({
     "fileformat",
     fmt = string.upper,
     icons_enabled = false,
-    color = { fg = colors.green, gui = "bold" },
+    color = { fg = c.red, gui = "bold" },
   })
 
   right({
     "branch",
     icon = "",
-    color = { fg = colors.blue, gui = "bold" },
+    color = { fg = c.dark_orange, gui = "bold" },
   })
 
   right({
     "diff",
     symbols = { added = "+", modified = "~", removed = "-" },
     diff_color = {
-      added = { fg = colors.green },
-      modified = { fg = colors.orange },
-      removed = { fg = colors.red },
+      added = { fg = c.diff.add },
+      modified = { fg = c.diff.change },
+      removed = { fg = c.diff.delete },
     },
     cond = conditions.hide_in_width,
   })
@@ -201,7 +191,7 @@ lualine_spec.config = function()
     function()
       return "▊"
     end,
-    color = { fg = colors.red },
+    color = { fg = c.gray },
     padding = { left = 1 },
   })
 

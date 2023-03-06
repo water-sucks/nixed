@@ -30,7 +30,7 @@ neorg_spec.config = function()
       ["core.norg.esupports.metagen"] = {
         config = {
           type = "empty",
-          tab = "  ",
+          tab = "",
           template = {
             {
               "title",
@@ -58,19 +58,8 @@ neorg_spec.config = function()
       },
       ["core.highlights"] = {
         config = {
-          highlights = {
-            markup = {
-              bold = {
-                [""] = "cterm=bold gui=bold",
-              },
-              italic = {
-                [""] = "cterm=italic gui=italic",
-              },
-              verbatim = {
-                [""] = "+@comment",
-              },
-            },
-          },
+          highlights = require("darkrose.groups.plugins.neorg")(),
+          todo_items_match_color = "except_undone",
         },
       },
       ["core.norg.concealer"] = {
@@ -78,92 +67,42 @@ neorg_spec.config = function()
           icons = {
             todo = {
               enabled = true,
-              done = {
-                icon = "",
-              },
-              pending = {
-                icon = "",
-              },
-              undone = {
-                enabled = false,
-              },
-              uncertain = {
-                icon = "",
-              },
-              on_hold = {
-                icon = "",
-              },
-              cancelled = {
-                icon = "ﲅ",
-              },
-              recurring = {
-                icon = "ﮫ",
-              },
-              urgent = {
-                icon = "",
-              },
+              done = { icon = "" },
+              pending = { icon = "" },
+              undone = { enabled = false },
+              uncertain = { icon = "" },
+              on_hold = { icon = "" },
+              cancelled = { icon = "ﲅ" },
+              recurring = { icon = "ﮫ" },
+              urgent = { icon = "" },
             },
             heading = {
               enabled = true,
-
-              level_1 = {
-                icon = "◈",
-              },
-
-              level_2 = {
-                icon = " ◇",
-              },
-
-              level_3 = {
-                icon = "  ◆",
-              },
-
-              level_4 = {
-                icon = "   ⋄",
-              },
-
-              level_5 = {
-                icon = "    ❖",
-              },
-
-              level_6 = {
-                icon = "     ⟡",
-              },
+              level_1 = { icon = "◈" },
+              level_2 = { icon = " ◇" },
+              level_3 = { icon = "  ◆" },
+              level_4 = { icon = "   ⋄" },
+              level_5 = { icon = "    ❖" },
+              level_6 = { icon = "     ⟡" },
             },
             list = {
               enabled = true,
-              level_1 = {
-                icon = "",
-              },
-              level_2 = {
-                icon = " ",
-              },
-              level_3 = {
-                icon = "  ",
-              },
-              level_4 = {
-                icon = "   ",
-              },
-              level_5 = {
-                icon = "    ",
-              },
-              level_6 = {
-                icon = "     ",
-              },
+              level_1 = { icon = "" },
+              level_2 = { icon = " " },
+              level_3 = { icon = "  " },
+              level_4 = { icon = "   " },
+              level_5 = { icon = "    " },
+              level_6 = { icon = "     " },
             },
-            marker = {
-              icon = "",
+            definition = {
+              single = { icon = "≡" },
+              multi_prefix = { icon = "󰂺 " },
+              multi_suffix = { icon = "󰂺 " },
             },
             footnote = {
-              single = {
-                icon = "",
-              },
-              multi_prefix = {
-                icon = " ",
-              },
-              multi_suffix = {
-                icon = " ",
-              },
+              single = { icon = "󰇈 " },
+              multi_prefix = { icon = "󰮊 " },
+              multi_suffix = { icon = "󰮊 " },
             },
           },
         },
@@ -190,6 +129,7 @@ neorg_spec.config = function()
 
               n = "New note",
               p = { "<cmd>Neorg presenter start<CR>", "Start presenter" },
+              c = { "<cmd>Neorg toggle-concealer<CR>", "Toggle concealer" },
 
               h = {
                 name = "Hop",

@@ -5,17 +5,6 @@ local colorscheme_spec = use("water-sucks/darkrose.nvim", {
   end,
 })
 
-local colorfulwinsep_spec = use("nvim-zh/colorful-winsep.nvim", {
-  event = "BufEnter",
-  config = function()
-    require("colorful-winsep").setup({
-      highlight = {
-        fg = require("darkrose.colors").get().magenta,
-      },
-    })
-  end,
-})
-
 local colorizer_spec = use("NvChad/nvim-colorizer.lua", {
   event = "CursorHold",
   config = function()
@@ -72,7 +61,6 @@ local lush_spec = use("rktjmp/lush.nvim", {
 
 return {
   colorscheme_spec,
-  colorfulwinsep_spec,
   colorizer_spec,
   highlight_current_n_spec,
   lush_spec,

@@ -8,6 +8,7 @@ local devicons_spec = use("nvim-tree/nvim-web-devicons", {
 local indent_blankline_spec = use("lukas-reineke/indent-blankline.nvim", {
   event = "BufRead",
 })
+
 indent_blankline_spec.config = function()
   vim.opt.list = true
   vim.opt.listchars:append("eol:↴")
@@ -26,6 +27,7 @@ indent_blankline_spec.config = function()
     filetype_exclude = {
       "FTerm",
       "terminal",
+      "norg",
     },
     buftype_exclude = {
       "nofile",
