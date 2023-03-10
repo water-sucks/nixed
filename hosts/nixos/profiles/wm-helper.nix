@@ -37,6 +37,9 @@
     sounds.enable = false;
     portal = {
       enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
       wlr = {
         enable = true;
         settings.screencast = {
@@ -44,6 +47,17 @@
           chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
         };
       };
+    };
+  };
+
+  systemd.user.services.xdg-desktop-portal-gtk = {
+    unitConfig = {
+      StartLimitIntervalSec = 0;
+    };
+
+    serviceConfig = {
+      Restart = "on-failure";
+      RestartSec = 1;
     };
   };
 }

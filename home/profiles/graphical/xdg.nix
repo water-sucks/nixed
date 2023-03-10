@@ -1,7 +1,8 @@
-_: {
+{
+  pkgs,
+  lib,
+  ...
+}:
+lib.mkIf pkgs.stdenv.isLinux {
   xdg.mimeApps.enable = true;
-
-  systemd.user.services.xdg-desktop-portal-wlr = {
-    Unit.ConditionPathExistsGlob = ["%t/wayland-*"];
-  };
 }

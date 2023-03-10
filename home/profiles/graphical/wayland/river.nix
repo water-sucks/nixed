@@ -163,8 +163,9 @@ in {
       ${riverctl} border-color-focused 0x732735
       ${riverctl} border-color-unfocused 0x333333
 
-      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
-      systemctl --user import-environment DISPLAY WAYLAND_DISPLAY PATH
+      export XDG_CURRENT_DESKTOP=river
+      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+      systemctl --user import-environment DISPLAY WAYLAND_DISPLAY PATH XDG_CURRENT_DESKTOP
       systemctl --user restart graphical-session.target
       systemctl --user restart wob.socket
 
