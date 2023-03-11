@@ -124,13 +124,13 @@ fi
 
 ## COLORS
 
-red='[38;5;124m'
-brightred='[38;5;196m'
-orange='[38;5;202m'
-purple='[38;5;125m'
-white='[38;5;250m'
-grey='[38;5;238m'
 reset='[0m'
+red="\033[31m"
+brightred="\033[91m"
+orange="\033[93m"
+purple="\033[35m"
+white="\033[97m"
+grey="\033[37m"
 
 rc="$reset$red"
 brc="$reset$brightred"
@@ -143,25 +143,21 @@ oc="$reset$orange"
 
 case $ostype in
 "Linux")
-  cat <<EOF
-${gc}      ___
+  echo -e "${gc}      ___
 ${gc}     (${wc}.. ${gc}\    ${oc}${USER}${grey}@${reset}${mc}${host}${reset}
 ${gc}     (${oc}<> ${gc}|    ${rc} - ${red}OS: ${wc}${os}${reset}
 ${gc}    /${wc}/  \\ ${gc}\\   ${rc} - ${red}Kernel: ${wc}${kernel}${reset}
 ${gc}   ( ${wc}|  | ${gc}/|  ${rc} - ${red}Uptime: ${wc}${uptime}${reset}
 ${oc}  _${gc}/\\ ${wc}__)${gc}/${oc}_${gc})  ${rc} - ${red}Shell: ${wc}${shell}${reset}
-${oc}  \/${gc}-____${oc}\/${reset}   ${rc} - ${red}Memory: ${wc}${RAM}${memstat} ${mempercent}
-EOF
+${oc}  \/${gc}-____${oc}\/${reset}   ${rc} - ${red}Memory: ${wc}${RAM}${memstat} ${mempercent}"
   ;;
 "Darwin")
-  cat <<EOF
-${gc}       .:\'
+  echo -e "${gc}       .:\'
 ${mc}    _ ${gc}:\'${mc}_     ${oc}${USER}${grey}@${reset}${mc}${host}${reset}
 ${brc} .'\`_\`-'_\`\`.   ${rc} - OS: ${wc}${os}${reset}
 ${brc}:________.-\'  ${rc} - Kernel: ${wc}${kernel}${reset}
 ${oc}:_______:      ${rc} - Uptime: ${wc}${uptime}${reset}
 ${brc} :_______\`-\;  ${rc} - Shell: ${wc}${shell}${reset}
-${mc}  \`._.-._.\'   ${rc} - Memory: ${wc}${RAM}${memstat} ${mempercent}
-EOF
+${mc}  \`._.-._.\'   ${rc} - Memory: ${wc}${RAM}${memstat} ${mempercent}"
   ;;
 esac

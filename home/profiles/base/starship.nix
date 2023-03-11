@@ -14,20 +14,20 @@ _: {
         full_symbol = "";
       };
       character = {
-        error_symbol = "[➜](bold fg:125)";
-        success_symbol = "[➜](bold fg:202)";
+        error_symbol = "[➜](bold fg:purple)";
+        success_symbol = "[➜](bold fg:yellow)";
       };
       cmd_duration = {
         min_time = 1000;
         show_milliseconds = true;
-        style = "fg:202";
+        style = "fg:yellow";
       };
       dart = {
         symbol = " ";
       };
       directory = {
         read_only = " ";
-        style = "fg:124";
+        style = "fg:red";
       };
       docker_context = {
         symbol = " ";
@@ -39,7 +39,7 @@ _: {
         symbol = " ";
       };
       format = builtins.concatStringsSep "" [
-        "$username[@](fg:238)"
+        "$username@"
         "$hostname in "
         "$directory"
         "$git_branch"
@@ -91,7 +91,7 @@ _: {
       ];
       git_branch = {
         format = "[$symbol$branch]($style) ";
-        style = "bold fg:250";
+        style = "bold fg:white";
         symbol = " ";
       };
       git_status = {
@@ -105,7 +105,7 @@ _: {
         renamed = " ";
         staged = " ";
         stashed = " ";
-        style = "bold fg:250";
+        style = "bold fg:bright-white";
         untracked = " ";
       };
       golang = {
@@ -117,7 +117,7 @@ _: {
       hostname = {
         format = "[$hostname]($style)";
         ssh_only = false;
-        style = "fg:125";
+        style = "fg:purple";
       };
       java = {
         symbol = " ";
@@ -158,25 +158,21 @@ _: {
       status = {
         disabled = false;
         format = "[$status]($style) ";
-        style = "fg:125";
+        style = "fg:purple";
       };
       time = {
         disabled = false;
         format = "at \\[[$time]($style)\\]";
-        style = "bold fg:250";
+        style = "bold fg:bright-white";
         time_format = "%T";
         use_12hr = false;
       };
       username = {
         format = "# [$user]($style)";
         show_always = true;
-        style_root = "bold fg:196";
-        style_user = "fg:202";
+        style_root = "bold fg:bright-red";
+        style_user = "fg:bright-yellow";
       };
     };
-
-    # home.sessionVariables = {
-    #   STARSHIP_CONFIG = pkgs.writeText "starship.toml" (lib.fileContents ./starship.toml);
-    # };
   };
 }
