@@ -23,7 +23,7 @@
       echo ""
     else
       if [ "$(echo info | ${bluetoothctl} | ${grep} 'Device' | ${wc} -c)" -eq 0 ]; then
-        echo "%{F#666666}%{F-}"
+        echo "%{F#4D5566}%{F-}"
       else
         echo ""
       fi
@@ -58,9 +58,9 @@ in {
       colors = {
         background = "#121212";
         primary = "#6D0011";
-        text = "#F8F8F2";
-        grey = "#757575";
-        deactivated = "#666666";
+        text = "#C9C1C9";
+        grey = "#8B8B8B";
+        deactivated = "#4D5566";
       };
 
       "global/wm" = {

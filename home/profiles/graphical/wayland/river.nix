@@ -44,7 +44,7 @@
   swayidle = "${pkgs.swayidle}/bin/swayidle";
   waylockWrapper =
     pkgs.writeShellScriptBin "waylock"
-    "${pkgs.waylock}/bin/waylock -init-color 0x121212 -input-color 0x732735 -fail-color 0x8a0801 $@";
+    "${pkgs.waylock}/bin/waylock -init-color 0x121212 -input-color 0xB76E79 -fail-color 0x6D0011 $@";
   waylockCommand = "${waylockWrapper}/bin/waylock";
   wobSocket = "$XDG_RUNTIME_DIR/wob.sock";
 
@@ -160,8 +160,8 @@ in {
       ];
     in ''
       ${riverctl} background-color 0x121212
-      ${riverctl} border-color-focused 0x732735
-      ${riverctl} border-color-unfocused 0x333333
+      ${riverctl} border-color-focused 0x8B2950
+      ${riverctl} border-color-unfocused 0x4D5566
 
       export XDG_CURRENT_DESKTOP=river
       dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP

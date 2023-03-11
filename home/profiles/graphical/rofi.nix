@@ -35,22 +35,16 @@ in {
 
       "*" = {
         background-color = mkLiteral "@bg";
-        al = mkLiteral "#00000000";
-        bg = mkLiteral "#101010ff";
-        se = mkLiteral "#151515ff";
-        fg = mkLiteral "#f5f5f5ff";
-        ac = mkLiteral "#42A5F5ff";
-        red = mkLiteral "#EC7875ff";
-        green = mkLiteral "#61C766ff";
-        yellow = mkLiteral "#FDD835ff";
-        blue = mkLiteral "#42A5F5ff";
-        purple = mkLiteral "#BA68C8ff";
-        cyan = mkLiteral "#4DD0E1ff";
+        bg = mkLiteral "#101010";
+        fg = mkLiteral "#C9C1C9";
+        bg-button = mkLiteral "#281C2B";
+        border = mkLiteral "#8B8B8B";
+        red = mkLiteral "#9E4244";
       };
 
       window = {
         border = mkLiteral "0px";
-        border-color = mkLiteral "@ac";
+        border-color = mkLiteral "@border";
         border-radius = mkLiteral "0px";
         padding = mkLiteral "69px";
         width = mkLiteral "33%";
@@ -89,7 +83,7 @@ in {
 
       mainbox = {
         border = mkLiteral "0px";
-        border-color = mkLiteral "@ac";
+        border-color = mkLiteral "@border";
         padding = 6;
       };
 
@@ -98,7 +92,7 @@ in {
         columns = 1;
         fixed-height = 0;
         border = mkLiteral "0px";
-        border-color = mkLiteral "@ac";
+        border-color = mkLiteral "@border";
         spacing = mkLiteral "5px";
         scrollbar = false;
         padding = mkLiteral "25px 5px -20px 5px";
@@ -133,7 +127,7 @@ in {
       "element normal.active" = {
         background-color = mkLiteral "@bg";
         text-color = mkLiteral "@fg";
-        border-color = mkLiteral "@green";
+        border-color = mkLiteral "@fg";
       };
 
       "element selected.normal" = {
@@ -171,7 +165,7 @@ in {
       button = {
         horizontal-align = mkLiteral "0.5";
         vertical-align = mkLiteral "0.5";
-        background-color = mkLiteral "@se";
+        background-color = mkLiteral "@bg-button";
         margin = mkLiteral "5px";
         padding = mkLiteral "15px";
         text-color = mkLiteral "@fg";
@@ -198,7 +192,7 @@ in {
 
       message = {
         border = mkLiteral "0px";
-        border-color = mkLiteral "@ac";
+        border-color = mkLiteral "@border";
         padding = mkLiteral "1px";
       };
 

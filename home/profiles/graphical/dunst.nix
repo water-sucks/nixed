@@ -41,7 +41,7 @@
         horizontal_padding = 8;
         text_icon_padding = 0;
         frame_width = 2;
-        frame_color = "#5d5d5d";
+        frame_color = "#8B8B8B";
         separator_color = "frame";
         sort = "yes";
         idle_threshold = 120;
@@ -62,7 +62,7 @@
 
       urgency_low = {
         background = "#121212";
-        foreground = "#cccccc";
+        foreground = "#C9C1C9";
         timeout = 7;
       };
       urgency_normal = {
@@ -71,8 +71,8 @@
         timeout = 10;
       };
       urgency_critical = {
-        background = "#660011";
-        foreground = "#ffffff";
+        background = "#6D0011";
+        foreground = "#C9C1C9";
         timeout = 0;
       };
     };

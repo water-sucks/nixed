@@ -183,9 +183,9 @@ in {
         theme = struct {
           border_width = 2;
           margin = 10;
-          default_border_color = "#333333";
-          floating_border_color = "#333333";
-          focused_border_color = "#732735";
+          default_border_color = "#4D5566";
+          floating_border_color = "#4D5566";
+          focused_border_color = "#8B2950";
         };
 
         up = ''

@@ -173,7 +173,7 @@ lualine_spec.config = function()
   right({
     "branch",
     icon = "",
-    color = { fg = c.dark_orange, gui = "bold" },
+    color = { fg = c.orange, gui = "bold" },
   })
 
   right({

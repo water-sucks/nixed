@@ -58,17 +58,17 @@ in
           color0 = "#101010";
           color8 = "#281C2B";
           # red
-          color1 = "#9E4244";
+          color1 = "#6D0011";
           color9 = "#F85149";
           # green
-          color2 = "#FF7979";
+          color2 = "#9E4244";
           color10 = "#F6ACA7";
           # yellow
           color3 = "#A26B35";
           color11 = "#F08838";
           # blue
           color4 = "#B76E79";
-          color12 = "#281C2B";
+          color12 = "#FF7979";
           # magenta
           color5 = "#8B2950";
           color13 = "#EB6F92";

@@ -1,10 +1,10 @@
-@define-color bg #111111;
-@define-color bg2 #222222;
-@define-color bg3 #333333;
-@define-color text #999999;
-@define-color focused #b4b4b4;
-@define-color primary #732735;
-@define-color secondary #9f1122;
+@define-color bg rgba(11, 11, 11, 0.69);
+@define-color bg-button #281C2B;
+@define-color text #8B8B8B;
+@define-color focused #C9C1C9;
+@define-color primary #8B2950;
+@define-color secondary #6D0011;
+@define-color error #F85149;
 
 * {
   color: @text;
@@ -22,7 +22,7 @@
 }
 
 window#waybar {
-  background: rgba(11, 11, 11, 0.69);
+  background: @bg;
   color: @text;
 }
 
@@ -35,7 +35,7 @@ window#waybar {
 }
 
 #battery.critical {
-  color: #ff0000;
+  color: @error;
 }
 
 #tags button {
@@ -46,12 +46,12 @@ window#waybar {
 }
 
 #tags button:hover {
-  background: @bg2;
+  background: @bg-button;
 }
 
 #tags button.focused {
-  color: #666666;
-  background: @bg3;
+  color: @focused;
+  background: @bg-button;
   border-left: 2px solid @focused;
 }
 
@@ -65,7 +65,7 @@ window#waybar {
 }
 
 #tray menu {
-  background: @bg3;
+  background: @bg-button;
   margin: 1px;
   padding: 1px;
 }
@@ -77,11 +77,11 @@ window#waybar {
 }
 
 #taskbar button:hover {
-  background: @bg3;
+  background: @bg-button;
 }
 
 #taskbar button.active {
-  background: @bg3;
+  background: @bg-button;
   border-left: 2px solid @focused;
 }
 
@@ -112,7 +112,7 @@ window#waybar {
 #custom-explorer,
 #custom-powermenu {
   font-size: 13px;
-  background: @bg2;
+  background: @bg-button;
 }
 
 #custom-active-window {
