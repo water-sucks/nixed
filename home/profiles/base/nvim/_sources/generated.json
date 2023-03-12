@@ -739,6 +739,46 @@
     },
     "version": "9deacda7abbfe09cd80ba86d0eefad514cda0b11"
   },
+  "'plugin-noice.nvim'": {
+    "cargoLocks": null,
+    "date": "2023-03-03",
+    "extract": null,
+    "name": "'plugin-noice.nvim'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "folke",
+      "repo": "noice.nvim",
+      "rev": "c22651651da01239fc4afac4cdb7261797d5f02e",
+      "sha256": "sha256-3XQklNVwwzkrQtaKw8U8iXnNcDMiuEvXtceE2ACY6wc=",
+      "type": "github"
+    },
+    "version": "c22651651da01239fc4afac4cdb7261797d5f02e"
+  },
+  "'plugin-nui.nvim'": {
+    "cargoLocks": null,
+    "date": "2023-02-28",
+    "extract": null,
+    "name": "'plugin-nui.nvim'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "MunifTanjim",
+      "repo": "nui.nvim",
+      "rev": "0dc148c6ec06577fcf06cbab3b7dac96d48ba6be",
+      "sha256": "sha256-xHpNGJ8ikTMiWHAtqaZg5IVKSngH/k0LN7WaOHl2iz8=",
+      "type": "github"
+    },
+    "version": "0dc148c6ec06577fcf06cbab3b7dac96d48ba6be"
+  },
   "'plugin-null-ls.nvim'": {
     "cargoLocks": null,
     "date": "2023-03-04",

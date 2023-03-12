@@ -44,6 +44,7 @@ packageSet = do
     plugin ("nvim-telescope", "telescope.nvim")
     plugin ("folke", "trouble.nvim")
     plugin ("numToStr", "FTerm.nvim")
+    plugin ("MunifTanjim", "nui.nvim")
 
     -- Text editing assistance/annotations
     plugin ("NMAC427", "guess-indent.nvim")
@@ -91,6 +92,7 @@ packageSet = do
     plugin ("ahmedkhalf", "project.nvim")
     plugin ("tamton-aquib", "duck.nvim")
     plugin ("samjwill", "nvim-unception")
+    plugin ("folke", "noice.nvim")
 
     -- Debugging
     plugin ("mfussenegger", "nvim-dap")

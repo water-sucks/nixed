@@ -31,10 +31,10 @@ local highlight_current_n_spec = use("rktjmp/highlight-current-n.nvim", {
     local augroup = vim.api.nvim_create_augroup
     local au = vim.api.nvim_create_autocmd
 
-    map("n", "n", "<Plug>(highlight-current-n-n)", { noremap = false })
-    map("n", "N", "<Plug>(highlight-current-n-N)", { noremap = false })
+    map("n", "n", "<Plug>(highlight-current-n-n)", { silent = true, noremap = false })
+    map("n", "N", "<Plug>(highlight-current-n-N)", { silent = true, noremap = false })
 
-    map("n", "*", "*N", { noremap = true })
+    map("n", "*", "*N", { silent = true, noremap = true })
 
     augroup("ClearSearchHL", { clear = true })
     au("CmdlineEnter", {

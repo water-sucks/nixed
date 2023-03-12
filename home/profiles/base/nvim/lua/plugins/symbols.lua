@@ -1,4 +1,4 @@
-local devicons_spec = use("nvim-tree/nvim-web-devicons", {
+local devicons_spec = use("kyazdani42/nvim-web-devicons", {
   event = "BufEnter",
   config = function()
     require("nvim-web-devicons").setup({})

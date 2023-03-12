@@ -449,6 +449,30 @@
     };
     date = "2023-02-21";
   };
+  "'plugin-noice.nvim'" = {
+    pname = "'plugin-noice.nvim'";
+    version = "c22651651da01239fc4afac4cdb7261797d5f02e";
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "noice.nvim";
+      rev = "c22651651da01239fc4afac4cdb7261797d5f02e";
+      fetchSubmodules = false;
+      sha256 = "sha256-3XQklNVwwzkrQtaKw8U8iXnNcDMiuEvXtceE2ACY6wc=";
+    };
+    date = "2023-03-03";
+  };
+  "'plugin-nui.nvim'" = {
+    pname = "'plugin-nui.nvim'";
+    version = "0dc148c6ec06577fcf06cbab3b7dac96d48ba6be";
+    src = fetchFromGitHub {
+      owner = "MunifTanjim";
+      repo = "nui.nvim";
+      rev = "0dc148c6ec06577fcf06cbab3b7dac96d48ba6be";
+      fetchSubmodules = false;
+      sha256 = "sha256-xHpNGJ8ikTMiWHAtqaZg5IVKSngH/k0LN7WaOHl2iz8=";
+    };
+    date = "2023-02-28";
+  };
   "'plugin-null-ls.nvim'" = {
     pname = "'plugin-null-ls.nvim'";
     version = "456cd2754c56c991c5e4df60a807d054c1bc7148";

@@ -81,6 +81,15 @@ cmp.setup({
       },
     }),
   },
+  window = {
+    completion = {
+      border = "single",
+      winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = "single",
+    },
+  },
 })
 
 cmp.setup.filetype("tex", {
