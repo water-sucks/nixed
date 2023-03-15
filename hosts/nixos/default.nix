@@ -21,6 +21,7 @@
         };
         modules = with inputs; [
           agenix.nixosModules.age
+          impermanence.nixosModules.impermanence
           home.nixosModules.home-manager
           (import configuration)
           {
