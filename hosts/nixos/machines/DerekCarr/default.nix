@@ -10,6 +10,7 @@
     caches.enable = true;
     ssh.enable = true;
     pam.enable = true;
+    sudo.enable = true;
     fonts.enable = true;
     fontconfig.enable = true;
     kmscon.enable = false;
