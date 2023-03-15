@@ -1,4 +1,5 @@
 {
+  config,
   self,
   lib,
   ...
@@ -22,11 +23,30 @@
 
   xdg.portal.wlr.settings.screencast.output_name = "HDMI-A-1";
 
+  # Workaround to use agenix with impermanence. I'll probably end up using sops-nix at some point
+  # anyway so this workaround is fine, no need to be perfect.
+  age.identityPaths = ["/persist/etc/ssh/ssh_host_rsa_key" "/persist/etc/ssh/ssh_host_ed25519_key"];
+
   age.secrets.varun-user-DerekCarr.file = "${self}/secrets/varun-user-DerekCarr.age";
-  users.users.varun.passwordFile = "/run/agenix/varun-user-DerekCarr";
+  users.users.varun.passwordFile = "${config.age.secrets.varun-user-DerekCarr.path}";
 
   age.secrets.root-user-DerekCarr.file = "${self}/secrets/root-user-DerekCarr.age";
-  users.users.root.passwordFile = "/run/agenix/root-user-DerekCarr";
+  users.users.root.passwordFile = "${config.age.secrets.root-user-DerekCarr.path}";
+
+  environment.persistence."/persist" = {
+    hideMounts = true;
+    directories = [
+      "/var/log"
+      "/var/lib/bluetooth"
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+      "/etc/ssh"
+      "/etc/NetworkManager/system-connections"
+    ];
+    files = [
+      "/etc/machine-id"
+    ];
+  };
 
   home-manager.sharedModules = [
     {

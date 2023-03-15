@@ -45,29 +45,43 @@
     ];
   };
 
-  fileSystems."/" = {
-    device = "locker/root/nixos";
-    fsType = "zfs";
+  fileSystems = {
+    "/" = {
+      device = "none";
+      fsType = "tmpfs";
+      options = ["size=3G" "mode=755"];
+    };
+
+    "/boot" = {
+      device = "/dev/disk/by-partlabel/ESP";
+      fsType = "vfat";
+    };
+
+    "/nix" = {
+      device = "locker/nix";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+
+    "/persist" = {
+      device = "locker/persist";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+
+    "/home/varun" = {
+      device = "none";
+      fsType = "tmpfs";
+      options = ["size=4G" "mode=777"];
+    };
+
+    "/etc/ssh" = {
+      depends = ["/persist"];
+      neededForBoot = true;
+    };
   };
 
-  fileSystems."/persist" = {
-    device = "locker/persist";
-    fsType = "zfs";
-    neededForBoot = true;
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/8ECC-2ED9";
-    fsType = "vfat";
-  };
-
-  fileSystems."/home/varun" = {
-    device = "none";
-    fsType = "tmpfs";
-    options = ["size=4G" "mode=777"];
-  };
-
-  swapDevices = [{device = "/dev/disk/by-uuid/02e3a0c7-b170-48e4-a66d-5f0390ae09dc";}];
+  swapDevices = [{device = "/dev/disk/by-partlabel/swap";}];
 
   services.xserver.videoDrivers = ["amdgpu"];
 
