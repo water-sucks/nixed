@@ -163,7 +163,7 @@ _: {
       time = {
         disabled = false;
         format = "at \\[[$time]($style)\\]";
-        style = "bold fg:bright-white";
+        style = "bold fg:cyan";
         time_format = "%T";
         use_12hr = false;
       };
