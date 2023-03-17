@@ -108,6 +108,7 @@ in {
         (bind [mod ctrl alt] "r" "HardReload")
         (bind [mod shift] "f" "ToggleFloating")
         (bind [mod] "f" "ToggleFullScreen")
+        (bind [mod] "s" "ToggleSticky")
 
         # Tags
         (bind [mod] "w" "SwapTags")
