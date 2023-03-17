@@ -25,31 +25,43 @@
     ];
   };
 
-  fileSystems."/" = {
-    device = "locker/root/nixos";
-    fsType = "zfs";
+  fileSystems = {
+    "/" = {
+      device = "none";
+      fsType = "tmpfs";
+      options = ["size=3G" "mode=755"];
+    };
+
+    "/boot" = {
+      device = "/dev/disk/by-partlabel/ESP";
+      fsType = "vfat";
+    };
+
+    "/nix" = {
+      device = "locker/nix";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+
+    "/persist" = {
+      device = "locker/persist";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+
+    "/home/varun" = {
+      device = "none";
+      fsType = "tmpfs";
+      options = ["size=4G" "mode=777"];
+    };
+
+    "/etc/ssh" = {
+      depends = ["/persist"];
+      neededForBoot = true;
+    };
   };
 
-  fileSystems."/persist" = {
-    device = "locker/persist";
-    fsType = "zfs";
-    neededForBoot = true;
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/845A-9EA0";
-    fsType = "vfat";
-  };
-
-  fileSystems."/home/varun" = {
-    device = "none";
-    fsType = "tmpfs";
-    options = ["size=4G" "mode=777"];
-  };
-
-  swapDevices = [
-    {device = "/dev/disk/by-uuid/86cdd137-8957-4844-919b-23845735c7e6";}
-  ];
+  swapDevices = [{device = "/dev/disk/by-partlabel/swap";}];
 
   powerManagement = {
     enable = true;
