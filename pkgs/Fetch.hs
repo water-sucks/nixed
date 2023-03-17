@@ -27,7 +27,8 @@ packageSet = do
 
     define $
         package "rescrobbled"
-            `fromGitHub` ("InputUsername", "rescrobbled")
+            `sourceManual` "v0.6.2"
+            `fetchGitHub` ("InputUsername", "rescrobbled")
             `hasCargoLocks` ["Cargo.lock"]
 
     define $
