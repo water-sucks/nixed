@@ -50,3 +50,8 @@ packageSet = do
         package "get-appname"
             `sourceGit` "https://github.com/water-sucks/get-appname"
             `fetchGitHub` ("water-sucks", "get-appname")
+
+    define $
+        package "nsmb-mvl"
+            `sourceGitHub` ("ipodtouch0218", "NSMB-MarioVsLuigi")
+            `fetchUrl` (\(Version v) -> "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/" <> v <> "/MarioVsLuigi-Linux-" <> v <> ".zip")

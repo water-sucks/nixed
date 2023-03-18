@@ -49,6 +49,21 @@
     },
     "version": "df5166cab236b4220ec01edf5527c9c6a4487a8f"
   },
+  "nsmb-mvl": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "nsmb-mvl",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-rb9vZ3w4BfzygsdOCPLVX87T5tBXk6Aw+ba9I12fhwQ=",
+      "type": "url",
+      "url": "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/v1.7.1.0-beta/MarioVsLuigi-Linux-v1.7.1.0-beta.zip"
+    },
+    "version": "v1.7.1.0-beta"
+  },
   "picom": {
     "cargoLocks": null,
     "date": "2021-11-03",

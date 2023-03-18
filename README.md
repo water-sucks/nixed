@@ -34,6 +34,7 @@ to use them, feel free! Here's a rundown of what they are:
 | filen-desktop                   | Desktop client for filen.io               |
 | nerdfetch\*                     | Modified version of nerdfetch             |
 | plymouth-spinning-watch-theme\* | Spinning watch theme for Plymouth         |
+| nsmb-mvl                        | Mario vs. Luigi game rewrite from the DS  |
 | rescrobbled                     | MPRIS music scrobbler daemon              |
 | waybar-mpris                    | Waybar component for seeing MPRIS players |
 

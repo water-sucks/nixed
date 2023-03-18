@@ -24,6 +24,8 @@
     waybar-mpris = ./misc/waybar-mpris;
 
     get-appname = ./tools/get-appname;
+
+    nsmb-mvl = ./games/nsmb-mvl;
   };
 
   nodePkgs' = pkgs: let
