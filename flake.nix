@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-22.11";
-    nixpkgs-pr195816.url = "github:jojosch/nixpkgs/fix-pynitrokey";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
@@ -69,10 +68,6 @@
             })
             (_final: _prev: {
               stable = import nixpkgs-stable {
-                inherit system;
-                config.allowUnfree = true;
-              };
-              pr195816 = import nixpkgs-pr195816 {
                 inherit system;
                 config.allowUnfree = true;
               };

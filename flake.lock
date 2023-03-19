@@ -280,22 +280,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-pr195816": {
-      "locked": {
-        "lastModified": 1672824478,
-        "narHash": "sha256-GDu+xiZwtrI45mEqF79UEPWL2E4atxVG7Jsuowabnqo=",
-        "owner": "jojosch",
-        "repo": "nixpkgs",
-        "rev": "e7fd84881224e0ff6c8f1b5d8b5bc99cc4a57ba1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jojosch",
-        "ref": "fix-pynitrokey",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1679043548,
@@ -377,7 +361,6 @@
         "impermanence": "impermanence",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-pr195816": "nixpkgs-pr195816",
         "nixpkgs-stable": "nixpkgs-stable",
         "pre-commit-hooks": "pre-commit-hooks",
         "treefmt": "treefmt"
