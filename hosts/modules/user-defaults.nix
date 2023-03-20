@@ -19,7 +19,11 @@
       }
       (with lib; collectLeaves ../../home/modules)
       (args: {
-        imports = lib.genModules args "profiles" ../../home/profiles;
+        imports =
+          [
+            inputs.nix-colors.homeManagerModule
+          ]
+          ++ (lib.genModules args "profiles" ../../home/profiles);
       })
     ];
   };

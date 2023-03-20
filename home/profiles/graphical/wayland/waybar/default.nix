@@ -38,6 +38,8 @@
         fi
       done
     '';
+
+  c = config.colorscheme.colors;
 in {
   programs.waybar = {
     enable = true;
@@ -189,7 +191,18 @@ in {
         };
       };
     };
-    style = builtins.readFile ./style.css;
+    style = ''
+      /* I have to define bg statically due to GTK CSS limitations */
+      @define-color bg rgba(11, 11, 11, 0.69);
+      @define-color bg-button #${c.dark-purple};
+      @define-color text #${c.gray};
+      @define-color focused #${c.fg};
+      @define-color primary #${c.magenta};
+      @define-color secondary #${c.dark-red};
+      @define-color error #${c.light-red};
+
+      ${builtins.readFile ./style.css}
+    '';
   };
 
   systemd.user.services.waybar = {

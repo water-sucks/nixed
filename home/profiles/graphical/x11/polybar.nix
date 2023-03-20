@@ -3,6 +3,8 @@
   pkgs,
   ...
 }: let
+  c = config.colorscheme.colors;
+
   leftwm-state = "${pkgs.leftwm}/bin/leftwm-state";
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
@@ -23,7 +25,7 @@
       echo ""
     else
       if [ "$(echo info | ${bluetoothctl} | ${grep} 'Device' | ${wc} -c)" -eq 0 ]; then
-        echo "%{F#4D5566}%{F-}"
+        echo "%{F#${c.fg-dark}}%{F-}"
       else
         echo ""
       fi
@@ -56,11 +58,11 @@ in {
 
     config = {
       colors = {
-        background = "#121212";
-        primary = "#6D0011";
-        text = "#C9C1C9";
-        grey = "#8B8B8B";
-        deactivated = "#4D5566";
+        background = "#${c.bg-bright}";
+        primary = "#${c.dark-red}";
+        text = "#${c.fg}";
+        grey = "#${c.gray}";
+        deactivated = "#${c.fg-dark}";
       };
 
       "global/wm" = {
@@ -135,7 +137,7 @@ in {
       "module/layout" = {
         type = "custom/script";
         exec = ''${leftwm-state} -w 0 -s "{{ workspace.layout }}"'';
-        format = "%{B#6D0000}%{F#F8F8F2} · <label> · %{F-}%{B-}";
+        format = "%{B#${c.dark-red}}%{F#${c.fg}} · <label> · %{F-}%{B-}";
         tail = true;
         click-left = "${leftwm-command} NextLayout";
         click-right = "${leftwm-command} PreviousLayout";

@@ -21,6 +21,8 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-colors.url = "github:Misterio77/nix-colors";
+
     treefmt.url = "github:numtide/treefmt-nix";
 
     neovim.url = "github:nix-community/neovim-nightly-overlay";

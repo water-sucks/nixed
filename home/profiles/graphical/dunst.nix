@@ -1,8 +1,11 @@
 {
+  config,
   pkgs,
   lib,
   ...
-}: {
+}: let
+  c = config.colorscheme.colors;
+in {
   assertions = with lib; [
     (hm.assertions.assertPlatform "dunst" pkgs platforms.linux)
   ];
@@ -41,7 +44,7 @@
         horizontal_padding = 8;
         text_icon_padding = 0;
         frame_width = 2;
-        frame_color = "#8B8B8B";
+        frame_color = "#${c.gray}";
         separator_color = "frame";
         sort = "yes";
         idle_threshold = 120;
@@ -61,18 +64,18 @@
       };
 
       urgency_low = {
-        background = "#121212";
-        foreground = "#C9C1C9";
+        background = "#${c.bg}";
+        foreground = "#${c.fg}";
         timeout = 7;
       };
       urgency_normal = {
-        background = "#121212";
-        foreground = "#cccccc";
+        background = "#${c.bg-bright}";
+        foreground = "#${c.fg}";
         timeout = 10;
       };
       urgency_critical = {
-        background = "#6D0011";
-        foreground = "#C9C1C9";
+        background = "#${c.dark-red}";
+        foreground = "#${c.fg}";
         timeout = 0;
       };
     };

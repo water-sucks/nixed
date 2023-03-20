@@ -1,4 +1,5 @@
 {
+  config,
   self,
   pkgs,
   lib,
@@ -6,6 +7,8 @@
 }: let
   toINI = lib.generators.toINI {};
   toINI' = lib.generators.toINIWithGlobalSection {};
+
+  c = config.colorscheme.colors;
 in {
   i18n.inputMethod = {
     enabled = "fcitx5";
@@ -28,19 +31,19 @@ in {
     "fcitx5/themes/darkrose/radio.png".source = "${self}/assets/radio.png";
     "fcitx5/themes/darkrose/theme.conf".text = toINI {
       "Metadata" = {
-        Name = "Darkrose";
+        Name = "darkrose";
         Version = 1;
         Author = "water-sucks";
-        Description = "Low-constrast colorscheme that takes inspiration from rose colors";
+        Description = "Low-contrast colorscheme that takes inspiration from rose colors";
         ScaleWithDPI = true;
       };
 
       InputPanel = {
         Font = "Sans 13";
-        NormalColor = "#B76E79";
-        HighlightCandidateColor = "#9E4244";
-        HighlightColor = "#9E4244";
-        HighlightBackgroundColor = "#281C2B";
+        NormalColor = "#${c.dark-pink}";
+        HighlightCandidateColor = "#${c.red}";
+        HighlightColor = "#${c.red}";
+        HighlightBackgroundColor = "#${c.dark-purple}";
         Spacing = 3;
       };
 
@@ -52,8 +55,8 @@ in {
       };
 
       "InputPanel/Background" = {
-        Color = "#281C2B";
-        BorderColor = "#281C2B";
+        Color = "#${c.dark-purple}";
+        BorderColor = "#${c.dark-purple}";
         BorderWidth = 1;
       };
 
@@ -65,7 +68,7 @@ in {
       };
 
       "InputPanel/Highlight" = {
-        Color = "#333333";
+        Color = "#${c.bg-bright}";
       };
 
       "InputPanel/Highlight/Margin" = {
@@ -77,13 +80,13 @@ in {
 
       Menu = {
         Font = "Sans 10";
-        NormalColor = "#C9C1C9";
-        HighlightColor = "#4D5566";
+        NormalColor = "#${c.fg}";
+        HighlightColor = "#${c.fg-dark}";
         Spacing = 3;
       };
 
       "Menu/Background" = {
-        Color = "#281C2B";
+        Color = "#${c.dark-purple}";
       };
 
       "Menu/Background/Margin" = {
@@ -101,7 +104,7 @@ in {
       };
 
       "Menu/Highlight" = {
-        Color = "#FF7979";
+        Color = "#${c.salmon}";
       };
 
       "Menu/HighlightMargin" = {
@@ -112,7 +115,7 @@ in {
       };
 
       "Menu/Separator" = {
-        Color = "#101010";
+        Color = "#${c.bg-secondary}";
       };
 
       "Menu/CheckBox" = {

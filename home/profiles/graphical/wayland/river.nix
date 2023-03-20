@@ -1,4 +1,5 @@
 {
+  config,
   self,
   pkgs,
   lib,
@@ -6,6 +7,8 @@
 }: let
   riverctl = "${pkgs.river}/bin/riverctl";
   rivertile = "${pkgs.river}/bin/rivertile";
+
+  c = config.colorscheme.colors;
 
   modifier = keys:
     with lib;
@@ -44,7 +47,7 @@
   swayidle = "${pkgs.swayidle}/bin/swayidle";
   waylockWrapper =
     pkgs.writeShellScriptBin "waylock"
-    "${pkgs.waylock}/bin/waylock -init-color 0x121212 -input-color 0xB76E79 -fail-color 0x6D0011 $@";
+    "${pkgs.waylock}/bin/waylock -init-color 0x${c.bg-bright} -input-color 0x${c.dark-pink} -fail-color 0x${c.dark-red} $@";
   waylockCommand = "${waylockWrapper}/bin/waylock";
   wobSocket = "$XDG_RUNTIME_DIR/wob.sock";
 
@@ -159,9 +162,9 @@ in {
         ]) [nmap lmap])
       ];
     in ''
-      ${riverctl} background-color 0x121212
-      ${riverctl} border-color-focused 0x8B2950
-      ${riverctl} border-color-unfocused 0x4D5566
+      ${riverctl} background-color 0x${c.bg-bright}
+      ${riverctl} border-color-focused 0x${c.magenta}
+      ${riverctl} border-color-unfocused 0x${c.fg-dark}
 
       export XDG_CURRENT_DESKTOP=river
       dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP

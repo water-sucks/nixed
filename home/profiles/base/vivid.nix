@@ -1,24 +1,26 @@
-_: {
+{config, ...}: let
+  c = config.colorscheme.colors;
+in {
   programs.vivid = {
     enable = true;
     theme = "darkrose";
     themes = {
       darkrose = {
         colors = {
-          red = "9E4244";
-          dark_red = "6D0011";
-          light_red = "F85149";
-          orange = "A26B35";
-          light_orange = "F0883E";
-          dark_purple = "281C2B";
-          magenta = "8B2950";
-          dark_pink = "B76E79";
-          pink = "EB6F92";
-          salmon = "FF7979";
-          light_pink = "F6ACA7";
-          gray = "8B8B8B";
-          fg = "C9C1C9";
-          fg_dark = "8A95A2";
+          red = "${c.red}";
+          dark_red = "${c.dark-red}";
+          light_red = "${c.light-red}";
+          orange = "${c.orange}";
+          light_orange = "${c.light-orange}";
+          dark_purple = "${c.dark-purple}";
+          magenta = "${c.magenta}";
+          dark_pink = "${c.dark-pink}";
+          pink = "${c.pink}";
+          salmon = "${c.salmon}";
+          light_pink = "${c.light-pink}";
+          gray = "${c.gray}";
+          fg = "${c.fg}";
+          fg_dark = "${c.fg-dark}";
         };
 
         core = {

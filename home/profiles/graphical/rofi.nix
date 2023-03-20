@@ -4,6 +4,8 @@
   ...
 }: let
   inherit (config.lib.formats.rasi) mkLiteral;
+
+  c = config.colorscheme.colors;
 in {
   programs.rofi = {
     enable = true;
@@ -35,11 +37,11 @@ in {
 
       "*" = {
         background-color = mkLiteral "@bg";
-        bg = mkLiteral "#101010";
-        fg = mkLiteral "#C9C1C9";
-        bg-button = mkLiteral "#281C2B";
-        border = mkLiteral "#8B8B8B";
-        red = mkLiteral "#9E4244";
+        bg = mkLiteral "#${c.bg-secondary}";
+        fg = mkLiteral "#${c.fg}";
+        bg-button = mkLiteral "#${c.dark-purple}";
+        border = mkLiteral "#${c.gray}";
+        red = mkLiteral "#${c.red}";
       };
 
       window = {
@@ -99,12 +101,12 @@ in {
       };
 
       element-text = {
-        background-color = mkLiteral "#00000000";
+        background-color = mkLiteral "@bg";
         text-color = mkLiteral "inherit";
       };
 
       element-icon = {
-        background-color = mkLiteral "#00000000";
+        background-color = mkLiteral "@bg";
         text-color = mkLiteral "inherit";
       };
 

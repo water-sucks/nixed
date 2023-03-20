@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -9,6 +10,8 @@
     url = "https://raw.githubusercontent.com/k0nserv/kitty-icon/main/kitty.icns";
     sha256 = "0n6fb98pj86cm5zl3727vrayxvcbvnkn07sjbyixk4npcmd6w5bg";
   };
+
+  c = config.colorscheme.colors;
 in
   lib.mkMerge [
     {
@@ -28,56 +31,56 @@ in
 
           allow_remote_control = "yes";
 
-          cursor = "#FF7979";
-          cursor_text_color = "#C9C1C9";
+          cursor = "#${c.salmon}";
+          cursor_text_color = "#${c.fg}";
 
-          active_tab_foreground = "#C9C1C9";
-          active_tab_background = "#B76E79";
+          active_tab_foreground = "#${c.fg}";
+          active_tab_background = "#${c.dark-pink}";
           active_tab_font_style = "bold";
-          inactive_tab_foreground = "#B76E79";
-          inactive_tab_background = "#281C2B";
+          inactive_tab_foreground = "#${c.dark-pink}";
+          inactive_tab_background = "#${c.dark-purple}";
           tab_bar_margin_color = "none";
 
-          mark1_foreground = "#C9C1C9";
-          mark1_background = "#9E4244";
+          mark1_foreground = "#${c.fg}";
+          mark1_background = "#${c.red}";
 
-          active_border_color = "#C9C1C9";
-          inactive_border_color = "#9E4244";
-          bell_border_color = "#9E4244";
+          active_border_color = "#${c.fg}";
+          inactive_border_color = "#${c.red}";
+          bell_border_color = "#${c.red}";
           visual_bell_color = "none";
 
-          selection_foreground = "#C9C1C9";
-          selection_background = "#281C2B";
+          selection_foreground = "#${c.fg}";
+          selection_background = "#${c.dark-purple}";
 
-          url_color = "#FF7979";
+          url_color = "#${c.salmon}";
 
-          background = "#000000";
-          foreground = "#C9C1C9";
+          background = "#${c.bg}";
+          foreground = "#${c.fg}";
 
           # black
-          color0 = "#101010";
-          color8 = "#281C2B";
+          color0 = "#${c.bg-secondary}";
+          color8 = "#${c.dark-purple}";
           # red
-          color1 = "#6D0011";
-          color9 = "#F85149";
+          color1 = "#${c.dark-red}";
+          color9 = "#${c.light-red}";
           # green
-          color2 = "#9E4244";
-          color10 = "#F6ACA7";
+          color2 = "#${c.red}";
+          color10 = "#${c.light-pink}";
           # yellow
-          color3 = "#A26B35";
-          color11 = "#F08838";
+          color3 = "#${c.orange}";
+          color11 = "#${c.light-orange}";
           # blue
-          color4 = "#B76E79";
-          color12 = "#FF7979";
+          color4 = "#${c.dark-pink}";
+          color12 = "#${c.salmon}";
           # magenta
-          color5 = "#8B2950";
-          color13 = "#EB6F92";
+          color5 = "#${c.magenta}";
+          color13 = "#${c.pink}";
           # cyan (substituted with gray instead)
-          color6 = "#4D5566";
-          color14 = "#8A95A2";
+          color6 = "#${c.fg-dark}";
+          color14 = "#${c.fg-secondary}";
           # white
-          color7 = "#8B8B8B";
-          color15 = "#C9C1C9";
+          color7 = "#${c.gray}";
+          color15 = "#${c.fg}";
         };
       };
     }

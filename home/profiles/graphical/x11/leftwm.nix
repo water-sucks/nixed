@@ -1,5 +1,6 @@
 {
   self,
+  config,
   pkgs,
   lib,
   ...
@@ -55,6 +56,8 @@
       ${dunstify} -u low "Screenshot taken" "at $(date +%r)"
     fi
   '';
+
+  c = config.colorscheme.colors;
 in {
   home.packages = with pkgs; [
     pkgs.slop
@@ -184,9 +187,9 @@ in {
         theme = struct {
           border_width = 2;
           margin = 10;
-          default_border_color = "#4D5566";
-          floating_border_color = "#4D5566";
-          focused_border_color = "#8B2950";
+          default_border_color = "#${c.fg-dark}";
+          floating_border_color = "#${c.fg-dark}";
+          focused_border_color = "#${c.magenta}";
         };
 
         up = ''
