@@ -10,6 +10,7 @@
       inherit self inputs pkgs;
       lib = lib.extend (_: _: inputs.home.lib);
     };
+    backupFileExtension = "backup";
     sharedModules = lib.flatten [
       {
         programs.home-manager.enable = true;
