@@ -23,6 +23,7 @@
         imports =
           [
             inputs.nix-colors.homeManagerModule
+            inputs.impermanence.nixosModules.home-manager.impermanence
           ]
           ++ (lib.genModules args "profiles" ../../home/profiles);
       })
