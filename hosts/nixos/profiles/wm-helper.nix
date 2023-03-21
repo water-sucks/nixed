@@ -27,7 +27,6 @@
   environment.systemPackages = with pkgs; [river];
 
   environment.variables = {
-    GTK_THEME = "Orchis:dark";
     NIXOS_OZONE_WL = "1";
   };
 

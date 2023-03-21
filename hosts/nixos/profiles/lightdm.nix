@@ -11,12 +11,16 @@
       greeters.slick = {
         enable = true;
         theme = {
-          name = "Orchis-dark";
-          package = pkgs.orchis-theme;
+          name = "vimix-dark-ruby";
+          package = pkgs.vimix-gtk-themes.override {
+            themeVariants = ["ruby"];
+            colorVariants = ["dark"];
+            tweaks = ["flat" "grey"];
+          };
         };
         iconTheme = {
-          name = "Orchis-dark";
-          package = pkgs.orchis-theme;
+          name = "Adwaita";
+          package = pkgs.gnome.adwaita-icon-theme;
         };
         extraConfig = ''
           show-a11y=false

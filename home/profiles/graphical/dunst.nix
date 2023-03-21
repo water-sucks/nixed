@@ -12,10 +12,7 @@ in {
 
   services.dunst = {
     enable = true;
-    iconTheme = {
-      name = "Orchis-dark";
-      package = pkgs.orchis-theme;
-    };
+    inherit (config.gtk) iconTheme;
     waylandDisplay = "wayland-1";
     settings = {
       global = {

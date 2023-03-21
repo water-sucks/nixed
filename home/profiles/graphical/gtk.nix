@@ -8,7 +8,7 @@
   ];
 
   home.sessionVariables = {
-    GTK_THEME = "Orchis:dark";
+    GTK_THEME = "vimix-dark-ruby";
   };
 
   gtk = {
@@ -18,12 +18,18 @@
       name = "IBM Plex Sans";
     };
     iconTheme = {
-      name = "Orchis-dark";
-      package = pkgs.orchis-theme;
+      name = "Colloid-grey-dark";
+      package = pkgs.colloid-icon-theme.override {
+        colorVariants = ["grey"];
+      };
     };
     theme = {
-      name = "Orchis-dark";
-      package = pkgs.orchis-theme;
+      name = "vimix-dark-ruby";
+      package = pkgs.vimix-gtk-themes.override {
+        themeVariants = ["ruby"];
+        colorVariants = ["dark"];
+        tweaks = ["flat" "grey"];
+      };
     };
     gtk3.extraCss = ''
       decoration, window, window.background, window.titlebar, * {
