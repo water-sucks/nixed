@@ -307,15 +307,15 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "690f9e88e2a7dc92bcb0cca85f778a3e99fe1f7e";
+    version = "4cdc8aa8dbcfee5d7cef1dcbf5159af50214f005";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "690f9e88e2a7dc92bcb0cca85f778a3e99fe1f7e";
+      rev = "4cdc8aa8dbcfee5d7cef1dcbf5159af50214f005";
       fetchSubmodules = false;
-      sha256 = "sha256-Sg5dVBtU+o80qzNdhmPCN7viVfEcH5jCYCCTEKzdfAg=";
+      sha256 = "sha256-JdJB6QeHeaVEejSuOv4XliI2qNHmVkL+Q3+hzJMH5OA=";
     };
-    date = "2023-03-20";
+    date = "2023-03-22";
   };
   "'plugin-leap.nvim'" = {
     pname = "'plugin-leap.nvim'";
@@ -811,15 +811,15 @@
   };
   "'plugin-telescope.nvim'" = {
     pname = "'plugin-telescope.nvim'";
-    version = "a3f17d3baf70df58b9d3544ea30abe52a7a832c2";
+    version = "e504cf03c24119ee024c4182bee7ab31276cd684";
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
-      rev = "a3f17d3baf70df58b9d3544ea30abe52a7a832c2";
+      rev = "e504cf03c24119ee024c4182bee7ab31276cd684";
       fetchSubmodules = false;
-      sha256 = "sha256-QmyVJ/LZFtb/qqD5Q5fHsqAGgqaOT9XkVoLyOcqM14w=";
+      sha256 = "sha256-q7t60Tq7QR20VSmkSbiXAy/vPIm2DknJvZCBSl+y+yc=";
     };
-    date = "2023-02-26";
+    date = "2023-03-21";
   };
   "'plugin-trouble.nvim'" = {
     pname = "'plugin-trouble.nvim'";
