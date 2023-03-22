@@ -65,6 +65,12 @@ local server_configs = {
       },
     },
   },
+  nil_ls = {
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr)
+      client.server_capabilities.semanticTokensProvider = nil
+    end,
+  },
 }
 
 require("neodev").setup({
