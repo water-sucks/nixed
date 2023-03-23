@@ -163,7 +163,7 @@ in {
         width = 36;
         spacing = 8;
         modules-left = ["custom/explorer" "river/tags"];
-        # modules-center = ["wlr/taskbar"]; # Segfaults when ran as a systemd user service; will check later
+        modules-center = ["wlr/taskbar"]; # Segfaults when ran as a systemd user service; will check later
         modules-right = ["tray" "custom/powermenu"];
         "custom/explorer" = {
           format = "λ";
@@ -181,9 +181,9 @@ in {
           on-click-right = "none";
         };
         tray = {
-          tooltip = true;
+          show-passive-items = true;
           icon-size = 11;
-          spacing = 8;
+          spacing = 11;
         };
         "custom/powermenu" = {
           format = "拉";
