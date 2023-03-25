@@ -62,7 +62,5 @@
 
   services.earlyoom.enable = true;
 
-  services.hardware.openrgb.enable = true;
-
   system.stateVersion = "21.11";
 }
