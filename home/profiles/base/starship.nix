@@ -1,4 +1,6 @@
-_: {
+{config, ...}: let
+  c = config.colorscheme.colors;
+in {
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
@@ -14,20 +16,20 @@ _: {
         full_symbol = "";
       };
       character = {
-        error_symbol = "[➜](bold fg:purple)";
-        success_symbol = "[➜](bold fg:yellow)";
+        error_symbol = "[➜](bold #${c.magenta})";
+        success_symbol = "[➜](bold #${c.orange})";
       };
       cmd_duration = {
         min_time = 1000;
         show_milliseconds = true;
-        style = "fg:yellow";
+        style = "#${c.orange}";
       };
       dart = {
         symbol = " ";
       };
       directory = {
         read_only = " ";
-        style = "fg:red";
+        style = "#${c.dark-red}";
       };
       docker_context = {
         symbol = " ";
@@ -91,7 +93,7 @@ _: {
       ];
       git_branch = {
         format = "[$symbol$branch]($style) ";
-        style = "bold fg:white";
+        style = "bold #${c.gray}";
         symbol = " ";
       };
       git_status = {
@@ -105,7 +107,7 @@ _: {
         renamed = " ";
         staged = " ";
         stashed = " ";
-        style = "bold fg:bright-white";
+        style = "bold #${c.fg}";
         untracked = " ";
       };
       golang = {
@@ -117,7 +119,7 @@ _: {
       hostname = {
         format = "[$hostname]($style)";
         ssh_only = false;
-        style = "fg:purple";
+        style = "#${c.magenta}";
       };
       java = {
         symbol = " ";
@@ -158,20 +160,20 @@ _: {
       status = {
         disabled = false;
         format = "[$status]($style) ";
-        style = "fg:purple";
+        style = "#${c.magenta}";
       };
       time = {
         disabled = false;
         format = "at \\[[$time]($style)\\]";
-        style = "bold fg:cyan";
+        style = "bold #${c.fg-dark}";
         time_format = "%T";
         use_12hr = false;
       };
       username = {
         format = "# [$user]($style)";
         show_always = true;
-        style_root = "bold fg:bright-red";
-        style_user = "fg:bright-yellow";
+        style_root = "bold #${c.light-red}";
+        style_user = "#${c.light-orange}";
       };
     };
   };
