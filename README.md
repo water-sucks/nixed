@@ -71,6 +71,7 @@ To add them to your flake, you can use the provided overlay:
 | hikari           | Hikari Wayland compositor configuration   |
 | leftwm           | LeftWM configuration                      |
 | river            | River configuration                       |
+| vivid            | Vivid LS_COLORS generator configuration   |
 | wob              | Wayland overlay bar configuration/service |
 
 To use these modules, you can use the provided `homeModules` attribute:
