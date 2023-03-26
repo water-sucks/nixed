@@ -14,6 +14,7 @@ lib.mkIf pkgs.stdenv.isLinux {
   home.persistence."/persist/home/${config.home.username}" = {
     directories = [
       ".config/tidal-hifi"
+      ".config/rescrobbled"
       ".config/pulse"
     ];
   };
