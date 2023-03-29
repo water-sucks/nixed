@@ -31,7 +31,6 @@
 
   age.secrets.root-user-HunterRenfrow.file = "${self}/secrets/root-user-HunterRenfrow.age";
   users.users.root.passwordFile = "${config.age.secrets.root-user-HunterRenfrow.path}";
-  # users.users.root.initialPassword = "hunter2";
 
   environment.persistence."/persist" = {
     hideMounts = true;
