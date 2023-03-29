@@ -37,9 +37,6 @@ in
           plugins = ["git" "sudo" "dirhistory" "thefuck" "ssh-agent"];
           theme = ""; # Using starship for theme
         };
-        initExtraFirst = ''
-          nerdfetch
-        '';
         shellAliases = {
           please = "sudo";
           dog = "bat";
