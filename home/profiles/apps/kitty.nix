@@ -31,7 +31,7 @@ in
 
           allow_remote_control = "yes";
 
-          cursor = "#${c.salmon}";
+          cursor = "#${c.pink}";
           cursor_text_color = "#${c.fg}";
 
           active_tab_foreground = "#${c.fg}";
@@ -52,7 +52,7 @@ in
           selection_foreground = "#${c.fg}";
           selection_background = "#${c.dark-purple}";
 
-          url_color = "#${c.salmon}";
+          url_color = "#${c.pink}";
 
           background = "#${c.bg}";
           foreground = "#${c.fg}";
@@ -71,7 +71,7 @@ in
           color11 = "#${c.light-orange}";
           # blue
           color4 = "#${c.dark-pink}";
-          color12 = "#${c.salmon}";
+          color12 = "#${c.pink}";
           # magenta
           color5 = "#${c.magenta}";
           color13 = "#${c.pink}";

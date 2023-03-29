@@ -13,8 +13,7 @@ _: {
       dark-purple = "#281C2B";
       magenta = "#8B2950";
       dark-pink = "#B76E79";
-      pink = "#EB6F92";
-      salmon = "#FF7979";
+      pink = "#FF7979";
       light-pink = "#F6ACA7";
       gray = "#8B8B8B";
       bg = "#000000";

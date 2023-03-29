@@ -7,13 +7,19 @@ flutter_tools_spec.config = function()
     lsp = {
       cmd = (function()
         if vim.env.FLUTTER_SDK then
+          -- FLUTTER_SDK is intended for when the Flutter SDK is
+          -- installed with Nix, but can still be specified even
+          -- when installed normally.
           return {
             vim.env.FLUTTER_SDK .. "/bin/cache/dart-sdk/bin/dart",
             vim.env.FLUTTER_SDK .. "/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot",
             "--lsp",
           }
         else
-          return nil
+          -- Dart has to be on the PATH if FLUTTER_SDK is not defined,
+          -- it makes no sense to write Dart without Dart installed
+          -- properly.
+          return { "dart", "language-server", "--protocol=lsp" }
         end
       end)(),
       on_attach = require("plugins.lsp.on_attach"),
@@ -47,7 +53,13 @@ flutter_tools_spec.config = function()
       enabled = true,
       run_via_dap = true,
       register_configurations = function(_)
-        require("dap").configurations.dart = {}
+        local dap = require("dap")
+        dap.adapters.dart = {
+          type = "executable",
+          command = vim.env.FLUTTER_SDK and "flutter" or "dart",
+          args = { "debug_adapter" },
+        }
+        dap.configurations.dart = {}
         require("dap.ext.vscode").load_launchjs()
       end,
     },

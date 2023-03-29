@@ -16,7 +16,6 @@ in {
           magenta = "${c.magenta}";
           dark_pink = "${c.dark-pink}";
           pink = "${c.pink}";
-          salmon = "${c.salmon}";
           light_pink = "${c.light-pink}";
           gray = "${c.gray}";
           fg = "${c.fg}";
@@ -33,11 +32,11 @@ in {
           };
 
           symlink = {
-            foreground = "salmon";
+            foreground = "pink";
           };
 
           multi_hard_link = {
-            foreground = "salmon";
+            foreground = "pink";
           };
 
           fifo = {

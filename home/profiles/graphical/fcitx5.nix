@@ -104,7 +104,7 @@ in {
       };
 
       "Menu/Highlight" = {
-        Color = "#${c.salmon}";
+        Color = "#${c.pink}";
       };
 
       "Menu/HighlightMargin" = {
