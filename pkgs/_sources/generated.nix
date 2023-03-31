@@ -41,18 +41,6 @@
       sha256 = "sha256-rb9vZ3w4BfzygsdOCPLVX87T5tBXk6Aw+ba9I12fhwQ=";
     };
   };
-  picom = {
-    pname = "picom";
-    version = "c4107bb6cc17773fdc6c48bb2e475ef957513c7a";
-    src = fetchFromGitHub {
-      owner = "ibhagwan";
-      repo = "picom";
-      rev = "c4107bb6cc17773fdc6c48bb2e475ef957513c7a";
-      fetchSubmodules = false;
-      sha256 = "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=";
-    };
-    date = "2021-11-03";
-  };
   polybar = {
     pname = "polybar";
     version = "921e2d06704d78a03bc851b173012682c12191d0";

@@ -21,11 +21,6 @@ packageSet = do
             `fromGitHub` ("francma", "wob")
 
     define $
-        package "picom"
-            `sourceGit` "https://github.com/ibhagwan/picom"
-            `fetchGitHub` ("ibhagwan", "picom")
-
-    define $
         package "rescrobbled"
             `sourceManual` "v0.6.2"
             `fetchGitHub` ("InputUsername", "rescrobbled")

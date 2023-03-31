@@ -36,10 +36,7 @@ in {
           graphical = {
             enable = true;
             darwin-wallpaper.enable = false;
-            x11 = {
-              enable = true;
-              picom.enable = false;
-            };
+            x11.enable = true;
             wayland.enable = true;
           };
         };

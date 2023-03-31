@@ -64,26 +64,6 @@
     },
     "version": "v1.7.1.0-beta"
   },
-  "picom": {
-    "cargoLocks": null,
-    "date": "2021-11-03",
-    "extract": null,
-    "name": "picom",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "ibhagwan",
-      "repo": "picom",
-      "rev": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a",
-      "sha256": "sha256-1hVFBGo4Ieke2T9PqMur1w4D0bz/L3FAvfujY9Zergw=",
-      "type": "github"
-    },
-    "version": "c4107bb6cc17773fdc6c48bb2e475ef957513c7a"
-  },
   "polybar": {
     "cargoLocks": null,
     "date": "2023-03-25",
