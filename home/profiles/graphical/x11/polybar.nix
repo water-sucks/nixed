@@ -18,17 +18,19 @@
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
   wc = "${pkgs.coreutils}/bin/wc";
+  cut = "${pkgs.coreutils}/bin/cut";
   sed = "${pkgs.gnused}/bin/sed";
 
   bluetooth-status = pkgs.writeShellScript "polybar-bluetooth-status.sh" ''
-    if [ "$(${bluetoothctl} show | ${grep} "Powered: yes" | ${wc} -c)" -eq 0 ]; then
-      echo ""
-    else
-      if [ "$(echo info | ${bluetoothctl} | ${grep} 'Device' | ${wc} -c)" -eq 0 ]; then
-        echo "%{F#${c.fg-dark}}%{F-}"
+    if [ "$(${bluetoothctl} show | ${grep} "Powered: yes" | ${wc} -c)" -ne 0 ]; then
+      device="$(${bluetoothctl} devices Connected | ${cut} -d' ' -f3-)"
+      if [ ! -z "$device" ]; then
+        echo " $device"
       else
-        echo ""
+        echo ":"
       fi
+    else
+      echo "%{F#${c.fg-dark}}%{F-}"
     fi
   '';
   toggle-bluetooth = pkgs.writeShellScript "polybar-toggle-bluetooth.sh" ''
@@ -81,8 +83,9 @@ in {
       };
 
       "bar/oofbar" = {
-        modules-left = "powermenu spacer ewmh spacer layout";
-        modules-right = "battery dot storage dot cpu dot mem dot brightness dot audio dot bluetooth dot wlan dot date spacer tray launcher";
+        modules-left = "powermenu ewmh layout";
+        modules-center = "date";
+        modules-right = "battery brightness storage cpu mem audio bluetooth wlan tray launcher";
         width = "100%";
         offset-x = 0;
         offset-y = 0;
@@ -94,8 +97,8 @@ in {
         radius = 0;
         padding-left = 0;
         padding-right = 0;
-        module-margin-left = 0;
-        module-margin-right = 0;
+        module-margin-left = 1;
+        module-margin-right = 1;
         separator = "";
         font-0 = "BlexMono Nerd Font:size=8;3";
         border-bottom-size = 2;
@@ -151,7 +154,7 @@ in {
         time-format = "%H:%M";
 
         format-charging = "<animation-charging> <label-charging>";
-        label-charging = "%percentage%% ";
+        label-charging = " %percentage%% ";
 
         format-discharging = "<ramp-capacity> <label-discharging>";
         label-discharging = " %percentage%% (%time%)";
@@ -199,10 +202,9 @@ in {
         enable-scroll = true;
 
         format = "<ramp>";
-        ramp-0 = "";
-        ramp-1 = "ﯧ";
-        ramp-2 = "";
-        ramp-3 = "ﯦ";
+        ramp-0 = "󰃞";
+        ramp-1 = "󰃟";
+        ramp-2 = "󰃠";
       };
 
       "module/audio" = {
@@ -234,7 +236,7 @@ in {
         format-disconnected = "<label-disconnected>";
         format-connected-padding = 0;
 
-        label-connected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}直%{A}%{A}";
+        label-connected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}直 %essid%%{A}%{A}";
         label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}睊%{A}%{A}";
 
         label-disconnected-foreground = "\${colors.deactivated}";
@@ -243,8 +245,8 @@ in {
       "module/date" = {
         type = "internal/date";
         interval = 1;
-        time = "%a %H:%M:%S";
-        time-alt = "%B %d, %Y";
+        time = " %a %d %b  祥 %H:%M:%S";
+        # time-alt = "%B %d, %Y";
         format = "<label>";
         label = "%time%";
       };
@@ -260,18 +262,7 @@ in {
 
       "module/tray" = {
         type = "internal/tray";
-        format = " <tray> ";
-      };
-
-      "module/spacer" = {
-        type = "custom/text";
-        format = " ";
-      };
-
-      "module/dot" = {
-        type = "custom/text";
-        format-foreground = "\${colors.grey}";
-        format = " · ";
+        format = "<tray>";
       };
     };
   };
