@@ -95,8 +95,6 @@
       in
         valueType;
 
-      bruh = "hi";
-
       lib = let
         mkType = typeName: value: {
           inherit value;
