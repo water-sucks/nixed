@@ -55,15 +55,15 @@
   };
   "'plugin-bufferline.nvim'" = {
     pname = "'plugin-bufferline.nvim'";
-    version = "eb4e95be22c55890b90fc01a8223e0c0ea4a0862";
+    version = "01b20685000e704214e58d5d8cd0851c1657efee";
     src = fetchFromGitHub {
       owner = "akinsho";
       repo = "bufferline.nvim";
-      rev = "eb4e95be22c55890b90fc01a8223e0c0ea4a0862";
+      rev = "01b20685000e704214e58d5d8cd0851c1657efee";
       fetchSubmodules = false;
-      sha256 = "sha256-wROiVa15dS/huRJMnXy9gPESgFY+Q8dfDX9MqK3glzs=";
+      sha256 = "sha256-Gqgvbkb9t7ys0rFZ7nS7i2wBFb+iKju36pdfR4WyfZA=";
     };
-    date = "2023-03-30";
+    date = "2023-04-01";
   };
   "'plugin-cmp-buffer'" = {
     pname = "'plugin-cmp-buffer'";
@@ -271,15 +271,15 @@
   };
   "'plugin-haskell-tools.nvim'" = {
     pname = "'plugin-haskell-tools.nvim'";
-    version = "eb54118da4467e52d020f2d5c70436f0d1c785f5";
+    version = "0ede270a6393cdafa67f247a79b376cf9ade2756";
     src = fetchFromGitHub {
       owner = "MrcJkb";
       repo = "haskell-tools.nvim";
-      rev = "eb54118da4467e52d020f2d5c70436f0d1c785f5";
+      rev = "0ede270a6393cdafa67f247a79b376cf9ade2756";
       fetchSubmodules = false;
-      sha256 = "sha256-cpVxGEbVmUX5/kRNPqA9Xe+SxY+/1C5Ny12dC0z58LU=";
+      sha256 = "sha256-1M5ALLR6OqUnN1xaHuXjUUiD9nRp1vcyRTTblD/XMzQ=";
     };
-    date = "2023-03-31";
+    date = "2023-04-02";
   };
   "'plugin-highlight-current-n.nvim'" = {
     pname = "'plugin-highlight-current-n.nvim'";
@@ -391,27 +391,27 @@
   };
   "'plugin-lush.nvim'" = {
     pname = "'plugin-lush.nvim'";
-    version = "e26df50e856e671ce79db99449e1b015d6608673";
+    version = "39d91f09cde4c96f09015716fce6f91bca1eaa9a";
     src = fetchFromGitHub {
       owner = "rktjmp";
       repo = "lush.nvim";
-      rev = "e26df50e856e671ce79db99449e1b015d6608673";
+      rev = "39d91f09cde4c96f09015716fce6f91bca1eaa9a";
       fetchSubmodules = false;
-      sha256 = "sha256-j8b7zW4HK6l/5X3F1kRU7PREV6w+sLYtRK+PNtJKOfk=";
+      sha256 = "sha256-lfd6+M8ymtZdCCTC0H8j0kTk5xCIEDymoi5J3p+u/SA=";
     };
-    date = "2023-03-27";
+    date = "2023-04-02";
   };
   "'plugin-mini.surround'" = {
     pname = "'plugin-mini.surround'";
-    version = "cbc884d4dc99ab0d0c843cdb7391aad3144fad3f";
+    version = "cc962bae0890217f8473390abc8cef988519d370";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.surround";
-      rev = "cbc884d4dc99ab0d0c843cdb7391aad3144fad3f";
+      rev = "cc962bae0890217f8473390abc8cef988519d370";
       fetchSubmodules = false;
-      sha256 = "sha256-f4QoqJEXecT7bUy9MzZVkGuHeAyRosFtYeyKe4/y11I=";
+      sha256 = "sha256-aL8xMH2uJHRgsB6BlCSbQhdhOioikP/YRYnG9VjzxSI=";
     };
-    date = "2023-03-24";
+    date = "2023-04-01";
   };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
@@ -427,15 +427,15 @@
   };
   "'plugin-neorg'" = {
     pname = "'plugin-neorg'";
-    version = "c278f6f895c6b2f9ef4fc217ed867675108d804e";
+    version = "d38a22940aaa55351cd4dc106540fa302fad4f0d";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "neorg";
-      rev = "c278f6f895c6b2f9ef4fc217ed867675108d804e";
+      rev = "d38a22940aaa55351cd4dc106540fa302fad4f0d";
       fetchSubmodules = false;
-      sha256 = "sha256-uA3fF8mbi6erB7nRoDzJ+AqMu6gd158+yXaFXJkH318=";
+      sha256 = "sha256-RTOVFVa6/PfvCMSLcNz3QoWWQ9oumf4JiHKiS26q08c=";
     };
-    date = "2023-03-31";
+    date = "2023-04-01";
   };
   "'plugin-neorg-telescope'" = {
     pname = "'plugin-neorg-telescope'";
@@ -547,15 +547,15 @@
   };
   "'plugin-nvim-dap-python'" = {
     pname = "'plugin-nvim-dap-python'";
-    version = "af5e04c6eae97498258f84c61e1b22be6660763b";
+    version = "b21f707b39bbe0b530a61371ab5fc1786bd16c22";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap-python";
-      rev = "af5e04c6eae97498258f84c61e1b22be6660763b";
+      rev = "b21f707b39bbe0b530a61371ab5fc1786bd16c22";
       fetchSubmodules = false;
-      sha256 = "sha256-NXhSynRUTB2CjTHdz0r+tTipMJemeVI9wMjLHcfWdXM=";
+      sha256 = "sha256-KGQHxsC8xTtYUkMsMIFTZcqA2y5mbhoIRhwLp6yN+as=";
     };
-    date = "2023-03-24";
+    date = "2023-04-02";
   };
   "'plugin-nvim-dap-ui'" = {
     pname = "'plugin-nvim-dap-ui'";
@@ -607,15 +607,15 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "94291c924f0efdbc16ac625cf77ae7d3a7fa5821";
+    version = "0bc0c38e1b11dfb6b5f1794d53869f89ccf9e78f";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "94291c924f0efdbc16ac625cf77ae7d3a7fa5821";
+      rev = "0bc0c38e1b11dfb6b5f1794d53869f89ccf9e78f";
       fetchSubmodules = false;
-      sha256 = "sha256-04N1kvQPUhDZ45U+YY1M8DqGz86/5xxri6EWiaov4nc=";
+      sha256 = "sha256-gyVeSuuc7PiX2kDxbT2IzTvJ083qN7NbE+sVhH0keUc=";
     };
-    date = "2023-03-30";
+    date = "2023-04-02";
   };
   "'plugin-nvim-tetris'" = {
     pname = "'plugin-nvim-tetris'";
