@@ -8,7 +8,7 @@ lib.mkIf pkgs.stdenv.isLinux {
 
   home.activation = {
     deleteMimeappsList = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
-      rm $VERBOSE_ARG $HOME/.config/mimeapps.list
+      rm $VERBOSE_ARG -f $HOME/.config/mimeapps.list
     '';
   };
 }
