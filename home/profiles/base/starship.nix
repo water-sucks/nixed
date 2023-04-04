@@ -47,7 +47,6 @@ in {
         "$git_branch"
         "$git_commit"
         "$git_state"
-        "$git_metrics"
         "$git_status"
         "$hg_branch"
         "$docker_context"
@@ -97,18 +96,19 @@ in {
         symbol = " ";
       };
       git_status = {
-        ahead = "\${count} ";
-        behind = "\${count} ";
-        conflicted = " ";
-        deleted = " ";
-        diverged = "ﬕ ";
-        format = "([「 $all_status$ahead_behind 」]($style) )";
-        modified = "δ ";
-        renamed = " ";
-        staged = " ";
-        stashed = " ";
+        ahead = " \${count}";
+        behind = " \${count}";
+        conflicted = " ";
+        deleted = " ";
+        diverged = " ﬕ";
+        # format = "([「$all_status$ahead_behind」]($style))";
+        format = "[\\[$all_status$ahead_behind \\]]($style) ";
+        modified = " δ";
+        renamed = " ";
+        staged = " ";
+        stashed = " ";
         style = "bold #${c.fg}";
-        untracked = " ";
+        untracked = " ";
       };
       golang = {
         symbol = " ";
@@ -135,7 +135,7 @@ in {
         symbol = " ";
       };
       nix_shell = {
-        format = "[$symbol$state]($style) ";
+        format = "[$symbol$state]($style)";
         impure_msg = "λ ";
         # The pure_msg symbol will probably never show up;
         # pure shells likely won't be running starship.
