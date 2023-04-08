@@ -53,6 +53,9 @@ in
       };
     })
     (lib.mkIf isLinux {
+      programs.zsh.shellAliases = {
+        open = "xdg-open";
+      };
       home.persistence."/persist/home/${config.home.username}" = {
         directories = [
           ".local/share/zsh"
