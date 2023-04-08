@@ -40,28 +40,6 @@ to use them, feel free! Here's a rundown of what they are:
 
 \* - Probably don't use this package, this is tailored for my own config.
 
-To add them to your flake, you can use the provided overlay:
-
-```nix
-{
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
-    nixed.url = "github:water-sucks/nixed";
-  };
-
-  outputs = {self, nixpkgs, nixed, ...}: let
-    pkgs = import nixpkgs {
-      system = "x86_64-linux";
-      overlays = [
-        nixed.overlays.default
-      ];
-    };
-  in {
-    # Whatever you want to do with my packages...
-  };
-}
-```
-
 ### home-manager Modules
 
 | Name             | Description                               |
@@ -74,39 +52,10 @@ To add them to your flake, you can use the provided overlay:
 | vivid            | Vivid LS_COLORS generator configuration   |
 | wob              | Wayland overlay bar configuration/service |
 
-To use these modules, you can use the provided `homeModules` attribute:
-
-```nix
-{
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
-    home.url = "github:nix-community/home-manager";
-    nixed.url = "github:water-sucks/nixed";
-  };
-
-  outputs = {self, nixpkgs, home-manager, nixed, ... }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    homeConfigurations.jdoe =
-      home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
-        # Adds all modules to configuration
-        modules = [
-          # Whatver other modules you want
-        ] ++ (builtins.attrValues nixed.homeModules);
-
-      };
-  };
-}
-```
+To use these modules, you can use the provided `homeModules` attribute.
 
 To see possible options, check their definitions out in
 [home/modules](./home/modules).
-
-Note: I don't use berry or Hikari actively anymore, but since their modules are
-pretty uncomplicated, I still keep them in the tree.
 
 ## Roster
 
