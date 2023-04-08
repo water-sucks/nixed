@@ -3,7 +3,7 @@
 
 # shellcheck disable=2251 # Disables annoying check for skipping errexit
 
-# Fetch all inputs specified in all Fetch.hs files.
+# Fetch all inputs specified in all nvfetcher.toml files.
 
 set -euo pipefail
 set -o noclobber
@@ -82,7 +82,7 @@ done
 
 cd_to_root
 
-for file in **/Fetch.hs; do
+for file in **/nvfetcher.toml; do
   cd "$root/$(dirname "$file")" || exit 2
 
   if "$interactive"; then
@@ -90,7 +90,7 @@ for file in **/Fetch.hs; do
     confirm
   fi
 
-  cmd="runghc $(basename "$file") ${keyfile+"-k $keyfile"}"
+  cmd="nvfetcher -c $(basename "$file") ${keyfile+"-k $keyfile"}"
 
   if ! eval "$cmd"; then
     printf "error: unable to run nvfetcher in %s\n\n" "$(dirname "$file")"

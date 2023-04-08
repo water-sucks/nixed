@@ -1,3 +1,9 @@
 result
 .direnv
 .pre-commit-config.yaml
+
+# nixago: ignore-linked-files
+pkgs/nvfetcher.toml
+home/profiles/base/zsh/nvfetcher.toml
+home/profiles/base/nvim/nvfetcher.toml
+home/profiles/apps/firefox/nvfetcher.toml

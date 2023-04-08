@@ -21,6 +21,9 @@
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixago.url = "github:nix-community/nixago";
+    nixago.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-colors.url = "github:Misterio77/nix-colors";
 
     treefmt.url = "github:numtide/treefmt-nix";
@@ -37,17 +40,19 @@
     lib = import ./lib inputs;
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = with inputs;
-        [
-          pre-commit-hooks.flakeModule
-          treefmt.flakeModule
+      imports = with inputs; [
+        pre-commit-hooks.flakeModule
+        treefmt.flakeModule
 
-          ./hosts/nixos
-          ./hosts/darwin
-          ./home
-          ./pkgs
-        ]
-        ++ (lib.collectLeaves ./modules);
+        ./modules/hooks.nix
+        ./modules/shell.nix
+        ./modules/treefmt.nix
+
+        ./hosts/nixos
+        ./hosts/darwin
+        ./home
+        ./pkgs
+      ];
 
       systems = ["x86_64-linux" "x86_64-darwin"];
 

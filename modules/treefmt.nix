@@ -3,10 +3,6 @@
     settings = {
       projectRootFile = "flake.nix";
       programs.alejandra.enable = true;
-      programs.ormolu = {
-        enable = true;
-        package = pkgs.haskellPackages.fourmolu;
-      };
       programs.stylua.enable = true;
       programs.prettier.enable = true;
       programs.shfmt.enable = true;
