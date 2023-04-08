@@ -12,6 +12,12 @@ in {
   options.programs.wob = {
     enable = mkEnableOption "Wayland overlay bar";
 
+    package = mkOption {
+      type = types.package;
+      default = pkgs.wob;
+      description = "Package to use for wob";
+    };
+
     # I'm lazy, so I'm just going to specify the global
     # section inside my config.
     settings = mkOption {

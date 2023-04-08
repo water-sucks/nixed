@@ -5,6 +5,10 @@
 }: let
   c = config.colorscheme.colors;
 
+  polybarPackage = pkgs.polybar.overrideAttrs (_: {
+    inherit (pkgs.sources.polybar) pname src version;
+  });
+
   leftwm-state = "${pkgs.leftwm}/bin/leftwm-state";
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
@@ -51,7 +55,7 @@ in {
 
   services.polybar = {
     enable = true;
-    package = pkgs.polybar.override {
+    package = polybarPackage.override {
       pulseSupport = true;
     };
     script = ''
