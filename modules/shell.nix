@@ -30,10 +30,13 @@
                 config.treefmt.build.wrapper
               ]
               ++ (builtins.attrValues config.treefmt.build.programs));
-          shellHook = pkgs.lib.optionalString (!ci) ''
-            ${(nixago.lib.${system}.makeAll nixagoConfigs).shellHook}
-            ${config.pre-commit.installationScript}
-          '';
+          shellHook =
+            ''
+              ${(nixago.lib.${system}.makeAll nixagoConfigs).shellHook}
+            ''
+            + pkgs.lib.optionalString (!ci) ''
+              ${config.pre-commit.installationScript}
+            '';
         };
     in {
       default = shell {};
