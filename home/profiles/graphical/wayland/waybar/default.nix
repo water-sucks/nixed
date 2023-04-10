@@ -102,7 +102,7 @@ in {
         };
         disk = {
           interval = 30;
-          path = "/";
+          path = lib.mkDefault "/nix";
           format = " {percentage_used}%";
         };
         memory = {

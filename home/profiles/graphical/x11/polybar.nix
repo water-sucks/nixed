@@ -182,7 +182,7 @@ in {
       "module/storage" = {
         type = "internal/fs";
         interval = 25;
-        mount-0 = "/";
+        mount-0 = "/nix";
         label-mounted = "  %used%";
         label-unmounted = "%mountpoint% not mounted";
         label-unmounted-foreground = "\${colors.deactivated}";
