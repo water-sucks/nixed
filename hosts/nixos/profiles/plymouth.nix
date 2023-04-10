@@ -15,10 +15,10 @@
     plymouth = {
       enable = true;
       font = "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexSans-Text.otf";
-      theme = "spinning-watch";
-      themePackages = with pkgs; [
-        plymouth-spinning-watch-theme
-      ];
+      # theme = "anarchist";
+      # themePackages = with pkgs; [
+      #   plymouth-anarchist-theme
+      # ];
     };
   };
 }

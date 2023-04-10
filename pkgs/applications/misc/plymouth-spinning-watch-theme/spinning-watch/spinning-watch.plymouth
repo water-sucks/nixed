@@ -1,9 +1,0 @@
-[Plymouth Theme]
-Name=spinning-watch
-Description=display tech rings
-Comment=created By Aditya Shakya (@adi1090x)
-ModuleName=script
-
-[script]
-ImageDir=/usr/share/plymouth/themes/spinning-watch
-ScriptFile=/usr/share/plymouth/themes/spinning-watch/spinning-watch.script

@@ -17,8 +17,6 @@
 
     nerdfetch = ./applications/misc/nerdfetch;
 
-    plymouth-spinning-watch-theme = ./applications/misc/plymouth-spinning-watch-theme;
-
     rescrobbled = ./tools/audio/rescrobbled;
 
     waybar-mpris = ./misc/waybar-mpris;
