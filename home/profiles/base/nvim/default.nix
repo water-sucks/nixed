@@ -61,73 +61,84 @@
       # Add plugins you want synced with nixpkgs here.
       inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
     };
-in {
-  home.packages = with pkgs; [
-    neovim-remote
-  ];
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-
-    withPython3 = true;
-    withRuby = false;
-    withNodeJs = false;
-
-    extraPackages = with pkgs; [
-      # Language servers
-      pyright
-      ccls
-      gopls
-      ltex-ls
-      emmet-ls
-      lua-language-server
-      nodePackages.bash-language-server
-      nodePackages.graphql-language-service-cli
-      nodePackages.vscode-langservers-extracted
-      stable.nil
-
-      # null-ls sources
-      alejandra
-      asmfmt
-      black
-      cppcheck
-      deadnix
-      editorconfig-checker
-      gofumpt
-      gitlint
-      mypy
-      nodePackages.alex
-      nodePackages.prettier
-      nodePackages.markdownlint-cli
-      python3Packages.flake8
-      shellcheck
-      shellharden
-      shfmt
-      statix
-      stylua
-      vim-vint
-
-      # DAP servers
-      delve
-    ];
-  };
-
-  xdg.configFile = {
-    "nvim/init.lua".source = ./init.lua;
-    "nvim/lua".source = ./lua;
-    "nvim/parser".source = "${parserDir}";
-  };
-
-  xdg.dataFile =
+in
+  lib.mkMerge [
     {
-      "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+      home.packages = with pkgs; [
+        neovim-remote
+      ];
+
+      programs.neovim = {
+        enable = true;
+        viAlias = true;
+        vimAlias = true;
+
+        withPython3 = true;
+        withRuby = false;
+        withNodeJs = false;
+
+        extraPackages = with pkgs; [
+          # Language servers
+          pyright
+          ccls
+          gopls
+          ltex-ls
+          emmet-ls
+          lua-language-server
+          nodePackages.bash-language-server
+          nodePackages.graphql-language-service-cli
+          nodePackages.vscode-langservers-extracted
+          stable.nil
+
+          # null-ls sources
+          alejandra
+          asmfmt
+          black
+          cppcheck
+          deadnix
+          editorconfig-checker
+          gofumpt
+          gitlint
+          mypy
+          nodePackages.alex
+          nodePackages.prettier
+          nodePackages.markdownlint-cli
+          python3Packages.flake8
+          shellcheck
+          shellharden
+          shfmt
+          statix
+          stylua
+          vim-vint
+
+          # DAP servers
+          delve
+        ];
+      };
+
+      xdg.configFile = {
+        "nvim/init.lua".source = ./init.lua;
+        "nvim/lua".source = ./lua;
+        "nvim/parser".source = "${parserDir}";
+      };
+
+      xdg.dataFile =
+        {
+          "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+        }
+        // (with lib;
+          mapAttrs' (n: v:
+            nameValuePair "nvim/plugins/${n}" {
+              source = "${v}";
+            })
+          plugins);
     }
-    // (with lib;
-      mapAttrs' (n: v:
-        nameValuePair "nvim/plugins/${n}" {
-          source = "${v}";
-        })
-      plugins);
-}
+
+    (lib.mkIf pkgs.stdenv.isLinux {
+      home.persistence."/persist/home/varun" = {
+        directories = [
+          ".local/state/nvim"
+        ];
+      };
+    })
+  ]
