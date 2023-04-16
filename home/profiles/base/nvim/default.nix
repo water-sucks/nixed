@@ -20,7 +20,7 @@
   # Attrset of grammars built using nvim-treesitter's lockfile
   grammars' = with lib;
     genAttrs' pkgs.vimPlugins.nvim-treesitter.withAllGrammars.passthru.dependencies
-    (v: (replaceStrings ["nvim-treesitter-"] ["tree-sitter-"] (removeSuffix "-grammar" v.name)));
+    (v: (replaceStrings ["nvim-treesitter-"] ["tree-sitter-"] v.name));
   grammars = grammars' // generatedGrammars;
 
   parserDir = with lib;
@@ -28,7 +28,7 @@
     "treesitter-parsers"
     (mapAttrsToList
       (n: v: let
-        name = "${replaceStrings ["-"] ["_"] (removePrefix "tree-sitter-" n)}.so";
+        name = "${replaceStrings ["-"] ["_"] (removePrefix "tree-sitter-grammar-" n)}.so";
       in {
         inherit name;
         path =
