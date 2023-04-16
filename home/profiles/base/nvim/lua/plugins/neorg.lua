@@ -58,7 +58,7 @@ neorg_spec.config = function()
       },
       ["core.highlights"] = {
         config = {
-          highlights = require("darkrose.groups.plugins.neorg")(),
+          highlights = require("darkrose.integrations.neorg").generate(),
           todo_items_match_color = "except_undone",
         },
       },

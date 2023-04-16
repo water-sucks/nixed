@@ -6,7 +6,7 @@ local bufferline_spec = use("akinsho/bufferline.nvim", {
         numbers = "ordinal",
         offsets = { { filetype = "NvimTree", text = "File Explorer" } },
       },
-      highlights = require("darkrose.groups.plugins.bufferline")(),
+      highlights = require("darkrose.integrations.bufferline").generate(),
     })
   end,
 })

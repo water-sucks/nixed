@@ -1,7 +1,7 @@
 local colorscheme_spec = use("water-sucks/darkrose.nvim", {
   dev = true,
   config = function()
-    require("darkrose").setup({})
+    vim.cmd.colorscheme("darkrose")
   end,
 })
 
