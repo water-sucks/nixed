@@ -22,7 +22,6 @@
   dbus,
   libglvnd,
   vulkan-loader,
-  curl,
   forceVulkan ? false,
 }: let
   desktopItem = makeDesktopItem {
@@ -34,7 +33,7 @@
     categories = ["Game"];
   };
 
-  libPath =
+  rpath =
     lib.makeLibraryPath
     [
       libX11
@@ -48,7 +47,6 @@
       dbus.lib
       libglvnd
       vulkan-loader
-      curl
     ];
 in
   stdenv.mkDerivation {
@@ -72,16 +70,13 @@ in
       mkdir -p "$out/bin" "$out/share"
       cp -r linux.x86_64 linux_Data UnityPlayer.so "$out/share"
       makeWrapper "$out/share/linux.x86_64" "$out/bin/nsmb-mvl" \
+        --prefix LD_LIBRARY_PATH : "${rpath}" \
         ${lib.optionalString forceVulkan "--add-flags '-force-vulkan'"}
 
       ln -s "${desktopItem}/share/applications" $out/share
     '';
 
     postFixup = ''
-      for lib in $(find $out -type f -name "*.so"); do
-        patchelf --set-rpath "${libPath}" "$lib"
-      done
-      patchelf --set-rpath "${libPath}" $out/share/linux.x86_64
       patchelf \
         --add-needed libasound.so.2 \
         --add-needed libudev.so.1 \
