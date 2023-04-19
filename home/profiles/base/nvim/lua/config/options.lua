@@ -16,6 +16,7 @@ vim.o.pumheight = 10
 vim.opt.number = true
 vim.opt.ignorecase = true
 vim.opt.signcolumn = "yes"
+vim.opt.statuscolumn = "%=%{&nu?(&rnu&&v:relnum?v:relnum:v:lnum):''}%=%s"
 
 vim.g.editorconfig = true
 vim.g.maplocalleader = ";"
