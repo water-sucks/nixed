@@ -12,8 +12,8 @@ neorg_spec.config = function()
   neorg.setup({
     load = {
       ["core.defaults"] = {},
-      ["core.norg.qol.toc"] = {},
-      ["core.norg.dirman"] = {
+      ["core.qol.toc"] = {},
+      ["core.dirman"] = {
         config = {
           workspaces = {
             general = "~/Documents/Notes/General",
@@ -27,7 +27,7 @@ neorg_spec.config = function()
           index = "index.norg",
         },
       },
-      ["core.norg.esupports.metagen"] = {
+      ["core.esupports.metagen"] = {
         config = {
           type = "empty",
           tab = "",
@@ -45,13 +45,13 @@ neorg_spec.config = function()
           },
         },
       },
-      ["core.norg.journal"] = {
+      ["core.journal"] = {
         config = {
           journal_folder = "Journal",
           strategy = "nested",
         },
       },
-      ["core.norg.news"] = {
+      ["core.news"] = {
         config = {
           check_news = false,
         },
@@ -62,7 +62,7 @@ neorg_spec.config = function()
           todo_items_match_color = "except_undone",
         },
       },
-      ["core.norg.concealer"] = {
+      ["core.concealer"] = {
         config = {
           icons = {
             todo = {
@@ -107,7 +107,7 @@ neorg_spec.config = function()
           },
         },
       },
-      ["core.norg.completion"] = {
+      ["core.completion"] = {
         config = {
           engine = "nvim-cmp",
         },
@@ -154,28 +154,28 @@ neorg_spec.config = function()
                 n = {
                   {
                     leader .. "tc",
-                    "core.norg.qol.todo_items.todo.task_cancelled",
+                    "core.qol.todo_items.todo.task_cancelled",
                     "Mark task canceled",
                   },
-                  { leader .. "td", "core.norg.qol.todo_items.todo.task_done", "Mark task done" },
-                  { leader .. "th", "core.norg.qol.todo_items.todo.task_on_hold", "Mark task on hold" },
+                  { leader .. "td", "core.qol.todo_items.todo.task_done", "Mark task done" },
+                  { leader .. "th", "core.qol.todo_items.todo.task_on_hold", "Mark task on hold" },
                   {
                     leader .. "ti",
-                    "core.norg.qol.todo_items.todo.task_important",
+                    "core.qol.todo_items.todo.task_important",
                     "Mark task important",
                   },
-                  { leader .. "tp", "core.norg.qol.todo_items.todo.task_pending", "Mark task pending" },
+                  { leader .. "tp", "core.qol.todo_items.todo.task_pending", "Mark task pending" },
                   {
                     leader .. "tr",
-                    "core.norg.qol.todo_items.todo.task_recurring",
+                    "core.qol.todo_items.todo.task_recurring",
                     "Mark task recurring",
                   },
-                  { leader .. "tu", "core.norg.qol.todo_items.todo.task_undone", "Mark task undone" },
+                  { leader .. "tu", "core.qol.todo_items.todo.task_undone", "Mark task undone" },
 
-                  { leader .. "n", "core.norg.dirman.new.note" },
+                  { leader .. "n", "core.dirman.new.note" },
 
-                  { leader .. "hg", "core.norg.esupports.hop.hop-link" },
-                  { leader .. "hv", "core.norg.esupports.hop.hop-link", "vsplit" },
+                  { leader .. "hg", "core.esupports.hop.hop-link" },
+                  { leader .. "hv", "core.esupports.hop.hop-link", "vsplit" },
 
                   { leader .. "j", "core.integrations.treesitter.next.heading" },
                   { leader .. "k", "core.integrations.treesitter.previous.heading" },
@@ -191,9 +191,9 @@ neorg_spec.config = function()
 
               keybinds.map_event_to_mode("toc-split", {
                 n = {
-                  { "hg", "core.norg.qol.toc.hop-toc-link" },
-                  { "q", "core.norg.qol.toc.close" },
-                  { "<Esc>", "core.norg.qol.toc.close" },
+                  { "hg", "core.qol.toc.hop-toc-link" },
+                  { "q", "core.qol.toc.close" },
+                  { "<Esc>", "core.qol.toc.close" },
                 },
               }, {
                 silent = true,
