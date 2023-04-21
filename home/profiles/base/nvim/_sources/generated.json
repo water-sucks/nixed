@@ -359,6 +359,26 @@
     },
     "version": "b1a3b4e52eec886bf4ce5ed692a2162d504d9632"
   },
+  "'plugin-fidget.nvim'": {
+    "cargoLocks": null,
+    "date": "2023-03-27",
+    "extract": null,
+    "name": "'plugin-fidget.nvim'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "j-hui",
+      "repo": "fidget.nvim",
+      "rev": "0ba1e16d07627532b6cae915cc992ecac249fb97",
+      "sha256": "sha256-rmJgfrEr/PYBq0S7j3tzRZvxi7PMMaAo0k528miXOQc=",
+      "type": "github"
+    },
+    "version": "0ba1e16d07627532b6cae915cc992ecac249fb97"
+  },
   "'plugin-flutter-tools.nvim'": {
     "cargoLocks": null,
     "date": "2023-04-20",

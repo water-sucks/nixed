@@ -6,6 +6,24 @@ local lspconfig_spec = use("neovim/nvim-lspconfig", {
   end,
 })
 
+local fidget_spec = use("j-hui/fidget.nvim", {
+  event = "BufRead",
+  config = function()
+    require("fidget").setup({
+      filter = function(client, title)
+        if
+          (client == "null-ls" and title == "diagnostics")
+          or title == "code_action"
+          or title == "Checking document"
+        then
+          return false
+        end
+        return true
+      end,
+    })
+  end,
+})
+
 local cmp_spec = use("hrsh7th/nvim-cmp", {
   event = { "InsertEnter", "CmdlineEnter" },
   config = function()
@@ -40,4 +58,5 @@ return {
   lspconfig_spec,
   cmp_spec,
   null_ls_spec,
+  fidget_spec,
 }

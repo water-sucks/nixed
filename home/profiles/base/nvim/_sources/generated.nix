@@ -221,6 +221,18 @@
     };
     date = "2022-11-30";
   };
+  "'plugin-fidget.nvim'" = {
+    pname = "'plugin-fidget.nvim'";
+    version = "0ba1e16d07627532b6cae915cc992ecac249fb97";
+    src = fetchFromGitHub {
+      owner = "j-hui";
+      repo = "fidget.nvim";
+      rev = "0ba1e16d07627532b6cae915cc992ecac249fb97";
+      fetchSubmodules = false;
+      sha256 = "sha256-rmJgfrEr/PYBq0S7j3tzRZvxi7PMMaAo0k528miXOQc=";
+    };
+    date = "2023-03-27";
+  };
   "'plugin-flutter-tools.nvim'" = {
     pname = "'plugin-flutter-tools.nvim'";
     version = "bd82eed8ed710e538fb0752c4c8ec36089d5d239";

@@ -64,6 +64,7 @@ in
     (plugin "folke" "trouble.nvim")
     (plugin "numToStr" "FTerm.nvim")
     (plugin "MunifTanjim" "nui.nvim")
+    (plugin "j-hui" "fidget.nvim")
 
     # Text editing assistance/annotations
     (plugin "NMAC427" "guess-indent.nvim")

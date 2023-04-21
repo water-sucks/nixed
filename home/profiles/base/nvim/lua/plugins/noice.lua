@@ -5,6 +5,9 @@ local noice_spec = use("folke/noice.nvim", {
 noice_spec.config = function()
   require("noice").setup({
     lsp = {
+      progress = {
+        enabled = false,
+      },
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
@@ -28,6 +31,14 @@ noice_spec.config = function()
       view_warn = "notify",
       view_history = "messages",
       view_search = "virtualtext",
+    },
+    routes = {
+      {
+        filter = {
+          min_height = 15,
+        },
+        view = "split",
+      },
     },
     popupmenu = {
       enabled = true,
