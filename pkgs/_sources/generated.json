@@ -86,7 +86,7 @@
   },
   "rescrobbled": {
     "cargoLocks": {
-      "Cargo.lock": ["./rescrobbled-v0.6.2/Cargo.lock", {}]
+      "Cargo.lock": ["./rescrobbled-v0.7.0/Cargo.lock", {}]
     },
     "date": null,
     "extract": null,
@@ -100,11 +100,11 @@
       "name": null,
       "owner": "InputUsername",
       "repo": "rescrobbled",
-      "rev": "v0.6.2",
-      "sha256": "sha256-g6YGqphXB3dI3gnxw7MtTs1c5mIf6CFdfg2KjEVJhDU=",
+      "rev": "v0.7.0",
+      "sha256": "sha256-+/EuzkO+ZrnUzmX49N7xEYzQN2hRQEtsN7Ttb8yV4UQ=",
       "type": "github"
     },
-    "version": "v0.6.2"
+    "version": "v0.7.0"
   },
   "waybar-mpris": {
     "cargoLocks": null,

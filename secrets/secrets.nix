@@ -6,14 +6,10 @@ let
   system-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINtQ3kCUKsjmVWjmm2LDaD5WHtEsixOZAV0Vj5UGKKoZ root@HunterRenfrow";
   varun-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP6BkNDJ79vuLySy15ZO72ZYjaalVQN8EHuEdlZss0t5 varun@HunterRenfrow";
   HunterRenfrowKeys = [system-HunterRenfrow varun-HunterRenfrow];
-
-  allKeys = DerekCarrKeys ++ HunterRenfrowKeys;
 in {
   "varun-user-DerekCarr.age".publicKeys = DerekCarrKeys;
   "root-user-DerekCarr.age".publicKeys = [system-DerekCarr];
 
   "varun-user-HunterRenfrow.age".publicKeys = HunterRenfrowKeys;
   "root-user-HunterRenfrow.age".publicKeys = [system-HunterRenfrow];
-
-  "lastfm-rescrobbled-config.age".publicKeys = allKeys;
 }

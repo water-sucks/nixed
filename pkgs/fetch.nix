@@ -10,7 +10,7 @@
   };
 
   rescrobbled = {
-    "src.manual" = "v0.6.2";
+    "src.github_tag" = "InputUsername/rescrobbled";
     "fetch.github" = "InputUsername/rescrobbled";
     "cargo_locks" = ["Cargo.lock"];
   };
