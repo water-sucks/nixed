@@ -27,6 +27,8 @@
     nix-colors.url = "github:Misterio77/nix-colors";
 
     treefmt.url = "github:numtide/treefmt-nix";
+
+    neovim.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {
@@ -63,6 +65,7 @@
         overlays = with inputs;
           [
             agenix.overlays.default
+            neovim.overlay
             self.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
             # expose nvfetcher-generated stuff, that's annoying.
