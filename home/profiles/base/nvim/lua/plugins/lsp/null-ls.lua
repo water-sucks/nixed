@@ -2,6 +2,17 @@ local null_ls = require("null-ls")
 
 null_ls.setup({
   on_attach = require("plugins.lsp.on_attach"),
+  on_init = function(client, _)
+    -- ccls is UTF-32 only, and that gives me a SUPER annoying error message.
+    -- I need to change the encoding prevent this warning madness.
+    local filetypes_to_change = require("lspconfig").ccls.document_config.default_config.filetypes
+    local current_filetype = vim.bo.filetype
+    for _, filetype in ipairs(filetypes_to_change) do
+      if filetype == current_filetype then
+        client.offset_encoding = "utf-32"
+      end
+    end
+  end,
   sources = {
     null_ls.builtins.formatting.asmfmt,
     null_ls.builtins.formatting.black,
