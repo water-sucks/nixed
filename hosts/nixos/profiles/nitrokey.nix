@@ -6,17 +6,7 @@
       python3Packages = pkgs.python3Packages.override {
         overrides = _self: super: {
           spsdk = super.spsdk.overridePythonAttrs (o: {
-            propagatedBuildInputs =
-              o.propagatedBuildInputs
-              ++ [
-                super.typing-extensions
-              ];
-            pythonRelaxDeps =
-              o.pythonRelaxDeps
-              ++ [
-                "typing-extensions"
-                "pycryptodome"
-              ];
+            pythonRelaxDeps = o.pythonRelaxDeps ++ ["cryptography"];
           });
         };
       };
