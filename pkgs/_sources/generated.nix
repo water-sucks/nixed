@@ -43,15 +43,15 @@
   };
   polybar = {
     pname = "polybar";
-    version = "7bc673b8f212f78768b1f153cb0ec5a3e9a80e4a";
+    version = "61f0e9dd5d1d7880a2546b485bfe92704ac08554";
     src = fetchFromGitHub {
       owner = "polybar";
       repo = "polybar";
-      rev = "7bc673b8f212f78768b1f153cb0ec5a3e9a80e4a";
+      rev = "61f0e9dd5d1d7880a2546b485bfe92704ac08554";
       fetchSubmodules = true;
-      sha256 = "sha256-fbsLbkFzmEVA5Fz/XvLEtMOXqkxwZ+PfSPx10f8F8H4=";
+      sha256 = "sha256-xs4RczJNGU2ybODHLZaXl+R+/9l5PUl+5Pw8/K5GobY=";
     };
-    date = "2023-04-20";
+    date = "2023-04-29";
   };
   rescrobbled = {
     pname = "rescrobbled";
