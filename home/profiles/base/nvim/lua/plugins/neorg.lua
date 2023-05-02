@@ -51,11 +51,6 @@ neorg_spec.config = function()
           strategy = "nested",
         },
       },
-      ["core.news"] = {
-        config = {
-          check_news = false,
-        },
-      },
       ["core.highlights"] = {
         config = {
           highlights = require("darkrose.integrations.neorg").generate(),
