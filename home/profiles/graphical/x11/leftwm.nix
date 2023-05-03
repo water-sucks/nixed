@@ -33,6 +33,7 @@
   return = "Return";
 
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
+  sed = "${pkgs.gnused}/bin/sed";
   feh = "${pkgs.feh}/bin/feh";
   kitty = "${pkgs.kitty}/bin/kitty";
   rofi = "${pkgs.rofi}/bin/rofi";
@@ -41,6 +42,7 @@
   dunstify = "${pkgs.dunst}/bin/dunstify";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   light = "${pkgs.light}/bin/light";
+  xobSocket = "$XDG_RUNTIME_DIR/xob.sock";
 
   switchTag = tag: transform: (bind' [mod] (toString (transform tag)) "GotoTag" (toString tag));
   moveTag = tag: transform: (bind' [mod shift] (toString (transform tag)) "MoveToTag" (toString tag));
@@ -165,12 +167,12 @@ in {
         (execute [mod ctrl alt] "q" "loginctl kill-session $XDG_SESSION_ID")
         (execute [mod] "Print" "${screenshot} -s")
         (execute [] "Print" "${screenshot}")
-        (execute [] "XF86XK_AudioRaiseVolume" "${amixer} sset Master 5%+")
-        (execute [] "XF86XK_AudioLowerVolume" "${amixer} sset Master 5%-")
-        (execute [] "XF86XK_AudioMute" "${amixer} sset Master toggle")
+        (execute [] "XF86XK_AudioRaiseVolume" ''${amixer} sset Master 1%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${xobSocket}'')
+        (execute [] "XF86XK_AudioLowerVolume" ''${amixer} sset Master 1%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${xobSocket}'')
+        (execute [] "XF86XK_AudioMute" ''${amixer} sset Master toggle | ${sed} -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > ${xobSocket}'')
         (execute [] "XF86XK_AudioMicMute" "${amixer} sset Capture toggle")
-        (execute [] "XF86XK_MonBrightnessUp" "${light} -A 5")
-        (execute [] "XF86XK_MonBrightnessDown" "${light} -U 5")
+        (execute [] "XF86XK_MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${xobSocket}")
+        (execute [] "XF86XK_MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${xobSocket}")
         (execute [] "XF86XK_Calculator" "rofi -modi calc -show calc")
         (execute [ctrl alt] "Delete" "rofi-power-menu")
       ]);

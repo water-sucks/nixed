@@ -32,6 +32,8 @@ in {
       (hm.assertions.assertPlatform "programs.wob" pkgs platforms.linux)
     ];
 
+    home.packages = [cfg.package];
+
     xdg.configFile."wob/wob.ini".text = generate cfg.settings;
 
     systemd.user.services.wob = {
@@ -45,7 +47,7 @@ in {
       Install.WantedBy = ["graphical-session.target"];
 
       Service = {
-        ExecStart = "${pkgs.wob}/bin/wob";
+        ExecStart = "${cfg.package}/bin/wob";
         StandardInput = "socket";
         Restart = "on-failure";
         RestartSec = 1;
