@@ -64,10 +64,11 @@ in {
 
     config = {
       colors = {
-        background = "#${c.bg-bright}";
+        background = "#${c.bg-secondary}";
         primary = "#${c.dark-red}";
         text = "#${c.fg}";
         grey = "#${c.gray}";
+        activated = "#222222"; # This must be defined statically because of color contrast
         deactivated = "#${c.fg-dark}";
       };
 
@@ -136,6 +137,7 @@ in {
         label-empty = " %name% ";
 
         label-active-foreground = "\${colors.text}";
+        label-active-background = "\${colors.activated}";
         label-occupied-foreground = "\${colors.text}";
         label-urgent-foreground = "\${colors.text}";
         label-empty-foreground = "\${colors.deactivated}";
@@ -183,7 +185,7 @@ in {
         type = "internal/fs";
         interval = 25;
         mount-0 = "/nix";
-        label-mounted = "  %used%";
+        label-mounted = "󰋊 %used%";
         label-unmounted = "%mountpoint% not mounted";
         label-unmounted-foreground = "\${colors.deactivated}";
       };
@@ -191,7 +193,7 @@ in {
       "module/cpu" = {
         type = "internal/cpu";
         interval = 2;
-        label = " %percentage:2%%";
+        label = " %percentage%%";
       };
 
       "module/mem" = {
@@ -205,16 +207,15 @@ in {
         card = "amdgpu_bl0";
         enable-scroll = true;
 
-        format = "<ramp>";
-        ramp-0 = "󰃞";
-        ramp-1 = "󰃟";
-        ramp-2 = "󰃠";
+        format = "<ramp> <label>";
+        ramp-0 = "󰽤";
+        ramp-1 = "󱎖";
+        ramp-2 = "󰽢";
       };
 
       "module/audio" = {
         type = "internal/pulseaudio";
-        format-volume = "<ramp-volume>";
-        label-volume = "%percentage%%";
+        format-volume = "<ramp-volume> <label-volume>";
         ramp-volume-0 = "";
         ramp-volume-1 = "󰖀";
         ramp-volume-2 = "󰕾";
@@ -266,6 +267,7 @@ in {
       "module/tray" = {
         type = "internal/tray";
         format = "<tray>";
+        tray-spacing = 5;
       };
     };
   };

@@ -114,3 +114,11 @@ window#waybar {
 #custom-dunst {
   margin-right: 8px;
 }
+
+#pulseaudio.muted,
+#bluetooth.off,
+#bluetooth.disabled,
+#network.disabled,
+#network.disconnected {
+  color: @disabled;
+}

@@ -43,6 +43,7 @@
         else
           echo "River"
         fi
+        sleep 0.01
       done
     '';
 
@@ -74,7 +75,7 @@ in {
         backlight = {
           device = lib.mkDefault "amdgpu_bl0";
           format = "{icon} {percent}%";
-          format-icons = ["" ""];
+          format-icons = ["󰽤" "󱎖" "󰽢"];
         };
         battery = {
           interval = 5;
@@ -82,13 +83,13 @@ in {
             warning = 30;
             critical = 15;
           };
-          format = "{icon}  {capacity}%";
+          format = "{icon} {capacity}%";
           format-icons = ["" "" "" "" ""];
           max-length = 25;
         };
         bluetooth = {
           format = " {status}";
-          format-disabled = ""; # an empty format will hide the module
+          format-disabled = "󰂲";
           format-off = "󰂲";
           format-on = ":";
           format-connected = " {device_alias}";
@@ -110,7 +111,7 @@ in {
         disk = {
           interval = 30;
           path = lib.mkDefault "/nix";
-          format = "󰋊 {percentage_used}%";
+          format = "󰋊 {used}";
         };
         memory = {
           interval = 30;
@@ -204,6 +205,7 @@ in {
       @define-color bg-button #${c.dark-purple};
       @define-color text #${c.gray};
       @define-color focused #${c.fg};
+      @define-color disabled #${c.fg-dark};
       @define-color primary #${c.magenta};
       @define-color secondary #${c.dark-red};
       @define-color error #${c.light-red};
