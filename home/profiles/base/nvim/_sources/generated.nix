@@ -319,15 +319,15 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "83a625f5c884a3ceee821ce54a812c8321ecba31";
+    version = "9ac19880b677d08f416c5189ffc2dc023084a159";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "83a625f5c884a3ceee821ce54a812c8321ecba31";
+      rev = "9ac19880b677d08f416c5189ffc2dc023084a159";
       fetchSubmodules = false;
-      sha256 = "sha256-azDgxgWzJXa6kdkF7mqkw5UowD8rS315mAcFd+7rOH8=";
+      sha256 = "sha256-zCHS/GEIpqGL3HC1Ku2Sh4EttifJ0NV3QjLgix3HvE4=";
     };
-    date = "2023-05-05";
+    date = "2023-05-07";
   };
   "'plugin-leap.nvim'" = {
     pname = "'plugin-leap.nvim'";
@@ -463,15 +463,15 @@
   };
   "'plugin-noice.nvim'" = {
     pname = "'plugin-noice.nvim'";
-    version = "6a7649413ef61123c333f422ee95840c04ece161";
+    version = "13c3b39e43fbd0f50dac608fdbda230dec69f1d1";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "noice.nvim";
-      rev = "6a7649413ef61123c333f422ee95840c04ece161";
+      rev = "13c3b39e43fbd0f50dac608fdbda230dec69f1d1";
       fetchSubmodules = false;
-      sha256 = "sha256-Ktrkr2P7BGC9kfeZ0xDnHbbbWrvCIN6M/ynXvil/7hU=";
+      sha256 = "sha256-rZejNvfjJbNZjYFty1peB1bqYjcmwszP8QKATZGMWLI=";
     };
-    date = "2023-05-04";
+    date = "2023-05-07";
   };
   "'plugin-nui.nvim'" = {
     pname = "'plugin-nui.nvim'";
@@ -511,15 +511,15 @@
   };
   "'plugin-nvim-cmp'" = {
     pname = "'plugin-nvim-cmp'";
-    version = "1cad30fcffa282c0a9199c524c821eadc24bf939";
+    version = "935b4069ce73b60ba9075bf05ee6ab50ed3af1a9";
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "1cad30fcffa282c0a9199c524c821eadc24bf939";
+      rev = "935b4069ce73b60ba9075bf05ee6ab50ed3af1a9";
       fetchSubmodules = false;
-      sha256 = "sha256-u0x0PCHlSDQwwJ4vxhZRFc5VF5G4Y4b9jSRQCuLMYVw=";
+      sha256 = "sha256-VlpXpDMd4UHHRo5uZIZb2s50VKG3pYRk9PtdxvJ7Nx4=";
     };
-    date = "2023-05-05";
+    date = "2023-05-08";
   };
   "'plugin-nvim-colorizer.lua'" = {
     pname = "'plugin-nvim-colorizer.lua'";
