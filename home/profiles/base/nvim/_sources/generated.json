@@ -521,7 +521,7 @@
   },
   "'plugin-lazy.nvim'": {
     "cargoLocks": null,
-    "date": "2023-05-05",
+    "date": "2023-05-07",
     "extract": null,
     "name": "'plugin-lazy.nvim'",
     "passthru": null,
@@ -533,11 +533,11 @@
       "name": null,
       "owner": "folke",
       "repo": "lazy.nvim",
-      "rev": "83a625f5c884a3ceee821ce54a812c8321ecba31",
-      "sha256": "sha256-azDgxgWzJXa6kdkF7mqkw5UowD8rS315mAcFd+7rOH8=",
+      "rev": "9ac19880b677d08f416c5189ffc2dc023084a159",
+      "sha256": "sha256-zCHS/GEIpqGL3HC1Ku2Sh4EttifJ0NV3QjLgix3HvE4=",
       "type": "github"
     },
-    "version": "83a625f5c884a3ceee821ce54a812c8321ecba31"
+    "version": "9ac19880b677d08f416c5189ffc2dc023084a159"
   },
   "'plugin-leap.nvim'": {
     "cargoLocks": null,
@@ -761,7 +761,7 @@
   },
   "'plugin-noice.nvim'": {
     "cargoLocks": null,
-    "date": "2023-05-04",
+    "date": "2023-05-07",
     "extract": null,
     "name": "'plugin-noice.nvim'",
     "passthru": null,
@@ -773,11 +773,11 @@
       "name": null,
       "owner": "folke",
       "repo": "noice.nvim",
-      "rev": "6a7649413ef61123c333f422ee95840c04ece161",
-      "sha256": "sha256-Ktrkr2P7BGC9kfeZ0xDnHbbbWrvCIN6M/ynXvil/7hU=",
+      "rev": "13c3b39e43fbd0f50dac608fdbda230dec69f1d1",
+      "sha256": "sha256-rZejNvfjJbNZjYFty1peB1bqYjcmwszP8QKATZGMWLI=",
       "type": "github"
     },
-    "version": "6a7649413ef61123c333f422ee95840c04ece161"
+    "version": "13c3b39e43fbd0f50dac608fdbda230dec69f1d1"
   },
   "'plugin-nui.nvim'": {
     "cargoLocks": null,
@@ -841,7 +841,7 @@
   },
   "'plugin-nvim-cmp'": {
     "cargoLocks": null,
-    "date": "2023-05-05",
+    "date": "2023-05-08",
     "extract": null,
     "name": "'plugin-nvim-cmp'",
     "passthru": null,
@@ -853,11 +853,11 @@
       "name": null,
       "owner": "hrsh7th",
       "repo": "nvim-cmp",
-      "rev": "1cad30fcffa282c0a9199c524c821eadc24bf939",
-      "sha256": "sha256-u0x0PCHlSDQwwJ4vxhZRFc5VF5G4Y4b9jSRQCuLMYVw=",
+      "rev": "935b4069ce73b60ba9075bf05ee6ab50ed3af1a9",
+      "sha256": "sha256-VlpXpDMd4UHHRo5uZIZb2s50VKG3pYRk9PtdxvJ7Nx4=",
       "type": "github"
     },
-    "version": "1cad30fcffa282c0a9199c524c821eadc24bf939"
+    "version": "935b4069ce73b60ba9075bf05ee6ab50ed3af1a9"
   },
   "'plugin-nvim-colorizer.lua'": {
     "cargoLocks": null,
