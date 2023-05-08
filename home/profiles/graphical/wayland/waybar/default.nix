@@ -1,4 +1,5 @@
 {
+  self,
   config,
   pkgs,
   lib,
@@ -10,6 +11,12 @@
     sndioSupport = false;
   };
 
+  waybar-mpris-pkg = pkgs.waybar-mpris.overrideAttrs (_: {
+    patches = [
+      "${self}/overrides/patches/waybar-mpris-icons.patch"
+    ];
+  });
+
   sed = "${pkgs.gnused}/bin/sed";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
@@ -19,7 +26,7 @@
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
-  waybarMpris = "${pkgs.waybar-mpris}/bin/waybar-mpris";
+  waybarMpris = "${waybar-mpris-pkg}/bin/waybar-mpris";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   getAppname = "${pkgs.get-appname}/bin/get-appname";
@@ -82,7 +89,7 @@ in {
         bluetooth = {
           format = " {status}";
           format-disabled = ""; # an empty format will hide the module
-          format-off = "";
+          format-off = "󰂲";
           format-on = ":";
           format-connected = " {device_alias}";
           on-click = "${termLaunch} ${bluetoothctl}";
@@ -92,7 +99,7 @@ in {
         };
         clock = {
           interval = 1;
-          format = " {:%a %d %b  祥 %H:%M:%S}";
+          format = " {:%a %d %b  󰔛 %H:%M:%S}";
           format-calendar = "{}";
         };
         cpu = {
@@ -103,23 +110,23 @@ in {
         disk = {
           interval = 30;
           path = lib.mkDefault "/nix";
-          format = " {percentage_used}%";
+          format = "󰋊 {percentage_used}%";
         };
         memory = {
           interval = 30;
-          format = " {}%";
+          format = "󰍛 {}%";
           max-length = 10;
         };
         network = {
           interface = lib.mkDefault "wlan0";
           format = "{ifname}";
-          format-wifi = "  {essid}";
-          format-ethernet = " {ipaddr}";
-          format-disconnected = "睊 ";
+          format-wifi = "󰖩 {essid}";
+          format-ethernet = "󰈀 {ipaddr}";
+          format-disconnected = "󰖪";
           on-click = "${termLaunch} ${nmtui}";
           on-click-right = ''${nmcli} radio wifi "$(${nmcli} r wifi | ${grep} enabled -c | ${sed} -e "s/1/off/" | ${sed} -e "s/0/on/")"'';
           tooltip-format-wifi = " {essid} ({signalStrength}%)";
-          tooltip-format-ethernet = " {ifname}";
+          tooltip-format-ethernet = "󰈀 {ifname}";
           tooltip-format-disconnected = "Disconnected";
           max-length = 50;
         };
@@ -128,9 +135,9 @@ in {
           format-bluetooth = "{icon} {volume}%";
           format-muted = "";
           format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
+            headphone = "󰋋";
+            hands-free = "󰋋";
+            headset = "󰋎";
             phone = "";
             portable = "";
             car = "";
@@ -186,7 +193,7 @@ in {
           spacing = 11;
         };
         "custom/powermenu" = {
-          format = "拉";
+          format = "󰐥";
           on-click = "rofi-power-menu";
         };
       };

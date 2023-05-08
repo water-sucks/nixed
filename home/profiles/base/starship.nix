@@ -11,9 +11,9 @@ in {
         symbol = " ";
       };
       battery = {
-        charging_symbol = "";
-        discharging_symbol = "";
-        full_symbol = "";
+        charging_symbol = "󰂄";
+        discharging_symbol = "󰂃";
+        full_symbol = "󰁹";
       };
       character = {
         error_symbol = "[➜](bold #${c.magenta})";
@@ -96,12 +96,11 @@ in {
         symbol = " ";
       };
       git_status = {
-        ahead = " \${count}";
-        behind = " \${count}";
+        ahead = " 󰄾\${count}";
+        behind = " 󰄽\${count}";
         conflicted = " ";
         deleted = " ";
-        diverged = " ﬕ";
-        # format = "([「$all_status$ahead_behind」]($style))";
+        diverged = " 󰘖";
         format = "[\\[$all_status$ahead_behind \\]]($style) ";
         modified = " δ";
         renamed = " ";
@@ -129,10 +128,10 @@ in {
       };
       memory_usage = {
         disabled = false;
-        symbol = " ";
+        symbol = "󰍛 ";
       };
       nim = {
-        symbol = " ";
+        symbol = "󰆥 ";
       };
       nix_shell = {
         format = "[$symbol$state]($style)";
@@ -143,7 +142,7 @@ in {
         symbol = " ";
       };
       package = {
-        symbol = " ";
+        symbol = "󰏗 ";
       };
       php = {
         symbol = " ";

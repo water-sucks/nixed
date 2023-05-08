@@ -34,7 +34,7 @@
         echo ":"
       fi
     else
-      echo "%{F#${c.fg-dark}}%{F-}"
+      echo "%{F#${c.fg-dark}}󰂲%{F-}"
     fi
   '';
   toggle-bluetooth = pkgs.writeShellScript "polybar-toggle-bluetooth.sh" ''
@@ -115,7 +115,7 @@ in {
 
       "module/launcher" = {
         type = "custom/text";
-        format = "";
+        format = "󱗼";
         format-padding = 2;
         format-foreground = "\${colors.text}";
         format-background = "\${colors.primary}";
@@ -197,7 +197,7 @@ in {
       "module/mem" = {
         type = "internal/memory";
         interval = 2;
-        label = " %percentage_used%%";
+        label = "󰍛 %percentage_used%%";
       };
 
       "module/brightness" = {
@@ -215,10 +215,10 @@ in {
         type = "internal/pulseaudio";
         format-volume = "<ramp-volume>";
         label-volume = "%percentage%%";
-        ramp-volume-0 = "奄";
-        ramp-volume-1 = "奔";
-        ramp-volume-2 = "墳";
-        label-muted = "婢";
+        ramp-volume-0 = "";
+        ramp-volume-1 = "󰖀";
+        ramp-volume-2 = "󰕾";
+        label-muted = "󰖁";
         label-muted-foreground = "\${colors.deactivated}";
         click-right = "${pavucontrol}";
       };
@@ -240,8 +240,8 @@ in {
         format-disconnected = "<label-disconnected>";
         format-connected-padding = 0;
 
-        label-connected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}直 %essid%%{A}%{A}";
-        label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}睊%{A}%{A}";
+        label-connected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}󰖩 %essid%%{A}%{A}";
+        label-disconnected = "%{A1:${toggle-wifi}:}%{A3:${termLaunch} ${nmtui}:}󰖪%{A}%{A}";
 
         label-disconnected-foreground = "\${colors.deactivated}";
       };
@@ -249,15 +249,14 @@ in {
       "module/date" = {
         type = "internal/date";
         interval = 1;
-        time = " %a %d %b  祥 %H:%M:%S";
-        # time-alt = "%B %d, %Y";
+        time = " %a %d %b  󰔛 %H:%M:%S";
         format = "<label>";
         label = "%time%";
       };
 
       "module/powermenu" = {
         type = "custom/text";
-        format = "襤";
+        format = "󰐥";
         format-padding = "2";
         format-foreground = "\${colors.text}";
         format-background = "\${colors.primary}";

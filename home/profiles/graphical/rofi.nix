@@ -30,9 +30,9 @@ in {
         display-windowcd = "";
         display-run = "";
         display-ssh = "";
-        display-drun = "";
-        display-calc = "";
-        display-combi = "";
+        display-drun = "";
+        display-calc = "󰃬";
+        display-combi = "󱗼";
       };
 
       "*" = {

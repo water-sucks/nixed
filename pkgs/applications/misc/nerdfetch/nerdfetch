@@ -147,17 +147,17 @@ case $ostype in
 ${gc}     (${wc}.. ${gc}\    ${oc}${USER}${grey}@${reset}${mc}${host}${reset}
 ${gc}     (${oc}<> ${gc}|    ${rc} - ${red}OS: ${wc}${os}${reset}
 ${gc}    /${wc}/  \\ ${gc}\\   ${rc} - ${red}Kernel: ${wc}${kernel}${reset}
-${gc}   ( ${wc}|  | ${gc}/|  ${rc} - ${red}Uptime: ${wc}${uptime}${reset}
+${gc}   ( ${wc}|  | ${gc}/|  ${rc} - ${red}Uptime: ${wc}${uptime}${reset}
 ${oc}  _${gc}/\\ ${wc}__)${gc}/${oc}_${gc})  ${rc} - ${red}Shell: ${wc}${shell}${reset}
-${oc}  \/${gc}-____${oc}\/${reset}   ${rc} - ${red}Memory: ${wc}${RAM}${memstat} ${mempercent}"
+${oc}  \/${gc}-____${oc}\/${reset}   ${rc}󰍛 - ${red}Memory: ${wc}${RAM}${memstat} ${mempercent}"
   ;;
 "Darwin")
   echo -e "${gc}       .:\'
 ${mc}    _ ${gc}:\'${mc}_     ${oc}${USER}${grey}@${reset}${mc}${host}${reset}
 ${brc} .'\`_\`-'_\`\`.   ${rc} - OS: ${wc}${os}${reset}
 ${brc}:________.-\'  ${rc} - Kernel: ${wc}${kernel}${reset}
-${oc}:_______:      ${rc} - Uptime: ${wc}${uptime}${reset}
+${oc}:_______:      ${rc} - Uptime: ${wc}${uptime}${reset}
 ${brc} :_______\`-\;  ${rc} - Shell: ${wc}${shell}${reset}
-${mc}  \`._.-._.\'   ${rc} - Memory: ${wc}${RAM}${memstat} ${mempercent}"
+${mc}  \`._.-._.\'   ${rc}󰍛 - Memory: ${wc}${RAM}${memstat} ${mempercent}"
   ;;
 esac

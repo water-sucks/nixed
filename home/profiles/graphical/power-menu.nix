@@ -9,7 +9,7 @@
 
   home.packages = [
     (pkgs.writeShellScriptBin "rofi-power-menu" ''
-      MENU="$(echo "Lock|Suspend|Logout|Reboot|Shutdown" | ${pkgs.rofi}/bin/rofi -sep "|" -dmenu -i -p '襤' -lines 5)"
+      MENU="$(echo "Lock|Suspend|Logout|Reboot|Shutdown" | ${pkgs.rofi}/bin/rofi -sep "|" -dmenu -i -p '󰐥' -lines 5)"
       case "$MENU" in
           *Lock) loginctl lock-session $XDG_SESSION_ID ;;
           *Suspend) systemctl suspend ;;

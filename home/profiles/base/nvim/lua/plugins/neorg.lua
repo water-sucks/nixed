@@ -63,12 +63,12 @@ neorg_spec.config = function()
             todo = {
               enabled = true,
               done = { icon = "" },
-              pending = { icon = "" },
+              pending = { icon = "󰇘" },
               undone = { enabled = false },
               uncertain = { icon = "" },
               on_hold = { icon = "" },
-              cancelled = { icon = "ﲅ" },
-              recurring = { icon = "ﮫ" },
+              cancelled = { icon = "󰜺" },
+              recurring = { icon = "" },
               urgent = { icon = "" },
             },
             heading = {

@@ -5,7 +5,7 @@ local signs = {
   BreakpointCondition = "",
   LogPoint = "",
   Stopped = "",
-  BreakpointRejected = "",
+  BreakpointRejected = "󰊙",
 }
 
 for type, icon in pairs(signs) do
