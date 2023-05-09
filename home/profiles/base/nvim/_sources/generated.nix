@@ -559,15 +559,15 @@
   };
   "'plugin-nvim-dap-python'" = {
     pname = "'plugin-nvim-dap-python'";
-    version = "972b8b8b65823c433ee834ed02a7f06edf590dfc";
+    version = "51ecb08dbff57fca8add396b93dc765aba262e0a";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap-python";
-      rev = "972b8b8b65823c433ee834ed02a7f06edf590dfc";
+      rev = "51ecb08dbff57fca8add396b93dc765aba262e0a";
       fetchSubmodules = false;
-      sha256 = "sha256-e+CrBal4/uQxavtls8jscA9tjREocr/KBxrB7v3VjpQ=";
+      sha256 = "sha256-EABQAic5bghq7B4Pv25/D8RvUFRVjmN0Jg2bDhNv/R4=";
     };
-    date = "2023-04-05";
+    date = "2023-05-08";
   };
   "'plugin-nvim-dap-ui'" = {
     pname = "'plugin-nvim-dap-ui'";
@@ -619,15 +619,15 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "5ba7ab746d814413c84ed98c0214c71cd28f130a";
+    version = "8356319af6e8012a5797b647e946b377d1ba3d9c";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "5ba7ab746d814413c84ed98c0214c71cd28f130a";
+      rev = "8356319af6e8012a5797b647e946b377d1ba3d9c";
       fetchSubmodules = false;
-      sha256 = "sha256-n3XeoENWlPxKm3TZf6uZ11o/E+BU/cccTZJUHbv+cUA=";
+      sha256 = "sha256-3EfR0P4ZjkmxnzzE3D9GhLnUwWW5aZtPTspp9eYl1gg=";
     };
-    date = "2023-05-07";
+    date = "2023-05-09";
   };
   "'plugin-nvim-tetris'" = {
     pname = "'plugin-nvim-tetris'";
@@ -799,15 +799,15 @@
   };
   "'plugin-scope.nvim'" = {
     pname = "'plugin-scope.nvim'";
-    version = "6c5d5d73701e45b1fad50fa821fe9bf88ab2eec6";
+    version = "aae18f209049bca84075a8adccc934e463bfe7fe";
     src = fetchFromGitHub {
       owner = "tiagovla";
       repo = "scope.nvim";
-      rev = "6c5d5d73701e45b1fad50fa821fe9bf88ab2eec6";
+      rev = "aae18f209049bca84075a8adccc934e463bfe7fe";
       fetchSubmodules = false;
-      sha256 = "sha256-9WY0Nky/olWvAK7HmB8XOnU4UkoLRRErwIqgAai0zuc=";
+      sha256 = "sha256-RHXc8selJZ5L7RLIz894W9SXlmzRUGABA6Js4NjzICI=";
     };
-    date = "2023-04-24";
+    date = "2023-05-08";
   };
   "'plugin-sort.nvim'" = {
     pname = "'plugin-sort.nvim'";
