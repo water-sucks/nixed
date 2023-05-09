@@ -60,7 +60,7 @@ local server_configs = {
     },
   },
   elixirls = {
-    cmd = { vim.fn.exepath("elixir-ls") or "" },
+    cmd = { "elixir-ls" },
     dialyzerEnabled = false,
   },
   ltex = {
