@@ -66,7 +66,7 @@
   },
   "polybar": {
     "cargoLocks": null,
-    "date": "2023-05-08",
+    "date": "2023-05-10",
     "extract": null,
     "name": "polybar",
     "passthru": null,
@@ -78,11 +78,11 @@
       "name": null,
       "owner": "polybar",
       "repo": "polybar",
-      "rev": "f5169abde257a8085a6b0bcffd0d1fee793abadb",
-      "sha256": "sha256-CwWe2AViCbyb32b2i58ZfhacbPwHTbZlmcMmn3Ct+PI=",
+      "rev": "d74a4fab7748033e3eeb45ddec6c341b0b502eb6",
+      "sha256": "sha256-sNg/jyQlR1tMTZTHKuFWV0kPFB3YZNr3xYTGS445lQQ=",
       "type": "github"
     },
-    "version": "f5169abde257a8085a6b0bcffd0d1fee793abadb"
+    "version": "d74a4fab7748033e3eeb45ddec6c341b0b502eb6"
   },
   "rescrobbled": {
     "cargoLocks": {
