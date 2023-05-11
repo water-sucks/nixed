@@ -14,6 +14,15 @@ in
         enable = true;
         enableAutosuggestions = false; # Disabled for thefuck command to work instantly
         enableCompletion = true;
+        completionInit = ''
+          setopt extendedglob
+          autoload -Uz compinit
+          if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
+            compinit;
+          else
+            compinit -C;
+          fi;
+        '';
         history = {
           path = "${config.xdg.dataHome}/zsh/zsh_history";
           expireDuplicatesFirst = true;
@@ -22,6 +31,16 @@ in
           share = true;
           size = 10000;
         };
+        initExtra = ''
+          zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+
+          bindkey "^[[1;5C" forward-word
+          bindkey "^[[1;5D" backward-word
+
+          autoload edit-command-line
+          zle -N edit-command-line
+          bindkey -M vicmd v edit-command-line
+        '';
         plugins = [
           {
             name = "zsh-autosuggestions";
@@ -32,11 +51,6 @@ in
             inherit (sources.fast-syntax-highlighting) src;
           }
         ];
-        oh-my-zsh = {
-          enable = true;
-          plugins = ["git" "sudo" "dirhistory" "thefuck" "ssh-agent"];
-          theme = ""; # Using starship for theme
-        };
         shellAliases = {
           please = "sudo";
           dog = "bat";

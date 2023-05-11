@@ -72,15 +72,15 @@ in {
     cfg.themes);
 
     programs.bash.initExtra = mkIf cfg.enableBashIntegration ''
-      LS_COLORS=$(${vividCmd} generate ${cfg.theme})
+      export LS_COLORS=$(${vividCmd} generate ${cfg.theme})
     '';
 
     programs.zsh.initExtra = mkIf cfg.enableZshIntegration ''
-      LS_COLORS=$(${vividCmd} generate ${cfg.theme})
+      export LS_COLORS=$(${vividCmd} generate ${cfg.theme})
     '';
 
     programs.fish.interactiveShellInit = mkIf cfg.enableFishIntegration ''
-      LS_COLORS=$(${vividCmd} generate ${cfg.theme})
+      export LS_COLORS=$(${vividCmd} generate ${cfg.theme})
     '';
   };
 }
