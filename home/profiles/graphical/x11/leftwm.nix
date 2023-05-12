@@ -1,5 +1,4 @@
 {
-  self,
   config,
   pkgs,
   lib,
@@ -213,7 +212,7 @@ in {
           ${leftwm-command} "LoadTheme $SCRIPTPATH/theme.ron"
 
           if [ -x "$(command -v feh)" ]; then
-            ${feh} --bg-scale ${../../../../assets/woah.jpg}
+            ${feh} --bg-scale ${../../../../assets/dystopia.jpg}
           fi
         '';
 
