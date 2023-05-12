@@ -34,12 +34,11 @@ in
         initExtra = ''
           zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
 
-          bindkey "^[[1;5C" forward-word
-          bindkey "^[[1;5D" backward-word
-
-          autoload edit-command-line
-          zle -N edit-command-line
-          bindkey -M vicmd v edit-command-line
+          if [ -z "$NVIM_LISTEN_ADDRESS" ]; then
+            ZVM_VI_SURROUND_BINDKEY=s-prefix
+            ZVM_KEYTIMEOUT=0.1
+            source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+          fi
         '';
         plugins = [
           {
