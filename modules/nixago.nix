@@ -16,6 +16,7 @@
     "home/profiles/apps/firefox/fetch.nix"
     "home/profiles/base/nvim/fetch.nix"
     "home/profiles/base/zsh/fetch.nix"
+    "home/profiles/dev/git/fetch.nix"
     "pkgs/fetch.nix"
   ];
 in

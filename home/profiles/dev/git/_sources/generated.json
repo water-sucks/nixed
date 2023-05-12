@@ -1,0 +1,22 @@
+{
+  "git-aliases": {
+    "cargoLocks": null,
+    "date": "2023-04-03",
+    "extract": null,
+    "name": "git-aliases",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "GitAlias",
+      "repo": "gitalias",
+      "rev": "5972ac8a7db47f24bd3b61c6603b08b487b40c9f",
+      "sha256": "sha256-aWS+fITtJp3BDB6CIzbz38yCVkza/+8PNP/jCdRgxCo=",
+      "type": "github"
+    },
+    "version": "5972ac8a7db47f24bd3b61c6603b08b487b40c9f"
+  }
+}
