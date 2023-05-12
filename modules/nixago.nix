@@ -1,8 +1,4 @@
-{
-  self,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   nvfetcherEngine = opts: request: let
     inherit (request) data output;
 
@@ -21,7 +17,7 @@
   ];
 in
   map (f: {
-    data = import "${self}/${f}";
+    data = import ../${f};
     output = "${builtins.dirOf f}/nvfetcher.toml";
     engine = nvfetcherEngine {};
   })

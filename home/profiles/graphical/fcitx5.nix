@@ -1,6 +1,5 @@
 {
   config,
-  self,
   pkgs,
   lib,
   ...
@@ -27,8 +26,8 @@ in {
   };
 
   xdg.dataFile = {
-    "fcitx5/themes/darkrose/arrow.png".source = "${self}/assets/arrow.png";
-    "fcitx5/themes/darkrose/radio.png".source = "${self}/assets/radio.png";
+    "fcitx5/themes/darkrose/arrow.png".source = ../../../assets/arrow.png;
+    "fcitx5/themes/darkrose/radio.png".source = ../../../assets/radio.png;
     "fcitx5/themes/darkrose/theme.conf".text = toINI {
       "Metadata" = {
         Name = "darkrose";

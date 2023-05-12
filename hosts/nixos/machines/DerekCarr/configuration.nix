@@ -1,6 +1,5 @@
 {
   config,
-  self,
   lib,
   ...
 }: {
@@ -27,10 +26,10 @@
   # anyway so this workaround is fine, no need to be perfect.
   age.identityPaths = ["/persist/etc/ssh/ssh_host_rsa_key" "/persist/etc/ssh/ssh_host_ed25519_key"];
 
-  age.secrets.varun-user-DerekCarr.file = "${self}/secrets/varun-user-DerekCarr.age";
+  age.secrets.varun-user-DerekCarr.file = ../../../../secrets/varun-user-DerekCarr.age;
   users.users.varun.passwordFile = "${config.age.secrets.varun-user-DerekCarr.path}";
 
-  age.secrets.root-user-DerekCarr.file = "${self}/secrets/root-user-DerekCarr.age";
+  age.secrets.root-user-DerekCarr.file = ../../../../secrets/root-user-DerekCarr.age;
   users.users.root.passwordFile = "${config.age.secrets.root-user-DerekCarr.path}";
 
   environment.persistence."/persist" = {

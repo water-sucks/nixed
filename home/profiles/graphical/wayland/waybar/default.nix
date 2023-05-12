@@ -1,5 +1,4 @@
 {
-  self,
   config,
   pkgs,
   lib,
@@ -13,7 +12,7 @@
 
   waybar-mpris-pkg = pkgs.waybar-mpris.overrideAttrs (_: {
     patches = [
-      "${self}/overrides/patches/waybar-mpris-icons.patch"
+      ../../../../../overrides/patches/waybar-mpris-icons.patch
     ];
   });
 

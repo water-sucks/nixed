@@ -1,12 +1,8 @@
-{
-  self,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   services.xserver = {
     displayManager.lightdm = {
       enable = true;
-      background = "${self}/assets/cube.jpg";
+      background = ../../../assets/cube.jpg;
 
       greeters.slick = {
         enable = true;
