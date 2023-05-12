@@ -106,6 +106,7 @@ in {
         module-margin-right = 1;
         separator = "";
         font-0 = "BlexMono Nerd Font:size=8;3";
+        font-1 = "IBM Plex Sans JP:size=8;0";
         border-bottom-size = 2;
         border-color = "\${colors.primary}";
         cursor-click = "pointer";
@@ -131,16 +132,26 @@ in {
         format = "<label-state>";
         label-monitor = "%name%";
 
-        label-active = "%{+o} %name% %{-o}";
-        label-occupied = " %name% ";
-        label-urgent = " %name% ";
-        label-empty = " %name% ";
+        label-active = "%{+o} %icon% %{-o}";
+        label-occupied = " %icon% ";
+        label-urgent = " %icon% ";
+        label-empty = " %icon% ";
 
         label-active-foreground = "\${colors.text}";
         label-active-background = "\${colors.activated}";
         label-occupied-foreground = "\${colors.text}";
         label-urgent-foreground = "\${colors.text}";
         label-empty-foreground = "\${colors.deactivated}";
+
+        icon-0 = "1;一";
+        icon-1 = "2;二";
+        icon-2 = "3;三";
+        icon-3 = "4;四";
+        icon-4 = "5;五";
+        icon-5 = "6;六";
+        icon-6 = "7;七";
+        icon-7 = "8;八";
+        icon-8 = "9;九";
       };
 
       "module/layout" = {
