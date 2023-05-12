@@ -3,6 +3,7 @@
 in {
   programs.vivid = {
     enable = true;
+    enableZshIntegration = false; # So LS_COLORS can be set for completion along with initialization
     theme = "darkrose";
     themes = {
       darkrose = {
@@ -147,4 +148,9 @@ in {
       };
     };
   };
+
+  programs.zsh.initExtra = ''
+    export LS_COLORS=$(${config.programs.vivid.package}/bin/vivid generate darkrose)
+    zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+  '';
 }

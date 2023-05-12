@@ -32,8 +32,6 @@ in
           size = 10000;
         };
         initExtra = ''
-          zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
-
           if [ -z "$NVIM_LISTEN_ADDRESS" ]; then
             ZVM_VI_SURROUND_BINDKEY=s-prefix
             ZVM_KEYTIMEOUT=0.1
