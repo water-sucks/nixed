@@ -9,7 +9,7 @@ in {
     extraConfig = {
       pull.rebase = false;
       init.defaultBranch = "main";
-      core.editor = "nvim -c 'let g:unception_block_while_host_edits=1'";
+      core.editor = "nvim --cmd 'let g:unception_block_while_host_edits=1'";
     };
 
     aliases = {
