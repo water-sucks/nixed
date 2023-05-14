@@ -8,7 +8,13 @@
 
   sources = pkgs.callPackage _sources/generated.nix {};
 
-  simplefox = sources.simplefox-theme.src;
+  cascade = pkgs.buildEnv {
+    name = "cascade-chrome";
+    paths = [
+      "${sources.cascade-theme.src}/chrome"
+      ./chrome
+    ];
+  };
 in
   lib.mkMerge [
     {
@@ -27,12 +33,8 @@ in
           then "Library/Application Support/Firefox/Profiles/default"
           else ".mozilla/firefox/default";
       in {
-        "simplefox-assets" = {
-          source = "${simplefox}/assets";
-          target = "${prefix}/assets";
-        };
-        "simplefox-chrome" = {
-          source = "${simplefox}/chrome";
+        "cascade-chrome" = {
+          source = cascade;
           target = "${prefix}/chrome";
         };
       };

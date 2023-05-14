@@ -1,6 +1,6 @@
 {
-  "simplefox-theme" = {
-    "src.git" = "https://github.com/migueravila/SimpleFox";
-    "fetch.github" = "migueravila/SimpleFox";
+  "cascade-theme" = {
+    "src.git" = "https://github.com/andreasgrafen/cascade";
+    "fetch.github" = "andreasgrafen/cascade";
   };
 }

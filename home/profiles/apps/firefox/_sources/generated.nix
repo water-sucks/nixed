@@ -5,16 +5,16 @@
   fetchFromGitHub,
   dockerTools,
 }: {
-  simplefox-theme = {
-    pname = "simplefox-theme";
-    version = "a4c1ec7d2af121047f09da4a572960e032ca29a6";
+  cascade-theme = {
+    pname = "cascade-theme";
+    version = "a89173a67696a8bf43e8e2ac7ed93ba7903d7a70";
     src = fetchFromGitHub {
-      owner = "migueravila";
-      repo = "SimpleFox";
-      rev = "a4c1ec7d2af121047f09da4a572960e032ca29a6";
+      owner = "andreasgrafen";
+      repo = "cascade";
+      rev = "a89173a67696a8bf43e8e2ac7ed93ba7903d7a70";
       fetchSubmodules = false;
-      sha256 = "sha256-iNILXnOZYbzy2/HcUpyiq6VOLA2C6fogAAwSWsTun1U=";
+      sha256 = "sha256-D4ZZPm/li1Eoo1TmDS/lI2MAlgosNGOOk4qODqIaCes=";
     };
-    date = "2021-12-22";
+    date = "2023-04-10";
   };
 }
