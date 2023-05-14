@@ -86,18 +86,18 @@ in {
       workspaces = [];
       tags = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
       layouts = map enum [
-        "Fibonacci"
         "MainAndVertStack"
         "MainAndHorizontalStack"
         "MainAndDeck"
+        "RightWiderLeftStack"
+        "LeftWiderRightStack"
         "GridHorizontal"
         "EvenHorizontal"
         "EvenVertical"
         "CenterMain"
         "CenterMainBalanced"
         "Monocle"
-        "RightWiderLeftStack"
-        "LeftWiderRightStack"
+        "Fibonacci"
       ];
       max_window_width = null;
       layout_mode = enum "Workspace";
@@ -136,15 +136,17 @@ in {
         (bind [mod ctrl] "Up" "NextLayout")
         (bind [mod ctrl] "j" "PreviousLayout")
         (bind [mod ctrl] "Down" "PreviousLayout")
-        (bind' [mod ctrl] "m" "SetLayout" "Monocle")
+        (bind' [mod ctrl] "s" "SetLayout" "MainAndVertStack")
         (bind' [mod ctrl] "f" "SetLayout" "Fibonacci")
+        (bind' [mod ctrl] "m" "SetLayout" "Monocle")
 
-        # Workspace
-        (bind [mod shift] "l" "FocusWorkspaceNext")
-        (bind [mod shift] "Right" "FocusWorkspaceNext")
-        (bind [mod shift] "h" "FocusWorkspacePrevious")
-        (bind [mod shift] "Left" "FocusWorkspacePrevious")
-        (bind [mod shift] "w" "MoveToLastWorkspace")
+        # Workspaces (I only have a single monitor so these bindings
+        # should be disabled for until I have a use for them
+        # (bind [mod shift] "l" "FocusWorkspaceNext")
+        # (bind [mod shift] "Right" "FocusWorkspaceNext")
+        # (bind [mod shift] "h" "FocusWorkspacePrevious")
+        # (bind [mod shift] "Left" "FocusWorkspacePrevious")
+        # (bind [mod shift] "w" "MoveToLastWorkspace")
 
         # Window
         (bind [mod] "k" "FocusWindowUp")
@@ -157,6 +159,8 @@ in {
         (bind [mod shift] "j" "MoveWindowDown")
         (bind [mod shift] "Down" "MoveWindowDown")
         (bind [mod shift] "t" "MoveWindowTop")
+        (bind' [mod shift] "h" "DecreaseMainWidth" "5")
+        (bind' [mod shift] "l" "IncreaseMainWidth" "5")
 
         # External
         (execute [mod] return kitty)
