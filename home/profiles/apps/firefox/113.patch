@@ -1,0 +1,35 @@
+diff --git a/chrome/includes/cascade-config.css b/chrome/includes/cascade-config.css
+index c918659..4cfe108 100644
+--- a/chrome/includes/cascade-config.css
++++ b/chrome/includes/cascade-config.css
+@@ -106,7 +106,7 @@
+ #urlbar-go-button { display: none !important; }
+ 
+ /* Hides the Extensions Menu Icon */
+-#unified-extensions-button { display: none !important; }
++/* #unified-extensions-button { display: none !important; } */
+ 
+ 
+ 
+diff --git a/chrome/includes/cascade-responsive.css b/chrome/includes/cascade-responsive.css
+index 10f68b4..94e4b41 100644
+--- a/chrome/includes/cascade-responsive.css
++++ b/chrome/includes/cascade-responsive.css
+@@ -1,7 +1,7 @@
+ @media (min-width: 1000px) {
+ 
+ 
+-  #navigator-toolbox { display: flex; flex-wrap: wrap; }
++  #navigator-toolbox { display: flex; flex-wrap: wrap; flex-direction: row; }
+ 
+ 
+   #nav-bar {
+@@ -11,7 +11,7 @@
+ 
+   }
+   
+-  #nav-bar #urlbar-container { min-width: 0px !important; }
++  #nav-bar #urlbar-container { min-width: 0px !important; width: auto !important; }
+ 
+ 
+   #titlebar {

@@ -8,13 +8,27 @@
 
   sources = pkgs.callPackage _sources/generated.nix {};
 
-  cascade = pkgs.buildEnv {
-    name = "cascade-chrome";
-    paths = [
-      "${sources.cascade-theme.src}/chrome"
-      ./chrome
-    ];
-  };
+  cascade = let
+    patched-cascade = pkgs.stdenv.mkDerivation {
+      name = "cascade-theme-src";
+      inherit (sources.cascade-theme) src;
+      patches = [
+        ./113.patch
+      ];
+      dontBuild = true;
+      installPhase = ''
+        mkdir $out
+        cp -r chrome/* $out
+      '';
+    };
+  in
+    pkgs.buildEnv {
+      name = "cascade-chrome";
+      paths = [
+        patched-cascade
+        ./chrome
+      ];
+    };
 in
   lib.mkMerge [
     {
