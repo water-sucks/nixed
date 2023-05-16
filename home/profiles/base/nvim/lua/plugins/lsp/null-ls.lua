@@ -48,6 +48,7 @@ null_ls.setup({
         return null_ls.builtins.formatting.alejandra
       end
     end)(),
+    null_ls.builtins.formatting.rustfmt,
     null_ls.builtins.formatting.shellharden,
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
