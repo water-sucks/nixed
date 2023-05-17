@@ -47,6 +47,21 @@ local cmp_spec = use("hrsh7th/nvim-cmp", {
   },
 })
 
+local lsp_signature_spec = use("ray-x/lsp_signature.nvim", {
+  dependencies = { use("neovim/nvim-lspconfig") },
+  config = function()
+    -- For showing completion for function entry instead of using noice
+    require("lsp_signature").setup({
+      hint_enable = true,
+      hint_prefix = " ", -- OMG Debian??
+      handler_opts = { border = "single" },
+      max_width = 80,
+      toggle_key = "<C-k>",
+      toggle_key_flip_floatwin_setting = true,
+    })
+  end,
+})
+
 local null_ls_spec = use("jose-elias-alvarez/null-ls.nvim", {
   event = "CursorHold",
   config = function()
@@ -57,6 +72,7 @@ local null_ls_spec = use("jose-elias-alvarez/null-ls.nvim", {
 return {
   lspconfig_spec,
   cmp_spec,
+  lsp_signature_spec,
   null_ls_spec,
   fidget_spec,
 }

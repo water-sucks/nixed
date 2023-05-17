@@ -13,6 +13,9 @@ noice_spec.config = function()
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
+      signature = {
+        enabled = false, -- This is buggy, so I'm using lsp_signature.nvim for now.
+      },
     },
     cmdline = {
       format = {
@@ -46,7 +49,7 @@ noice_spec.config = function()
       kind_icons = {},
     },
     presets = {
-      long_message_to_split = true,
+      -- long_message_to_split = true,
     },
     views = {
       cmdline_popup = {
