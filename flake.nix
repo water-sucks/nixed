@@ -18,6 +18,8 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
+    nvfetcher.url = "github:berberman/nvfetcher";
+
     pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
     pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -66,6 +68,7 @@
           [
             agenix.overlays.default
             neovim.overlay
+            nvfetcher.overlays.default
             self.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
             # expose nvfetcher-generated stuff, that's annoying.
