@@ -1,5 +1,5 @@
 local nvim_tree_spec = use("nvim-tree/nvim-tree.lua", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 nvim_tree_spec.config = function()
   local api = require("nvim-tree.api")
@@ -42,7 +42,7 @@ local eunuch_spec = use("tpope/vim-eunuch", {
 
 local project_spec = use("ahmedkhalf/project.nvim", {
   dependencies = { use("nvim-telescope/telescope.nvim") },
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("project_nvim").setup({
       manual_mode = true,
@@ -53,7 +53,7 @@ local project_spec = use("ahmedkhalf/project.nvim", {
 })
 
 local zoxide_spec = use("nanotee/zoxide.vim", {
-  event = "CursorHold",
+  event = "CmdlineEnter",
 })
 
 return {

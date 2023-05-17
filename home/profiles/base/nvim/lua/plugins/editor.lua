@@ -1,5 +1,5 @@
 local autosave_spec = use("Pocco81/auto-save.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     local autosave = require("auto-save")
 

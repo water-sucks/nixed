@@ -1,5 +1,5 @@
 local dressing_spec = use("stevearc/dressing.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 
 dressing_spec.config = function()

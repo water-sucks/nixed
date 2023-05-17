@@ -1,9 +1,9 @@
 local diffview_spec = use("sindrets/diffview.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 
 local gitsigns_spec = use("lewis6991/gitsigns.nvim", {
-  event = "BufRead",
+  event = "VeryLazy",
 })
 
 diffview_spec.config = function()

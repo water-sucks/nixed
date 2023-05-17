@@ -1,5 +1,5 @@
 local trouble_spec = use("folke/trouble.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 
 trouble_spec.config = function()

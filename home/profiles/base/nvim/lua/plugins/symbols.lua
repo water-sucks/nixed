@@ -6,7 +6,7 @@ local devicons_spec = use("kyazdani42/nvim-web-devicons", {
 })
 
 local indent_blankline_spec = use("lukas-reineke/indent-blankline.nvim", {
-  event = "BufRead",
+  event = "VeryLazy",
 })
 
 indent_blankline_spec.config = function()
@@ -37,7 +37,7 @@ indent_blankline_spec.config = function()
 end
 
 local lightbulb_spec = use("kosayoda/nvim-lightbulb", {
-  event = "BufRead",
+  event = "VeryLazy",
   config = function()
     require("nvim-lightbulb").setup({
       sign = {

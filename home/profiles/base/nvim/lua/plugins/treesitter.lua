@@ -6,7 +6,7 @@ local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
     use("JoosepAlviste/nvim-ts-context-commentstring", {}),
     use("nvim-treesitter/playground", {}),
   },
-  event = "BufReadPost",
+  event = "VeryLazy",
 })
 
 treesitter_spec.config = function()

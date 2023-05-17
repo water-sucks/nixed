@@ -1,5 +1,5 @@
 local telescope_spec = use("nvim-telescope/telescope.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 
 telescope_spec.config = function()

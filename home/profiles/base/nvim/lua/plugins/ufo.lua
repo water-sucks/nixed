@@ -1,5 +1,5 @@
 local ufo_spec = use("kevinhwang91/nvim-ufo", {
-  event = "CursorHold",
+  event = "VeryLazy",
   dependencies = { use("kevinhwang91/promise-async") },
 })
 

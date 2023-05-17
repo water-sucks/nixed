@@ -1,5 +1,5 @@
 local duck_spec = use("tamton-aquib/duck.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     local duck = require("duck")
 
@@ -70,7 +70,7 @@ local duck_spec = use("tamton-aquib/duck.nvim", {
 })
 
 local presence_spec = use("andweeb/presence.nvim", {
-  event = "BufRead",
+  event = "VeryLazy",
   config = function()
     require("presence"):setup({})
   end,

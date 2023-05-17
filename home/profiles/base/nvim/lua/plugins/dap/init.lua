@@ -1,5 +1,5 @@
 local dap_spec = use("mfussenegger/nvim-dap", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     for _, file in ipairs({ "dap", "c", "haskell", "elixir" }) do
       require("plugins.dap." .. file)
@@ -8,7 +8,7 @@ local dap_spec = use("mfussenegger/nvim-dap", {
 })
 
 local dapui_spec = use("rcarriga/nvim-dap-ui", {
-  event = "CursorHold",
+  event = "VeryLazy",
   dependencies = { use("mfussenegger/nvim-dap") },
   config = function()
     require("plugins.dap.ui")
@@ -16,36 +16,36 @@ local dapui_spec = use("rcarriga/nvim-dap-ui", {
 })
 
 local dap_virtual_text_spec = use("theHamsta/nvim-dap-virtual-text", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("nvim-dap-virtual-text").setup()
   end,
 })
 
 local osv_spec = use("jbyuki/one-small-step-for-vimkind", {
+  event = "VeryLazy",
   dependencies = { use("mfussenegger/nvim-dap") },
   config = function()
     require("plugins.dap.nlua")
   end,
-  ft = "lua",
 })
 
 local dap_go_spec = use("leoluz/nvim-dap-go", {
+  event = "VeryLazy",
   dependencies = { use("mfussenegger/nvim-dap") },
   config = function()
     require("dap-go").setup()
   end,
-  ft = "go",
 })
 
 local dap_python_spec = use("mfussenegger/nvim-dap-python", {
+  event = "VeryLazy",
   dependencies = { use("mfussenegger/nvim-dap") },
   config = function()
     if vim.fn.executable("python3") then
       require("dap-python").setup(vim.fn.exepath("python3"))
     end
   end,
-  ft = "python",
 })
 
 return {

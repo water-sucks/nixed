@@ -12,7 +12,7 @@ local bufferline_spec = use("akinsho/bufferline.nvim", {
 })
 
 local scope_spec = use("tiagovla/scope.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   dependencies = { use("akinsho/bufferline.nvim") },
   config = function()
     require("scope").setup()

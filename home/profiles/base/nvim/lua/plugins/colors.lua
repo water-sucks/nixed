@@ -1,12 +1,13 @@
 local colorscheme_spec = use("water-sucks/darkrose.nvim", {
   dev = true,
+  lazy = false,
   config = function()
     vim.cmd.colorscheme("darkrose")
   end,
 })
 
 local colorizer_spec = use("NvChad/nvim-colorizer.lua", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("colorizer").setup({
       user_default_options = {
@@ -25,7 +26,7 @@ local colorizer_spec = use("NvChad/nvim-colorizer.lua", {
 })
 
 local highlight_current_n_spec = use("rktjmp/highlight-current-n.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     local map = vim.keymap.set
     local augroup = vim.api.nvim_create_augroup
@@ -56,7 +57,7 @@ local highlight_current_n_spec = use("rktjmp/highlight-current-n.nvim", {
 })
 
 local lush_spec = use("rktjmp/lush.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 
 return {

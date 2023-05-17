@@ -1,5 +1,5 @@
 local twilight_spec = use("folke/twilight.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("twilight").setup({
       context = 20,
@@ -8,7 +8,7 @@ local twilight_spec = use("folke/twilight.nvim", {
 })
 
 local zen_spec = use("folke/zen-mode.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   dependencies = { twilight_spec },
 })
 zen_spec.config = function()

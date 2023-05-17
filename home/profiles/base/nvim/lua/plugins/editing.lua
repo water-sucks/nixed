@@ -36,7 +36,7 @@ autopairs_spec.config = function()
 end
 
 local comment_spec = use("numToStr/Comment.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("Comment").setup({
       padding = true,
@@ -65,7 +65,7 @@ local comment_spec = use("numToStr/Comment.nvim", {
 })
 
 local dial_spec = use("monaqa/dial.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 dial_spec.config = function()
   local map = vim.keymap.set
@@ -114,7 +114,7 @@ dial_spec.config = function()
 end
 
 local gomove_spec = use("booperlv/nvim-gomove", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 gomove_spec.config = function()
   local map = vim.keymap.set
@@ -148,7 +148,7 @@ gomove_spec.config = function()
 end
 
 local leap_spec = use("ggandor/leap.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 leap_spec.config = function()
   local wk = require("which-key")
@@ -170,11 +170,11 @@ leap_spec.config = function()
 end
 
 local repeat_spec = use("tpope/vim-repeat", {
-  event = "CursorHold",
+  event = "VeryLazy",
 })
 
 local sort_spec = use("sQVe/sort.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("config.sort")
   end,
@@ -208,7 +208,7 @@ sort_spec.config = function()
 end
 
 local surround_spec = use("echasnovski/mini.surround", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("mini.surround").setup()
   end,

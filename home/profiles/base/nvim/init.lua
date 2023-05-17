@@ -29,6 +29,10 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup("plugins", {
+  default = {
+    lazy = true,
+  },
+  colorschemes = { "darkrose" },
   dev = {
     path = vim.env.HOME .. "/Code/NeovimPlugins",
     patterns = { "water-sucks" },

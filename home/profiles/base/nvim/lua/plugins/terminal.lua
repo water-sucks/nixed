@@ -1,5 +1,5 @@
 local fterm_spec = use("numToStr/FTerm.nvim", {
-  event = "CursorHold",
+  event = "VeryLazy",
   config = function()
     require("FTerm").setup({
       blend = 10,
