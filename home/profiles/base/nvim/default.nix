@@ -62,7 +62,7 @@
         patches = [./fidget.patch];
       });
       # Add plugins you want synced with nixpkgs here.
-      inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
+      # inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
     };
 in
   lib.mkMerge [
