@@ -23,7 +23,6 @@ local lsp_formatting = function(bufnr)
       return true
     end,
     bufnr = bufnr,
-    async = true,
   })
 end
 
@@ -45,7 +44,7 @@ local on_attach = function(client, bufnr)
     g = {
       name = "LSP",
       D = { vim.lsp.buf.declaration, "Go to declaration" },
-      -- d = { vim.lsp.buf.definition, "Go to definition" }, -- This is declared in Treesitter instead.
+      --[[ -- d = { vim.lsp.buf.definition, "Go to definition" }, -- This is declared in Treesitter instead. ]]
       i = { vim.lsp.buf.implementation, "Go to implementation" },
       h = { vim.lsp.buf.hover, "Hover docs" },
 
