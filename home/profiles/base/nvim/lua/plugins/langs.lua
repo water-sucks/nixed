@@ -102,6 +102,7 @@ local rust_tools_spec = use("simrat39/rust-tools.nvim", {
   -- dependencies = { use("neovim/nvim-lspconfig") },
   ft = "rust",
 })
+
 rust_tools_spec.config = function()
   local extension_path = vim.fn.stdpath("data") .. "/vscode-lldb/"
   local codelldb_path = extension_path .. "adapter/codelldb"
@@ -115,6 +116,9 @@ rust_tools_spec.config = function()
       adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
     },
   })
+
+  -- Workaround for when rust-tools is initially loaded so that ft = "rust" can work in the spec
+  vim.cmd("e!")
 end
 
 local vimtex_spec = use("lervag/vimtex", {
