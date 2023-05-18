@@ -20,9 +20,6 @@
 
     nvfetcher.url = "github:berberman/nvfetcher";
 
-    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
-    pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
-
     nixago.url = "github:nix-community/nixago";
     nixago.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -43,10 +40,8 @@
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
       imports = with inputs; [
-        pre-commit-hooks.flakeModule
         treefmt.flakeModule
 
-        ./modules/hooks.nix
         ./modules/shell.nix
         ./modules/treefmt.nix
 

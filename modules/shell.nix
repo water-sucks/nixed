@@ -1,8 +1,4 @@
-{
-  self,
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   perSystem = {
     config,
     pkgs,
@@ -12,7 +8,13 @@
     devShells = let
       inherit (inputs) nixago;
 
-      nixagoConfigs = import ./nixago.nix {inherit self pkgs;};
+      nvfetcherConfigs = import ./nvfetcher.nix {inherit pkgs;};
+      lefthookConfig = import ./lefthook.nix {inherit config pkgs;};
+      nixagoConfigs =
+        nvfetcherConfigs
+        ++ [
+          lefthookConfig
+        ];
 
       shell = {ci ? false}:
         pkgs.mkShell {
@@ -23,6 +25,7 @@
               node2nix
               nodePackages.prettier
               nvfetcher
+              lefthook
             ]
             ++ (lib.optionals (!ci) [
                 agenix
@@ -35,7 +38,7 @@
               ${(nixago.lib.${system}.makeAll nixagoConfigs).shellHook}
             ''
             + pkgs.lib.optionalString (!ci) ''
-              ${config.pre-commit.installationScript}
+              ${pkgs.lefthook}/bin/lefthook install
             '';
         };
     in {
