@@ -965,6 +965,18 @@
     };
     date = "2023-04-20";
   };
+  tree-sitter-just = {
+    pname = "tree-sitter-just";
+    version = "4e5f5f3ff37b12a1bbf664eb3966b3019e924594";
+    src = fetchFromGitHub {
+      owner = "IndianBoy42";
+      repo = "tree-sitter-just";
+      rev = "4e5f5f3ff37b12a1bbf664eb3966b3019e924594";
+      fetchSubmodules = false;
+      sha256 = "sha256-Qs0Klt9uj6Vgs4vJrjKXYD8nNe8KYdWCnADvogm4/l0=";
+    };
+    date = "2023-03-18";
+  };
   tree-sitter-norg = {
     pname = "tree-sitter-norg";
     version = "d7a466e182a532065a559dbfc7a847271d5e9c29";

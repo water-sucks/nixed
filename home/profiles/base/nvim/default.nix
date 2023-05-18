@@ -63,6 +63,7 @@
       });
       # Add plugins you want synced with nixpkgs here.
       # inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
+      tree-sitter-just = buildPlugin sources.tree-sitter-just;
     };
 in
   lib.mkMerge [

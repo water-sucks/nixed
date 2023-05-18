@@ -138,4 +138,5 @@ in
       isPlugin = false;
     })
     (fetch "nvim-neorg" "tree-sitter-norg-meta" {isPlugin = false;})
+    (fetch "IndianBoy42" "tree-sitter-just" {isPlugin = false;})
   ]
