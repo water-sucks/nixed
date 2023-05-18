@@ -16,8 +16,8 @@
   };
 
   filen-desktop = {
-    "src.manual" = "2.0.14";
-    "fetch.url" = "https://cdn.filen.io/desktop/release/$ver/filen_x86_64.AppImage";
+    "src.github" = "FilenCloudDienste/filen-desktop";
+    "fetch.url" = "https://cdn.filen.io/desktop/dev/$ver/filen_x86_64.AppImage";
   };
 
   airtame = {
