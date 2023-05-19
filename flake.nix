@@ -44,6 +44,7 @@
 
         ./modules/shell.nix
         ./modules/treefmt.nix
+        ./modules/nvfetcher.nix
 
         ./hosts/nixos
         ./hosts/darwin

@@ -104,7 +104,7 @@ jobs:
           github = "$GITHUB_TOKEN"
           EOF
 
-          nix develop ".#ci" -c bin/nvfetch -k /tmp/keyfile.toml
+          nix develop ".#ci" -c nix run ".#update-nvfetcher-sources" -- -k /tmp/keyfile.toml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate patch

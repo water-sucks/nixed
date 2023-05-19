@@ -8,42 +8,40 @@
     devShells = let
       inherit (inputs) nixago;
 
-      nvfetcherConfigs = import ./nvfetcher.nix {inherit pkgs;};
-      lefthookConfig = import ./lefthook.nix {inherit config pkgs;};
+      nvfetcherConfigs = import ./nixago/nvfetcher.nix {inherit pkgs;};
+      lefthookConfig = import ./nixago/lefthook.nix {inherit config pkgs;};
       nixagoConfigs =
         nvfetcherConfigs
         ++ [
           lefthookConfig
         ];
-
-      shell = {ci ? false}:
-        pkgs.mkShell {
-          name = "nixed-shell";
-          packages = with pkgs;
-            [
-              alejandra
-              node2nix
-              nodePackages.prettier
-              nvfetcher
-              lefthook
-            ]
-            ++ (lib.optionals (!ci) [
-                agenix
-
-                config.treefmt.build.wrapper
-              ]
-              ++ (builtins.attrValues config.treefmt.build.programs));
-          shellHook =
-            ''
-              ${(nixago.lib.${system}.makeAll nixagoConfigs).shellHook}
-            ''
-            + pkgs.lib.optionalString (!ci) ''
-              ${pkgs.lefthook}/bin/lefthook install
-            '';
-        };
     in {
-      default = shell {};
-      ci = shell {ci = true;};
+      default = pkgs.mkShell {
+        name = "nixed-shell";
+        packages = with pkgs;
+          [
+            agenix
+            config.treefmt.build.wrapper
+            lefthook
+            node2nix
+            nodePackages.prettier
+            nvfetcher
+          ]
+          ++ (builtins.attrValues config.treefmt.build.programs);
+        shellHook = ''
+          ${(nixago.lib.${system}.makeAll nixagoConfigs).shellHook}
+          ${pkgs.lefthook}/bin/lefthook install
+        '';
+      };
+
+      # Slimmed-down GH Actions environment for nvfetcher to update packages in
+      # This just generates the actual nvfetcher.toml files.
+      ci = pkgs.mkShell {
+        name = "nixed-shell-ci";
+        shellHook = ''
+          ${(nixago.lib.${system}.makeAll nvfetcherConfigs).shellHook}
+        '';
+      };
     };
   };
 }
