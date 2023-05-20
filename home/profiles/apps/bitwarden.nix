@@ -6,7 +6,7 @@
 }:
 lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
-    bitwarden
+    stable.bitwarden
   ];
 
   home.persistence."/persist/home/${config.home.username}" = {
