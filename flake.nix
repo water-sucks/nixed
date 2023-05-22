@@ -63,7 +63,6 @@
         overlays = with inputs;
           [
             agenix.overlays.default
-            neovim.overlay
             nvfetcher.overlays.default
             self.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
