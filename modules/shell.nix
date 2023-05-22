@@ -16,7 +16,7 @@
           lefthookConfig
         ];
     in {
-      default = pkgs.mkShell {
+      default = pkgs.mkShellNoCC {
         name = "nixed-shell";
         packages = with pkgs;
           [
@@ -36,7 +36,7 @@
 
       # Slimmed-down GH Actions environment for nvfetcher to update packages in
       # This just generates the actual nvfetcher.toml files.
-      ci = pkgs.mkShell {
+      ci = pkgs.mkShellNoCC {
         name = "nixed-shell-ci";
         shellHook = ''
           ${(nixago.lib.${system}.makeAll nvfetcherConfigs).shellHook}
