@@ -84,10 +84,10 @@ in
     (plugin "sindrets" "diffview.nvim")
 
     # Appearance/Theming
-    (plugin "nvim-treesitter" "nvim-treesitter")
-    (plugin "nvim-treesitter" "nvim-treesitter-textobjects")
-    (plugin "nvim-treesitter" "nvim-treesitter-refactor")
     # Treesitter queries will be synced with the nixpkgs treesitter input
+    # (plugin "nvim-treesitter" "nvim-treesitter")
+    # (plugin "nvim-treesitter" "nvim-treesitter-textobjects")
+    # (plugin "nvim-treesitter" "nvim-treesitter-refactor")
     (plugin "nvim-treesitter" "playground")
     (plugin "windwp" "nvim-ts-autotag")
     (plugin "JoosepAlviste" "nvim-ts-context-commentstring")
