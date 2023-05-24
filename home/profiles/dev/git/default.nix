@@ -17,6 +17,15 @@ in {
 
       rst = "restore";
       rsts = "restore --staged";
+
+      st = "stash";
+      sta = "stash apply";
+      stl = "stash list";
+      stp = "stash pop";
+      sts = "stash show --text";
+      stsp = "stash show -p";
+      stu = "stash --include-untracked";
+      stall = "stash --all";
     };
   };
 }
