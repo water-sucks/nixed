@@ -28,14 +28,13 @@ to use them, feel free! Here's a rundown of what they are:
 
 ### Packages
 
-| Name          | Description                               |
-| ------------- | ----------------------------------------- |
-| airtame       | Screen streaming application              |
-| filen-desktop | Desktop client for filen.io               |
-| nerdfetch\*   | Modified version of nerdfetch             |
-| nsmb-mvl      | Mario vs. Luigi game rewrite from the DS  |
-| rescrobbled   | MPRIS music scrobbler daemon              |
-| waybar-mpris  | Waybar component for seeing MPRIS players |
+| Name         | Description                               |
+| ------------ | ----------------------------------------- |
+| airtame      | Screen streaming application              |
+| nerdfetch\*  | Modified version of nerdfetch             |
+| nsmb-mvl     | Mario vs. Luigi game rewrite from the DS  |
+| rescrobbled  | MPRIS music scrobbler daemon              |
+| waybar-mpris | Waybar component for seeing MPRIS players |
 
 \* - Probably don't use this package, this is tailored for my own config.
 

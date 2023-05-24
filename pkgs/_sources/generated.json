@@ -14,21 +14,6 @@
     },
     "version": "4.6.3"
   },
-  "filen-desktop": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "filen-desktop",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-K/drxz1wWgTM33YrldsiEwbapCkPLXDwdw/lL16YA04=",
-      "type": "url",
-      "url": "https://cdn.filen.io/desktop/release/v2.0.21/filen_x86_64.AppImage"
-    },
-    "version": "v2.0.21"
-  },
   "get-appname": {
     "cargoLocks": null,
     "date": "2023-02-23",

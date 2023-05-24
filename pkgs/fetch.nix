@@ -15,11 +15,6 @@
     "cargo_locks" = ["Cargo.lock"];
   };
 
-  filen-desktop = {
-    "src.manual" = "v2.0.21";
-    "fetch.url" = "https://cdn.filen.io/desktop/release/$ver/filen_x86_64.AppImage";
-  };
-
   airtame = {
     "src.aur" = "airtame-application";
     "fetch.url" = "https://downloads.airtame.com/app/latest/linux/Airtame-$ver.deb";

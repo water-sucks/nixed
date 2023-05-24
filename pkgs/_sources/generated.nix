@@ -13,14 +13,6 @@
       sha256 = "sha256-vU04EtfYk6iK9g9v+QmxaD1naRKllPbGNqOydds4HPo=";
     };
   };
-  filen-desktop = {
-    pname = "filen-desktop";
-    version = "v2.0.21";
-    src = fetchurl {
-      url = "https://cdn.filen.io/desktop/release/v2.0.21/filen_x86_64.AppImage";
-      sha256 = "sha256-K/drxz1wWgTM33YrldsiEwbapCkPLXDwdw/lL16YA04=";
-    };
-  };
   get-appname = {
     pname = "get-appname";
     version = "df5166cab236b4220ec01edf5527c9c6a4487a8f";

@@ -13,8 +13,6 @@
   packages' = {
     airtame = ./applications/misc/airtame;
 
-    filen-desktop = ./applications/networking/filen-desktop;
-
     nerdfetch = ./applications/misc/nerdfetch;
 
     rescrobbled = ./tools/audio/rescrobbled;

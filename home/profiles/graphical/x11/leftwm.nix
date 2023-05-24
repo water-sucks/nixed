@@ -104,12 +104,6 @@ in {
       disable_current_tag_swap = false;
       focus_behaviour = enum "Sloppy"; # Bri*ish
       focus_new_windows = true;
-      window_rules = map struct [
-        {
-          window_title = "filen-desktop";
-          spawn_floating = true;
-        }
-      ];
 
       keybind = map struct (lib.lists.flatten [
         # General
