@@ -3,7 +3,6 @@ _: {
     "firefox"
     "brave-browser"
     "kitty"
-    "filen"
   ];
 
   homebrew.brews = [
