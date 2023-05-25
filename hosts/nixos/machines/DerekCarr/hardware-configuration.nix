@@ -83,8 +83,6 @@
 
   swapDevices = [{device = "/dev/disk/by-partlabel/swap";}];
 
-  services.xserver.videoDrivers = ["amdgpu"];
-
   systemd.services.systemd-udev-settle.enable = false;
   systemd.services.NetworkManager-wait-online.enable = false;
 }
