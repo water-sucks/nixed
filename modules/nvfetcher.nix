@@ -1,14 +1,22 @@
-{
-  perSystem = {pkgs, ...}: {
+{inputs, ...}: {
+  perSystem = {
+    pkgs,
+    system,
+    ...
+  }: let
+    inherit (inputs) nixago;
+
+    nvfetcherConfigs = import ./nixago/nvfetcher.nix {inherit pkgs;};
+  in {
     apps.update-nvfetcher-sources = let
       nvfetcher = "${pkgs.nvfetcher}/bin/nvfetcher";
       alejandra = "${pkgs.alejandra}/bin/alejandra";
       prettier = "${pkgs.nodePackages.prettier}/bin/prettier";
 
       program = pkgs.writeShellScript "update-nvfetcher-sources" ''
-        set -euo pipefail
-        set -o noclobber
         shopt -s globstar
+
+        ${(nixago.lib.${system}.makeAll nvfetcherConfigs).shellHook}
 
         cd "$(git rev-parse --show-toplevel)"
 
