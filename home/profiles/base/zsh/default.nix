@@ -32,6 +32,8 @@ in
           size = 10000;
         };
         initExtra = ''
+          setopt +o nomatch
+
           if [ -z "$NVIM_LISTEN_ADDRESS" ]; then
             ZVM_VI_SURROUND_BINDKEY=s-prefix
             ZVM_KEYTIMEOUT=0.1
