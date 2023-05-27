@@ -1,6 +1,5 @@
 {
   config,
-  self,
   pkgs,
   lib,
   ...
@@ -174,7 +173,7 @@ in {
 
       ${lib.concatStringsSep "\n" bindings}
 
-      ${riverctl} set-repeat 50 300
+      ${riverctl} set-repeat 50 250
 
       ${riverctl} float-filter-add app-id Rofi
 
