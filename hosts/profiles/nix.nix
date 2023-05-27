@@ -8,7 +8,7 @@ in {
   nix = {
     gc.automatic = true;
     settings = {
-      sandbox = true;
+      sandbox = !isDarwin;
       trusted-users = [
         (
           if isDarwin
