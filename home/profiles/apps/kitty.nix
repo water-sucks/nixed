@@ -21,12 +21,13 @@ in
           if isLinux
           then kitty
           else runCommand "kitty-0.0.0" {} "mkdir $out";
-        font = {
-          name = "BlexMono Nerd Font";
-          package = pkgs.nerdfonts.override {fonts = ["IBMPlexMono"];};
-          size = 10;
-        };
         settings = {
+          font_family = "BlexMono Nerd Font";
+          bold_font = "BlexMono Nerd Font Bold";
+          italic_font = "BlexMono Nerd Font Italic";
+          bold_italic_font = "BlexMono Nerd Font Bold Italic";
+          font_size = "10";
+
           macos_option_as_alt = "both";
 
           allow_remote_control = "yes";
