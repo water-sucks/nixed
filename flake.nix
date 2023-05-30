@@ -80,7 +80,8 @@
           ++ (map import (with lib; collectLeaves ./overrides));
       in {
         _module.args = {
-          inherit self inputs lib;
+          inherit self inputs;
+          lib = nixpkgs.lib.extend (_: _: lib);
           pkgs = import nixpkgs {
             inherit system overlays;
             config.allowUnfree = true;
