@@ -41,9 +41,11 @@
       })
       grammars);
 
-  buildPlugin = source:
+  buildPlugin = name: source:
     pkgs.vimUtils.buildVimPluginFrom2Nix {
-      inherit (source) pname version src;
+      name = "${name}-${source.version}";
+      namePrefix = ""; # Clear name prefix
+      inherit (source) version src;
     };
 
   generatedPluginSources = with lib;
@@ -55,7 +57,7 @@
       sources);
 
   generatedPlugins = with lib;
-    mapAttrs (_: buildPlugin) generatedPluginSources;
+    mapAttrs buildPlugin generatedPluginSources;
 
   plugins =
     generatedPlugins
@@ -66,7 +68,7 @@
       "fidget.nvim" = generatedPlugins."fidget.nvim".overrideAttrs (_: {
         patches = [./fidget.patch];
       });
-      tree-sitter-just = buildPlugin sources.tree-sitter-just;
+      tree-sitter-just = buildPlugin "tree-sitter-just" sources.tree-sitter-just;
     };
 in
   lib.mkMerge [
