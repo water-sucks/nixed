@@ -4,25 +4,22 @@
   ...
 }: let
   treefmt = "${config.treefmt.build.wrapper}/bin/treefmt";
-  lefthook = "${pkgs.lefthook}/bin/lefthook";
 
   lefthookConfig = {
-    # Disabling until the next release, when configurable colors are supported
     colors = false;
+    skip_output = [
+      "meta"
+      "success"
+      "summary"
+      "execution"
+      "execution_out"
+    ];
 
-    pre-commit.commands = {
-      # Nix, stop sorting things by alphabetical order! It's annoying sometimes.
-      "1_format".run = "LEFTHOOK_QUIET=meta,success ${lefthook} run format";
-      "2_checks".run = "LEFTHOOK_QUIET=meta,success ${lefthook} run checks";
-    };
-
-    format.commands = {
-      treefmt.run = "${treefmt} --fail-on-change {staged_files}";
-    };
-
-    checks = {
-      parallel = true;
+    pre-commit = {
+      piped = true;
       commands = {
+        treefmt.run = "${treefmt} --fail-on-change {staged_files}";
+
         statix = {
           glob = "*.nix";
           exclude = "generated.nix|node-packages";
