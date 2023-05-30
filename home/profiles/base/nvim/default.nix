@@ -70,6 +70,13 @@
       });
       tree-sitter-just = buildPlugin "tree-sitter-just" sources.tree-sitter-just;
     };
+
+  pluginDir = with lib;
+    pkgs.linkFarm "nvim-plugins" (mapAttrsToList (n: v: {
+        name = n;
+        path = v;
+      })
+      plugins);
 in
   lib.mkMerge [
     {
@@ -136,16 +143,10 @@ in
         "nvim/parser".source = "${parserDir}";
       };
 
-      xdg.dataFile =
-        {
-          "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
-        }
-        // (with lib;
-          mapAttrs' (n: v:
-            nameValuePair "nvim/plugins/${n}" {
-              source = "${v}";
-            })
-          plugins);
+      xdg.dataFile = {
+        "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+        "nvim/plugins".source = "${pluginDir}";
+      };
     }
 
     (lib.mkIf pkgs.stdenv.isLinux {
