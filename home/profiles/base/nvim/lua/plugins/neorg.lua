@@ -61,10 +61,9 @@ neorg_spec.config = function()
         config = {
           icons = {
             todo = {
-              enabled = true,
               done = { icon = "" },
               pending = { icon = "󰇘" },
-              undone = { enabled = false },
+              undone = { icon = " " },
               uncertain = { icon = "" },
               on_hold = { icon = "" },
               cancelled = { icon = "󰜺" },
@@ -72,7 +71,6 @@ neorg_spec.config = function()
               urgent = { icon = "" },
             },
             heading = {
-              enabled = true,
               level_1 = { icon = "◈" },
               level_2 = { icon = " ◇" },
               level_3 = { icon = "  ◆" },
@@ -81,7 +79,6 @@ neorg_spec.config = function()
               level_6 = { icon = "     ⟡" },
             },
             list = {
-              enabled = true,
               level_1 = { icon = "" },
               level_2 = { icon = " " },
               level_3 = { icon = "  " },
