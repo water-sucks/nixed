@@ -26,8 +26,6 @@
     nix-colors.url = "github:Misterio77/nix-colors";
 
     treefmt.url = "github:numtide/treefmt-nix";
-
-    neovim.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {

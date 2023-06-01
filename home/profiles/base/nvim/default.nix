@@ -4,8 +4,6 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isDarwin;
-
   sources = pkgs.callPackage _sources/generated.nix {};
 
   # Grammar builder function
@@ -86,11 +84,6 @@ in
 
       programs.neovim = {
         enable = true;
-        package =
-          if isDarwin
-          then pkgs.neovim-unwrapped
-          else inputs.neovim.packages.${pkgs.system}.default;
-
         viAlias = true;
         vimAlias = true;
 
