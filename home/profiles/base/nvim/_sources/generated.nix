@@ -7,15 +7,15 @@
 }: {
   "'plugin-Comment.nvim'" = {
     pname = "'plugin-Comment.nvim'";
-    version = "e1fe53117aab24c378d5e6deaad786789c360123";
+    version = "c8043290f2d77f61025494d839d88e414608c460";
     src = fetchFromGitHub {
       owner = "numToStr";
       repo = "Comment.nvim";
-      rev = "e1fe53117aab24c378d5e6deaad786789c360123";
+      rev = "c8043290f2d77f61025494d839d88e414608c460";
       fetchSubmodules = false;
-      sha256 = "sha256-CMHkf+0T5FRMcqD6zGFo5IHrgT0xbZXe1UgOs+b1148=";
+      sha256 = "sha256-au/jG2jhRKQwLxCTODNmLcy5aJBFfg5j9wtQvWhby4g=";
     };
-    date = "2023-05-03";
+    date = "2023-06-01";
   };
   "'plugin-FTerm.nvim'" = {
     pname = "'plugin-FTerm.nvim'";
@@ -247,15 +247,15 @@
   };
   "'plugin-friendly-snippets'" = {
     pname = "'plugin-friendly-snippets'";
-    version = "7006e69b60a559837ff6cdb7fe610af4f6ca823c";
+    version = "0dd6114bea08276d9111d58c5dce5e256bbc8921";
     src = fetchFromGitHub {
       owner = "rafamadriz";
       repo = "friendly-snippets";
-      rev = "7006e69b60a559837ff6cdb7fe610af4f6ca823c";
+      rev = "0dd6114bea08276d9111d58c5dce5e256bbc8921";
       fetchSubmodules = false;
-      sha256 = "sha256-+4Vg+Ixtavk4UiVmJSt3c16yOLXMt/Zo7wzcw66eINA=";
+      sha256 = "sha256-Pi1EqCyLn5ryNZQMz16ny7O8dbTx5Yf/tJgowQbLfTs=";
     };
-    date = "2023-05-30";
+    date = "2023-05-31";
   };
   "'plugin-gitsigns.nvim'" = {
     pname = "'plugin-gitsigns.nvim'";
@@ -331,27 +331,27 @@
   };
   "'plugin-leap.nvim'" = {
     pname = "'plugin-leap.nvim'";
-    version = "be918a8e6aa00a6cfa7270d4bfcc11b2f80d6902";
+    version = "ecb6b6eaafc761e3eaee3c0b7ea37674c038c8d6";
     src = fetchFromGitHub {
       owner = "ggandor";
       repo = "leap.nvim";
-      rev = "be918a8e6aa00a6cfa7270d4bfcc11b2f80d6902";
+      rev = "ecb6b6eaafc761e3eaee3c0b7ea37674c038c8d6";
       fetchSubmodules = false;
-      sha256 = "sha256-BZW/d6vYtONi5ot3r1eIH/gE7ZHUa0z4M85cBqO0M54=";
+      sha256 = "sha256-leDD5g3kEH/nKRmEKBQcAzTqWQXH0+wusLA6de8tTxU=";
     };
-    date = "2023-05-26";
+    date = "2023-06-01";
   };
   "'plugin-lsp_signature.nvim'" = {
     pname = "'plugin-lsp_signature.nvim'";
-    version = "c6826d2c3f4bc4a37b41b6a140061ccb0e9cdc4a";
+    version = "17ff7a405fea8376b015b8ea7910d2e59958bf68";
     src = fetchFromGitHub {
       owner = "ray-x";
       repo = "lsp_signature.nvim";
-      rev = "c6826d2c3f4bc4a37b41b6a140061ccb0e9cdc4a";
+      rev = "17ff7a405fea8376b015b8ea7910d2e59958bf68";
       fetchSubmodules = false;
-      sha256 = "sha256-NgJ63e8wHqmnC10Y1S3lqouesRG2DHyjwqtQ3f7K5Bw=";
+      sha256 = "sha256-Fxgsdgi4ubeOhE07UHt3y7ELuOypIBzQcHwsoJIc9OE=";
     };
-    date = "2023-05-31";
+    date = "2023-06-01";
   };
   "'plugin-lspkind-nvim'" = {
     pname = "'plugin-lspkind-nvim'";
@@ -439,13 +439,13 @@
   };
   "'plugin-neorg'" = {
     pname = "'plugin-neorg'";
-    version = "5629898cf24bf25a39723e4113ce87a08f0d9dc1";
+    version = "e0fcf254fbdb95fa0918692aee1c93b938e883f8";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "neorg";
-      rev = "5629898cf24bf25a39723e4113ce87a08f0d9dc1";
+      rev = "e0fcf254fbdb95fa0918692aee1c93b938e883f8";
       fetchSubmodules = false;
-      sha256 = "sha256-yizSWaSQNdz8SaMLjFtfRfuBJWsbO843q2J6TjnMQQA=";
+      sha256 = "sha256-6jeN6FTeSBi2rq4+vTWVb4ywZVZ6tjcMvUPOWCQtqyE=";
     };
     date = "2023-05-31";
   };
@@ -535,15 +535,15 @@
   };
   "'plugin-nvim-dap'" = {
     pname = "'plugin-nvim-dap'";
-    version = "56118cee6af15cb9ddba9d080880949d8eeb0c9f";
+    version = "d234b0a77fc98a550dbaecdb5cd3dc5cd17147be";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "56118cee6af15cb9ddba9d080880949d8eeb0c9f";
+      rev = "d234b0a77fc98a550dbaecdb5cd3dc5cd17147be";
       fetchSubmodules = false;
-      sha256 = "sha256-iY9FJkwLlWu8/WZy3Trgq9cV69ve0lBkfOKwgY+yfok=";
+      sha256 = "sha256-sATLAWaFpPQuc3EwHAqTEhRzdY/+f1TpOIYrN2+uRIM=";
     };
-    date = "2023-05-17";
+    date = "2023-06-01";
   };
   "'plugin-nvim-dap-go'" = {
     pname = "'plugin-nvim-dap-go'";
