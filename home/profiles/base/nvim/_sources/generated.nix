@@ -55,15 +55,15 @@
   };
   "'plugin-bufferline.nvim'" = {
     pname = "'plugin-bufferline.nvim'";
-    version = "32d74d5d044f7cc89892d4781a83d55ee4ed552a";
+    version = "02d795081e6a24ec1fd506c513491543793d0780";
     src = fetchFromGitHub {
       owner = "akinsho";
       repo = "bufferline.nvim";
-      rev = "32d74d5d044f7cc89892d4781a83d55ee4ed552a";
+      rev = "02d795081e6a24ec1fd506c513491543793d0780";
       fetchSubmodules = false;
-      sha256 = "sha256-WM8/dHqiEykuw0qEQtenM5Rcv/Jr3Jxj5vulC/IKfAE=";
+      sha256 = "sha256-bZCqccQPI20MjsRZoWy89gGe59x8f8RtOgbrgrHdBP8=";
     };
-    date = "2023-05-21";
+    date = "2023-06-02";
   };
   "'plugin-cmp-buffer'" = {
     pname = "'plugin-cmp-buffer'";
@@ -187,15 +187,15 @@
   };
   "'plugin-diffview.nvim'" = {
     pname = "'plugin-diffview.nvim'";
-    version = "bff58a6ea3e081ca50049700f9848b2f84ea57be";
+    version = "86bf6182e2ea767c21711de8a3c396d9b635d970";
     src = fetchFromGitHub {
       owner = "sindrets";
       repo = "diffview.nvim";
-      rev = "bff58a6ea3e081ca50049700f9848b2f84ea57be";
+      rev = "86bf6182e2ea767c21711de8a3c396d9b635d970";
       fetchSubmodules = false;
-      sha256 = "sha256-nW2LxAgLD98zCeZwmgIvvTEzz9BV78PMTMLt3SSKiUY=";
+      sha256 = "sha256-pD/C/jYo91XI0ypruz7xvJY2/PPMoMGc4B+5pUe7db0=";
     };
-    date = "2023-05-26";
+    date = "2023-06-01";
   };
   "'plugin-dressing.nvim'" = {
     pname = "'plugin-dressing.nvim'";
@@ -439,15 +439,15 @@
   };
   "'plugin-neorg'" = {
     pname = "'plugin-neorg'";
-    version = "e0fcf254fbdb95fa0918692aee1c93b938e883f8";
+    version = "44ee0cb8db3d655d45d5ca5cedc2b0745b232659";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "neorg";
-      rev = "e0fcf254fbdb95fa0918692aee1c93b938e883f8";
+      rev = "44ee0cb8db3d655d45d5ca5cedc2b0745b232659";
       fetchSubmodules = false;
-      sha256 = "sha256-6jeN6FTeSBi2rq4+vTWVb4ywZVZ6tjcMvUPOWCQtqyE=";
+      sha256 = "sha256-hNJTIsRlgosWNTc0o3XmQqL4lgkQgra3wSKPM9FgJ0c=";
     };
-    date = "2023-05-31";
+    date = "2023-06-01";
   };
   "'plugin-neorg-telescope'" = {
     pname = "'plugin-neorg-telescope'";
@@ -535,13 +535,13 @@
   };
   "'plugin-nvim-dap'" = {
     pname = "'plugin-nvim-dap'";
-    version = "d234b0a77fc98a550dbaecdb5cd3dc5cd17147be";
+    version = "7c1d47cf7188fc31acdf951f9eee22da9d479152";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "d234b0a77fc98a550dbaecdb5cd3dc5cd17147be";
+      rev = "7c1d47cf7188fc31acdf951f9eee22da9d479152";
       fetchSubmodules = false;
-      sha256 = "sha256-sATLAWaFpPQuc3EwHAqTEhRzdY/+f1TpOIYrN2+uRIM=";
+      sha256 = "sha256-wZViQwTMyogt0gd6cAAu+fyy3OJnLqBMnr9gP2UI+1U=";
     };
     date = "2023-06-01";
   };
