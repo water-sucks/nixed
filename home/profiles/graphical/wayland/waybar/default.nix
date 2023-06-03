@@ -5,6 +5,7 @@
   ...
 }: let
   waybar = pkgs.waybar.override {
+    cavaSupport = false;
     swaySupport = false;
     mpdSupport = false;
     sndioSupport = false;
