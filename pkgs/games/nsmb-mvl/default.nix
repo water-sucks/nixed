@@ -5,24 +5,12 @@
   unzip,
   autoPatchelfHook,
   makeDesktopItem,
-  makeWrapper,
-  gtk2,
-  zlib,
   alsa-lib,
-  pipewire,
-  libXrandr,
-  libXScrnSaver,
-  udev,
-  libX11,
-  libXcursor,
-  libXext,
-  libXi,
-  libXinerama,
-  libXxf86vm,
   dbus,
   libglvnd,
+  udev,
   vulkan-loader,
-  forceVulkan ? false,
+  zlib,
 }: let
   desktopItem = makeDesktopItem {
     name = "nsmb-mvl";
@@ -32,57 +20,42 @@
     icon = "mario";
     categories = ["Game"];
   };
-
-  rpath =
-    lib.makeLibraryPath
-    [
-      libX11
-      libXcursor
-      libXext
-      libXi
-      libXinerama
-      libXrandr
-      libXScrnSaver
-      libXxf86vm
-      dbus.lib
-      libglvnd
-      vulkan-loader
-    ];
 in
   stdenv.mkDerivation {
     inherit (sources.nsmb-mvl) pname version src;
 
-    nativeBuildInputs = [unzip autoPatchelfHook makeWrapper];
+    nativeBuildInputs = [unzip autoPatchelfHook];
 
     buildInputs = [
       stdenv.cc.cc.lib
-      gtk2
-      zlib
 
       alsa-lib
-      pipewire
-      libXrandr
-      libXScrnSaver
+      dbus.lib
+      libglvnd
       udev
+      vulkan-loader
+      zlib
     ];
 
     installPhase = ''
-      mkdir -p "$out/bin" "$out/share"
-      cp -r linux.x86_64 linux_Data UnityPlayer.so "$out/share"
-      makeWrapper "$out/share/linux.x86_64" "$out/bin/nsmb-mvl" \
-        --prefix LD_LIBRARY_PATH : "${rpath}" \
-        ${lib.optionalString forceVulkan "--add-flags '-force-vulkan'"}
+      runHook preInstall
 
-      ln -s "${desktopItem}/share/applications" $out/share
+      mkdir -p "$out/bin" "$out/share" "$out/opt/nsmb-mvl"
+      cp -r linux.x86_64 linux_Data UnityPlayer.so "$out/opt/nsmb-mvl"
+      ln -s "$out/opt/nsmb-mvl/linux.x86_64" "$out/bin/nsmb-mvl"
+      ln -s "${desktopItem}/share/applications" "$out/share"
+
+      runHook postInstall
     '';
 
     postFixup = ''
       patchelf \
         --add-needed libasound.so.2 \
+        --add-needed libdbus-1.so.3 \
+        --add-needed libGL.so.1 \
         --add-needed libudev.so.1 \
-        --add-needed libXrandr.so.2 \
-        --add-needed libXss.so.1 \
-        $out/share/linux.x86_64
+        --add-needed libvulkan.so.1 \
+        $out/bin/nsmb-mvl
     '';
 
     meta = with lib; {

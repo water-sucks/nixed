@@ -6,7 +6,7 @@
 }:
 lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
-    (nsmb-mvl.override {forceVulkan = true;})
+    nsmb-mvl
   ];
 
   home.persistence."/persist/home/${config.home.username}" = {
