@@ -91,6 +91,21 @@
     },
     "version": "v0.7.0"
   },
+  "vics-mvlo": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "vics-mvlo",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "name": null,
+      "sha256": "sha256-jNb5sMxbOnm5ux91vDVDAiRW8pZh37GM/tNP4ekMkGQ=",
+      "type": "url",
+      "url": "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.8/linux.zip"
+    },
+    "version": "v17.0.8"
+  },
   "waybar-mpris": {
     "cargoLocks": null,
     "date": "2022-01-09",

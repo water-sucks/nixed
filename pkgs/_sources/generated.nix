@@ -61,6 +61,14 @@
       };
     };
   };
+  vics-mvlo = {
+    pname = "vics-mvlo";
+    version = "v17.0.8";
+    src = fetchurl {
+      url = "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.8/linux.zip";
+      sha256 = "sha256-jNb5sMxbOnm5ux91vDVDAiRW8pZh37GM/tNP4ekMkGQ=";
+    };
+  };
   waybar-mpris = {
     pname = "waybar-mpris";
     version = "1233aa9f90d75ec2bbd82afde757309fd9abab3a";

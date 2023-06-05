@@ -35,4 +35,9 @@
     "src.github" = "ipodtouch0218/NSMB-MarioVsLuigi";
     "fetch.url" = "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/$ver/MarioVsLuigi-Linux-$ver.zip";
   };
+
+  vics-mvlo = {
+    "src.github" = "vlcoo/VicMvsLO";
+    "fetch.url" = "https://github.com/vlcoo/VicMvsLO/releases/download/$ver/linux.zip";
+  };
 }

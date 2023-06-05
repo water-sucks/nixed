@@ -22,6 +22,8 @@
     get-appname = ./tools/get-appname;
 
     nsmb-mvl = ./games/nsmb-mvl;
+
+    vics-mvlo = ./games/vics-mvlo;
   };
 
   nodePkgs' = pkgs: let
