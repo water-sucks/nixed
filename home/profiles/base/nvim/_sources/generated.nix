@@ -283,15 +283,15 @@
   };
   "'plugin-haskell-tools.nvim'" = {
     pname = "'plugin-haskell-tools.nvim'";
-    version = "33bac7b297df2b16df82f1465decfa13069b1ce1";
+    version = "c8084560f5d449053b8d13d0a21ef0c7619fd886";
     src = fetchFromGitHub {
       owner = "MrcJkb";
       repo = "haskell-tools.nvim";
-      rev = "33bac7b297df2b16df82f1465decfa13069b1ce1";
+      rev = "c8084560f5d449053b8d13d0a21ef0c7619fd886";
       fetchSubmodules = false;
-      sha256 = "sha256-1wKWG2Ib2Lf0YGkgZux7C8aSEDhn5jeRkv5boNb0AuU=";
+      sha256 = "sha256-N7Y41BCmSMDuAQ8ANroU4X/8k20FkWAPI2xcxN4AhBc=";
     };
-    date = "2023-06-04";
+    date = "2023-06-06";
   };
   "'plugin-highlight-current-n.nvim'" = {
     pname = "'plugin-highlight-current-n.nvim'";
@@ -427,25 +427,25 @@
   };
   "'plugin-neodev.nvim'" = {
     pname = "'plugin-neodev.nvim'";
-    version = "91bebf70e2c50c1d298752b74a34ca9da3c04f85";
+    version = "1dffaffd6eadd39daba4a102d1ead42dd198e2c2";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neodev.nvim";
-      rev = "91bebf70e2c50c1d298752b74a34ca9da3c04f85";
+      rev = "1dffaffd6eadd39daba4a102d1ead42dd198e2c2";
       fetchSubmodules = false;
-      sha256 = "sha256-c/8pRPXymwz7eK82q+LjFtb710mE93X62nkHZdQf49c=";
+      sha256 = "sha256-3hy6bkg0MSVTjbUYW9pQI4NHGyAKdsWHji+bQqu8hoQ=";
     };
-    date = "2023-06-04";
+    date = "2023-06-06";
   };
   "'plugin-neorg'" = {
     pname = "'plugin-neorg'";
-    version = "35df54bd2fa896935fb8fe68c5fac0fda2e7f148";
+    version = "45efa0e606cd403fead47dd7b199f6b5c9a0a68b";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "neorg";
-      rev = "35df54bd2fa896935fb8fe68c5fac0fda2e7f148";
+      rev = "45efa0e606cd403fead47dd7b199f6b5c9a0a68b";
       fetchSubmodules = false;
-      sha256 = "sha256-HJo96r1dc4ZPtKdF60j3WIzltJr3i5fXt9E6VY9KZVQ=";
+      sha256 = "sha256-UYPATgubql6s/RjOeJn5F7l/OwMgvED1MOV7k0cl5SQ=";
     };
     date = "2023-06-05";
   };
@@ -463,15 +463,15 @@
   };
   "'plugin-noice.nvim'" = {
     pname = "'plugin-noice.nvim'";
-    version = "7b14678f83ad1a875b1bcea34de4377ebfb50973";
+    version = "acf47e2b863eb20f177aa1bd5398041513e731e1";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "noice.nvim";
-      rev = "7b14678f83ad1a875b1bcea34de4377ebfb50973";
+      rev = "acf47e2b863eb20f177aa1bd5398041513e731e1";
       fetchSubmodules = false;
-      sha256 = "sha256-PRS5UkmqwPlFikoXNIxfj9pJwXdj/6OqXbJmksmnyBc=";
+      sha256 = "sha256-eWHnaO0qTTOcDATASBKfKx6x7cGNpfX+xP5EqNX8m/A=";
     };
-    date = "2023-06-04";
+    date = "2023-06-06";
   };
   "'plugin-nui.nvim'" = {
     pname = "'plugin-nui.nvim'";
@@ -619,15 +619,15 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "664de12a7816dfa348bb475607edfa4fe0122025";
+    version = "0eb508c925ab79d9136d7fcd15711368999cbf25";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "664de12a7816dfa348bb475607edfa4fe0122025";
+      rev = "0eb508c925ab79d9136d7fcd15711368999cbf25";
       fetchSubmodules = false;
-      sha256 = "sha256-+lq+a5Fk481W/TbUZrhxwwGJue4PTZ7m7j2zaSgyQDg=";
+      sha256 = "sha256-e9mWKAj7Rptjz8IlMlac1O4boU1Btqi2Fy2SbLf059A=";
     };
-    date = "2023-06-05";
+    date = "2023-06-06";
   };
   "'plugin-nvim-tetris'" = {
     pname = "'plugin-nvim-tetris'";
@@ -883,15 +883,15 @@
   };
   "'plugin-vimtex'" = {
     pname = "'plugin-vimtex'";
-    version = "e3bc0066f3a717d838b663287612674a78ff7840";
+    version = "1306bdaabc58c72838fc8dde3f7755bcbdecfabc";
     src = fetchFromGitHub {
       owner = "lervag";
       repo = "vimtex";
-      rev = "e3bc0066f3a717d838b663287612674a78ff7840";
+      rev = "1306bdaabc58c72838fc8dde3f7755bcbdecfabc";
       fetchSubmodules = false;
-      sha256 = "sha256-Q2Gup7GDwdo9KkukfzHJuqWPH7LzJILAm4iiOCu0N3M=";
+      sha256 = "sha256-upXsOsKNQL+AHAImrXZVntsYfR+BIvhF25new1VtvCs=";
     };
-    date = "2023-06-04";
+    date = "2023-06-05";
   };
   "'plugin-which-key.nvim'" = {
     pname = "'plugin-which-key.nvim'";
