@@ -41,6 +41,16 @@ local server_configs = {
       },
     },
   },
+  gopls = {
+    settings = {
+      gopls = {
+        analyses = {
+          composites = false,
+          structtag = false,
+        },
+      },
+    },
+  },
   html = {
     settings = {
       html = {
