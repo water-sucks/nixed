@@ -91,15 +91,15 @@
   };
   "'plugin-cmp-cmdline'" = {
     pname = "'plugin-cmp-cmdline'";
-    version = "5af1bb7d722ef8a96658f01d6eb219c4cf746b32";
+    version = "8ee981b4a91f536f52add291594e89fb6645e451";
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-cmdline";
-      rev = "5af1bb7d722ef8a96658f01d6eb219c4cf746b32";
+      rev = "8ee981b4a91f536f52add291594e89fb6645e451";
       fetchSubmodules = false;
-      sha256 = "sha256-s3T4fQt9RbtnIhmaeFsFb+8X0fARVke0oITFLVfrtws=";
+      sha256 = "sha256-W8v/XhPjbvKSwCrfOAPihO2N9PEVnH5Cp/Fa25lNRw4=";
     };
-    date = "2023-04-24";
+    date = "2023-06-09";
   };
   "'plugin-cmp-dap'" = {
     pname = "'plugin-cmp-dap'";
@@ -187,13 +187,13 @@
   };
   "'plugin-diffview.nvim'" = {
     pname = "'plugin-diffview.nvim'";
-    version = "989fc917f6d0b79c88236530b462c075a2181f41";
+    version = "9f00ed07c16662bd4280ecc4bfe7d35a65b1f6b7";
     src = fetchFromGitHub {
       owner = "sindrets";
       repo = "diffview.nvim";
-      rev = "989fc917f6d0b79c88236530b462c075a2181f41";
+      rev = "9f00ed07c16662bd4280ecc4bfe7d35a65b1f6b7";
       fetchSubmodules = false;
-      sha256 = "sha256-SSW/KPaTMaTuZ6PDIsNGz8ExtVxxv9M8AKNticPSgZw=";
+      sha256 = "sha256-X296gZnie4CXjbolMVMSwiDVq8pWu1IYBNZJhE/zOzA=";
     };
     date = "2023-06-07";
   };
@@ -247,15 +247,15 @@
   };
   "'plugin-friendly-snippets'" = {
     pname = "'plugin-friendly-snippets'";
-    version = "b471f5419155ce832eff71ad8920ea8cfbd54840";
+    version = "0eb246a7dbb06d3d9e560696be210241cc27c081";
     src = fetchFromGitHub {
       owner = "rafamadriz";
       repo = "friendly-snippets";
-      rev = "b471f5419155ce832eff71ad8920ea8cfbd54840";
+      rev = "0eb246a7dbb06d3d9e560696be210241cc27c081";
       fetchSubmodules = false;
-      sha256 = "sha256-en9OGFP4FjLV91K3G5soGTH8AWZqthPXrKj5/CtT0pM=";
+      sha256 = "sha256-MFFuWd38LU6v4I1QsCwPXXe927zDR93VN2tiMhzM9NE=";
     };
-    date = "2023-06-06";
+    date = "2023-06-08";
   };
   "'plugin-gitsigns.nvim'" = {
     pname = "'plugin-gitsigns.nvim'";
@@ -319,15 +319,15 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "ae25448d39fb2bdc38a139339233270edec44484";
+    version = "d1b02c2dda88422ca573f2a1ebdfb213ce0124d6";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "ae25448d39fb2bdc38a139339233270edec44484";
+      rev = "d1b02c2dda88422ca573f2a1ebdfb213ce0124d6";
       fetchSubmodules = false;
-      sha256 = "sha256-+j5EY6IWor4P2rU+C/g16PV9IG8P/6hmdc92mFKIbQ8=";
+      sha256 = "sha256-UdPss3SETIGqThbsnBxXiCcrKhmXgNEWFzBjEZ4bSIg=";
     };
-    date = "2023-06-06";
+    date = "2023-06-08";
   };
   "'plugin-leap.nvim'" = {
     pname = "'plugin-leap.nvim'";
@@ -403,15 +403,15 @@
   };
   "'plugin-lush.nvim'" = {
     pname = "'plugin-lush.nvim'";
-    version = "fb148c0082488ba048f681792c4044e3229fd1a6";
+    version = "25cf75a5347d664783fce3d16f7fee3f58f37e1d";
     src = fetchFromGitHub {
       owner = "rktjmp";
       repo = "lush.nvim";
-      rev = "fb148c0082488ba048f681792c4044e3229fd1a6";
+      rev = "25cf75a5347d664783fce3d16f7fee3f58f37e1d";
       fetchSubmodules = false;
-      sha256 = "sha256-hLShxquZls64uvJbt9hGImUMGF0vdXQ8p0JENbWFcFA=";
+      sha256 = "sha256-B6q+m1nIGLpORacr7YBkpJXFpw9srj58EEzxd3jP7oQ=";
     };
-    date = "2023-05-01";
+    date = "2023-06-09";
   };
   "'plugin-mini.surround'" = {
     pname = "'plugin-mini.surround'";
@@ -439,13 +439,13 @@
   };
   "'plugin-neorg'" = {
     pname = "'plugin-neorg'";
-    version = "04af06b69ab7c6d1519cf0932e46c288f817c06e";
+    version = "9a55117b6175e63d86346bb893392cdf0b6ad2cc";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "neorg";
-      rev = "04af06b69ab7c6d1519cf0932e46c288f817c06e";
+      rev = "9a55117b6175e63d86346bb893392cdf0b6ad2cc";
       fetchSubmodules = false;
-      sha256 = "sha256-67OuiUIDRD3Oc5ECdCZKe4m3LwBwVIeeCtbjLzmiaVU=";
+      sha256 = "sha256-AzubePJokJnbKg+fwKmk8nPzQgE6yyewHTFsfdPa7nU=";
     };
     date = "2023-06-07";
   };
@@ -475,15 +475,15 @@
   };
   "'plugin-nui.nvim'" = {
     pname = "'plugin-nui.nvim'";
-    version = "d5a82aae64426a805e19d8ef5a379292f9dc55d3";
+    version = "062e366afcdf2bc1e9d28313a1df4ff14f05cb4e";
     src = fetchFromGitHub {
       owner = "MunifTanjim";
       repo = "nui.nvim";
-      rev = "d5a82aae64426a805e19d8ef5a379292f9dc55d3";
+      rev = "062e366afcdf2bc1e9d28313a1df4ff14f05cb4e";
       fetchSubmodules = false;
-      sha256 = "sha256-LErlEyMfZTxbQQ+4VAjJx7Pwfn49gQT7LWrrv/nUtpI=";
+      sha256 = "sha256-/ZW760bzrWf0LhDVKhaYt/VuMl4UQM+1iMAwLqDQHCI=";
     };
-    date = "2023-06-04";
+    date = "2023-06-09";
   };
   "'plugin-null-ls.nvim'" = {
     pname = "'plugin-null-ls.nvim'";
@@ -511,15 +511,15 @@
   };
   "'plugin-nvim-cmp'" = {
     pname = "'plugin-nvim-cmp'";
-    version = "fc0f694af1a742ada77e5b1c91ff405c746f4a26";
+    version = "b5a636d46c69bb371995c22d7a10ee1544004879";
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "fc0f694af1a742ada77e5b1c91ff405c746f4a26";
+      rev = "b5a636d46c69bb371995c22d7a10ee1544004879";
       fetchSubmodules = false;
-      sha256 = "sha256-54CffrodPKKkZxgf389KCzqtnfQXwT8FztqenjdRuu4=";
+      sha256 = "sha256-sULfoSrk6urotOHOsvHn3sfaa5vDBfH6aOH1QIgrMgI=";
     };
-    date = "2023-05-30";
+    date = "2023-06-09";
   };
   "'plugin-nvim-colorizer.lua'" = {
     pname = "'plugin-nvim-colorizer.lua'";
@@ -619,15 +619,15 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "458fa2ee2115c693ca48a04afa65f6de6b40a2db";
+    version = "0f598b9ab9f2a6d7e137074be99c8d89af44b990";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "458fa2ee2115c693ca48a04afa65f6de6b40a2db";
+      rev = "0f598b9ab9f2a6d7e137074be99c8d89af44b990";
       fetchSubmodules = false;
-      sha256 = "sha256-+iN95DdU3E/lPmz3UCqBclxvZSL6kx2O+xA7+VDVOgw=";
+      sha256 = "sha256-V8TZ8md2EHBxkhZ77pvLCfuSC9R2xw/DpHsN1bUBzto=";
     };
-    date = "2023-06-07";
+    date = "2023-06-08";
   };
   "'plugin-nvim-tetris'" = {
     pname = "'plugin-nvim-tetris'";
@@ -823,27 +823,27 @@
   };
   "'plugin-telescope.nvim'" = {
     pname = "'plugin-telescope.nvim'";
-    version = "9e3922f628ae2fbb29abac89668eed633a3da141";
+    version = "42267407ae588fd6c07238777d48869571193a49";
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
-      rev = "9e3922f628ae2fbb29abac89668eed633a3da141";
+      rev = "42267407ae588fd6c07238777d48869571193a49";
       fetchSubmodules = false;
-      sha256 = "sha256-G6aQ1jqmIDdDt7l7gRfqDc/8IXr23MdqQXKdjj1VxwE=";
+      sha256 = "sha256-7UUn4pvaJs/mjGUuHFDI6YsY4d4KV2HWqa5vz65+zAs=";
     };
-    date = "2023-06-07";
+    date = "2023-06-08";
   };
   "'plugin-trouble.nvim'" = {
     pname = "'plugin-trouble.nvim'";
-    version = "23c1327b85bd51258f9f8bd8f77f024acef6de69";
+    version = "2af0dd9767526410c88c628f1cbfcb6cf22dd683";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "trouble.nvim";
-      rev = "23c1327b85bd51258f9f8bd8f77f024acef6de69";
+      rev = "2af0dd9767526410c88c628f1cbfcb6cf22dd683";
       fetchSubmodules = false;
-      sha256 = "sha256-5J7uNM14IDldTJrvoJOoqFk1y/1XXMeI2k1PStDvn/g=";
+      sha256 = "sha256-0aYCAP0714za8CoXPqwWOX8RKn/OdIHxsVWyo2X00fM=";
     };
-    date = "2023-06-03";
+    date = "2023-06-08";
   };
   "'plugin-twilight.nvim'" = {
     pname = "'plugin-twilight.nvim'";
@@ -883,15 +883,15 @@
   };
   "'plugin-vimtex'" = {
     pname = "'plugin-vimtex'";
-    version = "1306bdaabc58c72838fc8dde3f7755bcbdecfabc";
+    version = "127c0a2ec8c6ca5f4c33902f004d302bd88a7c3e";
     src = fetchFromGitHub {
       owner = "lervag";
       repo = "vimtex";
-      rev = "1306bdaabc58c72838fc8dde3f7755bcbdecfabc";
+      rev = "127c0a2ec8c6ca5f4c33902f004d302bd88a7c3e";
       fetchSubmodules = false;
-      sha256 = "sha256-upXsOsKNQL+AHAImrXZVntsYfR+BIvhF25new1VtvCs=";
+      sha256 = "sha256-Y0xYY68+/fRasTWaq4ZoaXXFLvLZt6+C/KzVqeFXsl4=";
     };
-    date = "2023-06-05";
+    date = "2023-06-08";
   };
   "'plugin-which-key.nvim'" = {
     pname = "'plugin-which-key.nvim'";
