@@ -15,6 +15,7 @@ local servers = {
   "elixirls",
   "graphql",
   "ltex",
+  "typst_lsp",
   "nil_ls",
   "nickel_ls",
   "vala_ls",
@@ -127,16 +128,3 @@ for _, server in pairs(servers) do
 
   lsp[server].setup(config)
 end
-
--- I got very annoyed by the ccls message about offset encodings,
--- and decided to silence it. It's a legitimate issue that needs
--- to be fixed upstream, though, so I'm following it.
--- local notify = vim.notify
----@diagnostic disable-next-line: duplicate-set-field
--- vim.notify = function(msg, ...)
---   if msg:match("warning: multiple different client offset_encodings") then
---     return
---   end
---
---   vim.notify(msg, ...)
--- end

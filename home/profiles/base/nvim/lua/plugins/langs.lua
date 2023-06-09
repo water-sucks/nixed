@@ -121,6 +121,11 @@ rust_tools_spec.config = function()
   vim.cmd("e!")
 end
 
+local typst_spec = use("kaarmu/typst.vim", {
+  ft = "typst",
+  lazy = false,
+})
+
 local vimtex_spec = use("lervag/vimtex", {
   dependencies = { use("neovim/nvim-lspconfig") },
   config = function() end,
@@ -264,5 +269,6 @@ return {
   ltex_extra_spec,
   neodev_spec,
   rust_tools_spec,
+  typst_spec,
   vimtex_spec,
 }

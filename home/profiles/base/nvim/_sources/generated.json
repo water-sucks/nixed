@@ -1419,6 +1419,26 @@
     },
     "version": "a4843e6e67092a1e6fa9666f02bf0ab59174c1df"
   },
+  "'plugin-typst.vim'": {
+    "cargoLocks": null,
+    "date": "2023-05-22",
+    "extract": null,
+    "name": "'plugin-typst.vim'",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "kaarmu",
+      "repo": "typst.vim",
+      "rev": "6750b01970045affed30efe063d7e21b399f1efc",
+      "sha256": "sha256-F2HBpPh7pukDr1f1vnSoD3sOxftqf2xqdVjpf6NJs/4=",
+      "type": "github"
+    },
+    "version": "6750b01970045affed30efe063d7e21b399f1efc"
+  },
   "'plugin-vim-eunuch'": {
     "cargoLocks": null,
     "date": "2022-10-12",

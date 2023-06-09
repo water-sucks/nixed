@@ -857,6 +857,18 @@
     };
     date = "2023-05-22";
   };
+  "'plugin-typst.vim'" = {
+    pname = "'plugin-typst.vim'";
+    version = "6750b01970045affed30efe063d7e21b399f1efc";
+    src = fetchFromGitHub {
+      owner = "kaarmu";
+      repo = "typst.vim";
+      rev = "6750b01970045affed30efe063d7e21b399f1efc";
+      fetchSubmodules = false;
+      sha256 = "sha256-F2HBpPh7pukDr1f1vnSoD3sOxftqf2xqdVjpf6NJs/4=";
+    };
+    date = "2023-05-22";
+  };
   "'plugin-vim-eunuch'" = {
     pname = "'plugin-vim-eunuch'";
     version = "291ef1f8c8996ca7715df1032a35a27b12d7b5cf";

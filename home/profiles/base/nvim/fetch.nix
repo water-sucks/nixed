@@ -132,6 +132,7 @@ in
     (plugin "MrcJkb" "haskell-tools.nvim")
     (plugin "lervag" "vimtex")
     (plugin "barreiroleo" "ltex_extra.nvim")
+    (plugin "kaarmu" "typst.vim")
 
     (fetch "nvim-neorg" "tree-sitter-norg" {
       branch = "dev";
