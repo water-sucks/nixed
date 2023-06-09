@@ -16,6 +16,8 @@
       program = pkgs.writeShellScript "update-nvfetcher-sources" ''
         shopt -s globstar
 
+        cd "$(git rev-parse --show-toplevel)" || exit 2
+
         ${(nixago.lib.${system}.makeAll nvfetcherConfigs).shellHook}
 
         cd "$(git rev-parse --show-toplevel)"
