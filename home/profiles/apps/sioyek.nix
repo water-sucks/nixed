@@ -14,13 +14,16 @@ in
           then sioyek
           else runCommand "sioyek-0.0.0" {} "mkdir $out";
         bindings = {
-          "move_up" = "k";
-          "move_down" = "j";
-          "move_left" = "h";
-          "move_right" = "l";
-          "screen_down" = ["d" "<C-d>"];
-          "screen_up" = ["u" "<C-u>"];
-          "toggle_dark_mode" = "<C-i>";
+          move_up = "k";
+          move_down = "j";
+          move_left = "h";
+          move_right = "l";
+          screen_down = ["d" "<C-d>"];
+          screen_up = ["u" "<C-u>"];
+          toggle_dark_mode = "<C-i>";
+        };
+        config = {
+          should_launch_new_window = "1";
         };
       };
     }
