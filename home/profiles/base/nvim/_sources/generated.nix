@@ -223,13 +223,13 @@
   };
   "'plugin-fidget.nvim'" = {
     pname = "'plugin-fidget.nvim'";
-    version = "f1c375ba68839eaa4a65efdf2aa078c0da0548fe";
+    version = "90c22e47be057562ee9566bad313ad42d622c1d3";
     src = fetchFromGitHub {
       owner = "j-hui";
       repo = "fidget.nvim";
-      rev = "f1c375ba68839eaa4a65efdf2aa078c0da0548fe";
+      rev = "90c22e47be057562ee9566bad313ad42d622c1d3";
       fetchSubmodules = false;
-      sha256 = "sha256-ZLe54bRMctXlBo8zH9Qy6HbrkVSlGhPiXg38aAja9C8=";
+      sha256 = "sha256-N3O/AvsD6Ckd62kDEN4z/K5A3SZNR15DnQeZhH6/Rr0=";
     };
     date = "2023-06-09";
   };

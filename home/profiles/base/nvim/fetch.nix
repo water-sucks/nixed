@@ -64,7 +64,8 @@ in
     (plugin "folke" "trouble.nvim")
     (plugin "numToStr" "FTerm.nvim")
     (plugin "MunifTanjim" "nui.nvim")
-    (plugin "j-hui" "fidget.nvim")
+    # Temporary until fidget.nvim is rewritten
+    (fetch "j-hui" "fidget.nvim" {branch = "legacy";})
 
     # Text editing assistance/annotations
     (plugin "NMAC427" "guess-indent.nvim")
