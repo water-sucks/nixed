@@ -45,6 +45,7 @@ neorg_spec.config = function()
           },
         },
       },
+      ["core.export"] = {},
       ["core.journal"] = {
         config = {
           journal_folder = "Journal",
