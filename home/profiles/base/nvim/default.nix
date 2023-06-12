@@ -102,7 +102,7 @@ in
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
           nodePackages.vscode-langservers-extracted
-          stable.nil
+          nil
           typst-lsp
 
           # null-ls sources
