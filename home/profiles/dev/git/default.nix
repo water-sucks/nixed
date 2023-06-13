@@ -20,6 +20,7 @@ in {
 
       st = "stash";
       sta = "stash apply";
+      std = "stash drop";
       stl = "stash list";
       stp = "stash pop";
       sts = "stash show --text";
