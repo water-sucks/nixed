@@ -4,9 +4,6 @@ _final: prev: {
 
     postFixup = let
       launcher = prev.writeShellScript "river-launcher.sh" ''
-        . "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh"
-        sleep 1
-        # systemctl --user start graphical-session.target
         systemd-cat --identifier=river river
       '';
     in ''
