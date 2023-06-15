@@ -20,7 +20,7 @@
   # Attrset of grammars built using nvim-treesitter's lockfile
   grammars' = with lib;
     genAttrs' pkgs.vimPlugins.nvim-treesitter.withAllGrammars.passthru.dependencies
-    (v: replaceStrings ["nvim-treesitter-grammar-"] ["tree-sitter-"] v.name);
+    (v: replaceStrings ["vimplugin-treesitter-grammar-"] ["tree-sitter-"] v.name);
   grammars = grammars' // generatedGrammars;
 
   parserDir = with lib;
@@ -33,7 +33,7 @@
         inherit name;
         path =
           # nvim-treesitter's grammars are inside a "parser" directory, which sucks
-          if hasPrefix "nvim-treesitter" v.name
+          if hasPrefix "vimplugin-treesitter" v.name
           then "${v}/parser/${name}"
           else "${v}/parser";
       })
