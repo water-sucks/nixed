@@ -49,8 +49,8 @@ in
       runHook preInstall
 
       mkdir -p "$out/bin" "$out/share" "$out/opt/vics-mvlo"
-      cp -r vcmi.x86_64 vcmi_Data UnityPlayer.so "$out/opt/vics-mvlo"
-      ln -s "$out/opt/vics-mvlo/vcmi.x86_64" "$out/bin/vics-mvlo"
+      cp -r vmci.x86_64 vmci_Data UnityPlayer.so "$out/opt/vics-mvlo"
+      ln -s "$out/opt/vics-mvlo/vmci.x86_64" "$out/bin/vics-mvlo"
       ln -s "${desktopItem}/share/applications" "$out/share"
 
       runHook postInstall
