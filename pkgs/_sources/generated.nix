@@ -63,10 +63,10 @@
   };
   vics-mvlo = {
     pname = "vics-mvlo";
-    version = "v17.0.8";
+    version = "v17.0.9";
     src = fetchurl {
-      url = "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.8/linux.zip";
-      sha256 = "sha256-jNb5sMxbOnm5ux91vDVDAiRW8pZh37GM/tNP4ekMkGQ=";
+      url = "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.9/linux.zip";
+      sha256 = "sha256-a/aoxeliHU7ez2r4IKE4vBcYs4ZIcLaRS7dZDoNacPk=";
     };
   };
   waybar-mpris = {
