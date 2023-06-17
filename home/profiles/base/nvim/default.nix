@@ -101,7 +101,7 @@ in
           lua-language-server
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
-          nodePackages.vscode-langservers-extracted
+          stable.nodePackages.vscode-langservers-extracted
           nil
           typst-lsp
 
