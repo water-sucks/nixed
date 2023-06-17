@@ -199,13 +199,13 @@
   };
   "'plugin-dressing.nvim'" = {
     pname = "'plugin-dressing.nvim'";
-    version = "8b1a436b207bad99e43a2485d287bc38dbcc4c81";
+    version = "5fb5cce0cbfcedeadbcee43e5674e8c9a9f28d4a";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "dressing.nvim";
-      rev = "8b1a436b207bad99e43a2485d287bc38dbcc4c81";
+      rev = "5fb5cce0cbfcedeadbcee43e5674e8c9a9f28d4a";
       fetchSubmodules = false;
-      sha256 = "sha256-uLJwP6+8Epr0R4CkdzDVgR9v/BpTOryKdYQupxXZmBg=";
+      sha256 = "sha256-J4AQliRtso+mJZGdWEfm9ul4x718fOUbyqqvK++rW2I=";
     };
     date = "2023-06-16";
   };
@@ -247,27 +247,27 @@
   };
   "'plugin-friendly-snippets'" = {
     pname = "'plugin-friendly-snippets'";
-    version = "9ec817dedd4474f16fc170910da9a2f5a8b262b6";
+    version = "70b727d3454cceb3a818b1746be09786568b7e33";
     src = fetchFromGitHub {
       owner = "rafamadriz";
       repo = "friendly-snippets";
-      rev = "9ec817dedd4474f16fc170910da9a2f5a8b262b6";
+      rev = "70b727d3454cceb3a818b1746be09786568b7e33";
       fetchSubmodules = false;
-      sha256 = "sha256-HjG8dMquaWWVgi8ayTgeaKOOmXcqnj9QcBgBwJC6mS0=";
+      sha256 = "sha256-Tr4/uHpWdRqz17Outyptz0r7Q8g4hfLi4/22paqzkY8=";
     };
-    date = "2023-06-15";
+    date = "2023-06-16";
   };
   "'plugin-gitsigns.nvim'" = {
     pname = "'plugin-gitsigns.nvim'";
-    version = "4f8f66da9816ec4c4847653c9ab9bcb9c609508c";
+    version = "256569c2fe697a3003dbd49ff474e5935af9066c";
     src = fetchFromGitHub {
       owner = "lewis6991";
       repo = "gitsigns.nvim";
-      rev = "4f8f66da9816ec4c4847653c9ab9bcb9c609508c";
+      rev = "256569c2fe697a3003dbd49ff474e5935af9066c";
       fetchSubmodules = false;
-      sha256 = "sha256-NvBrjUon+iqA7TmPF4H19e0VYC47RSrHmimbSmnRB+k=";
+      sha256 = "sha256-dKPIU6XcglQfiPV5aOnBvqYn80PHZUlUnOs43KvEt/c=";
     };
-    date = "2023-06-14";
+    date = "2023-06-16";
   };
   "'plugin-guess-indent.nvim'" = {
     pname = "'plugin-guess-indent.nvim'";
@@ -319,15 +319,15 @@
   };
   "'plugin-lazy.nvim'" = {
     pname = "'plugin-lazy.nvim'";
-    version = "10d4371745f88837c78c8daab00c5be6e48abea4";
+    version = "67af46a7f53e06322753cdd8cfd524bbb8ca30a2";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "10d4371745f88837c78c8daab00c5be6e48abea4";
+      rev = "67af46a7f53e06322753cdd8cfd524bbb8ca30a2";
       fetchSubmodules = false;
-      sha256 = "sha256-IT139QB/zrgIerQehCr3DzWKLS2zSHXQGo/XfTkV1XY=";
+      sha256 = "sha256-dRPhcZ5J/8mGSs/c8DhrX8J46FE4xGVVodrYJfrk0bE=";
     };
-    date = "2023-06-12";
+    date = "2023-06-17";
   };
   "'plugin-leap.nvim'" = {
     pname = "'plugin-leap.nvim'";
@@ -403,15 +403,15 @@
   };
   "'plugin-lush.nvim'" = {
     pname = "'plugin-lush.nvim'";
-    version = "25cf75a5347d664783fce3d16f7fee3f58f37e1d";
+    version = "789a2fbd98f3572f315958a0e8a711eb88d360d8";
     src = fetchFromGitHub {
       owner = "rktjmp";
       repo = "lush.nvim";
-      rev = "25cf75a5347d664783fce3d16f7fee3f58f37e1d";
+      rev = "789a2fbd98f3572f315958a0e8a711eb88d360d8";
       fetchSubmodules = false;
-      sha256 = "sha256-B6q+m1nIGLpORacr7YBkpJXFpw9srj58EEzxd3jP7oQ=";
+      sha256 = "sha256-KwTWmXigRyUsrpZv8wwLay22PYB81VgbDeUVlkhl+A4=";
     };
-    date = "2023-06-09";
+    date = "2023-06-17";
   };
   "'plugin-mini.surround'" = {
     pname = "'plugin-mini.surround'";
@@ -619,15 +619,15 @@
   };
   "'plugin-nvim-lspconfig'" = {
     pname = "'plugin-nvim-lspconfig'";
-    version = "295c646488d5baa63c6c4da68fe61171b9257375";
+    version = "80861dc087982a6ed8ba91ec4836adce619f5a8a";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "295c646488d5baa63c6c4da68fe61171b9257375";
+      rev = "80861dc087982a6ed8ba91ec4836adce619f5a8a";
       fetchSubmodules = false;
-      sha256 = "sha256-arsehgVJP5tAzaPhf93xUAsg5PiVOjpbubyrmjRHL8g=";
+      sha256 = "sha256-Y3eMNWBFfGNy5m+soxzEn99sLGAISad8Nir++Ar8ww4=";
     };
-    date = "2023-06-14";
+    date = "2023-06-17";
   };
   "'plugin-nvim-tetris'" = {
     pname = "'plugin-nvim-tetris'";
