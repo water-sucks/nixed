@@ -48,11 +48,8 @@
 
   generatedPluginSources = with lib;
     mapAttrs'
-    (n:
-      nameValuePair
-      (removePrefix "'plugin-" (removeSuffix "'" n)))
-    (filterAttrs (n: _: hasPrefix "'plugin-" n)
-      sources);
+    (_: v: nameValuePair v.pretty-name v)
+    (filterAttrs (n: _: hasPrefix "plugin-" n) sources);
 
   generatedPlugins = with lib;
     mapAttrs buildPlugin generatedPluginSources;

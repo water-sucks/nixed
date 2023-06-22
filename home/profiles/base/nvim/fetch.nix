@@ -8,7 +8,7 @@ let
   }: let
     pname =
       if isPlugin
-      then "'plugin-${repo}'"
+      then "plugin-${builtins.replaceStrings ["."] ["-"] repo}"
       else repo;
     repository = "${owner}/${repo}";
     src =
@@ -30,6 +30,9 @@ let
       src
       // {
         "fetch.github" = "${repository}";
+        passthru = {
+          pretty-name = repo;
+        };
       };
   };
 in
