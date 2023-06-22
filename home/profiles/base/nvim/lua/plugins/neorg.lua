@@ -72,20 +72,10 @@ neorg_spec.config = function()
               urgent = { icon = "" },
             },
             heading = {
-              level_1 = { icon = "◈" },
-              level_2 = { icon = " ◇" },
-              level_3 = { icon = "  ◆" },
-              level_4 = { icon = "   ⋄" },
-              level_5 = { icon = "    ❖" },
-              level_6 = { icon = "     ⟡" },
+              icons = { "◈", "◇", "◆", "⋄", "❖", "⟡" },
             },
             list = {
-              level_1 = { icon = "" },
-              level_2 = { icon = " " },
-              level_3 = { icon = "  " },
-              level_4 = { icon = "   " },
-              level_5 = { icon = "    " },
-              level_6 = { icon = "     " },
+              icons = { "", "", "", "", "", "" },
             },
             definition = {
               single = { icon = "≡" },
