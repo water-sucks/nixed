@@ -306,16 +306,16 @@
   };
   plugin-haskell-tools-nvim = {
     pname = "plugin-haskell-tools-nvim";
-    version = "ce1d69acb193ce49448ea121dc775e2a84316a6c";
+    version = "385563527de4a9e3b8eefdf350f396cdfff183da";
     src = fetchFromGitHub {
       owner = "MrcJkb";
       repo = "haskell-tools.nvim";
-      rev = "ce1d69acb193ce49448ea121dc775e2a84316a6c";
+      rev = "385563527de4a9e3b8eefdf350f396cdfff183da";
       fetchSubmodules = false;
-      sha256 = "sha256-7zHm1B9iKz85qGYGxj7KDsvPvkK3BybOEyrNVbyaDsw=";
+      sha256 = "sha256-EuAV3nfnjWQGI44WLdXN0XKM+F2wvGdYhAUNhpTlVWA=";
     };
     pretty-name = "haskell-tools.nvim";
-    date = "2023-06-21";
+    date = "2023-06-25";
   };
   plugin-highlight-current-n-nvim = {
     pname = "plugin-highlight-current-n-nvim";
@@ -501,16 +501,16 @@
   };
   plugin-noice-nvim = {
     pname = "plugin-noice-nvim";
-    version = "0c8fdec65247caf179571fea6002d4957451b654";
+    version = "0d672bd66dc0f77715a20cd149a3afe2ca1fed6d";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "noice.nvim";
-      rev = "0c8fdec65247caf179571fea6002d4957451b654";
+      rev = "0d672bd66dc0f77715a20cd149a3afe2ca1fed6d";
       fetchSubmodules = false;
-      sha256 = "sha256-Jz0CSYcwmJ1rJsBk+J2J0NnwnieqTyiK8wU7QR4PtPU=";
+      sha256 = "sha256-Ui5hFpER/sE2oI7Dbua31ErK92nT7URnojCVAiC+Yfs=";
     };
     pretty-name = "noice.nvim";
-    date = "2023-06-24";
+    date = "2023-06-25";
   };
   plugin-nui-nvim = {
     pname = "plugin-nui-nvim";
@@ -969,16 +969,16 @@
   };
   plugin-vimtex = {
     pname = "plugin-vimtex";
-    version = "e80108757cd03345be263c87009e68b7ab282311";
+    version = "41b64b93cd3f6caf5bc0f5233c036c74aa928ae5";
     src = fetchFromGitHub {
       owner = "lervag";
       repo = "vimtex";
-      rev = "e80108757cd03345be263c87009e68b7ab282311";
+      rev = "41b64b93cd3f6caf5bc0f5233c036c74aa928ae5";
       fetchSubmodules = false;
-      sha256 = "sha256-TESCp8uKrvpfmg6OuTzmQY6jwKcW+75XgArBWyYxHrw=";
+      sha256 = "sha256-nsyXFEQtDd4C7dSevGAnvKzIaQ3cFnwYObS2uyr/yyw=";
     };
     pretty-name = "vimtex";
-    date = "2023-06-24";
+    date = "2023-06-25";
   };
   plugin-which-key-nvim = {
     pname = "plugin-which-key-nvim";
