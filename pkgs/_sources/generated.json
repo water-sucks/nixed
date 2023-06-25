@@ -49,26 +49,6 @@
     },
     "version": "v1.7.1.0-beta"
   },
-  "polybar": {
-    "cargoLocks": null,
-    "date": "2023-06-13",
-    "extract": null,
-    "name": "polybar",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": true,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "polybar",
-      "repo": "polybar",
-      "rev": "c747599ef5448e8e15dec898b1f1a097a8af3803",
-      "sha256": "sha256-OGM6XJWF6tICotI73dShPCJXG7dj9PnI4o+4Wud8Jd8=",
-      "type": "github"
-    },
-    "version": "c747599ef5448e8e15dec898b1f1a097a8af3803"
-  },
   "rescrobbled": {
     "cargoLocks": {
       "Cargo.lock": ["./rescrobbled-v0.7.0/Cargo.lock", {}]

@@ -20,12 +20,6 @@
     "fetch.url" = "https://downloads.airtame.com/app/latest/linux/Airtame-$ver.deb";
   };
 
-  polybar = {
-    "src.git" = "https://github.com/polybar/polybar";
-    "fetch.github" = "polybar/polybar";
-    "git.fetchSubmodules" = true;
-  };
-
   get-appname = {
     "src.git" = "https://github.com/water-sucks/get-appname";
     "fetch.github" = "water-sucks/get-appname";
