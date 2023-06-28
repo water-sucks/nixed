@@ -5,10 +5,10 @@
   ...
 }: let
   waybar = pkgs.waybar.override {
-    cavaSupport = false;
-    swaySupport = false;
-    mpdSupport = false;
-    sndioSupport = false;
+    # Temporary override for spdlog, should be removed when it hits nixos-unstable
+    spdlog = pkgs.spdlog.override {
+      fmt = pkgs.fmt_9;
+    };
   };
 
   waybar-mpris-pkg = pkgs.waybar-mpris.overrideAttrs (_: {
