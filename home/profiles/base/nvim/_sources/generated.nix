@@ -33,16 +33,16 @@
   };
   plugin-LuaSnip = {
     pname = "plugin-LuaSnip";
-    version = "c7984d1cca3d8615e4daefc196597872a0b8d590";
+    version = "105b5f7f72c13e682a3aa5d29eac2408ae513b22";
     src = fetchFromGitHub {
       owner = "L3MON4D3";
       repo = "LuaSnip";
-      rev = "c7984d1cca3d8615e4daefc196597872a0b8d590";
+      rev = "105b5f7f72c13e682a3aa5d29eac2408ae513b22";
       fetchSubmodules = false;
-      sha256 = "sha256-fUNskIWJoMPT1wAAyF9jli/xKT0IGzIU232ex5MWwTg=";
+      sha256 = "sha256-+MYDe8bLf/oyoieNuw9wEBfbrr8mUocYa9CFA4fRCgE=";
     };
     pretty-name = "LuaSnip";
-    date = "2023-06-24";
+    date = "2023-06-29";
   };
   plugin-auto-save-nvim = {
     pname = "plugin-auto-save-nvim";
@@ -527,16 +527,16 @@
   };
   plugin-null-ls-nvim = {
     pname = "plugin-null-ls-nvim";
-    version = "b919452c84e461c21a79185bef90c96e1cfecff9";
+    version = "aac27a1fa550de3d0b2c651168167cc0d5366a9a";
     src = fetchFromGitHub {
       owner = "jose-elias-alvarez";
       repo = "null-ls.nvim";
-      rev = "b919452c84e461c21a79185bef90c96e1cfecff9";
+      rev = "aac27a1fa550de3d0b2c651168167cc0d5366a9a";
       fetchSubmodules = false;
-      sha256 = "sha256-00mM2AdZZkGA+NWf46wZ2Yflk6LhuUx6TGk+BwVHPNI=";
+      sha256 = "sha256-4y10Q+dH460WBhrPOJSxUE3BJxnoEwgMwYsnk5pJM54=";
     };
     pretty-name = "null-ls.nvim";
-    date = "2023-06-28";
+    date = "2023-06-29";
   };
   plugin-nvim-autopairs = {
     pname = "plugin-nvim-autopairs";
@@ -579,16 +579,16 @@
   };
   plugin-nvim-dap = {
     pname = "plugin-nvim-dap";
-    version = "a6d48d23407fbad7a4c1451803b8f34cab31c441";
+    version = "bb1ddce6cd951ef3c1319e4fd8596131113163c3";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "a6d48d23407fbad7a4c1451803b8f34cab31c441";
+      rev = "bb1ddce6cd951ef3c1319e4fd8596131113163c3";
       fetchSubmodules = false;
-      sha256 = "sha256-eS0E8GKSPek1LnR9bDvBZ7BtOS4sb1psrGwMJXkyMjw=";
+      sha256 = "sha256-utIawothzBmcvbPPiobft+rs6N4A1Xfd/0+d9xxhC0s=";
     };
     pretty-name = "nvim-dap";
-    date = "2023-06-14";
+    date = "2023-06-30";
   };
   plugin-nvim-dap-go = {
     pname = "plugin-nvim-dap-go";
@@ -670,16 +670,16 @@
   };
   plugin-nvim-lspconfig = {
     pname = "plugin-nvim-lspconfig";
-    version = "a2c8ad6c7b4e35ed33d648795dcb1e08dbd4ec01";
+    version = "0011c435282f043a018e23393cae06ed926c3f4a";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "a2c8ad6c7b4e35ed33d648795dcb1e08dbd4ec01";
+      rev = "0011c435282f043a018e23393cae06ed926c3f4a";
       fetchSubmodules = false;
-      sha256 = "sha256-wQ5XceCJAuRTsmHBxhUq44LWmNtU0tQAY3aEMsbsEP8=";
+      sha256 = "sha256-17n6Vxp+HOUpdmWB6EI4QyTowVi0tILJRFISJP96YYk=";
     };
     pretty-name = "nvim-lspconfig";
-    date = "2023-06-29";
+    date = "2023-06-30";
   };
   plugin-nvim-tetris = {
     pname = "plugin-nvim-tetris";
@@ -800,16 +800,16 @@
   };
   plugin-plenary-nvim = {
     pname = "plugin-plenary-nvim";
-    version = "36aaceb6e93addd20b1b18f94d86aecc552f30c4";
+    version = "102c02903c74b93c705406bf362049383abc87c8";
     src = fetchFromGitHub {
       owner = "nvim-lua";
       repo = "plenary.nvim";
-      rev = "36aaceb6e93addd20b1b18f94d86aecc552f30c4";
+      rev = "102c02903c74b93c705406bf362049383abc87c8";
       fetchSubmodules = false;
-      sha256 = "sha256-q7cWcedN/BViNWpIFRdnvQrs60vQICmboqi9y+cRH2Q=";
+      sha256 = "sha256-sxTxPbV3GTG+mJoLV47V00i1V0KOimcYgMNoEj4mDcA=";
     };
     pretty-name = "plenary.nvim";
-    date = "2023-06-10";
+    date = "2023-06-30";
   };
   plugin-presence-nvim = {
     pname = "plugin-presence-nvim";
@@ -891,16 +891,16 @@
   };
   plugin-telescope-nvim = {
     pname = "plugin-telescope-nvim";
-    version = "6074847b6ee4b725747c8fc540d9b6b128ac8a12";
+    version = "e651c3731749f71a36d414e7cbb6b36bcf30aee6";
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
-      rev = "6074847b6ee4b725747c8fc540d9b6b128ac8a12";
+      rev = "e651c3731749f71a36d414e7cbb6b36bcf30aee6";
       fetchSubmodules = false;
-      sha256 = "sha256-BPDgzjPnDxKo1vN07CY8UC88cRpKYFqKwmMaXOaumL4=";
+      sha256 = "sha256-tR4lPdPmjMAoMY6rOs0/UZUNZEeJWn/k5hzs+0V/nEA=";
     };
     pretty-name = "telescope.nvim";
-    date = "2023-06-25";
+    date = "2023-06-29";
   };
   plugin-trouble-nvim = {
     pname = "plugin-trouble-nvim";
