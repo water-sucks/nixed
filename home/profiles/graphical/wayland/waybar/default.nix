@@ -4,13 +4,12 @@
   lib,
   ...
 }: let
-  waybar = pkgs.waybar.override {
-    # Temporary override for spdlog, should be removed when it hits nixos-unstable
-    spdlog = pkgs.spdlog.override {
-      fmt = pkgs.fmt_9;
-    };
-  };
-
+  # waybar = pkgs.waybar.override {
+  #   # Temporary override for spdlog, should be removed when it hits nixos-unstable
+  #   spdlog = pkgs.spdlog.override {
+  #     fmt = pkgs.fmt_9;
+  #   };
+  # };
   waybar-mpris-pkg = pkgs.waybar-mpris.overrideAttrs (_: {
     patches = [
       ./waybar-mpris-icons.patch
@@ -51,7 +50,7 @@
 in {
   programs.waybar = {
     enable = true;
-    package = waybar;
+    # package = waybar;
     systemd.enable = true;
     settings = {
       topbar = {
