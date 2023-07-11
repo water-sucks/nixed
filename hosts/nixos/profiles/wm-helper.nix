@@ -20,8 +20,16 @@
     desktopManager.xterm.enable = false;
 
     displayManager.sessionPackages = with pkgs; [river];
-    displayManager.defaultSession = "river";
+    displayManager.defaultSession = "none+leftwm";
     windowManager.leftwm.enable = true;
+  };
+
+  # Allow for user sessions to start the graphical session target in their init scripts
+  systemd.user.targets.graphical-session = {
+    unitConfig = {
+      RefuseManualStart = false;
+      StopWhenUnneeded = false;
+    };
   };
 
   environment.systemPackages = with pkgs; [river];
