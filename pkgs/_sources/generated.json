@@ -51,7 +51,7 @@
   },
   "rescrobbled": {
     "cargoLocks": {
-      "Cargo.lock": ["./rescrobbled-v0.7.0/Cargo.lock", {}]
+      "Cargo.lock": ["./rescrobbled-v0.7.1/Cargo.lock", {}]
     },
     "date": null,
     "extract": null,
@@ -65,11 +65,11 @@
       "name": null,
       "owner": "InputUsername",
       "repo": "rescrobbled",
-      "rev": "v0.7.0",
-      "sha256": "sha256-+/EuzkO+ZrnUzmX49N7xEYzQN2hRQEtsN7Ttb8yV4UQ=",
+      "rev": "v0.7.1",
+      "sha256": "sha256-1E+SeKjHCah+IFn2QLAyyv7jgEcZ1gtkh8iHgiVBuz4=",
       "type": "github"
     },
-    "version": "v0.7.0"
+    "version": "v0.7.1"
   },
   "vics-mvlo": {
     "cargoLocks": null,
