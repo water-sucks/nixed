@@ -103,6 +103,10 @@ local server_configs = {
   },
 }
 
+-- Prevent quickfix list from popping up when attempting to
+-- format Zig files if there are errors
+vim.g.zig_fmt_parse_errors = 0
+
 require("neodev").setup({
   library = {
     enabled = true,
