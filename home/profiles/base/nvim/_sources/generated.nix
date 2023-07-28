@@ -280,16 +280,16 @@
   };
   plugin-gitsigns-nvim = {
     pname = "plugin-gitsigns-nvim";
-    version = "11b80e7eea249affc8776483272bcfc627b5552a";
+    version = "5d73da785a3c05fd63ac31769079db05169a6ec7";
     src = fetchFromGitHub {
       owner = "lewis6991";
       repo = "gitsigns.nvim";
-      rev = "11b80e7eea249affc8776483272bcfc627b5552a";
+      rev = "5d73da785a3c05fd63ac31769079db05169a6ec7";
       fetchSubmodules = false;
-      sha256 = "sha256-mlJ9d/YuMpYVLKhkzNoOAFXCvdFHc0Z3/pnwYiLzlVc=";
+      sha256 = "sha256-kraK0GP5aLGbh1eVZCm41D6BztjFxthSXGnE5CxhrZs=";
     };
     pretty-name = "gitsigns.nvim";
-    date = "2023-07-25";
+    date = "2023-07-27";
   };
   plugin-guess-indent-nvim = {
     pname = "plugin-guess-indent-nvim";
