@@ -7,7 +7,7 @@ neorg_spec.config = function()
   local wk = require("which-key")
 
   local neorg = require("neorg")
-  local config = require("neorg.config")
+  local config = require("neorg.core.config")
 
   neorg.setup({
     load = {
