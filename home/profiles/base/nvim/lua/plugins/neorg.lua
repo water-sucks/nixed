@@ -101,6 +101,7 @@ neorg_spec.config = function()
             wk.register({
               t = {
                 name = "Tasks",
+                a = "Mark task ambiguous",
                 c = "Mark task canceled",
                 d = "Mark task done",
                 h = "Mark task on hold",
@@ -152,6 +153,7 @@ neorg_spec.config = function()
               -- Map all the below keybinds only when the "norg" mode is active
               keybinds.map_event_to_mode("norg", {
                 n = {
+                  { leader .. "ta", "core.qol.todo_items.todo.task_ambiguous" },
                   { leader .. "tc", "core.qol.todo_items.todo.task_cancelled" },
                   { leader .. "td", "core.qol.todo_items.todo.task_done" },
                   { leader .. "th", "core.qol.todo_items.todo.task_on_hold" },
