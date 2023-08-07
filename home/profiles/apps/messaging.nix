@@ -9,6 +9,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     element-desktop
     signal-desktop
     slack
+    zoom-us
   ];
 
   home.persistence."/persist/home/${config.home.username}" = {
@@ -16,6 +17,10 @@ lib.mkIf pkgs.stdenv.isLinux {
       ".config/Element"
       ".config/Signal"
       ".config/Slack"
+    ];
+    files = [
+      ".config/zoom.conf"
+      ".config/zoomus.conf"
     ];
   };
 }
