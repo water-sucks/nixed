@@ -1,3 +1,4 @@
+local on_attach = require("plugins.lsp.on_attach")
 local flutter_tools_spec = use("akinsho/flutter-tools.nvim", {
   dependencies = { use("nvim-lua/plenary.nvim") },
   ft = "dart",
@@ -87,6 +88,75 @@ local haskell_tools_spec = use("MrcJkb/haskell-tools.nvim", {
   end,
   ft = "haskell",
 })
+
+local jdtls_spec = use("mfussenegger/nvim-jdtls", {
+  ft = "java",
+})
+
+local java_version_names = {
+  ["8"] = "JavaSE-1.8",
+  ["9"] = "JavaSE-9",
+  ["10"] = "JavaSE-10",
+  ["11"] = "JavaSE-11",
+  ["12"] = "JavaSE-12",
+  ["13"] = "JavaSE-13",
+  ["14"] = "JavaSE-14",
+  ["15"] = "JavaSE-15",
+  ["16"] = "JavaSE-16",
+  ["17"] = "JavaSE-17",
+  ["18"] = "JavaSE-18",
+  ["19"] = "JavaSE-19",
+}
+
+jdtls_spec.config = function()
+  -- This only supports JAVA_HOME. How do I support detecting more
+  -- JDKs on demand?
+
+  local java_home = vim.env.JAVA_HOME
+  local runtime = nil
+  local idx = string.find(java_home or "", "openjdk-")
+  if idx == nil then
+    print("error: unable to determine JDK version from JAVA_HOME")
+  else
+    local version = string.match(string.sub(java_home, idx), "%d+")
+    runtime = {
+      name = java_version_names[version],
+      path = java_home .. "/lib/openjdk",
+    }
+  end
+
+  local root_dir = require("jdtls.setup").find_root({ "pom.xml", "build.gradle", "settings.gradle", ".git" })
+  local workspace_folder = vim.env.HOME .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+
+  require("jdtls").start_or_attach({
+    cmd = {
+      "jdt-language-server",
+      "-noverify",
+      "-data",
+      workspace_folder,
+    },
+    root_dir = root_dir,
+    on_attach = function(client, bufnr)
+      -- TODO: add extra bindings here
+      on_attach(client, bufnr)
+    end,
+    settings = {
+      ["java.format.settings.url"] = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+      ["java.format.settings.profile"] = "GoogleStyle",
+      java = {
+        configuration = {
+          runtimes = runtime and {
+            runtime,
+          } or nil,
+        },
+      },
+    },
+    handlers = {
+      -- Only show progress reports from LSP
+      ["language/status"] = function() end,
+    },
+  })
+end
 
 local ltex_extra_spec = use("barreiroleo/ltex_extra.nvim", {
   module = "ltex_extra",
@@ -266,6 +336,7 @@ end
 return {
   flutter_tools_spec,
   haskell_tools_spec,
+  jdtls_spec,
   ltex_extra_spec,
   neodev_spec,
   rust_tools_spec,

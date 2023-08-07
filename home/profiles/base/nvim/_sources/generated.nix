@@ -655,6 +655,19 @@
     pretty-name = "nvim-gomove";
     date = "2022-07-19";
   };
+  plugin-nvim-jdtls = {
+    pname = "plugin-nvim-jdtls";
+    version = "095dc490f362adc85be66dc14bd9665ddd94413b";
+    src = fetchFromGitHub {
+      owner = "mfussenegger";
+      repo = "nvim-jdtls";
+      rev = "095dc490f362adc85be66dc14bd9665ddd94413b";
+      fetchSubmodules = false;
+      sha256 = "sha256-8KiZFYCYeuMUZO3mw4EVuMNIZ7zhhyZ3tXoAWR2eYQk=";
+    };
+    pretty-name = "nvim-jdtls";
+    date = "2023-08-01";
+  };
   plugin-nvim-lightbulb = {
     pname = "plugin-nvim-lightbulb";
     version = "8f00b89dd1b1dbde16872bee5fbcee2e58c9b8e9";

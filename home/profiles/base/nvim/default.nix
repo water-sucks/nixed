@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   lib,
@@ -79,6 +80,12 @@ in
         neovim-remote
       ];
 
+      home.persistence."/persist/home/${config.home.username}" = {
+        directories = [
+          ".local/share/eclipse"
+        ];
+      };
+
       programs.neovim = {
         enable = true;
         viAlias = true;
@@ -95,6 +102,7 @@ in
           gopls
           ltex-ls
           emmet-ls
+          jdt-language-server
           lua-language-server
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
