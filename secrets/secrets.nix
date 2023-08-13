@@ -3,8 +3,8 @@ let
   varun-DerekCarr = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG8s+et9SplfHpcjT0+divFZPEjHpmCJ6tIQBYwlBbfB varun@DerekCarr";
   DerekCarrKeys = [system-DerekCarr varun-DerekCarr];
 
-  system-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINtQ3kCUKsjmVWjmm2LDaD5WHtEsixOZAV0Vj5UGKKoZ root@HunterRenfrow";
-  varun-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP6BkNDJ79vuLySy15ZO72ZYjaalVQN8EHuEdlZss0t5 varun@HunterRenfrow";
+  system-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEI4MxuN1oTp93Q6P4cl7Lm2XfradkQmqUOYRnrN2Z9Z root@HunterRenfrow";
+  varun-HunterRenfrow = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP9SxX2gAUoWL9bkIYEoC5VVAw48+tqlbrWrL6+o6v5p varun@HunterRenfrow";
   HunterRenfrowKeys = [system-HunterRenfrow varun-HunterRenfrow];
 in {
   "varun-user-DerekCarr.age".publicKeys = DerekCarrKeys;
