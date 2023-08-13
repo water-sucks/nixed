@@ -4,12 +4,6 @@
   lib,
   ...
 }: let
-  # waybar = pkgs.waybar.override {
-  #   # Temporary override for spdlog, should be removed when it hits nixos-unstable
-  #   spdlog = pkgs.spdlog.override {
-  #     fmt = pkgs.fmt_9;
-  #   };
-  # };
   waybar-mpris-pkg = pkgs.waybar-mpris.overrideAttrs (_: {
     patches = [
       ./waybar-mpris-icons.patch
@@ -72,7 +66,7 @@ in {
           "custom/dunst"
         ];
         backlight = {
-          device = lib.mkDefault "amdgpu_bl0";
+          device = lib.mkDefault "intel_backlight";
           format = "{icon} {percent}%";
           format-icons = ["󰽤" "󱎖" "󰽢"];
         };

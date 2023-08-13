@@ -147,8 +147,8 @@ in {
 
         # Media buttons (also work in locked mode)
         (map (f: [
-          (f (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 1%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
-          (f (exec [] "XF86AudioLowerVolume" ''${amixer} sset Master 1%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
+          (f (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
+          (f (exec [] "XF86AudioLowerVolume" ''${amixer} sset Master 5%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
           (f (exec [] "XF86AudioMute" ''${amixer} sset Master toggle | ${sed} -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > ${wobSocket}''))
           (f (exec [] "XF86AudioMicMute" "${amixer} sset Capture toggle"))
           (f (exec [] "XF86AudioMedia" "${playerctl} play-pause"))

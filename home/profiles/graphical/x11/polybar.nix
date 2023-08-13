@@ -222,7 +222,7 @@ in {
 
       "module/brightness" = {
         type = "internal/backlight";
-        card = "amdgpu_bl0";
+        card = "intel_backlight";
         enable-scroll = true;
 
         format = "<ramp> <label>";
