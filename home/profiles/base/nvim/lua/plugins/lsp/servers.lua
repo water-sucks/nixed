@@ -96,6 +96,16 @@ local server_configs = {
     },
   },
   nil_ls = {
+    settings = {
+      ["nil"] = {
+        nix = {
+          flake = {
+            autoArchive = true,
+            autoEvalInputs = true,
+          },
+        },
+      },
+    },
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
       client.server_capabilities.semanticTokensProvider = nil
