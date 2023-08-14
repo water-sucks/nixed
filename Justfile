@@ -1,6 +1,6 @@
 rebuild-cmd := if os() == "linux" {
   "sudo nixos-rebuild"
-} else if os() == "darwin" {
+} else if os() == "macos" {
   "darwin-rebuild"
 } else {
   error("unsupported system; manually use nix to build instead")

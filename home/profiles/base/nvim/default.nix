@@ -5,6 +5,8 @@
   lib,
   ...
 }: let
+  inherit (pkgs.stdenv) isLinux;
+
   sources = pkgs.callPackage _sources/generated.nix {};
 
   # Grammar builder function
@@ -80,12 +82,6 @@ in
         neovim-remote
       ];
 
-      home.persistence."/persist/home/${config.home.username}" = {
-        directories = [
-          ".local/share/eclipse"
-        ];
-      };
-
       programs.neovim = {
         enable = true;
         viAlias = true;
@@ -142,16 +138,23 @@ in
         "nvim/parser".source = "${parserDir}";
       };
 
-      xdg.dataFile = {
-        "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
-        "nvim/plugins".source = "${pluginDir}";
-      };
+      xdg.dataFile = lib.mkMerge [
+        {
+          "nvim/plugins".source = "${pluginDir}";
+        }
+        # Broken on macOS, and I don't develop C/C++/Rust/Zig much on Rust for now.
+        # Check out why this is happening later.
+        (lib.mkIf isLinux {
+          "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+        })
+      ];
     }
 
-    (lib.mkIf pkgs.stdenv.isLinux {
-      home.persistence."/persist/home/varun" = {
+    (lib.mkIf isLinux {
+      home.persistence."/persist/home/${config.home.username}" = {
         directories = [
           ".local/state/nvim"
+          ".local/share/eclipse"
         ];
       };
     })
