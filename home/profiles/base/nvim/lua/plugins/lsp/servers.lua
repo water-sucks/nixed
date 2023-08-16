@@ -101,7 +101,6 @@ local server_configs = {
         nix = {
           flake = {
             autoArchive = true,
-            autoEvalInputs = true,
           },
         },
       },
