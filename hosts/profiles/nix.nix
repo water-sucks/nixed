@@ -31,8 +31,18 @@ in {
       "nixpkgs-stable=${inputs.nixpkgs-stable}"
       "home-manager=${inputs.home}"
     ];
-    extraOptions = ''
-      experimental-features = nix-command flakes
+    extraOptions = let
+      experimentalFeatures = builtins.concatStringsSep " " [
+        "auto-allocate-uids"
+        "ca-derivations"
+        "flakes"
+        "nix-command"
+        "no-url-literals"
+        "recursive-nix"
+        "repl-flake"
+      ];
+    in ''
+      experimental-features = ${experimentalFeatures}
       min-free = 536870912
       keep-outputs = true
       keep-derivations = true
