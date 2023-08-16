@@ -423,16 +423,16 @@
   };
   plugin-luasnip-latex-snippets-nvim = {
     pname = "plugin-luasnip-latex-snippets-nvim";
-    version = "3f5eeb7d01a6cf25a8d9aef40edbede8119f5e6f";
+    version = "b8f0be4aa19dcb5ca4f98ac6a9e3d07c45098af6";
     src = fetchFromGitHub {
       owner = "iurimateus";
       repo = "luasnip-latex-snippets.nvim";
-      rev = "3f5eeb7d01a6cf25a8d9aef40edbede8119f5e6f";
+      rev = "b8f0be4aa19dcb5ca4f98ac6a9e3d07c45098af6";
       fetchSubmodules = false;
-      sha256 = "sha256-kVRL16nJWI3ARPZKkX3mc2kqCPdveZg2/Civ3mkr1tY=";
+      sha256 = "sha256-753/1SAyeXHZkv6TLsvp6YiV9S3Tm+Fi4AQAdST6s+E=";
     };
     pretty-name = "luasnip-latex-snippets.nvim";
-    date = "2023-08-12";
+    date = "2023-08-15";
   };
   plugin-lush-nvim = {
     pname = "plugin-lush-nvim";
@@ -462,16 +462,16 @@
   };
   plugin-neodev-nvim = {
     pname = "plugin-neodev-nvim";
-    version = "9a5c0f0de5c15fba52d4fb83d425d3f4fa7abfa1";
+    version = "f1f5f840fec7218bd277e7e88e7c539c305f649a";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neodev.nvim";
-      rev = "9a5c0f0de5c15fba52d4fb83d425d3f4fa7abfa1";
+      rev = "f1f5f840fec7218bd277e7e88e7c539c305f649a";
       fetchSubmodules = false;
-      sha256 = "sha256-xuj/4dG5/3AcsJhHufOyrJuweR44efUpEOpTixKFevs=";
+      sha256 = "sha256-g9jVGPdyaBE+tBSsOSthbw1hJgPy7K/LLGt06AqTFUE=";
     };
     pretty-name = "neodev.nvim";
-    date = "2023-08-12";
+    date = "2023-08-16";
   };
   plugin-neorg = {
     pname = "plugin-neorg";

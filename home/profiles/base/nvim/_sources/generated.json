@@ -705,7 +705,7 @@
   },
   "plugin-luasnip-latex-snippets-nvim": {
     "cargoLocks": null,
-    "date": "2023-08-12",
+    "date": "2023-08-15",
     "extract": null,
     "name": "plugin-luasnip-latex-snippets-nvim",
     "passthru": {
@@ -719,11 +719,11 @@
       "name": null,
       "owner": "iurimateus",
       "repo": "luasnip-latex-snippets.nvim",
-      "rev": "3f5eeb7d01a6cf25a8d9aef40edbede8119f5e6f",
-      "sha256": "sha256-kVRL16nJWI3ARPZKkX3mc2kqCPdveZg2/Civ3mkr1tY=",
+      "rev": "b8f0be4aa19dcb5ca4f98ac6a9e3d07c45098af6",
+      "sha256": "sha256-753/1SAyeXHZkv6TLsvp6YiV9S3Tm+Fi4AQAdST6s+E=",
       "type": "github"
     },
-    "version": "3f5eeb7d01a6cf25a8d9aef40edbede8119f5e6f"
+    "version": "b8f0be4aa19dcb5ca4f98ac6a9e3d07c45098af6"
   },
   "plugin-lush-nvim": {
     "cargoLocks": null,
@@ -771,7 +771,7 @@
   },
   "plugin-neodev-nvim": {
     "cargoLocks": null,
-    "date": "2023-08-12",
+    "date": "2023-08-16",
     "extract": null,
     "name": "plugin-neodev-nvim",
     "passthru": {
@@ -785,11 +785,11 @@
       "name": null,
       "owner": "folke",
       "repo": "neodev.nvim",
-      "rev": "9a5c0f0de5c15fba52d4fb83d425d3f4fa7abfa1",
-      "sha256": "sha256-xuj/4dG5/3AcsJhHufOyrJuweR44efUpEOpTixKFevs=",
+      "rev": "f1f5f840fec7218bd277e7e88e7c539c305f649a",
+      "sha256": "sha256-g9jVGPdyaBE+tBSsOSthbw1hJgPy7K/LLGt06AqTFUE=",
       "type": "github"
     },
-    "version": "9a5c0f0de5c15fba52d4fb83d425d3f4fa7abfa1"
+    "version": "f1f5f840fec7218bd277e7e88e7c539c305f649a"
   },
   "plugin-neorg": {
     "cargoLocks": null,
