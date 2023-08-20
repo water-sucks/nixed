@@ -14,6 +14,7 @@ local servers = {
   "emmet_ls",
   "elixirls",
   "graphql",
+  "tsserver",
   "ltex",
   "typst_lsp",
   "nil_ls",
