@@ -13,6 +13,7 @@
   libopus,
   libpulseaudio,
   libsecret,
+  mesa,
   nss,
   systemd,
   xdg-utils,
@@ -31,6 +32,7 @@ stdenv.mkDerivation rec {
     libpulseaudio
     libopus
     libsecret
+    mesa
     nss
     xorg.libXdamage
     xorg.libXScrnSaver
