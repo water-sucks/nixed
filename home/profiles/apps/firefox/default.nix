@@ -12,9 +12,6 @@
     patched-cascade = pkgs.stdenv.mkDerivation {
       name = "cascade-theme-src";
       inherit (sources.cascade-theme) src;
-      patches = [
-        ./113.patch
-      ];
       dontBuild = true;
       installPhase = ''
         mkdir $out
