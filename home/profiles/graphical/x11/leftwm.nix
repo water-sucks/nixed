@@ -58,6 +58,8 @@
     fi
   '';
 
+  numpad_keys = ["End" "Down" "Next" "Left" "Begin" "Right" "Home" "Up" "Prior"];
+
   c = config.colorscheme.colors;
 in {
   home.packages = with pkgs; [
@@ -101,7 +103,7 @@ in {
       ];
       max_window_width = null;
       layout_mode = enum "Workspace";
-      disable_current_tag_swap = false;
+      disable_current_tag_swap = true;
       focus_behaviour = enum "Sloppy"; # Bri*ish
       focus_new_windows = true;
 
@@ -118,9 +120,9 @@ in {
         (bind [mod] "w" "SwapTags")
         (bind [mod] "z" "RotateTag")
         (map (t: (switchTag t (x: x))) (lib.range 1 9))
-        (map (t: (switchTag t (x: "KP_${toString x}"))) (lib.range 1 9))
+        (map (t: (switchTag t (x: "KP_${builtins.elemAt numpad_keys (x - 1)}"))) (lib.range 1 9))
         (map (t: (moveTag t (x: x))) (lib.range 1 9))
-        (map (t: (moveTag t (x: "KP_${toString x}"))) (lib.range 1 9))
+        (map (t: (moveTag t (x: "KP_${builtins.elemAt numpad_keys (x - 1)}"))) (lib.range 1 9))
 
         # Scratchpads
         (bind' [ctrl alt] "t" "ToggleScratchPad" "Terminal")
