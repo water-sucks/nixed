@@ -267,13 +267,13 @@
   };
   plugin-friendly-snippets = {
     pname = "plugin-friendly-snippets";
-    version = "7ff46f90aad07a9be1eb9e2f24e5d7256ecc766b";
+    version = "00e191fea2cfbbdd378243f35b5953296537a116";
     src = fetchFromGitHub {
       owner = "rafamadriz";
       repo = "friendly-snippets";
-      rev = "7ff46f90aad07a9be1eb9e2f24e5d7256ecc766b";
+      rev = "00e191fea2cfbbdd378243f35b5953296537a116";
       fetchSubmodules = false;
-      sha256 = "sha256-FKvfbMMmkabGcYY2aO52g8EEsrv6mYskmZssl19hxxo=";
+      sha256 = "sha256-BWB14J4NaKapL+N5I4vYYgsHvN4C/Z6heN1h0Snszb4=";
     };
     pretty-name = "friendly-snippets";
     date = "2023-08-27";
@@ -306,13 +306,13 @@
   };
   plugin-haskell-tools-nvim = {
     pname = "plugin-haskell-tools-nvim";
-    version = "fc29c58bba949ed7feb44790a6243886480a279b";
+    version = "d56a6d100f9f9260eb3527e1e397774a69fe36ca";
     src = fetchFromGitHub {
       owner = "MrcJkb";
       repo = "haskell-tools.nvim";
-      rev = "fc29c58bba949ed7feb44790a6243886480a279b";
+      rev = "d56a6d100f9f9260eb3527e1e397774a69fe36ca";
       fetchSubmodules = false;
-      sha256 = "sha256-fTPH5NAkNRaXahtNrX6ONkHx58KxvHpJalvG0REgGlo=";
+      sha256 = "sha256-sV9Tscfi8s0ReHHiLEaxEG6UnZxFB2k2+4QsrzND8ig=";
     };
     pretty-name = "haskell-tools.nvim";
     date = "2023-08-27";
@@ -904,16 +904,16 @@
   };
   plugin-telescope-nvim = {
     pname = "plugin-telescope-nvim";
-    version = "207285ccec21b69996a4d3bcfa59df35d48610e8";
+    version = "1dfa66b845673effc8771f9ebe511bb36a09f560";
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
-      rev = "207285ccec21b69996a4d3bcfa59df35d48610e8";
+      rev = "1dfa66b845673effc8771f9ebe511bb36a09f560";
       fetchSubmodules = false;
-      sha256 = "sha256-L0EA0luXUXPiHHHQvArPLzlJu+l0tuwDNLDZAlgEyXQ=";
+      sha256 = "sha256-iWzd6k3VNiSjK1FjDgYgy1Hc8yeR3pcM2LGiDnIbCRU=";
     };
     pretty-name = "telescope.nvim";
-    date = "2023-08-26";
+    date = "2023-08-28";
   };
   plugin-trouble-nvim = {
     pname = "plugin-trouble-nvim";
