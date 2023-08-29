@@ -59,16 +59,16 @@
   };
   plugin-bufferline-nvim = {
     pname = "plugin-bufferline-nvim";
-    version = "417b303328118b6d836ae330142e88771c48a8a3";
+    version = "9961d87bb3ec008213c46ba14b3f384a5f520eb5";
     src = fetchFromGitHub {
       owner = "akinsho";
       repo = "bufferline.nvim";
-      rev = "417b303328118b6d836ae330142e88771c48a8a3";
+      rev = "9961d87bb3ec008213c46ba14b3f384a5f520eb5";
       fetchSubmodules = false;
-      sha256 = "sha256-jsjT56YWsFb9Qr/mjmwpOm9thYkScnSCOZ+MPzaz1DM=";
+      sha256 = "sha256-Wo6oAbqG0SOJ4dKjg85s/IJGe1Z6XnyjVPzQZ00Lojw=";
     };
     pretty-name = "bufferline.nvim";
-    date = "2023-08-11";
+    date = "2023-08-29";
   };
   plugin-cmp-buffer = {
     pname = "plugin-cmp-buffer";
@@ -306,16 +306,16 @@
   };
   plugin-haskell-tools-nvim = {
     pname = "plugin-haskell-tools-nvim";
-    version = "d56a6d100f9f9260eb3527e1e397774a69fe36ca";
+    version = "9b7e2bb7af2032f115b6b5c591c6bbca5fc65f4a";
     src = fetchFromGitHub {
       owner = "MrcJkb";
       repo = "haskell-tools.nvim";
-      rev = "d56a6d100f9f9260eb3527e1e397774a69fe36ca";
+      rev = "9b7e2bb7af2032f115b6b5c591c6bbca5fc65f4a";
       fetchSubmodules = false;
-      sha256 = "sha256-sV9Tscfi8s0ReHHiLEaxEG6UnZxFB2k2+4QsrzND8ig=";
+      sha256 = "sha256-TbRRr7ZWwfcn6VxIf1B6UVvO9ekEiWhHmCYNzl6e/bI=";
     };
     pretty-name = "haskell-tools.nvim";
-    date = "2023-08-27";
+    date = "2023-08-29";
   };
   plugin-highlight-current-n-nvim = {
     pname = "plugin-highlight-current-n-nvim";
@@ -943,16 +943,16 @@
   };
   plugin-typst-vim = {
     pname = "plugin-typst-vim";
-    version = "97f21818cb8d3d5ed6bb4b672ddb5af975aab71a";
+    version = "c2fe406c6283713993db58e08cf16974c44e9032";
     src = fetchFromGitHub {
       owner = "kaarmu";
       repo = "typst.vim";
-      rev = "97f21818cb8d3d5ed6bb4b672ddb5af975aab71a";
+      rev = "c2fe406c6283713993db58e08cf16974c44e9032";
       fetchSubmodules = false;
-      sha256 = "sha256-49yHaqDoNbHkkWdfHkIGZpuDonGSXbj4Qzft6HkyFhE=";
+      sha256 = "sha256-2j/NFJN4f/pK+UM6rz57Hq8NlcolrRzi+gC7j/Iazjw=";
     };
     pretty-name = "typst.vim";
-    date = "2023-08-17";
+    date = "2023-08-28";
   };
   plugin-vim-eunuch = {
     pname = "plugin-vim-eunuch";

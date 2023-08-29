@@ -89,7 +89,7 @@
   },
   "plugin-bufferline-nvim": {
     "cargoLocks": null,
-    "date": "2023-08-11",
+    "date": "2023-08-29",
     "extract": null,
     "name": "plugin-bufferline-nvim",
     "passthru": {
@@ -103,11 +103,11 @@
       "name": null,
       "owner": "akinsho",
       "repo": "bufferline.nvim",
-      "rev": "417b303328118b6d836ae330142e88771c48a8a3",
-      "sha256": "sha256-jsjT56YWsFb9Qr/mjmwpOm9thYkScnSCOZ+MPzaz1DM=",
+      "rev": "9961d87bb3ec008213c46ba14b3f384a5f520eb5",
+      "sha256": "sha256-Wo6oAbqG0SOJ4dKjg85s/IJGe1Z6XnyjVPzQZ00Lojw=",
       "type": "github"
     },
-    "version": "417b303328118b6d836ae330142e88771c48a8a3"
+    "version": "9961d87bb3ec008213c46ba14b3f384a5f520eb5"
   },
   "plugin-cmp-buffer": {
     "cargoLocks": null,
@@ -507,7 +507,7 @@
   },
   "plugin-haskell-tools-nvim": {
     "cargoLocks": null,
-    "date": "2023-08-27",
+    "date": "2023-08-29",
     "extract": null,
     "name": "plugin-haskell-tools-nvim",
     "passthru": {
@@ -521,11 +521,11 @@
       "name": null,
       "owner": "MrcJkb",
       "repo": "haskell-tools.nvim",
-      "rev": "d56a6d100f9f9260eb3527e1e397774a69fe36ca",
-      "sha256": "sha256-sV9Tscfi8s0ReHHiLEaxEG6UnZxFB2k2+4QsrzND8ig=",
+      "rev": "9b7e2bb7af2032f115b6b5c591c6bbca5fc65f4a",
+      "sha256": "sha256-TbRRr7ZWwfcn6VxIf1B6UVvO9ekEiWhHmCYNzl6e/bI=",
       "type": "github"
     },
-    "version": "d56a6d100f9f9260eb3527e1e397774a69fe36ca"
+    "version": "9b7e2bb7af2032f115b6b5c591c6bbca5fc65f4a"
   },
   "plugin-highlight-current-n-nvim": {
     "cargoLocks": null,
@@ -1585,7 +1585,7 @@
   },
   "plugin-typst-vim": {
     "cargoLocks": null,
-    "date": "2023-08-17",
+    "date": "2023-08-28",
     "extract": null,
     "name": "plugin-typst-vim",
     "passthru": {
@@ -1599,11 +1599,11 @@
       "name": null,
       "owner": "kaarmu",
       "repo": "typst.vim",
-      "rev": "97f21818cb8d3d5ed6bb4b672ddb5af975aab71a",
-      "sha256": "sha256-49yHaqDoNbHkkWdfHkIGZpuDonGSXbj4Qzft6HkyFhE=",
+      "rev": "c2fe406c6283713993db58e08cf16974c44e9032",
+      "sha256": "sha256-2j/NFJN4f/pK+UM6rz57Hq8NlcolrRzi+gC7j/Iazjw=",
       "type": "github"
     },
-    "version": "97f21818cb8d3d5ed6bb4b672ddb5af975aab71a"
+    "version": "c2fe406c6283713993db58e08cf16974c44e9032"
   },
   "plugin-vim-eunuch": {
     "cargoLocks": null,
