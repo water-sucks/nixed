@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{config, ...}: {
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
@@ -19,11 +19,7 @@
     supportedFilesystems = ["zfs"];
 
     kernelModules = ["kvm-intel" "mt7921e" "uinput"];
-    kernelPackages = pkgs.linuxPackages_latest.extend (_: prev: {
-      # Force ZFS modules to compile. This is a little dangerous
-      # but frankly I don't really care.
-      zfs = prev.zfs.overrideAttrs (_: {meta.broken = false;});
-    });
+    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     kernelParams = [
       "mem_sleep_default=deep"
       "nvme.noacpi=1"
