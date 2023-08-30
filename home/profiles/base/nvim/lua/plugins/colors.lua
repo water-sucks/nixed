@@ -60,9 +60,23 @@ local lush_spec = use("rktjmp/lush.nvim", {
   event = "VeryLazy",
 })
 
+local todo_comments_spec = use("folke/todo-comments.nvim", {
+  event = "VeryLazy",
+})
+todo_comments_spec.config = function()
+  require("todo-comments").setup({
+    keywords = {
+      FIX = { icon = "" },
+      TODO = { icon = "󰇘" },
+      NOTE = { icon = "" },
+    },
+  })
+end
+
 return {
   colorscheme_spec,
   colorizer_spec,
   highlight_current_n_spec,
   lush_spec,
+  todo_comments_spec,
 }

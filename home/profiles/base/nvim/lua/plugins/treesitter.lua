@@ -21,10 +21,12 @@ treesitter_spec.config = function()
 
     highlight = {
       enable = true,
+      disable = { "comment" },
     },
 
     indent = {
       enable = true,
+      disable = { "dart" },
     },
 
     playground = {

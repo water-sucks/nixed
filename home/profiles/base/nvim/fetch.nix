@@ -108,6 +108,7 @@ in
     (plugin "rktjmp" "highlight-current-n.nvim")
     (plugin "kevinhwang91" "nvim-ufo")
     (plugin "kevinhwang91" "promise-async")
+    (plugin "folke" "todo-comments.nvim")
 
     # Special Neovim sauce
     (plugin "andweeb" "presence.nvim")

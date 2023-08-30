@@ -1517,6 +1517,28 @@
     },
     "version": "1dfa66b845673effc8771f9ebe511bb36a09f560"
   },
+  "plugin-todo-comments-nvim": {
+    "cargoLocks": null,
+    "date": "2023-07-28",
+    "extract": null,
+    "name": "plugin-todo-comments-nvim",
+    "passthru": {
+      "pretty-name": "todo-comments.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "folke",
+      "repo": "todo-comments.nvim",
+      "rev": "3094ead8edfa9040de2421deddec55d3762f64d1",
+      "sha256": "sha256-Qm8AJ8omU5eCfjLt91DVxLS0R3QHbfW55ZTegB1JvWI=",
+      "type": "github"
+    },
+    "version": "3094ead8edfa9040de2421deddec55d3762f64d1"
+  },
   "plugin-trouble-nvim": {
     "cargoLocks": null,
     "date": "2023-07-29",

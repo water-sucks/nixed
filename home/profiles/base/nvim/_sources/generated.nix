@@ -902,6 +902,19 @@
     pretty-name = "telescope.nvim";
     date = "2023-08-28";
   };
+  plugin-todo-comments-nvim = {
+    pname = "plugin-todo-comments-nvim";
+    version = "3094ead8edfa9040de2421deddec55d3762f64d1";
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "todo-comments.nvim";
+      rev = "3094ead8edfa9040de2421deddec55d3762f64d1";
+      fetchSubmodules = false;
+      sha256 = "sha256-Qm8AJ8omU5eCfjLt91DVxLS0R3QHbfW55ZTegB1JvWI=";
+    };
+    pretty-name = "todo-comments.nvim";
+    date = "2023-07-28";
+  };
   plugin-trouble-nvim = {
     pname = "plugin-trouble-nvim";
     version = "40aad004f53ae1d1ba91bcc5c29d59f07c5f01d3";
