@@ -93,40 +93,40 @@ in
 
         extraPackages = with pkgs; [
           # Language servers
-          pyright
           ccls
-          gopls
-          ltex-ls
           emmet-ls
+          gopls
           jdt-language-server
+          ltex-ls
           lua-language-server
+          nil
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
           nodePackages.typescript-language-server
+          pyright
+          python3Packages.ruff-lsp
           stable.nodePackages.vscode-langservers-extracted
-          nil
           typst-lsp
 
-          # null-ls sources
+          # efm-langserver sources
           alejandra
           asmfmt
           black
           cppcheck
           deadnix
           editorconfig-checker
-          gofumpt
+          efm-langserver
           gitlint
-          mypy
+          gofumpt
           nodePackages.alex
-          nodePackages.prettier
           nodePackages.markdownlint-cli
+          nodePackages.prettier
           python3Packages.flake8
           shellcheck
           shellharden
           shfmt
           statix
           stylua
-          vim-vint
 
           # DAP servers
           delve

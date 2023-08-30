@@ -525,19 +525,6 @@
     pretty-name = "nui.nvim";
     date = "2023-08-27";
   };
-  plugin-null-ls-nvim = {
-    pname = "plugin-null-ls-nvim";
-    version = "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7";
-    src = fetchFromGitHub {
-      owner = "jose-elias-alvarez";
-      repo = "null-ls.nvim";
-      rev = "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7";
-      fetchSubmodules = false;
-      sha256 = "sha256-cWA0rzkOp/ekVKaFee7iea1lhnqKtWUIU+fW5M950wI=";
-    };
-    pretty-name = "null-ls.nvim";
-    date = "2023-08-11";
-  };
   plugin-nvim-autopairs = {
     pname = "plugin-nvim-autopairs";
     version = "ae5b41ce880a6d850055e262d6dfebd362bb276e";

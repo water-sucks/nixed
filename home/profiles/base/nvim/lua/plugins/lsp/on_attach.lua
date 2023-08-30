@@ -1,31 +1,5 @@
 local wk = require("which-key")
 
-local disable_format_cap = {
-  "pyright",
-  "dartls",
-  "lua_ls",
-  "rnix",
-  "gopls",
-  -- "zls",
-}
-
-local lsp_formatting = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(client)
-      if client.name ~= "null-ls" then
-        for _, name in ipairs(disable_format_cap) do
-          if name == client.name then
-            return false
-          end
-        end
-      end
-
-      return true
-    end,
-    bufnr = bufnr,
-  })
-end
-
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local on_attach = function(client, bufnr)
@@ -35,7 +9,7 @@ local on_attach = function(client, bufnr)
       group = augroup,
       buffer = bufnr,
       callback = function()
-        lsp_formatting(bufnr)
+        vim.lsp.buf.format({ bufnr = bufnr })
       end,
     })
   end

@@ -879,28 +879,6 @@
     },
     "version": "0f913a3ae1a24c8a4487fbf111b4044cc22b1b0d"
   },
-  "plugin-null-ls-nvim": {
-    "cargoLocks": null,
-    "date": "2023-08-11",
-    "extract": null,
-    "name": "plugin-null-ls-nvim",
-    "passthru": {
-      "pretty-name": "null-ls.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "jose-elias-alvarez",
-      "repo": "null-ls.nvim",
-      "rev": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7",
-      "sha256": "sha256-cWA0rzkOp/ekVKaFee7iea1lhnqKtWUIU+fW5M950wI=",
-      "type": "github"
-    },
-    "version": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7"
-  },
   "plugin-nvim-autopairs": {
     "cargoLocks": null,
     "date": "2023-07-14",

@@ -4,23 +4,116 @@ local on_attach = require("plugins.lsp.on_attach")
 -- Rust/Flutter/LTeX are configured in
 -- their respective plugins.
 local servers = {
-  "pyright",
-  "ccls",
-  "gopls",
   "bashls",
-  "lua_ls",
-  "html",
+  "ccls",
   "cssls",
-  "emmet_ls",
+  "efm",
   "elixirls",
+  "emmet_ls",
+  "gopls",
   "graphql",
-  "tsserver",
+  "html",
   "ltex",
-  "typst_lsp",
-  "nil_ls",
+  "lua_ls",
   "nickel_ls",
+  "nil_ls",
+  "pyright",
+  "ruff_lsp",
+  "tsserver",
+  "typst_lsp",
   "vala_ls",
   "zls",
+}
+
+local efm_sources = {
+  formatters = {
+    asmfmt = { formatCommand = "asmfmt", formatStdin = true },
+    black = { formatCommand = "black --no-color -q -", formatStdin = true },
+    latexindent = { formatCommand = "latexindent -l -", formatStdin = true },
+    prettier = {
+      formatCanRange = true,
+      formatCommand = "prettier --stdin --stdin-filepath ${INPUT} ${--range-start:charStart} "
+        .. "${--range-end:charEnd} ${--tab-width:tabSize} ${--use-tabs:!insertSpaces}",
+      formatStdin = true,
+      rootMarkers = {
+        ".prettierrc",
+        ".prettierrc.json",
+        ".prettierrc.js",
+        ".prettierrc.yml",
+        ".prettierrc.yaml",
+        ".prettierrc.json5",
+        ".prettierrc.mjs",
+        ".prettierrc.cjs",
+        ".prettierrc.toml",
+        "prettier.config.js",
+        "prettier.config.cjs",
+        "package.json",
+      },
+    },
+    shfmt = { formatCommand = "shfmt -filename ${INPUT} -", formatStdin = true },
+    shellharden = { formatCommand = "shellharden --transform ''", formatStdin = true },
+    stylua = {
+      formatCanRange = true,
+      formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
+      formatStdin = true,
+    },
+  },
+
+  diagnostics = {
+    alex = {
+      lintCommand = "alex --stdin",
+      lintFormats = { "%r%l:%c-%r %terror %m", "%r%l:%c-%r %tarning %m" },
+      lintStdin = true,
+      prefix = "alex",
+    },
+    chktex = {
+      lintCommand = "chktex -v0 -q",
+      lintFormats = { "%f:%l:%c:%m" },
+      lintIgnoreExitCode = true,
+      lintStdin = true,
+      prefix = "chktex",
+    },
+    cppcheck = {
+      lintCommand = "cppcheck --quiet --force --enable=warning,style,performance,portability --error-exitcode=1 ${INPUT}",
+      lintFormats = { "%f:%l:%c: %trror: %m", "%f:%l:%c: %tarning: %m", "%f:%l:%c: %tote: %m" },
+      rootMarkers = { "CmakeLists.txt", "compile_commands.json", ".git" },
+      lintStdin = false,
+      prefix = "cppcheck",
+    },
+    credo = {
+      lintCategoryMap = { R = "N", D = "I", F = "E", W = "W" },
+      lintCommand = "mix credo suggest --format=flycheck --read-from-stdin ${INPUT}",
+      lintFormats = { "%f:%l:%c: %t: %m", "%f:%l: %t: %m" },
+      lintStdin = true,
+      prefix = "credo",
+      rootMarkers = { "mix.lock", "mix.exs" },
+    },
+    editorconfig_checker = {
+      lintCategoryMap = { ["	"] = "N" },
+      lintCommand = "editorconfig-checker -no-color",
+      lintFormats = { "%t%l: %m" },
+      lintStdin = false,
+      prefix = "editorconfig",
+      rootMarkers = { ".editorconfig" },
+    },
+    gitlint = {
+      lintCommand = "gitlint",
+      lintFormats = { '%l: %m: "%r"', "%l: %m" },
+      lintStdin = true,
+      prefix = "gitlint",
+    },
+    markdownlint = {
+      lintCommand = "markdownlint -s",
+      lintFormats = { "%f:%l:%c %m", "%f:%l %m", "%f: %l: %m" },
+      lintStdin = true,
+      prefix = "markdownlint",
+    },
+    statix = {
+      lintCommand = "statix check --stdin --format=errfmt",
+      lintStdin = true,
+      prefix = "statix",
+    },
+  },
 }
 
 local server_configs = {
@@ -40,12 +133,16 @@ local server_configs = {
         telemetry = {
           enable = false,
         },
+        format = {
+          enable = false,
+        },
       },
     },
   },
   gopls = {
     settings = {
       gopls = {
+        gofumpt = true,
         analyses = {
           composites = false,
           structtag = false,
@@ -70,6 +167,13 @@ local server_configs = {
     init_options = {
       provideFormatter = false,
     },
+  },
+  dartls = {
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr)
+      ---@diagnostic disable-next-line: undefined-field
+      client.settings.dart.lineLength = tonumber(vim.b.editorconfig.max_line_length) or 80
+    end,
   },
   elixirls = {
     cmd = { "elixir-ls" },
@@ -104,12 +208,78 @@ local server_configs = {
             autoArchive = true,
           },
         },
+        formatting = {
+          -- I prefer using alejandra for my own code, but also
+          -- use nixpkgs-fmt in some codebases and in nixpkgs,
+          -- so I switch it based on an environment variable.
+          command = vim.env.USE_NIXPKGS_FMT == "1" and { "nixpkgs-fmt" } or { "alejandra" },
+        },
       },
     },
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
       client.server_capabilities.semanticTokensProvider = nil
     end,
+  },
+  efm = {
+    init_options = { documentFormatting = true },
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr)
+      -- ccls is UTF-32 only, and that gives me a SUPER annoying error message.
+      -- I need to change the encoding prevent this warning madness.
+      local filetypes_to_change = require("lspconfig").ccls.document_config.default_config.filetypes
+      local current_filetype = vim.bo.filetype
+      for _, filetype in ipairs(filetypes_to_change) do
+        if filetype == current_filetype then
+          client.offset_encoding = "utf-32"
+        end
+      end
+    end,
+    settings = {
+      rootMarkers = { ".git/" },
+      languages = {
+        asm = { efm_sources.formatters.asmfmt },
+        c = { efm_sources.diagnostics.cppcheck },
+        cpp = { efm_sources.diagnostics.cppcheck },
+        css = { efm_sources.formatters.prettier },
+        elixir = { efm_sources.diagnostics.credo },
+        gitcommit = { efm_sources.diagnostics.gitlint },
+        graphql = { efm_sources.formatters.prettier },
+        handlebars = { efm_sources.formatters.prettier },
+        html = { efm_sources.formatters.prettier },
+        javascript = { efm_sources.formatters.prettier },
+        javascriptreact = { efm_sources.formatters.prettier },
+        json = { efm_sources.formatters.prettier },
+        jsonc = { efm_sources.formatters.prettier },
+        less = { efm_sources.formatters.prettier },
+        lua = { efm_sources.formatters.stylua },
+        markdown = {
+          efm_sources.diagnostics.alex,
+          efm_sources.diagnostics.markdownlint,
+          efm_sources.formatters.prettier,
+        },
+        ["markdown.mdx"] = { efm_sources.formatters.prettier },
+        nix = { efm_sources.diagnostics.statix },
+        python = {
+          efm_sources.diagnostics.mypy,
+          efm_sources.formatters.black,
+        },
+        scss = { efm_sources.formatters.prettier },
+        sh = {
+          efm_sources.formatters.shfmt,
+          efm_sources.formatters.shellharden,
+        },
+        tex = {
+          efm_sources.diagnostics.chktex,
+          efm_sources.formatters.latexindent,
+        },
+        typescript = { efm_sources.formatters.prettier },
+        typescriptreact = { efm_sources.formatters.prettier },
+        vue = { efm_sources.formatters.prettier },
+        yaml = { efm_sources.formatters.prettier },
+        ["="] = { efm_sources.diagnostics.editorconfig_checker },
+      },
+    },
   },
 }
 

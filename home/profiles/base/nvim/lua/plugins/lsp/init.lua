@@ -62,17 +62,9 @@ local lsp_signature_spec = use("ray-x/lsp_signature.nvim", {
   end,
 })
 
-local null_ls_spec = use("jose-elias-alvarez/null-ls.nvim", {
-  event = "CursorHold",
-  config = function()
-    require("plugins.lsp.null-ls")
-  end,
-})
-
 return {
   lspconfig_spec,
   cmp_spec,
   lsp_signature_spec,
-  null_ls_spec,
   fidget_spec,
 }
