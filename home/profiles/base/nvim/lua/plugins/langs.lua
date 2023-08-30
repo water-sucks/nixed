@@ -168,6 +168,137 @@ local neodev_spec = use("folke/neodev.nvim", {
   ft = "lua",
 })
 
+local nvim_r_spec = use("jamespeapen/Nvim-R", {
+  ft = { "r", "rmd", "rrst", "rnoweb", "quarto", "rhelp" },
+})
+nvim_r_spec.config = function()
+  local wk = require("which-key")
+
+  vim.g.R_set_omnifunc = {}
+  vim.g.R_hi_fun = 0
+  vim.g.rout_follow_colorscheme = 1
+
+  wk.register({
+    a = {
+      name = "Send file",
+      a = "Send file",
+      e = "Send file (echo)",
+      o = "Send file (.Rout)",
+    },
+    b = {
+      name = "Send block",
+      a = "Send block (echo, down)",
+      b = "Send block",
+      d = "Send block (down)",
+      e = "Send block (echo)",
+      g = "Debug",
+    },
+    c = {
+      name = "Send chunk",
+      a = "Send chunk (echo, down)",
+      c = "Send chunk",
+      d = "Send chunk (down)",
+      e = "Send chunk (echo)",
+      h = "Send chunk (first -> here)",
+    },
+    f = {
+      name = "Send function",
+      a = "Send function (echo, down)",
+      d = "Send function (down)",
+      e = "Send function (echo)",
+      f = "Send function",
+    },
+    s = {
+      name = "Send selection",
+      s = "Send selection",
+      e = "Send selection (echo)",
+      d = "Send selection (down)",
+      a = "Send selection (echo, down)",
+      o = "Send selection (eval and new tab)",
+      u = "Send all lines above current",
+      w = "Sweave current file",
+      p = "Sweave/PDF current file",
+      b = "Sweave/BibTeX/PDF current file",
+    },
+    m = {
+      name = "Send motion region",
+    },
+    g = {
+      name = "Go",
+      n = "Next R chunk",
+      N = "Previous R chunk",
+      t = "Go to LaTeX",
+      p = "Search forward",
+    },
+    p = {
+      name = "Send paragraph",
+      p = "Send paragraph",
+      e = "Send paragraph (echo)",
+      d = "Send paragraph (down)",
+      a = "Send paragraph (echo, down)",
+    },
+    r = {
+      name = "R commands",
+      o = "Open/close",
+      a = "Arguments",
+      e = "Example",
+      h = "Help",
+      s = "Summary",
+      g = "Plot",
+      b = "Plot and summary",
+      d = "Set working directory",
+      f = "Start R",
+      c = "Start custom R",
+      q = "Close R",
+      l = "List space",
+      r = "Clear console",
+      m = "Remove objects and clear console",
+      p = "Print (cur)",
+      n = "Names (cur)",
+      t = "Structure (cur)",
+      v = "View data.frame in new tab",
+      w = "Save and close R",
+      ["="] = "Expand all lists",
+      ["-"] = "Collapse all lists",
+    },
+    k = {
+      name = "Knit current file",
+      n = "Knit current file",
+      b = "Knit/BibTeX/PDF current file",
+      p = "Knit/PDF current file",
+      l = "Knit/Beamer PDF current file",
+      h = "Knit/HTML current file",
+      o = "Knit/ODT current file",
+      r = "Render as markdown",
+      s = "Spin current file",
+      a = "Render as markdown (YAML)",
+    },
+    v = {
+      name = "View data.frame",
+      s = "View data.frame in hsplit",
+      v = "View data.frame in vsplit",
+      h = "View head(data.frame) in hsplit",
+    },
+    t = {
+      name = "Run dput",
+      d = "Run dput and show output in new tab",
+    },
+    l = "Send line",
+    d = "Send line (down)",
+    q = "Send line (and new)",
+    ["r<Left>"] = "Send left part of line (cur)",
+    ["r<Right>"] = "Send Right part of line (cur)",
+    o = "Send line (and insert output as comment)",
+    u = {
+      name = "Undebug",
+      d = "Undebug",
+    },
+  }, {
+    prefix = "<LocalLeader>",
+    buffer = 0,
+  })
+end
+
 local rust_tools_spec = use("simrat39/rust-tools.nvim", {
   -- dependencies = { use("neovim/nvim-lspconfig") },
   ft = "rust",
@@ -339,6 +470,7 @@ return {
   jdtls_spec,
   ltex_extra_spec,
   neodev_spec,
+  nvim_r_spec,
   rust_tools_spec,
   typst_spec,
   vimtex_spec,

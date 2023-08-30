@@ -138,6 +138,7 @@ in
     (plugin "lervag" "vimtex")
     (plugin "barreiroleo" "ltex_extra.nvim")
     (plugin "kaarmu" "typst.vim")
+    (plugin "jamespeapen" "Nvim-R")
 
     (fetch "nvim-neorg" "tree-sitter-norg" {
       branch = "dev";

@@ -19,6 +19,7 @@ local servers = {
   "nil_ls",
   "pyright",
   "ruff_lsp",
+  "r_language_server",
   "tsserver",
   "typst_lsp",
   "vala_ls",

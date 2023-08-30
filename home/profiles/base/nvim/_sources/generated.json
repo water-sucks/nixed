@@ -65,6 +65,28 @@
     },
     "version": "c4d6298347f7707e9757351b2ee03d0c00da5c20"
   },
+  "plugin-Nvim-R": {
+    "cargoLocks": null,
+    "date": "2023-08-26",
+    "extract": null,
+    "name": "plugin-Nvim-R",
+    "passthru": {
+      "pretty-name": "Nvim-R"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "jamespeapen",
+      "repo": "Nvim-R",
+      "rev": "556f7099361747a4cd213407f10f40e9ddc4df47",
+      "sha256": "sha256-k6BkIWWG2R18yDHOY98FRo1c5I4rO+C/ehArDCEDu0E=",
+      "type": "github"
+    },
+    "version": "556f7099361747a4cd213407f10f40e9ddc4df47"
+  },
   "plugin-auto-save-nvim": {
     "cargoLocks": null,
     "date": "2022-11-01",

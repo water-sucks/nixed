@@ -44,6 +44,19 @@
     pretty-name = "LuaSnip";
     date = "2023-08-18";
   };
+  plugin-Nvim-R = {
+    pname = "plugin-Nvim-R";
+    version = "556f7099361747a4cd213407f10f40e9ddc4df47";
+    src = fetchFromGitHub {
+      owner = "jamespeapen";
+      repo = "Nvim-R";
+      rev = "556f7099361747a4cd213407f10f40e9ddc4df47";
+      fetchSubmodules = false;
+      sha256 = "sha256-k6BkIWWG2R18yDHOY98FRo1c5I4rO+C/ehArDCEDu0E=";
+    };
+    pretty-name = "Nvim-R";
+    date = "2023-08-26";
+  };
   plugin-auto-save-nvim = {
     pname = "plugin-auto-save-nvim";
     version = "979b6c82f60cfa80f4cf437d77446d0ded0addf0";
