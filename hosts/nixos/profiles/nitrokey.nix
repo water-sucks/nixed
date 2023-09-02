@@ -37,6 +37,11 @@
       })
       .overridePythonAttrs (o: {
         pythonRelaxDeps = o.pythonRelaxDeps ++ ["click"];
+        propagatedBuildInputs =
+          o.propagatedBuildInputs
+          ++ [
+            python3Packages.importlib-metadata
+          ];
       });
   in [
     pynitrokey
