@@ -17,7 +17,6 @@
     nitrokey.enable = true;
 
     plymouth.enable = true;
-    dot.enable = true;
     wm-helper.enable = true;
     lightdm.enable = true;
     sound.enable = true;
