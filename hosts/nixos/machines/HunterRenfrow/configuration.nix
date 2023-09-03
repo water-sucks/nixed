@@ -43,6 +43,7 @@
     hideMounts = true;
     directories = [
       "/var/log"
+      "/var/lib/alsa"
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"

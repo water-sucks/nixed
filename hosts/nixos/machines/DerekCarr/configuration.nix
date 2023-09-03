@@ -45,6 +45,7 @@
     directories = [
       "/var/log"
       "/var/lib/bluetooth"
+      "/var/lib/alsa"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/etc/ssh"
