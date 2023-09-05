@@ -18,10 +18,15 @@ in {
 
   home-manager.users.varun = _:
     lib.mkMerge [
+      # User-specific program configuration
       {
         programs.git = {
           userEmail = "varun@snare.dev";
           userName = "Varun Narravula";
+        };
+        programs.ssh.githubAccounts = {
+          "water-sucks" = {email = "varun@snare.dev";};
+          "varun-sal" = {email = "varun@saltandlight.community";};
         };
       }
       {

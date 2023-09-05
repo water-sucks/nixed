@@ -43,6 +43,7 @@
         ./modules/shell.nix
         ./modules/treefmt.nix
         ./modules/nvfetcher.nix
+        ./modules/ssh-keys.nix
 
         ./hosts/nixos
         ./hosts/darwin
