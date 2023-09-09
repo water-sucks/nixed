@@ -1,6 +1,6 @@
 _: {
   programs.go = {
     enable = true;
-    goPath = "Documents/GoWorkspace";
+    goPath = ".local/share/go";
   };
 }
