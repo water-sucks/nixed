@@ -1,5 +1,6 @@
 _final: prev: {
   statix = prev.statix.overrideAttrs (_: {
+    __contentAddresssed = true;
     patches = [
       (prev.fetchurl {
         url = "https://github.com/nerdypepper/statix/commit/a0c7a3274d32f584d165f06fbaf953568cd0e0e5.patch";
