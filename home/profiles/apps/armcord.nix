@@ -35,13 +35,24 @@ in
     };
 
     xdg.configFile = {
-      "ArmCord/themes/DarkDiscord/DarkDiscord.css".text = ''
-        @import url(https://discord-modifications.github.io/dark-discord/src/source.css);
+      "ArmCord/themes/OLED/oled.theme.css".text = ''
+        @import url(https://dimdengd.github.io/discord-oled-theme/code.css);
+
+        :is(:root, .theme-dark) {
+          --background-primary: black !important;
+          --background-secondary: black !important;
+          --background-tertiary: black !important;
+          --background-secondary-alt: black !important;
+          --background-accent: black !important;
+          --button-secondary-background: hsl(0 0% 10%) !important;
+          --activity-card-background: black;
+          --home-background: black !important;
+        }
       '';
-      "ArmCord/themes/DarkDiscord/manifest.json".text = builtins.toJSON {
-        name = "DarkDiscord";
-        author = "discord-modifications";
-        theme = "DarkDiscord.css";
+      "ArmCord/themes/OLED/manifest.json".text = builtins.toJSON {
+        name = "OLED";
+        author = "dimden";
+        theme = "oled.theme.css";
       };
     };
   }
