@@ -128,34 +128,45 @@ jdtls_spec.config = function()
   local root_dir = require("jdtls.setup").find_root({ "pom.xml", "build.gradle", "settings.gradle", ".git" })
   local workspace_folder = vim.env.HOME .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
-  require("jdtls").start_or_attach({
-    cmd = {
-      "jdt-language-server",
-      "-noverify",
-      "-data",
-      workspace_folder,
-    },
-    root_dir = root_dir,
-    on_attach = function(client, bufnr)
-      -- TODO: add extra bindings here
-      on_attach(client, bufnr)
-    end,
-    settings = {
-      ["java.format.settings.url"] = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-      ["java.format.settings.profile"] = "GoogleStyle",
-      java = {
-        configuration = {
-          runtimes = runtime and {
-            runtime,
-          } or nil,
+  local start = function()
+    require("jdtls").start_or_attach({
+      cmd = {
+        "jdt-language-server",
+        "-noverify",
+        "-data",
+        workspace_folder,
+      },
+      root_dir = root_dir,
+      on_attach = function(client, bufnr)
+        -- TODO: add extra bindings here
+        on_attach(client, bufnr)
+      end,
+      settings = {
+        ["java.format.settings.url"] = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+        ["java.format.settings.profile"] = "GoogleStyle",
+        java = {
+          configuration = {
+            runtimes = runtime and {
+              runtime,
+            } or nil,
+          },
         },
       },
-    },
-    handlers = {
-      -- Only show progress reports from LSP
-      ["language/status"] = function() end,
-    },
+      handlers = {
+        -- Only show progress reports from LSP
+        ["language/status"] = function() end,
+      },
+    })
+  end
+
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "java",
+    callback = function()
+      start()
+    end,
   })
+
+  start()
 end
 
 local ltex_extra_spec = use("barreiroleo/ltex_extra.nvim", {
