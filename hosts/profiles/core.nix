@@ -16,11 +16,11 @@
         dnsutils
         dosfstools
         dutree
-        exa
         fd
         git
         bottom
         jq
+        lsd
         lsof
         manix
         moreutils
