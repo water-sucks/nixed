@@ -140,10 +140,10 @@
       "name": null,
       "owner": "francma",
       "repo": "wob",
-      "rev": "0.14.2",
-      "sha256": "sha256-u4jLVLGcMTgDEgN8jW5d59m3GorJX7Z6+qKhzvbON3k=",
+      "rev": "0.15.1",
+      "sha256": "sha256-9LFAEo17w861ldMJU+t1oLAKoM6gJc4Em4tSwQDXbKU=",
       "type": "github"
     },
-    "version": "0.14.2"
+    "version": "0.15.1"
   }
 }

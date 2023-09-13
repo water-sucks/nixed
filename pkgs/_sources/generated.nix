@@ -82,13 +82,13 @@
   };
   wob = {
     pname = "wob";
-    version = "0.14.2";
+    version = "0.15.1";
     src = fetchFromGitHub {
       owner = "francma";
       repo = "wob";
-      rev = "0.14.2";
+      rev = "0.15.1";
       fetchSubmodules = false;
-      sha256 = "sha256-u4jLVLGcMTgDEgN8jW5d59m3GorJX7Z6+qKhzvbON3k=";
+      sha256 = "sha256-9LFAEo17w861ldMJU+t1oLAKoM6gJc4Em4tSwQDXbKU=";
     };
   };
 }
