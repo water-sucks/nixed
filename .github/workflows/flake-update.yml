@@ -3,8 +3,8 @@ name: flake-update
 on:
   workflow_dispatch:
   schedule:
-    # Every day @ 4:00 AM PST
-    - cron: "0 12 * * *"
+    # Every Saturday @ 12:00 PM UTC
+    - cron: "0 12 * * 6"
 
 jobs:
   # Update flake inputs
