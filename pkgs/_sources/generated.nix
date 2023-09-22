@@ -25,6 +25,17 @@
     };
     date = "2023-02-23";
   };
+  java-debug = {
+    pname = "java-debug";
+    version = "0.49.0";
+    src = fetchFromGitHub {
+      owner = "microsoft";
+      repo = "java-debug";
+      rev = "0.49.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-i4dQNJtpXgX0d/wicWvEl25UO2sVCjOLDZAIDrV/gUw=";
+    };
+  };
   nsmb-mvl = {
     pname = "nsmb-mvl";
     version = "v1.7.1.0-beta";

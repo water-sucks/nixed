@@ -34,6 +34,26 @@
     },
     "version": "df5166cab236b4220ec01edf5527c9c6a4487a8f"
   },
+  "java-debug": {
+    "cargoLocks": null,
+    "date": null,
+    "extract": null,
+    "name": "java-debug",
+    "passthru": null,
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "microsoft",
+      "repo": "java-debug",
+      "rev": "0.49.0",
+      "sha256": "sha256-i4dQNJtpXgX0d/wicWvEl25UO2sVCjOLDZAIDrV/gUw=",
+      "type": "github"
+    },
+    "version": "0.49.0"
+  },
   "nsmb-mvl": {
     "cargoLocks": null,
     "date": null,

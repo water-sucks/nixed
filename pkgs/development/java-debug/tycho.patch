@@ -1,0 +1,13 @@
+diff --git a/pom.xml b/pom.xml
+index c71560b..ad144ac 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -11,7 +11,7 @@
+     <properties>
+         <base.name>Java Debug Server for Visual Studio Code</base.name>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+-        <tycho-version>2.7.3</tycho-version>
++        <tycho-version>3.0.4</tycho-version>
+         <checkstyleDir>${basedir}</checkstyleDir>
+     </properties>
+ 

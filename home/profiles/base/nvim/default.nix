@@ -142,6 +142,8 @@ in
       xdg.dataFile = lib.mkMerge [
         {
           "nvim/plugins".source = "${pluginDir}";
+          "nvim/java-debug".source = "${pkgs.java-debug}";
+          "nvim/vscode-java-test".source = "${pkgs.vscode-extensions.vscjava.vscode-java-test}";
         }
         # Broken on macOS, and I don't develop C/C++/Rust/Zig much on Rust for now.
         # Check out why this is happening later.
