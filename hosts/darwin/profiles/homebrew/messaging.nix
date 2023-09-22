@@ -1,6 +1,6 @@
 _: {
   homebrew.casks = [
-    "discord"
+    "armcord"
     "element"
     "signal"
     "slack"

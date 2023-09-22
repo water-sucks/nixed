@@ -11,6 +11,7 @@ _: {
     taps = [
       "homebrew/cask"
       "homebrew/cask-versions"
+      "ArmCord/homebrew-armcord"
     ];
   };
 }
