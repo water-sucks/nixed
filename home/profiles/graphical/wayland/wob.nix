@@ -4,6 +4,7 @@
     package = pkgs.wob.overrideAttrs (o: {
       inherit (pkgs.sources.wob) pname version src;
 
+      nativeBuildInputs = o.nativeBuildInputs ++ [pkgs.cmocka];
       buildInputs = o.buildInputs ++ [pkgs.inih];
     });
     settings = {
