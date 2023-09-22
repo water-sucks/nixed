@@ -62,7 +62,11 @@
     fi
   '';
 in {
-  home.packages = with pkgs; [waylockWrapper wl-clipboard pavucontrol];
+  home.packages = with pkgs; [
+    waylockWrapper
+    wl-clipboard
+    wlr-randr
+  ];
 
   wayland.windowManager.river = {
     enable = true;
