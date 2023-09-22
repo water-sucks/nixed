@@ -34,4 +34,9 @@
     "src.github" = "vlcoo/VicMvsLO";
     "fetch.url" = "https://github.com/vlcoo/VicMvsLO/releases/download/$ver/linux.zip";
   };
+
+  java-debug = {
+    "src.github" = "microsoft/java-debug";
+    "fetch.github" = "microsoft/java-debug";
+  };
 }

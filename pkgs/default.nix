@@ -15,6 +15,8 @@
 
     nerdfetch = ./applications/misc/nerdfetch;
 
+    java-debug = ./development/java-debug;
+
     rescrobbled = ./tools/audio/rescrobbled;
 
     waybar-mpris = ./misc/waybar-mpris;

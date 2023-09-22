@@ -91,6 +91,11 @@ local haskell_tools_spec = use("MrcJkb/haskell-tools.nvim", {
 
 local jdtls_spec = use("mfussenegger/nvim-jdtls", {
   ft = "java",
+  dependencies = {
+    use("neovim/nvim-lspconfig"),
+    use("nvim-lua/plenary.nvim"),
+    use("mfussenegger/nvim-dap"),
+  },
 })
 
 local java_version_names = {
@@ -109,43 +114,107 @@ local java_version_names = {
 }
 
 jdtls_spec.config = function()
+  local wk = require("which-key")
+  local jdtls = require("jdtls")
+
   -- This only supports JAVA_HOME. How do I support detecting more
   -- JDKs on demand?
-
   local java_home = vim.env.JAVA_HOME
   local runtime = nil
-  local idx = string.find(java_home or "", "openjdk-")
+  local idx = string.find(java_home or "", "jdk-")
   if idx == nil then
     print("error: unable to determine JDK version from JAVA_HOME")
   else
     local version = string.match(string.sub(java_home, idx), "%d+")
     runtime = {
       name = java_version_names[version],
-      path = java_home .. "/lib/openjdk",
+      path = java_home,
     }
   end
 
   local root_dir = require("jdtls.setup").find_root({ "pom.xml", "build.gradle", "settings.gradle", ".git" })
   local workspace_folder = vim.env.HOME .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
+  local bundles = {
+    vim.fn.glob(
+      vim.fn.stdpath("data")
+        .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
+      true
+    ),
+  }
+
+  vim.list_extend(
+    bundles,
+    vim.split(
+      vim.fn.glob(
+        vim.fn.stdpath("data") .. "/vscode-java-test/share/vscode/extensions/vscjava.vscode-java-test/server/*.jar",
+        true
+      ),
+      "\n"
+    )
+  )
+
+  print(vim.inspect(bundles))
+
   local start = function()
-    require("jdtls").start_or_attach({
+    jdtls.start_or_attach({
       cmd = {
         "jdt-language-server",
         "-noverify",
         "-data",
         workspace_folder,
       },
+      init_options = {
+        bundles = bundles,
+      },
       root_dir = root_dir,
       on_attach = function(client, bufnr)
-        -- TODO: add extra bindings here
         on_attach(client, bufnr)
+        local keymaps = {
+          o = { jdtls.organize_imports, "Organize imports" },
+          d = {
+            name = "Debug",
+            c = { jdtls.compile, "Compile" },
+            f = { jdtls.test_class, "Test class" },
+            n = { jdtls.test_nearest_method, "Test nearest method" },
+            s = {
+              function()
+                vim.cmd("JdtJshell")
+              end,
+              "Start JShell",
+            },
+            u = {
+              function()
+                vim.cmd("JdtUpdateDebugConfig")
+              end,
+              "Update debug config",
+            },
+          },
+          x = {
+            name = "Extract",
+            c = { jdtls.extract_constant, "Extract constant" },
+            m = { jdtls.extract_method, "Extract method" },
+            v = { jdtls.extract_variable, "Extract variable" },
+          },
+        }
+        wk.register(keymaps, {
+          prefix = "<LocalLeader>",
+          buffer = bufnr,
+        })
       end,
       settings = {
         ["java.format.settings.url"] = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
         ["java.format.settings.profile"] = "GoogleStyle",
         java = {
           configuration = {
+            completion = {
+              filteredTypes = {
+                "com.sun.*",
+                "java.awt.*",
+                "jdk.*",
+                "sun.*",
+              },
+            },
             runtimes = runtime and {
               runtime,
             } or nil,
