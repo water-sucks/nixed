@@ -1,5 +1,5 @@
 diff --git a/pom.xml b/pom.xml
-index c71560b..ad144ac 100644
+index c71560b..89c9f1a 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -11,7 +11,7 @@
@@ -11,3 +11,11 @@ index c71560b..ad144ac 100644
          <checkstyleDir>${basedir}</checkstyleDir>
      </properties>
  
+@@ -93,6 +93,7 @@
+                 <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-dependency-plugin</artifactId>
++                    <version>3.6.0</version>
+                     <executions>
+                         <execution>
+                             <?m2e execute onConfiguration?>
