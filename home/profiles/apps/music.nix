@@ -17,7 +17,6 @@
 in
   lib.mkIf pkgs.stdenv.isLinux {
     home.packages = [
-      pkgs.playerctl
       tidal-hifi
     ];
 
@@ -30,6 +29,4 @@ in
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/tidal" = ["tidal-hifi.desktop"];
     };
-
-    services.playerctld.enable = true;
   }
