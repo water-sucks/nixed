@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -12,9 +13,8 @@ lib.mkMerge [
     };
   }
   (lib.mkIf pkgs.stdenv.isLinux {
-    home.persistence."/persist/home/varun" = {
+    home.persistence."/persist/home/${config.home.username}" = {
       directories = [
-        "Sync"
         ".config/syncthing"
       ];
     };
