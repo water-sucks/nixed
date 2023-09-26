@@ -1,5 +1,6 @@
 {
   sources,
+  stdenv,
   lib,
   makeWrapper,
   maven,
@@ -9,7 +10,10 @@ maven.buildMavenPackage {
 
   patches = [./tycho.patch];
 
-  mvnHash = "sha256-m/4JqUELTQC6Bkn+YkiR8vCUHHcLRzgdtMvhMjdzwso=";
+  mvnHash =
+    if stdenv.isDarwin
+    then "sha256-6bNhKWfUWHFaxIdUUpAVjKs3khwJeTIkBVubBCyN6Ag="
+    else "sha256-m/4JqUELTQC6Bkn+YkiR8vCUHHcLRzgdtMvhMjdzwso=";
 
   installPhase = ''
     mkdir $out
