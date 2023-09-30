@@ -15,7 +15,8 @@
 
     nerdfetch = ./applications/misc/nerdfetch;
 
-    java-debug = ./development/java-debug;
+    # mvnHash keeps changing, so this is disabled for now.
+    # java-debug = ./development/java-debug;
 
     rescrobbled = ./tools/audio/rescrobbled;
 

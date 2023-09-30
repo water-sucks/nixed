@@ -142,7 +142,12 @@ in
       xdg.dataFile = lib.mkMerge [
         {
           "nvim/plugins".source = "${pluginDir}";
-          "nvim/java-debug".source = "${pkgs.java-debug}";
+          # Workaround for not being able to package `java-debug` from source
+          "nvim/java-debug/com.microsoft.java.debug.plugin.jar".source = pkgs.fetchurl {
+            url = "https://repo1.maven.org/maven2/com/microsoft/java/com.microsoft.java.debug.plugin/0.49.0/com.microsoft.java.debug.plugin-0.49.0.jar";
+            hash = "sha256-kI6JbMtxYkBp+O9QjeYq3QbwnqRBDYUZkWK+G+1vvec=";
+          };
+          # "nvim/java-debug".source = "${pkgs.java-debug}";
           "nvim/vscode-java-test".source = "${pkgs.vscode-extensions.vscjava.vscode-java-test}";
         }
         # Broken on macOS, and I don't develop C/C++/Rust/Zig much on Rust for now.
