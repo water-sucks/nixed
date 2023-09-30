@@ -1,19 +1,16 @@
 {
   sources,
-  stdenv,
   lib,
   makeWrapper,
   maven,
+  ...
 }:
 maven.buildMavenPackage {
   inherit (sources.java-debug) pname src version;
 
   patches = [./tycho.patch];
 
-  mvnHash =
-    if stdenv.isDarwin
-    then "sha256-6bNhKWfUWHFaxIdUUpAVjKs3khwJeTIkBVubBCyN6Ag="
-    else "sha256-m/4JqUELTQC6Bkn+YkiR8vCUHHcLRzgdtMvhMjdzwso=";
+  mvnHash = "sha256-jFyB4StM4qsaf5caxaMs8QTFnF2hHrEAb+m/dnGN7vc=";
 
   installPhase = ''
     mkdir $out
