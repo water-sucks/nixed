@@ -136,11 +136,7 @@ jdtls_spec.config = function()
   local workspace_folder = vim.env.HOME .. "/.local/share/eclipse/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
 
   local bundles = {
-    vim.fn.glob(
-      vim.fn.stdpath("data")
-        .. "/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
-      true
-    ),
+    vim.fn.stdpath("data") .. "/java-debug/com.microsoft.java.debug.plugin.jar",
   }
 
   vim.list_extend(
