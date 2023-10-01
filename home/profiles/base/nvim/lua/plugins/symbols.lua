@@ -12,26 +12,35 @@ local indent_blankline_spec = use("lukas-reineke/indent-blankline.nvim", {
 indent_blankline_spec.config = function()
   vim.opt.list = true
   vim.opt.listchars:append("eol:↴")
-  require("indent_blankline").setup({
-    show_end_of_line = true,
-    show_current_context = true,
-    show_current_context_start = true,
-    char_highlight_list = {
-      "IndentBlanklineIndent1",
-      "IndentBlanklineIndent2",
-      "IndentBlanklineIndent3",
-      "IndentBlanklineIndent4",
-      "IndentBlanklineIndent5",
-      "IndentBlanklineIndent6",
+  require("ibl").setup({
+    indent = {
+      highlight = {
+        "IblIndent1",
+        "IblIndent2",
+        "IblIndent3",
+        "IblIndent4",
+        "IblIndent5",
+        "IblIndent6",
+      },
     },
-    filetype_exclude = {
-      "FTerm",
-      "terminal",
-      "norg",
+    scope = {
+      show_start = true,
+      show_end = true,
+      highlight = {
+        "IblScopeStart",
+        "IblScopeEnd",
+      },
     },
-    buftype_exclude = {
-      "nofile",
-      "terminal",
+    exclude = {
+      filetypes = {
+        "FTerm",
+        "terminal",
+        "norg",
+      },
+      buftypes = {
+        "nofile",
+        "terminal",
+      },
     },
   })
 end
