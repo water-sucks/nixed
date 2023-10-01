@@ -1,8 +1,7 @@
 _: {
   homebrew.casks = [
-    "insomnia"
+    "bruno"
     "jetbrains-toolbox"
-    "postman"
     "virtualbox"
     "visual-studio-code"
   ];
