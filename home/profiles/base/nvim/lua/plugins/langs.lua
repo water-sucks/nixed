@@ -150,8 +150,6 @@ jdtls_spec.config = function()
     )
   )
 
-  print(vim.inspect(bundles))
-
   local start = function()
     jdtls.start_or_attach({
       cmd = {
