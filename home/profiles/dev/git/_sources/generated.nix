@@ -7,14 +7,14 @@
 }: {
   git-aliases = {
     pname = "git-aliases";
-    version = "31a45d34f3695cdbaa20686e094eb390c1760684";
+    version = "c37a5314e3ee59f408eba82519f4dd0187cd91ef";
     src = fetchFromGitHub {
       owner = "GitAlias";
       repo = "gitalias";
-      rev = "31a45d34f3695cdbaa20686e094eb390c1760684";
+      rev = "c37a5314e3ee59f408eba82519f4dd0187cd91ef";
       fetchSubmodules = false;
-      sha256 = "sha256-EPQNBCb5QJWHfzP15F8WDvGudNYWbURjkC/qbBY5b0E=";
+      sha256 = "sha256-Lkn3IHbMd4lUYpwN5rTfuf8XxrV4vXsmCxz5yxj9hsM=";
     };
-    date = "2023-09-23";
+    date = "2023-10-06";
   };
 }
