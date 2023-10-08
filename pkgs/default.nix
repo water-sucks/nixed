@@ -13,8 +13,6 @@
   packages' = {
     airtame = ./applications/misc/airtame;
 
-    bruno = ./applications/misc/bruno;
-
     nerdfetch = ./applications/misc/nerdfetch;
 
     # mvnHash keeps changing, so this is disabled for now.
