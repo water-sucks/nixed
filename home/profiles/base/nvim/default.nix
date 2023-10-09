@@ -75,6 +75,11 @@
         path = v;
       })
       plugins);
+
+  ruff-lsp = with pkgs;
+    python3Packages.ruff-lsp.overridePythonAttrs (o: {
+      propagatedBuildInputs = o.propagatedBuildInputs ++ [python3Packages.packaging];
+    });
 in
   lib.mkMerge [
     {
@@ -104,7 +109,7 @@ in
           nodePackages.graphql-language-service-cli
           nodePackages.typescript-language-server
           pyright
-          python3Packages.ruff-lsp
+          ruff-lsp
           stable.nodePackages.vscode-langservers-extracted
           typst-lsp
 

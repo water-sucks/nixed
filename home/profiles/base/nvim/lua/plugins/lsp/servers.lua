@@ -29,7 +29,11 @@ local servers = {
 local efm_sources = {
   formatters = {
     asmfmt = { formatCommand = "asmfmt", formatStdin = true },
-    black = { formatCommand = "black --no-color -q -", formatStdin = true },
+    black = {
+      formatCommand = "black --no-color -q -",
+      formatStdin = true,
+      rootMarkers = { "pyproject.toml", "requirements.txt", ".git" },
+    },
     latexindent = { formatCommand = "latexindent -l -", formatStdin = true },
     prettier = {
       formatCanRange = true,
