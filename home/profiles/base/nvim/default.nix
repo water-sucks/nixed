@@ -43,7 +43,7 @@
       grammars);
 
   buildPlugin = name: source:
-    pkgs.vimUtils.buildVimPluginFrom2Nix {
+    pkgs.vimUtils.buildVimPlugin {
       name = "${name}-${source.version}";
       namePrefix = ""; # Clear name prefix
       inherit (source) version src;
