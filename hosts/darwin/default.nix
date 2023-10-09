@@ -24,7 +24,6 @@
           (import configuration)
           {
             networking.hostName = hostname;
-            nixpkgs.config.allowUnfree = true;
           }
           (args: {
             imports =

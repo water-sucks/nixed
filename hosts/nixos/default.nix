@@ -1,5 +1,4 @@
 {
-  lib,
   inputs,
   self,
   withSystem,
@@ -28,13 +27,6 @@
             networking.hostName = hostname;
             users.mutableUsers = false;
             programs.fuse.userAllowOther = true; # Used for home.persistence.allowOther options, must be enabled
-            # I don't like having to manually set this, but the _module.args
-            # pkgs is not being passed properly for some reason; I'll look
-            # into this later.
-            nixpkgs = {
-              inherit pkgs;
-              config.allowUnfree = true;
-            };
           }
           (args: {
             imports =
