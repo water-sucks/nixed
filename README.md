@@ -58,9 +58,12 @@ To see possible options, check their definitions out in
 
 ## Roster
 
-I name all of my machines after my favorite players from the Las Vegas Raiders.
+I name all of my machines after my favorite players from the Oakland Raiders\*.
 It's a time-honored thing for me; I've always done that with my personal
 machines. Let's see the lineup!
+
+\* To all the people going "um, akshually, it's Las Vegas!", I don't want to hear
+it! The Autumn Wind is a Raider no matter the location ;}
 
 <!--alex disable he-she her-him gals-man damn beast -->
 
