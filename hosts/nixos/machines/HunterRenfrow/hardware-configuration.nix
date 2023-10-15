@@ -64,6 +64,9 @@
 
   swapDevices = [{device = "/dev/disk/by-partlabel/swap";}];
 
+  systemd.services.systemd-udev-settle.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   powerManagement = {
     enable = true;
     powertop.enable = true;

@@ -5,7 +5,7 @@
     kernelParams = [
       "quiet"
       "splash"
-      # "loglevel=1"
+      "bgrt_disable"
       "rd.systemd_show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
@@ -15,10 +15,8 @@
     plymouth = {
       enable = true;
       font = "${pkgs.ibm-plex}/share/fonts/opentype/IBMPlexSans-Text.otf";
-      # theme = "anarchist";
-      # themePackages = with pkgs; [
-      #   plymouth-anarchist-theme
-      # ];
+      theme = "deus_ex";
+      themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["deus_ex"];})];
     };
   };
 }

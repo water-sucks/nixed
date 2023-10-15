@@ -10,20 +10,20 @@
   time.timeZone = "America/Los_Angeles";
 
   networking = {
-    nameservers = [
-      "9.9.9.9"
-      "9.9.9.10"
-      "9.9.9.11"
-      "2620:fe::9"
-      "2620:fe::10"
-      "2620:fe::11"
-    ];
     hostId = "7effc63b";
     useDHCP = false;
     usePredictableInterfaceNames = false;
     networkmanager = {
       enable = true;
-      dns = "none";
+      dns = "default";
+      appendNameservers = [
+        "9.9.9.9"
+        "9.9.9.10"
+        "9.9.9.11"
+        "2620:fe::9"
+        "2620:fe::10"
+        "2620:fe::11"
+      ];
     };
   };
 
