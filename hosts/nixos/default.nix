@@ -27,6 +27,7 @@
             networking.hostName = hostname;
             users.mutableUsers = false;
             programs.fuse.userAllowOther = true; # Used for home.persistence.allowOther options, must be enabled
+            system.configurationRevision = self.rev or "dirty";
           }
           (args: {
             imports =
