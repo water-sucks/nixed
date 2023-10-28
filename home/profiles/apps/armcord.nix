@@ -19,19 +19,10 @@
           --unset LD_LIBRARY_PATH
       '';
   in
-    pkgs.armcord.overrideAttrs (_: rec {
-      version = "3.2.4";
-
-      src = pkgs.fetchurl {
-        url = "https://github.com/ArmCord/ArmCord/releases/download/v${version}/ArmCord_${version}_amd64.deb";
-        hash = "sha256-IUHcDHIJeGx7QKjxl3fUFHqUfs1JdIFxesvDXt3mVw0=";
-      };
-
+    pkgs.armcord.overrideAttrs (_: {
       postInstall = ''
         wrapProgram $out/bin/armcord --prefix PATH : "${pristineXdgOpen}/bin"
       '';
-
-      meta.knownVulnerabilities = [];
     });
 in
   lib.mkMerge [
