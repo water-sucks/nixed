@@ -4,30 +4,28 @@
   environment.systemPackages = let
     python3Packages = pkgs.python3Packages.override {
       overrides = _final: prev: {
-        spsdk = prev.spsdk.overridePythonAttrs (o: rec {
-          version = "1.11.0";
-          src = pkgs.fetchFromGitHub {
-            owner = "nxp-mcuxpresso";
-            repo = o.pname;
-            rev = "refs/tags/${version}";
-            hash = "sha256-B3qedAXSG3A8rcWu1O2GnZ1ZqHN+7fQK43qXzGnDEY0=";
-          };
+        spsdk =
+          (prev.spsdk.override {
+            pyocd = prev.pyocd.overridePythonAttrs (o: {
+              propagatedBuildInputs = o.propagatedBuildInputs ++ (with prev; [importlib-metadata importlib-resources lark]);
+            });
+          })
+          .overridePythonAttrs (o: {
+            nativeCheckInputs =
+              o.nativeCheckInputs
+              ++ (with prev; [
+                importlib-metadata
+                pyftdi
+              ]);
 
-          nativeCheckInputs =
-            o.nativeCheckInputs
-            ++ (with prev; [
-              importlib-metadata
-              pyftdi
-            ]);
-
-          pythonRelaxDeps =
-            o.pythonRelaxDeps
-            ++ [
-              # Leave this here, because it is common to relax
-              # deps for this package.
-              "cryptography"
-            ];
-        });
+            pythonRelaxDeps =
+              o.pythonRelaxDeps
+              ++ [
+                # Leave this here, because it is common to relax
+                # deps for this package.
+                "cryptography"
+              ];
+          });
       };
     };
 
