@@ -291,6 +291,6 @@ in {
   };
 
   systemd.user.services.polybar = {
-    Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+    Unit.ConditionPathExistsGlob = ["|!%t/wayland-*"];
   };
 }

@@ -210,6 +210,7 @@ in {
   systemd.user.services.waybar = {
     Unit = {
       ConditionPathExistsGlob = ["%t/wayland-*"];
+      Conflicts = ["polybar.service"];
     };
   };
 }
