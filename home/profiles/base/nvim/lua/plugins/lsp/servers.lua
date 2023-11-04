@@ -10,6 +10,7 @@ local servers = {
   "efm",
   "elixirls",
   "emmet_ls",
+  "eslint",
   "gopls",
   "graphql",
   "html",
