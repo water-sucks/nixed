@@ -187,7 +187,7 @@ sort_spec.config = function()
   wk.register({
     ["1"] = {
       name = "Sort",
-      o = { "<cmd>Sort<CR>", "Sort line" },
+      o = { "<Cmd>Sort<CR>", "Sort line" },
       ['"'] = { 'vi"<Esc>:Sort<CR>', 'Sort until "' },
       ["'"] = { "vi'<Esc>:Sort<CR>", "Sort until '" },
       ["("] = { "vi(<Esc>:Sort<CR>", "Sort block inside ()" },
@@ -200,7 +200,7 @@ sort_spec.config = function()
   })
 
   wk.register({
-    s = { "<cmd>Sort<CR>", "Sort selection" },
+    s = { "<Esc><Cmd>Sort<CR>", "Sort selection" },
   }, {
     mode = "v",
     prefix = "<Leader>",
