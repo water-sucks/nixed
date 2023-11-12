@@ -26,6 +26,8 @@
     nix-colors.url = "github:Misterio77/nix-colors";
 
     treefmt.url = "github:numtide/treefmt-nix";
+
+    android.url = "github:tadfisher/android-nixpkgs";
   };
 
   outputs = {
@@ -62,6 +64,7 @@
         overlays = with inputs;
           [
             agenix.overlays.default
+            android.overlays.default
             self.overlays.default
             nvfetcher.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
