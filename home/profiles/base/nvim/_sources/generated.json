@@ -637,28 +637,6 @@
     },
     "version": "b6ae80f8fc9993638608fc1a51c6ab0eeb12618c"
   },
-  "plugin-lsp_signature-nvim": {
-    "cargoLocks": null,
-    "date": "2023-11-07",
-    "extract": null,
-    "name": "plugin-lsp_signature-nvim",
-    "passthru": {
-      "pretty-name": "lsp_signature.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "ray-x",
-      "repo": "lsp_signature.nvim",
-      "rev": "9ed85616b772a07f8db56c26e8fff2d962f1f211",
-      "sha256": "sha256-Y030tGXYRowAPMCuiBDF3CAFotVJ4v174rh+nlCH1W8=",
-      "type": "github"
-    },
-    "version": "9ed85616b772a07f8db56c26e8fff2d962f1f211"
-  },
   "plugin-lspkind-nvim": {
     "cargoLocks": null,
     "date": "2023-05-05",

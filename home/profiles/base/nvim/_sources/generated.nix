@@ -382,19 +382,6 @@
     pretty-name = "leap.nvim";
     date = "2023-10-22";
   };
-  plugin-lsp_signature-nvim = {
-    pname = "plugin-lsp_signature-nvim";
-    version = "9ed85616b772a07f8db56c26e8fff2d962f1f211";
-    src = fetchFromGitHub {
-      owner = "ray-x";
-      repo = "lsp_signature.nvim";
-      rev = "9ed85616b772a07f8db56c26e8fff2d962f1f211";
-      fetchSubmodules = false;
-      sha256 = "sha256-Y030tGXYRowAPMCuiBDF3CAFotVJ4v174rh+nlCH1W8=";
-    };
-    pretty-name = "lsp_signature.nvim";
-    date = "2023-11-07";
-  };
   plugin-lspkind-nvim = {
     pname = "plugin-lspkind-nvim";
     version = "57610d5ab560c073c465d6faf0c19f200cb67e6e";

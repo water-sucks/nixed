@@ -43,7 +43,6 @@ in
 
     # Editor tooling
     (plugin "neovim" "nvim-lspconfig")
-    (plugin "ray-x" "lsp_signature.nvim")
     (plugin "nanotee" "zoxide.vim")
     (plugin "hrsh7th" "nvim-cmp")
     (plugin "hrsh7th" "cmp-nvim-lsp")
