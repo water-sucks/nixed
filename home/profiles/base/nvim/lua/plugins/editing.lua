@@ -202,7 +202,7 @@ sort_spec.config = function()
   wk.register({
     s = { "<cmd>Sort<CR>", "Sort selection" },
   }, {
-    mode = "x",
+    mode = "v",
     prefix = "<Leader>",
   })
 end
