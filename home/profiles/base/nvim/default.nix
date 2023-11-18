@@ -107,6 +107,7 @@ in
           nil
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
+          nodePackages.svelte-language-server
           nodePackages.typescript-language-server
           pyright
           ruff-lsp

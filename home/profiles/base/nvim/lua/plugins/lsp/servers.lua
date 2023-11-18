@@ -21,6 +21,7 @@ local servers = {
   "pyright",
   "ruff_lsp",
   "r_language_server",
+  "svelte",
   "tsserver",
   "typst_lsp",
   "vala_ls",
