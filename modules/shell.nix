@@ -23,7 +23,6 @@
             agenix
             config.treefmt.build.wrapper
             lefthook
-            node2nix
             nodePackages.prettier
             nvfetcher
             just

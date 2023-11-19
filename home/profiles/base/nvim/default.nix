@@ -75,11 +75,6 @@
         path = v;
       })
       plugins);
-
-  ruff-lsp = with pkgs;
-    python3Packages.ruff-lsp.overridePythonAttrs (o: {
-      propagatedBuildInputs = o.propagatedBuildInputs ++ [python3Packages.packaging];
-    });
 in
   lib.mkMerge [
     {

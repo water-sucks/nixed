@@ -5,17 +5,6 @@
 }: let
   c = config.colorscheme.colors;
 
-  polybarPackage = pkgs.polybar.overrideAttrs (_: {
-    version = "c747599ef5448e8e15dec898b1f1a097a8af3803";
-    src = pkgs.fetchFromGitHub {
-      owner = "polybar";
-      repo = "polybar";
-      rev = "c747599ef5448e8e15dec898b1f1a097a8af3803";
-      fetchSubmodules = true;
-      sha256 = "sha256-OGM6XJWF6tICotI73dShPCJXG7dj9PnI4o+4Wud8Jd8=";
-    };
-  });
-
   leftwm-state = "${pkgs.leftwm}/bin/leftwm-state";
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";
 
@@ -62,7 +51,7 @@ in {
 
   services.polybar = {
     enable = true;
-    package = polybarPackage.override {
+    package = pkgs.polybar.override {
       pulseSupport = true;
     };
     script = ''

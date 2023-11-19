@@ -11,15 +11,7 @@ in
         enable = true;
         package = with pkgs;
           if isLinux
-          then
-            (sioyek.overrideAttrs (_: {
-              patches = [
-                (pkgs.fetchurl {
-                  url = "https://git.alpinelinux.org/aports/plain/community/sioyek/mupdf-0.23.0.patch?id=86e913eccf19b97a16f25d9b6cdf0f50232f1226";
-                  sha256 = "sha256-sEqhpk7/h6g/fIhbu5LgpKKnbnIFLInrTP1k+/GhrXE=";
-                })
-              ];
-            }))
+          then pkgs.sioyek
           else runCommand "sioyek-0.0.0" {} "mkdir $out";
         bindings = {
           move_up = "k";

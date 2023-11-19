@@ -106,26 +106,6 @@
     },
     "version": "v17.0.9"
   },
-  "waybar-mpris": {
-    "cargoLocks": null,
-    "date": "2022-01-09",
-    "extract": null,
-    "name": "waybar-mpris",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "b10n",
-      "repo": "waybar-mpris",
-      "rev": "1233aa9f90d75ec2bbd82afde757309fd9abab3a",
-      "sha256": "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=",
-      "type": "github"
-    },
-    "version": "1233aa9f90d75ec2bbd82afde757309fd9abab3a"
-  },
   "wob": {
     "cargoLocks": null,
     "date": null,
