@@ -68,18 +68,6 @@
       sha256 = "sha256-a/aoxeliHU7ez2r4IKE4vBcYs4ZIcLaRS7dZDoNacPk=";
     };
   };
-  waybar-mpris = {
-    pname = "waybar-mpris";
-    version = "1233aa9f90d75ec2bbd82afde757309fd9abab3a";
-    src = fetchFromGitHub {
-      owner = "b10n";
-      repo = "waybar-mpris";
-      rev = "1233aa9f90d75ec2bbd82afde757309fd9abab3a";
-      fetchSubmodules = false;
-      sha256 = "sha256-CV8hNW/KMFKfxe126ENV5h6qhypU9bz3u3DnTFa/94I=";
-    };
-    date = "2022-01-09";
-  };
   wob = {
     pname = "wob";
     version = "0.15.1";

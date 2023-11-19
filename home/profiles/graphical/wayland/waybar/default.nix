@@ -4,12 +4,6 @@
   lib,
   ...
 }: let
-  waybar-mpris-pkg = pkgs.waybar-mpris.overrideAttrs (_: {
-    patches = [
-      ./waybar-mpris-icons.patch
-    ];
-  });
-
   sed = "${pkgs.gnused}/bin/sed";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
@@ -19,7 +13,7 @@
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
-  waybarMpris = "${waybar-mpris-pkg}/bin/waybar-mpris";
+  waybarMpris = "${pkgs.waybar-mpris}/bin/waybar-mpris";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   getAppname = "${pkgs.get-appname}/bin/get-appname";
@@ -44,7 +38,6 @@
 in {
   programs.waybar = {
     enable = true;
-    # package = waybar;
     systemd.enable = true;
     settings = {
       topbar = {

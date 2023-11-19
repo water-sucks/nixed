@@ -1,9 +1,4 @@
 {
-  waybar-mpris = {
-    "src.git" = "https://github.com/b10n/waybar-mpris";
-    "fetch.github" = "b10n/waybar-mpris";
-  };
-
   wob = {
     "src.github" = "francma/wob";
     "fetch.github" = "francma/wob";
