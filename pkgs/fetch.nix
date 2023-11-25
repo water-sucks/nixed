@@ -27,7 +27,7 @@
 
   vics-mvlo = {
     "src.github" = "vlcoo/VicMvsLO";
-    "fetch.url" = "https://github.com/vlcoo/VicMvsLO/releases/download/$ver/linux.zip";
+    "fetch.url" = "https://github.com/vlcoo/VicMvsLO/releases/download/$ver/linux-vcmi.zip";
   };
 
   java-debug = {
