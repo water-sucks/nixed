@@ -44,7 +44,7 @@
     sounds.enable = false;
     portal = {
       enable = true;
-      extraPortals = [
+      configPackages = [
         pkgs.xdg-desktop-portal-gtk
       ];
       wlr = {
