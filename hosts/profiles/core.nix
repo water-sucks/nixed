@@ -32,7 +32,6 @@
         tealdeer
         tokei
         tree
-        whois
         zoxide
       ]
       ++ (lib.optionals stdenv.isLinux [
