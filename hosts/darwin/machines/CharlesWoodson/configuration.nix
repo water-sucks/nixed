@@ -1,4 +1,8 @@
 {
+  homebrew.casks = [
+    "native-access"
+  ];
+
   users.users.varun.home = "/Users/varun";
   users.users.varun.isHidden = false;
 
