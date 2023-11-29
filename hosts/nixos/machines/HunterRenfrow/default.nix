@@ -15,6 +15,7 @@
     fontconfig.enable = true;
     kmscon.enable = false;
     nitrokey.enable = true;
+    nixos-cli.enable = true;
 
     plymouth.enable = true;
     wm-helper.enable = true;

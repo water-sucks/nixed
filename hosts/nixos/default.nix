@@ -22,6 +22,7 @@
           agenix.nixosModules.age
           impermanence.nixosModules.impermanence
           home.nixosModules.home-manager
+          nixos-cli.nixosModules.nixos-cli
           (import configuration)
           {
             networking.hostName = hostname;
