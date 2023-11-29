@@ -109,12 +109,6 @@ local efm_sources = {
       lintStdin = true,
       prefix = "gitlint",
     },
-    markdownlint = {
-      lintCommand = "markdownlint -s",
-      lintFormats = { "%f:%l:%c %m", "%f:%l %m", "%f: %l: %m" },
-      lintStdin = true,
-      prefix = "markdownlint",
-    },
     statix = {
       lintCommand = "statix check --stdin --format=errfmt",
       lintStdin = true,

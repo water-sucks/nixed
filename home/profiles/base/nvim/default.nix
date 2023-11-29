@@ -120,7 +120,6 @@ in
           gitlint
           gofumpt
           nodePackages.alex
-          nodePackages.markdownlint-cli
           nodePackages.prettier
           python3Packages.flake8
           shellcheck
