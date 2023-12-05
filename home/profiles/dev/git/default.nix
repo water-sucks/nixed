@@ -10,6 +10,7 @@ in {
       pull.rebase = false;
       init.defaultBranch = "main";
       core.editor = "nvim --cmd 'let g:unception_block_while_host_edits=1'";
+      core.sshCommand = "ssh -o ConnectTimeout=1 -o ConnectionAttempts=1";
     };
 
     aliases = {
