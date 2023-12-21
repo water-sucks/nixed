@@ -14,6 +14,11 @@
   };
   icon = "${icons}/build/neue_outrun.icns";
 
+  fileicon =
+    if pkgs.stdenv.system == "aarch64-darwin"
+    then "/opt/homebrew/bin/fileicon"
+    else "/usr/local/bin/fileicon";
+
   c = config.colorscheme.colors;
 in
   lib.mkMerge [
@@ -92,7 +97,7 @@ in
       home.activation.setKittyIcon = lib.hm.dag.entryAfter ["writeBoundary"] ''
         original_sum=$(sha256sum /Applications/kitty.app/Contents/Resources/kitty.icns)
 
-        /usr/local/bin/fileicon -q set /Applications/kitty.app ${icon}
+        ${fileicon} -q set /Applications/kitty.app ${icon}
 
         if [ "$original_sum" != "$(sha256sum /Applications/kitty.app/Contents/Resources/kitty.icns)" ]; then
           killall Dock && killall Finder

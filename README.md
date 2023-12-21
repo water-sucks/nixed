@@ -98,6 +98,15 @@ namesake!).
 Hackintosh nix-darwin setup that is dual-booted with DerekCarr; primarily used
 for iOS development and to run other Apple-exclusive software.
 
+### TimBrown
+
+- Type: Work laptop
+- Operating system: macOS (with nix-darwin)
+- Model: MacBook M3 Pro 2023 (18 GB)
+
+A legit MacBook that is a beast. Used for music production on-the-go with
+Logic Pro X and mobile app development.
+
 ### SebastianJanikowski
 
 - Type: Work laptop

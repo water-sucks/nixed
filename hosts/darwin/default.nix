@@ -42,6 +42,7 @@ in {
     darwinConfigurations = with generatedHosts; {
       CharlesWoodson = CharlesWoodson {};
       SebastianJanikowski = SebastianJanikowski {};
+      TimBrown = TimBrown {system = "aarch64-darwin";};
     };
   };
 }

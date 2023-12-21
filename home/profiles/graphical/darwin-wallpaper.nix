@@ -1,3 +1,3 @@
-_: {
-  services.darwin-wallpaper.file = ../../../assets/woah.jpg;
+{lib, ...}: {
+  services.darwin-wallpaper.file = lib.mkDefault ../../../assets/woah.jpg;
 }
