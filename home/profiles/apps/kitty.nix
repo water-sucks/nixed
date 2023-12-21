@@ -6,10 +6,13 @@
 }: let
   inherit (pkgs.stdenv) isLinux isDarwin;
 
-  icon = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/k0nserv/kitty-icon/main/kitty.icns";
-    sha256 = "0n6fb98pj86cm5zl3727vrayxvcbvnkn07sjbyixk4npcmd6w5bg";
+  icons = pkgs.fetchFromGitHub {
+    owner = "k0nserv";
+    repo = "kitty-icon";
+    rev = "7f631a61bcbdfb268cdf1c97992a5c077beec9d6";
+    hash = "sha256-AXU1KOXaEiAMTkgkR+yVc8g4FZq8TqXj9imswCHhNKc=";
   };
+  icon = "${icons}/build/neue_outrun.icns";
 
   c = config.colorscheme.colors;
 in
