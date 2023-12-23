@@ -1,12 +1,6 @@
-{pkgs, ...}: {
+_: {
   programs.wob = {
     enable = true;
-    package = pkgs.wob.overrideAttrs (o: {
-      inherit (pkgs.sources.wob) pname version src;
-
-      nativeBuildInputs = o.nativeBuildInputs ++ [pkgs.cmocka];
-      buildInputs = o.buildInputs ++ [pkgs.inih];
-    });
     settings = {
       globalSection = {
         width = 256;

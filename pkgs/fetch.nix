@@ -1,9 +1,4 @@
 {
-  wob = {
-    "src.github" = "francma/wob";
-    "fetch.github" = "francma/wob";
-  };
-
   rescrobbled = {
     "src.github_tag" = "InputUsername/rescrobbled";
     "fetch.github" = "InputUsername/rescrobbled";

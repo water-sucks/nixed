@@ -68,15 +68,4 @@
       sha256 = "sha256-QGIM+Qz3iaL3O24ZZJFx7UEACMHJedZC5m6WO3zhFoY=";
     };
   };
-  wob = {
-    pname = "wob";
-    version = "0.15.1";
-    src = fetchFromGitHub {
-      owner = "francma";
-      repo = "wob";
-      rev = "0.15.1";
-      fetchSubmodules = false;
-      sha256 = "sha256-9LFAEo17w861ldMJU+t1oLAKoM6gJc4Em4tSwQDXbKU=";
-    };
-  };
 }

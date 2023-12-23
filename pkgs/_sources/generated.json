@@ -105,25 +105,5 @@
       "url": "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.10-mini/linux-vcmi.zip"
     },
     "version": "v17.0.10-mini"
-  },
-  "wob": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "wob",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "francma",
-      "repo": "wob",
-      "rev": "0.15.1",
-      "sha256": "sha256-9LFAEo17w861ldMJU+t1oLAKoM6gJc4Em4tSwQDXbKU=",
-      "type": "github"
-    },
-    "version": "0.15.1"
   }
 }
