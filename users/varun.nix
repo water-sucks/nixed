@@ -11,7 +11,7 @@ in {
       description = "Varun Narravula";
       shell = pkgs.zsh;
     }
-    // (lib.optionalAttrs pkgs.stdenv.isLinux {
+    // (lib.optionalAttrs isLinux {
       extraGroups = ["wheel" "audio" "video" "input" "networkmanager" "libvirtd" "adbusers" "dialout"];
       isNormalUser = true;
     });
@@ -27,6 +27,9 @@ in {
         programs.ssh.githubAccounts = {
           "water-sucks" = {email = "varun@snare.dev";};
           "varun-sal" = {email = "varun@saltandlight.community";};
+        };
+        home.sessionVariables = lib.mkIf isLinux {
+          NIXOS_CONFIG = "$HOME/.nixed"; # For `nixos-cli`
         };
       }
       {

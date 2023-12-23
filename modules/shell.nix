@@ -25,7 +25,6 @@
             lefthook
             nodePackages.prettier
             nvfetcher
-            just
           ]
           ++ (builtins.attrValues config.treefmt.build.programs);
         shellHook = ''
