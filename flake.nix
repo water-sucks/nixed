@@ -24,8 +24,6 @@
     nixago.url = "github:nix-community/nixago";
     nixago.inputs.nixpkgs.follows = "nixpkgs";
 
-    nvfetcher.url = "github:berberman/nvfetcher/0.6.2";
-
     nix-colors.url = "github:Misterio77/nix-colors";
 
     treefmt.url = "github:numtide/treefmt-nix";
@@ -69,7 +67,6 @@
             agenix.overlays.default
             android.overlays.default
             self.overlays.default
-            nvfetcher.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
             # expose nvfetcher-generated stuff, that's annoying.
             (_final: _prev: {
