@@ -111,18 +111,23 @@ neorg_spec.config = function()
                 u = "Mark task undone",
               },
 
+              i = {
+                name = "Insert",
+              },
+
+              m = {
+                name = "Modes",
+                h = "Navigate headings",
+                l = "Navigate links",
+                n = "Normal mode (norg)",
+              },
+
               n = "New note",
               p = { "<cmd>Neorg presenter start<CR>", "Start presenter" },
               c = { "<cmd>Neorg toggle-concealer<CR>", "Toggle concealer" },
 
-              h = {
-                name = "Hop",
-                g = "Open link",
-                v = "Open link in vsplit",
-              },
-
-              j = "Next heading",
-              k = "Previous heading",
+              j = "Traverse next",
+              k = "Traverse previous",
 
               l = {
                 name = "List type",
@@ -164,9 +169,6 @@ neorg_spec.config = function()
 
                   { leader .. "n", "core.dirman.new.note" },
 
-                  { leader .. "hg", "core.esupports.hop.hop-link" },
-                  { leader .. "hv", "core.esupports.hop.hop-link", "vsplit" },
-
                   { leader .. "j", "core.integrations.treesitter.next.heading" },
                   { leader .. "k", "core.integrations.treesitter.previous.heading" },
 
@@ -180,7 +182,6 @@ neorg_spec.config = function()
                 },
 
                 i = {
-                  { "<C-l>", "core.integrations.telescope.insert_link" },
                   { "<C-t>", "core.promo.promote" },
                   { "<C-d>", "core.promo.demote" },
                   { "<M-CR>", "core.itero.next-iteration" },
@@ -188,18 +189,6 @@ neorg_spec.config = function()
               }, {
                 silent = true,
                 noremap = true,
-              })
-
-              keybinds.map_event_to_mode("toc-split", {
-                n = {
-                  { "hg", "core.qol.toc.hop-toc-link" },
-                  { "q", "core.qol.toc.close" },
-                  { "<Esc>", "core.qol.toc.close" },
-                },
-              }, {
-                silent = true,
-                noremap = true,
-                nowait = true,
               })
 
               -- Map the below keys on presenter mode
