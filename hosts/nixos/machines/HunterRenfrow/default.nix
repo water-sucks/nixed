@@ -7,6 +7,7 @@
     nix.enable = true;
     core.enable = true;
     boot.enable = true;
+    systemd.enable = true;
     caches.enable = true;
     ssh.enable = true;
     pam.enable = true;
