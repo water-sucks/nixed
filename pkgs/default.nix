@@ -13,8 +13,6 @@
   packages' = {
     airtame = ./applications/misc/airtame;
 
-    nerdfetch = ./applications/misc/nerdfetch;
-
     # mvnHash keeps changing, so this is disabled for now.
     # java-debug = ./development/java-debug;
 
