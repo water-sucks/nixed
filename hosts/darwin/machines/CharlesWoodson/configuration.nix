@@ -1,6 +1,7 @@
 {
   homebrew.casks = [
     "native-access"
+    "openrgb"
   ];
 
   users.users.varun.home = "/Users/varun";

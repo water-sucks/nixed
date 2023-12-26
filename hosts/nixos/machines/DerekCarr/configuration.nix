@@ -32,12 +32,12 @@
 
   # Workaround to use agenix with impermanence. I'll probably end up using sops-nix at some point
   # anyway so this workaround is fine, no need to be perfect.
-  age.identityPaths = ["/persist/etc/ssh/ssh_host_rsa_key" "/persist/etc/ssh/ssh_host_ed25519_key"];
-
-  age.secrets.varun-user-DerekCarr.file = ../../../../secrets/varun-user-DerekCarr.age;
+  age = {
+    identityPaths = ["/persist/etc/ssh/ssh_host_rsa_key" "/persist/etc/ssh/ssh_host_ed25519_key"];
+    secrets.varun-user-DerekCarr.file = ../../../../secrets/varun-user-DerekCarr.age;
+    secrets.root-user-DerekCarr.file = ../../../../secrets/root-user-DerekCarr.age;
+  };
   users.users.varun.hashedPasswordFile = "${config.age.secrets.varun-user-DerekCarr.path}";
-
-  age.secrets.root-user-DerekCarr.file = ../../../../secrets/root-user-DerekCarr.age;
   users.users.root.hashedPasswordFile = "${config.age.secrets.root-user-DerekCarr.path}";
 
   environment.persistence."/persist" = {
@@ -68,6 +68,8 @@
   ];
 
   services.earlyoom.enable = true;
+
+  services.hardware.openrgb.enable = true;
 
   system.stateVersion = "21.11";
 }
