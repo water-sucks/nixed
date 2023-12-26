@@ -20,7 +20,7 @@
     desktopManager.xterm.enable = false;
 
     displayManager.sessionPackages = with pkgs; [river];
-    displayManager.defaultSession = "none+leftwm";
+    displayManager.defaultSession = "river";
     windowManager.leftwm.enable = true;
   };
 
