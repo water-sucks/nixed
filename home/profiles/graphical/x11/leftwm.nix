@@ -87,7 +87,7 @@ in {
       mousekey = "Mod4";
       workspaces = [];
       tags = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
-      layouts = map enum [
+      layouts = [
         "MainAndVertStack"
         "MainAndHorizontalStack"
         "MainAndDeck"
