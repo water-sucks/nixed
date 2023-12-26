@@ -37,4 +37,10 @@
       }
     '';
   };
+
+  # Force qt to mimic configured gtk theme
+  qt = {
+    enable = true;
+    platformTheme = "gtk3";
+  };
 }
