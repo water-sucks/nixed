@@ -156,6 +156,10 @@ in
           "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
         })
       ];
+
+      home.activation.createDictionaryDir = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
+        mkdir -p $HOME/.cache/nvim/spell/custom-dict
+      '';
     }
 
     (lib.mkIf isLinux {
@@ -163,6 +167,7 @@ in
         directories = [
           ".local/state/nvim"
           ".local/share/eclipse"
+          ".cache/nvim"
         ];
       };
     })
