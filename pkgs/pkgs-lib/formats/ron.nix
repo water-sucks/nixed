@@ -54,7 +54,9 @@ with lib; let
       entries = concatStringsSep ", " (mapAttrsToList toEntry set);
     in ''{${entries}}'';
 
-  rawString = value: ''r#"${value}"#'';
+  rawString = value: repeat: let
+    delimiter = lib.strings.replicate repeat "#";
+  in ''r${delimiter}"${value}"${delimiter}'';
   char = value: "'${escapedValues value}'";
   some = value: "Some(${toRon value})";
   tuple = values: "(${listContent values})";
@@ -101,11 +103,16 @@ in {
       _ronType = typeName;
     };
   in rec {
-    mkLiteral = mkType "literal";
-    rawString = mkType "raw_string";
+    literal = mkType "literal";
+    rawString = rawString' 1;
+    rawString' = repeat:
+      (mkType "raw_string")
+      // {
+        inherit repeat;
+      };
     char = mkType "character";
     some = mkType "optional";
-    enum = mkLiteral;
+    enum = literal;
     tuple = mkType "tuple";
     struct = name: value: {
       inherit value name;
