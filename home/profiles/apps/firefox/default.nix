@@ -67,7 +67,7 @@ in
         "application/x-extension-xht" = ["firefox.desktop"];
       };
 
-      home.persistence."/persist/home/${config.home.username}" = {
+      home.persistence.${config.persistence.directory} = {
         directories = [
           ".mozilla"
         ];

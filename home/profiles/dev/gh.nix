@@ -19,7 +19,7 @@ lib.mkMerge [
     };
   }
   (lib.mkIf pkgs.stdenv.isLinux {
-    home.persistence."/persist/home/${config.home.username}" = {
+    home.persistence.${config.persistence.directory} = {
       files = [
         ".config/gh/hosts.yml"
       ];

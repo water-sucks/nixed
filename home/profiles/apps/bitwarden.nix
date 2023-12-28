@@ -9,7 +9,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     bitwarden
   ];
 
-  home.persistence."/persist/home/${config.home.username}" = {
+  home.persistence.${config.persistence.directory} = {
     directories = [
       ".config/Bitwarden"
     ];

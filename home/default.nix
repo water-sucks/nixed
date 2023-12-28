@@ -1,5 +1,8 @@
 {self, ...}: {
-  flake = {
-    homeModules = self.lib.importModules ./modules;
+  flake = let
+    modules' = self.lib.importModules ./modules;
+    modules = builtins.removeAttrs modules' ["persistence"];
+  in {
+    homeModules = modules;
   };
 }

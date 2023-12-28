@@ -12,7 +12,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     zoom-us
   ];
 
-  home.persistence."/persist/home/${config.home.username}" = {
+  home.persistence.${config.persistence.directory} = {
     directories = [
       ".config/Element"
       ".config/Signal"

@@ -16,7 +16,7 @@ in {
       isNormalUser = true;
     });
 
-  home-manager.users.varun = _:
+  home-manager.users.varun = {config, ...}:
     lib.mkMerge [
       # User-specific program configuration
       {
@@ -49,7 +49,9 @@ in {
           };
         };
 
-        home.persistence."/persist/home/varun" = {
+        persistence.directory = "/persist/home/varun";
+
+        home.persistence.${config.persistence.directory} = {
           directories = [
             ".nixed"
             "Code"

@@ -163,7 +163,7 @@ in
     }
 
     (lib.mkIf isLinux {
-      home.persistence."/persist/home/${config.home.username}" = {
+      home.persistence.${config.persistence.directory} = {
         directories = [
           ".local/state/nvim"
           ".local/share/eclipse"

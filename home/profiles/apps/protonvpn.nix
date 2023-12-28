@@ -10,7 +10,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     protonvpn-cli
   ];
 
-  home.persistence."/persist/home/${config.home.username}" = {
+  home.persistence.${config.persistence.directory} = {
     directories = [
       ".config/protonvpn"
     ];

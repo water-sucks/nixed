@@ -31,7 +31,7 @@ in
         armcord
       ];
 
-      home.persistence."/persist/home/${config.home.username}" = {
+      home.persistence.${config.persistence.directory} = {
         directories = [
           ".config/ArmCord"
         ];

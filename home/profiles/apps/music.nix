@@ -20,7 +20,7 @@ in
       tidal-hifi
     ];
 
-    home.persistence."/persist/home/${config.home.username}" = {
+    home.persistence.${config.persistence.directory} = {
       directories = [
         ".config/tidal-hifi"
       ];

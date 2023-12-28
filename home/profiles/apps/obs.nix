@@ -10,7 +10,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     chatterino2
   ];
 
-  home.persistence."/persist/home/${config.home.username}" = {
+  home.persistence.${config.persistence.directory} = {
     directories = [
       ".config/obs-studio"
       ".local/share/chatterino"

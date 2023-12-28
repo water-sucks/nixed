@@ -9,7 +9,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     insomnia
   ];
 
-  home.persistence."/persist/home/${config.home.username}" = {
+  home.persistence.${config.persistence.directory} = {
     directories = [
       ".config/insomnia"
     ];

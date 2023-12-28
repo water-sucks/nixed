@@ -10,7 +10,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     vics-mvlo
   ];
 
-  home.persistence."/persist/home/${config.home.username}" = {
+  home.persistence.${config.persistence.directory} = {
     directories = [
       ".config/unity3d/ipodtouch0218/NSMB-MarioVsLuigi"
       ".config/unity3d/vlco_o/NSMBVersus_ vic's Custom Match-inator"
