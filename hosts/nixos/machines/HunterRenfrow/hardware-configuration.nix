@@ -56,6 +56,14 @@
       options = ["size=4G" "mode=777"];
     };
 
+    # Disabled sync in this dataset so atuin can run faster.
+    # Synchronous writes go brr: https://github.com/atuinsh/atuin/issues/952
+    "/persist/home/varun/.local/share/atuin" = {
+      device = "locker/persist/varun-atuin";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+
     "/etc/ssh" = {
       depends = ["/persist"];
       neededForBoot = true;
