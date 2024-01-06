@@ -3,7 +3,6 @@ _: {
     "bruno"
     "insomnia"
     "jetbrains-toolbox"
-    "virtualbox"
     "visual-studio-code"
   ];
 }
