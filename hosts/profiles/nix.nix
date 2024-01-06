@@ -1,12 +1,28 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv) isDarwin isLinux;
 in {
   nix = {
-    gc.automatic = true;
+    # Run GC every Sunday at 10:00 AM
+    gc =
+      {
+        automatic = true;
+      }
+      // (lib.optionalAttrs isDarwin {
+        interval = {
+          Weekday = 0;
+          Hour = 10;
+          Minute = 0;
+        };
+      })
+      // (lib.optionalAttrs isLinux {
+        dates = "Sun *-*-* 10:00:00";
+        persistent = true;
+      });
     settings = {
       sandbox = !isDarwin;
       trusted-users = [
