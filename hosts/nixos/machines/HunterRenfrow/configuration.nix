@@ -47,6 +47,7 @@
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
+      "/var/lib/libvirt"
       "/etc/ssh"
       "/etc/NetworkManager/system-connections"
     ];
