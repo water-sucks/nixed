@@ -75,6 +75,8 @@
         path = v;
       })
       plugins);
+
+  prisma-ls = pkgs.nodePackages."@prisma/language-server";
 in
   lib.mkMerge [
     {
@@ -104,6 +106,7 @@ in
           nodePackages.graphql-language-service-cli
           nodePackages.svelte-language-server
           nodePackages.typescript-language-server
+          prisma-ls
           pyright
           ruff-lsp
           stable.nodePackages.vscode-langservers-extracted
