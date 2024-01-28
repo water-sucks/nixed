@@ -22,7 +22,6 @@
       (args: {
         imports =
           [
-            inputs.android.hmModule
             inputs.nix-colors.homeManagerModule
             inputs.impermanence.nixosModules.home-manager.impermanence
           ]
