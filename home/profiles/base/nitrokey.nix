@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.pynitrokey
+    pkgs.stable.pynitrokey
   ];
 }
