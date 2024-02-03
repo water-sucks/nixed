@@ -1,7 +1,7 @@
 {
   "cascade-theme": {
     "cargoLocks": null,
-    "date": "2023-12-19",
+    "date": "2024-01-31",
     "extract": null,
     "name": "cascade-theme",
     "passthru": null,
@@ -13,10 +13,10 @@
       "name": null,
       "owner": "andreasgrafen",
       "repo": "cascade",
-      "rev": "e5d9d9b81eb9ea16e27e72087ca6a39cf17594bd",
-      "sha256": "sha256-xOihSEXn73tNSv1GhJJzBHXg+8azLvR3H/Iu+vM0y3w=",
+      "rev": "6b584eb86c45501930e689ca73a60f89521d9896",
+      "sha256": "sha256-xqA4U7IzGtmqdqFxznB/5d7riHVRCTz7PBiNQrnOpmE=",
       "type": "github"
     },
-    "version": "e5d9d9b81eb9ea16e27e72087ca6a39cf17594bd"
+    "version": "6b584eb86c45501930e689ca73a60f89521d9896"
   }
 }
