@@ -9,8 +9,6 @@ _: {
       upgrade = true;
     };
     taps = [
-      "homebrew/cask"
-      "homebrew/cask-versions"
       "ArmCord/homebrew-armcord"
     ];
   };
