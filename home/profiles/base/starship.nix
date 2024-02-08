@@ -1,5 +1,5 @@
 {config, ...}: let
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 in {
   programs.starship = {
     enable = true;

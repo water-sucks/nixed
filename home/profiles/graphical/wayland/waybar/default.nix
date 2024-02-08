@@ -40,7 +40,7 @@
       done
     '';
 
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 in {
   programs.waybar = {
     enable = true;

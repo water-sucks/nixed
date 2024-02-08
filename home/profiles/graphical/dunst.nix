@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 in {
   assertions = with lib; [
     (hm.assertions.assertPlatform "dunst" pkgs platforms.linux)

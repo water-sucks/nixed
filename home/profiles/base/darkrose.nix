@@ -3,8 +3,8 @@ _: {
     name = "darkrose";
     slug = "darkrose";
     author = "Varun Narravula";
-    kind = "dark";
-    colors = {
+    variant = "dark";
+    palette = {
       red = "#9E4244";
       dark-red = "#6D0011";
       light-red = "#F85149";

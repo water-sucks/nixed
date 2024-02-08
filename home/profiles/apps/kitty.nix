@@ -19,7 +19,7 @@
     then "/opt/homebrew/bin/fileicon"
     else "/usr/local/bin/fileicon";
 
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 in
   lib.mkMerge [
     {

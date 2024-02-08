@@ -7,7 +7,7 @@
   toINI = lib.generators.toINI {};
   toINI' = lib.generators.toINIWithGlobalSection {};
 
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 in {
   i18n.inputMethod = {
     enabled = "fcitx5";

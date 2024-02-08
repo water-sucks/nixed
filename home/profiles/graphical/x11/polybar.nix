@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 
   leftwm-state = "${pkgs.leftwm}/bin/leftwm-state";
   leftwm-command = "${pkgs.leftwm}/bin/leftwm-command";

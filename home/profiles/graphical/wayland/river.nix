@@ -7,7 +7,7 @@
   riverctl = "${pkgs.river}/bin/riverctl";
   rivertile = "${pkgs.river}/bin/rivertile";
 
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 
   modifier = keys:
     with lib;

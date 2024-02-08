@@ -13,7 +13,7 @@
   services.xserver = {
     enable = true;
     videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
-    layout = "us";
+    xkb.layout = "us";
 
     libinput.enable = true;
 

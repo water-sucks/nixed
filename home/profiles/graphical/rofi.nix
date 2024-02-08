@@ -5,7 +5,7 @@
 }: let
   inherit (config.lib.formats.rasi) mkLiteral;
 
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 in {
   programs.rofi = {
     enable = true;

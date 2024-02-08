@@ -60,7 +60,7 @@
 
   numpad_keys = ["End" "Down" "Next" "Left" "Begin" "Right" "Home" "Up" "Prior"];
 
-  c = config.colorscheme.colors;
+  c = config.colorscheme.palette;
 in {
   home.packages = with pkgs; [
     pkgs.slop
