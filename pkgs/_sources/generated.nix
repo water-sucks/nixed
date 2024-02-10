@@ -7,10 +7,10 @@
 }: {
   airtame = {
     pname = "airtame";
-    version = "4.6.3";
+    version = "4.8.0";
     src = fetchurl {
-      url = "https://downloads.airtame.com/app/latest/linux/Airtame-4.6.3.deb";
-      sha256 = "sha256-vU04EtfYk6iK9g9v+QmxaD1naRKllPbGNqOydds4HPo=";
+      url = "https://downloads.airtame.com/app/latest/linux/Airtame-4.8.0.deb";
+      sha256 = "sha256-Op9AkkYpBHdEH7UWK8Sbe4BoZUwruv9I8OVdo3oF+74=";
     };
   };
   get-appname = {
