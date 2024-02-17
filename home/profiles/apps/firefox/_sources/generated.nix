@@ -7,14 +7,14 @@
 }: {
   cascade-theme = {
     pname = "cascade-theme";
-    version = "6b584eb86c45501930e689ca73a60f89521d9896";
+    version = "8fbe98934fa58f934f7ed5253367396519b320a4";
     src = fetchFromGitHub {
       owner = "andreasgrafen";
       repo = "cascade";
-      rev = "6b584eb86c45501930e689ca73a60f89521d9896";
+      rev = "8fbe98934fa58f934f7ed5253367396519b320a4";
       fetchSubmodules = false;
-      sha256 = "sha256-xqA4U7IzGtmqdqFxznB/5d7riHVRCTz7PBiNQrnOpmE=";
+      sha256 = "sha256-GMXSpNaShNu/Bce6TTnlgzGHV8MhHRVICv8hJqMi70w=";
     };
-    date = "2024-01-31";
+    date = "2024-02-12";
   };
 }
