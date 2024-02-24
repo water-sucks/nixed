@@ -27,13 +27,13 @@
   };
   java-debug = {
     pname = "java-debug";
-    version = "0.51.0";
+    version = "0.51.1";
     src = fetchFromGitHub {
       owner = "microsoft";
       repo = "java-debug";
-      rev = "0.51.0";
+      rev = "0.51.1";
       fetchSubmodules = false;
-      sha256 = "sha256-bmdSecxtNhpaczuDFGvUsAx49kEcdUoylXQ59pm67YY=";
+      sha256 = "sha256-GGyRNGnPBRrZ/o/VyQItNpxxSdiEwCE1Kmqg2XX4Ew0=";
     };
   };
   nsmb-mvl = {
