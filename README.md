@@ -45,7 +45,6 @@ to use them, feel free! Here's a rundown of what they are:
 | darwin-wallpaper | Configure wallpaper on macOS              |
 | hikari           | Hikari Wayland compositor configuration   |
 | leftwm           | LeftWM configuration                      |
-| river            | River configuration                       |
 | vivid            | Vivid LS_COLORS generator configuration   |
 | wob              | Wayland overlay bar configuration/service |
 
@@ -116,28 +115,6 @@ rarely use it anymore unless I need access to an Apple environment and can't
 use CharlesWoodson.
 
 More to come in the future, such as Bo Jackson. Stay tuned!
-
-## Notes
-
-Originally, I used `digga`, but it proved to be a little unwieldy, and
-considering that `digga` is another abstraction on top of `flake-utils-plus`,
-itself another abstraction, the whole repository felt like it had a lot of
-indirection for no reason. I found `flake-parts`, and it proved to be a much
-simpler way of structuring my configuration, without the magic that `digga` had.
-
-I did like the way that `digga` structured profiles vs. modules, but I did not
-like the "suites" metaphor at all; it felt like a misuse of `specialArgs`. Due
-to this, I spent a lot of time trying to figure out a way to keep the profiles
-vs. modules distinction, and eventually came up with a way to dynamically
-generate modules; it's rather hackish, and does rely a lot on the module system
-to pass arguments properly, but it works quite well right now. In the future,
-I might create a template using this structure as an alternative to `digga`,
-but this is still rather complicated, and does not have some bells and whistles
-that `digga` has, like automatic integration with `deploy-rs`, and other stuff.
-
-This is not a complete configuration, and it'll never be. However, it's a great
-show of my progress living and breathing Nix, and I hope it'll continue to be
-in the future.
 
 ## Thanks
 
