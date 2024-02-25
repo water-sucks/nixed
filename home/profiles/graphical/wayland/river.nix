@@ -4,22 +4,9 @@
   lib,
   ...
 }: let
-  riverctl = "${pkgs.river}/bin/riverctl";
   rivertile = "${pkgs.river}/bin/rivertile";
 
   c = config.colorscheme.palette;
-
-  modifier = keys:
-    with lib;
-      if length keys < 1
-      then "None"
-      else (concatStringsSep "+" keys);
-  bind = modkeys: key: command: "${modifier modkeys} ${key} ${command}";
-  exec = modkeys: key: command: ''${modifier modkeys} ${key} spawn "${command}"'';
-
-  nmap = binding: "${riverctl} map normal ${binding}";
-  lmap = binding: "${riverctl} map locked ${binding}";
-  pmap = binding: "${riverctl} map-pointer normal ${binding}";
 
   # How is this not in the standard lib?
   pow = n: i:
@@ -68,130 +55,153 @@ in {
     wlr-randr
   ];
 
-  wayland.windowManager.river = {
+  wayland.windowManager.river = let
+    bind = modkeys: key: command: {
+      name = "${
+        if builtins.length modkeys != 0
+        then lib.concatStringsSep "+" modkeys
+        else "None"
+      } ${key}";
+      value = command;
+    };
+    exec = modkeys: key: command: bind modkeys key ''spawn "${command}"'';
+  in {
     enable = true;
+    package = null;
+    settings = {
+      background-color = "0x${c.bg-bright}";
+      border-color-focused = "0x${c.magenta}";
+      border-color-unfocused = "0x${c.fg-dark}";
+      border-width = 2;
+      default-layout = "rivertile";
+      float-filter-add = "app-id Rofi";
+      set-repeat = "50 250";
+      map = {
+        normal = builtins.listToAttrs (lib.lists.flatten [
+          # General
+          (bind [mod] "q" "close")
+          (bind [mod ctrl alt] "q" "exit")
+          (bind [mod shift] "f" "toggle-float")
+          (bind [mod] "f" "toggle-fullscreen")
 
-    init = let
-      bindings = lib.lists.flatten [
-        # General
-        (nmap (bind [mod] "q" "close"))
-        (nmap (bind [mod ctrl alt] "q" "exit"))
-        (nmap (bind [mod shift] "f" "toggle-float"))
-        (nmap (bind [mod] "f" "toggle-fullscreen"))
+          # Views
+          (bind [mod alt] "h" "move left 100")
+          (bind [mod alt] "j" "move down 100")
+          (bind [mod alt] "k" "move up 100")
+          (bind [mod alt] "l" "move right 100")
+          (bind [mod alt ctrl] "h" "snap left")
+          (bind [mod alt ctrl] "j" "snap down")
+          (bind [mod alt ctrl] "k" "snap up")
+          (bind [mod alt ctrl] "l" "snap right")
+          (bind [mod alt shift] "h" "resize horizontal -100")
+          (bind [mod alt shift] "j" "resize vertical 100")
+          (bind [mod alt shift] "k" "resize vertical -100")
+          (bind [mod alt shift] "l" "resize horizontal 100")
+          (bind [mod] "j" "focus-view next")
+          (bind [mod] "k" "focus-view previous")
+          (bind [mod shift] "j" "swap next")
+          (bind [mod shift] "k" "swap previous")
+          (bind [mod] "t" "zoom")
 
-        # Views
-        (nmap (bind [mod alt] "h" "move left 100"))
-        (nmap (bind [mod alt] "j" "move down 100"))
-        (nmap (bind [mod alt] "k" "move up 100"))
-        (nmap (bind [mod alt] "l" "move right 100"))
-        (nmap (bind [mod alt ctrl] "h" "snap left"))
-        (nmap (bind [mod alt ctrl] "j" "snap down"))
-        (nmap (bind [mod alt ctrl] "k" "snap up"))
-        (nmap (bind [mod alt ctrl] "l" "snap right"))
-        (nmap (bind [mod alt shift] "h" "resize horizontal -100"))
-        (nmap (bind [mod alt shift] "j" "resize vertical 100"))
-        (nmap (bind [mod alt shift] "k" "resize vertical -100"))
-        (nmap (bind [mod alt shift] "l" "resize horizontal 100"))
-        (nmap (bind [mod] "j" "focus-view next"))
-        (nmap (bind [mod] "k" "focus-view previous"))
-        (nmap (bind [mod shift] "j" "swap next"))
-        (nmap (bind [mod shift] "k" "swap previous"))
-        (nmap (bind [mod] "t" "zoom"))
-        (pmap (bind [mod] "BTN_LEFT" "move-view"))
-        (pmap (bind [mod] "BTN_RIGHT" "resize-view"))
-        (pmap (bind [alt] "BTN_LEFT" "resize-view"))
+          # Tags
+          (let
+            i' = i: toString (pow 2 (i - 1));
+            range = lib.range 1 9;
+          in [
+            (map (i: (bind [mod] "${toString i}" "set-focused-tags ${i' i}")) range)
+            (map (i: (bind [mod shift] "${toString i}" "set-view-tags ${i' i}")) range)
+            (map (i: (bind [mod ctrl] "${toString i}" "toggle-focused-tags ${i' i}")) range)
+            (map (i: (bind [mod shift ctrl] "${toString i}" "set-view-tags ${i' i}")) range)
+          ])
+          (let
+            allTags = toString (pow 2 32);
+          in [
+            (bind [mod] "0" "set-focused-tags ${allTags}")
+            (bind [mod shift] "0" "set-view-tags ${allTags}")
+          ])
+          (bind [mod] "w" "focus-previous-tags")
+          (bind [mod shift] "w" "send-to-previous-tags")
 
-        # Tags
-        (let
-          i' = i: toString (pow 2 (i - 1));
-          range = lib.range 1 9;
-        in [
-          (map (i: (nmap (bind [mod] "${toString i}" "set-focused-tags ${i' i}"))) range)
-          (map (i: (nmap (bind [mod shift] "${toString i}" "set-view-tags ${i' i}"))) range)
-          (map (i: (nmap (bind [mod ctrl] "${toString i}" "toggle-focused-tags ${i' i}"))) range)
-          (map (i: (nmap (bind [mod shift ctrl] "${toString i}" "set-view-tags ${i' i}"))) range)
-        ])
-        (let
-          allTags = toString (pow 2 32);
-        in [
-          (nmap (bind [mod] "0" "set-focused-tags ${allTags}"))
-          (nmap (bind [mod shift] "0" "set-view-tags ${allTags}"))
-        ])
-        (nmap (bind [mod] "w" "focus-previous-tags"))
-        (nmap (bind [mod shift] "w" "send-to-previous-tags"))
+          # Outputs
+          (bind [mod] "Period" "focus-output next")
+          (bind [mod] "Comma" "focus-output previous")
+          (bind [mod shift] "Comma" "send-to-output previous")
+          (bind [mod shift] "Comma" "send-to-output previous")
 
-        # Outputs
-        (nmap (bind [mod] "Period" "focus-output next"))
-        (nmap (bind [mod] "Comma" "focus-output previous"))
-        (nmap (bind [mod shift] "Comma" "send-to-output previous"))
-        (nmap (bind [mod shift] "Comma" "send-to-output previous"))
+          # Tiling (with rivertile layout)
+          (let
+            rivertile = command: ''send-layout-cmd rivertile "${command}"'';
+          in [
+            (bind [mod shift] "h" (rivertile "main-ratio -0.05"))
+            (bind [mod shift] "l" (rivertile "main-ratio +0.05"))
+            (bind [mod ctrl] "h" (rivertile "main-count +1"))
+            (bind [mod ctrl] "l" (rivertile "main-count -1"))
+            (bind [mod] "Up" (rivertile "main-location top"))
+            (bind [mod] "Right" (rivertile "main-location right"))
+            (bind [mod] "Down" (rivertile "main-location bottom"))
+            (bind [mod] "Left" (rivertile "main-location left"))
+          ])
 
-        # Rivertile
-        (let
-          rivertile = command: ''send-layout-cmd rivertile "${command}"'';
-        in [
-          (nmap (bind [mod shift] "h" (rivertile "main-ratio -0.05")))
-          (nmap (bind [mod shift] "l" (rivertile "main-ratio +0.05")))
-          (nmap (bind [mod ctrl] "h" (rivertile "main-count +1")))
-          (nmap (bind [mod ctrl] "l" (rivertile "main-count -1")))
-          (nmap (bind [mod] "Up" (rivertile "main-location top")))
-          (nmap (bind [mod] "Right" (rivertile "main-location right")))
-          (nmap (bind [mod] "Down" (rivertile "main-location bottom")))
-          (nmap (bind [mod] "Left" (rivertile "main-location left")))
-        ])
+          # Commands
+          (exec [mod] return "${kitty}")
+          (exec [mod] "space" "rofi -show drun")
+          (exec [mod shift] return "rofi -show combi -combi-modi 'drun,window,run,ssh' -modi combi")
+          (exec [] "Print" "${screenshot}")
+          (exec [mod] "Print" "${screenshot} -s")
+          (exec [ctrl alt] "Delete" "rofi-power-menu")
+          (exec [mod] "l" "${waylockCommand}")
 
-        # Commands
-        (nmap (exec [mod] return "${kitty}"))
-        (nmap (exec [mod] "space" "rofi -show drun"))
-        (nmap (exec [mod shift] return "rofi -show combi -combi-modi 'drun,window,run,ssh' -modi combi"))
-        (nmap (exec [] "Print" "${screenshot}"))
-        (nmap (exec [mod] "Print" "${screenshot} -s"))
-        (nmap (exec [ctrl alt] "Delete" "rofi-power-menu"))
-        (nmap (exec [mod] "l" "${waylockCommand}"))
-
-        # Media buttons (also work in locked mode)
-        (map (f: [
-          (f (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
-          (f (exec [] "XF86AudioLowerVolume" ''${amixer} sset Master 5%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}''))
-          (f (exec [] "XF86AudioMute" ''${amixer} sset Master toggle | ${sed} -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > ${wobSocket}''))
-          (f (exec [] "XF86AudioMicMute" "${amixer} sset Capture toggle"))
-          (f (exec [] "XF86AudioMedia" "${playerctl} play-pause"))
-          (f (exec [] "XF86AudioPlay" "${playerctl} play-pause"))
-          (f (exec [] "XF86AudioPrev" "${playerctl} previous"))
-          (f (exec [] "XF86AudioNext" "${playerctl} next"))
-          (f (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}"))
-          (f (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}"))
-          (f (exec [] "XF86Calculator" "rofi -modi calc -show calc"))
-        ]) [nmap lmap])
-      ];
-    in ''
-      ${riverctl} background-color 0x${c.bg-bright}
-      ${riverctl} border-color-focused 0x${c.magenta}
-      ${riverctl} border-color-unfocused 0x${c.fg-dark}
+          (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
+          (exec [] "XF86AudioLowerVolume" ''${amixer} sset Master 5%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
+          (exec [] "XF86AudioMute" ''${amixer} sset Master toggle | ${sed} -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > ${wobSocket}'')
+          (exec [] "XF86AudioMicMute" "${amixer} sset Capture toggle")
+          (exec [] "XF86AudioMedia" "${playerctl} play-pause")
+          (exec [] "XF86AudioPlay" "${playerctl} play-pause")
+          (exec [] "XF86AudioPrev" "${playerctl} previous")
+          (exec [] "XF86AudioNext" "${playerctl} next")
+          (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
+          (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
+          (exec [] "XF86Calculator" "rofi -modi calc -show calc")
+        ]);
+        locked = builtins.listToAttrs [
+          (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
+          (exec [] "XF86AudioLowerVolume" ''${amixer} sset Master 5%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
+          (exec [] "XF86AudioMute" ''${amixer} sset Master toggle | ${sed} -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > ${wobSocket}'')
+          (exec [] "XF86AudioMicMute" "${amixer} sset Capture toggle")
+          (exec [] "XF86AudioMedia" "${playerctl} play-pause")
+          (exec [] "XF86AudioPlay" "${playerctl} play-pause")
+          (exec [] "XF86AudioPrev" "${playerctl} previous")
+          (exec [] "XF86AudioNext" "${playerctl} next")
+          (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
+          (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
+          (exec [] "XF86Calculator" "rofi -modi calc -show calc")
+        ];
+      };
+      map-pointer = {
+        normal = builtins.listToAttrs [
+          (bind [mod] "BTN_LEFT" "move-view")
+          (bind [mod] "BTN_RIGHT" "resize-view")
+          (bind [alt] "BTN_LEFT" "resize-view")
+        ];
+      };
+    };
+    extraConfig = ''
+      ${rivertile} -view-padding 10 -outer-padding 10 &
 
       export XDG_CURRENT_DESKTOP=river
       dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
       systemctl --user import-environment DISPLAY WAYLAND_DISPLAY PATH XDG_CURRENT_DESKTOP
       systemctl --user restart graphical-session.target
-      systemctl --user restart wob.socket
-
-      ${lib.concatStringsSep "\n" bindings}
-
-      ${riverctl} set-repeat 50 250
-
-      ${riverctl} float-filter-add app-id Rofi
-
-      ${riverctl} spawn "${pkgs.dex}/bin/dex -a -s $HOME/.config/autostart/"
-
-      ${riverctl} default-layout rivertile
-      ${rivertile} -view-padding 10 -outer-padding 10
     '';
+    # There are problems with the automatically configured
+    # systemd service, so for now I'll use my own config
+    # to import the proper variables into systemd.
+    systemd.enable = false;
   };
 
   systemd.user.services.river-wallpaper = {
     Unit = {
       PartOf = ["graphical-session.target"];
-      After = ["graphical-session-pre.target"];
       Description = "Set wallpaper";
       ConditionPathExistsGlob = ["%t/wayland-*"];
     };
