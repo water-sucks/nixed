@@ -7,6 +7,7 @@ local servers = {
   "bashls",
   "ccls",
   "cssls",
+  "denols",
   "efm",
   "elixirls",
   "emmet_ls",
@@ -177,6 +178,10 @@ local server_configs = {
       client.settings.dart.lineLength = tonumber(vim.b.editorconfig.max_line_length) or 80
     end,
   },
+  denols = {
+    root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
+    single_file_support = false,
+  },
   elixirls = {
     cmd = { "elixir-ls" },
     dialyzerEnabled = false,
@@ -222,6 +227,10 @@ local server_configs = {
       on_attach(client, bufnr)
       client.server_capabilities.semanticTokensProvider = nil
     end,
+  },
+  tsserver = {
+    root_dir = lsp.util.root_pattern("package.json"),
+    single_file_support = false,
   },
   efm = {
     init_options = { documentFormatting = true },
