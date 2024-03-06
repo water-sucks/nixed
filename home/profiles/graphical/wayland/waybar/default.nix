@@ -4,12 +4,6 @@
   lib,
   ...
 }: let
-  waybar-mpris-pkg = pkgs.waybar-mpris.overrideAttrs (_: {
-    patches = [
-      ./waybar-mpris-icons.patch
-    ];
-  });
-
   sed = "${pkgs.gnused}/bin/sed";
   rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
@@ -19,7 +13,7 @@
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
-  waybarMpris = "${waybar-mpris-pkg}/bin/waybar-mpris";
+  playerctl = "${pkgs.playerctl}/bin/playerctl";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   getAppname = "${pkgs.get-appname}/bin/get-appname";
@@ -51,7 +45,7 @@ in {
         position = "top";
         height = 36;
         spacing = 8;
-        modules-left = ["custom/active-window" "custom/waybar-mpris"];
+        modules-left = ["custom/active-window" "custom/media"];
         modules-center = ["clock"];
         modules-right = [
           "battery"
@@ -144,12 +138,18 @@ in {
           exec = "${activeWindowAppName}";
           format = "{}";
         };
-        "custom/waybar-mpris" = {
+        "custom/media" = {
+          format = "{icon}{}";
           return-type = "json";
-          max-length = 150;
-          exec = ''${waybarMpris} --order "SYMBOL:ARTIST:TITLE:POSITION" --position'';
-          on-click = "${waybarMpris} --send toggle";
-          escape = true;
+          format-icons = {
+            Playing = "󰐊 ";
+            Paused = "󰏤 ";
+          };
+          max-length = 70;
+          exec = ''
+            ${playerctl} -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}} ({{ duration(position) }}/{{ duration(mpris:length) }})", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}'
+          '';
+          on-click = "${playerctl} play-pause";
         };
         "custom/dunst" = {
           format = "Δ";
