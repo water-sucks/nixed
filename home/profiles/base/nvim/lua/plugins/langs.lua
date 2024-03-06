@@ -153,7 +153,7 @@ jdtls_spec.config = function()
   local start = function()
     jdtls.start_or_attach({
       cmd = {
-        "jdt-language-server",
+        "jdtls",
         "-noverify",
         "-data",
         workspace_folder,
