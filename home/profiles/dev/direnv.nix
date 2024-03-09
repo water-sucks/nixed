@@ -8,13 +8,12 @@ lib.mkMerge [
   {
     programs.direnv = {
       enable = true;
+      config = {
+        hide_env_diff = true;
+      };
       nix-direnv = {
         enable = true;
       };
-    };
-
-    home.sessionVariables = {
-      DIRENV_HIDE_DIFF = 1;
     };
   }
   (lib.mkIf pkgs.stdenv.isLinux {
