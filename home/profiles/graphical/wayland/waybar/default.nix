@@ -149,6 +149,7 @@ in {
           exec = ''
             ${playerctl} -a metadata --format '{"text": "{{artist}} - {{markup_escape(title)}} ({{ duration(position) }}/{{ duration(mpris:length) }})", "tooltip": "{{playerName}} : {{markup_escape(title)}}", "alt": "{{status}}", "class": "{{status}}"}'
           '';
+          interval = 1;
           on-click = "${playerctl} play-pause";
         };
         "custom/dunst" = {
