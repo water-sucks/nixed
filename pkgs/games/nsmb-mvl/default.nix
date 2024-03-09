@@ -11,6 +11,7 @@
   udev,
   vulkan-loader,
   zlib,
+  libpulseaudio,
 }: let
   desktopItem = makeDesktopItem {
     name = "nsmb-mvl";
@@ -32,6 +33,7 @@ in
       alsa-lib
       dbus.lib
       libglvnd
+      libpulseaudio
       udev
       vulkan-loader
       zlib
@@ -50,11 +52,12 @@ in
 
     postFixup = ''
       patchelf \
-        --add-needed libasound.so.2 \
-        --add-needed libdbus-1.so.3 \
-        --add-needed libGL.so.1 \
-        --add-needed libudev.so.1 \
-        --add-needed libvulkan.so.1 \
+        --add-needed libasound.so \
+        --add-needed libpulse-simple.so \
+        --add-needed libdbus-1.so \
+        --add-needed libGL.so \
+        --add-needed libudev.so \
+        --add-needed libvulkan.so \
         $out/bin/nsmb-mvl
     '';
 
