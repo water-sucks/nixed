@@ -23,6 +23,10 @@ in {
         programs.git = {
           userEmail = "varun@snare.dev";
           userName = "Varun Narravula";
+          signing = {
+            key = "A1F17E43F6747FC0";
+            signByDefault = true;
+          };
         };
         programs.ssh.githubAccounts = {
           "water-sucks" = {email = "varun@snare.dev";};
