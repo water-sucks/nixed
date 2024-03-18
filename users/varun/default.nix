@@ -31,6 +31,12 @@ in {
         home.sessionVariables = lib.mkIf isLinux {
           NIXOS_CONFIG = "$HOME/.nixed"; # For `nixos-cli`
         };
+        programs.gpg.publicKeys = [
+          {
+            source = ./pgp.asc;
+            trust = 5;
+          }
+        ];
       }
       {
         profiles = {
