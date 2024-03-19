@@ -30,7 +30,6 @@ in {
         };
         programs.ssh.githubAccounts = {
           "water-sucks" = {email = "varun@snare.dev";};
-          "varun-sal" = {email = "varun@saltandlight.community";};
         };
         home.sessionVariables = lib.mkIf isLinux {
           NIXOS_CONFIG = "$HOME/.nixed"; # For `nixos-cli`
