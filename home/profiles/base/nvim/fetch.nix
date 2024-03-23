@@ -123,6 +123,7 @@ in
     # Debugging
     (plugin "mfussenegger" "nvim-dap")
     (plugin "rcarriga" "nvim-dap-ui")
+    (plugin "nvim-neotest" "nvim-nio")
     (plugin "theHamsta" "nvim-dap-virtual-text")
     (plugin "jbyuki" "one-small-step-for-vimkind")
     (plugin "leoluz" "nvim-dap-go")

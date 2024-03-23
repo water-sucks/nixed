@@ -9,7 +9,10 @@ local dap_spec = use("mfussenegger/nvim-dap", {
 
 local dapui_spec = use("rcarriga/nvim-dap-ui", {
   event = "VeryLazy",
-  dependencies = { use("mfussenegger/nvim-dap") },
+  dependencies = {
+    use("mfussenegger/nvim-dap"),
+    use("nvim-neotest/nvim-nio"),
+  },
   config = function()
     require("plugins.dap.ui")
   end,
