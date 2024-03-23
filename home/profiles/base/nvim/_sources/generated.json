@@ -1143,6 +1143,28 @@
     },
     "version": "24662f92c18edd397ef12d635b11dbdedef2d094"
   },
+  "plugin-nvim-nio": {
+    "cargoLocks": null,
+    "date": "2024-03-22",
+    "extract": null,
+    "name": "plugin-nvim-nio",
+    "passthru": {
+      "pretty-name": "nvim-nio"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "nvim-neotest",
+      "repo": "nvim-nio",
+      "rev": "33c62b3eadd8154169e42144de16ba4db6784bec",
+      "sha256": "sha256-MHCrUisx3blgHWFyA5IHcSwKvC1tK1Pgy/jADBkoXX0=",
+      "type": "github"
+    },
+    "version": "33c62b3eadd8154169e42144de16ba4db6784bec"
+  },
   "plugin-nvim-tetris": {
     "cargoLocks": null,
     "date": "2021-06-28",

@@ -681,6 +681,19 @@
     pretty-name = "nvim-lspconfig";
     date = "2024-03-22";
   };
+  plugin-nvim-nio = {
+    pname = "plugin-nvim-nio";
+    version = "33c62b3eadd8154169e42144de16ba4db6784bec";
+    src = fetchFromGitHub {
+      owner = "nvim-neotest";
+      repo = "nvim-nio";
+      rev = "33c62b3eadd8154169e42144de16ba4db6784bec";
+      fetchSubmodules = false;
+      sha256 = "sha256-MHCrUisx3blgHWFyA5IHcSwKvC1tK1Pgy/jADBkoXX0=";
+    };
+    pretty-name = "nvim-nio";
+    date = "2024-03-22";
+  };
   plugin-nvim-tetris = {
     pname = "plugin-nvim-tetris";
     version = "d17c99fb527ada98ffb0212ffc87ccda6fd4f7d9";
