@@ -27,13 +27,13 @@
   };
   java-debug = {
     pname = "java-debug";
-    version = "0.51.1";
+    version = "0.52.0";
     src = fetchFromGitHub {
       owner = "microsoft";
       repo = "java-debug";
-      rev = "0.51.1";
+      rev = "0.52.0";
       fetchSubmodules = false;
-      sha256 = "sha256-GGyRNGnPBRrZ/o/VyQItNpxxSdiEwCE1Kmqg2XX4Ew0=";
+      sha256 = "sha256-1RAzbR1EK1dDzx2bDzZwzFZXCIISnil2NxigBSCp0Ls=";
     };
   };
   nsmb-mvl = {
@@ -62,9 +62,9 @@
   };
   vics-mvlo = {
     pname = "vics-mvlo";
-    version = "v17.0.10-mini";
+    version = "v17.0.10";
     src = fetchurl {
-      url = "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.10-mini/linux-vcmi.zip";
+      url = "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.10/linux-vcmi.zip";
       sha256 = "sha256-QGIM+Qz3iaL3O24ZZJFx7UEACMHJedZC5m6WO3zhFoY=";
     };
   };
