@@ -27,7 +27,6 @@ lib.mkMerge [
             ChallengeResponseAuthentication = "no";
             PasswordAuthentication = "yes";
             StrictHostKeyChecking = "ask";
-            VerifyHostKeyDNS = "yes";
             VisualHostKey = "yes";
           };
         };
