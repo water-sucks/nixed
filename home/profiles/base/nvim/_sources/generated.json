@@ -793,7 +793,7 @@
   },
   "plugin-neorg": {
     "cargoLocks": null,
-    "date": "2024-04-04",
+    "date": null,
     "extract": null,
     "name": "plugin-neorg",
     "passthru": {
@@ -807,11 +807,11 @@
       "name": null,
       "owner": "nvim-neorg",
       "repo": "neorg",
-      "rev": "6ffe7093eb54650d3f479c882dd6fa4a2492ddbf",
-      "sha256": "sha256-pQbJHlWSlhROzLaUKWw8uSuaLsayJcrrdLFg4BZapNg=",
+      "rev": "v7.0.0",
+      "sha256": "sha256-Q5V3ru+fgPYS3OxN5jDMh+4Vi9eJOuq5cC/kJ6neJ3I=",
       "type": "github"
     },
-    "version": "6ffe7093eb54650d3f479c882dd6fa4a2492ddbf"
+    "version": "v7.0.0"
   },
   "plugin-neorg-telescope": {
     "cargoLocks": null,

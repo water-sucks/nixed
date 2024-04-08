@@ -112,7 +112,7 @@ in
     # Special Neovim sauce
     (plugin "andweeb" "presence.nvim")
     (plugin "alec-gibson" "nvim-tetris")
-    (plugin "nvim-neorg" "neorg")
+    (fetch "nvim-neorg" "neorg" {rev = "v7.0.0";})
     (plugin "nvim-neorg" "neorg-telescope")
     (plugin "folke" "which-key.nvim")
     (plugin "ahmedkhalf" "project.nvim")

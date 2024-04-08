@@ -475,16 +475,15 @@
   };
   plugin-neorg = {
     pname = "plugin-neorg";
-    version = "6ffe7093eb54650d3f479c882dd6fa4a2492ddbf";
+    version = "v7.0.0";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "neorg";
-      rev = "6ffe7093eb54650d3f479c882dd6fa4a2492ddbf";
+      rev = "v7.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-pQbJHlWSlhROzLaUKWw8uSuaLsayJcrrdLFg4BZapNg=";
+      sha256 = "sha256-Q5V3ru+fgPYS3OxN5jDMh+4Vi9eJOuq5cC/kJ6neJ3I=";
     };
     pretty-name = "neorg";
-    date = "2024-04-04";
   };
   plugin-neorg-telescope = {
     pname = "plugin-neorg-telescope";
