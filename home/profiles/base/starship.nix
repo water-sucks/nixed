@@ -16,12 +16,12 @@ in {
         full_symbol = "󰁹";
       };
       character = {
-        error_symbol = "[➜](bold #${c.magenta})";
-        success_symbol = "[➜](bold #${c.orange})";
-        vimcmd_symbol = "[󱦱](bold #${c.red})";
-        vimcmd_replace_one_symbol = "[1󱦱](bold #${c.red})";
-        vimcmd_replace_symbol = "[r󱦱](bold #${c.red})";
-        vimcmd_visual_symbol = "[󰍉󱦱](bold #${c.red})";
+        error_symbol = "[](bold #${c.magenta})";
+        success_symbol = "[](bold #${c.orange})";
+        vimcmd_symbol = "[](bold #${c.red})";
+        vimcmd_replace_one_symbol = "[1](bold #${c.red})";
+        vimcmd_replace_symbol = "[r](bold #${c.red})";
+        vimcmd_visual_symbol = "[󰍉](bold #${c.red})";
       };
       cmd_duration = {
         min_time = 1000;
