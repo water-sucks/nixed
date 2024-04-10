@@ -20,7 +20,7 @@ in
       # since it isn't supported in HM
       home.file.".gnupg/gpg-agent.conf".text = ''
         grab
-        pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
+        pinentry-program ${pkgs.pinentry-curses}/bin/pinentry-curses
       '';
     })
     (lib.mkIf isLinux {
