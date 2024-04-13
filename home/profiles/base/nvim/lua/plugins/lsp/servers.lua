@@ -4,6 +4,7 @@ local on_attach = require("plugins.lsp.on_attach")
 -- Rust/Flutter/LTeX are configured in
 -- their respective plugins.
 local servers = {
+  "astro",
   "bashls",
   "ccls",
   "cssls",
@@ -249,6 +250,7 @@ local server_configs = {
     settings = {
       rootMarkers = { ".git/" },
       languages = {
+        astro = { efm_sources.formatters.prettier },
         asm = { efm_sources.formatters.asmfmt },
         c = { efm_sources.diagnostics.cppcheck },
         cpp = { efm_sources.diagnostics.cppcheck },

@@ -102,6 +102,7 @@ in
           ltex-ls
           lua-language-server
           nil
+          nodePackages."@astrojs/language-server"
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
           nodePackages.svelte-language-server
