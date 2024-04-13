@@ -70,12 +70,6 @@ local efm_sources = {
   },
 
   diagnostics = {
-    alex = {
-      lintCommand = "alex --stdin",
-      lintFormats = { "%r%l:%c-%r %terror %m", "%r%l:%c-%r %tarning %m" },
-      lintStdin = true,
-      prefix = "alex",
-    },
     chktex = {
       lintCommand = "chktex -v0 -q",
       lintFormats = { "%f:%l:%c:%m" },
@@ -267,7 +261,6 @@ local server_configs = {
         less = { efm_sources.formatters.prettier },
         lua = { efm_sources.formatters.stylua },
         markdown = {
-          efm_sources.diagnostics.alex,
           efm_sources.diagnostics.markdownlint,
           efm_sources.formatters.prettier,
         },

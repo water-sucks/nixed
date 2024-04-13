@@ -123,7 +123,6 @@ in
           efm-langserver
           gitlint
           gofumpt
-          nodePackages.alex
           nodePackages.prettier
           python3Packages.flake8
           shellcheck

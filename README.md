@@ -62,8 +62,6 @@ machines. Let's see the lineup!
 \* To all the people going "um, akshually, it's Las Vegas!", I don't want to hear
 it! The Autumn Wind is a Raider no matter the location ;}
 
-<!--alex disable he-she her-him gals-man damn beast -->
-
 ### DerekCarr
 
 - Type: Home workstation
