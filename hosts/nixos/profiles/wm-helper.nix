@@ -8,20 +8,22 @@
 
   # Theming helpers
   programs.dconf.enable = true;
-  services.dbus.packages = with pkgs; [dconf];
 
-  services.xserver = {
-    enable = true;
-    videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
-    xkb.layout = "us";
-
-    libinput.enable = true;
-
-    desktopManager.xterm.enable = false;
+  services = {
+    dbus.packages = with pkgs; [dconf];
 
     displayManager.sessionPackages = with pkgs; [river];
     displayManager.defaultSession = "river";
-    windowManager.leftwm.enable = true;
+
+    xserver = {
+      enable = true;
+      videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
+      xkb.layout = "us";
+
+      libinput.enable = true;
+      desktopManager.xterm.enable = false;
+      windowManager.leftwm.enable = true;
+    };
   };
 
   # Allow for user sessions to start the graphical session target in their init scripts
