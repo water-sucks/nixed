@@ -71,10 +71,15 @@ in {
     settings = {
       background-color = "0x${c.bg-bright}";
       border-color-focused = "0x${c.magenta}";
-      border-color-unfocused = "0x${c.fg-dark}";
+      border-color-unfocused = "0x00000000"; # Remove border color for unfocused windows
       border-width = 2;
       default-layout = "rivertile";
-      float-filter-add = "app-id Rofi";
+      rule-add = {
+        "-app-id" = {
+          "Rofi" = "float";
+          "firefox" = "ssd";
+        };
+      };
       set-repeat = "50 250";
       map = {
         normal = builtins.listToAttrs (lib.lists.flatten [
