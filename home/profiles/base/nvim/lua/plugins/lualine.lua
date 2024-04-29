@@ -77,7 +77,7 @@ lualine_spec.config = function()
 
   left({
     function()
-      return ""
+      return ""
     end,
     color = function()
       local mode_color = {
