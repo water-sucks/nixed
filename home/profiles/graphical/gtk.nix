@@ -41,6 +41,6 @@
   # Force qt to mimic configured gtk theme
   qt = {
     enable = true;
-    platformTheme = "gtk3";
+    platformTheme.name = "gtk3";
   };
 }
