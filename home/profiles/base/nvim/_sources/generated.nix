@@ -460,6 +460,19 @@
     pretty-name = "mini.surround";
     date = "2024-04-13";
   };
+  plugin-neocord = {
+    pname = "plugin-neocord";
+    version = "aa7a58023166533da83ca7b11c0d2569e45d7381";
+    src = fetchFromGitHub {
+      owner = "IogaMaster";
+      repo = "neocord";
+      rev = "aa7a58023166533da83ca7b11c0d2569e45d7381";
+      fetchSubmodules = false;
+      sha256 = "sha256-oVWdnQlgXIMzMiybMq7yR/WfEW+Fm5RmhWx0RWprlfQ=";
+    };
+    pretty-name = "neocord";
+    date = "2024-04-24";
+  };
   plugin-neodev-nvim = {
     pname = "plugin-neodev-nvim";
     version = "ce9a2e8eaba5649b553529c5498acb43a6c317cd";
@@ -822,19 +835,6 @@
     };
     pretty-name = "plenary.nvim";
     date = "2024-03-25";
-  };
-  plugin-presence-nvim = {
-    pname = "plugin-presence-nvim";
-    version = "87c857a56b7703f976d3a5ef15967d80508df6e6";
-    src = fetchFromGitHub {
-      owner = "andweeb";
-      repo = "presence.nvim";
-      rev = "87c857a56b7703f976d3a5ef15967d80508df6e6";
-      fetchSubmodules = false;
-      sha256 = "sha256-ZpsunLsn//zYgUtmAm5FqKVueVd/Pa1r55ZDqxCimBk=";
-    };
-    pretty-name = "presence.nvim";
-    date = "2023-01-29";
   };
   plugin-project-nvim = {
     pname = "plugin-project-nvim";

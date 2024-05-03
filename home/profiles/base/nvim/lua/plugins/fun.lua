@@ -69,10 +69,12 @@ local duck_spec = use("tamton-aquib/duck.nvim", {
   end,
 })
 
-local presence_spec = use("andweeb/presence.nvim", {
+local neocord_spec = use("IogaMaster/neocord", {
   event = "VeryLazy",
   config = function()
-    require("presence"):setup({})
+    require("neocord").setup({
+      global_timer = true,
+    })
   end,
 })
 
@@ -82,6 +84,6 @@ local tetris_spec = use("alec-gibson/nvim-tetris", {
 
 return {
   duck_spec,
-  presence_spec,
+  neocord_spec,
   tetris_spec,
 }

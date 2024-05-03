@@ -769,6 +769,28 @@
     },
     "version": "d035934958e2605048ee1378ce47cf799f7071d4"
   },
+  "plugin-neocord": {
+    "cargoLocks": null,
+    "date": "2024-04-24",
+    "extract": null,
+    "name": "plugin-neocord",
+    "passthru": {
+      "pretty-name": "neocord"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "IogaMaster",
+      "repo": "neocord",
+      "rev": "aa7a58023166533da83ca7b11c0d2569e45d7381",
+      "sha256": "sha256-oVWdnQlgXIMzMiybMq7yR/WfEW+Fm5RmhWx0RWprlfQ=",
+      "type": "github"
+    },
+    "version": "aa7a58023166533da83ca7b11c0d2569e45d7381"
+  },
   "plugin-neodev-nvim": {
     "cargoLocks": null,
     "date": "2024-03-29",
@@ -1384,28 +1406,6 @@
       "type": "github"
     },
     "version": "8aad4396840be7fc42896e3011751b7609ca4119"
-  },
-  "plugin-presence-nvim": {
-    "cargoLocks": null,
-    "date": "2023-01-29",
-    "extract": null,
-    "name": "plugin-presence-nvim",
-    "passthru": {
-      "pretty-name": "presence.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "andweeb",
-      "repo": "presence.nvim",
-      "rev": "87c857a56b7703f976d3a5ef15967d80508df6e6",
-      "sha256": "sha256-ZpsunLsn//zYgUtmAm5FqKVueVd/Pa1r55ZDqxCimBk=",
-      "type": "github"
-    },
-    "version": "87c857a56b7703f976d3a5ef15967d80508df6e6"
   },
   "plugin-project-nvim": {
     "cargoLocks": null,
