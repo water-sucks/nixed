@@ -27,6 +27,8 @@
     nix-colors.url = "github:Misterio77/nix-colors";
 
     treefmt.url = "github:numtide/treefmt-nix";
+
+    zls.url = "github:zigtools/zls/0.12.0";
   };
 
   outputs = {

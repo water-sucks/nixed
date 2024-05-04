@@ -77,6 +77,8 @@
       plugins);
 
   prisma-ls = pkgs.nodePackages."@prisma/language-server";
+
+  zlsPkg = inputs.zls.packages.${pkgs.system}.zls;
 in
   lib.mkMerge [
     {
@@ -112,6 +114,7 @@ in
           ruff-lsp
           stable.nodePackages.vscode-langservers-extracted
           typst-lsp
+          zlsPkg
 
           # efm-langserver sources
           alejandra
