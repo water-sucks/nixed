@@ -15,12 +15,13 @@
     displayManager.sessionPackages = with pkgs; [river];
     displayManager.defaultSession = "river";
 
+    libinput.enable = true;
+
     xserver = {
       enable = true;
       videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
       xkb.layout = "us";
 
-      libinput.enable = true;
       desktopManager.xterm.enable = false;
       windowManager.leftwm.enable = true;
     };
