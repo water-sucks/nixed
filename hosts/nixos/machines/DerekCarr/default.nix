@@ -28,6 +28,8 @@
     android.enable = true;
     kvm.enable = true;
     ios.enable = true;
+
+    steam.enable = true;
   };
 
   users = {
