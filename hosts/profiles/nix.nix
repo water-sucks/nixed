@@ -7,6 +7,7 @@
   inherit (pkgs.stdenv) isDarwin isLinux;
 in {
   nix = {
+    package = pkgs.nixVersions.latest;
     # Run GC every Sunday at 10:00 AM
     gc =
       {
@@ -54,7 +55,6 @@ in {
         "flakes"
         "nix-command"
         "recursive-nix"
-        "repl-flake"
       ];
     in ''
       experimental-features = ${experimentalFeatures}
