@@ -345,16 +345,16 @@
   };
   plugin-indent-blankline-nvim = {
     pname = "plugin-indent-blankline-nvim";
-    version = "171d4d5a1560ccb556e94aa6df7e969068384049";
+    version = "ece00d5fb44d196680a81fd2761062d2fa44663b";
     src = fetchFromGitHub {
       owner = "lukas-reineke";
       repo = "indent-blankline.nvim";
-      rev = "171d4d5a1560ccb556e94aa6df7e969068384049";
+      rev = "ece00d5fb44d196680a81fd2761062d2fa44663b";
       fetchSubmodules = false;
-      sha256 = "sha256-xAlgrlcwwO2Z2iqGweRyvaa43mhVbIpYWXeIvmfi7nE=";
+      sha256 = "sha256-qlFoZ/GDsbnIhMoT+esNxheC3I9guxiV2DQYlY9kcMM=";
     };
     pretty-name = "indent-blankline.nvim";
-    date = "2024-05-17";
+    date = "2024-05-18";
   };
   plugin-lazy-nvim = {
     pname = "plugin-lazy-nvim";

@@ -573,7 +573,7 @@
   },
   "plugin-indent-blankline-nvim": {
     "cargoLocks": null,
-    "date": "2024-05-17",
+    "date": "2024-05-18",
     "extract": null,
     "name": "plugin-indent-blankline-nvim",
     "passthru": {
@@ -587,11 +587,11 @@
       "name": null,
       "owner": "lukas-reineke",
       "repo": "indent-blankline.nvim",
-      "rev": "171d4d5a1560ccb556e94aa6df7e969068384049",
-      "sha256": "sha256-xAlgrlcwwO2Z2iqGweRyvaa43mhVbIpYWXeIvmfi7nE=",
+      "rev": "ece00d5fb44d196680a81fd2761062d2fa44663b",
+      "sha256": "sha256-qlFoZ/GDsbnIhMoT+esNxheC3I9guxiV2DQYlY9kcMM=",
       "type": "github"
     },
-    "version": "171d4d5a1560ccb556e94aa6df7e969068384049"
+    "version": "ece00d5fb44d196680a81fd2761062d2fa44663b"
   },
   "plugin-lazy-nvim": {
     "cargoLocks": null,
