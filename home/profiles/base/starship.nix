@@ -7,6 +7,7 @@ in {
     enableZshIntegration = true;
 
     settings = {
+      command_timeout = 100;
       aws = {
         symbol = " ";
       };
