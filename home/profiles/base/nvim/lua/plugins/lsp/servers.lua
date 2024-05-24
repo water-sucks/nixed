@@ -24,6 +24,7 @@ local servers = {
   "pyright",
   "ruff_lsp",
   "r_language_server",
+  "sqls",
   "svelte",
   "tsserver",
   "typst_lsp",
@@ -62,6 +63,7 @@ local efm_sources = {
     },
     shfmt = { formatCommand = "shfmt -filename ${INPUT} -", formatStdin = true },
     shellharden = { formatCommand = "shellharden --transform ''", formatStdin = true },
+    sleek = { formatCommand = "sleek -i 2", formatStdin = true },
     stylua = {
       formatCanRange = true,
       formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
@@ -275,6 +277,7 @@ local server_configs = {
           efm_sources.formatters.shfmt,
           efm_sources.formatters.shellharden,
         },
+        sql = { efm_sources.formatters.sleek },
         tex = {
           efm_sources.diagnostics.chktex,
           efm_sources.formatters.latexindent,

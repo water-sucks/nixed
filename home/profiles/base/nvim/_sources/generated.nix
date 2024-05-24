@@ -513,16 +513,16 @@
   };
   plugin-noice-nvim = {
     pname = "plugin-noice-nvim";
-    version = "4a691f630c75966397f7a67c6860c03ae5da643f";
+    version = "f119045f38792ad5311e5f9be7a879e4c1a95fe0";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "noice.nvim";
-      rev = "4a691f630c75966397f7a67c6860c03ae5da643f";
+      rev = "f119045f38792ad5311e5f9be7a879e4c1a95fe0";
       fetchSubmodules = false;
-      sha256 = "sha256-8Ehhyv0rC+qGe3JXBdaNlhHIl7/jVOyNN+2h31gW4Zo=";
+      sha256 = "sha256-GrgFjVDIQcCfg5qyO6FnhlGUCrz6rwAFh81yZXUJra4=";
     };
     pretty-name = "noice.nvim";
-    date = "2024-05-18";
+    date = "2024-05-24";
   };
   plugin-nui-nvim = {
     pname = "plugin-nui-nvim";

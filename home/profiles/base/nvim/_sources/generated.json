@@ -859,7 +859,7 @@
   },
   "plugin-noice-nvim": {
     "cargoLocks": null,
-    "date": "2024-05-18",
+    "date": "2024-05-24",
     "extract": null,
     "name": "plugin-noice-nvim",
     "passthru": {
@@ -873,11 +873,11 @@
       "name": null,
       "owner": "folke",
       "repo": "noice.nvim",
-      "rev": "4a691f630c75966397f7a67c6860c03ae5da643f",
-      "sha256": "sha256-8Ehhyv0rC+qGe3JXBdaNlhHIl7/jVOyNN+2h31gW4Zo=",
+      "rev": "f119045f38792ad5311e5f9be7a879e4c1a95fe0",
+      "sha256": "sha256-GrgFjVDIQcCfg5qyO6FnhlGUCrz6rwAFh81yZXUJra4=",
       "type": "github"
     },
-    "version": "4a691f630c75966397f7a67c6860c03ae5da643f"
+    "version": "f119045f38792ad5311e5f9be7a879e4c1a95fe0"
   },
   "plugin-nui-nvim": {
     "cargoLocks": null,

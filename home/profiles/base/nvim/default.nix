@@ -110,6 +110,7 @@ in
           prisma-ls
           pyright
           ruff-lsp
+          sqls
           stable.nodePackages.vscode-langservers-extracted
           typst-lsp
           zls
@@ -130,6 +131,7 @@ in
           shellharden
           shfmt
           statix
+          sleek
           stylua
 
           # DAP servers
@@ -172,6 +174,7 @@ in
           ".local/state/nvim"
           ".local/share/eclipse"
           ".cache/nvim"
+          ".config/sqls"
         ];
       };
     })
