@@ -10,10 +10,12 @@
 
       nvfetcherConfigs = import ./nixago/nvfetcher.nix {inherit pkgs;};
       lefthookConfig = import ./nixago/lefthook.nix {inherit config pkgs;};
+      statixConfig = import ./nixago/statix.nix;
       nixagoConfigs =
         nvfetcherConfigs
         ++ [
           lefthookConfig
+          statixConfig
         ];
     in {
       default = pkgs.mkShellNoCC {

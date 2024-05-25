@@ -4,6 +4,7 @@ result
 
 # nixago: ignore-linked-files
 /lefthook.yml
+/statix.toml
 /pkgs/nvfetcher.toml
 /home/profiles/base/zsh/nvfetcher.toml
 /home/profiles/base/nvim/nvfetcher.toml
