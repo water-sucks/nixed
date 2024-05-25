@@ -15,6 +15,8 @@ in {
     };
 
     aliases = {
+      cns = "-c commit.gpgsign=false commit";
+
       lgs = "log --stat";
 
       rst = "restore";
