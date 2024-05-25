@@ -69,6 +69,7 @@ local efm_sources = {
       formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
       formatStdin = true,
     },
+    zigfmt = { formatCommand = "zig fmt --stdin", formatStdin = true },
   },
 
   diagnostics = {
@@ -229,6 +230,15 @@ local server_configs = {
     root_dir = lsp.util.root_pattern("package.json"),
     single_file_support = false,
   },
+  zls = {
+    on_attach = function(client, bufnr)
+      on_attach(client, bufnr)
+      -- Disabling automatic LSP formatter in favor of manually configured
+      -- EFM provider for `zig fmt`
+      client.server_capabilities.documentFormattingProvider = nil
+      client.server_capabilities.documentRangeFormattingProvider = nil
+    end,
+  },
   efm = {
     init_options = { documentFormatting = true },
     on_attach = function(client, bufnr)
@@ -286,6 +296,7 @@ local server_configs = {
         typescriptreact = { efm_sources.formatters.prettier },
         vue = { efm_sources.formatters.prettier },
         yaml = { efm_sources.formatters.prettier },
+        zig = { efm_sources.formatters.zigfmt },
         ["="] = { efm_sources.diagnostics.editorconfig_checker },
       },
     },
