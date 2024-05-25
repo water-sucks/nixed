@@ -22,12 +22,11 @@ with lib; let
     };
   };
 
-  sshConfigBlock = username: properties: {
-    "github.com-${username}" = {
+  sshMatchBlock = {
+    "github.com" = {
       hostname = "github.com";
       user = "git";
-      identityFile = "~/.ssh/github_${username}";
-      match = ''host github.com exec "[[ $(git config user.email) = ${properties.email} ]]" '';
+      identityFile = map (username: "~/.ssh/github_${username}") (builtins.attrNames cfg);
     };
   };
 in {
@@ -38,7 +37,7 @@ in {
   };
 
   config = mkIf (cfg != {}) {
-    programs.ssh.matchBlocks = mkMerge (mapAttrsToList sshConfigBlock cfg);
+    programs.ssh.matchBlocks = sshMatchBlock;
 
     home.activation.generateSshKeys = let
       generateSshStub = username: properties: let
