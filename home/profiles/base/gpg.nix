@@ -22,6 +22,9 @@ in
         grab
         pinentry-program ${pkgs.pinentry-curses}/bin/pinentry-curses
       '';
+      programs.zsh.initExtra = ''
+        export GPG_TTY="$(tty)"
+      '';
     })
     (lib.mkIf isLinux {
       home.persistence.${config.persistence.directory} = {
