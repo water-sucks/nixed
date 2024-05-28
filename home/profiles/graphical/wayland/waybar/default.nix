@@ -5,7 +5,7 @@
   ...
 }: let
   sed = "${pkgs.gnused}/bin/sed";
-  rofi = "${pkgs.rofi}/bin/rofi";
+  rofi = "${pkgs.rofi-wayland}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
   kitty = "${pkgs.kitty}/bin/kitty";
   termLaunch = "${kitty} -e";
@@ -188,7 +188,7 @@ in {
         };
         "custom/powermenu" = {
           format = "󰐥";
-          on-click = "rofi-power-menu";
+          on-click = "rofi-power-menu-wayland";
         };
       };
     };

@@ -30,6 +30,7 @@
   slurp = "${pkgs.slurp}/bin/slurp";
   grim = "${pkgs.grim}/bin/grim";
   dunstify = "${pkgs.dunst}/bin/dunstify";
+  rofi = "${pkgs.rofi-wayland}/bin/rofi";
   swayidle = "${pkgs.swayidle}/bin/swayidle";
   waylockWrapper =
     pkgs.writeShellScriptBin "waylock"
@@ -149,11 +150,11 @@ in {
 
           # Commands
           (exec [mod] return "${kitty}")
-          (exec [mod] "space" "rofi -show drun")
-          (exec [mod shift] return "rofi -show combi -combi-modi 'drun,window,run,ssh' -modi combi")
+          (exec [mod] "space" "${rofi} -show drun")
+          (exec [mod shift] return "${rofi} -show combi -combi-modi 'drun,window,run,ssh' -modi combi")
           (exec [] "Print" "${screenshot}")
           (exec [mod] "Print" "${screenshot} -s")
-          (exec [ctrl alt] "Delete" "rofi-power-menu")
+          (exec [ctrl alt] "Delete" "rofi-power-menu-wayland")
           (exec [mod] "l" "${waylockCommand}")
 
           (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
@@ -166,7 +167,7 @@ in {
           (exec [] "XF86AudioNext" "${playerctl} next")
           (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
           (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
-          (exec [] "XF86Calculator" "rofi -modi calc -show calc")
+          (exec [] "XF86Calculator" "${rofi} -modi calc -show calc")
         ]);
         locked = builtins.listToAttrs [
           (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
@@ -179,7 +180,7 @@ in {
           (exec [] "XF86AudioNext" "${playerctl} next")
           (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
           (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
-          (exec [] "XF86Calculator" "rofi -modi calc -show calc")
+          (exec [] "XF86Calculator" "${rofi} -modi calc -show calc")
         ];
       };
       map-pointer = {
