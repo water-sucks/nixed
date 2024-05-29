@@ -14,7 +14,14 @@ lib.mkIf pkgs.stdenv.isLinux {
     directories = [
       ".config/unity3d/ipodtouch0218/NSMB-MarioVsLuigi"
       ".config/unity3d/vlco_o/NSMBVersus_ vic's Custom Match-inator"
-      ".steam"
+      {
+        directory = ".steam";
+        method = "symlink";
+      }
+      {
+        directory = ".local/share/Steam";
+        method = "symlink";
+      }
     ];
   };
 }
