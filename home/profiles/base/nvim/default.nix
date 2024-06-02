@@ -66,6 +66,9 @@
       "fidget.nvim" = generatedPlugins."fidget.nvim".overrideAttrs (_: {
         patches = [./fidget.patch];
       });
+      "luarocks.nvim" = generatedPlugins."luarocks.nvim".overrideAttrs (_: {
+        patches = [./luarocks-nvim.patch];
+      });
       tree-sitter-just = buildPlugin "tree-sitter-just" sources.tree-sitter-just;
     };
 
@@ -136,6 +139,11 @@ in
 
           # DAP servers
           delve
+
+          # Neorg dependencies
+          gnumake
+          luajit
+          unzip
         ];
       };
 
@@ -173,6 +181,7 @@ in
         directories = [
           ".local/state/nvim"
           ".local/share/eclipse"
+          ".local/share/luarocks.nvim-rocks"
           ".cache/nvim"
           ".config/sqls"
         ];

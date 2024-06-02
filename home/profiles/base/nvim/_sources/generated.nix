@@ -421,6 +421,19 @@
     pretty-name = "lualine.nvim";
     date = "2024-04-05";
   };
+  plugin-luarocks-nvim = {
+    pname = "plugin-luarocks-nvim";
+    version = "1db9093915eb16ba2473cfb8d343ace5ee04130a";
+    src = fetchFromGitHub {
+      owner = "vhyrro";
+      repo = "luarocks.nvim";
+      rev = "1db9093915eb16ba2473cfb8d343ace5ee04130a";
+      fetchSubmodules = false;
+      sha256 = "sha256-siqpyQLpxWYfZKxoPrflnCg8V5oTQcIXKrezjCgZfMM=";
+    };
+    pretty-name = "luarocks.nvim";
+    date = "2024-05-28";
+  };
   plugin-luasnip-latex-snippets-nvim = {
     pname = "plugin-luasnip-latex-snippets-nvim";
     version = "4b91f28d91979f61a3e8aef1cee5b7c7f2c7beb8";
@@ -488,15 +501,16 @@
   };
   plugin-neorg = {
     pname = "plugin-neorg";
-    version = "v7.0.0";
+    version = "b17a33ede3ff91de614c735c1617bf9dc61372d5";
     src = fetchFromGitHub {
       owner = "nvim-neorg";
       repo = "neorg";
-      rev = "v7.0.0";
+      rev = "b17a33ede3ff91de614c735c1617bf9dc61372d5";
       fetchSubmodules = false;
-      sha256 = "sha256-Q5V3ru+fgPYS3OxN5jDMh+4Vi9eJOuq5cC/kJ6neJ3I=";
+      sha256 = "sha256-RXiPzLN/1Lwi4W1bfTh50nDe8hgF1C4VIob4H7omMJU=";
     };
     pretty-name = "neorg";
+    date = "2024-05-31";
   };
   plugin-neorg-telescope = {
     pname = "plugin-neorg-telescope";

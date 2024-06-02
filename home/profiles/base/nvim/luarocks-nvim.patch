@@ -1,0 +1,13 @@
+diff --git a/lua/luarocks-nvim/paths.lua b/lua/luarocks-nvim/paths.lua
+index fa10bc8..33a9774 100644
+--- a/lua/luarocks-nvim/paths.lua
++++ b/lua/luarocks-nvim/paths.lua
+@@ -1,7 +1,7 @@
+ local utils = require("luarocks-nvim.utils")
+ 
+ local plugin_path = utils.get_plugin_path()
+-local rocks_path = utils.combine_paths(plugin_path, ".rocks")
++local rocks_path = utils.combine_paths(vim.fn.stdpath("data"), "luarocks.nvim-rocks")
+ local lib_extension = utils.is_win() and "?.dll" or "?.so"
+ 
+ return {

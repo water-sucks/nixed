@@ -1,6 +1,14 @@
+local luarocks_spec = use("vhyrro/luarocks.nvim", {
+  priority = 1000,
+  config = true,
+})
+
 local neorg_spec = use("nvim-neorg/neorg", {
-  dependencies = { use("nvim-neorg/neorg-telescope") },
-  ft = "norg",
+  dependencies = {
+    use("vhyrro/luarocks.nvim"),
+    use("nvim-neorg/neorg-telescope"),
+  },
+  lazy = false,
 })
 
 neorg_spec.config = function()
@@ -220,5 +228,6 @@ neorg_spec.config = function()
 end
 
 return {
+  luarocks_spec,
   neorg_spec,
 }

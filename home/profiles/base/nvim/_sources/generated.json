@@ -703,6 +703,28 @@
     },
     "version": "0a5a66803c7407767b799067986b4dc3036e1983"
   },
+  "plugin-luarocks-nvim": {
+    "cargoLocks": null,
+    "date": "2024-05-28",
+    "extract": null,
+    "name": "plugin-luarocks-nvim",
+    "passthru": {
+      "pretty-name": "luarocks.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "vhyrro",
+      "repo": "luarocks.nvim",
+      "rev": "1db9093915eb16ba2473cfb8d343ace5ee04130a",
+      "sha256": "sha256-siqpyQLpxWYfZKxoPrflnCg8V5oTQcIXKrezjCgZfMM=",
+      "type": "github"
+    },
+    "version": "1db9093915eb16ba2473cfb8d343ace5ee04130a"
+  },
   "plugin-luasnip-latex-snippets-nvim": {
     "cargoLocks": null,
     "date": "2024-05-09",
@@ -815,7 +837,7 @@
   },
   "plugin-neorg": {
     "cargoLocks": null,
-    "date": null,
+    "date": "2024-05-31",
     "extract": null,
     "name": "plugin-neorg",
     "passthru": {
@@ -829,11 +851,11 @@
       "name": null,
       "owner": "nvim-neorg",
       "repo": "neorg",
-      "rev": "v7.0.0",
-      "sha256": "sha256-Q5V3ru+fgPYS3OxN5jDMh+4Vi9eJOuq5cC/kJ6neJ3I=",
+      "rev": "b17a33ede3ff91de614c735c1617bf9dc61372d5",
+      "sha256": "sha256-RXiPzLN/1Lwi4W1bfTh50nDe8hgF1C4VIob4H7omMJU=",
       "type": "github"
     },
-    "version": "v7.0.0"
+    "version": "b17a33ede3ff91de614c735c1617bf9dc61372d5"
   },
   "plugin-neorg-telescope": {
     "cargoLocks": null,

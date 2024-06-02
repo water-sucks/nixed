@@ -112,7 +112,8 @@ in
     # Special Neovim sauce
     (plugin "IogaMaster" "neocord")
     (plugin "alec-gibson" "nvim-tetris")
-    (fetch "nvim-neorg" "neorg" {rev = "v7.0.0";})
+    (plugin "nvim-neorg" "neorg")
+    (plugin "vhyrro" "luarocks.nvim")
     (plugin "nvim-neorg" "neorg-telescope")
     (plugin "folke" "which-key.nvim")
     (plugin "ahmedkhalf" "project.nvim")
