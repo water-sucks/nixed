@@ -114,7 +114,7 @@ in
           pyright
           ruff-lsp
           sqls
-          stable.nodePackages.vscode-langservers-extracted
+          nodePackages.vscode-langservers-extracted
           typst-lsp
           zls
 

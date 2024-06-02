@@ -2,7 +2,7 @@
   inherit (pkgs.stdenv) isDarwin;
 in {
   home.packages = [
-    pkgs.stable.pynitrokey
+    pkgs.pynitrokey
   ];
 
   programs.zsh.initExtra = ''
