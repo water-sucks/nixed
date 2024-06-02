@@ -25,6 +25,7 @@
     bluetooth.enable = true;
     i18n.enable = true;
     avahi.enable = true;
+    printers.enable = true;
 
     android.enable = true;
     kvm.enable = true;
