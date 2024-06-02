@@ -56,7 +56,7 @@ neorg_spec.config = function()
       ["core.export"] = {},
       ["core.journal"] = {
         config = {
-          journal_folder = "Journal",
+          journal_folder = ".",
           strategy = "nested",
         },
       },
