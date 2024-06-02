@@ -24,6 +24,7 @@
     sound.enable = true;
     bluetooth.enable = true;
     i18n.enable = true;
+    avahi.enable = true;
 
     android.enable = true;
     kvm.enable = true;
