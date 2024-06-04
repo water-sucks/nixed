@@ -625,11 +625,11 @@
         "zignix": "zignix"
       },
       "locked": {
-        "lastModified": 1716605103,
-        "narHash": "sha256-mb/6nvNdqdaKdtEjv4zRI6JMi+rlFkXAuirjK0Ku8ts=",
+        "lastModified": 1717484837,
+        "narHash": "sha256-B3qR9wgq9TzivEcjKCihkh5Xgk1I+GbBa2wG6nNFiDQ=",
         "owner": "water-sucks",
         "repo": "nixos",
-        "rev": "c6296876ed63c95239c04b8755daf1b7d1b55aae",
+        "rev": "1691cf757b134feee7eb8b9855d380431500cd51",
         "type": "github"
       },
       "original": {
