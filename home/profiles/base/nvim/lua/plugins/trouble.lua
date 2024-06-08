@@ -8,8 +8,8 @@ trouble_spec.config = function()
   require("which-key").register({
     x = {
       name = "Trouble",
-      x = { "<cmd>TroubleToggle<CR>", "Toggle diagnostics" },
-      q = { "<cmd>TroubleToggle quickfix<CR>", "Toggle quickfixes" },
+      x = { "<cmd>Trouble diagnostics toggle<CR>", "Toggle diagnostics" },
+      q = { "<cmd>TroubleToggle quickfix toggle<CR>", "Toggle quickfixes" },
     },
   }, {
     prefix = "<Leader>",
