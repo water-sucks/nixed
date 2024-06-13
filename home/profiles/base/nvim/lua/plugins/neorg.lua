@@ -3,10 +3,22 @@ local luarocks_spec = use("vhyrro/luarocks.nvim", {
   config = true,
 })
 
+local file_exists_and_is_empty = function(filepath)
+  local file = io.open(filepath, "r")
+  if file ~= nil then
+    local content = file:read("*all")
+    file:close()
+    return content == ""
+  else
+    return false
+  end
+end
+
 local neorg_spec = use("nvim-neorg/neorg", {
   dependencies = {
     use("vhyrro/luarocks.nvim"),
     use("nvim-neorg/neorg-telescope"),
+    use("pysan3/neorg-templates", { dependencies = { use("L3MON4D3/LuaSnip") } }),
   },
   lazy = false,
 })
@@ -16,6 +28,7 @@ neorg_spec.config = function()
 
   local neorg = require("neorg")
   local config = require("neorg.core.config")
+  local notes_dir = vim.env.HOME .. "/Documents/Notes"
 
   neorg.setup({
     load = {
@@ -24,12 +37,11 @@ neorg_spec.config = function()
       ["core.dirman"] = {
         config = {
           workspaces = {
-            general = "~/Documents/Notes/General",
-            schedule = "~/Documents/Notes/Schedule",
-            reflections = "~/Documents/Notes/Reflections",
-            music = "~/Documents/Notes/Music",
-            coffee = "~/Documents/Notes/Coffee",
-            programming = "~/Documents/Notes/Programming",
+            general = notes_dir .. "/General",
+            schedule = notes_dir .. "/Schedule",
+            reflections = notes_dir .. "/Reflections",
+            music = notes_dir .. "/Music",
+            programming = notes_dir .. "/Programming",
           },
           autochdir = true,
           index = "index.norg",
@@ -223,7 +235,40 @@ neorg_spec.config = function()
           zen_mode = "zen-mode",
         },
       },
+      ["external.templates"] = {
+        config = {
+          default_subcommand = "fload",
+          keywords = {
+            TODAY_NAME = function()
+              return require("luasnip").insert_node(1, os.date([[%B %d, %Y]]))
+            end,
+            NEORG_VERSION = function()
+              return require("luasnip").insert_node(1, config.version)
+            end,
+          },
+          snippets_overwrite = {
+            AUTHOR = "Varun Narravula",
+          },
+        },
+      },
     },
+  })
+
+  vim.api.nvim_create_autocmd({ "BufNew", "BufNewFile" }, {
+    callback = function(args)
+      local toc = "index.norg"
+
+      vim.schedule(function()
+        if vim.fn.fnamemodify(args.file, ":t") == toc then
+          return
+        end
+        if args.event == "BufNewFile" or (args.event == "BufNew" and file_exists_and_is_empty(args.file)) then
+          vim.api.nvim_cmd({ cmd = "Neorg", args = { "templates", "fload", "schedule" } }, {})
+        end
+      end)
+    end,
+    desc = "Load new schedule entries with Neorg template",
+    pattern = notes_dir .. "/Schedule/????/??/??.norg",
   })
 end
 

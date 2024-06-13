@@ -151,6 +151,7 @@ in
         "nvim/init.lua".source = ./init.lua;
         "nvim/lua".source = ./lua;
         "nvim/parser".source = "${parserDir}";
+        "nvim/templates".source = ./templates;
       };
 
       xdg.dataFile = lib.mkMerge [

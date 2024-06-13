@@ -525,6 +525,19 @@
     pretty-name = "neorg-telescope";
     date = "2024-06-05";
   };
+  plugin-neorg-templates = {
+    pname = "plugin-neorg-templates";
+    version = "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f";
+    src = fetchFromGitHub {
+      owner = "pysan3";
+      repo = "neorg-templates";
+      rev = "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f";
+      fetchSubmodules = false;
+      sha256 = "sha256-nZOAxXSHTUDBpUBS/Esq5HHwEaTB01dI7x5CQFB3pcw=";
+    };
+    pretty-name = "neorg-templates";
+    date = "2024-02-11";
+  };
   plugin-noice-nvim = {
     pname = "plugin-noice-nvim";
     version = "e5cb20c6e14305d24025ecb77d7d4dd9d61f1a64";

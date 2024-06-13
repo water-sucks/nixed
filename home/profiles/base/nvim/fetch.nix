@@ -115,6 +115,7 @@ in
     (plugin "nvim-neorg" "neorg")
     (plugin "vhyrro" "luarocks.nvim")
     (plugin "nvim-neorg" "neorg-telescope")
+    (plugin "pysan3" "neorg-templates")
     (plugin "folke" "which-key.nvim")
     (plugin "ahmedkhalf" "project.nvim")
     (plugin "tamton-aquib" "duck.nvim")

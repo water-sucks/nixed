@@ -879,6 +879,28 @@
     },
     "version": "329ee31b8d92f252d880d8f607089eb89a1640b8"
   },
+  "plugin-neorg-templates": {
+    "cargoLocks": null,
+    "date": "2024-02-11",
+    "extract": null,
+    "name": "plugin-neorg-templates",
+    "passthru": {
+      "pretty-name": "neorg-templates"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "pysan3",
+      "repo": "neorg-templates",
+      "rev": "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f",
+      "sha256": "sha256-nZOAxXSHTUDBpUBS/Esq5HHwEaTB01dI7x5CQFB3pcw=",
+      "type": "github"
+    },
+    "version": "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f"
+  },
   "plugin-noice-nvim": {
     "cargoLocks": null,
     "date": "2024-06-07",
