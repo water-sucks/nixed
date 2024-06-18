@@ -116,7 +116,7 @@ in
           sqls
           nodePackages.vscode-langservers-extracted
           typst-lsp
-          zls
+          inputs.zls.packages.${pkgs.system}.zls
 
           # efm-langserver sources
           alejandra
