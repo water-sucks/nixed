@@ -643,11 +643,11 @@
         "zignix": "zignix"
       },
       "locked": {
-        "lastModified": 1718678577,
-        "narHash": "sha256-6ahKbfemBb3lt9KjO0gewQHVadrpmPsiUDTQugPAlwc=",
+        "lastModified": 1718740528,
+        "narHash": "sha256-GN72WnVtUMPj7t+Vb57xhXxJ9lD3EuswJfpoYQQOKzE=",
         "owner": "water-sucks",
         "repo": "nixos",
-        "rev": "e31379653e378ccdfe0fee35d9a883e5ac5bbaa9",
+        "rev": "1f9b3b91adc0252420c7eed3d253a7d214e2db7e",
         "type": "github"
       },
       "original": {
