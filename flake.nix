@@ -16,7 +16,6 @@
     impermanence.url = "github:nix-community/impermanence";
 
     nixos-cli.url = "github:water-sucks/nixos";
-    nixos-cli.inputs.nixpkgs.follows = "nixpkgs";
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
