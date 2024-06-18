@@ -1,16 +1,14 @@
-{pkgs, ...}: {
-  fonts = let
-    packages-key = "${
-      if pkgs.stdenv.isDarwin
-      then "fonts"
-      else "packages"
-    }";
-  in {
-    ${packages-key} = with pkgs; [
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  fonts = {
+    packages = with pkgs; [
       ibm-plex
       (nerdfonts.override {fonts = ["IBMPlexMono"];})
       font-awesome
     ];
-    fontDir.enable = true;
+    fontDir.enable = lib.mkIf (!pkgs.stdenv.isDarwin) true;
   };
 }
