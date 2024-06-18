@@ -9,6 +9,7 @@
     boot.enable = true;
     systemd.enable = true;
     caches.enable = true;
+    internet.enable = true;
     ssh.enable = true;
     pam.enable = true;
     sudo.enable = true;
@@ -24,7 +25,6 @@
     sound.enable = true;
     bluetooth.enable = true;
     i18n.enable = true;
-    avahi.enable = true;
     printers.enable = true;
 
     android.enable = true;

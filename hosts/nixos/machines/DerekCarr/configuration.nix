@@ -9,22 +9,7 @@
 
   time.timeZone = "America/Los_Angeles";
 
-  networking = {
-    nameservers = [
-      "9.9.9.9"
-      "9.9.9.10"
-      "9.9.9.11"
-      "2620:fe::9"
-      "2620:fe::10"
-      "2620:fe::11"
-    ];
-    hostId = "8e004b0f";
-    useDHCP = false;
-    networkmanager = {
-      enable = true;
-      dns = "none";
-    };
-  };
+  networking.hostId = "8e004b0f";
 
   i18n.defaultLocale = "en_US.UTF-8";
 

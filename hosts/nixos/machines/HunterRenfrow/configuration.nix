@@ -9,23 +9,7 @@
 
   time.timeZone = "America/Los_Angeles";
 
-  networking = {
-    hostId = "7effc63b";
-    useDHCP = false;
-    usePredictableInterfaceNames = false;
-    networkmanager = {
-      enable = true;
-      dns = "default";
-      appendNameservers = [
-        "9.9.9.9"
-        "9.9.9.10"
-        "9.9.9.11"
-        "2620:fe::9"
-        "2620:fe::10"
-        "2620:fe::11"
-      ];
-    };
-  };
+  networking.hostId = "7effc63b";
 
   xdg.portal.wlr.settings.screencast.output_name = "eDP-1";
 
