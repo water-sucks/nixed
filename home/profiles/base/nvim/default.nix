@@ -182,7 +182,7 @@ in
         directories = [
           ".local/state/nvim"
           ".local/share/eclipse"
-          ".local/share/luarocks.nvim-rocks"
+          ".local/share/nvim/luarocks.nvim-rocks"
           ".cache/nvim"
           ".config/sqls"
         ];
