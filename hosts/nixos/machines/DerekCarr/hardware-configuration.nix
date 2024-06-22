@@ -6,20 +6,6 @@
     loader.grub = {
       default = "saved";
       gfxmodeEfi = "2560x1440";
-      extraEntriesBeforeNixOS = true;
-      extraEntries = ''
-        menuentry "Windows 10" --class windows --class os {
-          search --no-floppy --set=root --fs-uuid 860D-8749
-          chainloader /efi/Microsoft/Boot/bootmgfw.efi
-          boot
-        }
-
-        menuentry "macOS Ventura" --class macos --class os {
-          search --no-floppy --set=root --fs-uuid 860D-8749
-          chainloader /efi/oc/bootx64.efi
-          boot
-        }
-      '';
     };
 
     initrd = {
