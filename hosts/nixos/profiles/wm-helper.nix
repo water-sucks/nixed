@@ -1,9 +1,7 @@
 {pkgs, ...}: {
   # Graphics support
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
   };
 
   # Theming helpers
