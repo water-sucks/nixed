@@ -1,4 +1,5 @@
-# Nixed
+<h1 align="center">nixed</h1>
+<h6 align="center">I've spent too much time on this.</h6>
 
 ```raw
 d8b   db d888888b db    db d88888b d8888b.
@@ -62,7 +63,7 @@ machines. Let's see the lineup!
 \* To all the people going "um, akshually, it's Las Vegas!", I don't want to hear
 it! The Autumn Wind is a Raider no matter the location ;}
 
-### DerekCarr
+### CharlesWoodson
 
 - Type: Home workstation
 - Operating system: NixOS
@@ -70,28 +71,19 @@ it! The Autumn Wind is a Raider no matter the location ;}
   - AMD Ryzen 9 3950X (16 cores, 3.8 GHz OC)
   - G.SKILL Trident RGB (64 GB DDR4-3600)
   - AMD Radeon RX 5500 XT
-  - Sabrent Rocket 4.0 x2 (1 TB, 2 TB)
+  - Sabrent Rocket 4.0 (1 TB)
 
 My daily driver workstation; it's served me well throughout the years, and
-doesn't take too much power, even when overclocked.
+doesn't take too much power, even when overclocked. What a legend.
 
-### HunterRenfrow
+### SebastianJanikowski
 
-- Type: Primary laptop
+- Type: Personal laptop
 - Operating system: NixOS
 - Model: Lenovo IdeaPad Flex 5
 
-My primary laptop; I take it everywhere, it's very mobile (quite a lot like its
-namesake!).
-
-### CharlesWoodson
-
-- Type: Home workstation (for Apple-specific stuff)
-- Operating system: macOS (with nix-darwin)
-- Specs: (same as DerekCarr)
-
-Hackintosh nix-darwin setup that is dual-booted with DerekCarr; primarily used
-for iOS development and to run other Apple-exclusive software.
+My primary laptop; I take it everywhere, it's very mobile and can kick many
+workloads quite far (a lot like its namesake!).
 
 ### TimBrown
 
@@ -99,18 +91,8 @@ for iOS development and to run other Apple-exclusive software.
 - Operating system: macOS (with nix-darwin)
 - Model: MacBook M3 Pro 2023 (18 GB)
 
-A legit MacBook that is a beast. Used for music production on-the-go with
-Logic Pro X and mobile app development.
-
-### SebastianJanikowski
-
-- Type: Work laptop
-- Operating system: macOS (with nix-darwin)
-- Model: MacBook Pro 2017 (base model)
-
-A legit MacBook, but sadly declining; it's hot enough to cook some bacon on. I
-rarely use it anymore unless I need access to an Apple environment and can't
-use CharlesWoodson.
+A legit MacBook that is a beast on the run. Used for music production on-the-go
+with Logic Pro X and mobile app development.
 
 More to come in the future, such as Bo Jackson. Stay tuned!
 

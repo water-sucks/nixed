@@ -45,8 +45,8 @@
 in {
   flake = {
     nixosConfigurations = with generatedHosts; {
-      DerekCarr = DerekCarr {};
-      HunterRenfrow = HunterRenfrow {};
+      CharlesWoodson = CharlesWoodson {};
+      SebastianJanikowski = SebastianJanikowski {};
     };
 
     nixosModules = let

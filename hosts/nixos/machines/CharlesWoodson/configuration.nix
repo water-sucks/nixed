@@ -19,11 +19,11 @@
   # anyway so this workaround is fine, no need to be perfect.
   age = {
     identityPaths = ["/persist/etc/ssh/ssh_host_rsa_key" "/persist/etc/ssh/ssh_host_ed25519_key"];
-    secrets.varun-user-DerekCarr.file = ../../../../secrets/varun-user-DerekCarr.age;
-    secrets.root-user-DerekCarr.file = ../../../../secrets/root-user-DerekCarr.age;
+    secrets.varun-user-CharlesWoodson.file = ../../../../secrets/varun-user-CharlesWoodson.age;
+    secrets.root-user-CharlesWoodson.file = ../../../../secrets/root-user-CharlesWoodson.age;
   };
-  users.users.varun.hashedPasswordFile = "${config.age.secrets.varun-user-DerekCarr.path}";
-  users.users.root.hashedPasswordFile = "${config.age.secrets.root-user-DerekCarr.path}";
+  users.users.varun.hashedPasswordFile = "${config.age.secrets.varun-user-CharlesWoodson.path}";
+  users.users.root.hashedPasswordFile = "${config.age.secrets.root-user-CharlesWoodson.path}";
 
   environment.persistence."/persist" = {
     hideMounts = true;

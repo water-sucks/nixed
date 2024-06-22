@@ -17,11 +17,11 @@
   # anyway so this workaround is fine, no need to be perfect.
   age.identityPaths = ["/persist/etc/ssh/ssh_host_rsa_key" "/persist/etc/ssh/ssh_host_ed25519_key"];
 
-  age.secrets.varun-user-HunterRenfrow.file = ../../../../secrets/varun-user-HunterRenfrow.age;
-  users.users.varun.hashedPasswordFile = "${config.age.secrets.varun-user-HunterRenfrow.path}";
+  age.secrets.varun-user-SebastianJanikowski.file = ../../../../secrets/varun-user-SebastianJanikowski.age;
+  users.users.varun.hashedPasswordFile = "${config.age.secrets.varun-user-SebastianJanikowski.path}";
 
-  age.secrets.root-user-HunterRenfrow.file = ../../../../secrets/root-user-HunterRenfrow.age;
-  users.users.root.hashedPasswordFile = "${config.age.secrets.root-user-HunterRenfrow.path}";
+  age.secrets.root-user-SebastianJanikowski.file = ../../../../secrets/root-user-SebastianJanikowski.age;
+  users.users.root.hashedPasswordFile = "${config.age.secrets.root-user-SebastianJanikowski.path}";
 
   environment.persistence."/persist" = {
     hideMounts = true;
