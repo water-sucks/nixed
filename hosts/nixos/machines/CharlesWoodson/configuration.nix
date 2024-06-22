@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+{config, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -41,17 +37,6 @@
       "/etc/machine-id"
     ];
   };
-
-  home-manager.sharedModules = [
-    {
-      services.polybar.config = {
-        "module/wlan".interface = lib.mkForce "wlp6s0";
-      };
-    }
-    {
-      programs.waybar.settings.topbar.network.interface = "wlp6s0";
-    }
-  ];
 
   services.earlyoom.enable = true;
 
