@@ -1,9 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
-  treefmt = "${config.treefmt.build.wrapper}/bin/treefmt";
+{pkgs, ...}: let
+  treefmt = "${pkgs.treefmt}/bin/treefmt";
 
   lefthookConfig = {
     colors = false;

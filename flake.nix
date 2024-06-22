@@ -25,8 +25,6 @@
 
     nix-colors.url = "github:Misterio77/nix-colors";
 
-    treefmt.url = "github:numtide/treefmt-nix";
-
     zls.url = "github:zigtools/zls";
   };
 
@@ -39,11 +37,8 @@
     lib = import ./lib inputs;
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = with inputs; [
-        treefmt.flakeModule
-
+      imports = [
         ./modules/shell.nix
-        ./modules/treefmt.nix
         ./modules/nvfetcher.nix
         ./modules/ssh-keys.nix
 

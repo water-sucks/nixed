@@ -3,6 +3,7 @@ result
 .pre-commit-config.yaml
 
 # nixago: ignore-linked-files
+/treefmt.toml
 /lefthook.yml
 /statix.toml
 /pkgs/nvfetcher.toml
@@ -10,3 +11,4 @@ result
 /home/profiles/base/nvim/nvfetcher.toml
 /home/profiles/apps/firefox/nvfetcher.toml
 /home/profiles/dev/git/nvfetcher.toml
+
