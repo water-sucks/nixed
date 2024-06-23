@@ -22,14 +22,11 @@
         jq
         lsd
         lsof
-        manix
         moreutils
         nix-index
         neovim
         nmap
         ripgrep
-        skim
-        tealdeer
         tokei
         tree
         zoxide

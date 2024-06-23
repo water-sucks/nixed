@@ -7,7 +7,7 @@
   inherit (pkgs.stdenv) isDarwin isLinux;
 in {
   nix = {
-    package = pkgs.nixVersions.latest;
+    package = lib.mkIf isLinux pkgs.nixVersions.latest;
     # Run GC every Sunday at 10:00 AM
     gc =
       {
@@ -37,7 +37,11 @@ in {
       allowed-users = ["*"];
       max-jobs = "auto";
       cores = 0;
-      auto-optimise-store = true;
+      auto-optimise-store = !isDarwin;
+      substituters = ["https://nix-community.cachix.org"];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
     };
     registry = {
       nixpkgs.flake = inputs.nixpkgs;

@@ -8,7 +8,6 @@
     core.enable = true;
     boot.enable = true;
     systemd.enable = true;
-    caches.enable = true;
     internet.enable = true;
     ssh.enable = true;
     pam.enable = true;
