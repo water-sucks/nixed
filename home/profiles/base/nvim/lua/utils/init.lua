@@ -10,10 +10,15 @@ _G.use = function(name, spec)
   -- This works around the automatic dev plugin functionality, and falls
   -- back properly to the Nix-generated version if it exists.
   if spec.dev then
+    spec.dev = nil
+
     local dev_plugin_dir = vim.env.HOME .. "/Code/NeovimPlugins/" .. plugin_name
-    if vim.fn.isdirectory(dev_plugin_dir) > 0 then
+    local dev_mode_marker = io.open(dev_plugin_dir .. "/.dev-mode")
+
+    if dev_mode_marker ~= nil then
+      dev_mode_marker:close()
+
       spec.dir = dev_plugin_dir
-      spec.dev = nil
       return spec
     end
   end
