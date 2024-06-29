@@ -19,3 +19,7 @@ map("n", "<A-p>", "<cmd><C-w><S-w>", { silent = true, noremap = true })
 
 -- Esc to exit terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
+
+-- Zz writes and removes a buffer
+map("n", "zx", "<cmd>w|bd<CR>", { noremap = true })
+map("n", "Zx", "<cmd>w|bd!<CR>", { noremap = true })
