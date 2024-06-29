@@ -77,7 +77,7 @@ in
     (plugin "Pocco81" "auto-save.nvim")
     (plugin "monaqa" "dial.nvim")
     (plugin "sQVe" "sort.nvim")
-    (plugin "booperlv" "nvim-gomove")
+    (plugin "echasnovski" "mini.move")
     (plugin "ggandor" "leap.nvim")
 
     # UNIX/Git commands

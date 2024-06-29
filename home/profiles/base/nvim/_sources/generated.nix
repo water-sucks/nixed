@@ -460,6 +460,19 @@
     pretty-name = "lush.nvim";
     date = "2024-04-18";
   };
+  plugin-mini-move = {
+    pname = "plugin-mini-move";
+    version = "0977d909000510b9d3c16981e16580b8433c8697";
+    src = fetchFromGitHub {
+      owner = "echasnovski";
+      repo = "mini.move";
+      rev = "0977d909000510b9d3c16981e16580b8433c8697";
+      fetchSubmodules = false;
+      sha256 = "sha256-WKI8/krLPG+Fu2yCAbeWgAmd3eNnr/bvZQYKEJZqUQU=";
+    };
+    pretty-name = "mini.move";
+    date = "2024-06-23";
+  };
   plugin-mini-surround = {
     pname = "plugin-mini-surround";
     version = "af280fc18792b4d142aab4c1638a8949a38ff33a";
@@ -667,19 +680,6 @@
     };
     pretty-name = "nvim-dap-virtual-text";
     date = "2024-05-22";
-  };
-  plugin-nvim-gomove = {
-    pname = "plugin-nvim-gomove";
-    version = "2b44ae7ac0804f4e3959228122f7c85bef1964e3";
-    src = fetchFromGitHub {
-      owner = "booperlv";
-      repo = "nvim-gomove";
-      rev = "2b44ae7ac0804f4e3959228122f7c85bef1964e3";
-      fetchSubmodules = false;
-      sha256 = "sha256-9YLJm/L13gTktb6VIkz2W/60cothFtF7feiKd26R5lo=";
-    };
-    pretty-name = "nvim-gomove";
-    date = "2022-07-19";
   };
   plugin-nvim-jdtls = {
     pname = "plugin-nvim-jdtls";

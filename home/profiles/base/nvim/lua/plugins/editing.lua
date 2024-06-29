@@ -113,38 +113,26 @@ dial_spec.config = function()
   })
 end
 
-local gomove_spec = use("booperlv/nvim-gomove", {
+local minimove = use("echasnovski/mini.move", {
   event = "VeryLazy",
 })
-gomove_spec.config = function()
-  local map = vim.keymap.set
+minimove.config = function()
+  require("mini.move").setup({
+    mappings = {
+      left = "H",
+      right = "L",
+      down = "J",
+      up = "K",
 
-  require("gomove").setup({
-    map_defaults = false,
-    reindent = true,
-    undojoin = true,
-    move_past_end_col = true,
+      line_left = "H",
+      line_right = "L",
+      line_down = "J",
+      line_up = "K",
+    },
+    options = {
+      reindent_linewise = true,
+    },
   })
-
-  map("n", "<S-h>", "<Plug>GoNSMLeft", {})
-  map("n", "<S-j>", "<Plug>GoNSMDown", {})
-  map("n", "<S-k>", "<Plug>GoNSMUp", {})
-  map("n", "<S-l>", "<Plug>GoNSMRight", {})
-
-  map("n", "<C-h>", "<Plug>GoNSDLeft", {})
-  map("n", "<C-j>", "<Plug>GoNSDDown", {})
-  map("n", "<C-k>", "<Plug>GoNSDUp", {})
-  map("n", "<C-l>", "<Plug>GoNSDRight", {})
-
-  map("x", "<S-h>", "<Plug>GoVSMLeft", {})
-  map("x", "<S-j>", "<Plug>GoVSMDown", {})
-  map("x", "<S-k>", "<Plug>GoVSMUp", {})
-  map("x", "<S-l>", "<Plug>GoVSMRight", {})
-
-  map("x", "<C-h>", "<Plug>GoVSDLeft", {})
-  map("x", "<C-j>", "<Plug>GoVSDDown", {})
-  map("x", "<C-k>", "<Plug>GoVSDUp", {})
-  map("x", "<C-l>", "<Plug>GoVSDRight", {})
 end
 
 local leap_spec = use("ggandor/leap.nvim", {
@@ -218,7 +206,7 @@ return {
   autopairs_spec,
   comment_spec,
   dial_spec,
-  gomove_spec,
+  minimove,
   leap_spec,
   repeat_spec,
   sort_spec,
