@@ -29,14 +29,14 @@ au("TermClose", {
 })
 
 -- Filetype-specific options
-vim.api.nvim_create_autocmd("FileType", {
+au("FileType", {
   pattern = "markdown",
   callback = function()
     vim.opt.colorcolumn = "80"
   end,
 })
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "neorg",
+au("FileType", {
+  pattern = "norg",
   callback = function()
     vim.opt.colorcolumn = "80"
   end,
