@@ -27,7 +27,7 @@ local on_attach = function(client, bufnr)
 
       o = { vim.diagnostic.open_float, "Show diagnostics for line" },
       j = { vim.diagnostic.goto_next, "Jump to next diagnostic" },
-      k = { vim.diagnostic.goto_prev, "Jump to last diagnostic " },
+      k = { vim.diagnostic.goto_prev, "Jump to last diagnostic" },
     },
   }
 

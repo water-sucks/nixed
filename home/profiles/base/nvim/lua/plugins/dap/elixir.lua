@@ -7,8 +7,6 @@ dap.adapters.mix_task = {
   args = {},
 }
 
-require("dap.ext.vscode").load_launchjs()
-
 -- I have to manually assign these to the Elixir debug config
 -- table after loading existing VSCode launch.json configs
 dap.configurations.elixir = dap.configurations.mix_task

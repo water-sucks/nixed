@@ -23,7 +23,7 @@ flutter_tools_spec.config = function()
           return { "dart", "language-server", "--protocol=lsp" }
         end
       end)(),
-      on_attach = require("plugins.lsp.on_attach"),
+      on_attach = on_attach,
       color = {
         enabled = false,
         background = false,
@@ -61,7 +61,6 @@ flutter_tools_spec.config = function()
           args = { "debug_adapter" },
         }
         dap.configurations.dart = {}
-        require("dap.ext.vscode").load_launchjs()
       end,
     },
   })
