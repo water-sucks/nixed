@@ -11,6 +11,9 @@ return {
             g = false,
           },
         },
+        icons = {
+          rules = false,
+        },
       })
     end,
   }),
