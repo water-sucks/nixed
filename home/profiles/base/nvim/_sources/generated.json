@@ -615,6 +615,28 @@
     },
     "version": "6e66f8e6550dd22467c11284e638dfccb5d514e4"
   },
+  "plugin-lazydev-nvim": {
+    "cargoLocks": null,
+    "date": "2024-07-14",
+    "extract": null,
+    "name": "plugin-lazydev-nvim",
+    "passthru": {
+      "pretty-name": "lazydev.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "folke",
+      "repo": "lazydev.nvim",
+      "rev": "a33be921553ba478743206161380edacfc25d69b",
+      "sha256": "sha256-th/wfvKGsEpkKau0DUhUpFc4WMMhSDZ/ISEHxH0IQ48=",
+      "type": "github"
+    },
+    "version": "a33be921553ba478743206161380edacfc25d69b"
+  },
   "plugin-leap-nvim": {
     "cargoLocks": null,
     "date": "2024-07-09",
@@ -834,28 +856,6 @@
       "type": "github"
     },
     "version": "aa7a58023166533da83ca7b11c0d2569e45d7381"
-  },
-  "plugin-neodev-nvim": {
-    "cargoLocks": null,
-    "date": "2024-07-06",
-    "extract": null,
-    "name": "plugin-neodev-nvim",
-    "passthru": {
-      "pretty-name": "neodev.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "folke",
-      "repo": "neodev.nvim",
-      "rev": "46aa467dca16cf3dfe27098042402066d2ae242d",
-      "sha256": "sha256-hOjzlo/IqmV8tYjGwfmcCPEmHYsWnEIwtHZdhpwA1kM=",
-      "type": "github"
-    },
-    "version": "46aa467dca16cf3dfe27098042402066d2ae242d"
   },
   "plugin-neorg": {
     "cargoLocks": null,

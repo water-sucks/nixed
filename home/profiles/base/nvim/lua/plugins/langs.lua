@@ -236,9 +236,11 @@ local ltex_extra_spec = use("barreiroleo/ltex_extra.nvim", {
   ft = "tex",
 })
 
-local neodev_spec = use("folke/neodev.nvim", {
-  module = "neodev",
+local lazydev_spec = use("folke/lazydev.nvim", {
   ft = "lua",
+  config = function()
+    require("lazydev").setup({})
+  end,
 })
 
 local nvim_r_spec = use("jamespeapen/Nvim-R", {
@@ -542,7 +544,7 @@ return {
   haskell_tools_spec,
   jdtls_spec,
   ltex_extra_spec,
-  neodev_spec,
+  lazydev_spec,
   nvim_r_spec,
   rust_tools_spec,
   typst_spec,

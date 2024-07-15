@@ -66,6 +66,7 @@ cmp.setup({
     { name = "path" },
     { name = "calc" },
     { name = "buffer" },
+    { name = "lazydev", group_index = 0 },
   }),
   formatting = {
     format = require("lspkind").cmp_format({

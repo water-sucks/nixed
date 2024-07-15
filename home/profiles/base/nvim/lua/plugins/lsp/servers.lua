@@ -296,16 +296,6 @@ local server_configs = {
 -- format Zig files if there are errors
 vim.g.zig_fmt_parse_errors = 0
 
-require("neodev").setup({
-  library = {
-    enabled = true,
-    runtime = true,
-    types = true,
-    plugins = true,
-  },
-  lspconfig = true,
-})
-
 for _, server in pairs(servers) do
   ---@type table<string, boolean|function|table>
   local config = {

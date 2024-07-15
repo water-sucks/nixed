@@ -369,6 +369,19 @@
     pretty-name = "lazy.nvim";
     date = "2024-07-13";
   };
+  plugin-lazydev-nvim = {
+    pname = "plugin-lazydev-nvim";
+    version = "a33be921553ba478743206161380edacfc25d69b";
+    src = fetchFromGitHub {
+      owner = "folke";
+      repo = "lazydev.nvim";
+      rev = "a33be921553ba478743206161380edacfc25d69b";
+      fetchSubmodules = false;
+      sha256 = "sha256-th/wfvKGsEpkKau0DUhUpFc4WMMhSDZ/ISEHxH0IQ48=";
+    };
+    pretty-name = "lazydev.nvim";
+    date = "2024-07-14";
+  };
   plugin-leap-nvim = {
     pname = "plugin-leap-nvim";
     version = "c099aecaf858574909bd38cbadb8543c4dd16611";
@@ -498,19 +511,6 @@
     };
     pretty-name = "neocord";
     date = "2024-04-24";
-  };
-  plugin-neodev-nvim = {
-    pname = "plugin-neodev-nvim";
-    version = "46aa467dca16cf3dfe27098042402066d2ae242d";
-    src = fetchFromGitHub {
-      owner = "folke";
-      repo = "neodev.nvim";
-      rev = "46aa467dca16cf3dfe27098042402066d2ae242d";
-      fetchSubmodules = false;
-      sha256 = "sha256-hOjzlo/IqmV8tYjGwfmcCPEmHYsWnEIwtHZdhpwA1kM=";
-    };
-    pretty-name = "neodev.nvim";
-    date = "2024-07-06";
   };
   plugin-neorg = {
     pname = "plugin-neorg";

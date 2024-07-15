@@ -132,7 +132,7 @@ in
     (plugin "mfussenegger" "nvim-dap-python")
 
     # Language-specific plugins
-    (plugin "folke" "neodev.nvim")
+    (plugin "folke" "lazydev.nvim")
     (plugin "akinsho" "flutter-tools.nvim")
     (plugin "simrat39" "rust-tools.nvim")
     (plugin "MrcJkb" "haskell-tools.nvim")
