@@ -18,7 +18,6 @@
       stylua = {
         command = "${pkgs.stylua}/bin/stylua";
         includes = ["*.lua"];
-        options = ["-f" "./home/profiles/base/nvim/.stylua.toml"];
       };
     };
   };
