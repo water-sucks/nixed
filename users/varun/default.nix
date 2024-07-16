@@ -12,7 +12,7 @@ in {
       shell = pkgs.zsh;
     }
     // (lib.optionalAttrs isLinux {
-      extraGroups = ["wheel" "audio" "video" "input" "networkmanager" "libvirtd" "adbusers" "dialout"];
+      extraGroups = ["wheel" "audio" "video" "input" "networkmanager" "libvirtd" "adbusers" "dialout" "docker"];
       isNormalUser = true;
     });
 
