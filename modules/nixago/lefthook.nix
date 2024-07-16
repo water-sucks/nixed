@@ -17,6 +17,10 @@
         treefmt = {
           tags = ["format"];
           run = "${treefmt} --fail-on-change {staged_files}";
+          env = {
+            # This is an odd workaround for very slow commits.
+            TERM = "tmux";
+          };
         };
 
         statix = {
