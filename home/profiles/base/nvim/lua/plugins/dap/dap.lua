@@ -1,4 +1,5 @@
 local dap = require("dap")
+local wk = require("which-key")
 
 local signs = {
   Breakpoint = "",
@@ -13,36 +14,27 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = "LspDiagnosticsSignHint" })
 end
 
-require("which-key").register({
-  d = {
-    name = "Debug",
-    b = { dap.step_back, "Step back" },
-    c = { dap.continue, "Continue" },
-    d = { dap.disconnect, "Disconnect" },
-    g = { dap.session, "Get session" },
-    i = { dap.step_into, "Step into" },
-    o = { dap.step_over, "Step over" },
-    p = { dap.pause, "Pause" },
-    q = { dap.close, "Quit" },
-    r = { dap.repl.toggle, "Toggle REPL" },
-    s = { dap.continue, "Start" },
-    t = { dap.toggle_breakpoint, "Toggle breakpoint" },
-    x = { dap.terminate, "Terminate" },
-    u = { dap.step_out, "Step out" },
-    R = { dap.run_to_cursor, "Run to cursor" },
-    B = {
-      function()
-        local condition = ""
-        vim.ui.select({
-          prompt = "[Condition] > ",
-        }, function(input)
-          condition = input
-        end)
-        dap.set_breakpoint(condition)
-      end,
-      "Conditional breakpoint",
-    },
-  },
-}, {
-  prefix = "<Leader>",
+local function conditionalBreakpoint()
+  vim.ui.input({ prompt = "Condition" }, function(cond)
+    dap.set_breakpoint(cond)
+  end)
+end
+
+wk.add({
+  { "<Leader>d", group = "Debug" },
+  { "<Leader>db", dap.step_back, desc = "Step back" },
+  { "<Leader>dc", dap.continue, desc = "Continue" },
+  { "<Leader>dd", dap.disconnect, desc = "Disconnect" },
+  { "<Leader>dg", dap.session, desc = "Get session" },
+  { "<Leader>di", dap.step_into, desc = "Step into" },
+  { "<Leader>do", dap.step_over, desc = "Step over" },
+  { "<Leader>dp", dap.pause, desc = "Pause" },
+  { "<Leader>dq", dap.close, desc = "Quit" },
+  { "<Leader>dr", dap.repl.toggle, desc = "Toggle REPL" },
+  { "<Leader>ds", dap.continue, desc = "Start" },
+  { "<Leader>dt", dap.toggle_breakpoint, desc = "Toggle breakpoint" },
+  { "<Leader>dx", dap.terminate, desc = "Terminate" },
+  { "<Leader>du", dap.step_out, desc = "Step out" },
+  { "<Leader>dR", dap.run_to_cursor, desc = "Run to cursor" },
+  { "<Leader>dB", conditionalBreakpoint, desc = "Conditional breakpoint" },
 })

@@ -3,6 +3,7 @@ local nvim_tree_spec = use("nvim-tree/nvim-tree.lua", {
 })
 nvim_tree_spec.config = function()
   local api = require("nvim-tree.api")
+  local wk = require("which-key")
   local event = api.events.Event
 
   require("nvim-tree").setup({
@@ -29,10 +30,8 @@ nvim_tree_spec.config = function()
     vim.opt_local.fillchars = "eob: "
   end)
 
-  require("which-key").register({
-    l = { "<cmd>NvimTreeToggle<CR>", "Show files" },
-  }, {
-    prefix = "<Leader>",
+  wk.add({
+    { "<Leader>l", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
   })
 end
 

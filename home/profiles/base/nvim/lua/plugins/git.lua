@@ -9,15 +9,11 @@ local gitsigns_spec = use("lewis6991/gitsigns.nvim", {
 diffview_spec.config = function()
   require("diffview").setup()
 
-  require("which-key").register({
-    ["="] = {
-      name = "Diffview",
-      o = { "<cmd>DiffviewOpen<CR>", "Open diffview" },
-      c = { "<cmd>DiffviewClose<CR>", "Close diffview" },
-      h = { "<cmd>DiffviewFileHistory<CR>", "Show file history" },
-    },
-  }, {
-    prefix = "<Leader>",
+  require("which-key").add({
+    { "<Leader>=", group = "Diffview " },
+    { "<Leader>=o", "<cmd>DiffviewOpen<CR>", desc = "Open diffview" },
+    { "<Leader>=c", "<cmd>DiffviewClose<CR>", desc = "Close diffview" },
+    { "<Leader>=h", "<cmd>DiffviewFileHistory<CR>", desc = "Show file history" },
   })
 end
 
@@ -26,42 +22,22 @@ gitsigns_spec.config = function()
 
   require("gitsigns").setup({})
 
-  wk.register({
-    ["[c"] = { "<cmd>Gitsigns next_hunk<CR>", "Move to next hunk" },
-    ["]c"] = { "<cmd>Gitsigns next_hunk<CR>", "Move to previous hunk" },
-  }, {})
+  wk.add({
+    { "[c", "<cmd>Gitsigns next_hunk<CR>", desc = "Move to next hunk" },
+    { "]c", "<cmd>Gitsigns prev_hunk<CR>", desc = "Move to previous hunk" },
 
-  wk.register({
-    h = {
-      name = "Gitsigns",
-      s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
-      u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
-      r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
-      p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview hunk" },
-      S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage buffer" },
-      R = { "<cmd>Gitsigns reset_buffer_index<CR>", "Unstage buffer" },
-      U = { "<cmd>Gitsigns reset_buffer<CR>", "Reset buffer" },
-    },
-  }, {
-    prefix = "<Leader>",
-  })
+    { "<Leader>h", group = "Gitsigns" },
+    { "<Leader>hs", "<cmd>Gitsigns stage_hunk<CR>", desc = "Stage hunk", mode = { "n", "v" } },
+    { "<Leader>hu", "<cmd>Gitsigns undo_stage_hunk<CR>", desc = "Unstage hunk", mode = { "n", "v" } },
+    { "<Leader>hr", "<cmd>Gitsigns reset_hunk<CR>", desc = "Reset hunk", mode = { "n", "v" } },
+    { "<Leader>hp", "<cmd>Gitsigns preview_hunk<CR>", desc = "Preview hunk" },
+    { "<Leader>hS", "<cmd>Gitsigns stage_buffer<CR>", desc = "Stage buffer" },
+    { "<Leader>hR", "<cmd>Gitsigns reset_buffer_index<CR>", desc = "Unstage buffer" },
+    { "<Leader>hU", "<cmd>Gitsigns reset_buffer<CR>", desc = "Reset buffer" },
+    { "<Leader>hB", "<cmd>Gitsigns blame<CR>", desc = "Show blame window" },
+    { "<Leader>hb", "<cmd>Gitsigns toggle_current_line_blame<CR>", desc = "Toggle blame virtual text" },
 
-  wk.register({
-    h = {
-      name = "Gitsigns",
-      s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage hunk" },
-      u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Unstage hunk" },
-      r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset hunk" },
-    },
-  }, {
-    mode = "v",
-    prefix = "<Leader>",
-  })
-
-  wk.register({
-    ih = { "<cmd>Gitsigns select_hunk<CR>", "Select hunk" },
-  }, {
-    mode = { "x", "o" },
+    { "ih", "<C-U>Gitsigns select_hunk<CR>", desc = "Select hunk", mode = { "x", "o" } },
   })
 end
 

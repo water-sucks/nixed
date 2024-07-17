@@ -47,32 +47,22 @@ dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 -- dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 -- dap.listeners.before.event_exited["dapui_config"] = dapui.close
 
-wk.register({
-  d = {
-    name = "Debug",
-    E = {
-      function()
-        local expression = vim.fn.input({ prompt = "[Expression] > " })
-        dapui.eval(expression)
-      end,
-      "Evaluate input",
-    },
-    e = { dapui.eval, "Evaluate" },
-    U = { dapui.toggle, "Toggle UI" },
-    W = {
-      function()
-        dapui.open({ reset = true })
-      end,
-      "Reset UI layout",
-    },
+wk.add({
+  {
+    "<Leader>dE",
+    function()
+      local expression = vim.fn.input({ prompt = "[Expression] > " })
+      dapui.eval(expression)
+    end,
+    desc = "Evaluate input",
   },
-}, {
-  prefix = "<Leader>",
-})
-
-wk.register({
-  e = { dapui.eval, "Evaluate" },
-}, {
-  mode = "v",
-  prefix = "<Leader>",
+  {
+    "<Leader>dW",
+    function()
+      dapui.open({ reset = true })
+    end,
+    desc = "Reset UI layout",
+  },
+  { "<Leader>de", dapui.eval, desc = "Evaluate", mode = { "n", "v" } },
+  { "<Leader>dU", dapui.eval, desc = "Toggle UI" },
 })

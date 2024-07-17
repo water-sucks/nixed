@@ -3,7 +3,11 @@ local telescope_spec = use("nvim-telescope/telescope.nvim", {
 })
 
 telescope_spec.config = function()
-  require("telescope").setup({
+  local telescope = require("telescope")
+  local finders = require("telescope.builtin")
+  local wk = require("which-key")
+
+  telescope.setup({
     pickers = {
       find_files = {
         theme = "dropdown",
@@ -33,28 +37,22 @@ telescope_spec.config = function()
     },
   })
 
-  require("which-key").register({
-    f = {
-      name = "Telescope",
-      c = { "<cmd>Telescope highlights<CR>", "Find highlights" },
-      f = { "<cmd>Telescope find_files<CR>", "Find files" },
-      i = { "<cmd>Telescope live_grep<CR>", "Find with ripgrep" },
-      b = { "<cmd>Telescope buffers<CR>", "Find buffers" },
-      h = { "<cmd>Telescope help_tags<CR>", "Find help tags" },
-      k = { "<cmd>Telescope keymaps<CR>", "Find keymaps" },
-      r = { "<cmd>Telescope lsp_references<CR>", "Find LSP references" },
-      g = {
-        name = "Git",
-        c = { "<cmd>Telescope git_commits<CR>", "Find Git commits" },
-        b = {
-          name = "Find b...",
-          r = { "<cmd>Telescope git_branches<CR>", "Find Git branches" },
-          c = { "<cmd>Telescope git_bcommits<CR>", "Find Git buffer commits" },
-        },
-      },
-    },
-  }, {
-    prefix = "<Leader>",
+  wk.add({
+    { "<Leader>f", group = "Find" },
+
+    { "<Leader>fc", finders.highlights, desc = "Find highlights" },
+    { "<Leader>ff", finders.find_files, desc = "Find files" },
+    { "<Leader>fi", finders.live_grep, desc = "Find with ripgrep" },
+    { "<Leader>fb", finders.buffers, desc = "Find buffers" },
+    { "<Leader>fh", finders.help_tags, desc = "Find help tags" },
+    { "<Leader>fk", finders.keymaps, desc = "Find keymaps" },
+    { "<Leader>fr", finders.lsp_references, desc = "Find LSP references" },
+
+    { "<Leader>fg", group = "Git" },
+    { "<Leader>fgc", finders.git_commits, desc = "Find Git commits" },
+    { "<Leader>fgb", group = "Find b..." },
+    { "<Leader>fgbr", finders.git_branches, desc = "Find Git branches" },
+    { "<Leader>fgbc", finders.git_bcommits, desc = "Find Git buffer commits" },
   })
 end
 

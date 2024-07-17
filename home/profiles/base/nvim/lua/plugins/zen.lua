@@ -19,10 +19,8 @@ zen_spec.config = function()
     },
   })
 
-  require("which-key").register({
-    z = { "<cmd>ZenMode<CR>", "Toggle zen-mode" },
-  }, {
-    prefix = "<Leader>",
+  require("which-key").add({
+    { "<Leader>z", "<cmd>ZenMode<CR>", desc = "Toggle zen-mode" },
   })
 end
 

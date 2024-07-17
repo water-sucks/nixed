@@ -14,6 +14,11 @@ treesitter_spec.config = function()
   local wk = require("which-key")
 
   require("nvim-treesitter.configs").setup({
+    modules = {},
+    auto_install = false,
+    sync_install = false,
+    ignore_install = {},
+    ensure_installed = {},
     -- This directory doesn't actually have any parsers in it;
     -- it's just to prevent the plugin from getting fussy because
     -- it can't write into the Nix store.
@@ -135,26 +140,15 @@ treesitter_spec.config = function()
     },
   })
 
-  wk.register({
-    s = {
-      name = "Swap",
-    },
-  }, {
-    prefix = "<Leader>",
+  wk.add({
+    { "<Leader>s", group = "Swap" },
+    { "gd", desc = "Go to definition" },
+    { "gn", desc = "Jump to next usage" },
+    { "gp", desc = "Jump to previous usage" },
+    { "gl", group = "List" },
+    { "glD", desc = "List definitions" },
+    { "glO", desc = "List definitions TOC" },
   })
-
-  wk.register({
-    g = {
-      d = "Go to definition",
-      n = "Jump to next usage",
-      p = "Jump to previous usage",
-      l = {
-        name = "List",
-        D = "List definitions",
-        O = "List definitions TOC",
-      },
-    },
-  }, {})
 
   -- Use HTML parser for XML files
   vim.treesitter.language.register("html", "xml")

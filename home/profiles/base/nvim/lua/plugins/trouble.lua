@@ -3,16 +3,14 @@ local trouble_spec = use("folke/trouble.nvim", {
 })
 
 trouble_spec.config = function()
+  local wk = require("which-key")
+
   require("trouble").setup({})
 
-  require("which-key").register({
-    x = {
-      name = "Trouble",
-      x = { "<cmd>Trouble diagnostics toggle<CR>", "Toggle diagnostics" },
-      q = { "<cmd>TroubleToggle quickfix toggle<CR>", "Toggle quickfixes" },
-    },
-  }, {
-    prefix = "<Leader>",
+  wk.add({
+    { "<Leader>x", group = "Diagnostics" },
+    { "<Leader>xx", "<cmd>Trouble diagnostics toggle<CR>", desc = "Toggle diagnostics" },
+    { "<Leader>xq", "<cmd>TroubleToggle quickfix toggle<CR>", desc = "Toggle quickfixes" },
   })
 end
 

@@ -118,55 +118,42 @@ neorg_spec.config = function()
       ["core.keybinds"] = {
         config = {
           hook = function()
-            wk.register({
-              t = {
-                name = "Tasks",
-                a = "Mark task ambiguous",
-                c = "Mark task canceled",
-                d = "Mark task done",
-                h = "Mark task on hold",
-                i = "Mark task important",
-                p = "Mark task pending",
-                r = "Mark task recurring",
-                u = "Mark task undone",
-              },
+            wk.add({
+              {
+                buffer = 0,
+                { "<LocalLeader>t", group = "Tasks" },
+                { "<LocalLeader>ta", desc = "Mark task ambiguous" },
+                { "<LocalLeader>tc", desc = "Mark task canceled" },
+                { "<LocalLeader>td", desc = "Mark task done" },
+                { "<LocalLeader>th", desc = "Mark task on hold" },
+                { "<LocalLeader>ti", desc = "Mark task important" },
+                { "<LocalLeader>tp", desc = "Mark task pending" },
+                { "<LocalLeader>tr", desc = "Mark task recurring" },
+                { "<LocalLeader>tu", desc = "Mark task undone" },
 
-              i = {
-                name = "Insert",
-              },
+                { "<LocalLeader>i", desc = "Insert" },
 
-              m = {
-                name = "Modes",
-                h = "Navigate headings",
-                l = "Navigate links",
-                n = "Normal mode (norg)",
-              },
+                { "<LocalLeader>m", group = "Modes" },
+                { "<LocalLeader>mh", desc = "Navigate headings" },
+                { "<LocalLeader>ml", desc = "Navigate links" },
+                { "<LocalLeader>mn", desc = "Normal mode (norg)" },
 
-              n = "New note",
-              p = { "<cmd>Neorg presenter start<CR>", "Start presenter" },
-              c = { "<cmd>Neorg toggle-concealer<CR>", "Toggle concealer" },
+                { "<LocalLeader>n", desc = "New note" },
 
-              j = "Traverse next",
-              k = "Traverse previous",
+                { "<LocalLeader>p", "<cmd>Neorg presenter start<CR>", desc = "Start presenter" },
+                { "<LocalLeader>c", "<cmd>Neorg toggle-concealer<CR>", desc = "Toggle concealer" },
 
-              l = {
-                name = "List type",
-                i = "Invert list type",
-                t = "Toggle list type",
-              },
-            }, {
-              prefix = "<LocalLeader>",
-              bufnr = 0,
-            })
+                { "<LocalLeader>j", desc = "Traverse next" },
+                { "<LocalLeader>k", desc = "Traverse previous" },
 
-            wk.register({
-              [">"] = {
-                ["."] = "Promote",
-                [">"] = "Promote nested",
-              },
-              ["<"] = {
-                [","] = "Demote",
-                ["<"] = "Demote nested",
+                { "<LocalLeader>l", group = "List" },
+                { "<LocalLeader>li", desc = "Invert list type" },
+                { "<LocalLeader>lt", desc = "Toggle list type" },
+
+                { ">.", desc = "Promote" },
+                { ">>", desc = "Promote nested" },
+                { "<,", desc = "Demote" },
+                { "<<", desc = "Demote nested" },
               },
             })
           end,

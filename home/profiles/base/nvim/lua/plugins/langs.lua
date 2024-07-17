@@ -66,28 +66,6 @@ flutter_tools_spec.config = function()
   })
 end
 
-local haskell_tools_spec = use("MrcJkb/haskell-tools.nvim", {
-  dependencies = {
-    use("neovim/nvim-lspconfig"),
-    use("nvim-lua/plenary.nvim"),
-    use("nvim-telescope/telescope.nvim"),
-  },
-  config = function()
-    require("haskell-tools").setup({
-      hls = {
-        on_attach = require("plugins.lsp.on_attach"),
-        settings = {
-          haskell = {
-            formattingProvider = "fourmolu",
-            checkProject = true,
-          },
-        },
-      },
-    })
-  end,
-  ft = "haskell",
-})
-
 local jdtls_spec = use("mfussenegger/nvim-jdtls", {
   ft = "java",
   dependencies = {
@@ -163,36 +141,37 @@ jdtls_spec.config = function()
       root_dir = root_dir,
       on_attach = function(client, bufnr)
         on_attach(client, bufnr)
-        local keymaps = {
-          o = { jdtls.organize_imports, "Organize imports" },
-          d = {
-            name = "Debug",
-            c = { jdtls.compile, "Compile" },
-            f = { jdtls.test_class, "Test class" },
-            n = { jdtls.test_nearest_method, "Test nearest method" },
-            s = {
+
+        wk.add({
+          {
+            buffer = bufnr,
+            { "<LocalLeader>o", jdtls.organize_imports, desc = "Organize imports" },
+
+            { "<LocalLeader>d", group = "Debug" },
+            { "<LocalLeader>dc", jdtls.compile, desc = "Compile" },
+            { "<LocalLeader>df", jdtls.test_class, desc = "Test class" },
+            { "<LocalLeader>dn", jdtls.test_nearest_method, desc = "Test nearest method" },
+            {
+              "<LocalLeader>ds",
               function()
                 vim.cmd("JdtJshell")
               end,
-              "Start JShell",
+              desc = "Start JShell",
             },
-            u = {
+            {
+              "<LocalLeader>du",
+
               function()
                 vim.cmd("JdtUpdateDebugConfig")
               end,
-              "Update debug config",
+              desc = "Update debug config",
             },
+
+            { "<LocalLeader>d", group = "Extract" },
+            { "<LocalLeader>xc", jdtls.extract_constant, desc = "Extract constant" },
+            { "<LocalLeader>xm", jdtls.extract_method, desc = "Extract method" },
+            { "<LocalLeader>xv", jdtls.extract_variable, desc = "Extract variable" },
           },
-          x = {
-            name = "Extract",
-            c = { jdtls.extract_constant, "Extract constant" },
-            m = { jdtls.extract_method, "Extract method" },
-            v = { jdtls.extract_variable, "Extract variable" },
-          },
-        }
-        wk.register(keymaps, {
-          prefix = "<LocalLeader>",
-          buffer = bufnr,
         })
       end,
       settings = {
@@ -242,137 +221,6 @@ local lazydev_spec = use("folke/lazydev.nvim", {
     require("lazydev").setup({})
   end,
 })
-
-local nvim_r_spec = use("jamespeapen/Nvim-R", {
-  ft = { "r", "rmd", "rrst", "rnoweb", "quarto", "rhelp" },
-})
-nvim_r_spec.config = function()
-  local wk = require("which-key")
-
-  vim.g.R_set_omnifunc = {}
-  vim.g.R_hi_fun = 0
-  vim.g.rout_follow_colorscheme = 1
-
-  wk.register({
-    a = {
-      name = "Send file",
-      a = "Send file",
-      e = "Send file (echo)",
-      o = "Send file (.Rout)",
-    },
-    b = {
-      name = "Send block",
-      a = "Send block (echo, down)",
-      b = "Send block",
-      d = "Send block (down)",
-      e = "Send block (echo)",
-      g = "Debug",
-    },
-    c = {
-      name = "Send chunk",
-      a = "Send chunk (echo, down)",
-      c = "Send chunk",
-      d = "Send chunk (down)",
-      e = "Send chunk (echo)",
-      h = "Send chunk (first -> here)",
-    },
-    f = {
-      name = "Send function",
-      a = "Send function (echo, down)",
-      d = "Send function (down)",
-      e = "Send function (echo)",
-      f = "Send function",
-    },
-    s = {
-      name = "Send selection",
-      s = "Send selection",
-      e = "Send selection (echo)",
-      d = "Send selection (down)",
-      a = "Send selection (echo, down)",
-      o = "Send selection (eval and new tab)",
-      u = "Send all lines above current",
-      w = "Sweave current file",
-      p = "Sweave/PDF current file",
-      b = "Sweave/BibTeX/PDF current file",
-    },
-    m = {
-      name = "Send motion region",
-    },
-    g = {
-      name = "Go",
-      n = "Next R chunk",
-      N = "Previous R chunk",
-      t = "Go to LaTeX",
-      p = "Search forward",
-    },
-    p = {
-      name = "Send paragraph",
-      p = "Send paragraph",
-      e = "Send paragraph (echo)",
-      d = "Send paragraph (down)",
-      a = "Send paragraph (echo, down)",
-    },
-    r = {
-      name = "R commands",
-      o = "Open/close",
-      a = "Arguments",
-      e = "Example",
-      h = "Help",
-      s = "Summary",
-      g = "Plot",
-      b = "Plot and summary",
-      d = "Set working directory",
-      f = "Start R",
-      c = "Start custom R",
-      q = "Close R",
-      l = "List space",
-      r = "Clear console",
-      m = "Remove objects and clear console",
-      p = "Print (cur)",
-      n = "Names (cur)",
-      t = "Structure (cur)",
-      v = "View data.frame in new tab",
-      w = "Save and close R",
-      ["="] = "Expand all lists",
-      ["-"] = "Collapse all lists",
-    },
-    k = {
-      name = "Knit current file",
-      n = "Knit current file",
-      b = "Knit/BibTeX/PDF current file",
-      p = "Knit/PDF current file",
-      l = "Knit/Beamer PDF current file",
-      h = "Knit/HTML current file",
-      o = "Knit/ODT current file",
-      r = "Render as markdown",
-      s = "Spin current file",
-      a = "Render as markdown (YAML)",
-    },
-    v = {
-      name = "View data.frame",
-      s = "View data.frame in hsplit",
-      v = "View data.frame in vsplit",
-      h = "View head(data.frame) in hsplit",
-    },
-    t = {
-      name = "Run dput",
-      d = "Run dput and show output in new tab",
-    },
-    l = "Send line",
-    d = "Send line (down)",
-    q = "Send line (and new)",
-    ["r<Left>"] = "Send left part of line (cur)",
-    ["r<Right>"] = "Send Right part of line (cur)",
-    o = "Send line (and insert output as comment)",
-    u = {
-      name = "Undebug",
-      d = "Undebug",
-    },
-  }, {
-    prefix = "<LocalLeader>",
-    buffer = 0,
-  })
-end
 
 local rust_tools_spec = use("simrat39/rust-tools.nvim", {
   -- dependencies = { use("neovim/nvim-lspconfig") },
@@ -428,124 +276,106 @@ vimtex_spec.config = function()
   }
   vim.g.vimtex_echo_verbose_input = 0
 
-  wk.register({
-    l = {
-      name = "VimTeX",
-      a = "Context menu",
-      i = "Info",
-      I = "Full info",
-      t = "Open ToC",
-      T = "Toggle ToC",
-      y = "Open labels",
-      Y = "Toggle labels",
-      v = "View",
-      r = "Reverse search",
-      l = "Compile",
-      L = "Compile selected",
-      k = "Stop",
-      K = "Stop all",
-      e = "Errors",
-      o = "Compiler output",
-      g = "Status",
-      G = "Full status",
-      c = "Clean",
-      C = "Full clean",
-      m = "List imaps",
-      x = "Reload",
-      X = "Reload state",
-      s = "Toggle main",
-      q = "Logs",
-    },
-  }, {
-    prefix = "<LocalLeader>",
+  wk.add({
+    { "<LocalLeader>l", group = "VimTeX" },
+    { "<LocalLeader>la", desc = "Context menu" },
+    { "<LocalLeader>li", desc = "Info" },
+    { "<LocalLeader>lI", desc = "Full info" },
+    { "<LocalLeader>lt", desc = "Open ToC" },
+    { "<LocalLeader>lT", desc = "Toggle ToC" },
+    { "<LocalLeader>ly", desc = "Open labels" },
+    { "<LocalLeader>lY", desc = "Toggle labels" },
+    { "<LocalLeader>lv", desc = "View" },
+    { "<LocalLeader>lr", desc = "Reverse search" },
+    { "<LocalLeader>ll", desc = "Compile" },
+    { "<LocalLeader>lL", desc = "Compile selected" },
+    { "<LocalLeader>lk", desc = "Stop" },
+    { "<LocalLeader>lK", desc = "Stop all" },
+    { "<LocalLeader>le", desc = "Errors" },
+    { "<LocalLeader>lo", desc = "Compiler output" },
+    { "<LocalLeader>lg", desc = "Status" },
+    { "<LocalLeader>lG", desc = "Full status" },
+    { "<LocalLeader>lc", desc = "Clean" },
+    { "<LocalLeader>lC", desc = "Full clean" },
+    { "<LocalLeader>lm", desc = "List imaps" },
+    { "<LocalLeader>lx", desc = "Reload" },
+    { "<LocalLeader>lX", desc = "Reload state" },
+    { "<LocalLeader>ls", desc = "Toggle main" },
+    { "<LocalLeader>lq", desc = "Logs" },
   })
 
-  wk.register({
-    ds = {
-      c = "Command",
-      d = "Delimiter",
-      e = "Environment",
-      ["$"] = "Math environment",
-    },
+  wk.add({
+    { "dsc", desc = "Command" },
+    { "dsd", desc = "Delimiter" },
+    { "dse", desc = "Environment" },
+    { "ds$", desc = "Math environment" },
 
-    cs = {
-      c = "Command",
-      d = "Delimiter",
-      e = "Environment",
-      ["$"] = "Math environment",
-    },
+    { "csc", desc = "Command" },
+    { "csd", desc = "Delimiter" },
+    { "cse", desc = "Environment" },
+    { "cs$", desc = "Math environment" },
 
-    ts = {
-      name = "Toggle",
-      c = "Star",
-      d = "Modifier",
-      D = "Modifier (reversed)",
-      e = "Star (environment)",
-      f = "Fraction",
-      ["$"] = "Math",
-    },
-  }, {})
-
-  wk.register({
-    i = {
-      c = "Command",
-      d = "Delimiter",
-      e = "Environment",
-      m = "Item",
-      P = "Section",
-      ["$"] = "Math environment",
-    },
-
-    a = {
-      c = "Command",
-      d = "Delimiter",
-      e = "Environment",
-      m = "Item",
-      P = "Section",
-      ["$"] = "Math environment",
-    },
-  }, {
-    mode = "o",
+    { "ts", name = "Toggle" },
+    { "tsc", desc = "Star" },
+    { "tsd", desc = "Modifier" },
+    { "tsD", desc = "Modifier (reversed)" },
+    { "tse", desc = "Star (environment)" },
+    { "tsf", desc = "Fraction" },
+    { "ts$", desc = "Math" },
   })
 
-  wk.register({
-    ["]"] = {
-      ["["] = "Next section start",
-      ["]"] = "Next section end",
-      ["/"] = "Next comment start",
-      ["*"] = "Next comment end",
-      m = "Next section start",
-      M = "Next section end",
-      n = "Next math env start",
-      N = "Next math env end",
-      r = "Next frame env start",
-      R = "Next frame env end",
-    },
+  wk.add({
+    {
+      mode = "o",
+      { "ic", desc = "Command" },
+      { "id", desc = "Delimiter" },
+      { "ie", desc = "Environment" },
+      { "im", desc = "Item" },
+      { "iP", desc = "Section" },
+      { "i$", desc = "Math environment" },
 
-    ["["] = {
-      ["["] = "Previous section start",
-      ["]"] = "Previous section end",
-      ["/"] = "Previous comment start",
-      ["*"] = "Previous comment end",
-      m = "Previous section start",
-      M = "Previous section end",
-      n = "Previous math env start",
-      N = "Previous math env end",
-      r = "Previous frame env start",
-      R = "Previous frame env end",
+      { "ac", desc = "Command" },
+      { "ad", desc = "Delimiter" },
+      { "ae", desc = "Environment" },
+      { "am", desc = "Item" },
+      { "aP", desc = "Section" },
+      { ["a$"] = "Math environment" },
     },
-  }, {
-    mode = { "n", "x", "o" },
+  })
+
+  wk.add({
+    {
+      mode = { "n", "x", "o" },
+      { "][", desc = "Next section start" },
+      { "]]", desc = "Next section end" },
+      { "]/", desc = "Next comment start" },
+      { "]*", desc = "Next comment end" },
+      { "]m", desc = "Next section start" },
+      { "]M", desc = "Next section end" },
+      { "]n", desc = "Next math env start" },
+      { "]N", desc = "Next math env end" },
+      { "]r", desc = "Next frame env start" },
+      { "]R", desc = "Next frame env end" },
+
+      { "[[", desc = "Previous section start" },
+      { "[]", desc = "Previous section end" },
+      { "[/", desc = "Previous comment start" },
+      { "[*", desc = "Previous comment end" },
+      { "[m", desc = "Previous section start" },
+      { "[M", desc = "Previous section end" },
+      { "[n", desc = "Previous math env start" },
+      { "[N", desc = "Previous math env end" },
+      { "[r", desc = "Previous frame env start" },
+      { "[R", desc = "Previous frame env end" },
+    },
   })
 end
 
 return {
   flutter_tools_spec,
-  haskell_tools_spec,
   jdtls_spec,
   ltex_extra_spec,
   lazydev_spec,
-  nvim_r_spec,
   rust_tools_spec,
   typst_spec,
   vimtex_spec,

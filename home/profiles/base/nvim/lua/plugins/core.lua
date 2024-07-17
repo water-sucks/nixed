@@ -15,6 +15,8 @@ return {
           rules = false,
         },
       })
+
+      vim.keymap.set({ "n", "v", "x", "o" }, "s", "<cmd>WhichKey n s<CR>")
     end,
   }),
 }

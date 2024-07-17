@@ -97,19 +97,11 @@ dial_spec.config = function()
   map("v", "g<C-a>", require("dial.map").inc_gvisual(), { silent = true })
   map("v", "g<C-x>", require("dial.map").dec_gvisual(), { silent = true })
 
-  wk.register({
-    ["["] = { require("dial.map").inc_normal(), "Increment" },
-    ["]"] = { require("dial.map").dec_normal(), "Decrement" },
-  }, {
-    prefix = "<Leader>",
-  })
-
-  wk.register({
-    ["["] = { require("dial.map").inc_visual(), "Increment" },
-    ["]"] = { require("dial.map").dec_visual(), "Decrement" },
-  }, {
-    mode = "x",
-    prefix = "<Leader>",
+  wk.add({
+    { "<Leader>[", require("dial.map").inc_normal(), desc = "Increment", mode = "n" },
+    { "<Leader>]", require("dial.map").dec_normal(), desc = "Decrement", mode = "n" },
+    { "<Leader>[", require("dial.map").inc_visual(), desc = "Increment", mode = "x" },
+    { "<Leader>]", require("dial.map").dec_visual(), desc = "Decrement", mode = "x" },
   })
 end
 
@@ -141,19 +133,22 @@ local leap_spec = use("ggandor/leap.nvim", {
 leap_spec.config = function()
   local wk = require("which-key")
 
-  wk.register({
-    ss = { "<Plug>(leap-forward-to)", "Leap forward" },
-    sS = { "<Plug>(leap-backward-to)", "Leap backward" },
-    sw = { "<Plug>(leap-cross-window)", "Leap across windows" },
-  }, {
-    mode = { "n", "x", "o" },
+  wk.add({
+    {
+      mode = { "n", "x", "o" },
+
+      { "ss", "<Plug>(leap-forward-to)", desc = "Leap forward" },
+      { "sS", "<Plug>(leap-backward-to)", desc = "Leap backward" },
+      { "sw", "<Plug>(leap-cross-window)", desc = "Leap across windows" },
+    },
   })
 
-  wk.register({
-    u = { "<Plug>(leap-forward-till)", "Leap forward until" },
-    U = { "<Plug>(leap-backward-till)", "Leap backward until" },
-  }, {
-    mode = { "x", "o" },
+  wk.add({
+    {
+      mode = { "x", "o" },
+      { "su", "<Plug>(leap-forward-till)", desc = "Leap forward until" },
+      { "sU", "<Plug>(leap-backward-till)", desc = "Leap backward until" },
+    },
   })
 end
 
@@ -170,28 +165,18 @@ local sort_spec = use("sQVe/sort.nvim", {
 sort_spec.config = function()
   local wk = require("which-key")
 
-  require("sort").setup({})
+  require("sort").setup()
 
-  wk.register({
-    ["1"] = {
-      name = "Sort",
-      o = { "<Cmd>Sort<CR>", "Sort line" },
-      ['"'] = { 'vi"<Esc>:Sort<CR>', 'Sort until "' },
-      ["'"] = { "vi'<Esc>:Sort<CR>", "Sort until '" },
-      ["("] = { "vi(<Esc>:Sort<CR>", "Sort block inside ()" },
-      ["["] = { "vi[<Esc>:Sort<CR>", "Sort block inside []" },
-      ["{"] = { "vi{<Esc>:Sort<CR>", "Sort block inside {}" },
-      ["p"] = { "vip<Esc>:Sort<CR>", "Sort block inside paragraph" },
-    },
-  }, {
-    prefix = "<Leader>",
-  })
-
-  wk.register({
-    s = { "<Esc><Cmd>Sort<CR>", "Sort selection" },
-  }, {
-    mode = "v",
-    prefix = "<Leader>",
+  wk.add({
+    { "<Leader>1", group = "Sort" },
+    { "<Leader>1o", "<Cmd>Sort<CR>", desc = "Sort line" },
+    { '<Leader>1"', 'vi"<Esc>:Sort<CR>', desc = 'Sort until "' },
+    { "<Leader>1'", "vi'<Esc>:Sort<CR>", desc = "Sort until '" },
+    { "<Leader>1(", "vi(<Esc>:Sort<CR>", desc = "Sort block inside ()" },
+    { "<Leader>1[", "vi[<Esc>:Sort<CR>", desc = "Sort block inside []" },
+    { "<Leader>1{", "vi{<Esc>:Sort<CR>", desc = "Sort block inside {}" },
+    { "<Leader>1p", "vip<Esc>:Sort<CR>", desc = "Sort block inside paragraph" },
+    { "<Leader>s", "<Esc><Cmd>Sort<CR>", desc = "Sort selection", mode = "v" },
   })
 end
 

@@ -1,7 +1,10 @@
 local fterm_spec = use("numToStr/FTerm.nvim", {
   event = "VeryLazy",
   config = function()
-    require("FTerm").setup({
+    local fterm = require("FTerm")
+    local wk = require("which-key")
+
+    fterm.setup({
       blend = 10,
       dimensions = {
         height = 0.6,
@@ -9,37 +12,15 @@ local fterm_spec = use("numToStr/FTerm.nvim", {
       },
     })
 
-    require("which-key").register({
-      t = {
-        name = "Terminal",
-        t = {
-          function()
-            require("FTerm").toggle()
-          end,
-          "Toggle terminal",
-        },
-        o = {
-          function()
-            require("FTerm").open()
-          end,
-          "Open terminal",
-        },
-        c = {
-          function()
-            require("FTerm").close()
-          end,
-          "Open terminal",
-        },
-        k = {
-          function()
-            require("FTerm").exit()
-          end,
-          "Kill terminal",
-        },
+    wk.add({
+      {
+        mode = { "n", "t" },
+        { "<Leader>t", group = "Terminal" },
+        { "<Leader>tt", fterm.toggle, desc = "Toggle terminal" },
+        { "<Leader>to", fterm.open, desc = "Toggle terminal" },
+        { "<Leader>tc", fterm.close, desc = "Toggle terminal" },
+        { "<Leader>tk", fterm.exit, desc = "Toggle terminal" },
       },
-    }, {
-      mode = { "n", "t" },
-      prefix = "<Leader>",
     })
   end,
 })

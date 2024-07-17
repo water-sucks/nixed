@@ -21,7 +21,7 @@ local dapui_spec = use("rcarriga/nvim-dap-ui", {
 local dap_virtual_text_spec = use("theHamsta/nvim-dap-virtual-text", {
   event = "VeryLazy",
   config = function()
-    require("nvim-dap-virtual-text").setup()
+    require("nvim-dap-virtual-text").setup({})
   end,
 })
 

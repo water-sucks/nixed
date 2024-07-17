@@ -4,7 +4,9 @@ local noice_spec = use("folke/noice.nvim", {
 
 noice_spec.config = function()
   local wk = require("which-key")
-  require("noice").setup({
+  local noice = require("noice")
+
+  noice.setup({
     lsp = {
       progress = {
         enabled = false, -- Using fidget.nvim
@@ -60,16 +62,15 @@ noice_spec.config = function()
     },
   })
 
-  wk.register({
-    m = {
+  wk.add({
+    {
+      "<Leader>m",
       function()
-        require("noice").cmd("telescope")
+        noice.cmd("telescope")
       end,
-      "Show messages",
+      desc = "Show messages",
+      silent = true,
     },
-  }, {
-    prefix = "<Leader>",
-    silent = true,
   })
 
   vim.keymap.set("i", "<C-h>", function()
