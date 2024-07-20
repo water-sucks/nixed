@@ -514,11 +514,11 @@
         "zig-deps-fod": "zig-deps-fod"
       },
       "locked": {
-        "lastModified": 1721342447,
-        "narHash": "sha256-5RBaescm8z6nERG4JBUpnXlj2Xwgu7weJqVAvhnv/ko=",
+        "lastModified": 1721515330,
+        "narHash": "sha256-Pbqo3gQTwz/a7ardGmcX3YP3EHppRjUeY/fSCPciud8=",
         "owner": "water-sucks",
         "repo": "nixos",
-        "rev": "b0c0f3d01a4a2aa61c6afbede8c4053546986460",
+        "rev": "ea9ce9f0ddaf6d9114c4a2fe82f675931b4c9516",
         "type": "github"
       },
       "original": {
