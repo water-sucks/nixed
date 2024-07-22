@@ -124,6 +124,13 @@ neorg_spec.config = function()
           zen_mode = "zen-mode",
         },
       },
+      ["core.integrations.telescope"] = {
+        config = {
+          insert_file_link = {
+            show_title_preview = true,
+          },
+        },
+      },
       ["external.templates"] = {
         config = {
           default_subcommand = "fload",
@@ -162,6 +169,11 @@ neorg_spec.config = function()
           { "<LocalLeader>i", desc = "Insert" },
           { "<LocalLeader>id", desc = "Insert date" },
 
+          { "<LocalLeader>j", desc = "Journal" },
+          { "<LocalLeader>jt", "<cmd>Neorg journal today<CR>", desc = "Open today's journal" },
+          { "<LocalLeader>jy", "<cmd>Neorg journal yesterday<CR>", desc = "Open yesterday's journal" },
+          { "<LocalLeader>jn", "<cmd>Neorg journal tomorrow<CR>", desc = "Open tomorrow's journal" },
+
           { "<LocalLeader>n", group = "New" },
           { "<LocalLeader>nn", desc = "New note" },
 
@@ -171,6 +183,8 @@ neorg_spec.config = function()
           { "<LocalLeader>l", group = "List" },
           { "<LocalLeader>li", desc = "Invert list type" },
           { "<LocalLeader>lt", desc = "Toggle list type" },
+
+          { "<LocalLeader>w", "<Plug>(neorg.telescope.switch_workspace)", desc = "Switch workspace" },
 
           { ">.", desc = "Promote" },
           { ">>", desc = "Promote nested" },
