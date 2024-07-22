@@ -28,6 +28,9 @@ neorg_spec.config = function()
 
   local neorg = require("neorg")
   local config = require("neorg.core.config")
+  local norg_snippets = require("neorg.modules.external.templates.default_snippets")
+  local ls = require("luasnip")
+
   local notes_dir = vim.env.HOME .. "/Documents/Notes"
 
   neorg.setup({
@@ -227,10 +230,10 @@ neorg_spec.config = function()
           default_subcommand = "fload",
           keywords = {
             TODAY_NAME = function()
-              return require("luasnip").insert_node(1, os.date([[%B %d, %Y]]))
+              return ls.text_node(norg_snippets.parse_date(0, norg_snippets.file_name_date(), [[%B %d, %Y]]))
             end,
             NEORG_VERSION = function()
-              return require("luasnip").insert_node(1, config.version)
+              return ls.text_node(config.version)
             end,
           },
           snippets_overwrite = {
