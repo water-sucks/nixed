@@ -118,108 +118,7 @@ neorg_spec.config = function()
           engine = "nvim-cmp",
         },
       },
-      ["core.keybinds"] = {
-        config = {
-          hook = function()
-            wk.add({
-              {
-                buffer = 0,
-                { "<LocalLeader>t", group = "Tasks" },
-                { "<LocalLeader>ta", desc = "Mark task ambiguous" },
-                { "<LocalLeader>tc", desc = "Mark task canceled" },
-                { "<LocalLeader>td", desc = "Mark task done" },
-                { "<LocalLeader>th", desc = "Mark task on hold" },
-                { "<LocalLeader>ti", desc = "Mark task important" },
-                { "<LocalLeader>tp", desc = "Mark task pending" },
-                { "<LocalLeader>tr", desc = "Mark task recurring" },
-                { "<LocalLeader>tu", desc = "Mark task undone" },
-
-                { "<LocalLeader>i", desc = "Insert" },
-
-                { "<LocalLeader>m", group = "Modes" },
-                { "<LocalLeader>mh", desc = "Navigate headings" },
-                { "<LocalLeader>ml", desc = "Navigate links" },
-                { "<LocalLeader>mn", desc = "Normal mode (norg)" },
-
-                { "<LocalLeader>n", desc = "New note" },
-
-                { "<LocalLeader>p", "<cmd>Neorg presenter start<CR>", desc = "Start presenter" },
-                { "<LocalLeader>c", "<cmd>Neorg toggle-concealer<CR>", desc = "Toggle concealer" },
-
-                { "<LocalLeader>j", desc = "Traverse next" },
-                { "<LocalLeader>k", desc = "Traverse previous" },
-
-                { "<LocalLeader>l", group = "List" },
-                { "<LocalLeader>li", desc = "Invert list type" },
-                { "<LocalLeader>lt", desc = "Toggle list type" },
-
-                { ">.", desc = "Promote" },
-                { ">>", desc = "Promote nested" },
-                { "<,", desc = "Demote" },
-                { "<<", desc = "Demote nested" },
-              },
-            })
-          end,
-          keybind_presets = {
-            neorg = function(keybinds)
-              -- This is a slightly misleading name; it's the localleader key.
-              local leader = keybinds.leader
-
-              -- Map all the below keybinds only when the "norg" mode is active
-              keybinds.map_event_to_mode("norg", {
-                n = {
-                  { leader .. "ta", "core.qol.todo_items.todo.task_ambiguous" },
-                  { leader .. "tc", "core.qol.todo_items.todo.task_cancelled" },
-                  { leader .. "td", "core.qol.todo_items.todo.task_done" },
-                  { leader .. "th", "core.qol.todo_items.todo.task_on_hold" },
-                  { leader .. "ti", "core.qol.todo_items.todo.task_important" },
-                  { leader .. "tp", "core.qol.todo_items.todo.task_pending" },
-                  { leader .. "tr", "core.qol.todo_items.todo.task_recurring" },
-                  { leader .. "tu", "core.qol.todo_items.todo.task_undone", "Mark task undone" },
-
-                  { leader .. "n", "core.dirman.new.note" },
-
-                  { leader .. "j", "core.integrations.treesitter.next.heading" },
-                  { leader .. "k", "core.integrations.treesitter.previous.heading" },
-
-                  { ">.", "core.promo.promote" },
-                  { "<,", "core.promo.demote" },
-                  { ">>", "core.promo.promote", "nested" },
-                  { "<<", "core.promo.demote", "nested" },
-
-                  { leader .. "lt", "core.pivot.toggle-list-type" },
-                  { leader .. "li", "core.pivot.invert-list-type" },
-                },
-
-                i = {
-                  { "<C-t>", "core.promo.promote" },
-                  { "<C-d>", "core.promo.demote" },
-                  { "<M-CR>", "core.itero.next-iteration" },
-                },
-              }, {
-                silent = true,
-                noremap = true,
-              })
-
-              -- Map the below keys on presenter mode
-              keybinds.map_event_to_mode("presenter", {
-                n = {
-                  { "<CR>", "core.presenter.next_page" },
-                  { "l", "core.presenter.next_page" },
-                  { "h", "core.presenter.previous_page" },
-
-                  { "q", "core.presenter.close" },
-                  { "<Esc>", "core.presenter.close" },
-                },
-              }, {
-                silent = true,
-                noremap = true,
-                nowait = true,
-              })
-            end,
-          },
-        },
-      },
+      ["core.keybinds"] = {},
       ["core.presenter"] = {
         config = {
           zen_mode = "zen-mode",
@@ -242,6 +141,44 @@ neorg_spec.config = function()
         },
       },
     },
+  })
+
+  vim.api.nvim_create_autocmd("Filetype", {
+    pattern = "norg",
+    callback = function()
+      wk.add({
+        {
+          buffer = true,
+          { "<LocalLeader>t", group = "Tasks" },
+          { "<LocalLeader>ta", desc = "Mark task ambiguous" },
+          { "<LocalLeader>tc", desc = "Mark task canceled" },
+          { "<LocalLeader>td", desc = "Mark task done" },
+          { "<LocalLeader>th", desc = "Mark task on hold" },
+          { "<LocalLeader>ti", desc = "Mark task important" },
+          { "<LocalLeader>tp", desc = "Mark task pending" },
+          { "<LocalLeader>tr", desc = "Mark task recurring" },
+          { "<LocalLeader>tu", desc = "Mark task undone" },
+
+          { "<LocalLeader>i", desc = "Insert" },
+          { "<LocalLeader>id", desc = "Insert date" },
+
+          { "<LocalLeader>n", group = "New" },
+          { "<LocalLeader>nn", desc = "New note" },
+
+          { "<LocalLeader>p", "<cmd>Neorg presenter start<CR>", desc = "Start presenter" },
+          { "<LocalLeader>c", "<cmd>Neorg toggle-concealer<CR>", desc = "Toggle concealer" },
+
+          { "<LocalLeader>l", group = "List" },
+          { "<LocalLeader>li", desc = "Invert list type" },
+          { "<LocalLeader>lt", desc = "Toggle list type" },
+
+          { ">.", desc = "Promote" },
+          { ">>", desc = "Promote nested" },
+          { "<,", desc = "Demote" },
+          { "<<", desc = "Demote nested" },
+        },
+      })
+    end,
   })
 
   vim.api.nvim_create_autocmd({ "BufNew", "BufNewFile" }, {
