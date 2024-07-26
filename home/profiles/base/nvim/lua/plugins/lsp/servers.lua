@@ -220,10 +220,6 @@ local server_configs = {
         },
       },
     },
-    on_attach = function(client, bufnr)
-      on_attach(client, bufnr)
-      client.server_capabilities.semanticTokensProvider = nil
-    end,
   },
   tsserver = {
     root_dir = lsp.util.root_pattern("package.json"),
