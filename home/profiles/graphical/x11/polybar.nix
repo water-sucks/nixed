@@ -13,6 +13,7 @@
   termLaunch = "${kitty} start --";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
+  blueberry = "${pkgs.blueberry}/bin/blueberry";
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   rofi = "${pkgs.rofi}/bin/rofi";
@@ -236,7 +237,7 @@ in {
         exec = "${bluetooth-status}";
         interval = 2;
         click-left = "${toggle-bluetooth}";
-        click-right = "${termLaunch} ${bluetoothctl}";
+        click-right = "${blueberry}";
       };
 
       "module/wlan" = {

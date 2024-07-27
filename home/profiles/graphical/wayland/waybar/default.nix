@@ -14,7 +14,7 @@
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
-  bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
+  blueberry = "${pkgs.blueberry}/bin/blueberry";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   getAppname = "${pkgs.get-appname}/bin/get-appname";
   activeWindowAppName = with pkgs;
@@ -79,7 +79,7 @@ in {
           format-off = "󰂲";
           format-on = ":";
           format-connected = " {device_alias}";
-          on-click = "${termLaunch} ${bluetoothctl}";
+          on-click = "${blueberry}";
           tooltip-format = "{controller_alias}\t{controller_address}";
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
