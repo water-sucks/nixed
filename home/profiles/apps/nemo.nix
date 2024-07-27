@@ -5,7 +5,7 @@
 }:
 lib.mkIf pkgs.stdenv.isLinux {
   home.packages = with pkgs; [
-    cinnamon.nemo
+    nemo
   ];
 
   xdg.mimeApps.defaultApplications = {
