@@ -186,6 +186,9 @@ in
           ".cache/nvim"
           ".config/sqls"
         ];
+        files = [
+          ".config/zls.json"
+        ];
       };
     })
   ]
