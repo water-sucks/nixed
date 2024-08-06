@@ -6,24 +6,32 @@
 }: let
   inherit (pkgs.stdenv) isLinux isDarwin;
 
-  armcord = let
-    pristineXdgOpen =
-      pkgs.runCommandWith {
-        name = "pristine-xdg-open";
-        derivationArgs.nativeBuildInputs = [pkgs.makeWrapper];
-      } ''
-        # Wrap xdg-open, unsetting `LD_LIBRARY_PATH` becuase it's used by
-        # the `armcord` package to inject libraries at runtime; these conflict
-        # with Firefox, etc.
-        makeWrapper ${pkgs.xdg-utils}/bin/xdg-open $out/bin/xdg-open \
-          --unset LD_LIBRARY_PATH
-      '';
-  in
-    pkgs.armcord.overrideAttrs (_: {
-      postInstall = ''
-        wrapProgram $out/bin/armcord --prefix PATH : "${pristineXdgOpen}/bin"
-      '';
-    });
+  armcord = pkgs.armcord.overrideAttrs (o: rec {
+    version = "3.3.0-dev";
+    src = pkgs.fetchFromGitHub {
+      owner = "ArmCord";
+      repo = "ArmCord";
+      rev = "122601b0211847648e553398a67a43e760c129c6";
+      hash = "sha256-VWPzTljwfG+/JLUYlWJLiy3dXf9NeunR3eQhDUR2DEg=";
+    };
+    pnpmDeps = pkgs.pnpm.fetchDeps {
+      inherit (o) pname;
+      inherit version src;
+      hash = "sha256-y/y1lpTWqcf/aLj5GBxGfRbK2XVF6rkjRLA/TXa3X6Q=";
+    };
+    desktopItems = [
+      (pkgs.makeDesktopItem {
+        name = "armcord";
+        desktopName = "ArmCord";
+        exec = "armcord %U";
+        icon = "armcord";
+        comment = o.meta.description;
+        categories = ["Network"];
+        startupWMClass = "ArmCord";
+        terminal = false;
+      })
+    ];
+  });
 in
   lib.mkMerge [
     (lib.mkIf isLinux {
@@ -33,7 +41,7 @@ in
 
       home.persistence.${config.persistence.directory} = {
         directories = [
-          ".config/ArmCord"
+          ".config/armcord"
         ];
       };
     })
@@ -41,8 +49,8 @@ in
       home.file = let
         target =
           if isDarwin
-          then "Library/Application Support/ArmCord/themes/OLED"
-          else ".config/ArmCord/themes/OLED";
+          then "Library/Application Support/armcord/themes/OLED"
+          else ".config/armcord/themes/OLED";
       in {
         "${target}/oled.theme.css".text = ''
           @import url(https://dimdengd.github.io/discord-oled-theme/code.css);
