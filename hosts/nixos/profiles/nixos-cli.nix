@@ -8,6 +8,10 @@ _: {
         rollback = ["generation" "rollback"];
         build = ["apply" "--no-activate" "--no-boot" "--output result"];
       };
+
+      apply = {
+        imply_impure_with_tag = true;
+      };
     };
   };
 }
