@@ -7,17 +7,17 @@
   inherit (pkgs.stdenv) isLinux isDarwin;
 
   armcord = pkgs.armcord.overrideAttrs (o: rec {
-    version = "3.3.0-dev";
+    version = "3.2.8";
     src = pkgs.fetchFromGitHub {
       owner = "ArmCord";
       repo = "ArmCord";
-      rev = "122601b0211847648e553398a67a43e760c129c6";
-      hash = "sha256-VWPzTljwfG+/JLUYlWJLiy3dXf9NeunR3eQhDUR2DEg=";
+      rev = "v${version}";
+      hash = "sha256-H/Y3xA7gE24UsUkrxmrRFSvs16qZCVxli9vdnt7ihi8=";
     };
     pnpmDeps = pkgs.pnpm.fetchDeps {
       inherit (o) pname;
       inherit version src;
-      hash = "sha256-y/y1lpTWqcf/aLj5GBxGfRbK2XVF6rkjRLA/TXa3X6Q=";
+      hash = "sha256-hYp1XbWQL5NbIzzUSnZ7y7V+vYQmymRNo+EiSjn5d9E=";
     };
     desktopItems = [
       (pkgs.makeDesktopItem {
@@ -41,7 +41,11 @@ in
 
       home.persistence.${config.persistence.directory} = {
         directories = [
+          # This is a little strange, but we're keeping both in case
+          # the code gets any weirder when dealing with case-insensitive
+          # file systems
           ".config/armcord"
+          ".config/ArmCord"
         ];
       };
     })
@@ -49,8 +53,8 @@ in
       home.file = let
         target =
           if isDarwin
-          then "Library/Application Support/armcord/themes/OLED"
-          else ".config/armcord/themes/OLED";
+          then "Library/Application Support/ArmCord/themes/OLED"
+          else ".config/ArmCord/themes/OLED";
       in {
         "${target}/oled.theme.css".text = ''
           @import url(https://dimdengd.github.io/discord-oled-theme/code.css);
