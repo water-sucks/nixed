@@ -182,6 +182,8 @@ in
         directories = [
           ".local/state/nvim"
           ".local/share/eclipse"
+          # This is needed for neorg to not reinstall plugins on every boot
+          ".local/share/nvim/lazy"
           ".local/share/nvim/luarocks.nvim-rocks"
           ".cache/nvim"
           ".config/sqls"
