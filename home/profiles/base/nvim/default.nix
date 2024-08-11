@@ -98,6 +98,7 @@ in
 
         extraPackages = with pkgs; [
           # Language servers
+          astro-language-server
           ccls
           emmet-ls
           gopls
@@ -105,7 +106,6 @@ in
           ltex-ls
           lua-language-server
           nil
-          nodePackages."@astrojs/language-server"
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
           nodePackages.svelte-language-server
