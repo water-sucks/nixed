@@ -103,7 +103,7 @@ in {
         module-margin-right = 1;
         separator = "";
         font-0 = "BlexMono Nerd Font:size=8;3";
-        font-1 = "IBM Plex Sans JP:size=8;0";
+        font-1 = "Noto Sans Telugu:size=8;3";
         border-bottom-size = 2;
         border-color = "\${colors.primary}";
         cursor-click = "pointer";
@@ -140,15 +140,15 @@ in {
         label-urgent-foreground = "\${colors.text}";
         label-empty-foreground = "\${colors.deactivated}";
 
-        icon-0 = "1;一";
-        icon-1 = "2;二";
-        icon-2 = "3;三";
-        icon-3 = "4;四";
-        icon-4 = "5;五";
-        icon-5 = "6;六";
-        icon-6 = "7;七";
-        icon-7 = "8;八";
-        icon-8 = "9;九";
+        icon-0 = "1;౧";
+        icon-1 = "2;౨";
+        icon-2 = "3;౩";
+        icon-3 = "4;౪";
+        icon-4 = "5;౫";
+        icon-5 = "6;౬";
+        icon-6 = "7;౭";
+        icon-7 = "8;౮";
+        icon-8 = "9;౯";
       };
 
       "module/layout" = {

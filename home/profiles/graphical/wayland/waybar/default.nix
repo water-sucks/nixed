@@ -172,7 +172,7 @@ in {
         };
         "river/tags" = {
           "num-tags" = 9;
-          "tag-labels" = ["一" "二" "三" "四" "五" "六" "七" "八" "九"];
+          "tag-labels" = ["౧" "౨" "౩" "౪" "౫" "౬" "౭" "౮" "౯"];
         };
         "wlr/taskbar" = {
           format = "{icon}";
