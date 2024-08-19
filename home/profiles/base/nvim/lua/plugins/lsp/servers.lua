@@ -27,7 +27,7 @@ local servers = {
   "sqls",
   "svelte",
   "tsserver",
-  "typst_lsp",
+  -- "typst_lsp",
   "vala_ls",
   "zls",
 }
