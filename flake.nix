@@ -26,8 +26,6 @@
     nix-colors.url = "github:Misterio77/nix-colors";
 
     leftwm.url = "github:leftwm/leftwm/7e7fcab2c141bac303b70b33a5890ec8b0666f74";
-
-    zls.url = "github:zigtools/zls";
   };
 
   outputs = {
