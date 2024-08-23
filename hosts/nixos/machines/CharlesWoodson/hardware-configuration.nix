@@ -24,7 +24,8 @@
     supportedFilesystems = ["zfs"];
 
     kernelModules = ["amdgpu" "kvm-amd" "wl" "v412loopback"];
-    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+    # Disabled due to VMWare kernel module version requirements
+    # kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback.out
