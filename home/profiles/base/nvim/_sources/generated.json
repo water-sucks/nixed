@@ -285,6 +285,28 @@
     },
     "version": "05a9ab28b53f71d1aece421ef32fee2cb857a843"
   },
+  "plugin-conform-nvim": {
+    "cargoLocks": null,
+    "date": "2024-08-30",
+    "extract": null,
+    "name": "plugin-conform-nvim",
+    "passthru": {
+      "pretty-name": "conform.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "stevearc",
+      "repo": "conform.nvim",
+      "rev": "0ebe875d9c306f5fc829db38492ffff2a70d8e9d",
+      "sha256": "sha256-2Axf/8l4LkjrsD1cRQ36rK6pJF5rz2Wb7tAdWSH0/4w=",
+      "type": "github"
+    },
+    "version": "0ebe875d9c306f5fc829db38492ffff2a70d8e9d"
+  },
   "plugin-darkrose-nvim": {
     "cargoLocks": null,
     "date": "2024-06-28",

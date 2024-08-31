@@ -174,6 +174,19 @@
     pretty-name = "cmp_luasnip";
     date = "2023-10-09";
   };
+  plugin-conform-nvim = {
+    pname = "plugin-conform-nvim";
+    version = "0ebe875d9c306f5fc829db38492ffff2a70d8e9d";
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "conform.nvim";
+      rev = "0ebe875d9c306f5fc829db38492ffff2a70d8e9d";
+      fetchSubmodules = false;
+      sha256 = "sha256-2Axf/8l4LkjrsD1cRQ36rK6pJF5rz2Wb7tAdWSH0/4w=";
+    };
+    pretty-name = "conform.nvim";
+    date = "2024-08-30";
+  };
   plugin-darkrose-nvim = {
     pname = "plugin-darkrose-nvim";
     version = "c252ea0010b4dc7539f4b64bcaf64f9101a1cf16";

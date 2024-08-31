@@ -57,6 +57,7 @@ in
     (plugin "rafamadriz" "friendly-snippets")
     (plugin "onsails" "lspkind-nvim")
     (plugin "iurimateus" "luasnip-latex-snippets.nvim")
+    (plugin "stevearc" "conform.nvim")
 
     # Specialized windows
     (plugin "stevearc" "dressing.nvim")
