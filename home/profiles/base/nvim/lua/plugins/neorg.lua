@@ -1,6 +1,7 @@
 local luarocks_spec = use("vhyrro/luarocks.nvim", {
   priority = 1000,
   config = true,
+  ft = "norg",
 })
 
 local file_exists_and_is_empty = function(filepath)
@@ -20,7 +21,7 @@ local neorg_spec = use("nvim-neorg/neorg", {
     use("nvim-neorg/neorg-telescope"),
     use("pysan3/neorg-templates", { dependencies = { use("L3MON4D3/LuaSnip") } }),
   },
-  lazy = false,
+  ft = "norg",
 })
 
 neorg_spec.config = function()
