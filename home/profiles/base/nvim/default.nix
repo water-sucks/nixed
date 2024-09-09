@@ -115,7 +115,7 @@ in
           ruff-lsp
           sqls
           nodePackages.vscode-langservers-extracted
-          # typst-lsp
+          typst-lsp
           zls
 
           # efm-langserver sources
