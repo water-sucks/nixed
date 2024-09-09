@@ -21,9 +21,7 @@
       }) (filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources);
 
   # Attrset of grammars built using nvim-treesitter's lockfile
-  grammars' = with lib;
-    genAttrs' pkgs.vimPlugins.nvim-treesitter.withAllGrammars.passthru.dependencies
-    (v: replaceStrings ["vimplugin-treesitter-grammar-"] ["tree-sitter-"] v.name);
+  grammars' = lib.filterAttrs (n: _: lib.hasPrefix "tree-sitter-" n) pkgs.vimPlugins.nvim-treesitter.passthru.builtGrammars;
   grammars = grammars' // generatedGrammars;
 
   parserDir = with lib;
@@ -34,11 +32,7 @@
         name = "${replaceStrings ["-"] ["_"] (removePrefix "tree-sitter-" n)}.so";
       in {
         inherit name;
-        path =
-          # nvim-treesitter's grammars are inside a "parser" directory, which sucks
-          if hasPrefix "vimplugin-treesitter" v.name
-          then "${v}/parser/${name}"
-          else "${v}/parser";
+        path = "${v}/parser";
       })
       grammars);
 

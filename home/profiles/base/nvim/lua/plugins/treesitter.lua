@@ -19,10 +19,6 @@ treesitter_spec.config = function()
     sync_install = false,
     ignore_install = {},
     ensure_installed = {},
-    -- This directory doesn't actually have any parsers in it;
-    -- it's just to prevent the plugin from getting fussy because
-    -- it can't write into the Nix store.
-    parser_install_dir = vim.fn.stdpath("config") .. "/parsers",
 
     highlight = {
       enable = true,
@@ -150,7 +146,7 @@ treesitter_spec.config = function()
     { "glO", desc = "List definitions TOC" },
   })
 
-  -- Use HTML parser for XML files
+  --[[ -- Use HTML parser for XML files ]]
   vim.treesitter.language.register("html", "xml")
   require("tree-sitter-just").setup({})
 
