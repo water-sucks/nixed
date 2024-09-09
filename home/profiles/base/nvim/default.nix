@@ -115,6 +115,7 @@ in
           ruff-lsp
           sqls
           nodePackages.vscode-langservers-extracted
+          terraform-ls
           typst-lsp
           zls
 

@@ -26,6 +26,7 @@ local servers = {
   "r_language_server",
   "sqls",
   "svelte",
+  "terraformls",
   "tsserver",
   "typst_lsp",
   "vala_ls",
