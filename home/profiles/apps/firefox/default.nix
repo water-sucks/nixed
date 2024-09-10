@@ -53,6 +53,9 @@ in
     }
     (lib.mkIf isDarwin {
       programs.firefox.package = pkgs.runCommand "firefox-0.0.0" {} "mkdir $out";
+      home.sessionVariables = {
+        MOZ_LEGACY_PROFILES = "1";
+      };
     })
     (lib.mkIf isLinux {
       xdg.mimeApps.defaultApplications = {
