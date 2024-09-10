@@ -27,7 +27,7 @@ local servers = {
   "sqls",
   "svelte",
   "terraformls",
-  "tsserver",
+  "ts_ls",
   "typst_lsp",
   "vala_ls",
   "zls",
@@ -222,7 +222,7 @@ local server_configs = {
       },
     },
   },
-  tsserver = {
+  ts_ls = {
     root_dir = lsp.util.root_pattern("package.json"),
     single_file_support = false,
   },
