@@ -4,7 +4,8 @@ local on_attach = function(_, bufnr)
   wk.add({
     {
       buffer = bufnr,
-      { "gd", vim.lsp.buf.declaration, desc = "Go to declaration" },
+      { "gD", vim.lsp.buf.declaration, desc = "Go to declaration" },
+      { "gd", vim.lsp.buf.definition, desc = "Go to definition" },
       { "gh", vim.lsp.buf.hover, desc = "Hover docs" },
       { "gi", vim.lsp.buf.implementation, desc = "Go to implementation" },
       { "go", vim.lsp.buf.open_float, desc = "Show code actions" },
