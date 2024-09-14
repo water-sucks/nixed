@@ -44,8 +44,14 @@ in {
       ];
     };
     registry = {
-      nixpkgs.flake = inputs.nixpkgs;
-      nixpkgs-stable.flake = inputs.nixpkgs-stable;
+      nixpkgs.to = lib.mkForce {
+        type = "path";
+        path = inputs.nixpkgs;
+      };
+      nixpkgs-stable.to = lib.mkForce {
+        type = "path";
+        path = inputs.nixpkgs-stable;
+      };
     };
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
