@@ -14,6 +14,7 @@ local servers = {
   "emmet_ls",
   "eslint",
   "gopls",
+  "golangci_lint_ls",
   "graphql",
   "html",
   "ltex",

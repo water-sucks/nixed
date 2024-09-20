@@ -96,6 +96,7 @@ in
           ccls
           emmet-ls
           gopls
+          golangci-lint-langserver
           jdt-language-server
           ltex-ls
           lua-language-server
