@@ -8,9 +8,19 @@ telescope_spec.config = function()
   local wk = require("which-key")
 
   telescope.setup({
+    defaults = {
+      file_ignore_patterns = {
+        ".git/",
+        "node_modules",
+        "%.g.dart",
+        "%.freezed.dart",
+      },
+    },
+
     pickers = {
       find_files = {
         theme = "dropdown",
+        hidden = true,
       },
       live_grep = {},
       buffers = {
