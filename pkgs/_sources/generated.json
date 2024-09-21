@@ -8,11 +8,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-kYyQZCK7m3/rDTwhd+8xGrGYOZxTSA92q/4okQ73TS0=",
+      "sha256": "sha256-y25wHxOxZVaPJYQcyRq3rV8mFe2o/rwBD7W5eBqoQB8=",
       "type": "url",
-      "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.10.0.deb"
+      "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.11.0.deb"
     },
-    "version": "4.10.0"
+    "version": "4.11.0"
   },
   "get-appname": {
     "cargoLocks": null,
