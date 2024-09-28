@@ -1,7 +1,7 @@
 {
   "git-aliases": {
     "cargoLocks": null,
-    "date": "2024-08-24",
+    "date": "2024-09-21",
     "extract": null,
     "name": "git-aliases",
     "passthru": null,
@@ -13,10 +13,10 @@
       "name": null,
       "owner": "GitAlias",
       "repo": "gitalias",
-      "rev": "ddb75f099f4a60205bc16eef3428de77084b945f",
-      "sha256": "sha256-Bzp2rT0zcVUdn61FQXq+kOLjcb0/FhuwA33K/uzAa9I=",
+      "rev": "b56365b13a318b544ecb0df112bbbd12c4e61bce",
+      "sha256": "sha256-CdjSugU06nOiRBWx/CrLKlLRUi3OQWAuhe/pV+BgRb8=",
       "type": "github"
     },
-    "version": "ddb75f099f4a60205bc16eef3428de77084b945f"
+    "version": "b56365b13a318b544ecb0df112bbbd12c4e61bce"
   }
 }
