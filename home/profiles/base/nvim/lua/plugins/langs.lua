@@ -1,9 +1,11 @@
 local on_attach = require("plugins.lsp.on_attach")
 local flutter_tools_spec = use("akinsho/flutter-tools.nvim", {
-  dependencies = { use("nvim-lua/plenary.nvim") },
+  dependencies = { use("nvim-lua/plenary.nvim"), use("mfussenegger/nvim-dap") },
   ft = "dart",
 })
 flutter_tools_spec.config = function()
+  local wk = require("which-key")
+
   require("flutter-tools").setup({
     lsp = {
       cmd = (function()
@@ -23,7 +25,22 @@ flutter_tools_spec.config = function()
           return { "dart", "language-server", "--protocol=lsp" }
         end
       end)(),
-      on_attach = on_attach,
+      on_attach = function(client, bufnr)
+        on_attach(client, bufnr)
+
+        wk.add({
+          {
+            buffer = bufnr,
+            { "<LocalLeader>d", "<cmd>FlutterDevices<CR>", desc = "List connected devices" },
+            { "<LocalLeader>e", "<cmd>FlutterEmulators<CR>", desc = "List connected emulators" },
+            { "<LocalLeader>s", "<cmd>FlutterRun<CR>", desc = "Start app" },
+            { "<LocalLeader>r", "<cmd>FlutterReload<CR>", desc = "Hot reload" },
+            { "<LocalLeader>R", "<cmd>FlutterRestart<CR>", desc = "Hot restart" },
+            { "<LocalLeader>q", "<cmd>FlutterQuit<CR>", desc = "Quit app" },
+            { "<LocalLeader>Q", "<cmd>FlutterDetach<CR>", desc = "Detach app" },
+          },
+        })
+      end,
       color = {
         enabled = false,
         background = false,
@@ -52,16 +69,7 @@ flutter_tools_spec.config = function()
     },
     debugger = {
       enabled = true,
-      run_via_dap = true,
-      register_configurations = function(_)
-        local dap = require("dap")
-        dap.adapters.dart = {
-          type = "executable",
-          command = vim.env.FLUTTER_SDK and "flutter" or "dart",
-          args = { "debug_adapter" },
-        }
-        dap.configurations.dart = {}
-      end,
+      exception_breakpoints = {},
     },
   })
 end

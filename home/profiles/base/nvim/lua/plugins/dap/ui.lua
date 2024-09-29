@@ -43,6 +43,7 @@ dapui.setup({
 })
 
 dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+dap.listeners.before.launch.dapui_config = dapui.open
 -- Closing it makes it really hard to see stdout at the end :{
 -- dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 -- dap.listeners.before.event_exited["dapui_config"] = dapui.close
@@ -64,5 +65,5 @@ wk.add({
     desc = "Reset UI layout",
   },
   { "<Leader>de", dapui.eval, desc = "Evaluate", mode = { "n", "v" } },
-  { "<Leader>dU", dapui.eval, desc = "Toggle UI" },
+  { "<Leader>dU", dapui.toggle, desc = "Toggle UI" },
 })

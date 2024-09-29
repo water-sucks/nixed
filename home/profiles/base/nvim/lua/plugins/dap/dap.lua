@@ -38,3 +38,5 @@ wk.add({
   { "<Leader>dR", dap.run_to_cursor, desc = "Run to cursor" },
   { "<Leader>dB", conditionalBreakpoint, desc = "Conditional breakpoint" },
 })
+
+require("dap.ext.vscode").load_launchjs()

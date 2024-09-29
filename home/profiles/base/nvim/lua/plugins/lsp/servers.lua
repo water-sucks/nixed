@@ -170,13 +170,6 @@ local server_configs = {
       provideFormatter = false,
     },
   },
-  dartls = {
-    on_attach = function(client, bufnr)
-      on_attach(client, bufnr)
-      ---@diagnostic disable-next-line: undefined-field
-      client.settings.dart.lineLength = tonumber(vim.b.editorconfig.max_line_length) or 80
-    end,
-  },
   denols = {
     root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
     single_file_support = false,
