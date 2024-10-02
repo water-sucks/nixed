@@ -5,6 +5,8 @@
   ...
 }: let
   inherit (pkgs.stdenv) isLinux;
+
+  atuinCfg = config.programs.atuin;
 in
   lib.mkMerge [
     {
@@ -19,6 +21,9 @@ in
           enter_accept = "false";
           common_subcommands = ["nixos"];
           common_prefix = ["sudo"];
+          daemon = {
+            enabled = true;
+          };
         };
       };
       programs.zsh.initExtra = ''
@@ -30,6 +35,21 @@ in
         directories = [
           ".local/share/atuin"
         ];
+      };
+
+      systemd.user.services.atuind = {
+        Unit = {
+          Description = "atuin daemon";
+        };
+        Install = {
+          WantedBy = ["default.target"];
+        };
+        Service = {
+          ExecStart = "${atuinCfg.package}/bin/atuin daemon";
+          Restart = "on-failure";
+          RestartSec = 1;
+          Environment = ["ATUIN_LOG=info"];
+        };
       };
     })
   ]
