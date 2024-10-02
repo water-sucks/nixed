@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isLinux;
+  inherit (pkgs.stdenv) isLinux isDarwin;
 
-  atuinCfg = config.programs.atuin;
+  atuin = "${config.programs.atuin.package}/bin/atuin";
 in
   lib.mkMerge [
     {
@@ -45,10 +45,26 @@ in
           WantedBy = ["default.target"];
         };
         Service = {
-          ExecStart = "${atuinCfg.package}/bin/atuin daemon";
+          ExecStart = "${atuin} daemon";
           Restart = "on-failure";
           RestartSec = 1;
           Environment = ["ATUIN_LOG=info"];
+        };
+      };
+    })
+    (lib.mkIf isDarwin {
+      launchd.agents.atuind = {
+        enable = true;
+        config = {
+          ProgramArguments = ["${atuin}" "daemon"];
+          EnvironmentVariables = {
+            ATUIN_LOG = "info";
+          };
+          KeepAlive = {
+            Crashed = true;
+            SuccessfulExit = false;
+          };
+          ProcessType = "Background";
         };
       };
     })
