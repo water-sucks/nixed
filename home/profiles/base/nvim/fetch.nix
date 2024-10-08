@@ -113,6 +113,7 @@ in
     # Special Neovim sauce
     (plugin "IogaMaster" "neocord")
     (plugin "alec-gibson" "nvim-tetris")
+    (plugin "Eandrju" "cellular-automaton.nvim")
     (plugin "nvim-neorg" "neorg")
     (plugin "vhyrro" "luarocks.nvim")
     (plugin "nvim-neorg" "neorg-telescope")

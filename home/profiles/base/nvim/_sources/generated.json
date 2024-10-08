@@ -109,6 +109,28 @@
     },
     "version": "0b2fd861eee7595015b6561dade52fb060be10c4"
   },
+  "plugin-cellular-automaton-nvim": {
+    "cargoLocks": null,
+    "date": "2024-06-30",
+    "extract": null,
+    "name": "plugin-cellular-automaton-nvim",
+    "passthru": {
+      "pretty-name": "cellular-automaton.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "Eandrju",
+      "repo": "cellular-automaton.nvim",
+      "rev": "11aea08aa084f9d523b0142c2cd9441b8ede09ed",
+      "sha256": "sha256-nIv7ISRk0+yWd1lGEwAV6u1U7EFQj/T9F8pU6O0Wf0s=",
+      "type": "github"
+    },
+    "version": "11aea08aa084f9d523b0142c2cd9441b8ede09ed"
+  },
   "plugin-cmp-buffer": {
     "cargoLocks": null,
     "date": "2022-08-10",

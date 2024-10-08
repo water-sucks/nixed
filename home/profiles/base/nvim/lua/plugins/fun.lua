@@ -82,8 +82,20 @@ local tetris_spec = use("alec-gibson/nvim-tetris", {
   cmd = "Tetris",
 })
 
+local cell_automata_spec = use("Eandrju/cellular-automaton.nvim", {
+  config = function()
+    local wk = require("which-key")
+    wk.add({
+      { "<Leader>`", group = "Fuck around/find out" },
+      { "<Leader>`r", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Make it rain" },
+      { "<Leader>`l", "<cmd>CellularAutomaton game_of_life<CR>", desc = "Game of life" },
+    })
+  end,
+})
+
 return {
   duck_spec,
   neocord_spec,
   tetris_spec,
+  cell_automata_spec,
 }
