@@ -37,23 +37,48 @@ in
         ];
       };
 
-      systemd.user.services.atuind = {
+      programs.atuin = {
+        settings = {
+          daemon = {
+            systemd_socket = true;
+          };
+        };
+      };
+
+      systemd.user.services.atuin-daemon = {
         Unit = {
           Description = "atuin daemon";
+          Requires = ["atuin-daemon.socket"];
         };
         Install = {
+          Also = ["atuin-daemon.socket"];
           WantedBy = ["default.target"];
         };
         Service = {
           ExecStart = "${atuin} daemon";
-          Restart = "on-failure";
-          RestartSec = 1;
           Environment = ["ATUIN_LOG=info"];
+          Restart = "on-failure";
+          RestartSteps = 3;
+          RestartMaxDelaySec = 6;
+        };
+      };
+
+      systemd.user.sockets.atuin-daemon = {
+        Unit = {
+          Description = "atuin daemon socket";
+        };
+        Install = {
+          WantedBy = ["sockets.target"];
+        };
+        Socket = {
+          ListenStream = "%h/.local/share/atuin/atuin.sock";
+          SocketMode = "0600";
+          RemoveOnStop = true;
         };
       };
     })
     (lib.mkIf isDarwin {
-      launchd.agents.atuind = {
+      launchd.agents.atuin-daemon = {
         enable = true;
         config = {
           ProgramArguments = ["${atuin}" "daemon"];
