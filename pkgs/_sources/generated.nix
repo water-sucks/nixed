@@ -62,10 +62,10 @@
   };
   vics-mvlo = {
     pname = "vics-mvlo";
-    version = "v17.0.10";
+    version = "v17.0.11";
     src = fetchurl {
-      url = "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.10/linux-vcmi.zip";
-      sha256 = "sha256-QGIM+Qz3iaL3O24ZZJFx7UEACMHJedZC5m6WO3zhFoY=";
+      url = "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.11/linux-vcmi.zip";
+      sha256 = "sha256-wt5GdIVlW4bC1eN+hNFWR5jGRJt5hLaB/nYOE5wZUKY=";
     };
   };
 }
