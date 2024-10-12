@@ -20,11 +20,6 @@
     "fetch.url" = "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/$ver/MarioVsLuigi-Linux-$ver.zip";
   };
 
-  vics-mvlo = {
-    "src.github" = "vlcoo/VicMvsLO";
-    "fetch.url" = "https://github.com/vlcoo/VicMvsLO/releases/download/$ver/linux-vcmi.zip";
-  };
-
   java-debug = {
     "src.github" = "microsoft/java-debug";
     "fetch.github" = "microsoft/java-debug";
