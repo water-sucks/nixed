@@ -100,10 +100,10 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-QGIM+Qz3iaL3O24ZZJFx7UEACMHJedZC5m6WO3zhFoY=",
+      "sha256": "sha256-wt5GdIVlW4bC1eN+hNFWR5jGRJt5hLaB/nYOE5wZUKY=",
       "type": "url",
-      "url": "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.10/linux-vcmi.zip"
+      "url": "https://github.com/vlcoo/VicMvsLO/releases/download/v17.0.11/linux-vcmi.zip"
     },
-    "version": "v17.0.10"
+    "version": "v17.0.11"
   }
 }
