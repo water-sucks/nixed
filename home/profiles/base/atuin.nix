@@ -44,6 +44,9 @@ in
           };
         };
       };
+      home.sessionVariables = {
+        ATUIN_DAEMON__SOCKET_PATH = "$XDG_RUNTIME_DIR/atuin.sock";
+      };
 
       systemd.user.services.atuin-daemon = {
         Unit = {
@@ -56,7 +59,10 @@ in
         };
         Service = {
           ExecStart = "${atuin} daemon";
-          Environment = ["ATUIN_LOG=info"];
+          Environment = [
+            "ATUIN_LOG=info"
+            "ATUIN_DAEMON__SOCKET_PATH=%t/atuin.sock"
+          ];
           Restart = "on-failure";
           RestartSteps = 3;
           RestartMaxDelaySec = 6;
@@ -71,7 +77,7 @@ in
           WantedBy = ["sockets.target"];
         };
         Socket = {
-          ListenStream = "%h/.local/share/atuin/atuin.sock";
+          ListenStream = "%t/atuin.sock";
           SocketMode = "0600";
           RemoveOnStop = true;
         };
