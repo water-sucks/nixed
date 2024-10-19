@@ -1,8 +1,8 @@
 _: {
   homebrew.casks = [
-    "armcord"
     "element"
     "signal"
+    "legcord"
     "slack"
     "zoom"
   ];

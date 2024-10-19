@@ -8,8 +8,5 @@ _: {
       autoUpdate = true;
       upgrade = true;
     };
-    taps = [
-      "ArmCord/homebrew-armcord"
-    ];
   };
 }

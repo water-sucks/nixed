@@ -9,12 +9,12 @@ in
   lib.mkMerge [
     (lib.mkIf isLinux {
       home.packages = [
-        pkgs.armcord
+        pkgs.legcord
       ];
 
       home.persistence.${config.persistence.directory} = {
         directories = [
-          ".config/armcord"
+          ".config/legcord"
         ];
       };
     })
@@ -22,8 +22,8 @@ in
       home.file = let
         target =
           if isDarwin
-          then "Library/Application Support/armcord/themes/OLED"
-          else ".config/armcord/themes/OLED";
+          then "Library/Application Support/legcord/themes/OLED"
+          else ".config/legcord/themes/OLED";
       in {
         "${target}/oled.theme.css".text = ''
           @import url(https://dimdengd.github.io/discord-oled-theme/code.css);
