@@ -29,7 +29,6 @@
     android.enable = true;
     kvm.enable = true;
     ios.enable = true;
-    vmware.enable = true;
   };
 
   users = {

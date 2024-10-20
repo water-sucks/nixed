@@ -30,7 +30,6 @@
     kvm.enable = true;
     ios.enable = true;
     docker.enable = true;
-    vmware.enable = true;
 
     steam.enable = true;
   };
