@@ -10,7 +10,7 @@
         preLVM = true;
         allowDiscards = true;
       };
-      availableKernelModules = ["nvme" "xhci_pci" "thunderbolt"];
+      availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "i915"];
       kernelModules = ["dm-snapshot"];
       systemd.enable = true;
       verbose = false;
@@ -24,6 +24,8 @@
     kernelParams = [
       "mem_sleep_default=deep"
       "nvme.noacpi=1"
+      "i915.fastboot=1"
+      "i915.force_probe=46a6"
     ];
   };
 
