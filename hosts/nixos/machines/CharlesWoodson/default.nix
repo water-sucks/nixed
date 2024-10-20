@@ -19,8 +19,11 @@
     nixos-cli.enable = true;
 
     plymouth.enable = true;
+    ly.enable = true;
     wm-helper.enable = true;
-    lightdm.enable = true;
+    leftwm.enable = true;
+    river.enable = true;
+
     sound.enable = true;
     bluetooth.enable = true;
     i18n.enable = true;

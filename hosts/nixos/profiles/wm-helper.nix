@@ -10,8 +10,7 @@
   services = {
     dbus.packages = with pkgs; [dconf];
 
-    displayManager.sessionPackages = with pkgs; [river];
-    displayManager.defaultSession = "river";
+    displayManager.defaultSession = null;
 
     libinput.enable = true;
 
@@ -20,8 +19,10 @@
       videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
       xkb.layout = "us";
 
+      autoRepeatDelay = 250;
+      autoRepeatInterval = 50;
+
       desktopManager.xterm.enable = false;
-      windowManager.leftwm.enable = true;
     };
   };
 
@@ -32,8 +33,6 @@
       StopWhenUnneeded = false;
     };
   };
-
-  environment.systemPackages = with pkgs; [river];
 
   environment.variables = {
     NIXOS_OZONE_WL = "1";

@@ -74,8 +74,6 @@ in {
       # Causes problems for xss-lock and other services that
       # use this to test for Wayland.
       systemctl --user unset-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
-      ${xset} r rate 250 50
     '';
   };
 
