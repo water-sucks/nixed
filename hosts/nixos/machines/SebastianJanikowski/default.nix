@@ -1,6 +1,7 @@
 {
   imports = [
     ./configuration.nix
+    ./home-manager.nix
   ];
 
   profiles = {
