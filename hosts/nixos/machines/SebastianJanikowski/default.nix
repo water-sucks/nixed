@@ -14,7 +14,7 @@
     sudo.enable = true;
     fonts.enable = true;
     fontconfig.enable = true;
-    kmscon.enable = false;
+    console.enable = true;
     yubikey.enable = true;
     nixos-cli.enable = true;
 
