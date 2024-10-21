@@ -4,6 +4,10 @@
   hardware.cpu.intel.updateMicrocode = true;
 
   boot = {
+    loader.grub = {
+      gfxmodeEfi = "1920x1200";
+    };
+
     initrd = {
       luks.devices.root = {
         device = "/dev/disk/by-partlabel/NixOS";
