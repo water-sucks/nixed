@@ -5,7 +5,7 @@
 
   boot = {
     loader.grub = {
-      gfxmodeEfi = "1920x1200";
+      gfxmodeEfi = "1920x1080";
     };
 
     initrd = {
