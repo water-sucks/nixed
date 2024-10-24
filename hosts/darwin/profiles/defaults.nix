@@ -1,8 +1,4 @@
-{
-  self,
-  lib,
-  ...
-}: let
+{lib, ...}: let
   inherit (lib) mkDefault;
 in {
   services = {
@@ -60,7 +56,7 @@ in {
       AppleShowAllExtensions = true;
       AppleShowAllFiles = true;
 
-      InitialKeyRepeat = 17;
+      InitialKeyRepeat = 13;
       KeyRepeat = 3;
 
       NSAutomaticCapitalizationEnabled = false;
