@@ -100,7 +100,7 @@ in
           jdt-language-server
           ltex-ls
           lua-language-server
-          nil
+          nixd
           nodePackages.bash-language-server
           nodePackages.graphql-language-service-cli
           nodePackages.svelte-language-server

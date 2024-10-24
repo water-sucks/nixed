@@ -20,7 +20,7 @@ local servers = {
   "ltex",
   "lua_ls",
   "nickel_ls",
-  "nil_ls",
+  "nixd",
   "prismals",
   "pyright",
   "ruff_lsp",
@@ -199,19 +199,29 @@ local server_configs = {
       },
     },
   },
-  nil_ls = {
+  nixd = {
+    -- Use a .nixd.json file as a source for configuration.
+    -- This is mostly important for this repo.
+    on_init = function(client)
+      local path = client.workspace_folders[1].name
+
+      local nixd_json = io.open(path .. ".nixd.json")
+      if nixd_json == nil then
+        return
+      end
+
+      local contents = nixd_json:read()
+      nixd_json:close()
+
+      local overriden_settings = vim.json.decode(contents)
+
+      client.config.settings = vim.tbl_deep_extend("force", client.config.settings, overriden_settings)
+    end,
+    cmd = { "nixd" },
     settings = {
-      ["nil"] = {
-        nix = {
-          flake = {
-            autoArchive = true,
-          },
-        },
+      nixd = {
         formatting = {
-          -- I prefer using alejandra for my own code, but also
-          -- use nixpkgs-fmt in some codebases and in nixpkgs,
-          -- so I switch it based on an environment variable.
-          command = vim.env.USE_NIXPKGS_FMT == "1" and { "nixpkgs-fmt" } or { "alejandra" },
+          command = vim.env.USE_NIXFMT == "1" and { "nixfmt" } or { "alejandra" },
         },
       },
     },
