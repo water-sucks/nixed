@@ -40,6 +40,8 @@ in {
             trust = 5;
           }
         ];
+
+        openrgb.profile = "darkrose";
       }
       {
         profiles = {
