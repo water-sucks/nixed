@@ -2,8 +2,18 @@ local dap = require("dap")
 local dapui = require("dapui")
 local wk = require("which-key")
 
+---@diagnostic disable-next-line: missing-fields
 dapui.setup({
-  icons = { expanded = "▾", collapsed = "▸" },
+  ---@diagnostic disable-next-line: missing-fields
+  controls = {
+    enabled = false,
+  },
+
+  icons = {
+    expanded = "▾",
+    collapsed = "▸",
+    current_frame = "*",
+  },
   mappings = {
     expand = { "<CR>", "<2-LeftMouse>" },
     open = "o",
@@ -16,8 +26,8 @@ dapui.setup({
     {
       elements = {
         "breakpoints",
-        "stacks",
         "scopes",
+        "watches",
       },
       size = 0.30,
       position = "left",
@@ -25,7 +35,7 @@ dapui.setup({
     {
       elements = {
         "console",
-        "watches",
+        "repl",
       },
       size = 0.25,
       position = "bottom",
@@ -44,9 +54,15 @@ dapui.setup({
 
 dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 dap.listeners.before.launch.dapui_config = dapui.open
--- Closing it makes it really hard to see stdout at the end :{
--- dap.listeners.before.event_terminated["dapui_config"] = dapui.close
--- dap.listeners.before.event_exited["dapui_config"] = dapui.close
+
+local function delayed_close()
+  vim.defer_fn(function()
+    dapui.close()
+  end, 3000)
+end
+
+dap.listeners.before.event_terminated["dapui_config"] = delayed_close
+dap.listeners.before.event_exited["dapui_config"] = delayed_close
 
 wk.add({
   {
