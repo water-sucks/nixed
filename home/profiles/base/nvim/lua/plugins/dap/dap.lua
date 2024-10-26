@@ -39,4 +39,12 @@ wk.add({
   { "<Leader>dB", conditionalBreakpoint, desc = "Conditional breakpoint" },
 })
 
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = "dap-repl",
+  group = vim.api.nvim_create_augroup("AutoColorizeDapRepl", { clear = true }),
+  callback = function()
+    vim.g.baleia.automatically(vim.api.nvim_get_current_buf())
+  end,
+})
+
 require("dap.ext.vscode").load_launchjs()

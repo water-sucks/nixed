@@ -87,6 +87,28 @@
     },
     "version": "979b6c82f60cfa80f4cf437d77446d0ded0addf0"
   },
+  "plugin-baleia-nvim": {
+    "cargoLocks": null,
+    "date": "2024-07-24",
+    "extract": null,
+    "name": "plugin-baleia-nvim",
+    "passthru": {
+      "pretty-name": "baleia.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "m00qek",
+      "repo": "baleia.nvim",
+      "rev": "1b25eac3ac03659c3d3af75c7455e179e5f197f7",
+      "sha256": "sha256-qA1x5kplP2I8bURO0I4R0gt/zeznu9hQQ+XHptLGuwc=",
+      "type": "github"
+    },
+    "version": "1b25eac3ac03659c3d3af75c7455e179e5f197f7"
+  },
   "plugin-bufferline-nvim": {
     "cargoLocks": null,
     "date": "2024-07-18",
@@ -768,28 +790,6 @@
       "type": "github"
     },
     "version": "4b91f28d91979f61a3e8aef1cee5b7c7f2c7beb8"
-  },
-  "plugin-lush-nvim": {
-    "cargoLocks": null,
-    "date": "2024-08-16",
-    "extract": null,
-    "name": "plugin-lush-nvim",
-    "passthru": {
-      "pretty-name": "lush.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "rktjmp",
-      "repo": "lush.nvim",
-      "rev": "45a79ec4acb5af783a6a29673a999ce37f00497e",
-      "sha256": "sha256-meUCXjJ9kHOOpRd4TR2dc7Ai97zOQX35hYFEDZseiSk=",
-      "type": "github"
-    },
-    "version": "45a79ec4acb5af783a6a29673a999ce37f00497e"
   },
   "plugin-mini-move": {
     "cargoLocks": null,

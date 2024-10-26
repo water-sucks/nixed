@@ -56,27 +56,30 @@ local highlight_current_n_spec = use("rktjmp/highlight-current-n.nvim", {
   end,
 })
 
-local lush_spec = use("rktjmp/lush.nvim", {
-  event = "VeryLazy",
-})
-
 local todo_comments_spec = use("folke/todo-comments.nvim", {
   event = "VeryLazy",
+  config = function()
+    require("todo-comments").setup({
+      keywords = {
+        FIX = { icon = "" },
+        TODO = { icon = "󰇘" },
+        NOTE = { icon = "" },
+      },
+    })
+  end,
 })
-todo_comments_spec.config = function()
-  require("todo-comments").setup({
-    keywords = {
-      FIX = { icon = "" },
-      TODO = { icon = "󰇘" },
-      NOTE = { icon = "" },
-    },
-  })
-end
+
+local baleia_spec = use("m00qek/baleia.nvim", {
+  event = "VeryLazy",
+  config = function()
+    vim.g.baleia = require("baleia").setup({})
+  end,
+})
 
 return {
+  baleia_spec,
   colorscheme_spec,
   colorizer_spec,
   highlight_current_n_spec,
-  lush_spec,
   todo_comments_spec,
 }
