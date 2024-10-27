@@ -1,6 +1,6 @@
 local dap = require("dap")
 
-dap.adapters.codelldb = {
+dap.adapters.lldb = {
   type = "server",
   port = "${port}",
   executable = {
@@ -13,7 +13,7 @@ dap.adapters.codelldb = {
 local configurations = {
   {
     name = "Launch file",
-    type = "codelldb",
+    type = "lldb",
     request = "launch",
     program = function()
       return vim.fn.input({ prompt = "Path to executable: ", default = vim.fn.getcwd() .. "/", completion = "file" })
