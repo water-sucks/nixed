@@ -6,6 +6,8 @@ _: {
         genlist = ["generation" "list"];
         switch = ["generation" "switch"];
         rollback = ["generation" "rollback"];
+        gendel = ["generation" "delete"];
+        gendelall = ["generation" "delete" "--all"];
         build = ["apply" "--no-activate" "--no-boot" "--output result"];
       };
 
