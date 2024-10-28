@@ -34,8 +34,8 @@ dapui.setup({
     },
     {
       elements = {
-        "console",
         "repl",
+        "console",
       },
       size = 0.25,
       position = "bottom",
