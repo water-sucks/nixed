@@ -833,6 +833,19 @@
     pretty-name = "one-small-step-for-vimkind";
     date = "2024-10-15";
   };
+  plugin-overseer-nvim = {
+    pname = "plugin-overseer-nvim";
+    version = "c416be50c2715a7f631d67e21154b8e6cd873ca3";
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "overseer.nvim";
+      rev = "c416be50c2715a7f631d67e21154b8e6cd873ca3";
+      fetchSubmodules = false;
+      sha256 = "sha256-QI8do5IZcdMxNJV8UCs534QtXHCPb0Pk8TJN8FNmNkY=";
+    };
+    pretty-name = "overseer.nvim";
+    date = "2024-10-25";
+  };
   plugin-playground = {
     pname = "plugin-playground";
     version = "ba48c6a62a280eefb7c85725b0915e021a1a0749";

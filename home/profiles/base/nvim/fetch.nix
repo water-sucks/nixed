@@ -123,6 +123,7 @@ in
     (plugin "tamton-aquib" "duck.nvim")
     (plugin "samjwill" "nvim-unception")
     (plugin "folke" "noice.nvim")
+    (plugin "stevearc" "overseer.nvim")
 
     # Debugging
     (plugin "mfussenegger" "nvim-dap")

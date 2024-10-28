@@ -1407,6 +1407,28 @@
     },
     "version": "ad065ad2c814249cfb9e344ce5b2b35d36fbc09f"
   },
+  "plugin-overseer-nvim": {
+    "cargoLocks": null,
+    "date": "2024-10-25",
+    "extract": null,
+    "name": "plugin-overseer-nvim",
+    "passthru": {
+      "pretty-name": "overseer.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "stevearc",
+      "repo": "overseer.nvim",
+      "rev": "c416be50c2715a7f631d67e21154b8e6cd873ca3",
+      "sha256": "sha256-QI8do5IZcdMxNJV8UCs534QtXHCPb0Pk8TJN8FNmNkY=",
+      "type": "github"
+    },
+    "version": "c416be50c2715a7f631d67e21154b8e6cd873ca3"
+  },
   "plugin-playground": {
     "cargoLocks": null,
     "date": "2023-09-15",
