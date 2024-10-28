@@ -31,6 +31,9 @@ in {
       stsp = "stash show -p";
       stu = "stash --include-untracked";
       stall = "stash --all";
+
+      sw = "switch";
+      swc = "switch -create";
     };
   };
 
