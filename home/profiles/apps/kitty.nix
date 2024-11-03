@@ -12,23 +12,12 @@
     rev = "7f631a61bcbdfb268cdf1c97992a5c077beec9d6";
     hash = "sha256-AXU1KOXaEiAMTkgkR+yVc8g4FZq8TqXj9imswCHhNKc=";
   };
-
-  pngIcon = "${icons}/build/outrun.iconset/icon_256x256.png";
-  icnsIcon = "${icons}/build/neue_outrun.icns";
+  icon = "${icons}/build/neue_outrun.icns";
 
   fileicon =
     if pkgs.stdenv.system == "aarch64-darwin"
     then "/opt/homebrew/bin/fileicon"
     else "/usr/local/bin/fileicon";
-
-  linuxPackage = pkgs.kitty.overrideAttrs (o: {
-    postInstall =
-      (o.postInstall or "")
-      + ''
-        cp -f "${pngIcon}" "$out/share/icons/hicolor/256x256/apps/kitty.png"
-        rm -f $out/share/icons/hicolor/scalable/apps/kitty.svg
-      '';
-  });
 
   c = config.colorscheme.palette;
 in
@@ -36,10 +25,10 @@ in
     {
       programs.kitty = {
         enable = true;
-        package =
+        package = with pkgs;
           if isLinux
-          then linuxPackage
-          else pkgs.runCommand "kitty-0.0.0" {} "mkdir $out";
+          then kitty
+          else runCommand "kitty-0.0.0" {} "mkdir $out";
         settings = {
           font_family = "BlexMono Nerd Font";
           bold_font = "BlexMono Nerd Font Bold";
@@ -108,7 +97,7 @@ in
       home.activation.setKittyIcon = lib.hm.dag.entryAfter ["writeBoundary"] ''
         original_sum=$(sha256sum /Applications/kitty.app/Contents/Resources/kitty.icns)
 
-        ${fileicon} -q set /Applications/kitty.app ${icnsIcon}
+        ${fileicon} -q set /Applications/kitty.app ${icon}
 
         if [ "$original_sum" != "$(sha256sum /Applications/kitty.app/Contents/Resources/kitty.icns)" ]; then
           killall Dock && killall Finder
