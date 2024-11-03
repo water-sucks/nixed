@@ -28,8 +28,8 @@ local servers = {
   "sqls",
   "svelte",
   "terraformls",
+  "tinymist",
   "ts_ls",
-  "typst_lsp",
   "vala_ls",
   "zls",
 }
@@ -224,6 +224,12 @@ local server_configs = {
           command = vim.env.USE_NIXFMT == "1" and { "nixfmt" } or { "alejandra" },
         },
       },
+    },
+  },
+  tinymist = {
+    settings = {
+      formatterMode = "typstyle",
+      exportPdf = "onSave",
     },
   },
   ts_ls = {

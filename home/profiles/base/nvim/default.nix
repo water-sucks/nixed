@@ -111,7 +111,7 @@ in
           sqls
           nodePackages.vscode-langservers-extracted
           terraform-ls
-          typst-lsp
+          tinymist
           zls
 
           # efm-langserver sources
@@ -132,6 +132,7 @@ in
           statix
           sleek
           stylua
+          typstyle
 
           # DAP servers
           delve
