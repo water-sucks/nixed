@@ -3,6 +3,7 @@ vim.filetype.add({
     ncl = "nickel",
     just = "just",
     mdx = "markdown",
+    smd = "markdown",
   },
   filename = {
     Justfile = "just",
