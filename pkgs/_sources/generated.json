@@ -48,11 +48,11 @@
       "name": null,
       "owner": "microsoft",
       "repo": "java-debug",
-      "rev": "0.53.0",
-      "sha256": "sha256-Lke+yyCUqcoGYS6pNYXdQdAn9uZ+S3pk9JVhfakAFvY=",
+      "rev": "0.53.1",
+      "sha256": "sha256-7h2U0l8OE8VrXymggfQ3XSXacvfBbQKCJmQVSo8J4M0=",
       "type": "github"
     },
-    "version": "0.53.0"
+    "version": "0.53.1"
   },
   "nsmb-mvl": {
     "cargoLocks": null,
