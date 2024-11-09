@@ -113,6 +113,7 @@ in
           terraform-ls
           tinymist
           zls
+          superhtml
 
           # efm-langserver sources
           alejandra

@@ -27,6 +27,7 @@ local servers = {
   "r_language_server",
   "sqls",
   "svelte",
+  "superhtml",
   "terraformls",
   "tinymist",
   "ts_ls",
