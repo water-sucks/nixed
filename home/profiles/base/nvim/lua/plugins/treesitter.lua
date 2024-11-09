@@ -5,7 +5,6 @@ local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
     use("windwp/nvim-ts-autotag", {}),
     use("JoosepAlviste/nvim-ts-context-commentstring", {}),
     use("nvim-treesitter/playground", {}),
-    use("IndianBoy42/tree-sitter-just", {}),
   },
   event = "VeryLazy",
 })
@@ -148,7 +147,6 @@ treesitter_spec.config = function()
 
   --[[ -- Use HTML parser for XML files ]]
   vim.treesitter.language.register("html", "xml")
-  require("tree-sitter-just").setup({})
 
   -- Only enable Treesitter highlighting for TeX files explicitly
   vim.api.nvim_create_autocmd("FileType", {

@@ -1825,28 +1825,6 @@
     },
     "version": "b1e70b6fc1682a83929aee63680d2b43456fe9a5"
   },
-  "tree-sitter-just": {
-    "cargoLocks": null,
-    "date": "2024-10-27",
-    "extract": null,
-    "name": "tree-sitter-just",
-    "passthru": {
-      "pretty-name": "tree-sitter-just"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "IndianBoy42",
-      "repo": "tree-sitter-just",
-      "rev": "1014d2fd6396856c312054d6c30df4d78b62966c",
-      "sha256": "sha256-8vr55zhJOJxZhc8bXZpvO6a/eEYUJQ+HBWC4xRYbrgk=",
-      "type": "github"
-    },
-    "version": "1014d2fd6396856c312054d6c30df4d78b62966c"
-  },
   "tree-sitter-norg": {
     "cargoLocks": null,
     "date": "2023-01-01",

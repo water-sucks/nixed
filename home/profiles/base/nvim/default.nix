@@ -63,7 +63,6 @@
       "luarocks.nvim" = generatedPlugins."luarocks.nvim".overrideAttrs (_: {
         patches = [./luarocks-nvim.patch];
       });
-      tree-sitter-just = buildPlugin "tree-sitter-just" sources.tree-sitter-just;
     };
 
   pluginDir = with lib;
