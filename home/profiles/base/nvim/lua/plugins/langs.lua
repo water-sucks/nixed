@@ -235,6 +235,13 @@ local rust_tools_spec = use("simrat39/rust-tools.nvim", {
   ft = "rust",
 })
 
+local roslyn_spec = use("seblj/roslyn.nvim", {
+  ft = "cs",
+  opts = {
+    exe = "Microsoft.CodeAnalysis.LanguageServer",
+  },
+})
+
 rust_tools_spec.config = function()
   local extension_path = vim.fn.stdpath("data") .. "/vscode-lldb/"
   local codelldb_path = extension_path .. "adapter/codelldb"
@@ -384,6 +391,7 @@ return {
   jdtls_spec,
   ltex_extra_spec,
   lazydev_spec,
+  roslyn_spec,
   rust_tools_spec,
   typst_spec,
   vimtex_spec,
