@@ -22,7 +22,6 @@
       default = pkgs.mkShellNoCC {
         name = "nixed-shell";
         packages = with pkgs; [
-          agenix
           age
           sops
           treefmt

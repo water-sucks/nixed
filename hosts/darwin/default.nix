@@ -19,7 +19,6 @@
           inherit self inputs lib pkgs;
         };
         modules = with inputs; [
-          agenix.nixosModules.age
           home.darwinModules.home-manager
           (import configuration)
           {

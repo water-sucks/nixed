@@ -17,9 +17,6 @@
 
     nixos-cli.url = "github:water-sucks/nixos";
 
-    agenix.url = "github:ryantm/agenix";
-    agenix.inputs.nixpkgs.follows = "nixpkgs";
-
     sops-nix.url = "github:Mic92/sops-nix";
 
     nixago.url = "github:nix-community/nixago";
@@ -62,7 +59,6 @@
       }: let
         overlays = with inputs;
           [
-            agenix.overlays.default
             self.overlays.default
             # Keeping this out of the exposed overlay, I don't want to
             # expose nvfetcher-generated stuff, that's annoying.

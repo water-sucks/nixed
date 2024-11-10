@@ -19,7 +19,6 @@
           inherit self inputs lib pkgs;
         };
         modules = with inputs; [
-          agenix.nixosModules.age
           sops-nix.nixosModules.sops
           impermanence.nixosModules.impermanence
           home.nixosModules.home-manager
