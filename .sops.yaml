@@ -1,5 +1,6 @@
 keys:
   - &varun 522e3a7813b5d0b5d70e5a40a1f17e43f6747fc0
+  - &varun_age age1lq2t4k8la567nvgk5j3f3du0gahg5y9u20s5x43t8cdc5zyqsu2qunrpaz
   - &SebastianJanikowski age12yl7t27k2hvdv0kt8ky2gmshfdt3ysw83zzjnk7fxxenqf3sv4zsjug5me
   - &CharlesWoodson age1wt5e7nasfsztzje86lnjxz3xycuzawhk4pl099mk4cn8xxw75vls5fyu6g
 creation_rules:
@@ -15,3 +16,9 @@ creation_rules:
           - *varun
         age:
           - *CharlesWoodson
+  - path_regex: users/varun/secrets/[^/]+\.yml$
+    key_groups:
+      - pgp:
+          - *varun
+        age:
+          - *varun_age

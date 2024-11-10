@@ -43,4 +43,13 @@ in {
   home-manager.sharedModules = [
     openrgbModule
   ];
+
+  home-manager.users.varun = {config, ...}: {
+    sops.age.keyFile = "/persist/home/varun/.sops_key";
+    home.persistence."${config.persistence.directory}" = {
+      files = [
+        ".sops_key"
+      ];
+    };
+  };
 }

@@ -15,11 +15,7 @@ let
     };
   };
 
-  autorandrModule = {
-    config,
-    pkgs,
-    ...
-  }: let
+  autorandrModule = {pkgs, ...}: let
     leftwm = "${pkgs.leftwm}/bin/leftwm";
   in {
     programs.autorandr = {
@@ -62,4 +58,13 @@ in {
     autorandrModule
     xrandrLaptopScreenMode
   ];
+
+  home-manager.users.varun = {config, ...}: {
+    sops.age.keyFile = "/persist/home/varun/.sops_key";
+    home.persistence."${config.persistence.directory}" = {
+      files = [
+        ".sops_key"
+      ];
+    };
+  };
 }

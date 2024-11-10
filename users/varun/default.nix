@@ -42,6 +42,24 @@ in {
         ];
 
         openrgb.profile = "darkrose";
+
+        sops = let
+          secretBlock = sopsFile: secretName: {
+            inherit sopsFile;
+            format = "yaml";
+            key = secretName;
+          };
+
+          atuinSecretBlock = secretBlock ./secrets/atuin.yml;
+        in {
+          # This may be overridden due to impermanence.
+          age.keyFile = lib.mkDefault "${config.home.homeDirectory}/.sops_key";
+          secrets = {
+            atuin-username = atuinSecretBlock "username";
+            atuin-password = atuinSecretBlock "password";
+            atuin-enc-key = atuinSecretBlock "encryption_key";
+          };
+        };
       }
       {
         profiles = {

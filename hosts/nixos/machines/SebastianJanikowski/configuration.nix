@@ -21,7 +21,7 @@ in {
   xdg.portal.wlr.settings.screencast.output_name = "eDP-1";
 
   sops = {
-    age.keyFile = "/persist/etc/ssh/sops_key";
+    age.keyFile = "/persist/var/secrets/sops_key";
     secrets = {
       varun-user-pw = pwSecretLocation "varun";
       root-user-pw = pwSecretLocation "root";

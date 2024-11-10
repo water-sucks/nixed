@@ -7,6 +7,19 @@
   inherit (pkgs.stdenv) isLinux isDarwin;
 
   atuin = "${config.programs.atuin.package}/bin/atuin";
+
+  automaticLogin = config.sops.secrets ? atuin-username;
+  automaticLoginScript = pkgs.writeShellScript "automatic-atuin-login.sh" ''
+    if [ -e ${config.home.homeDirectory}/.local/share/atuin/session ]; then
+      echo "atuin session exists already"
+    else
+      echo "Logging into atuin server"
+      ${atuin} login \
+        -u "$(cat ${config.sops.secrets.atuin-username.path})" \
+        -p "$(cat ${config.sops.secrets.atuin-password.path})" \
+        -k "$(cat ${config.sops.secrets.atuin-enc-key.path})"
+    fi
+  '';
 in
   lib.mkMerge [
     {
@@ -51,6 +64,7 @@ in
       systemd.user.services.atuin-daemon = {
         Unit = {
           Description = "atuin daemon";
+          After = lib.optionals automaticLogin ["sops-nix.service"];
           Requires = ["atuin-daemon.socket"];
         };
         Install = {
@@ -82,6 +96,23 @@ in
           RemoveOnStop = true;
         };
       };
+
+      systemd.user.services.atuin-automatic-login = lib.mkIf automaticLogin {
+        Unit = {
+          Description = "automatic atuin login";
+          Requires = ["sops-nix.service" "atuin-daemon.service"];
+        };
+
+        Service = {
+          Type = "oneshot";
+          ExecStart = "${automaticLoginScript}";
+          Restart = "on-failure";
+        };
+
+        Install = {
+          WantedBy = ["default.target"];
+        };
+      };
     })
     (lib.mkIf isDarwin {
       launchd.agents.atuin-daemon = {
@@ -95,6 +126,20 @@ in
             Crashed = true;
             SuccessfulExit = false;
           };
+          ProcessType = "Background";
+        };
+      };
+
+      launchd.agents.atuin-automatic-login = lib.mkIf automaticLogin {
+        enable = true;
+        config = {
+          ProgramArguments = ["${automaticLoginScript}"];
+          RunAtLoad = true;
+          KeepAlive = false;
+          Requires = [
+            "org.nix-community.home.sops-nix"
+            "org.nix-community.home.atuin-daemon"
+          ];
           ProcessType = "Background";
         };
       };
