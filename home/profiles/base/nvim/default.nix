@@ -89,59 +89,60 @@ in
         withRuby = false;
         withNodeJs = false;
 
-        extraPackages = with pkgs; [
-          # Language servers
-          astro-language-server
-          ccls
-          emmet-ls
-          gopls
-          golangci-lint-langserver
-          jdt-language-server
-          ltex-ls
-          lua-language-server
-          nixd
-          nodePackages.bash-language-server
-          nodePackages.graphql-language-service-cli
-          nodePackages.svelte-language-server
-          nodePackages.typescript-language-server
-          prisma-ls
-          pyright
-          ruff-lsp
-          sqls
-          nodePackages.vscode-langservers-extracted
-          terraform-ls
-          tinymist
-          zls
-          superhtml
+        extraPackages = with pkgs;
+          [
+            # Language servers
+            ccls
+            emmet-ls
+            gopls
+            golangci-lint-langserver
+            jdt-language-server
+            ltex-ls
+            lua-language-server
+            nixd
+            nodePackages.bash-language-server
+            nodePackages.graphql-language-service-cli
+            nodePackages.svelte-language-server
+            nodePackages.typescript-language-server
+            prisma-ls
+            pyright
+            ruff-lsp
+            sqls
+            nodePackages.vscode-langservers-extracted
+            terraform-ls
+            tinymist
 
-          # efm-langserver sources
-          alejandra
-          asmfmt
-          black
-          cppcheck
-          deadnix
-          editorconfig-checker
-          efm-langserver
-          gitlint
-          gofumpt
-          nodePackages.prettier
-          python3Packages.flake8
-          shellcheck
-          shellharden
-          shfmt
-          statix
-          sleek
-          stylua
-          typstyle
+            # efm-langserver sources
+            alejandra
+            asmfmt
+            black
+            cppcheck
+            deadnix
+            editorconfig-checker
+            efm-langserver
+            gitlint
+            gofumpt
+            nodePackages.prettier
+            python3Packages.flake8
+            shellcheck
+            shellharden
+            shfmt
+            statix
+            sleek
+            stylua
+            typstyle
 
-          # DAP servers
-          delve
+            # DAP servers
+            delve
 
-          # Neorg dependencies
-          gnumake
-          luajit
-          unzip
-        ];
+            # Neorg dependencies
+            gnumake
+            luajit
+            unzip
+          ]
+          # FIXME: These are broken on unstable darwin. Probably due to some Apple SDK
+          # build errors, but let's just disable these since we never use them on Darwin.
+          ++ (lib.optionals isLinux [astro-language-server zls superhtml]);
       };
 
       xdg.configFile = {
