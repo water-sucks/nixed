@@ -26,7 +26,7 @@
           treefmt
           lefthook
           nodePackages.prettier
-          stable.nvfetcher
+          nvfetcher
         ];
         shellHook = ''
           ${(nixago.lib.${system}.makeAll nixagoConfigs).shellHook}
