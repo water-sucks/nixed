@@ -20,10 +20,11 @@
       }
       (with lib; collectLeaves ../../home/modules)
       (args: {
-        imports =
+        imports = with inputs;
           [
-            inputs.nix-colors.homeManagerModule
-            inputs.impermanence.nixosModules.home-manager.impermanence
+            nix-colors.homeManagerModule
+            sops-nix.homeManagerModules.sops
+            impermanence.nixosModules.home-manager.impermanence
           ]
           ++ (lib.genModules args "profiles" ../../home/profiles);
       })
