@@ -1,4 +1,11 @@
-{config, ...}: {
+{config, ...}: let
+  pwSecretLocation = username: {
+    sopsFile = ./secrets/passwords.yml;
+    format = "yaml";
+    key = username;
+    neededForUsers = true;
+  };
+in {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -11,15 +18,16 @@
 
   xdg.portal.wlr.settings.screencast.output_name = "HDMI-A-1";
 
-  # Workaround to use agenix with impermanence. I'll probably end up using sops-nix at some point
-  # anyway so this workaround is fine, no need to be perfect.
-  age = {
-    identityPaths = ["/persist/etc/ssh/ssh_host_rsa_key" "/persist/etc/ssh/ssh_host_ed25519_key"];
-    secrets.varun-user-CharlesWoodson.file = ../../../../secrets/varun-user-CharlesWoodson.age;
-    secrets.root-user-CharlesWoodson.file = ../../../../secrets/root-user-CharlesWoodson.age;
+  sops = {
+    age.keyFile = "/persist/var/secrets/sops_key";
+    secrets = {
+      varun-user-pw = pwSecretLocation "varun";
+      root-user-pw = pwSecretLocation "root";
+    };
   };
-  users.users.varun.hashedPasswordFile = "${config.age.secrets.varun-user-CharlesWoodson.path}";
-  users.users.root.hashedPasswordFile = "${config.age.secrets.root-user-CharlesWoodson.path}";
+
+  users.users.varun.hashedPasswordFile = "${config.sops.secrets.varun-user-pw.path}";
+  users.users.root.hashedPasswordFile = "${config.sops.secrets.root-user-pw.path}";
 
   environment.persistence."/persist" = {
     hideMounts = true;
@@ -30,6 +38,7 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/var/lib/libvirt"
+      "/var/secrets"
       "/etc/ssh"
       "/etc/NetworkManager/system-connections"
     ];
