@@ -898,6 +898,19 @@
     pretty-name = "promise-async";
     date = "2024-08-05";
   };
+  plugin-roslyn-nvim = {
+    pname = "plugin-roslyn-nvim";
+    version = "27afc7fcfec623ef06f1f49ed0c821d1e9027197";
+    src = fetchFromGitHub {
+      owner = "seblj";
+      repo = "roslyn.nvim";
+      rev = "27afc7fcfec623ef06f1f49ed0c821d1e9027197";
+      fetchSubmodules = false;
+      sha256 = "sha256-5IYsrOzICgW0IHy89KjKRGhOmB58kP5+olK46SyiFww=";
+    };
+    pretty-name = "roslyn.nvim";
+    date = "2024-11-08";
+  };
   plugin-rust-tools-nvim = {
     pname = "plugin-rust-tools-nvim";
     version = "676187908a1ce35ffcd727c654ed68d851299d3e";

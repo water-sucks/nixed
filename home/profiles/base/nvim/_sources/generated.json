@@ -1517,6 +1517,28 @@
     },
     "version": "119e8961014c9bfaf1487bf3c2a393d254f337e2"
   },
+  "plugin-roslyn-nvim": {
+    "cargoLocks": null,
+    "date": "2024-11-08",
+    "extract": null,
+    "name": "plugin-roslyn-nvim",
+    "passthru": {
+      "pretty-name": "roslyn.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "seblj",
+      "repo": "roslyn.nvim",
+      "rev": "27afc7fcfec623ef06f1f49ed0c821d1e9027197",
+      "sha256": "sha256-5IYsrOzICgW0IHy89KjKRGhOmB58kP5+olK46SyiFww=",
+      "type": "github"
+    },
+    "version": "27afc7fcfec623ef06f1f49ed0c821d1e9027197"
+  },
   "plugin-rust-tools-nvim": {
     "cargoLocks": null,
     "date": "2024-01-03",
