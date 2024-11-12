@@ -16,8 +16,13 @@ in {
       isNormalUser = true;
     });
 
-  home-manager.users.varun = {config, ...}:
+  home-manager.users.varun = {
+    config,
+    pkgs,
+    ...
+  }:
     lib.mkMerge [
+      (import ./mail.nix {inherit config pkgs;})
       # User-specific program configuration
       {
         programs.git = {

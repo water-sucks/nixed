@@ -3,6 +3,7 @@
 in {
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     includes = [
       {path = "${sources.git-aliases.src}/gitalias.txt";}
     ];
