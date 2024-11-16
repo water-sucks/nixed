@@ -1,52 +1,60 @@
 {
   config,
   pkgs,
-}: {
-  sops.secrets.email-password = {
-    sopsFile = ./secrets/email.yml;
-    format = "yaml";
-    key = "password";
-  };
+}: let
+  inherit (pkgs) lib;
+  inherit (pkgs.stdenv) isLinux;
+in
+  lib.mkMerge [
+    {
+      sops.secrets.email-password = {
+        sopsFile = ./secrets/email.yml;
+        format = "yaml";
+        key = "password";
+      };
 
-  accounts.email = {
-    maildirBasePath = "Mail";
+      accounts.email = {
+        maildirBasePath = "Mail";
 
-    accounts = {
-      personal = {
-        primary = true;
-        flavor = "fastmail.com";
+        accounts = {
+          personal = {
+            primary = true;
+            flavor = "fastmail.com";
 
-        realName = "Varun Narravula";
-        address = "varun@snare.dev";
-        userName = "varun@snare.dev";
-        passwordCommand = "cat ${config.sops.secrets.email-password.path}";
+            realName = "Varun Narravula";
+            address = "varun@snare.dev";
+            userName = "varun@snare.dev";
+            passwordCommand = "cat ${config.sops.secrets.email-password.path}";
 
-        aerc.enable = true;
-        msmtp.enable = true;
-        mbsync = {
-          enable = true;
+            aerc.enable = true;
+            msmtp.enable = true;
+            mbsync = {
+              enable = true;
 
-          create = "both";
-          expunge = "both";
-          remove = "both";
-        };
-        imapnotify = {
-          enable = true;
-          onNotify = ''${pkgs.isync}/bin/mbsync personal && ${pkgs.libnotify}/bin/notify-send -i ${../../assets/mail.svg} "You've got mail\!" "Go check it out."'';
+              create = "both";
+              expunge = "both";
+              remove = "both";
+            };
+            imapnotify = {
+              enable = true;
+              onNotify = ''${pkgs.isync}/bin/mbsync personal && ${pkgs.libnotify}/bin/notify-send -i ${../../assets/mail.svg} "You've got mail\!" "Go check it out."'';
+            };
+          };
         };
       };
-    };
-  };
 
-  programs = {
-    msmtp.enable = true;
-    mbsync.enable = true;
-  };
-  services.imapnotify.enable = true;
+      programs = {
+        msmtp.enable = true;
+        mbsync.enable = true;
+      };
+      services.imapnotify.enable = true;
+    }
 
-  home.persistence."${config.persistence.directory}" = {
-    directories = [
-      "Mail"
-    ];
-  };
-}
+    (lib.mkIf isLinux {
+      home.persistence."${config.persistence.directory}" = {
+        directories = [
+          "Mail"
+        ];
+      };
+    })
+  ]
