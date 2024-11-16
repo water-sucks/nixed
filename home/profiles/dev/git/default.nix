@@ -35,6 +35,8 @@ in {
 
       sw = "switch";
       swc = "switch -create";
+
+      fucked = "reset";
     };
   };
 
