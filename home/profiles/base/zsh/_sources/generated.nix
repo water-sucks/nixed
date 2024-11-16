@@ -18,13 +18,13 @@
   };
   zsh-autosuggestions = {
     pname = "zsh-autosuggestions";
-    version = "v0.7.0";
+    version = "v0.7.1";
     src = fetchFromGitHub {
       owner = "zsh-users";
       repo = "zsh-autosuggestions";
-      rev = "v0.7.0";
+      rev = "v0.7.1";
       fetchSubmodules = false;
-      sha256 = "sha256-KLUYpUu4DHRumQZ3w59m9aTW6TBKMCXl2UcKi4uMd7w=";
+      sha256 = "sha256-vpTyYq9ZgfgdDsWzjxVAE7FZH4MALMNZIFyEOBLm5Qo=";
     };
   };
 }
