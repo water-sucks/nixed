@@ -10,8 +10,8 @@ telescope_spec.config = function()
   telescope.setup({
     defaults = {
       file_ignore_patterns = {
-        ".git/",
-        "node_modules",
+        "^.direnv/",
+        "^.git/",
         "%.g.dart",
         "%.freezed.dart",
       },
