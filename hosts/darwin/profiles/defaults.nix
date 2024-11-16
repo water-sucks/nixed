@@ -3,7 +3,6 @@
 in {
   services = {
     nix-daemon.enable = mkDefault true;
-    activate-system.enable = mkDefault true;
   };
 
   nix.configureBuildUsers = mkDefault true;
