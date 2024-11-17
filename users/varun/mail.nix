@@ -3,7 +3,22 @@
   pkgs,
 }: let
   inherit (pkgs) lib;
-  inherit (pkgs.stdenv) isLinux;
+  inherit (pkgs.stdenv) isLinux isDarwin;
+
+  notifierScript = pkgs.writeShellScript "new-mail-notification.sh" (
+    # TODO: add app icon for darwin :{
+    # Apparently this doesn't work with osascript
+    if isDarwin
+    then ''
+      osascript -e "display notification \"Go check it out.\" with title \"You've got mail!\""
+    ''
+    else ''
+      ${pkgs.libnotify}/bin/notify-send \
+        -i ${../../assets/mail.svg} \
+        "You've got mail!" \
+        "Go check it out."
+    ''
+  );
 in
   lib.mkMerge [
     {
@@ -37,7 +52,7 @@ in
             };
             imapnotify = {
               enable = true;
-              onNotify = ''${pkgs.isync}/bin/mbsync personal && ${pkgs.libnotify}/bin/notify-send -i ${../../assets/mail.svg} "You've got mail\!" "Go check it out."'';
+              onNotify = ''${pkgs.isync}/bin/mbsync personal && ${notifierScript}'';
             };
           };
         };
