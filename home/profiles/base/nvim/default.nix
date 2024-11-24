@@ -107,7 +107,6 @@ in
             prisma-ls
             pyright
             ruff-lsp
-            sqls
             nodePackages.vscode-langservers-extracted
             terraform-ls
             tinymist
@@ -128,7 +127,7 @@ in
             shellharden
             shfmt
             statix
-            sleek
+            sqlfluff
             stylua
             typstyle
 
@@ -182,7 +181,6 @@ in
           ".local/share/eclipse"
           ".local/share/nvim"
           ".cache/nvim"
-          ".config/sqls"
         ];
         files = [
           ".config/zls.json"

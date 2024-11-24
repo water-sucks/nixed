@@ -68,6 +68,22 @@ local conform_spec = use("stevearc/conform.nvim", {
       lsp_format = "fallback",
       timeout_ms = 500,
     },
+    formatters = {
+      sqlfluff = {
+        command = "sqlfluff",
+        args = {
+          "fix",
+          "--disable-progress-bar",
+          "-f",
+          "-n",
+          "-",
+        },
+        stdin = true,
+      },
+    },
+    formatters_by_ft = {
+      sql = { "sqlfluff" },
+    },
   },
 })
 
