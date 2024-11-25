@@ -44,19 +44,9 @@ in
     # Editor tooling
     (plugin "neovim" "nvim-lspconfig")
     (plugin "nanotee" "zoxide.vim")
-    (plugin "hrsh7th" "nvim-cmp")
-    (plugin "hrsh7th" "cmp-nvim-lsp")
-    (plugin "hrsh7th" "cmp-path")
-    (plugin "hrsh7th" "cmp-omni")
-    (plugin "hrsh7th" "cmp-calc")
-    (plugin "hrsh7th" "cmp-buffer")
-    (plugin "hrsh7th" "cmp-cmdline")
-    (plugin "rcarriga" "cmp-dap")
     (plugin "L3MON4D3" "LuaSnip")
-    (plugin "saadparwaiz1" "cmp_luasnip")
     (plugin "rafamadriz" "friendly-snippets")
     (plugin "onsails" "lspkind-nvim")
-    (plugin "iurimateus" "luasnip-latex-snippets.nvim")
     (plugin "stevearc" "conform.nvim")
 
     # Specialized windows

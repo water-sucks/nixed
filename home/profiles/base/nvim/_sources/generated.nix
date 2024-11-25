@@ -96,110 +96,6 @@
     pretty-name = "cellular-automaton.nvim";
     date = "2024-06-30";
   };
-  plugin-cmp-buffer = {
-    pname = "plugin-cmp-buffer";
-    version = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-buffer";
-      rev = "3022dbc9166796b644a841a02de8dd1cc1d311fa";
-      fetchSubmodules = false;
-      sha256 = "sha256-dG4U7MtnXThoa/PD+qFtCt76MQ14V1wX8GMYcvxEnbM=";
-    };
-    pretty-name = "cmp-buffer";
-    date = "2022-08-10";
-  };
-  plugin-cmp-calc = {
-    pname = "plugin-cmp-calc";
-    version = "5947b412da67306c5b68698a02a846760059be2e";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-calc";
-      rev = "5947b412da67306c5b68698a02a846760059be2e";
-      fetchSubmodules = false;
-      sha256 = "sha256-TI1FR0EjzPcjsFdJQ9vXVleQwyXkmqs4TvYyZ8A6cS0=";
-    };
-    pretty-name = "cmp-calc";
-    date = "2024-05-18";
-  };
-  plugin-cmp-cmdline = {
-    pname = "plugin-cmp-cmdline";
-    version = "d250c63aa13ead745e3a40f61fdd3470efde3923";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-cmdline";
-      rev = "d250c63aa13ead745e3a40f61fdd3470efde3923";
-      fetchSubmodules = false;
-      sha256 = "sha256-iBmXp+gUSMbgfkv7c7RDQAwPq02e07wEnBETP0dWBOo=";
-    };
-    pretty-name = "cmp-cmdline";
-    date = "2024-03-22";
-  };
-  plugin-cmp-dap = {
-    pname = "plugin-cmp-dap";
-    version = "ea92773e84c0ad3288c3bc5e452ac91559669087";
-    src = fetchFromGitHub {
-      owner = "rcarriga";
-      repo = "cmp-dap";
-      rev = "ea92773e84c0ad3288c3bc5e452ac91559669087";
-      fetchSubmodules = false;
-      sha256 = "sha256-wi9L4RcnJWUzTkC4u8vSTacrMxg4ftm/K7pkuwLEQ3U=";
-    };
-    pretty-name = "cmp-dap";
-    date = "2023-12-10";
-  };
-  plugin-cmp-nvim-lsp = {
-    pname = "plugin-cmp-nvim-lsp";
-    version = "39e2eda76828d88b773cc27a3f61d2ad782c922d";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-nvim-lsp";
-      rev = "39e2eda76828d88b773cc27a3f61d2ad782c922d";
-      fetchSubmodules = false;
-      sha256 = "sha256-CT1+Z4XJBVsl/RqvJeGmyitD6x7So0ylXvvef5jh7I8=";
-    };
-    pretty-name = "cmp-nvim-lsp";
-    date = "2024-05-17";
-  };
-  plugin-cmp-omni = {
-    pname = "plugin-cmp-omni";
-    version = "4ef610bbd85a5ee4e97e09450c0daecbdc60de86";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-omni";
-      rev = "4ef610bbd85a5ee4e97e09450c0daecbdc60de86";
-      fetchSubmodules = false;
-      sha256 = "sha256-PyCZGb+54l9nLR0fXM2QXACGt25nH0IlucbTXIgbJp0=";
-    };
-    pretty-name = "cmp-omni";
-    date = "2023-09-24";
-  };
-  plugin-cmp-path = {
-    pname = "plugin-cmp-path";
-    version = "91ff86cd9c29299a64f968ebb45846c485725f23";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "cmp-path";
-      rev = "91ff86cd9c29299a64f968ebb45846c485725f23";
-      fetchSubmodules = false;
-      sha256 = "sha256-thppiiV3wjIaZnAXmsh7j3DUc6ceSCvGzviwFUnoPaI=";
-    };
-    pretty-name = "cmp-path";
-    date = "2022-10-03";
-  };
-  plugin-cmp_luasnip = {
-    pname = "plugin-cmp_luasnip";
-    version = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90";
-    src = fetchFromGitHub {
-      owner = "saadparwaiz1";
-      repo = "cmp_luasnip";
-      rev = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90";
-      fetchSubmodules = false;
-      sha256 = "sha256-86lKQPPyqFz8jzuLajjHMKHrYnwW6+QOcPyQEx6B+gw=";
-    };
-    pretty-name = "cmp_luasnip";
-    date = "2024-11-04";
-  };
   plugin-conform-nvim = {
     pname = "plugin-conform-nvim";
     version = "62d5accad8b29d6ba9b58d3dff90c43a55621c60";
@@ -460,19 +356,6 @@
     pretty-name = "luarocks.nvim";
     date = "2024-05-28";
   };
-  plugin-luasnip-latex-snippets-nvim = {
-    pname = "plugin-luasnip-latex-snippets-nvim";
-    version = "cab134611eb755abe9ba95f5d86969f5cece448d";
-    src = fetchFromGitHub {
-      owner = "iurimateus";
-      repo = "luasnip-latex-snippets.nvim";
-      rev = "cab134611eb755abe9ba95f5d86969f5cece448d";
-      fetchSubmodules = false;
-      sha256 = "sha256-HGVm0VG8ig8w6gEf5SlIbnrs1c12FAo+LSvESmx2tGM=";
-    };
-    pretty-name = "luasnip-latex-snippets.nvim";
-    date = "2024-11-22";
-  };
   plugin-mini-move = {
     pname = "plugin-mini-move";
     version = "4caa1c212f5ca3d1633d21cfb184808090ed74b1";
@@ -589,19 +472,6 @@
     };
     pretty-name = "nvim-autopairs";
     date = "2024-11-17";
-  };
-  plugin-nvim-cmp = {
-    pname = "plugin-nvim-cmp";
-    version = "be7bd4c5f860c79da97af3a26d489af50babfd4b";
-    src = fetchFromGitHub {
-      owner = "hrsh7th";
-      repo = "nvim-cmp";
-      rev = "be7bd4c5f860c79da97af3a26d489af50babfd4b";
-      fetchSubmodules = false;
-      sha256 = "sha256-1vVqYltWM67yAzDmoqovFRhvuWit0MoSSnqd6PwVolk=";
-    };
-    pretty-name = "nvim-cmp";
-    date = "2024-11-21";
   };
   plugin-nvim-colorizer-lua = {
     pname = "plugin-nvim-colorizer-lua";

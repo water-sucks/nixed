@@ -303,16 +303,13 @@ vim.g.zig_fmt_parse_errors = 0
 
 for _, server in pairs(servers) do
   ---@type table<string, boolean|function|table>
-  local config = {
-    on_attach = on_attach,
-    capabilities = require("cmp_nvim_lsp").default_capabilities(),
-  }
+  local config = server_configs[server] or {}
 
-  if server_configs[server] ~= nil then
-    for key, value in pairs(server_configs[server]) do
-      config[key] = value
-    end
+  if config.on_attach == nil then
+    config.on_attach = on_attach
   end
+
+  config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities or {})
 
   lsp[server].setup(config)
 end

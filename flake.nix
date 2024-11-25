@@ -23,6 +23,8 @@
     nixago.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-colors.url = "github:Misterio77/nix-colors";
+
+    blink-cmp.url = "github:Saghen/blink.cmp";
   };
 
   outputs = {

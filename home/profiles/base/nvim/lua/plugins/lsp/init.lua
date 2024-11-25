@@ -24,26 +24,44 @@ local fidget_spec = use("j-hui/fidget.nvim", {
   end,
 })
 
-local cmp_spec = use("hrsh7th/nvim-cmp", {
-  event = { "InsertEnter", "CmdlineEnter" },
-  config = function()
-    require("plugins.lsp.cmp")
-  end,
+local blink_spec = use("saghen/blink.cmp", {
+  lazy = false, -- lazy loading handled internally
   dependencies = {
-    use("L3MON4D3/LuaSnip"),
-    use("hrsh7th/cmp-nvim-lsp"),
-    use("hrsh7th/cmp-path"),
-    use("hrsh7th/cmp-omni"),
-    use("hrsh7th/cmp-calc"),
-    use("hrsh7th/cmp-buffer"),
-    use("hrsh7th/cmp-cmdline"),
-    use("rcarriga/cmp-dap"),
-    use("saadparwaiz1/cmp_luasnip"),
     use("rafamadriz/friendly-snippets"),
-    use("iurimateus/luasnip-latex-snippets.nvim", {
-      ft = "tex",
-    }),
-    use("onsails/lspkind-nvim"),
+  },
+
+  opts = {
+    keymap = {
+      ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<C-e>"] = { "hide", "fallback" },
+      ["<CR>"] = { "accept", "fallback" },
+
+      ["<Tab>"] = { "select_next", "fallback" },
+      ["<S-Tab>"] = { "select_prev", "fallback" },
+
+      ["<Up>"] = { "select_prev", "fallback" },
+      ["<Down>"] = { "select_next", "fallback" },
+
+      ["<C-p>"] = { "snippet_forward", "fallback" },
+      ["<C-n>"] = { "snippet_backward", "fallback" },
+
+      ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+      ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+    },
+    highlight = {
+      use_nvim_cmp_as_default = true,
+    },
+    sources = {
+      completion = {
+        enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
+      },
+      providers = {
+        lsp = { fallback_for = { "lazydev" } },
+        lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+      },
+    },
+    accept = { auto_brackets = { enabled = true } },
+    trigger = { signature_help = { enabled = true } },
   },
 })
 
@@ -56,7 +74,7 @@ local conform_spec = use("stevearc/conform.nvim", {
       function()
         require("conform").format({ async = true })
       end,
-      mode = "",
+      mode = "n",
       desc = "Format buffer",
     },
   },
@@ -89,7 +107,8 @@ local conform_spec = use("stevearc/conform.nvim", {
 
 return {
   lspconfig_spec,
-  cmp_spec,
+  -- cmp_spec,
+  blink_spec,
   fidget_spec,
   conform_spec,
 }
