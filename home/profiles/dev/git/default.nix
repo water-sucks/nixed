@@ -36,6 +36,11 @@ in {
       sw = "switch";
       swc = "switch -create";
 
+      wt = "worktree";
+      lswt = "worktree list";
+      mkwt = "!f() { git worktree add \"$(git rev-parse --show-toplevel)+$@\"; }; f";
+      rmwt = "!f() { git worktree remove \"$(git rev-parse --show-toplevel)+$@\"; }; f";
+
       fucked = "reset";
     };
   };
