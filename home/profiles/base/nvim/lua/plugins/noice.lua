@@ -8,20 +8,15 @@ noice_spec.config = function()
 
   noice.setup({
     lsp = {
-      progress = {
-        enabled = false, -- Using fidget.nvim
-      },
+      -- Using fidget.nvim
+      progress = { enabled = false },
       override = {
         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
         ["vim.lsp.util.stylize_markdown"] = true,
         ["cmp.entry.get_documentation"] = true,
       },
-      hover = {
-        enabled = true,
-      },
-      signature = {
-        enabled = true,
-      },
+      hover = { enabled = true },
+      signature = { enabled = false },
     },
     cmdline = {
       format = {
