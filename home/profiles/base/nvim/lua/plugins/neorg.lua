@@ -114,11 +114,6 @@ neorg_spec.config = function()
           },
         },
       },
-      ["core.completion"] = {
-        config = {
-          engine = "nvim-cmp",
-        },
-      },
       ["core.keybinds"] = {},
       ["core.presenter"] = {
         config = {
