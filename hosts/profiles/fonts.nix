@@ -6,7 +6,7 @@
   fonts = {
     packages = with pkgs; [
       ibm-plex
-      (nerdfonts.override {fonts = ["IBMPlexMono"];})
+      nerd-fonts.blex-mono
       font-awesome
       noto-fonts
     ];
