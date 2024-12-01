@@ -108,7 +108,6 @@ in
           prisma-ls
           pyright
           ruff-lsp
-          roslyn-ls
           superhtml
           nodePackages.vscode-langservers-extracted
           terraform-ls
