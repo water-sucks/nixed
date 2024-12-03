@@ -4,5 +4,5 @@ local overseer_spec = use("stevearc/overseer.nvim", {
 })
 
 return {
-  overseer_spec
+  overseer_spec,
 }
