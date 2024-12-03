@@ -1,6 +1,6 @@
 {
-  "cascade-theme" = {
-    "src.git" = "https://github.com/andreasgrafen/cascade";
-    "fetch.github" = "andreasgrafen/cascade";
+  "arcadia-theme" = {
+    "src.git" = "https://github.com/tyrohellion/arcadia";
+    "fetch.github" = "tyrohellion/arcadia";
   };
 }

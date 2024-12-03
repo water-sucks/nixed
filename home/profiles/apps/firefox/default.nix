@@ -8,25 +8,23 @@
 
   sources = pkgs.callPackage _sources/generated.nix {};
 
-  cascade = let
-    patched-cascade = pkgs.stdenv.mkDerivation {
-      name = "cascade-theme-src";
-      inherit (sources.cascade-theme) src;
-      patches = [./cascade-config.patch];
-      dontBuild = true;
-      installPhase = ''
-        mkdir $out
-        cp -r chrome/* $out
-      '';
-    };
-  in
-    pkgs.buildEnv {
-      name = "cascade-chrome";
-      paths = [
-        patched-cascade
-        ./chrome
-      ];
-    };
+  arcadia = pkgs.stdenv.mkDerivation {
+    name = "arcadia-theme-src";
+    inherit (sources.arcadia-theme) src;
+
+    patches = []; # Add patches here
+    dontBuild = true;
+
+    installPhase = ''
+      mkdir $out
+
+      cp -r chrome $out
+      cp user.js $out
+
+      cp -f ${./chrome/new-tab-wallpaper.jpg} $out/chrome/new-tab-wallpaper.jpg
+      cp -f ${./chrome/userContent.css} $out/chrome/userContent.css
+    '';
+  };
 in
   lib.mkMerge [
     {
@@ -35,7 +33,6 @@ in
         profiles."default" = {
           id = 0;
           isDefault = true;
-          extraConfig = builtins.readFile ./user.js;
         };
       };
 
@@ -45,9 +42,13 @@ in
           then "Library/Application Support/Firefox/Profiles/default"
           else ".mozilla/firefox/default";
       in {
-        "cascade-chrome" = {
-          source = cascade;
+        "arcadia-chrome" = {
+          source = "${arcadia}/chrome";
           target = "${prefix}/chrome";
+        };
+        "arcadia-user-js" = {
+          source = "${arcadia}/user.js";
+          target = "${prefix}/user.js";
         };
       };
     }
