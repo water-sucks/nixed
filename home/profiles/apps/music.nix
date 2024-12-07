@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -16,7 +15,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     terminal = false;
   };
 
-  home.persistence.${config.persistence.directory} = {
+  persistence = {
     directories = [
       ".config/tidal-hifi"
     ];

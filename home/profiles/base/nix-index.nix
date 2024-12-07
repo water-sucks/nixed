@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -49,7 +48,7 @@ in
         Install.WantedBy = ["timers.target"];
       };
 
-      home.persistence.${config.persistence.directory} = {
+      persistence = {
         directories = [
           ".cache/nix-index"
         ];

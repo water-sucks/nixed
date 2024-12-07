@@ -33,7 +33,7 @@ let
         };
       };
 
-    home.persistence.${config.persistence.directory} = {
+    persistence = {
       directories = [
         ".config/OpenRGB"
       ];
@@ -44,9 +44,9 @@ in {
     openrgbModule
   ];
 
-  home-manager.users.varun = {config, ...}: {
+  home-manager.users.varun = _: {
     sops.age.keyFile = "/persist/home/varun/.sops_key";
-    home.persistence."${config.persistence.directory}" = {
+    persistence = {
       files = [
         ".sops_key"
       ];

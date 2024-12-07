@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -72,7 +71,7 @@ in
         "application/x-extension-xht" = ["firefox.desktop"];
       };
 
-      home.persistence.${config.persistence.directory} = {
+      persistence = {
         directories = [
           ".mozilla"
         ];

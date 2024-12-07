@@ -155,7 +155,7 @@ in
     }
 
     (lib.mkIf isLinux {
-      home.persistence."${config.persistence.directory}" = {
+      persistence = {
         directories = [
           "Mail"
         ];

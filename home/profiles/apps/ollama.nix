@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -15,7 +14,7 @@ in
     }
 
     (mkIf isLinux {
-      home.persistence.${config.persistence.directory} = {
+      persistence = {
         directories = [
           ".ollama"
         ];

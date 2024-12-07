@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -34,7 +33,7 @@ lib.mkMerge [
     };
   }
   (lib.mkIf pkgs.stdenv.isLinux {
-    home.persistence.${config.persistence.directory} = {
+    persistence = {
       directories = [
         ".ssh"
       ];

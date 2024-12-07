@@ -59,9 +59,9 @@ in {
     xrandrLaptopScreenMode
   ];
 
-  home-manager.users.varun = {config, ...}: {
+  home-manager.users.varun = _: {
     sops.age.keyFile = "/persist/home/varun/.sops_key";
-    home.persistence."${config.persistence.directory}" = {
+    persistence = {
       files = [
         ".sops_key"
       ];

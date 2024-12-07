@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -19,7 +18,7 @@ lib.mkMerge [
     };
   }
   (lib.mkIf pkgs.stdenv.isLinux {
-    home.persistence.${config.persistence.directory} = {
+    persistence = {
       files = [
         ".config/gh/hosts.yml"
       ];

@@ -24,7 +24,6 @@
           [
             nix-colors.homeManagerModule
             sops-nix.homeManagerModules.sops
-            impermanence.nixosModules.home-manager.impermanence
           ]
           ++ (lib.genModules args "profiles" ../../home/profiles);
       })

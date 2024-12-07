@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -9,7 +8,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     bitwarden
   ];
 
-  home.persistence.${config.persistence.directory} = {
+  persistence = {
     directories = [
       ".config/Bitwarden"
     ];

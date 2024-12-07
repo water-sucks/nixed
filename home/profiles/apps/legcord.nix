@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -12,7 +11,7 @@ in
         pkgs.legcord
       ];
 
-      home.persistence.${config.persistence.directory} = {
+      persistence = {
         directories = [
           ".config/legcord"
         ];

@@ -83,9 +83,9 @@ in {
           };
         };
 
-        persistence.directory = "/persist/home/varun";
+        # persistence.directory = "/persist/home/varun";
 
-        home.persistence.${config.persistence.directory} = {
+        persistence = {
           directories = [
             ".nixed"
             "Code"
@@ -96,7 +96,6 @@ in {
             "Videos"
             "VMs"
           ];
-          allowOther = true;
         };
       })
       (lib.mkIf isDarwin {

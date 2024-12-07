@@ -1,14 +1,10 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [
     pkgs.pavucontrol
     pkgs.playerctl
   ];
 
-  home.persistence.${config.persistence.directory} = {
+  persistence = {
     directories = [
       ".config/pulse"
       ".local/state/wireplumber"

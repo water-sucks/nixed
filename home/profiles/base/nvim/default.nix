@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   pkgs,
   lib,
@@ -175,7 +174,7 @@ in
     }
 
     (lib.mkIf isLinux {
-      home.persistence.${config.persistence.directory} = {
+      persistence = {
         directories = [
           ".local/state/nvim"
           ".local/share/eclipse"

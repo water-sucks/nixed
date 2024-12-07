@@ -69,7 +69,7 @@ in
       programs.zsh.shellAliases = {
         open = "xdg-open";
       };
-      home.persistence.${config.persistence.directory} = {
+      persistence = {
         directories = [
           ".local/share/zsh"
         ];

@@ -47,6 +47,12 @@ in {
     files = [
       "/etc/machine-id"
     ];
+
+    users.varun = let
+      hmOptions = config.home-manager.users.varun;
+    in {
+      inherit (hmOptions.persistence) directories files;
+    };
   };
 
   services.udev.extraRules = ''

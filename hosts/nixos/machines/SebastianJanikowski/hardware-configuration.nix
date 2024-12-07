@@ -35,7 +35,7 @@
     "/" = {
       device = "none";
       fsType = "tmpfs";
-      options = ["size=3G" "mode=755"];
+      options = ["size=6G" "mode=755"];
     };
 
     "/boot" = {
@@ -53,12 +53,6 @@
       device = "locker/persist";
       fsType = "zfs";
       neededForBoot = true;
-    };
-
-    "/home/varun" = {
-      device = "none";
-      fsType = "tmpfs";
-      options = ["size=4G" "mode=777"];
     };
 
     "/etc/ssh" = {

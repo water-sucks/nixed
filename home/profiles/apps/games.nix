@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   ...
@@ -10,18 +9,12 @@ lib.mkIf pkgs.stdenv.isLinux {
     dolphin-emu
   ];
 
-  home.persistence.${config.persistence.directory} = {
+  persistence = {
     directories = [
       ".config/unity3d/ipodtouch0218/NSMB-MarioVsLuigi"
       ".config/dolphin-emu"
-      {
-        directory = ".steam";
-        method = "symlink";
-      }
-      {
-        directory = ".local/share/Steam";
-        method = "symlink";
-      }
+      ".steam"
+      ".local/share/Steam"
     ];
   };
 }
