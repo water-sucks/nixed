@@ -42,6 +42,7 @@ in {
       rmwt = "!f() { git worktree remove \"$(git rev-parse --show-toplevel)+$@\"; }; f";
 
       fucked = "reset";
+      unfuck = "reflog";
     };
   };
 
