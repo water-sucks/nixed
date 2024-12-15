@@ -48,20 +48,21 @@ local blink_spec = use("saghen/blink.cmp", {
       ["<C-b>"] = { "scroll_documentation_up", "fallback" },
       ["<C-f>"] = { "scroll_documentation_down", "fallback" },
     },
-    highlight = {
+    appearance = {
       use_nvim_cmp_as_default = true,
     },
     sources = {
-      completion = {
-        enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
-      },
+      default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+      cmdline = {},
       providers = {
-        lsp = { fallback_for = { "lazydev" } },
-        lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+        lazydev = {
+          name = "LazyDev",
+          fallbacks = { "lsp" },
+          module = "lazydev.integrations.blink",
+        },
       },
     },
-    accept = { auto_brackets = { enabled = true } },
-    trigger = { signature_help = { enabled = true } },
+    signature = { enabled = true },
   },
 })
 
@@ -107,7 +108,6 @@ local conform_spec = use("stevearc/conform.nvim", {
 
 return {
   lspconfig_spec,
-  -- cmp_spec,
   blink_spec,
   fidget_spec,
   conform_spec,
