@@ -133,6 +133,7 @@ in
     (plugin "barreiroleo" "ltex_extra.nvim")
     (plugin "kaarmu" "typst.vim")
     (plugin "seblj" "roslyn.nvim")
+    (plugin "stevearc" "oil.nvim")
 
     (fetch "nvim-neorg" "tree-sitter-norg" {
       branch = "dev";

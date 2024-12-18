@@ -1,40 +1,3 @@
-local nvim_tree_spec = use("nvim-tree/nvim-tree.lua", {
-  event = "VeryLazy",
-})
-nvim_tree_spec.config = function()
-  local api = require("nvim-tree.api")
-  local wk = require("which-key")
-  local event = api.events.Event
-
-  require("nvim-tree").setup({
-    renderer = {
-      icons = {
-        git_placement = "after",
-        glyphs = {
-          git = {
-            deleted = "",
-            ignored = "",
-            staged = "",
-            unmerged = "󰽜",
-            unstaged = "",
-            untracked = "",
-          },
-        },
-      },
-    },
-    sort_by = "case_sensitive",
-  })
-
-  -- Clear fill characters in NvimTree buffer
-  api.events.subscribe(event.TreeOpen, function()
-    vim.opt_local.fillchars = "eob: "
-  end)
-
-  wk.add({
-    { "<Leader>l", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
-  })
-end
-
 local eunuch_spec = use("tpope/vim-eunuch", {
   event = "CmdlineEnter",
 })
@@ -55,9 +18,32 @@ local zoxide_spec = use("nanotee/zoxide.vim", {
   event = "CmdlineEnter",
 })
 
+local oil_spec = use("stevearc/oil.nvim", {
+  opts = {
+    skip_confirm_for_simple_edits = true,
+    watch_for_changes = true,
+    view_options = {
+      show_hidden = true,
+    },
+    float = {
+      max_width = 90,
+      max_height = 30,
+      border = "single",
+    },
+    use_default_keymaps = true,
+    keymaps = {
+      ["q"] = { "actions.close", mode = "n" },
+    },
+  },
+  keys = {
+    { "<Leader>`", "<Cmd>Oil --float<CR>", { desc = "Open file manager" } },
+    { "<Leader>L", "<Cmd>Oil<CR>", { desc = "Open file manager (full)" } },
+  },
+})
+
 return {
-  nvim_tree_spec,
   eunuch_spec,
   project_spec,
   zoxide_spec,
+  oil_spec,
 }

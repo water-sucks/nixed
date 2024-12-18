@@ -694,6 +694,19 @@
     pretty-name = "nvim-web-devicons";
     date = "2024-12-14";
   };
+  plugin-oil-nvim = {
+    pname = "plugin-oil-nvim";
+    version = "dba037598843973b8c54bc5ce0318db4a0da439d";
+    src = fetchFromGitHub {
+      owner = "stevearc";
+      repo = "oil.nvim";
+      rev = "dba037598843973b8c54bc5ce0318db4a0da439d";
+      fetchSubmodules = false;
+      sha256 = "sha256-LM/RWrh3zSVuiO3uI9lcZRjx1T1kw0L2fB1fQCBnHX4=";
+    };
+    pretty-name = "oil.nvim";
+    date = "2024-12-10";
+  };
   plugin-one-small-step-for-vimkind = {
     pname = "plugin-one-small-step-for-vimkind";
     version = "7f47c3297eeed1364be3c6ad915b1df2beb2b2f4";

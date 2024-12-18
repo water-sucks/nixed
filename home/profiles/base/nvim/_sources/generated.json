@@ -1165,6 +1165,28 @@
     },
     "version": "8a8e0668b8ad6124813a44a626afdf850dd24874"
   },
+  "plugin-oil-nvim": {
+    "cargoLocks": null,
+    "date": "2024-12-10",
+    "extract": null,
+    "name": "plugin-oil-nvim",
+    "passthru": {
+      "pretty-name": "oil.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "stevearc",
+      "repo": "oil.nvim",
+      "rev": "dba037598843973b8c54bc5ce0318db4a0da439d",
+      "sha256": "sha256-LM/RWrh3zSVuiO3uI9lcZRjx1T1kw0L2fB1fQCBnHX4=",
+      "type": "github"
+    },
+    "version": "dba037598843973b8c54bc5ce0318db4a0da439d"
+  },
   "plugin-one-small-step-for-vimkind": {
     "cargoLocks": null,
     "date": "2024-12-04",
