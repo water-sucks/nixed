@@ -20,7 +20,6 @@ in {
         follow = "none";
 
         width = 300;
-        height = 300;
         origin = "top-right";
         offset = "35x55";
         scale = 0;
