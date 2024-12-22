@@ -38,8 +38,8 @@ in {
 
       wt = "worktree";
       lswt = "worktree list";
-      mkwt = "!f() { git worktree add \"$(git rev-parse --show-toplevel)+$@\"; }; f";
-      rmwt = "!f() { git worktree remove \"$(git rev-parse --show-toplevel)+$@\"; }; f";
+      mkwt = ''!f() { git worktree add -b "$@" "$(git rev-parse --show-toplevel)+$@"; }; f'';
+      rmwt = ''!f() { git worktree remove "$(git rev-parse --show-toplevel)+$@"; }; f'';
 
       fucked = "reset";
       unfuck = "reflog";
