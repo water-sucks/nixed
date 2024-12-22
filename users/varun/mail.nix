@@ -26,6 +26,8 @@
           "${message}"
       ''
     );
+
+  cat = "${pkgs.coreutils}/bin/cat";
 in
   lib.mkMerge [
     {
@@ -43,7 +45,7 @@ in
             realName = "Varun Narravula";
             address = "varun@snare.dev";
             userName = "varun@snare.dev";
-            passwordCommand = "cat ${config.sops.secrets.email-password.path}";
+            passwordCommand = "${cat} ${config.sops.secrets.email-password.path}";
 
             aerc = {
               enable = true;
@@ -74,7 +76,7 @@ in
             realName = "Varun Narravula";
             address = "vnarravula@byggr.ai";
             userName = "vnarravula@byggr.ai";
-            passwordCommand = "cat ${config.sops.secrets.byggr-email-password.path}";
+            passwordCommand = "${cat} ${config.sops.secrets.byggr-email-password.path}";
 
             aerc = {
               enable = true;
