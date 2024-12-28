@@ -25,7 +25,7 @@
         "text/calendar" = "calendar";
         "message/delivery-status" = "colorize";
         "message/rfc822" = "colorize";
-        "image/*" = "${pkgs.catimg}/bin/catimg -";
+        "image/*" = "${pkgs.imv}/bin/imv -";
       };
     };
 
