@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: let
+  inherit (pkgs.stdenv) isLinux;
+in {
   programs.aerc = {
     enable = true;
     extraConfig = {
@@ -25,7 +31,7 @@
         "text/calendar" = "calendar";
         "message/delivery-status" = "colorize";
         "message/rfc822" = "colorize";
-        "image/*" = "${pkgs.imv}/bin/imv -";
+        "image/*" = lib.mkIf isLinux pkgs.stdenv."${pkgs.imv}/bin/imv -";
       };
     };
 
