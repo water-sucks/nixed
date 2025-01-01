@@ -90,58 +90,59 @@ in
         withRuby = false;
         withNodeJs = false;
 
-        extraPackages = with pkgs; [
-          # Language servers
-          astro-language-server
-          ccls
-          emmet-ls
-          gopls
-          golangci-lint-langserver
-          jdt-language-server
-          ltex-ls
-          lua-language-server
-          nixd
-          nodePackages.bash-language-server
-          nodePackages.graphql-language-service-cli
-          nodePackages.svelte-language-server
-          nodePackages.typescript-language-server
-          prisma-ls
-          pyright
-          ruff-lsp
-          superhtml
-          nodePackages.vscode-langservers-extracted
-          terraform-ls
-          tinymist
-          zls
+        extraPackages = with pkgs;
+          [
+            # Language servers
+            astro-language-server
+            ccls
+            emmet-ls
+            gopls
+            golangci-lint-langserver
+            jdt-language-server
+            ltex-ls
+            lua-language-server
+            nixd
+            nodePackages.bash-language-server
+            nodePackages.graphql-language-service-cli
+            nodePackages.svelte-language-server
+            nodePackages.typescript-language-server
+            prisma-ls
+            pyright
+            ruff-lsp
+            superhtml
+            nodePackages.vscode-langservers-extracted
+            terraform-ls
+            tinymist
+            zls
 
-          # efm-langserver sources
-          alejandra
-          asmfmt
-          black
-          cppcheck
-          deadnix
-          editorconfig-checker
-          efm-langserver
-          gitlint
-          gofumpt
-          nodePackages.prettier
-          python3Packages.flake8
-          shellcheck
-          shellharden
-          shfmt
-          statix
-          sqlfluff
-          stylua
-          typstyle
+            # efm-langserver sources
+            alejandra
+            asmfmt
+            black
+            deadnix
+            editorconfig-checker
+            efm-langserver
+            gitlint
+            gofumpt
+            nodePackages.prettier
+            python3Packages.flake8
+            shellcheck
+            shellharden
+            shfmt
+            statix
+            sqlfluff
+            stylua
+            typstyle
 
-          # DAP servers
-          delve
+            # DAP servers
+            delve
 
-          # Neorg dependencies
-          gnumake
-          luajit
-          unzip
-        ];
+            # Neorg dependencies
+            gnumake
+            luajit
+            unzip
+          ]
+          ++ lib.optionals isLinux [cppcheck];
       };
 
       xdg.configFile = {
