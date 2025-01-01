@@ -40,6 +40,7 @@
       name = "${name}-${source.version}";
       namePrefix = ""; # Clear name prefix
       inherit (source) version src;
+      doCheck = false;
     };
 
   generatedPluginSources = with lib;
