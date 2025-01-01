@@ -86,9 +86,9 @@ local cell_automata_spec = use("Eandrju/cellular-automaton.nvim", {
   config = function()
     local wk = require("which-key")
     wk.add({
-      { "<Leader>-", group = "Fuck around/find out" },
-      { "<Leader>-r", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Make it rain" },
-      { "<Leader>-l", "<cmd>CellularAutomaton game_of_life<CR>", desc = "Game of life" },
+      { "<Leader>q", group = "Fuck around/find out" },
+      { "<Leader>qr", "<cmd>CellularAutomaton make_it_rain<CR>", desc = "Make it rain" },
+      { "<Leader>ql", "<cmd>CellularAutomaton game_of_life<CR>", desc = "Game of life" },
     })
   end,
 })
