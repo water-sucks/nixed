@@ -31,7 +31,7 @@ in {
         "text/calendar" = "calendar";
         "message/delivery-status" = "colorize";
         "message/rfc822" = "colorize";
-        "image/*" = lib.mkIf isLinux pkgs.stdenv."${pkgs.imv}/bin/imv -";
+        "image/*" = lib.mkIf isLinux "${pkgs.imv}/bin/imv -";
       };
     };
 
