@@ -63,7 +63,7 @@
       "luarocks.nvim" = generatedPlugins."luarocks.nvim".overrideAttrs (_: {
         patches = [./luarocks-nvim.patch];
       });
-      "blink.cmp" = inputs.blink-cmp.packages.${pkgs.system}.blink-cmp;
+      "blink.cmp" = pkgs.vimPlugins.blink-cmp;
     };
 
   pluginDir = with lib;
