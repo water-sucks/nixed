@@ -81,9 +81,22 @@ local emoji_spec = use("Allaman/emoji.nvim", {
   end,
 })
 
+local nerdy_spec = use("2kabhishek/nerdy.nvim", {
+  dependencies = {
+    "stevearc/dressing.nvim",
+    "nvim-telescope/telescope.nvim",
+  },
+  event = "VeryLazy",
+  config = function()
+    require("telescope").load_extension("nerdy")
+    vim.keymap.set("n", "<Leader>fn", "<Cmd>Telescope nerdy<CR>", { desc = "Find nerd icons" })
+  end,
+})
+
 return {
   devicons_spec,
   indent_blankline_spec,
   lightbulb_spec,
   emoji_spec,
+  nerdy_spec,
 }

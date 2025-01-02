@@ -747,6 +747,28 @@
     },
     "version": "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f"
   },
+  "plugin-nerdy-nvim": {
+    "cargoLocks": null,
+    "date": "2024-12-02",
+    "extract": null,
+    "name": "plugin-nerdy-nvim",
+    "passthru": {
+      "pretty-name": "nerdy.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "2kabhishek",
+      "repo": "nerdy.nvim",
+      "rev": "719ed52244b34ea9de08f074e0d22fd67d615640",
+      "sha256": "sha256-ALghRgNavAeGZk0+JbSdjSkTvtDgzD8zAguCl00R0yw=",
+      "type": "github"
+    },
+    "version": "719ed52244b34ea9de08f074e0d22fd67d615640"
+  },
   "plugin-noice-nvim": {
     "cargoLocks": null,
     "date": "2024-12-12",

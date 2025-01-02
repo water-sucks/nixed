@@ -71,6 +71,7 @@ in
     (plugin "echasnovski" "mini.move")
     (plugin "ggandor" "leap.nvim")
     (plugin "Allaman" "emoji.nvim")
+    (plugin "2kabhishek" "nerdy.nvim")
 
     # UNIX/Git commands
     (plugin "tpope" "vim-eunuch")

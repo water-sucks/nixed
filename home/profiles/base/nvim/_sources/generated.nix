@@ -447,6 +447,19 @@
     pretty-name = "neorg-templates";
     date = "2024-02-11";
   };
+  plugin-nerdy-nvim = {
+    pname = "plugin-nerdy-nvim";
+    version = "719ed52244b34ea9de08f074e0d22fd67d615640";
+    src = fetchFromGitHub {
+      owner = "2kabhishek";
+      repo = "nerdy.nvim";
+      rev = "719ed52244b34ea9de08f074e0d22fd67d615640";
+      fetchSubmodules = false;
+      sha256 = "sha256-ALghRgNavAeGZk0+JbSdjSkTvtDgzD8zAguCl00R0yw=";
+    };
+    pretty-name = "nerdy.nvim";
+    date = "2024-12-02";
+  };
   plugin-noice-nvim = {
     pname = "plugin-noice-nvim";
     version = "eaed6cc9c06aa2013b5255349e4f26a6b17ab70f";
