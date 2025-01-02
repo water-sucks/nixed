@@ -70,6 +70,7 @@ in
     (plugin "sQVe" "sort.nvim")
     (plugin "echasnovski" "mini.move")
     (plugin "ggandor" "leap.nvim")
+    (plugin "Allaman" "emoji.nvim")
 
     # UNIX/Git commands
     (plugin "tpope" "vim-eunuch")

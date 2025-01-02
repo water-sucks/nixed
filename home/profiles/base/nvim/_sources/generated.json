@@ -285,6 +285,28 @@
     },
     "version": "d8a6b08af440e5a0e2b3b357e2f78bb1883272cd"
   },
+  "plugin-emoji-nvim": {
+    "cargoLocks": null,
+    "date": "2024-12-23",
+    "extract": null,
+    "name": "plugin-emoji-nvim",
+    "passthru": {
+      "pretty-name": "emoji.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "Allaman",
+      "repo": "emoji.nvim",
+      "rev": "8422df2b94beebf97569eee56deb37a307b59037",
+      "sha256": "sha256-uGUbBNwGy829KtMI1tSy0hnG8oUW7MyfS+FB6nCz7zc=",
+      "type": "github"
+    },
+    "version": "8422df2b94beebf97569eee56deb37a307b59037"
+  },
   "plugin-fidget-nvim": {
     "cargoLocks": null,
     "date": "2023-11-09",

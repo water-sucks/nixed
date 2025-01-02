@@ -64,8 +64,26 @@ local lightbulb_spec = use("kosayoda/nvim-lightbulb", {
   end,
 })
 
+local emoji_spec = use("Allaman/emoji.nvim", {
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
+  },
+  event = "VeryLazy",
+  opts = {
+    plugin_path = vim.fn.stdpath("data") .. "/plugins",
+  },
+  config = function(_, opts)
+    require("emoji").setup(opts)
+
+    local ts = require("telescope").load_extension("emoji")
+    vim.keymap.set("n", "<Leader>fe", ts.emoji, { desc = "Find emojis" })
+  end,
+})
+
 return {
   devicons_spec,
   indent_blankline_spec,
   lightbulb_spec,
+  emoji_spec,
 }

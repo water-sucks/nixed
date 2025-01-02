@@ -174,6 +174,19 @@
     pretty-name = "duck.nvim";
     date = "2024-03-07";
   };
+  plugin-emoji-nvim = {
+    pname = "plugin-emoji-nvim";
+    version = "8422df2b94beebf97569eee56deb37a307b59037";
+    src = fetchFromGitHub {
+      owner = "Allaman";
+      repo = "emoji.nvim";
+      rev = "8422df2b94beebf97569eee56deb37a307b59037";
+      fetchSubmodules = false;
+      sha256 = "sha256-uGUbBNwGy829KtMI1tSy0hnG8oUW7MyfS+FB6nCz7zc=";
+    };
+    pretty-name = "emoji.nvim";
+    date = "2024-12-23";
+  };
   plugin-fidget-nvim = {
     pname = "plugin-fidget-nvim";
     version = "2f7c08f45639a64a5c0abcf67321d52c3f499ae6";
