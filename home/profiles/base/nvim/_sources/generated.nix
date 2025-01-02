@@ -356,19 +356,6 @@
     pretty-name = "lualine.nvim";
     date = "2024-11-08";
   };
-  plugin-luarocks-nvim = {
-    pname = "plugin-luarocks-nvim";
-    version = "1db9093915eb16ba2473cfb8d343ace5ee04130a";
-    src = fetchFromGitHub {
-      owner = "vhyrro";
-      repo = "luarocks.nvim";
-      rev = "1db9093915eb16ba2473cfb8d343ace5ee04130a";
-      fetchSubmodules = false;
-      sha256 = "sha256-siqpyQLpxWYfZKxoPrflnCg8V5oTQcIXKrezjCgZfMM=";
-    };
-    pretty-name = "luarocks.nvim";
-    date = "2024-05-28";
-  };
   plugin-mini-move = {
     pname = "plugin-mini-move";
     version = "4caa1c212f5ca3d1633d21cfb184808090ed74b1";
@@ -407,45 +394,6 @@
     };
     pretty-name = "neocord";
     date = "2024-12-05";
-  };
-  plugin-neorg = {
-    pname = "plugin-neorg";
-    version = "6b945909d84b5aeadc875f9b3f529ec44b9bc60f";
-    src = fetchFromGitHub {
-      owner = "nvim-neorg";
-      repo = "neorg";
-      rev = "6b945909d84b5aeadc875f9b3f529ec44b9bc60f";
-      fetchSubmodules = false;
-      sha256 = "sha256-xH87caxEebrWLwY/v3xyyOy6PTG/ZqX2OfCdwg/RqDY=";
-    };
-    pretty-name = "neorg";
-    date = "2024-12-14";
-  };
-  plugin-neorg-telescope = {
-    pname = "plugin-neorg-telescope";
-    version = "ddb2556644cae922699a239bbb0fe16e25b084b7";
-    src = fetchFromGitHub {
-      owner = "nvim-neorg";
-      repo = "neorg-telescope";
-      rev = "ddb2556644cae922699a239bbb0fe16e25b084b7";
-      fetchSubmodules = false;
-      sha256 = "sha256-ei4uUqpIQjGKzu5ryu0Hlmis9TS9FJsYnjt4J4QdWlw=";
-    };
-    pretty-name = "neorg-telescope";
-    date = "2024-07-30";
-  };
-  plugin-neorg-templates = {
-    pname = "plugin-neorg-templates";
-    version = "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f";
-    src = fetchFromGitHub {
-      owner = "pysan3";
-      repo = "neorg-templates";
-      rev = "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f";
-      fetchSubmodules = false;
-      sha256 = "sha256-nZOAxXSHTUDBpUBS/Esq5HHwEaTB01dI7x5CQFB3pcw=";
-    };
-    pretty-name = "neorg-templates";
-    date = "2024-02-11";
   };
   plugin-nerdy-nvim = {
     pname = "plugin-nerdy-nvim";
@@ -1005,31 +953,5 @@
     };
     pretty-name = "zoxide.vim";
     date = "2023-10-23";
-  };
-  tree-sitter-norg = {
-    pname = "tree-sitter-norg";
-    version = "d7a466e182a532065a559dbfc7a847271d5e9c29";
-    src = fetchFromGitHub {
-      owner = "nvim-neorg";
-      repo = "tree-sitter-norg";
-      rev = "d7a466e182a532065a559dbfc7a847271d5e9c29";
-      fetchSubmodules = false;
-      sha256 = "sha256-kv3UiJUqMSF1qd3r4OCWomVTHTYjwX/EBRWm8mOSdwg=";
-    };
-    pretty-name = "tree-sitter-norg";
-    date = "2023-01-01";
-  };
-  tree-sitter-norg-meta = {
-    pname = "tree-sitter-norg-meta";
-    version = "6f0510cc516a3af3396a682fbd6655486c2c9d2d";
-    src = fetchFromGitHub {
-      owner = "nvim-neorg";
-      repo = "tree-sitter-norg-meta";
-      rev = "6f0510cc516a3af3396a682fbd6655486c2c9d2d";
-      fetchSubmodules = false;
-      sha256 = "sha256-8qSdwHlfnjFuQF4zNdLtU2/tzDRhDZbo9K54Xxgn5+8=";
-    };
-    pretty-name = "tree-sitter-norg-meta";
-    date = "2024-04-13";
   };
 }

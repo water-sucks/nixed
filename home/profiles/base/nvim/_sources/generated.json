@@ -593,28 +593,6 @@
     },
     "version": "2a5bae925481f999263d6f5ed8361baef8df4f83"
   },
-  "plugin-luarocks-nvim": {
-    "cargoLocks": null,
-    "date": "2024-05-28",
-    "extract": null,
-    "name": "plugin-luarocks-nvim",
-    "passthru": {
-      "pretty-name": "luarocks.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "vhyrro",
-      "repo": "luarocks.nvim",
-      "rev": "1db9093915eb16ba2473cfb8d343ace5ee04130a",
-      "sha256": "sha256-siqpyQLpxWYfZKxoPrflnCg8V5oTQcIXKrezjCgZfMM=",
-      "type": "github"
-    },
-    "version": "1db9093915eb16ba2473cfb8d343ace5ee04130a"
-  },
   "plugin-mini-move": {
     "cargoLocks": null,
     "date": "2024-08-15",
@@ -680,72 +658,6 @@
       "type": "github"
     },
     "version": "4d55d8dab2d5f2f272192add7a2c21982039c699"
-  },
-  "plugin-neorg": {
-    "cargoLocks": null,
-    "date": "2024-12-14",
-    "extract": null,
-    "name": "plugin-neorg",
-    "passthru": {
-      "pretty-name": "neorg"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nvim-neorg",
-      "repo": "neorg",
-      "rev": "6b945909d84b5aeadc875f9b3f529ec44b9bc60f",
-      "sha256": "sha256-xH87caxEebrWLwY/v3xyyOy6PTG/ZqX2OfCdwg/RqDY=",
-      "type": "github"
-    },
-    "version": "6b945909d84b5aeadc875f9b3f529ec44b9bc60f"
-  },
-  "plugin-neorg-telescope": {
-    "cargoLocks": null,
-    "date": "2024-07-30",
-    "extract": null,
-    "name": "plugin-neorg-telescope",
-    "passthru": {
-      "pretty-name": "neorg-telescope"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nvim-neorg",
-      "repo": "neorg-telescope",
-      "rev": "ddb2556644cae922699a239bbb0fe16e25b084b7",
-      "sha256": "sha256-ei4uUqpIQjGKzu5ryu0Hlmis9TS9FJsYnjt4J4QdWlw=",
-      "type": "github"
-    },
-    "version": "ddb2556644cae922699a239bbb0fe16e25b084b7"
-  },
-  "plugin-neorg-templates": {
-    "cargoLocks": null,
-    "date": "2024-02-11",
-    "extract": null,
-    "name": "plugin-neorg-templates",
-    "passthru": {
-      "pretty-name": "neorg-templates"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "pysan3",
-      "repo": "neorg-templates",
-      "rev": "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f",
-      "sha256": "sha256-nZOAxXSHTUDBpUBS/Esq5HHwEaTB01dI7x5CQFB3pcw=",
-      "type": "github"
-    },
-    "version": "2808ec9796e0ba89377e1eeb73bd25af3d10ef7f"
   },
   "plugin-nerdy-nvim": {
     "cargoLocks": null,
@@ -1692,49 +1604,5 @@
       "type": "github"
     },
     "version": "b1e70b6fc1682a83929aee63680d2b43456fe9a5"
-  },
-  "tree-sitter-norg": {
-    "cargoLocks": null,
-    "date": "2023-01-01",
-    "extract": null,
-    "name": "tree-sitter-norg",
-    "passthru": {
-      "pretty-name": "tree-sitter-norg"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nvim-neorg",
-      "repo": "tree-sitter-norg",
-      "rev": "d7a466e182a532065a559dbfc7a847271d5e9c29",
-      "sha256": "sha256-kv3UiJUqMSF1qd3r4OCWomVTHTYjwX/EBRWm8mOSdwg=",
-      "type": "github"
-    },
-    "version": "d7a466e182a532065a559dbfc7a847271d5e9c29"
-  },
-  "tree-sitter-norg-meta": {
-    "cargoLocks": null,
-    "date": "2024-04-13",
-    "extract": null,
-    "name": "tree-sitter-norg-meta",
-    "passthru": {
-      "pretty-name": "tree-sitter-norg-meta"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nvim-neorg",
-      "repo": "tree-sitter-norg-meta",
-      "rev": "6f0510cc516a3af3396a682fbd6655486c2c9d2d",
-      "sha256": "sha256-8qSdwHlfnjFuQF4zNdLtU2/tzDRhDZbo9K54Xxgn5+8=",
-      "type": "github"
-    },
-    "version": "6f0510cc516a3af3396a682fbd6655486c2c9d2d"
   }
 }

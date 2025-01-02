@@ -60,9 +60,6 @@
       "fidget.nvim" = generatedPlugins."fidget.nvim".overrideAttrs (_: {
         patches = [./fidget.patch];
       });
-      "luarocks.nvim" = generatedPlugins."luarocks.nvim".overrideAttrs (_: {
-        patches = [./luarocks-nvim.patch];
-      });
       "blink.cmp" = pkgs.vimPlugins.blink-cmp;
     };
 

@@ -36,9 +36,3 @@ au("FileType", {
     vim.opt.conceallevel = 2
   end,
 })
-au("FileType", {
-  pattern = "norg",
-  callback = function()
-    vim.opt.colorcolumn = "80"
-  end,
-})

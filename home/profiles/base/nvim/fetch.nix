@@ -106,10 +106,6 @@ in
     (plugin "IogaMaster" "neocord")
     (plugin "alec-gibson" "nvim-tetris")
     (plugin "Eandrju" "cellular-automaton.nvim")
-    (plugin "nvim-neorg" "neorg")
-    (plugin "vhyrro" "luarocks.nvim")
-    (plugin "nvim-neorg" "neorg-telescope")
-    (plugin "pysan3" "neorg-templates")
     (plugin "folke" "which-key.nvim")
     (plugin "ahmedkhalf" "project.nvim")
     (plugin "tamton-aquib" "duck.nvim")
@@ -136,10 +132,4 @@ in
     (plugin "kaarmu" "typst.vim")
     (plugin "seblj" "roslyn.nvim")
     (plugin "stevearc" "oil.nvim")
-
-    (fetch "nvim-neorg" "tree-sitter-norg" {
-      branch = "dev";
-      isPlugin = false;
-    })
-    (fetch "nvim-neorg" "tree-sitter-norg-meta" {isPlugin = false;})
   ]

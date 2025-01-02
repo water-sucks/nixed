@@ -35,7 +35,6 @@ indent_blankline_spec.config = function()
       filetypes = {
         "FTerm",
         "terminal",
-        "norg",
       },
       buftypes = {
         "nofile",
