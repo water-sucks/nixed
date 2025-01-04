@@ -101,6 +101,7 @@ in
     (plugin "kevinhwang91" "nvim-ufo")
     (plugin "kevinhwang91" "promise-async")
     (plugin "folke" "todo-comments.nvim")
+    (plugin "MeanderingProgrammer" "render-markdown.nvim")
 
     # Special Neovim sauce
     (plugin "IogaMaster" "neocord")

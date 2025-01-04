@@ -759,6 +759,19 @@
     pretty-name = "promise-async";
     date = "2024-08-05";
   };
+  plugin-render-markdown-nvim = {
+    pname = "plugin-render-markdown-nvim";
+    version = "1faa6568eb61467d64c3d0aad8ac4c9c0e45514e";
+    src = fetchFromGitHub {
+      owner = "MeanderingProgrammer";
+      repo = "render-markdown.nvim";
+      rev = "1faa6568eb61467d64c3d0aad8ac4c9c0e45514e";
+      fetchSubmodules = false;
+      sha256 = "sha256-dZq2bGeKZByjVloonQEBxByZ8QEvUcfVgbxa6pwm8vY=";
+    };
+    pretty-name = "render-markdown.nvim";
+    date = "2025-01-03";
+  };
   plugin-roslyn-nvim = {
     pname = "plugin-roslyn-nvim";
     version = "47d97e0a3f81b778409e742877b8b03fdf6c762d";

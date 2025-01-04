@@ -2,6 +2,34 @@ local colorscheme_spec = use("water-sucks/darkrose.nvim", {
   dev = true,
   lazy = false,
   config = function()
+    require("darkrose").setup({
+      overrides = function(c)
+        return {
+          RenderMarkdownH1 = { fg = c.markup.h1 },
+          RenderMarkdownH2 = { fg = c.markup.h2 },
+          RenderMarkdownH3 = { fg = c.markup.h3 },
+          RenderMarkdownH4 = { fg = c.markup.h4 },
+          RenderMarkdownH5 = { fg = c.markup.h5 },
+          RenderMarkdownH6 = { fg = c.markup.h6 },
+          RenderMarkdownH1Bg = { link = "Normal" },
+          RenderMarkdownH2Bg = { link = "Normal" },
+          RenderMarkdownH3Bg = { link = "Normal" },
+          RenderMarkdownH4Bg = { link = "Normal" },
+          RenderMarkdownH5Bg = { link = "Normal" },
+          RenderMarkdownH6Bg = { link = "Normal" },
+
+          RenderMarkdownBullet = { fg = c.pink },
+
+          RenderMarkdownUnchecked = { fg = c.fg },
+          RenderMarkdownChecked = { fg = c.red },
+          RenderMarkdownTodo = { fg = c.dark_pink },
+          RenderMarkdownUncertain = { fg = c.orange },
+          RenderMarkdownImportant = { fg = c.light_red },
+          RenderMarkdownPaused = { fg = c.gray },
+          RenderMarkdownCanceled = { fg = c.fg_dark },
+        }
+      end,
+    })
     vim.cmd.colorscheme("darkrose")
   end,
 })
