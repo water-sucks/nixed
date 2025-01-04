@@ -33,6 +33,5 @@ au("FileType", {
   pattern = "markdown",
   callback = function()
     vim.opt.colorcolumn = "80"
-    vim.opt.conceallevel = 2
   end,
 })
