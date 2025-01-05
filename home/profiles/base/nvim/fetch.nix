@@ -72,6 +72,7 @@ in
     (plugin "ggandor" "leap.nvim")
     (plugin "Allaman" "emoji.nvim")
     (plugin "2kabhishek" "nerdy.nvim")
+    (plugin "bullets-vim" "bullets.vim")
 
     # UNIX/Git commands
     (plugin "tpope" "vim-eunuch")

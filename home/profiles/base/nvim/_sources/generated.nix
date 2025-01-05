@@ -83,6 +83,19 @@
     pretty-name = "bufferline.nvim";
     date = "2024-12-31";
   };
+  plugin-bullets-vim = {
+    pname = "plugin-bullets-vim";
+    version = "2253f970e54320dbd76fd6bb4f5a0bf2436ce232";
+    src = fetchFromGitHub {
+      owner = "bullets-vim";
+      repo = "bullets.vim";
+      rev = "2253f970e54320dbd76fd6bb4f5a0bf2436ce232";
+      fetchSubmodules = false;
+      sha256 = "sha256-bPnLlaKphp9d25SoKdt1wFa+t51HYeZ3o5uc40keiHs=";
+    };
+    pretty-name = "bullets.vim";
+    date = "2024-08-03";
+  };
   plugin-cellular-automaton-nvim = {
     pname = "plugin-cellular-automaton-nvim";
     version = "11aea08aa084f9d523b0142c2cd9441b8ede09ed";

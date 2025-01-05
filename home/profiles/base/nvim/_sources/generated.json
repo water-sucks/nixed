@@ -131,6 +131,28 @@
     },
     "version": "9f0826ae6adfd836a23bf8a4910e3c07450211f4"
   },
+  "plugin-bullets-vim": {
+    "cargoLocks": null,
+    "date": "2024-08-03",
+    "extract": null,
+    "name": "plugin-bullets-vim",
+    "passthru": {
+      "pretty-name": "bullets.vim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "bullets-vim",
+      "repo": "bullets.vim",
+      "rev": "2253f970e54320dbd76fd6bb4f5a0bf2436ce232",
+      "sha256": "sha256-bPnLlaKphp9d25SoKdt1wFa+t51HYeZ3o5uc40keiHs=",
+      "type": "github"
+    },
+    "version": "2253f970e54320dbd76fd6bb4f5a0bf2436ce232"
+  },
   "plugin-cellular-automaton-nvim": {
     "cargoLocks": null,
     "date": "2024-06-30",

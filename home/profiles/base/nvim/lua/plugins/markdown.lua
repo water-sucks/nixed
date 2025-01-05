@@ -1,3 +1,28 @@
+local bullets_vim_spec = use("bullets-vim/bullets.vim", {
+  ft = { "markdown", "gitcommit", "text" },
+  event = "VeryLazy",
+})
+bullets_vim_spec.config = function()
+  vim.g.bullets_set_mappings = 0
+  vim.g.bullets_custom_mappings = {
+    { "imap", "<CR>", "<Plug>(bullets-newline)" },
+    { "inoremap", "<C-CR>", "<cr>" },
+
+    { "nmap", "o", "<Plug>(bullets-newline)" },
+
+    { "vmap", "<LocalLeader>N", "<Plug>(bullets-renumber)" },
+    { "nmap", "<LocalLeader>N", "<Plug>(bullets-renumber)" },
+
+    { "imap", "<C-t>", "<Plug>(bullets-demote)" },
+    { "nmap", ">>", "<Plug>(bullets-demote)" },
+    { "vmap", ">", "<Plug>(bullets-demote)" },
+    { "imap", "<C-d>", "<Plug>(bullets-promote)" },
+    { "nmap", "<<", "<Plug>(bullets-promote)" },
+    { "vmap", "<", "<Plug>(bullets-promote)" },
+  }
+  vim.g.bullets_checkbox_markers = " -x"
+end
+
 local function mark_checkbox(mark)
   local line = vim.api.nvim_get_current_line()
 
@@ -144,5 +169,6 @@ render_markdown_spec.config = function()
 end
 
 return {
+  bullets_vim_spec,
   render_markdown_spec,
 }
