@@ -850,6 +850,19 @@
     pretty-name = "telescope.nvim";
     date = "2024-11-29";
   };
+  plugin-template-nvim = {
+    pname = "plugin-template-nvim";
+    version = "59955db23613985e031d340756d5c01aebd583a3";
+    src = fetchFromGitHub {
+      owner = "nvimdev";
+      repo = "template.nvim";
+      rev = "59955db23613985e031d340756d5c01aebd583a3";
+      fetchSubmodules = false;
+      sha256 = "sha256-SsTqdOve0uAP9fApBSVIUj0JIOjneQD02CXbA0dRCWo=";
+    };
+    pretty-name = "template.nvim";
+    date = "2024-08-24";
+  };
   plugin-todo-comments-nvim = {
     pname = "plugin-todo-comments-nvim";
     version = "ae0a2afb47cf7395dc400e5dc4e05274bf4fb9e0";

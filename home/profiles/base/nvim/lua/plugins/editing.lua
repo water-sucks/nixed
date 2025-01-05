@@ -187,6 +187,39 @@ local surround_spec = use("echasnovski/mini.surround", {
   end,
 })
 
+local file_exists_and_is_empty = function(filepath)
+  local file = io.open(filepath, "r")
+  if file ~= nil then
+    local content = file:read("*all")
+    file:close()
+    return content == ""
+  else
+    return false
+  end
+end
+
+local notes_dir = vim.env.HOME .. "/Documents/Notes"
+
+local template_spec = use("nvimdev/template.nvim", {
+  config = function()
+    require("template").setup({
+      temp_dir = vim.fn.stdpath("config") .. "/templates",
+    })
+
+    vim.api.nvim_create_autocmd({ "BufNewFile" }, {
+      callback = function(args)
+        vim.schedule(function()
+          if args.event == "BufNewFile" or (args.event == "BufNew" and file_exists_and_is_empty(args.file)) then
+            vim.api.nvim_cmd({ cmd = "Template", args = { "schedule" } }, {})
+          end
+        end)
+      end,
+      desc = "Load new schedule entries with template",
+      pattern = notes_dir .. "/Schedule/????/??/??.md",
+    })
+  end,
+})
+
 return {
   autopairs_spec,
   comment_spec,
@@ -196,4 +229,5 @@ return {
   repeat_spec,
   sort_spec,
   surround_spec,
+  template_spec,
 }

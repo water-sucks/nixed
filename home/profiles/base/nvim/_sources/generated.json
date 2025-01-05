@@ -1429,6 +1429,28 @@
     },
     "version": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc"
   },
+  "plugin-template-nvim": {
+    "cargoLocks": null,
+    "date": "2024-08-24",
+    "extract": null,
+    "name": "plugin-template-nvim",
+    "passthru": {
+      "pretty-name": "template.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "nvimdev",
+      "repo": "template.nvim",
+      "rev": "59955db23613985e031d340756d5c01aebd583a3",
+      "sha256": "sha256-SsTqdOve0uAP9fApBSVIUj0JIOjneQD02CXbA0dRCWo=",
+      "type": "github"
+    },
+    "version": "59955db23613985e031d340756d5c01aebd583a3"
+  },
   "plugin-todo-comments-nvim": {
     "cargoLocks": null,
     "date": "2024-09-16",
