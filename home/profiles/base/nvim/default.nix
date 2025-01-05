@@ -177,6 +177,7 @@ in
           ".local/share/eclipse"
           ".local/share/nvim"
           ".cache/nvim"
+          ".local/share/ltex"
         ];
         files = [
           ".config/zls.json"

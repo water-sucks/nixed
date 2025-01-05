@@ -221,12 +221,15 @@ end
 local ltex_extra_spec = use("barreiroleo/ltex_extra.nvim", {
   module = "ltex_extra",
   ft = "tex",
+  opts = {
+    path = vim.env.HOME .. "/.local/share/ltex",
+  },
 })
 
 local lazydev_spec = use("folke/lazydev.nvim", {
   ft = "lua",
   config = function()
-    require("lazydev").setup({})
+    require("lazydev").setup()
   end,
 })
 
