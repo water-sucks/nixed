@@ -12,7 +12,6 @@ end
 
 local render_markdown_spec = use("MeanderingProgrammer/render-markdown.nvim", {
   dependencies = { use("nvim-treesitter/nvim-treesitter") },
-  event = "VeryLazy",
   ft = "markdown",
 })
 render_markdown_spec.config = function()
@@ -61,7 +60,7 @@ render_markdown_spec.config = function()
           scope_highlight = "@markup.italic",
         },
         canceled = {
-          raw = "[_]",
+          raw = "[@]",
           rendered = "[󰜺]",
           highlight = "RenderMarkdownCanceled",
           scope_highlight = "@markup.strikethrough",
@@ -71,65 +70,76 @@ render_markdown_spec.config = function()
     sign = { enabled = false },
   })
 
-  wk.add({
-    { "<LocalLeader>c", "<Cmd>RenderMarkdown toggle<CR>", desc = "Toggle concealer", buffer = 0 },
-    { "<LocalLeader>t", group = "Tasks", buffer = 0 },
-    {
-      "<LocalLeader>tc",
-      function()
-        mark_checkbox("_")
-      end,
-      desc = "Mark task canceled",
-      buffer = 0,
-    },
-    {
-      "<LocalLeader>td",
-      function()
-        mark_checkbox("x")
-      end,
-      desc = "Mark task done",
-      buffer = 0,
-    },
-    {
-      "<LocalLeader>th",
-      function()
-        mark_checkbox("?")
-      end,
-      desc = "Mark task on hold",
-      buffer = 0,
-    },
-    {
-      "<LocalLeader>ti",
-      function()
-        mark_checkbox("!")
-      end,
-      desc = "Mark task important",
-      buffer = 0,
-    },
-    {
-      "<LocalLeader>tp",
-      function()
-        mark_checkbox("-")
-      end,
-      desc = "Mark task pending",
-      buffer = 0,
-    },
-    {
-      "<LocalLeader>tu",
-      function()
-        mark_checkbox(" ")
-      end,
-      desc = "Mark task undone",
-      buffer = 0,
-    },
-    {
-      "<LocalLeader>tq",
-      function()
-        mark_checkbox("?")
-      end,
-      desc = "Mark task uncertain",
-      buffer = 0,
-    },
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function(opts)
+      local bufnr = opts.buf
+      wk.add({
+        {
+          "<LocalLeader>c",
+          "<Cmd>RenderMarkdown toggle<CR>",
+          desc = "Toggle concealer",
+          buffer = bufnr,
+        },
+        { "<LocalLeader>t", group = "Tasks" },
+        {
+          "<LocalLeader>tc",
+          function()
+            mark_checkbox("@")
+          end,
+          desc = "Mark task canceled",
+          buffer = bufnr,
+        },
+        {
+          "<LocalLeader>td",
+          function()
+            mark_checkbox("x")
+          end,
+          desc = "Mark task done",
+          buffer = bufnr,
+        },
+        {
+          "<LocalLeader>th",
+          function()
+            mark_checkbox("=")
+          end,
+          desc = "Mark task on hold",
+          buffer = bufnr,
+        },
+        {
+          "<LocalLeader>ti",
+          function()
+            mark_checkbox("!")
+          end,
+          desc = "Mark task important",
+          buffer = bufnr,
+        },
+        {
+          "<LocalLeader>tp",
+          function()
+            mark_checkbox("-")
+          end,
+          desc = "Mark task pending",
+          buffer = bufnr,
+        },
+        {
+          "<LocalLeader>tu",
+          function()
+            mark_checkbox(" ")
+          end,
+          desc = "Mark task undone",
+          buffer = bufnr,
+        },
+        {
+          "<LocalLeader>tq",
+          function()
+            mark_checkbox("?")
+          end,
+          desc = "Mark task uncertain",
+          buffer = bufnr,
+        },
+      })
+    end,
   })
 end
 
