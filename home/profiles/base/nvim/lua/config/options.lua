@@ -12,6 +12,7 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.timeoutlen = 50
 vim.o.pumheight = 10
+vim.o.formatoptions = "jcroql1"
 
 vim.opt.number = true
 vim.opt.ignorecase = true
