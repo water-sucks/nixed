@@ -1,4 +1,23 @@
 let
+  kanshiModule = {
+    services.kanshi = {
+      settings = [
+        {
+          profile.name = "default";
+          profile.outputs = [
+            {
+              criteria = "DP-1";
+            }
+            {
+              criteria = "DP-2";
+              transform = "90";
+            }
+          ];
+        }
+      ];
+    };
+  };
+
   openrgbModule = {
     config,
     pkgs,
@@ -41,6 +60,7 @@ let
   };
 in {
   home-manager.sharedModules = [
+    kanshiModule
     openrgbModule
   ];
 
