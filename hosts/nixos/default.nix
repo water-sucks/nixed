@@ -10,21 +10,21 @@
     withSystem system ({
       pkgs,
       lib,
-      system,
       ...
     }:
       lib.nixosSystem {
-        inherit system;
         specialArgs = {
           inherit self inputs lib pkgs;
         };
         modules = with inputs; [
+          nixpkgs.nixosModules.readOnlyPkgs
           sops-nix.nixosModules.sops
           impermanence.nixosModules.impermanence
           home.nixosModules.home-manager
           nixos-cli.nixosModules.nixos-cli
           (import configuration)
           {
+            nixpkgs.pkgs = pkgs;
             networking.hostName = hostname;
             users.mutableUsers = false;
             programs.fuse.userAllowOther = true; # Used for home.persistence.allowOther options, must be enabled
