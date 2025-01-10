@@ -134,10 +134,8 @@ in
           # DAP servers
           delve
 
-          # Neorg dependencies
-          gnumake
-          luajit
-          unzip
+          # Other special sauce
+          codeium
         ];
       };
 

@@ -220,12 +220,44 @@ local template_spec = use("nvimdev/template.nvim", {
   end,
 })
 
+local neocodeium_spec = use("monkoose/neocodeium", {
+  config = function()
+    local neocodeium = require("neocodeium")
+    local wk = require("which-key")
+
+    neocodeium.setup({
+      enabled = true,
+      bin = vim.fn.exepath("codeium_language_server"),
+      manual = false,
+      silent = true,
+    })
+
+    wk.add({
+      { "<A-CR>", neocodeium.accept, desc = "Accept suggestion", mode = "i" },
+      { "<A-w>", neocodeium.accept_word, desc = "Accept word", mode = "i" },
+      { "<A-a>", neocodeium.accept_line, desc = "Accept line", mode = "i" },
+
+      { "<A-f>", neocodeium.cycle_or_complete, desc = "Cycle forward", mode = "i" },
+      {
+        "<A-f>",
+        function()
+          neocodeium.cycle_or_complete(-1)
+        end,
+        desc = "Cycle backwards",
+        mode = "i",
+      },
+      { "<A-c>", neocodeium.clear, desc = "Clear suggestion", mode = "i" },
+    })
+  end,
+})
+
 return {
   autopairs_spec,
   comment_spec,
   dial_spec,
   minimove,
   leap_spec,
+  neocodeium_spec,
   repeat_spec,
   sort_spec,
   surround_spec,

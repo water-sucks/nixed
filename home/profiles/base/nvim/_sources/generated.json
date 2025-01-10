@@ -659,6 +659,28 @@
     },
     "version": "aa5e245829dd12d8ff0c96ef11da28681d6049aa"
   },
+  "plugin-neocodeium": {
+    "cargoLocks": null,
+    "date": "2024-11-05",
+    "extract": null,
+    "name": "plugin-neocodeium",
+    "passthru": {
+      "pretty-name": "neocodeium"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "monkoose",
+      "repo": "neocodeium",
+      "rev": "4da81528468b33585c411f31eb390dce573ccb14",
+      "sha256": "sha256-1n9nNqBNwNDSzbAkm8eB4HZLNy5HmMg25jPwQAnW5OU=",
+      "type": "github"
+    },
+    "version": "4da81528468b33585c411f31eb390dce573ccb14"
+  },
   "plugin-neocord": {
     "cargoLocks": null,
     "date": "2024-12-05",

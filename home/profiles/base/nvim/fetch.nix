@@ -74,6 +74,7 @@ in
     (plugin "2kabhishek" "nerdy.nvim")
     (plugin "bullets-vim" "bullets.vim")
     (plugin "nvimdev" "template.nvim")
+    (plugin "monkoose" "neocodeium")
 
     # UNIX/Git commands
     (plugin "tpope" "vim-eunuch")
