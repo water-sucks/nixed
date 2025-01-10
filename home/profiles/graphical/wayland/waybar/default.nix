@@ -19,6 +19,8 @@
   getAppname = "${pkgs.get-appname}/bin/get-appname";
   activeWindowAppName = with pkgs;
     writeShellScript "river-active-window" ''
+      export SHUT_UP=1
+
       while true; do
         app_id=$(${lswt}/bin/lswt -j | ${jq}/bin/jq -r '.toplevels | .[] | (if .activated then . else empty end) | ."app-id"')
         if name=$(${getAppname} $app_id); then

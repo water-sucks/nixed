@@ -15,15 +15,15 @@
   };
   get-appname = {
     pname = "get-appname";
-    version = "df5166cab236b4220ec01edf5527c9c6a4487a8f";
+    version = "c22fd3a9181279d4742578b8d0e279cded82b3f2";
     src = fetchFromGitHub {
       owner = "water-sucks";
       repo = "get-appname";
-      rev = "df5166cab236b4220ec01edf5527c9c6a4487a8f";
+      rev = "c22fd3a9181279d4742578b8d0e279cded82b3f2";
       fetchSubmodules = false;
-      sha256 = "sha256-MTTbuNJTs4m7TM2LIKIWd1j7c95Mea2tZwoxcrQLrzw=";
+      sha256 = "sha256-7kzduIbjsRwGYbYQaSymVOzxuWqqvbC76y2yFuZ9ZxM=";
     };
-    date = "2023-02-23";
+    date = "2025-01-10";
   };
   java-debug = {
     pname = "java-debug";
