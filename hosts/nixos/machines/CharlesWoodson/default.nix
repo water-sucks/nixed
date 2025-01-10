@@ -34,6 +34,7 @@
     kvm.enable = true;
     ios.enable = true;
     docker.enable = true;
+    ollama.enable = true;
 
     steam.enable = true;
   };

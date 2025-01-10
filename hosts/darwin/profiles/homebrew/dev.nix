@@ -3,5 +3,6 @@ _: {
     "bruno"
     "visual-studio-code"
     "clickup"
+    "ollama"
   ];
 }
