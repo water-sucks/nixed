@@ -733,19 +733,6 @@
     pretty-name = "overseer.nvim";
     date = "2025-01-03";
   };
-  plugin-playground = {
-    pname = "plugin-playground";
-    version = "ba48c6a62a280eefb7c85725b0915e021a1a0749";
-    src = fetchFromGitHub {
-      owner = "nvim-treesitter";
-      repo = "playground";
-      rev = "ba48c6a62a280eefb7c85725b0915e021a1a0749";
-      fetchSubmodules = false;
-      sha256 = "sha256-gOQr61Y3bVa6EAb0P924X9SJmg9lOmGiLcFTMdgu8u0=";
-    };
-    pretty-name = "playground";
-    date = "2023-09-15";
-  };
   plugin-plenary-nvim = {
     pname = "plugin-plenary-nvim";
     version = "2d9b06177a975543726ce5c73fca176cedbffe9d";

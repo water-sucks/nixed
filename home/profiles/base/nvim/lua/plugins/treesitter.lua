@@ -4,7 +4,6 @@ local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
     use("nvim-treesitter/nvim-treesitter-refactor", {}),
     use("windwp/nvim-ts-autotag", {}),
     use("JoosepAlviste/nvim-ts-context-commentstring", {}),
-    use("nvim-treesitter/playground", {}),
   },
   event = "VeryLazy",
 })
@@ -27,10 +26,6 @@ treesitter_spec.config = function()
     indent = {
       enable = true,
       disable = { "dart" },
-    },
-
-    playground = {
-      enable = true,
     },
 
     textobjects = {

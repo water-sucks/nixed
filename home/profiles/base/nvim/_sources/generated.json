@@ -1231,28 +1231,6 @@
     },
     "version": "8de110400643a02aeddf266b772a05f63db2e625"
   },
-  "plugin-playground": {
-    "cargoLocks": null,
-    "date": "2023-09-15",
-    "extract": null,
-    "name": "plugin-playground",
-    "passthru": {
-      "pretty-name": "playground"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "nvim-treesitter",
-      "repo": "playground",
-      "rev": "ba48c6a62a280eefb7c85725b0915e021a1a0749",
-      "sha256": "sha256-gOQr61Y3bVa6EAb0P924X9SJmg9lOmGiLcFTMdgu8u0=",
-      "type": "github"
-    },
-    "version": "ba48c6a62a280eefb7c85725b0915e021a1a0749"
-  },
   "plugin-plenary-nvim": {
     "cargoLocks": null,
     "date": "2024-09-17",
