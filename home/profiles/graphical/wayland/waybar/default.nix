@@ -211,12 +211,7 @@ in {
 
   systemd.user.services.waybar = {
     Unit = {
-      PartOf = ["graphical-session.target"];
-      After = ["graphical-session-pre.target"];
       ConditionPathExistsGlob = ["%t/wayland-*"];
-      Conflicts = ["polybar.service"];
     };
-
-    Install.WantedBy = ["graphical-session.target"];
   };
 }
