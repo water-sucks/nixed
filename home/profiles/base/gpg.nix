@@ -34,5 +34,9 @@ in
         enable = true;
         pinentryPackage = pkgs.pinentry-curses;
       };
+
+      systemd.user.services.gpg-agent = {
+        Unit.RefuseManualStart = lib.mkForce false;
+      };
     })
   ]

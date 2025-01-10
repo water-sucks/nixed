@@ -20,7 +20,7 @@
   activeWindowAppName = with pkgs;
     writeShellScript "river-active-window" ''
       while true; do
-        app_id=$(${lswt}/bin/lswt -j | ${jq}/bin/jq -r ".[] | (if .activated then . else empty end) | .app_id")
+        app_id=$(${lswt}/bin/lswt -j | ${jq}/bin/jq -r '.toplevels | .[] | (if .activated then . else empty end) | ."app-id"')
         if name=$(${getAppname} $app_id); then
           if [ "$name" == "mpv Media Player" ]; then
             echo "mpv"
@@ -209,8 +209,12 @@ in {
 
   systemd.user.services.waybar = {
     Unit = {
+      PartOf = ["graphical-session.target"];
+      After = ["graphical-session-pre.target"];
       ConditionPathExistsGlob = ["%t/wayland-*"];
       Conflicts = ["polybar.service"];
     };
+
+    Install.WantedBy = ["graphical-session.target"];
   };
 }
