@@ -131,7 +131,7 @@ in {
           # Outputs
           (bind [mod] "Period" "focus-output next")
           (bind [mod] "Comma" "focus-output previous")
-          (bind [mod shift] "Comma" "send-to-output previous")
+          (bind [mod shift] "Period" "send-to-output next")
           (bind [mod shift] "Comma" "send-to-output previous")
 
           # Tiling (with rivertile layout)
