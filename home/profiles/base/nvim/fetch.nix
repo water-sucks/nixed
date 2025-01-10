@@ -86,6 +86,7 @@ in
     (plugin "windwp" "nvim-ts-autotag")
     (plugin "JoosepAlviste" "nvim-ts-context-commentstring")
     (plugin "water-sucks" "darkrose.nvim")
+    (plugin "jackplus-xyz" "binary.nvim")
     (plugin "nvim-lualine" "lualine.nvim")
     (plugin "akinsho" "bufferline.nvim")
     (plugin "tiagovla" "scope.nvim")

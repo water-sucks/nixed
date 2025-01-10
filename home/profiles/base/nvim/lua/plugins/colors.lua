@@ -104,8 +104,85 @@ local baleia_spec = use("m00qek/baleia.nvim", {
   end,
 })
 
+local binary_spec = use("jackplus-xyz/binary.nvim", {
+  event = "VeryLazy",
+  config = function()
+    local wk = require("which-key")
+
+    require("binary").setup({
+      style = "dark",
+      colors = {
+        fg = "#000000",
+        bg = "#CCCCCC",
+      },
+    })
+
+    local enabled_ibl_config = {
+      enabled = true,
+      indent = {
+        highlight = {
+          "IblIndent1",
+          "IblIndent2",
+          "IblIndent3",
+          "IblIndent4",
+          "IblIndent5",
+          "IblIndent6",
+        },
+      },
+      scope = {
+        show_start = true,
+        show_end = true,
+        highlight = {
+          "IblScopeStart",
+          "IblScopeEnd",
+        },
+      },
+    }
+
+    local function color_toggle()
+      local is_binary = vim.g.colors_name == "binary"
+
+      local ibl_exists, ibl = pcall(require, "ibl")
+      local lualine_exists, lualine = pcall(require, "lualine")
+
+      if is_binary then
+        vim.cmd.colorscheme("darkrose")
+        if ibl_exists then
+          ibl.update(enabled_ibl_config)
+        end
+        if lualine_exists then
+          lualine.hide({ unhide = true })
+        end
+      else
+        if ibl_exists then
+          ibl.update({
+            enabled = false,
+            indent = {
+              highlight = "IblIndent",
+            },
+            scope = {
+              show_start = false,
+              show_end = false,
+              highlight = "IblScope",
+            },
+          })
+        end
+        if lualine_exists then
+          lualine.hide({ unhide = false })
+        end
+        vim.cmd.colorscheme("binary")
+      end
+    end
+
+    wk.add({
+      { "<Leader>w", color_toggle, desc = "Binary color toggle" },
+    })
+  end,
+})
+
 return {
   baleia_spec,
+  binary_spec,
   colorscheme_spec,
   colorizer_spec,
   highlight_current_n_spec,

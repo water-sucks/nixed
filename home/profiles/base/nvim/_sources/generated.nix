@@ -70,6 +70,19 @@
     pretty-name = "baleia.nvim";
     date = "2024-07-24";
   };
+  plugin-binary-nvim = {
+    pname = "plugin-binary-nvim";
+    version = "f0ff26080318013fd79a34b57d2937b7b4c5618b";
+    src = fetchFromGitHub {
+      owner = "jackplus-xyz";
+      repo = "binary.nvim";
+      rev = "f0ff26080318013fd79a34b57d2937b7b4c5618b";
+      fetchSubmodules = false;
+      sha256 = "sha256-niuKghip0EZjDQvmGkCW3qzmiCv0YWEb+Udyy5PQJKU=";
+    };
+    pretty-name = "binary.nvim";
+    date = "2025-01-09";
+  };
   plugin-bufferline-nvim = {
     pname = "plugin-bufferline-nvim";
     version = "9f0826ae6adfd836a23bf8a4910e3c07450211f4";

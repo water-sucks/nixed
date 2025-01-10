@@ -109,6 +109,28 @@
     },
     "version": "1b25eac3ac03659c3d3af75c7455e179e5f197f7"
   },
+  "plugin-binary-nvim": {
+    "cargoLocks": null,
+    "date": "2025-01-09",
+    "extract": null,
+    "name": "plugin-binary-nvim",
+    "passthru": {
+      "pretty-name": "binary.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "jackplus-xyz",
+      "repo": "binary.nvim",
+      "rev": "f0ff26080318013fd79a34b57d2937b7b4c5618b",
+      "sha256": "sha256-niuKghip0EZjDQvmGkCW3qzmiCv0YWEb+Udyy5PQJKU=",
+      "type": "github"
+    },
+    "version": "f0ff26080318013fd79a34b57d2937b7b4c5618b"
+  },
   "plugin-bufferline-nvim": {
     "cargoLocks": null,
     "date": "2024-12-31",
