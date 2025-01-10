@@ -14,7 +14,7 @@
     }:
       lib.nixosSystem {
         specialArgs = {
-          inherit self inputs lib pkgs;
+          inherit self inputs lib;
         };
         modules = with inputs; [
           nixpkgs.nixosModules.readOnlyPkgs
@@ -30,7 +30,13 @@
             programs.fuse.userAllowOther = true; # Used for home.persistence.allowOther options, must be enabled
             system.configurationRevision = self.rev or "dirty";
           }
-          (args: {
+          (args': let
+            args =
+              args'
+              // {
+                inherit pkgs;
+              };
+          in {
             imports =
               (genModules args "profiles" ../profiles) # Common profiles
               ++ (genModules args "profiles" ./profiles) # NixOS profiles
