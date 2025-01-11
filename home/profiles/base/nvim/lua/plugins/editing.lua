@@ -230,6 +230,9 @@ local neocodeium_spec = use("monkoose/neocodeium", {
       bin = vim.fn.exepath("codeium_language_server"),
       manual = false,
       silent = true,
+      filetypes = {
+        markdown = false,
+      },
     })
 
     wk.add({
