@@ -177,6 +177,7 @@ in
           ".local/share/nvim"
           ".cache/nvim"
           ".local/share/ltex"
+          ".codeium"
         ];
         files = [
           ".config/zls.json"
