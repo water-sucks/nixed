@@ -54,7 +54,6 @@ in
     (plugin "nvim-tree" "nvim-tree.lua")
     (plugin "nvim-telescope" "telescope.nvim")
     (plugin "folke" "trouble.nvim")
-    (plugin "numToStr" "FTerm.nvim")
     (plugin "MunifTanjim" "nui.nvim")
     # Temporary until fidget.nvim is rewritten
     (fetch "j-hui" "fidget.nvim" {branch = "legacy";})

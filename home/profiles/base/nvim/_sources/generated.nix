@@ -18,19 +18,6 @@
     pretty-name = "Comment.nvim";
     date = "2024-06-09";
   };
-  plugin-FTerm-nvim = {
-    pname = "plugin-FTerm-nvim";
-    version = "d1320892cc2ebab472935242d9d992a2c9570180";
-    src = fetchFromGitHub {
-      owner = "numToStr";
-      repo = "FTerm.nvim";
-      rev = "d1320892cc2ebab472935242d9d992a2c9570180";
-      fetchSubmodules = false;
-      sha256 = "sha256-fCtAs6qsvWOYRp2Z1AwQa2ByUZcUCMKfuYBoNTP7EeY=";
-    };
-    pretty-name = "FTerm.nvim";
-    date = "2022-11-13";
-  };
   plugin-LuaSnip = {
     pname = "plugin-LuaSnip";
     version = "33b06d72d220aa56a7ce80a0dd6f06c70cd82b9d";

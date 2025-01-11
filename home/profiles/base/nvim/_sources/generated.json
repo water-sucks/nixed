@@ -21,28 +21,6 @@
     },
     "version": "e30b7f2008e52442154b66f7c519bfd2f1e32acb"
   },
-  "plugin-FTerm-nvim": {
-    "cargoLocks": null,
-    "date": "2022-11-13",
-    "extract": null,
-    "name": "plugin-FTerm-nvim",
-    "passthru": {
-      "pretty-name": "FTerm.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "numToStr",
-      "repo": "FTerm.nvim",
-      "rev": "d1320892cc2ebab472935242d9d992a2c9570180",
-      "sha256": "sha256-fCtAs6qsvWOYRp2Z1AwQa2ByUZcUCMKfuYBoNTP7EeY=",
-      "type": "github"
-    },
-    "version": "d1320892cc2ebab472935242d9d992a2c9570180"
-  },
   "plugin-LuaSnip": {
     "cargoLocks": null,
     "date": "2024-12-02",

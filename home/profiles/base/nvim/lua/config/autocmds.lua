@@ -3,35 +3,41 @@ local au = vim.api.nvim_create_autocmd
 
 -- Remove terminal decorations
 augroup("TerminalSignsToggle", { clear = true })
-au("TermOpen", {
+au({ "TermOpen", "TermEnter", "BufEnter" }, {
   group = "TerminalSignsToggle",
-  pattern = "term://*",
+  pattern = { "term://*" },
   callback = function()
-    vim.opt.number = false
-    vim.opt.signcolumn = "no"
-  end,
-})
-au("FileType", {
-  group = "TerminalSignsToggle",
-  pattern = "FTerm",
-  callback = function()
-    vim.opt.number = false
-    vim.opt.signcolumn = "no"
+    vim.o.number = false
+    vim.o.signcolumn = "no"
+
+    vim.cmd("startinsert")
   end,
 })
 au("TermClose", {
   group = "TerminalSignsToggle",
-  pattern = "term://*",
+  pattern = { "term://**" },
   callback = function()
-    vim.opt.number = true
-    vim.opt.signcolumn = "yes"
+    vim.o.number = true
+    vim.o.signcolumn = "yes"
   end,
 })
 
--- Filetype-specific options
+vim.api.nvim_create_augroup("MarkdownCommands", { clear = true })
 au("FileType", {
+  group = "MarkdownCommands",
   pattern = "markdown",
   callback = function()
     vim.opt.colorcolumn = "80"
+  end,
+})
+
+vim.api.nvim_create_augroup("AutoDeleteGitBuffer", { clear = true })
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = "AutoDeleteGitBuffer",
+  pattern = { "COMMIT_EDITMSG", "git-rebase-todo" },
+  callback = function(args)
+    if not vim.g.unception_block_while_host_edits then
+      vim.api.nvim_buf_delete(args.buf, { force = true })
+    end
   end,
 })

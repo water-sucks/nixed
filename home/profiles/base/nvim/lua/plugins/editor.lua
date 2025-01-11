@@ -33,7 +33,14 @@ local guess_indent_spec = use("NMAC427/guess-indent.nvim", {
   end,
 })
 
+local unception_spec = use("samjwill/nvim-unception", {
+  config = function()
+    vim.g.unception_open_buffer_in_new_tab = true
+  end,
+})
+
 return {
   autosave_spec,
   guess_indent_spec,
+  unception_spec,
 }
