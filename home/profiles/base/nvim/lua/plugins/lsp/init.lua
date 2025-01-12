@@ -56,6 +56,28 @@ local blink_spec = use("saghen/blink.cmp", {
     appearance = {
       use_nvim_cmp_as_default = true,
     },
+    completion = {
+      list = {
+        selection = {
+          preselect = function(ctx)
+            return ctx.mode ~= "cmdline"
+          end,
+        },
+      },
+      menu = {
+        draw = {
+          columns = {
+            { "label", "label_description", gap = 1 },
+            { "kind_icon", "kind" },
+          },
+        },
+      },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 500,
+      },
+      ghost_text = { enabled = true },
+    },
     sources = {
       default = { "lazydev", "lsp", "path", "snippets", "buffer" },
       providers = {
