@@ -36,8 +36,8 @@ local oil_spec = use("stevearc/oil.nvim", {
     },
   },
   keys = {
-    { "<Leader>`", "<Cmd>Oil --float<CR>", { desc = "Open file manager" } },
-    { "<Leader>L", "<Cmd>Oil<CR>", { desc = "Open file manager (full)" } },
+    { "<Leader>`", "<Cmd>Oil --float<CR>", desc = "Open file manager" },
+    { "<Leader>L", "<Cmd>Oil<CR>", desc = "Open file manager (full)" },
   },
 })
 

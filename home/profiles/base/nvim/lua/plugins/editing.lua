@@ -253,7 +253,7 @@ local neocodeium_spec = use("monkoose/neocodeium", {
       },
       { "<A-c>", neocodeium.clear, desc = "Clear suggestion", mode = "i" },
 
-      { "<Leader>g", "<Cmd>NeoCodeium toggle<CR>", desc = "Toggle Neocodeium" },
+      { "<Leader>g", "<Cmd>NeoCodeium toggle<CR>", desc = "Toggle NeoCodeium", mode = "n" },
     })
   end,
 })
