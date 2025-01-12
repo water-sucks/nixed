@@ -35,7 +35,14 @@ local guess_indent_spec = use("NMAC427/guess-indent.nvim", {
 
 local unception_spec = use("samjwill/nvim-unception", {
   config = function()
-    vim.g.unception_open_buffer_in_new_tab = true
+    vim.g.unception_delete_replaced_buffer = true
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "UnceptionEditRequestReceived",
+      callback = function()
+        vim.o.number = true
+        vim.o.signcolumn = "yes"
+      end,
+    })
   end,
 })
 
