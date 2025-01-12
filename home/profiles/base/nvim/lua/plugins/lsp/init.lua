@@ -6,24 +6,6 @@ local lspconfig_spec = use("neovim/nvim-lspconfig", {
   end,
 })
 
-local fidget_spec = use("j-hui/fidget.nvim", {
-  event = "BufRead",
-  config = function()
-    require("fidget").setup({
-      filter = function(client, title)
-        if
-          (client == "null-ls" and title == "diagnostics")
-          or title == "code_action"
-          or title == "Checking document"
-        then
-          return false
-        end
-        return true
-      end,
-    })
-  end,
-})
-
 local blink_spec = use("saghen/blink.cmp", {
   lazy = false, -- lazy loading handled internally
   dependencies = {
@@ -135,6 +117,5 @@ local conform_spec = use("stevearc/conform.nvim", {
 return {
   lspconfig_spec,
   blink_spec,
-  fidget_spec,
   conform_spec,
 }

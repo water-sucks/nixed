@@ -51,12 +51,11 @@ in
 
     # Specialized windows
     (plugin "stevearc" "dressing.nvim")
-    (plugin "nvim-tree" "nvim-tree.lua")
     (plugin "nvim-telescope" "telescope.nvim")
     (plugin "folke" "trouble.nvim")
     (plugin "MunifTanjim" "nui.nvim")
-    # Temporary until fidget.nvim is rewritten
-    (fetch "j-hui" "fidget.nvim" {branch = "legacy";})
+    (plugin "j-hui" "fidget.nvim")
+    (plugin "ariel-frischer" "bmessages.nvim")
 
     # Text editing assistance/annotations
     (plugin "NMAC427" "guess-indent.nvim")

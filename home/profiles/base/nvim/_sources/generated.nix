@@ -70,6 +70,19 @@
     pretty-name = "binary.nvim";
     date = "2025-01-09";
   };
+  plugin-bmessages-nvim = {
+    pname = "plugin-bmessages-nvim";
+    version = "985c6973bc27888598a03f4766a2481248a599b2";
+    src = fetchFromGitHub {
+      owner = "ariel-frischer";
+      repo = "bmessages.nvim";
+      rev = "985c6973bc27888598a03f4766a2481248a599b2";
+      fetchSubmodules = false;
+      sha256 = "sha256-VzLyvUi42ItEPvCX25otTYrWJrhfJ4e7cr7IDrEm1Es=";
+    };
+    pretty-name = "bmessages.nvim";
+    date = "2025-01-09";
+  };
   plugin-bufferline-nvim = {
     pname = "plugin-bufferline-nvim";
     version = "9f0826ae6adfd836a23bf8a4910e3c07450211f4";
@@ -202,16 +215,16 @@
   };
   plugin-fidget-nvim = {
     pname = "plugin-fidget-nvim";
-    version = "2f7c08f45639a64a5c0abcf67321d52c3f499ae6";
+    version = "a0abbf18084b77d28bc70e24752e4f4fd54aea17";
     src = fetchFromGitHub {
       owner = "j-hui";
       repo = "fidget.nvim";
-      rev = "2f7c08f45639a64a5c0abcf67321d52c3f499ae6";
+      rev = "a0abbf18084b77d28bc70e24752e4f4fd54aea17";
       fetchSubmodules = false;
-      sha256 = "sha256-8Gl2Ck4YJGReSEq1Xeh1dpdRq4eImmrxvIHrfxdem3Q=";
+      sha256 = "sha256-o0za2NxFtzHZa7PRIm9U/P1/fwJrxS1G79ukdGLhJ4Q=";
     };
     pretty-name = "fidget.nvim";
-    date = "2023-11-09";
+    date = "2025-01-08";
   };
   plugin-flutter-tools-nvim = {
     pname = "plugin-flutter-tools-nvim";
@@ -615,19 +628,6 @@
     };
     pretty-name = "nvim-tetris";
     date = "2021-06-28";
-  };
-  plugin-nvim-tree-lua = {
-    pname = "plugin-nvim-tree-lua";
-    version = "68fc4c20f5803444277022c681785c5edd11916d";
-    src = fetchFromGitHub {
-      owner = "nvim-tree";
-      repo = "nvim-tree.lua";
-      rev = "68fc4c20f5803444277022c681785c5edd11916d";
-      fetchSubmodules = false;
-      sha256 = "sha256-4PmP31vYPH9xw4AjV5rDSKvcvZGTnIaPfR4Bwc0lAiA=";
-    };
-    pretty-name = "nvim-tree.lua";
-    date = "2024-12-22";
   };
   plugin-nvim-ts-autotag = {
     pname = "plugin-nvim-ts-autotag";

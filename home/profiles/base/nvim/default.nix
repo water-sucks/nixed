@@ -57,9 +57,6 @@
       # Add plugins you want synced with nixpkgs here, or override
       # existing ones from the generated plugin set.
       inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
-      "fidget.nvim" = generatedPlugins."fidget.nvim".overrideAttrs (_: {
-        patches = [./fidget.patch];
-      });
       "blink.cmp" = pkgs.vimPlugins.blink-cmp;
     };
 
