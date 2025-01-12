@@ -232,6 +232,8 @@ local neocodeium_spec = use("monkoose/neocodeium", {
       silent = true,
       filetypes = {
         markdown = false,
+        gitcommit = false,
+        gitrebase = false,
       },
     })
 
@@ -250,6 +252,8 @@ local neocodeium_spec = use("monkoose/neocodeium", {
         mode = "i",
       },
       { "<A-c>", neocodeium.clear, desc = "Clear suggestion", mode = "i" },
+
+      { "<Leader>g", "<Cmd>NeoCodeium toggle<CR>", desc = "Toggle Neocodeium" },
     })
   end,
 })
