@@ -2,18 +2,6 @@ local eunuch_spec = use("tpope/vim-eunuch", {
   event = "CmdlineEnter",
 })
 
-local project_spec = use("ahmedkhalf/project.nvim", {
-  dependencies = { use("nvim-telescope/telescope.nvim") },
-  event = "VeryLazy",
-  config = function()
-    require("project_nvim").setup({
-      manual_mode = true,
-      silent_chdir = false,
-    })
-    require("telescope").load_extension("projects")
-  end,
-})
-
 local zoxide_spec = use("nanotee/zoxide.vim", {
   event = "CmdlineEnter",
 })
@@ -43,7 +31,6 @@ local oil_spec = use("stevearc/oil.nvim", {
 
 return {
   eunuch_spec,
-  project_spec,
   zoxide_spec,
   oil_spec,
 }

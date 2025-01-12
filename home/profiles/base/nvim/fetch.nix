@@ -43,7 +43,6 @@ in
 
     # Editor tooling
     (plugin "neovim" "nvim-lspconfig")
-    (plugin "nanotee" "zoxide.vim")
     (plugin "L3MON4D3" "LuaSnip")
     (plugin "rafamadriz" "friendly-snippets")
     (plugin "onsails" "lspkind-nvim")
@@ -63,8 +62,6 @@ in
     (plugin "tpope" "vim-repeat")
     (plugin "numToStr" "Comment.nvim")
     (plugin "windwp" "nvim-autopairs")
-    (plugin "Pocco81" "auto-save.nvim")
-    (plugin "monaqa" "dial.nvim")
     (plugin "sQVe" "sort.nvim")
     (plugin "echasnovski" "mini.move")
     (plugin "ggandor" "leap.nvim")
@@ -78,6 +75,8 @@ in
     (plugin "tpope" "vim-eunuch")
     (plugin "lewis6991" "gitsigns.nvim")
     (plugin "sindrets" "diffview.nvim")
+    (plugin "nanotee" "zoxide.vim")
+    (plugin "stevearc" "oil.nvim")
 
     # Appearance/Theming
     # Treesitter queries will be synced with the nixpkgs treesitter input
@@ -106,7 +105,6 @@ in
     (plugin "alec-gibson" "nvim-tetris")
     (plugin "Eandrju" "cellular-automaton.nvim")
     (plugin "folke" "which-key.nvim")
-    (plugin "ahmedkhalf" "project.nvim")
     (plugin "tamton-aquib" "duck.nvim")
     (plugin "samjwill" "nvim-unception")
     (plugin "folke" "noice.nvim")
@@ -117,7 +115,6 @@ in
     (plugin "rcarriga" "nvim-dap-ui")
     (plugin "nvim-neotest" "nvim-nio")
     (plugin "theHamsta" "nvim-dap-virtual-text")
-    (plugin "jbyuki" "one-small-step-for-vimkind")
     (plugin "leoluz" "nvim-dap-go")
     (plugin "mfussenegger" "nvim-dap-python")
 
@@ -130,5 +127,4 @@ in
     (plugin "barreiroleo" "ltex_extra.nvim")
     (plugin "kaarmu" "typst.vim")
     (plugin "seblj" "roslyn.nvim")
-    (plugin "stevearc" "oil.nvim")
   ]

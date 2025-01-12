@@ -25,14 +25,6 @@ local dap_virtual_text_spec = use("theHamsta/nvim-dap-virtual-text", {
   end,
 })
 
-local osv_spec = use("jbyuki/one-small-step-for-vimkind", {
-  event = "VeryLazy",
-  dependencies = { use("mfussenegger/nvim-dap") },
-  config = function()
-    require("plugins.dap.nlua")
-  end,
-})
-
 local dap_go_spec = use("leoluz/nvim-dap-go", {
   event = "VeryLazy",
   dependencies = { use("mfussenegger/nvim-dap") },
@@ -55,7 +47,6 @@ return {
   dap_spec,
   dapui_spec,
   dap_virtual_text_spec,
-  osv_spec,
   dap_go_spec,
   dap_python_spec,
 }

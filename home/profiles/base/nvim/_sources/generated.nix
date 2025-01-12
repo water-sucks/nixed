@@ -31,19 +31,6 @@
     pretty-name = "LuaSnip";
     date = "2024-12-02";
   };
-  plugin-auto-save-nvim = {
-    pname = "plugin-auto-save-nvim";
-    version = "979b6c82f60cfa80f4cf437d77446d0ded0addf0";
-    src = fetchFromGitHub {
-      owner = "Pocco81";
-      repo = "auto-save.nvim";
-      rev = "979b6c82f60cfa80f4cf437d77446d0ded0addf0";
-      fetchSubmodules = false;
-      sha256 = "sha256-bWGil73YiCKZEaY7IuUOIU4Q7k7qCMjSeQ4I+cAVe44=";
-    };
-    pretty-name = "auto-save.nvim";
-    date = "2022-11-01";
-  };
   plugin-baleia-nvim = {
     pname = "plugin-baleia-nvim";
     version = "1b25eac3ac03659c3d3af75c7455e179e5f197f7";
@@ -147,19 +134,6 @@
     };
     pretty-name = "darkrose.nvim";
     date = "2024-08-31";
-  };
-  plugin-dial-nvim = {
-    pname = "plugin-dial-nvim";
-    version = "46b4375e84e8eb771129bff6b2b1e47746601ef9";
-    src = fetchFromGitHub {
-      owner = "monaqa";
-      repo = "dial.nvim";
-      rev = "46b4375e84e8eb771129bff6b2b1e47746601ef9";
-      fetchSubmodules = false;
-      sha256 = "sha256-YeAKLXxodzACP1PLlery8fCKJN5mJ0V5tvAHmJy7NpY=";
-    };
-    pretty-name = "dial.nvim";
-    date = "2024-11-19";
   };
   plugin-diffview-nvim = {
     pname = "plugin-diffview-nvim";
@@ -475,16 +449,16 @@
   };
   plugin-nvim-autopairs = {
     pname = "plugin-nvim-autopairs";
-    version = "b464658e9b880f463b9f7e6ccddd93fb0013f559";
+    version = "3d02855468f94bf435db41b661b58ec4f48a06b7";
     src = fetchFromGitHub {
       owner = "windwp";
       repo = "nvim-autopairs";
-      rev = "b464658e9b880f463b9f7e6ccddd93fb0013f559";
+      rev = "3d02855468f94bf435db41b661b58ec4f48a06b7";
       fetchSubmodules = false;
-      sha256 = "sha256-LbaxiU3ienVBcMKrug3Coppc4R+MD2rjREw7rHQim1w=";
+      sha256 = "sha256-wt0mEW43xSdEGVBXa+1LIwJPkTz7lqHZhTCg1nxKggs=";
     };
     pretty-name = "nvim-autopairs";
-    date = "2024-11-17";
+    date = "2025-01-12";
   };
   plugin-nvim-colorizer-lua = {
     pname = "plugin-nvim-colorizer-lua";
@@ -707,19 +681,6 @@
     pretty-name = "oil.nvim";
     date = "2025-01-03";
   };
-  plugin-one-small-step-for-vimkind = {
-    pname = "plugin-one-small-step-for-vimkind";
-    version = "5d2edc8937978585881d97a8fec4c2903fa4d72c";
-    src = fetchFromGitHub {
-      owner = "jbyuki";
-      repo = "one-small-step-for-vimkind";
-      rev = "5d2edc8937978585881d97a8fec4c2903fa4d72c";
-      fetchSubmodules = false;
-      sha256 = "sha256-TF8My2/5fFuH/lYkzgpSngjpy+jl+/nN7v5/8GeqyMI=";
-    };
-    pretty-name = "one-small-step-for-vimkind";
-    date = "2024-12-22";
-  };
   plugin-overseer-nvim = {
     pname = "plugin-overseer-nvim";
     version = "8de110400643a02aeddf266b772a05f63db2e625";
@@ -745,19 +706,6 @@
     };
     pretty-name = "plenary.nvim";
     date = "2024-09-17";
-  };
-  plugin-project-nvim = {
-    pname = "plugin-project-nvim";
-    version = "8c6bad7d22eef1b71144b401c9f74ed01526a4fb";
-    src = fetchFromGitHub {
-      owner = "ahmedkhalf";
-      repo = "project.nvim";
-      rev = "8c6bad7d22eef1b71144b401c9f74ed01526a4fb";
-      fetchSubmodules = false;
-      sha256 = "sha256-avV3wMiDbraxW4mqlEsKy0oeewaRj9Q33K8NzWoaptU=";
-    };
-    pretty-name = "project.nvim";
-    date = "2023-04-03";
   };
   plugin-promise-async = {
     pname = "plugin-promise-async";

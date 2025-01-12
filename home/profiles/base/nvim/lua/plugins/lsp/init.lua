@@ -39,6 +39,20 @@ local blink_spec = use("saghen/blink.cmp", {
       use_nvim_cmp_as_default = true,
     },
     completion = {
+      accept = {
+        create_undo_point = true,
+        auto_brackets = {
+          enabled = true,
+          kind_resolution = {
+            enabled = true,
+            blocked_filetypes = { "typescriptreact", "javascriptreact", "vue" },
+          },
+          semantic_token_resolution = {
+            enabled = true,
+            timeout_ms = 200,
+          },
+        },
+      },
       list = {
         selection = {
           preselect = function(ctx)
