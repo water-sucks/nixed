@@ -1,4 +1,3 @@
-local on_attach = require("plugins.lsp.on_attach")
 local flutter_tools_spec = use("akinsho/flutter-tools.nvim", {
   dependencies = { use("nvim-lua/plenary.nvim"), use("mfussenegger/nvim-dap") },
   ft = "dart",
@@ -25,9 +24,7 @@ flutter_tools_spec.config = function()
           return { "dart", "language-server", "--protocol=lsp" }
         end
       end)(),
-      on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
-
+      on_attach = function(_, bufnr)
         wk.add({
           {
             buffer = bufnr,
@@ -147,9 +144,7 @@ jdtls_spec.config = function()
         bundles = bundles,
       },
       root_dir = root_dir,
-      on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
-
+      on_attach = function(_, bufnr)
         wk.add({
           {
             buffer = bufnr,
@@ -251,9 +246,6 @@ rust_tools_spec.config = function()
   local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
 
   require("rust-tools").setup({
-    server = {
-      on_attach = require("plugins.lsp.on_attach"),
-    },
     dap = {
       adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
     },

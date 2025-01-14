@@ -1,5 +1,4 @@
 local lsp = require("lspconfig")
-local on_attach = require("plugins.lsp.on_attach")
 
 -- Rust/Flutter/LTeX are configured in
 -- their respective plugins.
@@ -178,8 +177,7 @@ local server_configs = {
     dialyzerEnabled = false,
   },
   ltex = {
-    on_attach = function(client, bufnr)
-      on_attach(client, bufnr)
+    on_attach = function(_, _)
       require("ltex_extra").setup({
         load_langs = { "en-US" },
         init_check = true,
@@ -237,8 +235,7 @@ local server_configs = {
   },
   efm = {
     init_options = { documentFormatting = true },
-    on_attach = function(client, bufnr)
-      on_attach(client, bufnr)
+    on_attach = function(client, _)
       -- ccls is UTF-32 only, and that gives me a SUPER annoying error message.
       -- I need to change the encoding prevent this warning madness.
       local filetypes_to_change = require("lspconfig").ccls.document_config.default_config.filetypes
@@ -302,12 +299,7 @@ local server_configs = {
 vim.g.zig_fmt_parse_errors = 0
 
 for _, server in pairs(servers) do
-  ---@type table<string, boolean|function|table>
   local config = server_configs[server] or {}
-
-  if config.on_attach == nil then
-    config.on_attach = on_attach
-  end
 
   config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities or {})
 
