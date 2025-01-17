@@ -417,6 +417,28 @@
     },
     "version": "6cd61f7a600bb756e558627cd2e740302c58e32d"
   },
+  "plugin-hardtime-nvim": {
+    "cargoLocks": null,
+    "date": "2024-12-22",
+    "extract": null,
+    "name": "plugin-hardtime-nvim",
+    "passthru": {
+      "pretty-name": "hardtime.nvim"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "m4xshen",
+      "repo": "hardtime.nvim",
+      "rev": "5d9adcbe2f12741de79e435c8b85dca69a3b22e4",
+      "sha256": "sha256-WDMr+ygWg9S2PoSqJ4pM26jSaNGAp63wiQ474/p6CIY=",
+      "type": "github"
+    },
+    "version": "5d9adcbe2f12741de79e435c8b85dca69a3b22e4"
+  },
   "plugin-highlight-current-n-nvim": {
     "cargoLocks": null,
     "date": "2023-06-26",

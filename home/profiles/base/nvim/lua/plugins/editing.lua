@@ -217,9 +217,15 @@ local neocodeium_spec = use("monkoose/neocodeium", {
   end,
 })
 
+local hardtime_spec = use("m4xshen/hardtime.nvim", {
+  dependencies = { use("MunifTanjim/nui.nvim") },
+  opts = {},
+})
+
 return {
   autopairs_spec,
   comment_spec,
+  hardtime_spec,
   minimove,
   leap_spec,
   neocodeium_spec,

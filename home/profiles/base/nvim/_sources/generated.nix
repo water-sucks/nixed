@@ -252,6 +252,19 @@
     pretty-name = "guess-indent.nvim";
     date = "2024-07-06";
   };
+  plugin-hardtime-nvim = {
+    pname = "plugin-hardtime-nvim";
+    version = "5d9adcbe2f12741de79e435c8b85dca69a3b22e4";
+    src = fetchFromGitHub {
+      owner = "m4xshen";
+      repo = "hardtime.nvim";
+      rev = "5d9adcbe2f12741de79e435c8b85dca69a3b22e4";
+      fetchSubmodules = false;
+      sha256 = "sha256-WDMr+ygWg9S2PoSqJ4pM26jSaNGAp63wiQ474/p6CIY=";
+    };
+    pretty-name = "hardtime.nvim";
+    date = "2024-12-22";
+  };
   plugin-highlight-current-n-nvim = {
     pname = "plugin-highlight-current-n-nvim";
     version = "1225d1ad3fee74c3e6a6d258f25a1952b927cb76";

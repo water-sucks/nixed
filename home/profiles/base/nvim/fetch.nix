@@ -109,6 +109,7 @@ in
     (plugin "samjwill" "nvim-unception")
     (plugin "folke" "noice.nvim")
     (plugin "stevearc" "overseer.nvim")
+    (plugin "m4xshen" "hardtime.nvim")
 
     # Debugging
     (plugin "mfussenegger" "nvim-dap")
