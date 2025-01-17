@@ -219,7 +219,20 @@ local neocodeium_spec = use("monkoose/neocodeium", {
 
 local hardtime_spec = use("m4xshen/hardtime.nvim", {
   dependencies = { use("MunifTanjim/nui.nvim") },
-  opts = {},
+  opts = {
+    -- Turn on manually for now. This is a hard plugin to get used to
+    -- when being productive.
+    enabled = false,
+  },
+  keys = {
+    {
+      "<Leader>t",
+      function()
+        require("hardtime").toggle()
+      end,
+      desc = "Toggle 'um akshually'",
+    },
+  },
 })
 
 return {
