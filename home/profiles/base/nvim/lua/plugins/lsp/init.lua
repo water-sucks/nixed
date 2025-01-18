@@ -115,7 +115,7 @@ local conform_spec = use("stevearc/conform.nvim", {
     {
       "<leader>p",
       function()
-        require("conform").format({ async = true })
+        require("conform").format()
       end,
       mode = "n",
       desc = "Format buffer",
