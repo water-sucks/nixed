@@ -61,32 +61,32 @@ render_markdown_spec.config = function()
       enabled = true,
       position = "inline",
 
-      unchecked = { icon = "[ ]", highlight = "RenderMarkdownUnchecked" },
-      checked = { icon = "[]", highlight = "RenderMarkdownChecked" },
+      unchecked = { icon = " [ ]", highlight = "RenderMarkdownUnchecked" },
+      checked = { icon = " []", highlight = "RenderMarkdownChecked" },
 
       custom = {
-        todo = { raw = "[-]", rendered = "[󰇘]", highlight = "RenderMarkdownTodo" },
+        todo = { raw = "[-]", rendered = " [󰇘]", highlight = "RenderMarkdownTodo" },
         uncertain = {
           raw = "[?]",
-          rendered = "[]",
+          rendered = " []",
           highlight = "RenderMarkdownUncertain",
           scope_highlight = "@markup.italic",
         },
         important = {
           raw = "[!]",
-          rendered = "[]",
+          rendered = " []",
           highlight = "RenderMarkdownImportant",
           scope_highlight = "@markup.strong",
         },
         paused = {
           raw = "[=]",
-          rendered = "[]",
+          rendered = " []",
           highlight = "RenderMarkdownPaused",
           scope_highlight = "@markup.italic",
         },
         canceled = {
           raw = "[@]",
-          rendered = "[󰜺]",
+          rendered = " [󰜺]",
           highlight = "RenderMarkdownCanceled",
           scope_highlight = "@markup.strikethrough",
         },
