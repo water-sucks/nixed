@@ -15,6 +15,7 @@
       "repo": "fast-syntax-highlighting",
       "rev": "v1.55",
       "sha256": "sha256-DWVFBoICroKaKgByLmDEo4O+xo6eA8YO792g8t8R7kA=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "v1.55"
@@ -35,6 +36,7 @@
       "repo": "zsh-autosuggestions",
       "rev": "v0.7.1",
       "sha256": "sha256-vpTyYq9ZgfgdDsWzjxVAE7FZH4MALMNZIFyEOBLm5Qo=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "v0.7.1"

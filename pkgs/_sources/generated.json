@@ -8,11 +8,11 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-y25wHxOxZVaPJYQcyRq3rV8mFe2o/rwBD7W5eBqoQB8=",
+      "sha256": "sha256-HTqJ637iPtiReFLoGdgKkpxW0UGRPvLjgMMcVV+cRfY=",
       "type": "url",
-      "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.11.0.deb"
+      "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.12.0.deb"
     },
-    "version": "4.11.0"
+    "version": "4.12.0"
   },
   "get-appname": {
     "cargoLocks": null,
@@ -30,6 +30,7 @@
       "repo": "get-appname",
       "rev": "c22fd3a9181279d4742578b8d0e279cded82b3f2",
       "sha256": "sha256-7kzduIbjsRwGYbYQaSymVOzxuWqqvbC76y2yFuZ9ZxM=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "c22fd3a9181279d4742578b8d0e279cded82b3f2"
@@ -50,6 +51,7 @@
       "repo": "java-debug",
       "rev": "0.53.1",
       "sha256": "sha256-7h2U0l8OE8VrXymggfQ3XSXacvfBbQKCJmQVSo8J4M0=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "0.53.1"
@@ -87,6 +89,7 @@
       "repo": "rescrobbled",
       "rev": "v0.7.1",
       "sha256": "sha256-1E+SeKjHCah+IFn2QLAyyv7jgEcZ1gtkh8iHgiVBuz4=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "v0.7.1"
