@@ -15,6 +15,7 @@
       "repo": "arcadia",
       "rev": "4a0bde59a53727129d56ca73b91440e96d1032d6",
       "sha256": "sha256-ZOFXJcBYrvIG1r8/adNEZeGG7PA6Rnbmzq5+LRzMtGg=",
+      "sparseCheckout": [],
       "type": "github"
     },
     "version": "4a0bde59a53727129d56ca73b91440e96d1032d6"
