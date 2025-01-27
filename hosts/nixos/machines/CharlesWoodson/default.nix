@@ -34,7 +34,7 @@
     kvm.enable = true;
     ios.enable = true;
     docker.enable = true;
-    ollama.enable = true;
+    ollama.enable = false; # Wait until I get a better graphics card.
 
     steam.enable = true;
   };
