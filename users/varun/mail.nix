@@ -32,7 +32,6 @@ in
   lib.mkMerge [
     {
       sops.secrets.email-password = sopsEmailPasswordBlock "password";
-      sops.secrets.byggr-email-password = sopsEmailPasswordBlock "byggr-password";
 
       accounts.email = {
         maildirBasePath = "Mail";
@@ -66,84 +65,6 @@ in
             in {
               enable = true;
               onNotify = ''${pkgs.isync}/bin/mbsync personal && ${notify}'';
-            };
-          };
-
-          work = {
-            primary = false;
-            flavor = "gmail.com";
-
-            realName = "Varun Narravula";
-            address = "vnarravula@byggr.ai";
-            userName = "vnarravula@byggr.ai";
-            passwordCommand = "${cat} ${config.sops.secrets.byggr-email-password.path}";
-
-            aerc = {
-              enable = true;
-              extraAccounts = {
-                folders-sort = ["Inbox" "Starred" "Sent" "Drafts" "Archive" "Spam" "Trash"];
-                copy-to = "Sent";
-                archive = "Archive";
-                postpone = "Drafts";
-              };
-            };
-
-            msmtp.enable = true;
-            mbsync = {
-              enable = true;
-              create = "both";
-              expunge = "both";
-              remove = "both";
-              groups.work.channels = let
-                channelConfigBlock = _: v:
-                  v
-                  // {
-                    extraConfig = {
-                      Create = "Near";
-                      CopyArrivalDate = "yes";
-                      MaxMessages = 1000000;
-                      MaxSize = "10m";
-                      Sync = "All";
-                      SyncState = "*";
-                    };
-                  };
-              in
-                lib.mapAttrs channelConfigBlock {
-                  inbox = {
-                    farPattern = "";
-                    nearPattern = "Inbox";
-                  };
-                  starred = {
-                    farPattern = "[Gmail]/Starred";
-                    nearPattern = "Starred";
-                  };
-                  sent = {
-                    farPattern = "[Gmail]/Sent Mail";
-                    nearPattern = "Sent";
-                  };
-                  drafts = {
-                    farPattern = "[Gmail]/Drafts";
-                    nearPattern = "Drafts";
-                  };
-                  archive = {
-                    farPattern = "[Gmail]/All Mail";
-                    nearPattern = "Archive";
-                  };
-                  spam = {
-                    farPattern = "[Gmail]/Spam";
-                    nearPattern = "Spam";
-                  };
-                  trash = {
-                    farPattern = "[Gmail]/Trash";
-                    nearPattern = "Trash";
-                  };
-                };
-            };
-            imapnotify = let
-              notify = notifierScript "You've got mail from work!" "Go check it out.";
-            in {
-              enable = true;
-              onNotify = ''${pkgs.isync}/bin/mbsync work && ${notify}'';
             };
           };
         };
