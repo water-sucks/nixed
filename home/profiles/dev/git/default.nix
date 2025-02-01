@@ -12,7 +12,7 @@ in {
       init.defaultBranch = "main";
       core.editor = "nvim --cmd 'let g:unception_block_while_host_edits=1'";
       core.sshCommand = "ssh -o ConnectTimeout=1 -o ConnectionAttempts=1";
-      core.fsmonitor = "rs-git-fsmonitor";
+      core.fsmonitor = true;
     };
 
     aliases = {
@@ -49,6 +49,5 @@ in {
   # Fast status monitoring
   home.packages = with pkgs; [
     watchman
-    rs-git-fsmonitor
   ];
 }
