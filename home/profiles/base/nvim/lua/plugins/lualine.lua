@@ -142,7 +142,7 @@ lualine_spec.config = function()
       local total = search.total
 
       if current_search > 0 and vim.v.hlsearch ~= 0 then
-        return "/" .. vim.fn.getreg("/") .. " [" .. current_search .. "/" .. total .. "]"
+        return "[" .. current_search .. "/" .. total .. "]"
       else
         return ""
       end

@@ -265,19 +265,6 @@
     pretty-name = "hardtime.nvim";
     date = "2024-12-22";
   };
-  plugin-highlight-current-n-nvim = {
-    pname = "plugin-highlight-current-n-nvim";
-    version = "1225d1ad3fee74c3e6a6d258f25a1952b927cb76";
-    src = fetchFromGitHub {
-      owner = "rktjmp";
-      repo = "highlight-current-n.nvim";
-      rev = "1225d1ad3fee74c3e6a6d258f25a1952b927cb76";
-      fetchSubmodules = false;
-      sha256 = "sha256-Bel83ytJCgQ6MK4qWKU557b+OI/HdMSriFoqYoCgpzA=";
-    };
-    pretty-name = "highlight-current-n.nvim";
-    date = "2023-06-26";
-  };
   plugin-indent-blankline-nvim = {
     pname = "plugin-indent-blankline-nvim";
     version = "e10626f7fcd51ccd56d7ffc00883ba7e0aa28f78";

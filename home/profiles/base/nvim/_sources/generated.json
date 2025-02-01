@@ -459,29 +459,6 @@
     },
     "version": "5d9adcbe2f12741de79e435c8b85dca69a3b22e4"
   },
-  "plugin-highlight-current-n-nvim": {
-    "cargoLocks": null,
-    "date": "2023-06-26",
-    "extract": null,
-    "name": "plugin-highlight-current-n-nvim",
-    "passthru": {
-      "pretty-name": "highlight-current-n.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "rktjmp",
-      "repo": "highlight-current-n.nvim",
-      "rev": "1225d1ad3fee74c3e6a6d258f25a1952b927cb76",
-      "sha256": "sha256-Bel83ytJCgQ6MK4qWKU557b+OI/HdMSriFoqYoCgpzA=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "1225d1ad3fee74c3e6a6d258f25a1952b927cb76"
-  },
   "plugin-indent-blankline-nvim": {
     "cargoLocks": null,
     "date": "2025-01-20",

@@ -94,7 +94,6 @@ in
     (plugin "kosayoda" "nvim-lightbulb")
     (plugin "NvChad" "nvim-colorizer.lua")
     (plugin "m00qek" "baleia.nvim")
-    (plugin "rktjmp" "highlight-current-n.nvim")
     (plugin "kevinhwang91" "nvim-ufo")
     (plugin "kevinhwang91" "promise-async")
     (plugin "folke" "todo-comments.nvim")
