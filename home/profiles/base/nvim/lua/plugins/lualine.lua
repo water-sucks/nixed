@@ -137,15 +137,15 @@ lualine_spec.config = function()
 
   right({
     function()
-      if vim.api.nvim_get_vvar("hlsearch") == 1 then
-        local res = vim.fn.searchcount({ maxcount = 999, timeout = 500 })
+      local search = vim.fn.searchcount({ maxcount = 0 })
+      local current_search = search.current
+      local total = search.total
 
-        if res.total > 0 then
-          return string.format("%d/%d", res.current, res.total)
-        end
+      if current_search > 0 and vim.v.hlsearch ~= 0 then
+        return "/" .. vim.fn.getreg("/") .. " [" .. current_search .. "/" .. total .. "]"
+      else
+        return ""
       end
-
-      return ""
     end,
   })
 
