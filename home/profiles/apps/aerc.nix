@@ -22,7 +22,7 @@ in {
       hooks = {
         # TODO: I need to figure out a better notification system for
         # when aerc is _not_ running.
-        # mail-received = ''exec ${pkgs.libnotify}/bin/notify-send -i ${../../../assets/mail.svg} "$AERC_FROM_NAME" "$AERC_SUBJECT"'';
+        mail-received = lib.mkIf isLinux ''exec ${pkgs.libnotify}/bin/notify-send -i ${../../../assets/mail.svg} "$AERC_FROM_NAME" "$AERC_SUBJECT"'';
       };
 
       filters = {

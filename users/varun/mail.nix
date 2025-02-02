@@ -3,29 +3,13 @@
   pkgs,
 }: let
   inherit (pkgs) lib;
-  inherit (pkgs.stdenv) isLinux isDarwin;
+  inherit (pkgs.stdenv) isLinux;
 
   sopsEmailPasswordBlock = key: {
     sopsFile = ./secrets/email.yml;
     format = "yaml";
     inherit key;
   };
-
-  notifierScript = title: message:
-    pkgs.writeShellScript "new-mail-notification.sh" (
-      # TODO: add app icon for darwin :{
-      # Apparently this doesn't work with osascript
-      if isDarwin
-      then ''
-        osascript -e "display notification \"Go check it out.\" with title \"You've got mail!\""
-      ''
-      else ''
-        ${pkgs.libnotify}/bin/notify-send \
-          -i ${../../assets/mail.svg} \
-          "${title}" \
-          "${message}"
-      ''
-    );
 
   cat = "${pkgs.coreutils}/bin/cat";
 in
@@ -60,21 +44,22 @@ in
               expunge = "both";
               remove = "both";
             };
-            imapnotify = let
-              notify = notifierScript "You've got mail!" "Go check it out.";
-            in {
-              enable = true;
-              onNotify = ''${pkgs.isync}/bin/mbsync personal && ${notify}'';
-            };
           };
         };
       };
 
       programs = {
         msmtp.enable = true;
-        mbsync.enable = true;
+        mbsync = {
+          enable = true;
+        };
       };
-      services.imapnotify.enable = true;
+      services = {
+        mbsync = {
+          enable = true;
+          frequency = "*:0/1";
+        };
+      };
     }
 
     (lib.mkIf isLinux {
