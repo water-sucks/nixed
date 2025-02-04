@@ -1,15 +1,4 @@
 {
-  rescrobbled = {
-    "src.github_tag" = "InputUsername/rescrobbled";
-    "fetch.github" = "InputUsername/rescrobbled";
-    "cargo_locks" = ["Cargo.lock"];
-  };
-
-  airtame = {
-    "src.aur" = "airtame-application";
-    "fetch.url" = "https://downloads.airtame.com/app/latest/linux/Airtame-$ver.deb";
-  };
-
   get-appname = {
     "src.git" = "https://github.com/water-sucks/get-appname";
     "fetch.github" = "water-sucks/get-appname";

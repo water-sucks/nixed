@@ -1,19 +1,4 @@
 {
-  "airtame": {
-    "cargoLocks": null,
-    "date": null,
-    "extract": null,
-    "name": "airtame",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "name": null,
-      "sha256": "sha256-HTqJ637iPtiReFLoGdgKkpxW0UGRPvLjgMMcVV+cRfY=",
-      "type": "url",
-      "url": "https://downloads.airtame.com/app/latest/linux/Airtame-4.12.0.deb"
-    },
-    "version": "4.12.0"
-  },
   "get-appname": {
     "cargoLocks": null,
     "date": "2025-01-10",
@@ -70,28 +55,5 @@
       "url": "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/v1.7.1.0-beta/MarioVsLuigi-Linux-v1.7.1.0-beta.zip"
     },
     "version": "v1.7.1.0-beta"
-  },
-  "rescrobbled": {
-    "cargoLocks": {
-      "Cargo.lock": ["./rescrobbled-v0.7.1/Cargo.lock", {}]
-    },
-    "date": null,
-    "extract": null,
-    "name": "rescrobbled",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "InputUsername",
-      "repo": "rescrobbled",
-      "rev": "v0.7.1",
-      "sha256": "sha256-1E+SeKjHCah+IFn2QLAyyv7jgEcZ1gtkh8iHgiVBuz4=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "v0.7.1"
   }
 }

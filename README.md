@@ -29,11 +29,9 @@ to use them, feel free! Here's a rundown of what they are:
 
 ### Packages
 
-| Name        | Description                              |
-| ----------- | ---------------------------------------- |
-| airtame     | Screen streaming application             |
-| nsmb-mvl    | Mario vs. Luigi game rewrite from the DS |
-| rescrobbled | MPRIS music scrobbler daemon             |
+| Name     | Description                              |
+| -------- | ---------------------------------------- |
+| nsmb-mvl | Mario vs. Luigi game rewrite from the DS |
 
 \* - Probably don't use this package, this is tailored for my own config.
 
