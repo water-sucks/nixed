@@ -3,6 +3,9 @@ vim.filetype.add({
     ncl = "nickel",
     mdx = "markdown",
     smd = "markdown",
+    fs = "fsharp",
+    fsi = "fsharp",
+    fsx = "fsharp",
   },
   filename = {},
 })

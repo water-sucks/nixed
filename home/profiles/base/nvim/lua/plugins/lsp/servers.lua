@@ -12,6 +12,7 @@ local servers = {
   "elixirls",
   "emmet_ls",
   "eslint",
+  "fsautocomplete",
   "gopls",
   "golangci_lint_ls",
   "graphql",
