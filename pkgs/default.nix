@@ -11,12 +11,8 @@
     pkgs.callPackage path ({inherit sources;} // args);
 
   packages' = {
-    airtame = ./applications/misc/airtame;
-
     # mvnHash keeps changing, so this is disabled for now.
     # java-debug = ./development/java-debug;
-
-    rescrobbled = ./tools/audio/rescrobbled;
 
     get-appname = ./tools/get-appname;
 
