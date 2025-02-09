@@ -124,7 +124,7 @@ in
           shellharden
           shfmt
           statix
-          sqlfluff
+          stable.sqlfluff
           stylua
           typstyle
 
@@ -157,7 +157,7 @@ in
         # Broken on macOS, and I don't develop C/C++/Rust/Zig much on Rust for now.
         # Check out why this is happening later.
         (lib.mkIf isLinux {
-          "nvim/vscode-lldb".source = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
+          "nvim/vscode-lldb".source = "${pkgs.stable.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb";
         })
       ];
 

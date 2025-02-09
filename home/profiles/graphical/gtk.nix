@@ -19,7 +19,7 @@
     };
     iconTheme = {
       name = "Colloid-grey-dark";
-      package = pkgs.colloid-icon-theme.override {
+      package = pkgs.stable.colloid-icon-theme.override {
         colorVariants = ["grey"];
       };
     };
