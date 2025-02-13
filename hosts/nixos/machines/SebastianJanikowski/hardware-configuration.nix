@@ -3,6 +3,8 @@
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = true;
 
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
+
   boot = {
     loader.grub = {
       gfxmodeEfi = "1920x1080";
