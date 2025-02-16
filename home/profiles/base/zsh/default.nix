@@ -53,6 +53,7 @@ in
         shellAliases = {
           please = "sudo";
           dog = "bat";
+          benji = "dog";
           mkdir = "mkdir -p";
         };
       };
