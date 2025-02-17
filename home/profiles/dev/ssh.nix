@@ -36,6 +36,7 @@ lib.mkMerge [
     persistence = {
       directories = [
         ".ssh"
+        ".config/ssh"
       ];
     };
   })
