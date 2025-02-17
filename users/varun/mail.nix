@@ -39,7 +39,7 @@ in
 
             msmtp.enable = true;
             mbsync = {
-              enable = true;
+              enable = isLinux;
               create = "both";
               expunge = "both";
               remove = "both";
@@ -56,7 +56,7 @@ in
       };
       services = {
         mbsync = {
-          enable = true;
+          enable = isLinux;
           frequency = "*:0/1";
         };
       };
