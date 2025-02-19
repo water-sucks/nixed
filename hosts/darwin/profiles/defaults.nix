@@ -1,12 +1,6 @@
 {lib, ...}: let
   inherit (lib) mkDefault;
 in {
-  services = {
-    nix-daemon.enable = mkDefault true;
-  };
-
-  nix.configureBuildUsers = mkDefault true;
-
   documentation = {
     enable = false;
   };
