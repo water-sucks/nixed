@@ -101,7 +101,7 @@ in
           nodePackages.typescript-language-server
           prisma-ls
           pyright
-          ruff-lsp
+          ruff
           superhtml
           nodePackages.vscode-langservers-extracted
           terraform-ls
