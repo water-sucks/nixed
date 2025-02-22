@@ -8,7 +8,7 @@ _: {
         rollback = ["generation" "rollback"];
         gendel = ["generation" "delete"];
         gendelall = ["generation" "delete" "--all"];
-        build = ["apply" "--no-activate" "--no-boot" "--output result"];
+        build = ["apply" "--no-activate" "--no-boot" "--output" "result"];
       };
 
       apply = {
