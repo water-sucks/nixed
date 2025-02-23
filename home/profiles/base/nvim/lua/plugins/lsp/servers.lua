@@ -15,7 +15,6 @@ local servers = {
   "fsautocomplete",
   "gopls",
   "golangci_lint_ls",
-  "graphql",
   "html",
   "ltex",
   "lua_ls",

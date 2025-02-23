@@ -96,7 +96,6 @@ in
           lua-language-server
           nixd
           nodePackages.bash-language-server
-          nodePackages.graphql-language-service-cli
           nodePackages.svelte-language-server
           nodePackages.typescript-language-server
           prisma-ls
