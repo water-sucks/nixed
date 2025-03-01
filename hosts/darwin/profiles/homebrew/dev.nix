@@ -4,5 +4,6 @@ _: {
     "visual-studio-code"
     "clickup"
     "ollama"
+    "wireshark"
   ];
 }
