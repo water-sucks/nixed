@@ -6,7 +6,7 @@
   users.users.varun.home = "/Users/varun";
   users.users.varun.isHidden = false;
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   networking.hostName = "TimBrown";
 
