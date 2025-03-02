@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   pkgs,
   lib,
@@ -86,50 +87,25 @@
     "general.smoothScroll.stopDecelerationWeighting" = "1";
     "mousewheel.default.delta_multiplier_y" = 265;
   };
-
-  latestSourceURL = name: "https://addons.mozilla.org/firefox/downloads/latest/${name}/latest.xpi";
 in
   lib.mkMerge [
     {
       programs.librewolf = {
         enable = true;
 
-        policies.ExtensionSettings = {
-          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-            default_area = "navbar";
-            install_url = latestSourceURL "bitwarden-password-manager";
-            installation_mode = "force_installed";
-          };
-
-          "addon@darkreader.org" = {
-            default_area = "navbar";
-            install_url = latestSourceURL "darkreader";
-            installation_mode = "force_installed";
-          };
-
-          "addon@simplelogin" = {
-            default_area = "navbar";
-            install_url = latestSourceURL "simplelogin";
-            installation_mode = "force_installed";
-          };
-
-          "CanvasBlocker@kkapsner.de" = {
-            default_area = "navbar";
-            install_url = latestSourceURL "canvas-blocker";
-            installation_mode = "force_installed";
-          };
-
-          "floccus@handmadeideas.org" = {
-            default_area = "navbar";
-            install_url = latestSourceURL "floccus";
-            installation_mode = "force_installed";
-          };
-        };
-
         profiles."default" = {
           id = 0;
           isDefault = true;
           inherit settings;
+
+          extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+            # uBlock Oriign already exists by default for Librewolf.
+            darkreader
+            simplelogin
+            canvasblocker
+            floccus
+            bitwarden
+          ];
 
           userChrome = ''
             @import "arcadia/userChrome.css";
