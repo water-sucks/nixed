@@ -136,7 +136,7 @@ in
       };
 
       home.file = let
-        prefix = "${config.programs.librewolf.configPath}/default";
+        prefix = "${config.programs.librewolf.configPath}/Profiles/default";
       in {
         "arcadia-chrome" = {
           source = "${arcadia}/chrome";
