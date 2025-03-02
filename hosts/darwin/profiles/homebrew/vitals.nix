@@ -1,6 +1,11 @@
 _: {
   homebrew.casks = [
-    "librewolf"
+    {
+      name = "librewolf";
+      args = {
+        no_quarantine = true;
+      };
+    }
     "brave-browser"
     "kitty"
   ];
