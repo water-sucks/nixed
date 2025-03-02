@@ -1,6 +1,6 @@
 _: {
   homebrew.casks = [
-    "firefox"
+    "librewolf"
     "brave-browser"
     "kitty"
   ];

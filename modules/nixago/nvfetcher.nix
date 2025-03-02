@@ -9,7 +9,7 @@
     (pkgs.formats.nvfetcherToml opts).generate name value;
 
   nvfetcherFiles = [
-    "home/profiles/apps/firefox/fetch.nix"
+    "home/profiles/apps/librewolf/fetch.nix"
     "home/profiles/base/nvim/fetch.nix"
     "home/profiles/base/zsh/fetch.nix"
     "home/profiles/dev/git/fetch.nix"

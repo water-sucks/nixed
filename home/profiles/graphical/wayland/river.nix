@@ -78,7 +78,7 @@ in {
       rule-add = {
         "-app-id" = {
           "Rofi" = "float";
-          "firefox" = "ssd";
+          "librewolf" = "ssd";
         };
       };
       set-repeat = "50 250";
