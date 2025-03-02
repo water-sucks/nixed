@@ -136,7 +136,10 @@ in
       };
 
       home.file = let
-        prefix = "${config.programs.librewolf.configPath}/Profiles/default";
+        prefix =
+          if isDarwin
+          then "${config.programs.librewolf.configPath}/Profiles/default"
+          else "${config.programs.librewolf.configPath}/default";
       in {
         "arcadia-chrome" = {
           source = "${arcadia}/chrome";
