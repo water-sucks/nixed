@@ -99,7 +99,7 @@ in
           inherit settings;
 
           extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
-            # uBlock Oriign already exists by default for Librewolf.
+            ublock-origin
             darkreader
             simplelogin
             canvasblocker
