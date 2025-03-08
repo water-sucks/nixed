@@ -93,6 +93,13 @@ render_markdown_spec.config = function()
       },
     },
     sign = { enabled = false },
+    link = {
+      footnote = {
+        superscript = false,
+        prefix = "{󰇈 ",
+        suffix = "}",
+      },
+    },
   })
 
   vim.api.nvim_create_autocmd("FileType", {

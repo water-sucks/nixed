@@ -20,6 +20,8 @@ local colorscheme_spec = use("water-sucks/darkrose.nvim", {
 
           RenderMarkdownBullet = { fg = c.pink },
 
+          RenderMarkdownLink = { fg = c.dark_pink, underline = true },
+
           RenderMarkdownUnchecked = { fg = c.fg },
           RenderMarkdownChecked = { fg = c.red },
           RenderMarkdownTodo = { fg = c.dark_pink },

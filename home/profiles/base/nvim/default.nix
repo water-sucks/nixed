@@ -58,6 +58,9 @@
       # existing ones from the generated plugin set.
       inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
       "blink.cmp" = pkgs.vimPlugins.blink-cmp;
+      "render-markdown.nvim" = generatedPlugins."render-markdown.nvim".overrideAttrs (_: {
+        patches = [./patches/footnote-superscript.patch];
+      });
     };
 
   pluginDir = with lib;
