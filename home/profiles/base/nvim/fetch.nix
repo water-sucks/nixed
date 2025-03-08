@@ -97,7 +97,9 @@ in
     (plugin "kevinhwang91" "nvim-ufo")
     (plugin "kevinhwang91" "promise-async")
     (plugin "folke" "todo-comments.nvim")
-    (plugin "MeanderingProgrammer" "render-markdown.nvim")
+    (fetch "MeanderingProgrammer" "render-markdown.nvim" {
+      rev = "f2bdf9f866671456f7a6119cc94501048d9d172c";
+    })
 
     # Special Neovim sauce
     (plugin "IogaMaster" "neocord")

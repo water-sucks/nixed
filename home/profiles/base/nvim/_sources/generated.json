@@ -1266,7 +1266,7 @@
   },
   "plugin-render-markdown-nvim": {
     "cargoLocks": null,
-    "date": "2025-03-07",
+    "date": null,
     "extract": null,
     "name": "plugin-render-markdown-nvim",
     "passthru": {
@@ -1280,12 +1280,12 @@
       "name": null,
       "owner": "MeanderingProgrammer",
       "repo": "render-markdown.nvim",
-      "rev": "81374ffd26f9a9d5f44274a9e7e60547b5fd106f",
-      "sha256": "sha256-6RjmTwhoChXn4l1NNulTUKSUT2IK6ZjevQ85/yVECcQ=",
+      "rev": "f2bdf9f866671456f7a6119cc94501048d9d172c",
+      "sha256": "sha256-1GbjWHfcC6TIQM1zPnybKs0fcNbQjJJcb6Rb4R9T3nc=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "81374ffd26f9a9d5f44274a9e7e60547b5fd106f"
+    "version": "f2bdf9f866671456f7a6119cc94501048d9d172c"
   },
   "plugin-roslyn-nvim": {
     "cargoLocks": null,
