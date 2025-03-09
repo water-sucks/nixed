@@ -382,11 +382,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1741453770,
-        "narHash": "sha256-hj4Dl7KFOhIDCLZ3JBqd9rysR1vc6pXelpmwp2hlJtE=",
+        "lastModified": 1741561120,
+        "narHash": "sha256-Llt/f/DwH5okXSKqnVrB+PRgGnyUhimETKobdWC7FI0=",
         "owner": "water-sucks",
         "repo": "nixos",
-        "rev": "eba51a8221cebe33e8ea2932bde4411b01178793",
+        "rev": "53a461347c2c0f3d86bc104f4535dff7df50244b",
         "type": "github"
       },
       "original": {
