@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    thefuck
+  home.packages = [
+    pkgs.stable.thefuck
   ];
 
   programs.zsh.initExtra = ''
