@@ -330,19 +330,6 @@
     pretty-name = "lspkind-nvim";
     date = "2024-12-05";
   };
-  plugin-ltex_extra-nvim = {
-    pname = "plugin-ltex_extra-nvim";
-    version = "67dc3465af8d8caa49a00aaff066289a94eb753e";
-    src = fetchFromGitHub {
-      owner = "barreiroleo";
-      repo = "ltex_extra.nvim";
-      rev = "67dc3465af8d8caa49a00aaff066289a94eb753e";
-      fetchSubmodules = false;
-      sha256 = "sha256-a5gtIOIHm+Iqn07r768W0VViiZZkspR66D9FabjVhwI=";
-    };
-    pretty-name = "ltex_extra.nvim";
-    date = "2025-03-04";
-  };
   plugin-lualine-nvim = {
     pname = "plugin-lualine-nvim";
     version = "b8b60c7f1d0d95ad74ee215b2291280b30482476";

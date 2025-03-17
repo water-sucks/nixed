@@ -15,8 +15,8 @@ local servers = {
   "fsautocomplete",
   "gopls",
   "golangci_lint_ls",
+  "harper_ls",
   "html",
-  "ltex",
   "lua_ls",
   "nickel_ls",
   "nixd",
@@ -150,6 +150,13 @@ local server_configs = {
       },
     },
   },
+  harper_ls = {
+    settings = {
+      ["harper-ls"] = {
+        userDictPath = vim.fn.stdpath("data") .. "/harper-dict.txt",
+      },
+    },
+  },
   html = {
     settings = {
       html = {
@@ -175,26 +182,6 @@ local server_configs = {
   elixirls = {
     cmd = { "elixir-ls" },
     dialyzerEnabled = false,
-  },
-  ltex = {
-    on_attach = function(_, _)
-      require("ltex_extra").setup({
-        load_langs = { "en-US" },
-        init_check = true,
-        path = vim.fn.stdpath("cache") .. "/spell/custom-dict",
-      })
-    end,
-    filetypes = { "latex", "tex", "bib", "markdown" },
-    settings = {
-      ltex = {
-        -- Currently not working, probably due to ltex_extra.nvim.
-        -- Let's figure this out later, just don't use any
-        -- cursewords in prose! Shouldn't be too hard (for now).
-        disabledRules = {
-          ["en-US"] = { "PROFANITY" },
-        },
-      },
-    },
   },
   nixd = {
     -- Use a .nixd.json file as a source for configuration.

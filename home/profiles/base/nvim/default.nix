@@ -94,8 +94,8 @@ in
           emmet-ls
           gopls
           golangci-lint-langserver
+          harper
           jdt-language-server
-          ltex-ls
           lua-language-server
           nixd
           nodePackages.bash-language-server
@@ -175,7 +175,7 @@ in
           ".local/share/eclipse"
           ".local/share/nvim"
           ".cache/nvim"
-          ".local/share/ltex"
+          ".local/share/harper-ls"
           ".codeium"
         ];
         files = [

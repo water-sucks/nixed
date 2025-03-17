@@ -574,29 +574,6 @@
     },
     "version": "d79a1c3299ad0ef94e255d045bed9fa26025dab6"
   },
-  "plugin-ltex_extra-nvim": {
-    "cargoLocks": null,
-    "date": "2025-03-04",
-    "extract": null,
-    "name": "plugin-ltex_extra-nvim",
-    "passthru": {
-      "pretty-name": "ltex_extra.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "barreiroleo",
-      "repo": "ltex_extra.nvim",
-      "rev": "67dc3465af8d8caa49a00aaff066289a94eb753e",
-      "sha256": "sha256-a5gtIOIHm+Iqn07r768W0VViiZZkspR66D9FabjVhwI=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "67dc3465af8d8caa49a00aaff066289a94eb753e"
-  },
   "plugin-lualine-nvim": {
     "cargoLocks": null,
     "date": "2025-03-15",

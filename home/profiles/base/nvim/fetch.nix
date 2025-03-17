@@ -126,7 +126,6 @@ in
     (plugin "simrat39" "rust-tools.nvim")
     (plugin "mfussenegger" "nvim-jdtls")
     (plugin "lervag" "vimtex")
-    (plugin "barreiroleo" "ltex_extra.nvim")
     (plugin "kaarmu" "typst.vim")
     (plugin "seblj" "roslyn.nvim")
   ]

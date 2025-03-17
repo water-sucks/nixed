@@ -213,14 +213,6 @@ jdtls_spec.config = function()
   start()
 end
 
-local ltex_extra_spec = use("barreiroleo/ltex_extra.nvim", {
-  module = "ltex_extra",
-  ft = "tex",
-  opts = {
-    path = vim.env.HOME .. "/.local/share/ltex",
-  },
-})
-
 local lazydev_spec = use("folke/lazydev.nvim", {
   ft = "lua",
   config = function()
@@ -384,7 +376,6 @@ end
 return {
   flutter_tools_spec,
   jdtls_spec,
-  ltex_extra_spec,
   lazydev_spec,
   roslyn_spec,
   rust_tools_spec,
