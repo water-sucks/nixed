@@ -38,6 +38,10 @@
         procs
         usbutils
         utillinux
+
+        linux-manual
+        man-pages
+        man-pages-posix
       ]);
 
     variables = {
