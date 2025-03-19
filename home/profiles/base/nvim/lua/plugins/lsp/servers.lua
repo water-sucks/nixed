@@ -154,6 +154,9 @@ local server_configs = {
     settings = {
       ["harper-ls"] = {
         userDictPath = vim.fn.stdpath("data") .. "/harper-dict.txt",
+        linters = {
+          AvoidCurses = false,
+        },
       },
     },
   },
