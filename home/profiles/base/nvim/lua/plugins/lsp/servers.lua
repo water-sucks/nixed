@@ -20,7 +20,6 @@ local servers = {
   "lua_ls",
   "nickel_ls",
   "nixd",
-  "prismals",
   "pyright",
   "r_language_server",
   "ruff",
