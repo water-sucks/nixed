@@ -69,8 +69,6 @@
         path = v;
       })
       plugins);
-
-  prisma-ls = pkgs.nodePackages."@prisma/language-server";
 in
   lib.mkMerge [
     {
@@ -101,7 +99,6 @@ in
           nodePackages.bash-language-server
           nodePackages.svelte-language-server
           nodePackages.typescript-language-server
-          prisma-ls
           pyright
           ruff
           superhtml
