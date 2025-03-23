@@ -155,6 +155,7 @@ local server_configs = {
         userDictPath = vim.fn.stdpath("data") .. "/harper-dict.txt",
         linters = {
           AvoidCurses = false,
+          ToDoHyphen = false, -- I love my TODO comments
         },
       },
     },
