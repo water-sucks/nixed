@@ -29,13 +29,11 @@ in
           if isLinux
           then kitty
           else runCommand "kitty-0.0.0" {} "mkdir $out";
+        font = {
+          name = "BerkeleyMono Nerd Font";
+          size = lib.mkDefault 10;
+        };
         settings = {
-          font_family = "BlexMono Nerd Font";
-          bold_font = "BlexMono Nerd Font Bold";
-          italic_font = "BlexMono Nerd Font Italic";
-          bold_italic_font = "BlexMono Nerd Font Bold Italic";
-          font_size = "10";
-
           macos_option_as_alt = "both";
 
           allow_remote_control = "yes";
@@ -91,6 +89,12 @@ in
           color7 = "#${c.gray}";
           color15 = "#${c.fg}";
         };
+        extraConfig = ''
+          font_features BerkeleyMonoNF-Regular    +zero
+          font_features BerkeleyMonoNF-Bold       +zero
+          font_features BerkeleyMonoNF-Italic     +zero
+          font_features BerkeleyMonoNF-BoldItalic +zero
+        '';
       };
     }
     (lib.mkIf isDarwin {

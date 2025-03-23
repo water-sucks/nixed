@@ -1,0 +1,2 @@
+.gitattributes !filter !diff
+pkgs/fonts/berkeley-mono/berkeley-mono.zip filter=git-crypt diff=git-crypt

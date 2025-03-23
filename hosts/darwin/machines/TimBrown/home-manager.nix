@@ -1,9 +1,7 @@
 let
-  kittyModule = {lib, ...}: {
+  kittyModule = {
     programs.kitty = {
-      settings = {
-        font_size = lib.mkForce "13";
-      };
+      font.size = 13;
     };
   };
 in {

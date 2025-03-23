@@ -17,6 +17,8 @@
     get-appname = ./tools/get-appname;
 
     nsmb-mvl = ./games/nsmb-mvl;
+
+    berkeley-mono = ./fonts/berkeley-mono;
   };
 in {
   perSystem = {

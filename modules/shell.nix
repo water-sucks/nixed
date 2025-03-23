@@ -28,6 +28,7 @@
           lefthook
           nodePackages.prettier
           nvfetcher
+          git-crypt
         ];
         shellHook = ''
           ${(nixago.lib.${system}.makeAll nixagoConfigs).shellHook}
