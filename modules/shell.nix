@@ -26,7 +26,6 @@
           sops
           treefmt
           lefthook
-          nodePackages.prettier
           nvfetcher
           git-crypt
         ];

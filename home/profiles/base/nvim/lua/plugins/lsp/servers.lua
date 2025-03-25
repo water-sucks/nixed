@@ -32,6 +32,11 @@ local servers = {
   "zls",
 }
 
+local prettier = vim.fn.exepath("prettier")
+if prettier == "" then
+  prettier = vim.fn.exepath("prettier-default-config")
+end
+
 local efm_sources = {
   formatters = {
     asmfmt = { formatCommand = "asmfmt", formatStdin = true },
@@ -43,8 +48,9 @@ local efm_sources = {
     latexindent = { formatCommand = "latexindent -l -", formatStdin = true },
     prettier = {
       formatCanRange = true,
-      formatCommand = "prettier --stdin --stdin-filepath ${INPUT} ${--range-start:charStart} "
-        .. "${--range-end:charEnd} ${--tab-width:tabSize} ${--use-tabs:!insertSpaces}",
+      formatCommand = prettier
+        .. " --stdin --stdin-filepath ${INPUT} ${--range-start:charStart}"
+        .. " ${--range-end:charEnd} ${--tab-width:tabSize} ${--use-tabs:!insertSpaces}",
       formatStdin = true,
       rootMarkers = {
         ".prettierrc",

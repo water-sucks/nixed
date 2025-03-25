@@ -69,6 +69,26 @@
         path = v;
       })
       plugins);
+
+  # prettier doesn't support global configuration explicitly.
+  # This is a workaround wrapper, that can be overridden by having
+  # Prettier inside a development shell.
+  prettierDefaultConfig = let
+    inherit (pkgs.nodePackages) prettier;
+    prettierConfig = pkgs.writeText "prettier-wrapper-config.json" (
+      builtins.toJSON {
+        experimentalTernaries = true;
+        printWidth = 80;
+        tabWidth = 2;
+        useTabs = false;
+        singleQuote = true;
+        proseWrap = "always";
+      }
+    );
+  in
+    pkgs.writeShellScriptBin "prettier-default-config" ''
+      ${lib.getExe prettier} --config "${prettierConfig}" "$@"
+    '';
 in
   lib.mkMerge [
     {
@@ -117,7 +137,7 @@ in
           efm-langserver
           gitlint
           gofumpt
-          nodePackages.prettier
+          prettierDefaultConfig
           python3Packages.flake8
           shellcheck
           shellharden
