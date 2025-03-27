@@ -22,7 +22,7 @@ in {
 
     home.activation = {
       setDarwinWallpaper = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        ${pkgs.m-cli}/bin/m wallpaper "${cfg.file}"
+        osascript -e 'tell application "Finder" to set desktop picture to "${cfg.file}" as POSIX file'
       '';
     };
   };

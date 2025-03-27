@@ -10,11 +10,5 @@
 
   networking.hostName = "TimBrown";
 
-  home-manager.sharedModules = [
-    {
-      services.darwin-wallpaper.file = ../../../../assets/city.jpg;
-    }
-  ];
-
   system.stateVersion = 4;
 }
