@@ -15,9 +15,40 @@ local lspconfig_spec = use("neovim/nvim-lspconfig", {
       end,
     })
 
-    for _, file in ipairs({ "servers", "handlers" }) do
-      require("plugins.lsp." .. file)
+    vim.diagnostic.config({
+      virtual_text = {
+        prefix = "●",
+        spacing = 1,
+
+        severity = {
+          max = vim.diagnostic.severity.WARN,
+        },
+      },
+
+      virtual_lines = {
+        severity = {
+          min = vim.diagnostic.severity.ERROR,
+        },
+      },
+
+      signs = true,
+      underline = true,
+      update_in_insert = true,
+    })
+
+    local signs = {
+      Error = "",
+      Warn = "",
+      Info = "",
+      Hint = "",
+    }
+
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
+
+    require("plugins.lsp.servers")
   end,
 })
 
