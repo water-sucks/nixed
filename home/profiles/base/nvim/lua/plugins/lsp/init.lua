@@ -19,17 +19,9 @@ local lspconfig_spec = use("neovim/nvim-lspconfig", {
       virtual_text = {
         prefix = "●",
         spacing = 1,
-
-        severity = {
-          max = vim.diagnostic.severity.WARN,
-        },
       },
 
-      virtual_lines = {
-        severity = {
-          min = vim.diagnostic.severity.ERROR,
-        },
-      },
+      virtual_lines = false,
 
       signs = true,
       underline = true,
