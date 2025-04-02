@@ -144,6 +144,12 @@ local server_configs = {
       },
     },
   },
+  golangci_lint_ls = {
+    init_options = {
+      -- The `--output.path.json=stdout` option does not work anymore.
+      command = { "golangci-lint", "run", "--out-format", "json" },
+    },
+  },
   gopls = {
     settings = {
       gopls = {
