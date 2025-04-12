@@ -7,6 +7,12 @@
 in {
   programs.aerc = {
     enable = true;
+    package = pkgs.aerc.override {
+      notmuch = pkgs.notmuch.override {
+        # Why the fuck is this a default?
+        withEmacs = false;
+      };
+    };
     extraConfig = {
       general.unsafe-accounts-conf = true;
 
