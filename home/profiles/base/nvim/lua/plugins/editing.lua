@@ -187,12 +187,15 @@ local neocodeium_spec = use("monkoose/neocodeium", {
     neocodeium.setup({
       enabled = true,
       bin = vim.fn.exepath("codeium_language_server"),
-      manual = false,
+      manual = true,
       silent = true,
       filetypes = {
         markdown = false,
         gitcommit = false,
         gitrebase = false,
+        TelescopePrompt = false,
+        ["dap-repl"] = false,
+        DressingInput = false,
       },
     })
 
@@ -200,7 +203,6 @@ local neocodeium_spec = use("monkoose/neocodeium", {
       { "<A-CR>", neocodeium.accept, desc = "Accept suggestion", mode = "i" },
       { "<A-w>", neocodeium.accept_word, desc = "Accept word", mode = "i" },
       { "<A-a>", neocodeium.accept_line, desc = "Accept line", mode = "i" },
-
       { "<A-f>", neocodeium.cycle_or_complete, desc = "Cycle forward", mode = "i" },
       {
         "<A-f>",
@@ -212,7 +214,11 @@ local neocodeium_spec = use("monkoose/neocodeium", {
       },
       { "<A-c>", neocodeium.clear, desc = "Clear suggestion", mode = "i" },
 
-      { "<Leader>g", "<Cmd>NeoCodeium toggle<CR>", desc = "Toggle NeoCodeium", mode = "n" },
+      { "<Leader>g", group = "NeoCodeium" },
+      { "<Leader>gt", "<Cmd>NeoCodeium toggle<CR>", desc = "Toggle NeoCodeium", mode = "n" },
+      { "<Leader>gk", "<Cmd>NeoCodeium! disable<CR>", desc = "Kill NeoCodeium", mode = "n" },
+      { "<Leader>gb", "<Cmd>NeoCodeium toggle_buffer<CR>", desc = "Toggle NeoCodeium (buffer)", mode = "n" },
+      { "<Leader>gr", "<Cmd>NeoCodeium restart<CR>", desc = "Restart NeoCodeium", mode = "n" },
     })
   end,
 })
