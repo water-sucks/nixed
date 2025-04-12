@@ -185,7 +185,7 @@ local neocodeium_spec = use("monkoose/neocodeium", {
     local wk = require("which-key")
 
     neocodeium.setup({
-      enabled = true,
+      enabled = false,
       bin = vim.fn.exepath("codeium_language_server"),
       manual = true,
       silent = true,
