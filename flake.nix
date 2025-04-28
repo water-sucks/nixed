@@ -15,7 +15,7 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    nixos-cli.url = "github:water-sucks/nixos/rewrite";
+    nixos-cli.url = "github:water-sucks/nixos";
 
     sops-nix.url = "github:Mic92/sops-nix";
 

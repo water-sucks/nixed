@@ -366,16 +366,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1745527503,
-        "narHash": "sha256-Z/vJTU14KxxbWCrg1/sGWw8hc7Qo6uaxR/iC/bgSGJs=",
+        "lastModified": 1745819904,
+        "narHash": "sha256-1yBuWYrnxJYH/5Cecsb8VsNiTcBiOimzCQBtydfMIlI=",
         "owner": "water-sucks",
         "repo": "nixos",
-        "rev": "28436de2a0fc273bcce999fafa2b7cc17010dca1",
+        "rev": "53beba5f09042ab8361708a5e0196098d642ba5b",
         "type": "github"
       },
       "original": {
         "owner": "water-sucks",
-        "ref": "rewrite",
         "repo": "nixos",
         "type": "github"
       }
