@@ -1,37 +1,5 @@
 local lsp = require("lspconfig")
 
--- Rust/Flutter/LTeX are configured in
--- their respective plugins.
-local servers = {
-  "astro",
-  "bashls",
-  "ccls",
-  "cssls",
-  "denols",
-  "efm",
-  "elixirls",
-  "emmet_ls",
-  "eslint",
-  "fsautocomplete",
-  "gopls",
-  "golangci_lint_ls",
-  "harper_ls",
-  "html",
-  "lua_ls",
-  "nickel_ls",
-  "nixd",
-  "pyright",
-  "r_language_server",
-  "ruff",
-  "svelte",
-  "superhtml",
-  "terraformls",
-  "tinymist",
-  "ts_ls",
-  "vala_ls",
-  "zls",
-}
-
 local prettier = vim.fn.exepath("prettier")
 if prettier == "" then
   prettier = vim.fn.exepath("prettier-default-config")
@@ -122,111 +90,12 @@ local efm_sources = {
 }
 
 local server_configs = {
-  lua_ls = {
-    settings = {
-      Lua = {
-        runtime = {
-          version = "LuaJIT",
-        },
-        diagnostics = {
-          globals = { "vim" },
-        },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true),
-          checkThirdParty = false,
-        },
-        telemetry = {
-          enable = false,
-        },
-        format = {
-          enable = false,
-        },
-      },
-    },
-  },
-  gopls = {
-    settings = {
-      gopls = {
-        gofumpt = true,
-        analyses = {
-          composites = false,
-          structtag = false,
-        },
-      },
-    },
-  },
-  harper_ls = {
-    settings = {
-      ["harper-ls"] = {
-        userDictPath = vim.fn.stdpath("data") .. "/harper-dict.txt",
-        linters = {
-          AvoidCurses = false,
-          ToDoHyphen = false, -- I love my TODO comments
-        },
-      },
-    },
-  },
-  html = {
-    settings = {
-      html = {
-        format = {
-          templating = true,
-          wrapLineLength = 120,
-          wrapAttributes = "auto",
-        },
-        hover = {
-          documentation = true,
-          references = true,
-        },
-      },
-    },
-    init_options = {
-      provideFormatter = false,
-    },
-  },
+  astro = {},
+  bashls = {},
+  ccls = {},
+  cssls = {},
   denols = {
     root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
-    single_file_support = false,
-  },
-  elixirls = {
-    cmd = { "elixir-ls" },
-    dialyzerEnabled = false,
-  },
-  nixd = {
-    -- Use a .nixd.json file as a source for configuration.
-    -- This is mostly important for this repo.
-    on_init = function(client)
-      local path = client.workspace_folders[1].name
-
-      local nixd_json = io.open(path .. ".nixd.json")
-      if nixd_json == nil then
-        return
-      end
-
-      local contents = nixd_json:read()
-      nixd_json:close()
-
-      local overriden_settings = vim.json.decode(contents)
-
-      client.config.settings = vim.tbl_deep_extend("force", client.config.settings, overriden_settings)
-    end,
-    cmd = { "nixd" },
-    settings = {
-      nixd = {
-        formatting = {
-          command = vim.env.USE_NIXFMT == "1" and { "nixfmt" } or { "alejandra" },
-        },
-      },
-    },
-  },
-  tinymist = {
-    settings = {
-      formatterMode = "typstyle",
-      exportPdf = "onSave",
-    },
-  },
-  ts_ls = {
-    root_dir = lsp.util.root_pattern("package.json"),
     single_file_support = false,
   },
   efm = {
@@ -288,16 +157,129 @@ local server_configs = {
       },
     },
   },
+  elixirls = {
+    cmd = { "elixir-ls" },
+    dialyzerEnabled = false,
+  },
+  emmet_ls = {},
+  eslint = {},
+  fsautocomplete = {},
+  gopls = {
+    settings = {
+      gopls = {
+        gofumpt = true,
+        analyses = {
+          composites = false,
+          structtag = false,
+        },
+      },
+    },
+  },
+  golangci_lint_ls = {},
+  harper_ls = {
+    settings = {
+      ["harper-ls"] = {
+        userDictPath = vim.fn.stdpath("data") .. "/harper-dict.txt",
+        linters = {
+          AvoidCurses = false,
+          ToDoHyphen = false, -- I love my TODO comments
+        },
+      },
+    },
+  },
+  html = {
+    settings = {
+      html = {
+        format = {
+          templating = true,
+          wrapLineLength = 120,
+          wrapAttributes = "auto",
+        },
+        hover = {
+          documentation = true,
+          references = true,
+        },
+      },
+    },
+    init_options = {
+      provideFormatter = false,
+    },
+  },
+  lua_ls = {
+    settings = {
+      Lua = {
+        runtime = {
+          version = "LuaJIT",
+        },
+        diagnostics = {
+          globals = { "vim" },
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file("", true),
+          checkThirdParty = false,
+        },
+        telemetry = {
+          enable = false,
+        },
+        format = {
+          enable = false,
+        },
+      },
+    },
+  },
+  nickel_ls = {},
+  nixd = {
+    -- Use a .nixd.json file as a source for configuration.
+    -- This is mostly important for this repo.
+    on_init = function(client)
+      local path = client.workspace_folders[1].name
+
+      local nixd_json = io.open(path .. ".nixd.json")
+      if nixd_json == nil then
+        return
+      end
+
+      local contents = nixd_json:read()
+      nixd_json:close()
+
+      local overriden_settings = vim.json.decode(contents)
+
+      client.config.settings = vim.tbl_deep_extend("force", client.config.settings, overriden_settings)
+    end,
+    cmd = { "nixd" },
+    settings = {
+      nixd = {
+        formatting = {
+          command = vim.env.USE_NIXFMT == "1" and { "nixfmt" } or { "alejandra" },
+        },
+      },
+    },
+  },
+  pyright = {},
+  r_language_server = {},
+  ruff = {},
+  svelte = {},
+  superhtml = {},
+  terraformls = {},
+  tinymist = {
+    settings = {
+      formatterMode = "typstyle",
+      exportPdf = "onSave",
+    },
+  },
+  ts_ls = {
+    root_dir = lsp.util.root_pattern("package.json"),
+    single_file_support = false,
+  },
+  vala_ls = {},
+  zls = {},
 }
 
 -- Prevent quickfix list from popping up when attempting to
 -- format Zig files if there are errors
 vim.g.zig_fmt_parse_errors = 0
 
-for _, server in pairs(servers) do
-  local config = server_configs[server] or {}
-
-  config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities or {})
-
-  lsp[server].setup(config)
+for server, cfg in pairs(server_configs) do
+  cfg.capabilities = require("blink.cmp").get_lsp_capabilities(cfg.capabilities or {})
+  lsp[server].setup(cfg)
 end
