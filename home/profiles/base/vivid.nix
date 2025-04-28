@@ -149,7 +149,7 @@ in {
     };
   };
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     export LS_COLORS=$(${config.programs.vivid.package}/bin/vivid generate darkrose)
     zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
   '';

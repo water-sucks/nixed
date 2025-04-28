@@ -3,7 +3,7 @@
     pkgs.stable.thefuck
   ];
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     eval $(thefuck --alias)
   '';
 }

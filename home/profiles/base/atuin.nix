@@ -39,7 +39,7 @@ in
           };
         };
       };
-      programs.zsh.initExtra = ''
+      programs.zsh.initContent = ''
         bindkey '^r' _atuin_search_widget
       '';
     }

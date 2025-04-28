@@ -21,7 +21,7 @@ in
         grab
         pinentry-program ${pkgs.pinentry-curses}/bin/pinentry-curses
       '';
-      programs.zsh.initExtra = ''
+      programs.zsh.initContent = ''
         export GPG_TTY="$(tty)"
       '';
     })

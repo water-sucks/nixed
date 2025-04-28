@@ -31,7 +31,7 @@ in
           share = true;
           size = 10000;
         };
-        initExtra = ''
+        initContent = ''
           setopt +o nomatch
 
           if [ -z "$NVIM_LISTEN_ADDRESS" ]; then
@@ -59,7 +59,7 @@ in
       };
     }
     (lib.mkIf isDarwin {
-      programs.zsh.initExtra = ''
+      programs.zsh.initContent = ''
         export PATH="$PATH:$HOME/.flutter-sdk/bin" # For Flutter development on Macs
       '';
       home.sessionVariables = {

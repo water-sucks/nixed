@@ -75,7 +75,7 @@ in {
       export LS_COLORS=$(${vividCmd} generate ${cfg.theme})
     '';
 
-    programs.zsh.initExtra = mkIf cfg.enableZshIntegration ''
+    programs.zsh.initContent = mkIf cfg.enableZshIntegration ''
       export LS_COLORS=$(${vividCmd} generate ${cfg.theme})
     '';
 
