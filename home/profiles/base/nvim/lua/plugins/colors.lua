@@ -29,6 +29,7 @@ local colorscheme_spec = use("water-sucks/darkrose.nvim", {
           RenderMarkdownImportant = { fg = c.light_red },
           RenderMarkdownPaused = { fg = c.gray },
           RenderMarkdownCanceled = { fg = c.fg_dark },
+          RenderMarkdownCode = { bg = c.bg_float },
         }
       end,
     })
