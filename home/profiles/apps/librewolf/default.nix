@@ -149,7 +149,8 @@ in
     }
 
     (lib.mkIf isDarwin {
-      programs.librewolf.package = pkgs.runCommand "librewolf-0.0.0" {} "mkdir $out";
+      programs.librewolf.package = null;
+
       home.sessionVariables = {
         MOZ_LEGACY_PROFILES = "1";
       };
