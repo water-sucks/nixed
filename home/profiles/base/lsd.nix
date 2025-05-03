@@ -3,7 +3,8 @@
 in {
   programs.lsd = {
     enable = true;
-    enableAliases = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
     settings = {
       blocks = [
         "permission"
