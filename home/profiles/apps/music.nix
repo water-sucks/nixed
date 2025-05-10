@@ -8,7 +8,7 @@ lib.mkIf pkgs.stdenv.isLinux {
     pkgs.tidal-hifi
   ];
 
-  xdg.desktopEntries.tidal-hifi = {
+  xdg.desktopEntries."TIDAL Hi-Fi" = {
     name = "TIDAL Hi-Fi";
     exec = "tidal-hifi --no-sandbox";
     icon = "tidal-hifi";
@@ -22,6 +22,6 @@ lib.mkIf pkgs.stdenv.isLinux {
   };
 
   xdg.mimeApps.defaultApplications = {
-    "x-scheme-handler/tidal" = ["tidal-hifi.desktop"];
+    "x-scheme-handler/tidal" = ["TIDAL Hi-Fi.desktop"];
   };
 }
