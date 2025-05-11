@@ -57,6 +57,11 @@ render_markdown_spec.config = function()
       -- Disable this behavior for now.
       language_name = false,
     },
+    html = {
+      comment = {
+        conceal = false,
+      },
+    },
     checkbox = {
       enabled = true,
       position = "inline",
