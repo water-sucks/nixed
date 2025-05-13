@@ -208,7 +208,7 @@
   },
   "plugin-darkrose-nvim": {
     "cargoLocks": null,
-    "date": "2025-02-01",
+    "date": "2025-05-13",
     "extract": null,
     "name": "plugin-darkrose-nvim",
     "passthru": {
@@ -222,12 +222,12 @@
       "name": null,
       "owner": "water-sucks",
       "repo": "darkrose.nvim",
-      "rev": "f1d6314c366c9c41af9615be500a8ea5b02b9c1b",
-      "sha256": "sha256-RItbRI6sAAswrUhcrLBChiBowqOgINKbQmwjZxAsffU=",
+      "rev": "ac689397a8b61bb87b455400ff0da46354133fae",
+      "sha256": "sha256-gQ7vQFjC81pTnxJM3sGD5CQwndw3dEJaSmOGaMGA5Fs=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "f1d6314c366c9c41af9615be500a8ea5b02b9c1b"
+    "version": "ac689397a8b61bb87b455400ff0da46354133fae"
   },
   "plugin-diffview-nvim": {
     "cargoLocks": null,

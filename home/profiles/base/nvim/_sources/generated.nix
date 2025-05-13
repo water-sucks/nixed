@@ -124,16 +124,16 @@
   };
   plugin-darkrose-nvim = {
     pname = "plugin-darkrose-nvim";
-    version = "f1d6314c366c9c41af9615be500a8ea5b02b9c1b";
+    version = "ac689397a8b61bb87b455400ff0da46354133fae";
     src = fetchFromGitHub {
       owner = "water-sucks";
       repo = "darkrose.nvim";
-      rev = "f1d6314c366c9c41af9615be500a8ea5b02b9c1b";
+      rev = "ac689397a8b61bb87b455400ff0da46354133fae";
       fetchSubmodules = false;
-      sha256 = "sha256-RItbRI6sAAswrUhcrLBChiBowqOgINKbQmwjZxAsffU=";
+      sha256 = "sha256-gQ7vQFjC81pTnxJM3sGD5CQwndw3dEJaSmOGaMGA5Fs=";
     };
     pretty-name = "darkrose.nvim";
-    date = "2025-02-01";
+    date = "2025-05-13";
   };
   plugin-diffview-nvim = {
     pname = "plugin-diffview-nvim";
