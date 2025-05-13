@@ -20,7 +20,7 @@ treesitter_spec.config = function()
 
     highlight = {
       enable = true,
-      disable = { "comment", "markdown" },
+      disable = { "comment" },
     },
 
     indent = {
