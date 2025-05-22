@@ -106,8 +106,7 @@ treesitter_spec.config = function()
 
     refactor = {
       highlight_definitions = {
-        enable = true,
-        clear_on_cursor_move = false,
+        enable = false,
       },
       highlight_current_scope = {
         enable = false,
