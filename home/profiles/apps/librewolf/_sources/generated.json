@@ -1,7 +1,7 @@
 {
   "arcadia-theme": {
     "cargoLocks": null,
-    "date": "2025-05-12",
+    "date": "2025-05-19",
     "extract": null,
     "name": "arcadia-theme",
     "passthru": null,
@@ -13,11 +13,11 @@
       "name": null,
       "owner": "tyrohellion",
       "repo": "arcadia",
-      "rev": "27ec09be4141f047534df9671557a050ae493b0a",
-      "sha256": "sha256-9HzLpeZ5gj/EkYsjCwQzxBrC8ASBeaAvQ4oqgRYdFAQ=",
+      "rev": "af0fd6ab7e1966701946531c28cb3c856e6f5887",
+      "sha256": "sha256-TqpDaeUu8oF4WxdKz8pxS9ic8YQmueA0LS8WdZTjXqk=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "27ec09be4141f047534df9671557a050ae493b0a"
+    "version": "af0fd6ab7e1966701946531c28cb3c856e6f5887"
   }
 }
