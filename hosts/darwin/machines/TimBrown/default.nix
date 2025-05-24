@@ -13,6 +13,8 @@
     homebrew.enable = true;
   };
 
+  system.primaryUser = "varun";
+
   users = {
     varun.enable = true;
   };
