@@ -1,11 +1,14 @@
 {
+  inputs,
   pkgs,
   lib,
   ...
 }: {
   programs.zsh.enable = true;
 
-  environment = {
+  environment = let
+    inherit (inputs.optnix.packages.${pkgs.system}) optnix;
+  in {
     systemPackages = with pkgs;
       [
         bat
@@ -26,6 +29,7 @@
         nix-index
         neovim
         nmap
+        optnix
         ripgrep
         tokei
         tree

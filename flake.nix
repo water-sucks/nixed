@@ -17,6 +17,8 @@
 
     nixos-cli.url = "github:nix-community/nixos-cli";
 
+    optnix.url = "github:water-sucks/optnix";
+
     sops-nix.url = "github:Mic92/sops-nix";
 
     nixago.url = "github:nix-community/nixago";
@@ -47,6 +49,7 @@
         ./modules/shell.nix
         ./modules/nvfetcher.nix
         ./modules/ssh-keys.nix
+        ./modules/options-doc.nix
 
         ./hosts/nixos
         ./hosts/darwin
