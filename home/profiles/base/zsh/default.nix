@@ -39,6 +39,10 @@ in
             ZVM_KEYTIMEOUT=0.1
             source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
           fi
+
+          if [ -f "$HOME/.zshrc.local" ]; then
+            source $HOME/.zshrc.local
+          fi
         '';
         plugins = [
           {
