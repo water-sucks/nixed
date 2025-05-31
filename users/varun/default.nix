@@ -46,8 +46,6 @@ in {
           }
         ];
 
-        openrgb.profile = "darkrose";
-
         sops = let
           secretBlock = sopsFile: secretName: {
             inherit sopsFile;
@@ -83,7 +81,7 @@ in {
           };
         };
 
-        # persistence.directory = "/persist/home/varun";
+        openrgb.profile = "darkrose";
 
         persistence = {
           directories = [

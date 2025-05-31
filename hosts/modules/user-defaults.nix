@@ -18,7 +18,7 @@
         news.display = "show";
         home.stateVersion = "21.11";
       }
-      (with lib; collectLeaves ../../home/modules)
+      (lib.collectLeaves ../../home/modules)
       (args: {
         imports = with inputs;
           [
