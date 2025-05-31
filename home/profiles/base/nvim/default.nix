@@ -135,7 +135,7 @@ in
           deadnix
           editorconfig-checker
           efm-langserver
-          stable.gitlint
+          gitlint
           gofumpt
           prettierDefaultConfig
           python3Packages.flake8

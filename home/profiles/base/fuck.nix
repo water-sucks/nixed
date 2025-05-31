@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.stable.thefuck
+    pkgs.thefuck
   ];
 
   programs.zsh.initContent = ''
