@@ -151,6 +151,15 @@ in
     (lib.mkIf isDarwin {
       programs.librewolf.package = null;
 
+      homebrew.casks = [
+        {
+          name = "librewolf";
+          args = {
+            no_quarantine = true;
+          };
+        }
+      ];
+
       home.sessionVariables = {
         MOZ_LEGACY_PROFILES = "1";
       };

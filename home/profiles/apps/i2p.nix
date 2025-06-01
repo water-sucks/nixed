@@ -2,9 +2,19 @@
   pkgs,
   lib,
   ...
-}:
-lib.mkIf pkgs.stdenv.isLinux {
-  home.packages = with pkgs; [
-    i2p
-  ];
-}
+}: let
+  inherit (pkgs.stdenv) isLinux isDarwin;
+in
+  lib.mkMerge [
+    (lib.mkIf isLinux {
+      home.packages = with pkgs; [
+        i2p
+      ];
+    })
+
+    (lib.mkIf isDarwin {
+      homebrew.brews = [
+        "i2p"
+      ];
+    })
+  ]

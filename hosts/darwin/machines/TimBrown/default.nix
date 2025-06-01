@@ -10,7 +10,9 @@
     fonts.enable = true;
 
     defaults.enable = true;
-    homebrew.enable = true;
+    brew.enable = true;
+    vscode.enable = true;
+    ollama.enable = true;
   };
 
   system.primaryUser = "varun";

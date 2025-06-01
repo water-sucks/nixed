@@ -98,6 +98,13 @@ in
       };
     }
     (lib.mkIf isDarwin {
+      homebrew.casks = [
+        "kitty"
+      ];
+      homebrew.brews = [
+        "fileicon"
+      ];
+
       home.activation.setKittyIcon = lib.hm.dag.entryAfter ["writeBoundary"] ''
         original_sum=$(sha256sum /Applications/kitty.app/Contents/Resources/kitty.icns)
 

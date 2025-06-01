@@ -2,15 +2,24 @@
   pkgs,
   lib,
   ...
-}:
-lib.mkIf pkgs.stdenv.isLinux {
-  home.packages = with pkgs; [
-    bitwarden
-  ];
+}: let
+  inherit (pkgs.stdenv) isLinux isDarwin;
+in
+  lib.mkMerge [
+    (lib.mkIf isLinux {
+      home.packages = with pkgs; [
+        bitwarden
+      ];
 
-  persistence = {
-    directories = [
-      ".config/Bitwarden"
-    ];
-  };
-}
+      persistence = {
+        directories = [
+          ".config/Bitwarden"
+        ];
+      };
+    })
+    (lib.mkIf isDarwin {
+      homebrew.casks = [
+        "bitwarden"
+      ];
+    })
+  ]

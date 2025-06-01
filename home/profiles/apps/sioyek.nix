@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isLinux;
+  inherit (pkgs.stdenv) isLinux isDarwin;
 in
   lib.mkMerge [
     {
@@ -36,5 +36,10 @@ in
         "application/xfdf" = ["sioyek.desktop"];
         "application/pdx" = ["sioyek.desktop"];
       };
+    })
+    (lib.mkIf isDarwin {
+      homebrew.casks = [
+        "sioyek"
+      ];
     })
   ]

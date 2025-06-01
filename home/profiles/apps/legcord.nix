@@ -2,15 +2,24 @@
   pkgs,
   lib,
   ...
-}:
-lib.mkIf pkgs.stdenv.isLinux {
-  home.packages = [
-    pkgs.legcord
-  ];
+}: let
+  inherit (pkgs.stdenv) isLinux isDarwin;
+in
+  lib.mkMerge [
+    (lib.mkIf isLinux {
+      home.packages = [
+        pkgs.legcord
+      ];
 
-  persistence = {
-    directories = [
-      ".config/legcord"
-    ];
-  };
-}
+      persistence = {
+        directories = [
+          ".config/legcord"
+        ];
+      };
+    })
+    (lib.mkIf isDarwin {
+      homebrew.casks = [
+        "legcord"
+      ];
+    })
+  ]
