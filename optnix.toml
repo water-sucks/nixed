@@ -20,7 +20,7 @@ evaluator = "nix eval .#nixosConfigurations.CharlesWoodson.config.{{ .Option }}"
 description = "NixOS flake configuration for SebastianJanikowski"
 options-list-file = "/run/current-system/etc/nixos-cli/options-cache.json"
 options-list-cmd = '''
-nix eval /home/varun/.nixed#nixosConfigurations.SebastianJanikowski --json --apply 'input: let
+nix eval .#nixosConfigurations.SebastianJanikowski --json --apply 'input: let
   inherit (input) options pkgs;
 
   optionsList = builtins.filter
@@ -34,7 +34,7 @@ evaluator = "nix eval .#nixosConfigurations.SebastianJanikowski.config.{{ .Optio
 [scopes.TimBrown]
 description = "nix-darwin flake configuration for TimBrown"
 options-list-cmd = '''
-nix eval /home/varun/.nixed#darwinConfigurations.TimBrown --json --apply 'input: let
+nix eval .#darwinConfigurations.TimBrown --json --apply 'input: let
   inherit (input) options pkgs;
 
   optionsList = builtins.filter
