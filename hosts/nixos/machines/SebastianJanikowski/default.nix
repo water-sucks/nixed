@@ -33,7 +33,6 @@
     android.enable = true;
     kvm.enable = true;
     ios.enable = true;
-    wireshark.enable = true;
   };
 
   users = {
