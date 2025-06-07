@@ -12,7 +12,6 @@ in
     {
       programs.zsh = {
         enable = true;
-        autosuggestion.enable = false; # Disabled for thefuck command to work instantly
         enableCompletion = true;
         completionInit = ''
           setopt extendedglob

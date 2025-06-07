@@ -1,9 +1,10 @@
-{pkgs, ...}: {
-  home.packages = [
-    pkgs.thefuck
-  ];
-
-  programs.zsh.initContent = ''
-    eval $(thefuck --alias)
-  '';
+_: {
+  programs.pay-respects = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [
+      "--alias"
+      "fuck"
+    ];
+  };
 }
