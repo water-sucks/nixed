@@ -22,7 +22,6 @@
       (args: {
         imports = with inputs;
           [
-            nix-colors.homeManagerModule
             sops-nix.homeManagerModules.sops
           ]
           ++ (lib.genModules args "profiles" ../../home/profiles);
