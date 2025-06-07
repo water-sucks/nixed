@@ -6,6 +6,8 @@
 }:
 with lib; let
   cfg = config.services.darwin-wallpaper;
+
+  desktoppr = "/usr/local/bin/desktoppr";
 in {
   options = {
     services.darwin-wallpaper.file = mkOption {
@@ -20,9 +22,11 @@ in {
       (hm.assertions.assertPlatform "services.darwin-wallpaper" pkgs platforms.darwin)
     ];
 
+    homebrew.casks = ["desktoppr"];
+
     home.activation = {
       setDarwinWallpaper = lib.hm.dag.entryAfter ["writeBoundary"] ''
-        osascript -e 'tell application "Finder" to set desktop picture to "${cfg.file}" as POSIX file'
+        ${desktoppr} "${cfg.file}"
       '';
     };
   };
