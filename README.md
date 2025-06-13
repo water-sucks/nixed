@@ -84,12 +84,23 @@ workloads quite far (a lot like its namesake!).
 
 ### TimBrown
 
-- Type: Work laptop
+- Type: Personal laptop
 - Operating system: macOS (with nix-darwin)
-- Model: MacBook M3 Pro 2023 (18 GB)
+- Model: MacBook M3 Pro 2023 (18 GB RAM)
 
 A legit MacBook that is a beast on the run. Used for music production on-the-go
 with Logic Pro X and mobile app development.
+
+More to come in the future, such as Bo Jackson. Stay tuned!
+
+### MarcusAllen
+
+- Type: Work laptop
+- Operating system: macOS (with nix-darwin)
+- Model: MacBook M4 (32 GB RAM)
+
+Another legit MacBook that is a beast on the run. Company laptop, used for work
+at [ANDYL](https://andyl.com).
 
 More to come in the future, such as Bo Jackson. Stay tuned!
 

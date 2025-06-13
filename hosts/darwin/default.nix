@@ -40,6 +40,7 @@ in {
   flake = {
     darwinConfigurations = with generatedHosts; {
       TimBrown = TimBrown {system = "aarch64-darwin";};
+      MarcusAllen = MarcusAllen {system = "aarch64-darwin";};
     };
   };
 }
