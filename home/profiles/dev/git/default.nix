@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   sources = pkgs.callPackage _sources/generated.nix {};
 in {
   programs.git = {
@@ -6,6 +10,7 @@ in {
     package = pkgs.gitFull;
     includes = [
       {path = "${sources.git-aliases.src}/gitalias.txt";}
+      {path = "${config.home.homeDirectory}/.config/git/local.txt";}
     ];
     extraConfig = {
       pull.rebase = false;
