@@ -137,6 +137,7 @@ in
           efm-langserver
           gitlint
           gofumpt
+          nixfmt-rfc-style
           prettierDefaultConfig
           python3Packages.flake8
           shellcheck
