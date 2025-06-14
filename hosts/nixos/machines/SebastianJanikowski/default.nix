@@ -29,6 +29,7 @@
     bluetooth.enable = true;
     i18n.enable = true;
     printers.enable = true;
+    tailscale.enable = true;
 
     android.enable = true;
     kvm.enable = true;

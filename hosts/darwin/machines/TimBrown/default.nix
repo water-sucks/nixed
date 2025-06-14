@@ -13,6 +13,7 @@
     brew.enable = true;
     vscode.enable = true;
     ollama.enable = true;
+    tailscale.enable = true;
   };
 
   system.primaryUser = "varun";
