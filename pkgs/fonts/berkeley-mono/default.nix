@@ -23,20 +23,15 @@ stdenvNoCC.mkDerivation {
   buildPhase = ''
     mkdir patched-fonts
 
-    for f in berkeley-mono/OTF/*.otf; do
-      nerd-font-patcher -c $f -out patched-fonts
-    done
-
-    for f in berkeley-mono/TTF/*.ttf; do
+    for f in *.ttf; do
       nerd-font-patcher -c $f -out patched-fonts
     done
   '';
 
   installPhase = ''
-    mkdir -p $out/share/fonts/{opentype,truetype}/berkeley-mono
+    mkdir -p $out/share/fonts/truetype/berkeley-mono
 
     mv patched-fonts/*.ttf $out/share/fonts/truetype/berkeley-mono
-    mv patched-fonts/*.otf $out/share/fonts/opentype/berkeley-mono
   '';
 
   meta = {
