@@ -12,6 +12,7 @@
     defaults.enable = true;
     brew.enable = true;
     vscode.enable = true;
+    amphetamine.enable = true;
   };
 
   system.primaryUser = "varun";

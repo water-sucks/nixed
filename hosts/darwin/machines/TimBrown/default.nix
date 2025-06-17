@@ -14,6 +14,7 @@
     vscode.enable = true;
     ollama.enable = true;
     tailscale.enable = true;
+    amphetamine.enable = true;
   };
 
   system.primaryUser = "varun";
