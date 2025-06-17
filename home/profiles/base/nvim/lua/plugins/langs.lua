@@ -220,32 +220,12 @@ local lazydev_spec = use("folke/lazydev.nvim", {
   end,
 })
 
-local rust_tools_spec = use("simrat39/rust-tools.nvim", {
-  -- dependencies = { use("neovim/nvim-lspconfig") },
-  ft = "rust",
-})
-
 local roslyn_spec = use("seblj/roslyn.nvim", {
   ft = "cs",
   opts = {
     exe = "Microsoft.CodeAnalysis.LanguageServer",
   },
 })
-
-rust_tools_spec.config = function()
-  local extension_path = vim.fn.stdpath("data") .. "/vscode-lldb/"
-  local codelldb_path = extension_path .. "adapter/codelldb"
-  local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
-
-  require("rust-tools").setup({
-    dap = {
-      adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-    },
-  })
-
-  -- Workaround for when rust-tools is initially loaded so that ft = "rust" can work in the spec
-  vim.cmd("e!")
-end
 
 local typst_spec = use("kaarmu/typst.vim", {
   ft = "typst",
@@ -378,7 +358,6 @@ return {
   jdtls_spec,
   lazydev_spec,
   roslyn_spec,
-  rust_tools_spec,
   typst_spec,
   vimtex_spec,
 }

@@ -123,7 +123,6 @@ in
     # Language-specific plugins
     (plugin "folke" "lazydev.nvim")
     (plugin "akinsho" "flutter-tools.nvim")
-    (plugin "simrat39" "rust-tools.nvim")
     (plugin "mfussenegger" "nvim-jdtls")
     (plugin "lervag" "vimtex")
     (plugin "kaarmu" "typst.vim")

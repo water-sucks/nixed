@@ -140,6 +140,7 @@ in
           nixfmt-rfc-style
           prettierDefaultConfig
           python3Packages.flake8
+          rust-analyzer
           shellcheck
           shellharden
           shfmt

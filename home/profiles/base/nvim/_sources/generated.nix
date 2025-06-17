@@ -732,19 +732,6 @@
     pretty-name = "roslyn.nvim";
     date = "2025-06-05";
   };
-  plugin-rust-tools-nvim = {
-    pname = "plugin-rust-tools-nvim";
-    version = "676187908a1ce35ffcd727c654ed68d851299d3e";
-    src = fetchFromGitHub {
-      owner = "simrat39";
-      repo = "rust-tools.nvim";
-      rev = "676187908a1ce35ffcd727c654ed68d851299d3e";
-      fetchSubmodules = false;
-      sha256 = "sha256-kFane5ze7VDiOzF7jdmXkr50XQsNvdb+a9HQtybEVE0=";
-    };
-    pretty-name = "rust-tools.nvim";
-    date = "2024-01-03";
-  };
   plugin-scope-nvim = {
     pname = "plugin-scope-nvim";
     version = "6b4208f017da9b122d69ddc5841e040dffe7313c";

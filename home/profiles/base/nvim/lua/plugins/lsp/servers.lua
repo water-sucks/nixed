@@ -258,6 +258,20 @@ local server_configs = {
   pyright = {},
   r_language_server = {},
   ruff = {},
+  rust_analyzer = {
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = {
+          buildScripts = {
+            enable = true,
+          },
+        },
+        procMacro = {
+          enable = true,
+        },
+      },
+    },
+  },
   svelte = {},
   superhtml = {},
   terraformls = {},
