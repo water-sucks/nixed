@@ -17,8 +17,8 @@ local efm_sources = {
     prettier = {
       formatCanRange = true,
       formatCommand = prettier
-        .. " --stdin --stdin-filepath ${INPUT} ${--range-start:charStart}"
-        .. " ${--range-end:charEnd} ${--tab-width:tabSize} ${--use-tabs:!insertSpaces}",
+        .. " --stdin --stdin-filepath ${INPUT}"
+        .. " ${--range-start:charStart} ${--range-end:charEnd}",
       formatStdin = true,
       rootMarkers = {
         ".prettierrc",
