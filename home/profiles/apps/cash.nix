@@ -8,7 +8,7 @@ in
   lib.mkMerge [
     (lib.mkIf isLinux {
       home.packages = [
-        pkgs.gnucash
+        pkgs.stable.gnucash
       ];
 
       persistence = {
