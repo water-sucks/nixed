@@ -39,9 +39,7 @@ to use them, feel free! Here's a rundown of what they are:
 
 | Name             | Description                               |
 | ---------------- | ----------------------------------------- |
-| berry            | Berry WM configuration                    |
 | darwin-wallpaper | Configure wallpaper on macOS              |
-| hikari           | Hikari Wayland compositor configuration   |
 | leftwm           | LeftWM configuration                      |
 | vivid            | Vivid LS_COLORS generator configuration   |
 | wob              | Wayland overlay bar configuration/service |
