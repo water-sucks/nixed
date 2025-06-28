@@ -16,21 +16,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Install Nix
-        uses: cachix/install-nix-action@v18
-        with:
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            experimental-features = nix-command flakes
-            substituters = https://cache.nixos.org/ https://nix-community.cachix.org
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+        uses: DeterminateSystems/nix-installer-action@main
+
       - name: Configure Git
         run: |
           git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
+
       - name: Find branch to create update on
         id: find-branch
         run: |
@@ -52,6 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update flake.lock
         run: nix flake update
+
       - name: Store flake.lock
         uses: actions/upload-artifact@v4
         with:
@@ -65,22 +60,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Install Nix
-        uses: cachix/install-nix-action@v30
-        with:
-          nix_path: nixpkgs=channel:nixos-unstable
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            experimental-features = nix-command flakes
-            substituters = https://cache.nixos.org/ https://nix-community.cachix.org
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+        uses: DeterminateSystems/nix-installer-action@main
+
       - name: Configure Git
         run: |
           git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
+
       - name: Find branch to create update on
         run: |
           number=${{needs.update_flake.outputs.pr-number}}
@@ -93,6 +81,7 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Restore flake.lock
         uses: actions/download-artifact@v4
         with:
@@ -107,12 +96,14 @@ jobs:
           nix run ".#update-nvfetcher-sources" -- -k /tmp/keyfile.toml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Generate patch
         run: |
           git restore flake.lock
           git add .
           git stash --include-untracked
           git stash show -p stash@\{0\} > nvfetcher-updates.patch
+
       - name: Store nvfetcher patch
         uses: actions/upload-artifact@v4
         with:
@@ -126,12 +117,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Configure Git
         run: |
           git config user.email autumnwind@snare.dev
           git config user.name "Autumn Wind"
+
       - name: Find branch to create update on
         run: |
           number=${{needs.update_flake.outputs.pr-number}}
@@ -144,25 +135,28 @@ jobs:
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Restore flake.lock
         uses: actions/download-artifact@v4
         with:
           name: flake_lock
+
       - name: Restore nvfetcher patches
         uses: actions/download-artifact@v4
         with:
           name: nvfetcher_updates_patch
+
       - name: Commit all updates and make a PR if needed
         run: |
           number=${{needs.update_flake.outputs.pr-number}}
           branch=${{needs.update_flake.outputs.branch}}
 
           git add flake.lock
-          git commit -m "chore: update flake inputs"
+          git commit -m "chore(deps): update nix flake inputs"
 
           git apply nvfetcher-updates.patch --allow-empty
           rm nvfetcher-updates.patch
-          git commit -am "chore: update nvfetcher sources" || true
+          git commit -am "chore(deps): update nvfetcher sources" || true
 
           git push -u origin "$branch"
 
@@ -170,10 +164,10 @@ jobs:
             gh pr create \
               --assignee water-sucks \
               --base main \
-              --body "Automatic updates to flake inputs and nvfetcher sources on $(date -I)" \
+              --body "Automatic updates to Nix flake sources and nvfetcher sources on $(date -I)" \
               --fill \
               --label bot \
-              --title "Automatic updates on $(date -I)"
+              --title "chore(deps): update nix flake inputs and nvfetcher sources"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
