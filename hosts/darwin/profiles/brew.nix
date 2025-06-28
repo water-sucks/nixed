@@ -12,6 +12,7 @@
       autoUpdate = true;
       upgrade = true;
     };
+    greedyCasks = true;
 
     casks = let
       casks' = lib.mapAttrsToList (_: cfg: cfg.homebrew.casks) config.home-manager.users;
