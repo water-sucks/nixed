@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isLinux isDarwin;
+  inherit (pkgs.stdenv) isLinux;
 in {
   users.users.varun =
     {
@@ -75,7 +75,6 @@ in {
         profiles = {
           graphical = {
             enable = true;
-            darwin-wallpaper.enable = false;
             x11.enable = true;
             wayland.enable = true;
           };
@@ -94,13 +93,6 @@ in {
             "Videos"
             "VMs"
           ];
-        };
-      })
-      (lib.mkIf isDarwin {
-        profiles = {
-          graphical = {
-            darwin-wallpaper.enable = true;
-          };
         };
       })
     ];
