@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -8,7 +9,7 @@
   ];
 
   home.sessionVariables = {
-    GTK_THEME = "vimix-dark-ruby";
+    GTK_THEME = config.gtk.theme.name;
   };
 
   gtk = {
@@ -24,18 +25,33 @@
       };
     };
     theme = {
-      name = "vimix-dark-ruby";
+      name = "Vimix-dark-ruby";
       package = pkgs.vimix-gtk-themes.override {
         themeVariants = ["ruby"];
         colorVariants = ["dark"];
         tweaks = ["flat" "grey"];
       };
     };
-    gtk3.extraCss = ''
-      decoration, window, window.background, window.titlebar, * {
-        border-radius: 0px;
-      }
-    '';
+
+    gtk3 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+      extraCss = ''
+        decoration, window, window.background, window.titlebar, * {
+          border-radius: 0px;
+        }
+      '';
+    };
+    gtk4 = {
+      extraConfig = {
+        gtk-application-prefer-dark-theme = 1;
+      };
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 
   # Force qt to mimic configured gtk theme
