@@ -9,7 +9,7 @@
       PartOf = ["graphical-session.target"];
       Requires = ["graphical-session.target"];
       After = ["graphical-session.target"];
-      ConditionPathExistsGlob = ["!%t/wayland-*"];
+      ConditionEnvironment = "!WAYLAND_DISPLAY";
     };
 
     Service = {

@@ -23,10 +23,10 @@ _: {
   };
 
   systemd.user.services.xob = {
-    Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+    Unit.ConditionEnvironment = "!WAYLAND_DISPLAY";
   };
 
   systemd.user.sockets.xob = {
-    Socket.ConditionPathExistsGlob = ["!%t/wayland-*"];
+    Unit.ConditionEnvironment = "!WAYLAND_DISPLAY";
   };
 }

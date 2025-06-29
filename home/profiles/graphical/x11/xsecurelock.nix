@@ -18,10 +18,10 @@
 
   systemd.user.services = {
     xss-lock = {
-      Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+      Unit.ConditionEnvironment = "!WAYLAND_DISPLAY";
     };
     xautolock-session = {
-      Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+      Unit.ConditionEnvironment = "!WAYLAND_DISPLAY";
     };
   };
 }
