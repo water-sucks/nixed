@@ -33,16 +33,12 @@ to use them, feel free! Here's a rundown of what they are:
 | -------- | ---------------------------------------- |
 | nsmb-mvl | Mario vs. Luigi game rewrite from the DS |
 
-\* - Probably don't use this package, this is tailored for my own config.
-
 ### home-manager Modules
 
-| Name             | Description                               |
-| ---------------- | ----------------------------------------- |
-| darwin-wallpaper | Configure wallpaper on macOS              |
-| leftwm           | LeftWM configuration                      |
-| vivid            | Vivid LS_COLORS generator configuration   |
-| wob              | Wayland overlay bar configuration/service |
+| Name   | Description                             |
+| ------ | --------------------------------------- |
+| leftwm | LeftWM configuration                    |
+| vivid  | Vivid LS_COLORS generator configuration |
 
 To use these modules, you can use the provided `homeModules` attribute.
 
