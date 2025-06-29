@@ -281,6 +281,10 @@ in {
   };
 
   systemd.user.services.polybar = {
-    Unit.ConditionPathExistsGlob = ["!%t/wayland-*"];
+    Unit = {
+      After = ["graphical-session.target"];
+      PartOf = ["graphical-session.target"];
+      ConditionEnvironment = "!WAYLAND_DISPLAY";
+    };
   };
 }

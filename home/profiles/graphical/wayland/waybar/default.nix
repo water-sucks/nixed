@@ -208,10 +208,4 @@ in {
       ${builtins.readFile ./style.css}
     '';
   };
-
-  systemd.user.services.waybar = {
-    Unit = {
-      ConditionPathExistsGlob = ["%t/wayland-*"];
-    };
-  };
 }
