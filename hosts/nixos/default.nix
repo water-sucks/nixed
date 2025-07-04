@@ -22,6 +22,7 @@
           impermanence.nixosModules.impermanence
           home.nixosModules.home-manager
           nixos-cli.nixosModules.nixos-cli
+          optnix.nixosModules.optnix
           (import configuration)
           {
             nixpkgs.pkgs = pkgs;

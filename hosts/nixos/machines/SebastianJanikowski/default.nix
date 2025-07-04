@@ -30,6 +30,7 @@
     i18n.enable = true;
     printers.enable = true;
     tailscale.enable = true;
+    optnix.enable = true;
 
     android.enable = true;
     kvm.enable = true;

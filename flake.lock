@@ -498,11 +498,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1751077103,
-        "narHash": "sha256-4iomfoj2TW97UVEs3R9QMgo1dJLsQm0Fvfc1c8a2xBo=",
+        "lastModified": 1751577435,
+        "narHash": "sha256-NQ4Q1pyPIZmRXTr6v4Q25nt18dGHspFcaPuhDqQ+V5w=",
         "owner": "water-sucks",
         "repo": "optnix",
-        "rev": "e7c41a4aac0417194e913475d6f641cdd2f10550",
+        "rev": "7258ac1de56faa10a2e86a9e60319d03b83105f7",
         "type": "github"
       },
       "original": {

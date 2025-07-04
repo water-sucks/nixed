@@ -22,6 +22,7 @@
       (args: {
         imports = with inputs;
           [
+            optnix.homeModules.optnix
             sops-nix.homeManagerModules.sops
           ]
           ++ (lib.genModules args "profiles" ../../home/profiles);

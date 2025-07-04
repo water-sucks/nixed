@@ -36,6 +36,7 @@
     docker.enable = true;
     ollama.enable = false; # Wait until I get a better graphics card.
     tailscale.enable = true;
+    optnix.enable = true;
 
     steam.enable = true;
   };

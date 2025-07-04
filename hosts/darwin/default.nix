@@ -20,6 +20,7 @@
         };
         modules = with inputs; [
           home.darwinModules.home-manager
+          optnix.darwinModules.optnix
           (import configuration)
           {
             networking.hostName = hostname;

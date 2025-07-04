@@ -11,6 +11,7 @@
 
     defaults.enable = true;
     brew.enable = true;
+    optnix.enable = true;
     vscode.enable = true;
     ollama.enable = true;
     tailscale.enable = true;
