@@ -34,7 +34,7 @@
     kvm.enable = true;
     ios.enable = true;
     docker.enable = true;
-    ollama.enable = false; # Wait until I get a better graphics card.
+    ollama.enable = true;
     tailscale.enable = true;
     optnix.enable = true;
 
