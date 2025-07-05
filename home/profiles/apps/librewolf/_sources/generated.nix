@@ -7,14 +7,14 @@
 }: {
   arcadia-theme = {
     pname = "arcadia-theme";
-    version = "af0fd6ab7e1966701946531c28cb3c856e6f5887";
+    version = "465fdc609a31fc0a93e7800d5c0a7cb23156a09f";
     src = fetchFromGitHub {
       owner = "tyrohellion";
       repo = "arcadia";
-      rev = "af0fd6ab7e1966701946531c28cb3c856e6f5887";
+      rev = "465fdc609a31fc0a93e7800d5c0a7cb23156a09f";
       fetchSubmodules = false;
-      sha256 = "sha256-TqpDaeUu8oF4WxdKz8pxS9ic8YQmueA0LS8WdZTjXqk=";
+      sha256 = "sha256-nPjnuNFh2xfgJsvmHxHifjqPwgmr79cVQVKLiP7km/o=";
     };
-    date = "2025-05-19";
+    date = "2025-06-28";
   };
 }
