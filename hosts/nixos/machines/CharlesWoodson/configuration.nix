@@ -62,9 +62,8 @@ in {
     # mounts properly, and attempts to configure this directory.
     # imperatively upon startup by changing permissions and other.
     # things
-    home = "/var/lib/private/ollama";
     acceleration = "rocm";
-    rocmOverrideGfx = "10.1.0"; # AMD RX 5500 XT
+    rocmOverrideGfx = "10.3.0"; # AMD RX 6900 XT
   };
 
   system.stateVersion = "21.11";

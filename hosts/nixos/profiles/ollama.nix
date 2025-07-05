@@ -1,4 +1,8 @@
-_: {
+{
+  config,
+  lib,
+  ...
+}: {
   services.ollama = {
     enable = true;
     user = "ollama";
@@ -12,11 +16,14 @@ _: {
   environment.persistence."/persist" = {
     directories = [
       {
-        directory = "/var/lib/private/ollama";
-        user = "ollama";
-        group = "ollama";
-        mode = "0700";
+        inherit (config.services.ollama) user group;
+        directory = config.services.ollama.home;
+        mode = "750";
       }
     ];
+  };
+
+  systemd.services.ollama.serviceConfig = {
+    StateDirectory = lib.mkForce "";
   };
 }
