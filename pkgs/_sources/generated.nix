@@ -30,10 +30,10 @@
   };
   nsmb-mvl = {
     pname = "nsmb-mvl";
-    version = "v1.7.1.0-beta";
+    version = "v2.0.0.0";
     src = fetchurl {
-      url = "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/v1.7.1.0-beta/MarioVsLuigi-Linux-v1.7.1.0-beta.zip";
-      sha256 = "sha256-rb9vZ3w4BfzygsdOCPLVX87T5tBXk6Aw+ba9I12fhwQ=";
+      url = "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/v2.0.0.0/MarioVsLuigi-Linux-v2.0.0.0.zip";
+      sha256 = "sha256-dlEwMZfA72XS+4HfuiAFM6PO79aLRfMBo1n/QoDQEcc=";
     };
   };
 }
