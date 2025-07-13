@@ -9,6 +9,7 @@
   dbus,
   libglvnd,
   udev,
+  gtk3,
   vulkan-loader,
   zlib,
   libpulseaudio,
@@ -32,6 +33,7 @@ in
 
       alsa-lib
       dbus.lib
+      gtk3
       libglvnd
       libpulseaudio
       udev
@@ -41,6 +43,8 @@ in
 
     installPhase = ''
       runHook preInstall
+
+      cd MarioVsLuigi-Linux
 
       mkdir -p "$out/bin" "$out/share" "$out/opt/nsmb-mvl"
       cp -r linux.x86_64 linux_Data UnityPlayer.so "$out/opt/nsmb-mvl"
@@ -57,6 +61,7 @@ in
         --add-needed libdbus-1.so \
         --add-needed libGL.so \
         --add-needed libudev.so \
+        --add-needed libgtk-3.so \
         --add-needed libvulkan.so \
         $out/bin/nsmb-mvl
     '';
