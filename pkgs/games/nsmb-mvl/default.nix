@@ -44,8 +44,6 @@ in
     installPhase = ''
       runHook preInstall
 
-      cd MarioVsLuigi-Linux
-
       mkdir -p "$out/bin" "$out/share" "$out/opt/nsmb-mvl"
       cp -r linux.x86_64 linux_Data UnityPlayer.so "$out/opt/nsmb-mvl"
       ln -s "$out/opt/nsmb-mvl/linux.x86_64" "$out/bin/nsmb-mvl"
