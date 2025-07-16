@@ -15,8 +15,8 @@ in
     {
       programs.nix-index = {
         enable = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
+        enableBashIntegration = false;
+        enableZshIntegration = false;
       };
     }
     # Automatically build nix-index while I'm doing
