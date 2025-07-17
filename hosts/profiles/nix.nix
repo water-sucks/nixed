@@ -7,7 +7,7 @@
   inherit (pkgs.stdenv) isDarwin isLinux;
 in {
   nix = {
-    package = lib.mkIf isLinux pkgs.nixVersions.latest;
+    package = pkgs.nixVersions.latest;
     # Run GC every Sunday at 10:00 AM
     gc =
       {
