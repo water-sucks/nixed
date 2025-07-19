@@ -7,13 +7,13 @@
 }: {
   fast-syntax-highlighting = {
     pname = "fast-syntax-highlighting";
-    version = "v1.55";
+    version = "v1.56";
     src = fetchFromGitHub {
       owner = "zdharma-continuum";
       repo = "fast-syntax-highlighting";
-      rev = "v1.55";
+      rev = "v1.56";
       fetchSubmodules = false;
-      sha256 = "sha256-DWVFBoICroKaKgByLmDEo4O+xo6eA8YO792g8t8R7kA=";
+      sha256 = "sha256-caVMOdDJbAwo8dvKNgwwidmxOVst/YDda7lNx2GvOjY=";
     };
   };
   zsh-autosuggestions = {
