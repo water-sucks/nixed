@@ -13,12 +13,12 @@
       "name": null,
       "owner": "zdharma-continuum",
       "repo": "fast-syntax-highlighting",
-      "rev": "v1.55",
-      "sha256": "sha256-DWVFBoICroKaKgByLmDEo4O+xo6eA8YO792g8t8R7kA=",
+      "rev": "v1.56",
+      "sha256": "sha256-caVMOdDJbAwo8dvKNgwwidmxOVst/YDda7lNx2GvOjY=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "v1.55"
+    "version": "v1.56"
   },
   "zsh-autosuggestions": {
     "cargoLocks": null,
