@@ -49,6 +49,8 @@ in
       ln -s "$out/opt/nsmb-mvl/linux.x86_64" "$out/bin/nsmb-mvl"
       ln -s "${desktopItem}/share/applications" "$out/share"
 
+      chmod +x $out/opt/nsmb-mvl/linux.x86_64
+
       runHook postInstall
     '';
 
