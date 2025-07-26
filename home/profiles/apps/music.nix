@@ -11,7 +11,7 @@ in
         pkgs.tidal-hifi
       ];
 
-      xdg.desktopEntries."TIDAL Hi-Fi" = {
+      xdg.desktopEntries.tidal-hifi = {
         name = "TIDAL Hi-Fi";
         exec = "tidal-hifi --no-sandbox";
         icon = "tidal-hifi";
