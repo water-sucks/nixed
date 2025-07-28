@@ -51,8 +51,11 @@ in {
     };
   };
 
-  # Fast status monitoring
   home.packages = with pkgs; [
+    # Fast status monitoring
     watchman
+
+    # Stacking branches
+    git-spice
   ];
 }
