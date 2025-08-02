@@ -1,10 +1,6 @@
 {lib, ...}: let
   inherit (lib) mkDefault;
 in {
-  documentation = {
-    enable = false;
-  };
-
   system.defaults = {
     dock = {
       autohide = false;
