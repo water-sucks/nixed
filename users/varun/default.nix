@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isLinux;
+  inherit (pkgs.stdenv) isLinux isDarwin;
 in {
   users.users.varun =
     {
@@ -36,9 +36,14 @@ in {
         programs.ssh.githubAccounts = {
           "water-sucks" = {email = "varun@snare.dev";};
         };
-        home.sessionVariables = lib.mkIf isLinux {
-          NIXOS_CONFIG = "$HOME/.nixed"; # For `nixos-cli`
-        };
+        home.sessionVariables = lib.mkMerge [
+          (lib.mkIf isLinux {
+            NIXOS_CONFIG = "$HOME/.nixed";
+          })
+          (lib.mkIf isDarwin {
+            NIX_DARWIN_CONFIG = "$HOME/.nixed";
+          })
+        ];
         programs.gpg.publicKeys = [
           {
             source = ./pgp.asc;

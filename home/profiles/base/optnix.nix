@@ -36,7 +36,7 @@ in {
           options-list-file = optnixLib.mkOptionsList {
             inherit (self.darwinConfigurations.TimBrown) options;
           };
-          evaluator = "nix eval $NIXOS_CONFIG#darwinConfigurations.TimBrown.config.{{ .Option }}";
+          evaluator = "nix eval $NIX_DARWIN_CONFIG#darwinConfigurations.TimBrown.config.{{ .Option }}";
         };
 
         MarcusAllen = {
@@ -44,7 +44,7 @@ in {
           options-list-file = optnixLib.mkOptionsList {
             inherit (self.darwinConfigurations.MarcusAllen) options;
           };
-          evaluator = "nix eval $NIXOS_CONFIG#darwinConfigurations.MarcusAllen.config.{{ .Option }}";
+          evaluator = "nix eval $NIX_DARWIN_CONFIG#darwinConfigurations.MarcusAllen.config.{{ .Option }}";
         };
 
         home-manager = {
