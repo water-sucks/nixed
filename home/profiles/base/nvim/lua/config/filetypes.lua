@@ -6,6 +6,7 @@ vim.filetype.add({
     fs = "fsharp",
     fsi = "fsharp",
     fsx = "fsharp",
+    scd = "scdoc",
   },
   filename = {},
 })
