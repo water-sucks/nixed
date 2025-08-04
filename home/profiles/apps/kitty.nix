@@ -30,7 +30,7 @@ in
           then kitty
           else runCommand "kitty-0.0.0" {} "mkdir $out";
         font = {
-          name = "BerkeleyMono Nerd Font";
+          name = "BerkeleyMonoNerdFont-Regular";
           size = lib.mkDefault 10;
         };
         settings = {
@@ -88,13 +88,11 @@ in
           # white
           color7 = "#${c.gray}";
           color15 = "#${c.fg}";
+
+          bold_font = "BerkeleyMonoNerdFont-Bold";
+          italic_font = "BerkeleyMonoNerdFont-Oblique";
+          bold_italic_font = "BerkeleyMonoNerdFont-BoldOblique";
         };
-        extraConfig = ''
-          font_features BerkeleyMonoNF-Regular    +zero
-          font_features BerkeleyMonoNF-Bold       +zero
-          font_features BerkeleyMonoNF-Italic     +zero
-          font_features BerkeleyMonoNF-BoldItalic +zero
-        '';
       };
     }
     (lib.mkIf isDarwin {
