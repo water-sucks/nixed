@@ -300,7 +300,7 @@
   },
   "plugin-fidget-nvim": {
     "cargoLocks": null,
-    "date": "2025-07-30",
+    "date": "2025-08-08",
     "extract": null,
     "name": "plugin-fidget-nvim",
     "passthru": {
@@ -314,12 +314,12 @@
       "name": null,
       "owner": "j-hui",
       "repo": "fidget.nvim",
-      "rev": "4ec7bed6c86b671ddde03ca1b227343cfa3e65fa",
-      "sha256": "sha256-bg97TCl2JfyYe11hG6LBn4k7JVkw6bdOl5NN2iKDIA8=",
+      "rev": "dafd592c7bdbb6cd6d17d3c9a1a8abf3930138c1",
+      "sha256": "sha256-znfyLUDmB/5wrEXvYyls5n6n66xXGyNsi5x9yuRDE0A=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "4ec7bed6c86b671ddde03ca1b227343cfa3e65fa"
+    "version": "dafd592c7bdbb6cd6d17d3c9a1a8abf3930138c1"
   },
   "plugin-flutter-tools-nvim": {
     "cargoLocks": null,
@@ -369,7 +369,7 @@
   },
   "plugin-gitsigns-nvim": {
     "cargoLocks": null,
-    "date": "2025-08-01",
+    "date": "2025-08-08",
     "extract": null,
     "name": "plugin-gitsigns-nvim",
     "passthru": {
@@ -383,12 +383,12 @@
       "name": null,
       "owner": "lewis6991",
       "repo": "gitsigns.nvim",
-      "rev": "8270378ab83540b03d09c0194ba3e208f9d0cb72",
-      "sha256": "sha256-WA/gFjer4i75/eBNS6vkGhP+4WF42lh6UCwZTF9yBJA=",
+      "rev": "c7d37ca22b461f64e26f8f6701b2586128ed0bef",
+      "sha256": "sha256-x51Pkh+dGgZ1Qpmb9AaYzO5l+ZBMdV4mTSNmFRU6Prw=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "8270378ab83540b03d09c0194ba3e208f9d0cb72"
+    "version": "c7d37ca22b461f64e26f8f6701b2586128ed0bef"
   },
   "plugin-guess-indent-nvim": {
     "cargoLocks": null,
@@ -507,7 +507,7 @@
   },
   "plugin-leap-nvim": {
     "cargoLocks": null,
-    "date": "2025-07-28",
+    "date": "2025-08-03",
     "extract": null,
     "name": "plugin-leap-nvim",
     "passthru": {
@@ -521,12 +521,12 @@
       "name": null,
       "owner": "ggandor",
       "repo": "leap.nvim",
-      "rev": "ebaf38f7fd7193cc918c10eb955afed63301cd76",
-      "sha256": "sha256-ZIvukO7yhuM1Ag8JthqWdCNt4o/D8fPP1+HqyYOM0YQ=",
+      "rev": "02bf52e49c72cc5dabb53ec9494d10d304f0b2c9",
+      "sha256": "sha256-la5Mq0cqWNZ3cV/LL/ip04E0BF0Hw84pdGbzLvG6gC8=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "ebaf38f7fd7193cc918c10eb955afed63301cd76"
+    "version": "02bf52e49c72cc5dabb53ec9494d10d304f0b2c9"
   },
   "plugin-lspkind-nvim": {
     "cargoLocks": null,
@@ -668,7 +668,7 @@
   },
   "plugin-nerdy-nvim": {
     "cargoLocks": null,
-    "date": "2025-07-21",
+    "date": "2025-08-04",
     "extract": null,
     "name": "plugin-nerdy-nvim",
     "passthru": {
@@ -682,12 +682,12 @@
       "name": null,
       "owner": "2kabhishek",
       "repo": "nerdy.nvim",
-      "rev": "9f9c8cc1629d1bd8a640840aca03cd4fda13f114",
-      "sha256": "sha256-1VxsSQL3BEeqkcdIGyq3l+UUh7ahlNpbla17mEgNvKk=",
+      "rev": "a8e3f70dc0232e956adfb12c647b7e9e2b2e6c89",
+      "sha256": "sha256-NPAtGzLhRGcYP8n9OMUGJbErb3raAAIqma8AKcBBcIs=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "9f9c8cc1629d1bd8a640840aca03cd4fda13f114"
+    "version": "a8e3f70dc0232e956adfb12c647b7e9e2b2e6c89"
   },
   "plugin-noice-nvim": {
     "cargoLocks": null,
@@ -944,7 +944,7 @@
   },
   "plugin-nvim-lspconfig": {
     "cargoLocks": null,
-    "date": "2025-08-01",
+    "date": "2025-08-08",
     "extract": null,
     "name": "plugin-nvim-lspconfig",
     "passthru": {
@@ -958,12 +958,12 @@
       "name": null,
       "owner": "neovim",
       "repo": "nvim-lspconfig",
-      "rev": "d0dbf489a8810672fa9a61f4a86e5cf89214b772",
-      "sha256": "sha256-0iNMc5mOygNUgsX9+/V88bIVNheSJxxsIWojsOgD/Jg=",
+      "rev": "276ce3bc878243dc63c32b75790c4296d11848f6",
+      "sha256": "sha256-DOQGwlJS4rgHHFDvMFJpYasznOYgFji3iO1KVMfkFqE=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "d0dbf489a8810672fa9a61f4a86e5cf89214b772"
+    "version": "276ce3bc878243dc63c32b75790c4296d11848f6"
   },
   "plugin-nvim-nio": {
     "cargoLocks": null,
@@ -1243,7 +1243,7 @@
   },
   "plugin-roslyn-nvim": {
     "cargoLocks": null,
-    "date": "2025-07-30",
+    "date": "2025-08-09",
     "extract": null,
     "name": "plugin-roslyn-nvim",
     "passthru": {
@@ -1257,12 +1257,12 @@
       "name": null,
       "owner": "seblj",
       "repo": "roslyn.nvim",
-      "rev": "365157b551422d11073772e6d823619bc0d22e81",
-      "sha256": "sha256-/usHEEsWj8q+K2DO2Cf5HSZfRDZbuHhwUxXTESyVW10=",
+      "rev": "8c949b1485aea6f56a7acc24c2362517e6002f2b",
+      "sha256": "sha256-WVc0Qf/m7tcsZoZYlJPpwJkdqJ4FmXN3SOV8jYwS+Ok=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "365157b551422d11073772e6d823619bc0d22e81"
+    "version": "8c949b1485aea6f56a7acc24c2362517e6002f2b"
   },
   "plugin-scope-nvim": {
     "cargoLocks": null,
@@ -1496,7 +1496,7 @@
   },
   "plugin-vimtex": {
     "cargoLocks": null,
-    "date": "2025-07-01",
+    "date": "2025-08-06",
     "extract": null,
     "name": "plugin-vimtex",
     "passthru": {
@@ -1510,12 +1510,12 @@
       "name": null,
       "owner": "lervag",
       "repo": "vimtex",
-      "rev": "7f2633027c8f496a85284de0c11aa32f1e07e049",
-      "sha256": "sha256-6XMJIPHe/et+4HsnbUvpZWV1a3rAmku8Yh1lyJOKA8o=",
+      "rev": "6fabe8b7b5e83f753eb930036b1d941b2f7d3d4d",
+      "sha256": "sha256-6ClxRxHQgr/qRSI7jg071MO5G4GTbHtyTt6iS6Wqq90=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "7f2633027c8f496a85284de0c11aa32f1e07e049"
+    "version": "6fabe8b7b5e83f753eb930036b1d941b2f7d3d4d"
   },
   "plugin-which-key-nvim": {
     "cargoLocks": null,
