@@ -30,7 +30,10 @@ in
           then kitty
           else runCommand "kitty-0.0.0" {} "mkdir $out";
         font = {
-          name = "BerkeleyMonoNerdFont-Regular";
+          name =
+            if isLinux
+            then "BerkeleyMono Nerd Font"
+            else "BerkeleyMonoNerdFont-Regular";
           size = lib.mkDefault 10;
         };
         settings = {
@@ -88,10 +91,6 @@ in
           # white
           color7 = "#${c.gray}";
           color15 = "#${c.fg}";
-
-          bold_font = "BerkeleyMonoNerdFont-Bold";
-          italic_font = "BerkeleyMonoNerdFont-Oblique";
-          bold_italic_font = "BerkeleyMonoNerdFont-BoldOblique";
         };
       };
     }
