@@ -91,29 +91,6 @@
     },
     "version": "0a0422551dfc9e8b02c00b133f63d72a75938d81"
   },
-  "plugin-bmessages-nvim": {
-    "cargoLocks": null,
-    "date": "2025-01-09",
-    "extract": null,
-    "name": "plugin-bmessages-nvim",
-    "passthru": {
-      "pretty-name": "bmessages.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "ariel-frischer",
-      "repo": "bmessages.nvim",
-      "rev": "985c6973bc27888598a03f4766a2481248a599b2",
-      "sha256": "sha256-VzLyvUi42ItEPvCX25otTYrWJrhfJ4e7cr7IDrEm1Es=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "985c6973bc27888598a03f4766a2481248a599b2"
-  },
   "plugin-bufferline-nvim": {
     "cargoLocks": null,
     "date": "2025-01-14",

@@ -54,7 +54,6 @@ in
     (plugin "folke" "trouble.nvim")
     (plugin "MunifTanjim" "nui.nvim")
     (plugin "j-hui" "fidget.nvim")
-    (plugin "ariel-frischer" "bmessages.nvim")
 
     # Text editing assistance/annotations
     (plugin "NMAC427" "guess-indent.nvim")

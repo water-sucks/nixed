@@ -57,19 +57,6 @@
     pretty-name = "binary.nvim";
     date = "2025-01-24";
   };
-  plugin-bmessages-nvim = {
-    pname = "plugin-bmessages-nvim";
-    version = "985c6973bc27888598a03f4766a2481248a599b2";
-    src = fetchFromGitHub {
-      owner = "ariel-frischer";
-      repo = "bmessages.nvim";
-      rev = "985c6973bc27888598a03f4766a2481248a599b2";
-      fetchSubmodules = false;
-      sha256 = "sha256-VzLyvUi42ItEPvCX25otTYrWJrhfJ4e7cr7IDrEm1Es=";
-    };
-    pretty-name = "bmessages.nvim";
-    date = "2025-01-09";
-  };
   plugin-bufferline-nvim = {
     pname = "plugin-bufferline-nvim";
     version = "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3";
