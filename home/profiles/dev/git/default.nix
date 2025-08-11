@@ -7,7 +7,7 @@
 in {
   programs.git = {
     enable = true;
-    package = pkgs.gitFull;
+    package = pkgs.stable.gitFull;
     includes = [
       {path = "${sources.git-aliases.src}/gitalias.txt";}
       {path = "${config.home.homeDirectory}/.config/git/local.txt";}
