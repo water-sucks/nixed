@@ -5,19 +5,6 @@
   fetchFromGitHub,
   dockerTools,
 }: {
-  plugin-Comment-nvim = {
-    pname = "plugin-Comment-nvim";
-    version = "e30b7f2008e52442154b66f7c519bfd2f1e32acb";
-    src = fetchFromGitHub {
-      owner = "numToStr";
-      repo = "Comment.nvim";
-      rev = "e30b7f2008e52442154b66f7c519bfd2f1e32acb";
-      fetchSubmodules = false;
-      sha256 = "sha256-h0kPue5Eqd5aeu4VoLH45pF0DmWWo1d8SnLICSQ63zc=";
-    };
-    pretty-name = "Comment.nvim";
-    date = "2024-06-09";
-  };
   plugin-LuaSnip = {
     pname = "plugin-LuaSnip";
     version = "de10d8414235b0a8cabfeba60d07c24304e71f5c";

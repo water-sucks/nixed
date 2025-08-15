@@ -59,7 +59,6 @@ in
     (plugin "NMAC427" "guess-indent.nvim")
     (plugin "echasnovski" "mini.surround")
     (plugin "tpope" "vim-repeat")
-    (plugin "numToStr" "Comment.nvim")
     (plugin "windwp" "nvim-autopairs")
     (plugin "sQVe" "sort.nvim")
     (plugin "echasnovski" "mini.move")

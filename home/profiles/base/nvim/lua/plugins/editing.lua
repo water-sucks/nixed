@@ -35,35 +35,6 @@ autopairs_spec.config = function()
   map("i", "<bs>", "v:lua.MUtils.BS()", { expr = true, noremap = true })
 end
 
-local comment_spec = use("numToStr/Comment.nvim", {
-  event = "VeryLazy",
-  config = function()
-    require("Comment").setup({
-      padding = true,
-      sticky = true,
-      ignore = nil,
-      toggler = {
-        line = "<Leader>cc",
-        block = "<Leader>bc",
-      },
-      opleader = {
-        line = "<Leader>c",
-        block = "<Leader>b",
-      },
-      extra = {
-        above = "<Leader>cO",
-        below = "<Leader>co",
-        eol = "<Leader>ca",
-      },
-      mappings = {
-        basic = true,
-        extra = true,
-        extended = false,
-      },
-    })
-  end,
-})
-
 local minimove = use("echasnovski/mini.move", {
   event = "VeryLazy",
 })
@@ -243,7 +214,6 @@ local hardtime_spec = use("m4xshen/hardtime.nvim", {
 
 return {
   autopairs_spec,
-  comment_spec,
   hardtime_spec,
   minimove,
   leap_spec,
