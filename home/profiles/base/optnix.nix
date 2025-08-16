@@ -39,14 +39,6 @@ in {
           evaluator = "nix eval $NIX_DARWIN_CONFIG#darwinConfigurations.TimBrown.config.{{ .Option }}";
         };
 
-        MarcusAllen = {
-          description = "nix-darwin configuration for MarcusAllen";
-          options-list-file = optnixLib.mkOptionsList {
-            inherit (self.darwinConfigurations.MarcusAllen) options;
-          };
-          evaluator = "nix eval $NIX_DARWIN_CONFIG#darwinConfigurations.MarcusAllen.config.{{ .Option }}";
-        };
-
         home-manager = {
           description = "home-manager configuration for all systems";
           options-list-file = optnixLib.mkOptionsList {

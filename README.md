@@ -87,17 +87,6 @@ with Logic Pro X and mobile app development.
 
 More to come in the future, such as Bo Jackson. Stay tuned!
 
-### MarcusAllen
-
-- Type: Work laptop
-- Operating system: macOS (with nix-darwin)
-- Model: MacBook M4 (32 GB RAM)
-
-Another legit MacBook that is a beast on the run. Company laptop, used for work
-at [ANDYL](https://andyl.com).
-
-More to come in the future, such as Bo Jackson. Stay tuned!
-
 ## Thanks
 
 - [digga](https://github.com/divnix/digga) :: for making my initial Nix journey
