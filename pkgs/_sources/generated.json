@@ -50,10 +50,10 @@
     "pinned": false,
     "src": {
       "name": null,
-      "sha256": "sha256-QC6YukLRO1KO8AKCu1/nEpqt36RWRh6g5pVYn2mru/U=",
+      "sha256": "sha256-fyoLcpIVmnZQuWwdZaq354D4TPCnpdaWDDFVWcouuYI=",
       "type": "url",
-      "url": "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/v2.0.3.0/MarioVsLuigi-Linux-v2.0.3.0.zip"
+      "url": "https://github.com/ipodtouch0218/NSMB-MarioVsLuigi/releases/download/v2.0.4.1/MarioVsLuigi-Linux-v2.0.4.1.zip"
     },
-    "version": "v2.0.3.0"
+    "version": "v2.0.4.1"
   }
 }
