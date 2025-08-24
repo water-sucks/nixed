@@ -17,12 +17,6 @@
 
       availableKernelModules = ["amdgpu" "dm-snapshot" "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
       kernelModules = ["dm-snapshot" "amdgpu"];
-      systemd = {
-        enable = true;
-        settings.Manager = {
-          DefaultDeviceTimeoutSec = "infinity";
-        };
-      };
       verbose = false;
     };
 

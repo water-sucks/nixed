@@ -59,6 +59,6 @@ in {
     nixosModules = let
       allModules = importModules ./modules;
     in
-      builtins.removeAttrs allModules ["user-defaults"];
+      builtins.removeAttrs allModules ["user-defaults" "luks"];
   };
 }

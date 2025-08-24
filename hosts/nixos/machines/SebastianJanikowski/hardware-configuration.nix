@@ -18,12 +18,6 @@
       };
       availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "i915"];
       kernelModules = ["dm-snapshot"];
-      systemd = {
-        enable = true;
-        settings.Manager = {
-          DefaultDeviceTimeoutSec = "infinity";
-        };
-      };
       verbose = false;
     };
 
