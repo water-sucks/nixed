@@ -33,8 +33,13 @@ in {
             signByDefault = true;
           };
         };
-        programs.ssh.githubAccounts = {
-          "water-sucks" = {email = "varun@snare.dev";};
+        programs.ssh = {
+          githubAccounts = {
+            "water-sucks" = {email = "varun@snare.dev";};
+          };
+          sourcehutAccounts = {
+            "watersucks" = {email = "varun@snare.dev";};
+          };
         };
         home.sessionVariables = lib.mkMerge [
           (lib.mkIf isLinux {
