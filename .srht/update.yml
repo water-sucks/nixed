@@ -1,0 +1,72 @@
+# This is the manifest that gets submitted by cron-job.org
+# every Saturday at midnight.
+
+image: nixos/unstable
+
+secrets:
+  - 30a7dc8f-69e7-4f02-831a-d1559afd40d4
+  - 7b75bda7-2003-417c-b039-64d4b2edc80d
+
+packages:
+  - nixos.gitFull
+
+environment:
+  NIX_CONFIG: "experimental-features = nix-command flakes"
+
+  GIT_AUTHOR_NAME: "Autumn Wind"
+  GIT_AUTHOR_EMAIL: autumnwind@snare.dev
+  GIT_COMMITTER_NAME: "Autumn Wind"
+  GIT_COMMITTER_EMAIL: autumnwind@snare.dev
+
+  SMTP_SERVER: smtp.fastmail.com
+  SMTP_PORT: 587
+  SMTP_USER: varun@snare.dev
+  EMAIL_TO: "~watersucks/nixed@lists.sr.ht"
+
+sources:
+  - https://git.sr.ht/~watersucks/nixed
+
+tasks:
+  - update-flake: |
+      cd ~/nixed
+
+      nix flake update
+      git add flake.lock
+      git commit -m "chore(deps): update nix flake inputs"
+
+  - update-nvfetcher: |
+      cd ~/nixed
+
+      nix run ".#update-nvfetcher-sources" -- -k ~/.config/nvfetcher-keyfile.toml || true
+
+      # If anything changed, commit it
+      git add -u .
+      git commit -m "chore(deps): update nvfetcher sources" || true
+
+  - send-email: |
+      cd ~/nixed
+
+      git format-patch \
+        --no-cc \
+        --from="Autumn Wind <varun@snare.dev>" \
+        origin/main \
+        -o /tmp/patches
+
+      git config sendemail.smtpserver "$SMTP_SERVER"
+      git config sendemail.smtpserverport "$SMTP_PORT"
+      git config sendemail.smtpuser "$SMTP_USER"
+      git config sendemail.smtpencryption tls
+      git config sendemail.smtpPass "$(cat ~/.config/smtp-password)"
+
+      git send-email \
+        --to "$EMAIL_TO" \
+        --no-cc \
+        --envelope-sender="$SMTP_USER" \
+        --from="Autumn Wind <varun@snare.dev>" \
+        --confirm=never \
+        /tmp/patches/*
+
+triggers:
+  - action: email
+    condition: failure
+    to: "<~watersucks/nixed@lists.sr.ht>"
