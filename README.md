@@ -20,6 +20,10 @@ files structured in yet another way. Is it good? Maybe; that's up to your
 discretion. If you think it's not, it can always be improved! Send me a message
 or open an issue, and I'd love to talk about it.
 
+The official source code is located on
+[SourceHut](https://sr.ht/~watersucks/nixed), but there is a mirror available on
+[GitHub](https://github.com/water-sucks/nixed).
+
 ## Packages/Modules
 
 I have a few custom packages and modules, some of which I do want to contribute
@@ -86,19 +90,3 @@ A legit MacBook that is a beast on the run. Used for music production on-the-go
 with Logic Pro X and mobile app development.
 
 More to come in the future, such as Bo Jackson. Stay tuned!
-
-## Thanks
-
-- [digga](https://github.com/divnix/digga) :: for making my initial Nix journey
-  possible, and also for some convenience functions and opinions on structure.
-- [flake-parts](https://github.com/hercules-ci/flake-parts) :: for being the
-  current backbone of my entire configuration.
-- [montchr/dotfield](https://github.com/montchr/dotfield) :: for showing me what
-  a super practical configuration can look like. Mine is nowhere near as complex
-  as his, but you'll see a lot of similarities and (maybe) blatant ripoffs.
-- [viperML/dotfiles](https://github.com/viperML/dotfiles) :: for giving me some
-  insight on how `flake-parts` works.
-- [fufexan/dotfiles](https://github.com/fufexan/dotfiles) :: for some naming
-  ideas and how to properly export a `lib` attribute.
-- [NobbZ/nixos-config](https://github.com/NobbZ/nixos-config) :: for a great way
-  to auto-update my flake using GitHub Actions

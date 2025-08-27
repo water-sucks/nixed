@@ -32,7 +32,7 @@ tasks:
 
       nix flake update
       git add flake.lock
-      git commit -m "chore(deps): update nix flake inputs"
+      git commit -m "chore(deps): update nix flake inputs & nvfetcher sources"
 
   - update-nvfetcher: |
       cd ~/nixed
@@ -41,7 +41,7 @@ tasks:
 
       # If anything changed, commit it
       git add -u .
-      git commit -m "chore(deps): update nvfetcher sources" || true
+      git commit --amend --no-edit
 
   - send-email: |
       cd ~/nixed
