@@ -7,15 +7,13 @@ lib.mkMerge [
   {
     programs.ssh = {
       enable = true;
-      forwardAgent = false;
-      serverAliveInterval = 300;
-      serverAliveCountMax = 2;
 
       includes = ["~/.config/ssh/config.local"];
 
       matchBlocks = {
         "*" = {
           addressFamily = "inet";
+          forwardAgent = false;
           forwardX11 = false;
           forwardX11Trusted = false;
           serverAliveInterval = 300;
