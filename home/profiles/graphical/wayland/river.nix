@@ -155,7 +155,7 @@ in {
           (exec [] "Print" "${screenshot}")
           (exec [mod] "Print" "${screenshot} -s")
           (exec [ctrl alt] "Delete" "rofi-power-menu-wayland")
-          (exec [mod] "l" "${waylockCommand}")
+          (exec [mod ctrl alt] "l" "${waylockCommand}")
 
           (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
           (exec [] "XF86AudioLowerVolume" ''${amixer} sset Master 5%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')
