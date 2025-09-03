@@ -75,7 +75,11 @@
   services.upower.enable = true;
   services.auto-cpufreq.enable = true;
   services.logind = {
-    lidSwitch = "suspend";
-    powerKey = "suspend";
+    settings = {
+      Login = {
+        HandlePowerKey = "suspend";
+        LidSwitch = "suspend";
+      };
+    };
   };
 }
