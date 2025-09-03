@@ -7,6 +7,7 @@ lib.mkMerge [
   {
     programs.ssh = {
       enable = true;
+      enableDefaultConfig = false;
 
       includes = ["~/.config/ssh/config.local"];
 
