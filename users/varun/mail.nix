@@ -3,7 +3,7 @@
   pkgs,
 }: let
   inherit (pkgs) lib;
-  inherit (pkgs.stdenv) isLinux;
+  inherit (pkgs.stdenv) isLinux isDarwin;
 
   sopsEmailPasswordBlock = key: {
     sopsFile = ./secrets/email.yml;
@@ -39,7 +39,7 @@ in
 
             msmtp.enable = true;
             mbsync = {
-              enable = isLinux;
+              enable = true;
               create = "both";
               expunge = "both";
               remove = "both";
@@ -54,19 +54,40 @@ in
           enable = true;
         };
       };
-      services = {
-        mbsync = {
-          enable = isLinux;
-          frequency = "*:0/1";
-        };
-      };
     }
 
     (lib.mkIf isLinux {
+      services.mbsync = {
+        enable = true;
+        frequency = "*:0/1";
+      };
+
       persistence = {
         directories = [
           "Mail"
         ];
+      };
+    })
+
+    (lib.mkIf isDarwin {
+      launchd.agents.mbsync = {
+        enable = true;
+        config = {
+          ProgramArguments = ["${pkgs.isync}/bin/mbsync" "-a"];
+          ProcessType = "Background";
+
+          StandardOutPath = "/tmp/mbsync.out";
+          StandardErrPath = "/tmp/mbsync.err";
+
+          RunAtLoad = false;
+          KeepAlive = false;
+
+          StartCalendarInterval = [
+            {
+              Minute = 1;
+            }
+          ];
+        };
       };
     })
   ]
