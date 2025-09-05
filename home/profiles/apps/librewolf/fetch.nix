@@ -1,6 +1,6 @@
 {
-  "arcadia-theme" = {
-    "src.git" = "https://github.com/tyrohellion/arcadia";
-    "fetch.github" = "tyrohellion/arcadia";
+  "cascadefox-theme" = {
+    "src.git" = "https://github.com/cascadefox/cascade";
+    "fetch.github" = "cascadefox/cascade";
   };
 }

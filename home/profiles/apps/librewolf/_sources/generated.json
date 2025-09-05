@@ -1,9 +1,9 @@
 {
-  "arcadia-theme": {
+  "cascadefox-theme": {
     "cargoLocks": null,
-    "date": "2025-08-11",
+    "date": "2025-08-17",
     "extract": null,
-    "name": "arcadia-theme",
+    "name": "cascadefox-theme",
     "passthru": null,
     "pinned": false,
     "src": {
@@ -11,13 +11,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "owner": "tyrohellion",
-      "repo": "arcadia",
-      "rev": "4f5b28ca133ae5dc1d52e7746fbabf014491ebdf",
-      "sha256": "sha256-glZ7GS2K2jyAf7Fir+taZzAe6OznHEewuj3clamUBTg=",
+      "owner": "cascadefox",
+      "repo": "cascade",
+      "rev": "1ad7bfa332dbde3ff62caea5e7fb59c1c6d11fe8",
+      "sha256": "sha256-adhwQpPb69wT5SZTmu7VxBbFpM4NNAuz4258k46T4K0=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "4f5b28ca133ae5dc1d52e7746fbabf014491ebdf"
+    "version": "1ad7bfa332dbde3ff62caea5e7fb59c1c6d11fe8"
   }
 }

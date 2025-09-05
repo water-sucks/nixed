@@ -5,16 +5,16 @@
   fetchFromGitHub,
   dockerTools,
 }: {
-  arcadia-theme = {
-    pname = "arcadia-theme";
-    version = "4f5b28ca133ae5dc1d52e7746fbabf014491ebdf";
+  cascadefox-theme = {
+    pname = "cascadefox-theme";
+    version = "1ad7bfa332dbde3ff62caea5e7fb59c1c6d11fe8";
     src = fetchFromGitHub {
-      owner = "tyrohellion";
-      repo = "arcadia";
-      rev = "4f5b28ca133ae5dc1d52e7746fbabf014491ebdf";
+      owner = "cascadefox";
+      repo = "cascade";
+      rev = "1ad7bfa332dbde3ff62caea5e7fb59c1c6d11fe8";
       fetchSubmodules = false;
-      sha256 = "sha256-glZ7GS2K2jyAf7Fir+taZzAe6OznHEewuj3clamUBTg=";
+      sha256 = "sha256-adhwQpPb69wT5SZTmu7VxBbFpM4NNAuz4258k46T4K0=";
     };
-    date = "2025-08-11";
+    date = "2025-08-17";
   };
 }

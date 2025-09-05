@@ -1,0 +1,107 @@
+diff --git a/chrome/includes/cascade-colours.css b/chrome/includes/cascade-colours.css
+index 498d73c..b1de842 100644
+--- a/chrome/includes/cascade-colours.css
++++ b/chrome/includes/cascade-colours.css
+@@ -2,48 +2,24 @@
+  | C | O | L | O | U | R | S |
+  +---+---+---+---+---+---+---*/
+ 
+-@media (prefers-color-scheme: dark) {
+-  :root {
+-    /* These colours are (mainly) used by the
++:root {
++  /* These colours are (mainly) used by the
+      Container Tabs Plugin */
+-    --uc-identity-colour-blue: #7ed6df;
+-    --uc-identity-colour-turquoise: #55e6c1;
+-    --uc-identity-colour-green: #b8e994;
+-    --uc-identity-colour-yellow: #f7d794;
+-    --uc-identity-colour-orange: #f19066;
+-    --uc-identity-colour-red: #fc5c65;
+-    --uc-identity-colour-pink: #f78fb3;
+-    --uc-identity-colour-purple: #786fa6;
+-
+-    /*  Cascades main Colour Scheme */
+-    --uc-base-colour: #1e2021;
+-    --uc-highlight-colour: #191b1c;
+-    --uc-inverted-colour: #fafafc;
+-    --uc-muted-colour: #aaaaac;
+-    --uc-accent-colour: var(--uc-identity-colour-purple);
+-  }
+-}
++  --uc-identity-colour-blue: #6d0011;
++  --uc-identity-colour-turquoise: #f6aca7;
++  --uc-identity-colour-green: #f85149;
++  --uc-identity-colour-yellow: #f0883e;
++  --uc-identity-colour-orange: #a26b35;
++  --uc-identity-colour-red: #9e4244;
++  --uc-identity-colour-pink: #ff7979;
++  --uc-identity-colour-purple: #8b2950;
+ 
+-@media (prefers-color-scheme: light) {
+-  :root {
+-    /* These colours are (mainly) used by the
+-     Container Tabs Plugin */
+-    --uc-identity-colour-blue: #1d65f5;
+-    --uc-identity-colour-turquoise: #209fb5;
+-    --uc-identity-colour-green: #40a02b;
+-    --uc-identity-colour-yellow: #e49320;
+-    --uc-identity-colour-orange: #fe640b;
+-    --uc-identity-colour-red: #fc5c65;
+-    --uc-identity-colour-pink: #ec83d0;
+-    --uc-identity-colour-purple: #822fee;
+-
+-    /*  Cascades main Colour Scheme */
+-    --uc-base-colour: #fafafc;
+-    --uc-highlight-colour: #dadadc;
+-    --uc-inverted-colour: #1e2021;
+-    --uc-muted-colour: #191b1c;
+-    --uc-accent-colour: var(--uc-identity-colour-purple);
+-  }
++  /*  Cascades main Colour Scheme */
++  --uc-base-colour: #101010;
++  --uc-highlight-colour: #121212;
++  --uc-inverted-colour: #c9c1c9;
++  --uc-muted-colour: #888888;
++  --uc-accent-colour: var(--uc-identity-colour-orange);
+ }
+ 
+ /* Down here I'm just reassigning variables based on the colours set above.
+@@ -92,30 +68,37 @@
+   --identity-tab-color: var(--uc-identity-colour-blue) !important;
+   --identity-icon-color: var(--uc-identity-colour-blue) !important;
+ }
++
+ .identity-color-turquoise {
+   --identity-tab-color: var(--uc-identity-colour-turquoise) !important;
+   --identity-icon-color: var(--uc-identity-colour-turquoise) !important;
+ }
++
+ .identity-color-green {
+   --identity-tab-color: var(--uc-identity-colour-green) !important;
+   --identity-icon-color: var(--uc-identity-colour-green) !important;
+ }
++
+ .identity-color-yellow {
+   --identity-tab-color: var(--uc-identity-colour-yellow) !important;
+   --identity-icon-color: var(--uc-identity-colour-yellow) !important;
+ }
++
+ .identity-color-orange {
+   --identity-tab-color: var(--uc-identity-colour-orange) !important;
+   --identity-icon-color: var(--uc-identity-colour-orange) !important;
+ }
++
+ .identity-color-red {
+   --identity-tab-color: var(--uc-identity-colour-red) !important;
+   --identity-icon-color: var(--uc-identity-colour-red) !important;
+ }
++
+ .identity-color-pink {
+   --identity-tab-color: var(--uc-identity-colour-pink) !important;
+   --identity-icon-color: var(--uc-identity-colour-pink) !important;
+ }
++
+ .identity-color-purple {
+   --identity-tab-color: var(--uc-identity-colour-purple) !important;
+   --identity-icon-color: var(--uc-identity-colour-purple) !important;
