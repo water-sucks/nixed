@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  rivertile = "${pkgs.river}/bin/rivertile";
+  rivertile = "${pkgs.river-classic}/bin/rivertile";
 
   c = config.colorscheme.palette;
 

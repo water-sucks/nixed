@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  services.displayManager.sessionPackages = with pkgs; [river];
+  services.displayManager.sessionPackages = with pkgs; [river-classic];
 
-  environment.systemPackages = with pkgs; [river];
+  environment.systemPackages = with pkgs; [river-classic];
 }
