@@ -5,7 +5,7 @@ image: nixos/unstable
 
 secrets:
   - 30a7dc8f-69e7-4f02-831a-d1559afd40d4
-  - 7b75bda7-2003-417c-b039-64d4b2edc80d
+  - 73773fe2-ee2b-4096-b673-3a26abbf738f
 
 packages:
   - nixos.gitFull
@@ -52,11 +52,13 @@ tasks:
         origin/main \
         -o /tmp/patches
 
+      set +x
       git config sendemail.smtpserver "$SMTP_SERVER"
       git config sendemail.smtpserverport "$SMTP_PORT"
       git config sendemail.smtpuser "$SMTP_USER"
       git config sendemail.smtpencryption tls
       git config sendemail.smtpPass "$(cat ~/.config/smtp-password)"
+      set -x
 
       git send-email \
         --to "$EMAIL_TO" \
