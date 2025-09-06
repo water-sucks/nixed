@@ -48,6 +48,7 @@
         ./modules/nvfetcher.nix
         ./modules/ssh-keys.nix
         ./modules/options-doc.nix
+        ./modules/srht.nix
 
         ./hosts/nixos
         ./hosts/darwin
