@@ -39,10 +39,9 @@ to use them, feel free! Here's a rundown of what they are:
 
 ### home-manager Modules
 
-| Name   | Description                             |
-| ------ | --------------------------------------- |
-| leftwm | LeftWM configuration                    |
-| vivid  | Vivid LS_COLORS generator configuration |
+| Name   | Description          |
+| ------ | -------------------- |
+| leftwm | LeftWM configuration |
 
 To use these modules, you can use the provided `homeModules` attribute.
 
