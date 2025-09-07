@@ -150,10 +150,14 @@
 in {
   programs.vivid = {
     enable = true;
-    enableZshIntegration = false; # So LS_COLORS can be set for completion along with initialization
+    enableZshIntegration = true;
     activeTheme = "darkrose";
     themes = {
       darkrose = yamlFormat.generate "darkrose.yml" darkroseTheme;
     };
   };
+
+  programs.zsh.initContent = ''
+    zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+  '';
 }
