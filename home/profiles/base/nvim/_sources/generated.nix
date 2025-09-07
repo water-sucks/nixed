@@ -343,19 +343,6 @@
     pretty-name = "mini.surround";
     date = "2025-08-28";
   };
-  plugin-neocodeium = {
-    pname = "plugin-neocodeium";
-    version = "f67384cee91f8ffc0d2e09d257691b2461725d5b";
-    src = fetchFromGitHub {
-      owner = "monkoose";
-      repo = "neocodeium";
-      rev = "f67384cee91f8ffc0d2e09d257691b2461725d5b";
-      fetchSubmodules = false;
-      sha256 = "sha256-UemmcgQbdTDYYh8BCCjHgr/wQ8M7OH0ef6MBMHfOJv8=";
-    };
-    pretty-name = "neocodeium";
-    date = "2025-08-28";
-  };
   plugin-neocord = {
     pname = "plugin-neocord";
     version = "2ebf3792a8100376bb65fd66d5dbf60f50af7529";

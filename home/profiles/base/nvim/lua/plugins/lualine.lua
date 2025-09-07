@@ -135,15 +135,6 @@ lualine_spec.config = function()
     },
   })
 
-  left({
-    function()
-      local status, _ = require("neocodeium").get_status()
-      local status_str = status == 0 and "ON" or "OFF"
-      return "{󱨚 " .. status_str .. "}"
-    end,
-    color = { fg = c.orange },
-  })
-
   right({
     function()
       local search = vim.fn.searchcount({ maxcount = 0 })

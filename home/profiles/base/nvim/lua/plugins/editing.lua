@@ -150,50 +150,6 @@ local template_spec = use("nvimdev/template.nvim", {
   end,
 })
 
-local neocodeium_spec = use("monkoose/neocodeium", {
-  config = function()
-    local neocodeium = require("neocodeium")
-    local wk = require("which-key")
-
-    neocodeium.setup({
-      enabled = false,
-      bin = vim.fn.exepath("codeium_language_server"),
-      manual = true,
-      silent = true,
-      filetypes = {
-        markdown = false,
-        gitcommit = false,
-        gitrebase = false,
-        TelescopePrompt = false,
-        ["dap-repl"] = false,
-        DressingInput = false,
-      },
-    })
-
-    wk.add({
-      { "<A-CR>", neocodeium.accept, desc = "Accept suggestion", mode = "i" },
-      { "<A-w>", neocodeium.accept_word, desc = "Accept word", mode = "i" },
-      { "<A-a>", neocodeium.accept_line, desc = "Accept line", mode = "i" },
-      { "<A-f>", neocodeium.cycle_or_complete, desc = "Cycle forward", mode = "i" },
-      {
-        "<A-f>",
-        function()
-          neocodeium.cycle_or_complete(-1)
-        end,
-        desc = "Cycle backwards",
-        mode = "i",
-      },
-      { "<A-c>", neocodeium.clear, desc = "Clear suggestion", mode = "i" },
-
-      { "<Leader>g", group = "NeoCodeium" },
-      { "<Leader>gt", "<Cmd>NeoCodeium toggle<CR>", desc = "Toggle NeoCodeium", mode = "n" },
-      { "<Leader>gk", "<Cmd>NeoCodeium! disable<CR>", desc = "Kill NeoCodeium", mode = "n" },
-      { "<Leader>gb", "<Cmd>NeoCodeium toggle_buffer<CR>", desc = "Toggle NeoCodeium (buffer)", mode = "n" },
-      { "<Leader>gr", "<Cmd>NeoCodeium restart<CR>", desc = "Restart NeoCodeium", mode = "n" },
-    })
-  end,
-})
-
 local hardtime_spec = use("m4xshen/hardtime.nvim", {
   dependencies = { use("MunifTanjim/nui.nvim") },
   opts = {
@@ -217,7 +173,6 @@ return {
   hardtime_spec,
   minimove,
   leap_spec,
-  neocodeium_spec,
   repeat_spec,
   sort_spec,
   surround_spec,
