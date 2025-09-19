@@ -112,6 +112,7 @@ in
           emmet-ls
           gopls
           golangci-lint-langserver
+          golangci-lint
           harper
           jdt-language-server
           lua-language-server
