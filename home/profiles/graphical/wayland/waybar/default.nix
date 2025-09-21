@@ -5,7 +5,7 @@
   ...
 }: let
   sed = "${pkgs.gnused}/bin/sed";
-  rofi = "${pkgs.rofi-wayland}/bin/rofi";
+  rofi = "${pkgs.rofi}/bin/rofi";
   grep = "${pkgs.gnugrep}/bin/grep";
   kitty = "${pkgs.kitty}/bin/kitty";
   termLaunch = "${kitty} -e";

@@ -30,7 +30,7 @@
   slurp = "${pkgs.slurp}/bin/slurp";
   grim = "${pkgs.grim}/bin/grim";
   dunstify = "${pkgs.dunst}/bin/dunstify";
-  rofi = "${pkgs.rofi-wayland}/bin/rofi";
+  rofi = "${pkgs.rofi}/bin/rofi";
   swayidle = "${pkgs.swayidle}/bin/swayidle";
   waylockWrapper =
     pkgs.writeShellScriptBin "waylock"
