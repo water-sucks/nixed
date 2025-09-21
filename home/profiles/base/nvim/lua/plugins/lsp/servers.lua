@@ -1,4 +1,4 @@
-local lsp = require("lspconfig")
+local root_pattern = require("lspconfig/util").root_pattern
 
 local prettier = vim.fn.exepath("prettier")
 if prettier == "" then
@@ -95,22 +95,11 @@ local server_configs = {
   ccls = {},
   cssls = {},
   denols = {
-    root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc"),
+    root_dir = root_pattern("deno.json", "deno.jsonc"),
     single_file_support = false,
   },
   efm = {
     init_options = { documentFormatting = true },
-    on_attach = function(client, _)
-      -- ccls is UTF-32 only, and that gives me a SUPER annoying error message.
-      -- I need to change the encoding prevent this warning madness.
-      local filetypes_to_change = require("lspconfig").ccls.document_config.default_config.filetypes
-      local current_filetype = vim.bo.filetype
-      for _, filetype in ipairs(filetypes_to_change) do
-        if filetype == current_filetype then
-          client.offset_encoding = "utf-32"
-        end
-      end
-    end,
     settings = {
       rootMarkers = { ".git/" },
       languages = {
@@ -282,7 +271,7 @@ local server_configs = {
     },
   },
   ts_ls = {
-    root_dir = lsp.util.root_pattern("package.json"),
+    root_dir = root_pattern("package.json"),
     single_file_support = false,
   },
   vala_ls = {},
@@ -295,5 +284,5 @@ vim.g.zig_fmt_parse_errors = 0
 
 for server, cfg in pairs(server_configs) do
   cfg.capabilities = require("blink.cmp").get_lsp_capabilities(cfg.capabilities or {})
-  lsp[server].setup(cfg)
+  vim.lsp.enable(server, cfg)
 end
