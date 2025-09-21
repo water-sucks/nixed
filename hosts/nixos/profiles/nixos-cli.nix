@@ -9,6 +9,7 @@ _: {
         gendel = ["generation" "delete"];
         gendelall = ["generation" "delete" "--all"];
         build = ["apply" "--no-activate" "--no-boot" "--output" "result"];
+        test = ["apply" "--no-boot" "-y"];
       };
 
       apply = {
