@@ -284,5 +284,6 @@ vim.g.zig_fmt_parse_errors = 0
 
 for server, cfg in pairs(server_configs) do
   cfg.capabilities = require("blink.cmp").get_lsp_capabilities(cfg.capabilities or {})
-  vim.lsp.enable(server, cfg)
+  vim.lsp.config[server] = cfg
+  vim.lsp.enable(server)
 end
