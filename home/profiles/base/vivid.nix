@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   c = config.colorscheme.palette;
@@ -157,7 +158,7 @@ in {
     };
   };
 
-  programs.zsh.initContent = ''
+  programs.zsh.initContent = lib.mkOrder 1200 ''
     zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
   '';
 }
