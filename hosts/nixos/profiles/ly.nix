@@ -19,7 +19,7 @@ in {
       load = true;
       save = true;
       xinitrc = "null";
-      session_log = "null";
+      session_log = "/dev/null";
       brightness_up_cmd = "${light} -A 5";
       brightness_down_cmd = "${light} -U 5";
       text_in_center = true;
