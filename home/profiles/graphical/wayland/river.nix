@@ -154,7 +154,7 @@ in {
           (exec [mod shift] return "${rofi} -show combi -combi-modi 'drun,window,run,ssh' -modi combi")
           (exec [] "Print" "${screenshot}")
           (exec [mod] "Print" "${screenshot} -s")
-          (exec [ctrl alt] "Delete" "rofi-power-menu-wayland")
+          (exec [ctrl alt] "Delete" "rofi-power-menu")
           (exec [mod ctrl alt] "l" "${waylockCommand}")
 
           (exec [] "XF86AudioRaiseVolume" ''${amixer} sset Master 5%+ | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${wobSocket}'')

@@ -190,7 +190,7 @@ in {
         };
         "custom/powermenu" = {
           format = "󰐥";
-          on-click = "rofi-power-menu-wayland";
+          on-click = "rofi-power-menu";
         };
       };
     };
