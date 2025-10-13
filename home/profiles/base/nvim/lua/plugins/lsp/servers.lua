@@ -1,5 +1,3 @@
-local root_pattern = require("lspconfig/util").root_pattern
-
 local prettier = vim.fn.exepath("prettier")
 if prettier == "" then
   prettier = vim.fn.exepath("prettier-default-config")
@@ -95,7 +93,7 @@ local server_configs = {
   ccls = {},
   cssls = {},
   denols = {
-    root_dir = root_pattern("deno.json", "deno.jsonc"),
+    root_markers = { "deno.json", "deno.jsonc" },
     single_file_support = false,
   },
   efm = {
@@ -271,7 +269,7 @@ local server_configs = {
     },
   },
   ts_ls = {
-    root_dir = root_pattern("package.json"),
+    root_markers = { "package.json" },
     single_file_support = false,
   },
   vala_ls = {},
