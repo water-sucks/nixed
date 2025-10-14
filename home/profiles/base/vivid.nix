@@ -1,12 +1,12 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: let
   c = config.colorscheme.palette;
 
-  yamlFormat = pkgs.formats.json {};
+  # JSON is a valid subset for a YAML parser.
+  jsonFormat = pkgs.formats.json {};
 
   darkroseTheme = {
     colors = {
@@ -149,16 +149,13 @@
     };
   };
 in {
-  programs.vivid = {
-    enable = true;
-    enableZshIntegration = true;
-    activeTheme = "darkrose";
-    themes = {
-      darkrose = yamlFormat.generate "darkrose.yml" darkroseTheme;
-    };
-  };
+  programs.vivid.enable = true;
 
-  programs.zsh.initContent = lib.mkOrder 1200 ''
+  xdg.configFile."vivid/themes/darkrose.yml".source =
+    jsonFormat.generate "darkrose-theme.yml" darkroseTheme;
+
+  programs.zsh.initContent = ''
+    export LS_COLORS="$(vivid generate darkrose)"
     zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
   '';
 }
