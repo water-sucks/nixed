@@ -34,7 +34,7 @@
     kvm.enable = true;
     ios.enable = true;
     docker.enable = true;
-    ollama.enable = true;
+    ollama.enable = false;
     tailscale.enable = true;
     optnix.enable = true;
 
