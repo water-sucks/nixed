@@ -1,5 +1,5 @@
 _: {
   homebrew.casks = [
-    "ollama"
+    "ollama-app"
   ];
 }
