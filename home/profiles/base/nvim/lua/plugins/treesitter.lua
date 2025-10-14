@@ -5,7 +5,6 @@ local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
     use("windwp/nvim-ts-autotag", {}),
     use("JoosepAlviste/nvim-ts-context-commentstring", {}),
   },
-  event = "VeryLazy",
 })
 
 treesitter_spec.config = function()
