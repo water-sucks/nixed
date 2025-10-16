@@ -149,7 +149,9 @@
     };
   };
 in {
-  programs.vivid.enable = true;
+  home.packages = [
+    pkgs.vivid
+  ];
 
   xdg.configFile."vivid/themes/darkrose.yml".source =
     jsonFormat.generate "darkrose-theme.yml" darkroseTheme;
