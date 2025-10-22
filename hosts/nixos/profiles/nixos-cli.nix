@@ -1,6 +1,7 @@
 _: {
   services.nixos-cli = {
     enable = true;
+    useActivationInterface = true;
     config = {
       aliases = {
         genlist = ["generation" "list"];
