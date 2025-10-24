@@ -164,6 +164,7 @@ local server_configs = {
   },
   golangci_lint_ls = {},
   harper_ls = {
+    filetypes = { "markdown", "toml", "typst" },
     settings = {
       ["harper-ls"] = {
         userDictPath = vim.fn.stdpath("data") .. "/harper-dict.txt",
