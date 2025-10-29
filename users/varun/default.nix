@@ -25,9 +25,9 @@ in {
       (import ./mail.nix {inherit config pkgs;})
       # User-specific program configuration
       {
-        programs.git = {
-          userEmail = "varun@snare.dev";
-          userName = "Varun Narravula";
+        programs.git.settings = {
+          user.email = "varun@snare.dev";
+          user.name = "Varun Narravula";
           signing = {
             key = "A1F17E43F6747FC0";
             signByDefault = true;
