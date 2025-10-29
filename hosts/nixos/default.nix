@@ -14,7 +14,7 @@
     }:
       lib.nixosSystem {
         specialArgs = {
-          inherit self inputs lib;
+          inherit self inputs lib pkgs;
         };
         modules = with inputs; [
           nixpkgs.nixosModules.readOnlyPkgs
@@ -25,19 +25,16 @@
           optnix.nixosModules.optnix
           (import configuration)
           {
-            nixpkgs.pkgs = pkgs;
+            nixpkgs = {
+              inherit pkgs;
+              hostPlatform = system;
+            };
             networking.hostName = hostname;
             users.mutableUsers = false;
             programs.fuse.userAllowOther = true; # Used for home.persistence.allowOther options, must be enabled
             system.configurationRevision = self.rev or "dirty";
           }
-          (args': let
-            args =
-              args'
-              // {
-                inherit pkgs;
-              };
-          in {
+          (args: {
             imports =
               (genModules args "profiles" ../profiles) # Common profiles
               ++ (genModules args "profiles" ./profiles) # NixOS profiles
