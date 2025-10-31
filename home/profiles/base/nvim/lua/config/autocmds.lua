@@ -31,6 +31,24 @@ au("FileType", {
   end,
 })
 
+vim.api.nvim_create_augroup("MailCommands", { clear = true })
+au("FileType", {
+  group = "MailCommands",
+  pattern = "mail",
+  callback = function()
+    vim.opt.colorcolumn = "72"
+  end,
+})
+
+vim.api.nvim_create_augroup("GitCommit", { clear = true })
+au("FileType", {
+  group = "GitCommit",
+  pattern = "gitcommit",
+  callback = function()
+    vim.opt.colorcolumn = "72"
+  end,
+})
+
 vim.api.nvim_create_augroup("AutoDeleteGitBuffer", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
   group = "AutoDeleteGitBuffer",
