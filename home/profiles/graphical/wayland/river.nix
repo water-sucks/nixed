@@ -82,6 +82,7 @@ in {
         };
       };
       set-repeat = "50 250";
+      set-cursor-warp = "on-output-change";
       map = {
         normal = builtins.listToAttrs (lib.lists.flatten [
           # General
