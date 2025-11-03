@@ -8,7 +8,7 @@ in
   lib.mkMerge [
     (lib.mkIf isLinux {
       home.packages = with pkgs; [
-        bitwarden
+        bitwarden-desktop
       ];
 
       persistence = {
