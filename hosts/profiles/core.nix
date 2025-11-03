@@ -37,7 +37,7 @@
         file
         procs
         usbutils
-        utillinux
+        util-linux
 
         man-pages
         man-pages-posix
