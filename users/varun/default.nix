@@ -55,6 +55,9 @@ in {
             trust = 5;
           }
         ];
+        services.gpg-agent.sshKeys = [
+          "522E3A7813B5D0B5D70E5A40A1F17E43F6747FC0"
+        ];
 
         sops = let
           secretBlock = sopsFile: secretName: {

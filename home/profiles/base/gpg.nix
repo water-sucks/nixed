@@ -33,6 +33,8 @@ in
       services.gpg-agent = {
         enable = true;
         pinentry.package = pkgs.pinentry-curses;
+        defaultCacheTtl = 60 * 30;
+        enableSshSupport = true;
       };
 
       systemd.user.services.gpg-agent = {
