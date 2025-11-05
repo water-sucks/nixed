@@ -6,6 +6,7 @@
   ...
 }: let
   inherit (pkgs.stdenv) isLinux isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) system;
 
   sources = pkgs.callPackage _sources/generated.nix {};
 
@@ -58,7 +59,7 @@ in
           isDefault = true;
           inherit settings;
 
-          extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+          extensions.packages = with inputs.firefox-addons.packages.${system}; [
             ublock-origin
             darkreader
             simplelogin
