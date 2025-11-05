@@ -37,7 +37,7 @@ in {
       allowed-users = ["*"];
       max-jobs = "auto";
       cores = 0;
-      auto-optimise-store = !isDarwin;
+      auto-optimise-store = false;
       substituters = [
         "https://nix-community.cachix.org"
         "https://watersucks.cachix.org"
