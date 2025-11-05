@@ -3,6 +3,5 @@ inputs: let
 
   importers = import ./importers.nix lib;
   generators = import ./generators.nix lib;
-  filter-packages = import ./filter-packages.nix;
 in
-  importers // generators // filter-packages
+  importers // generators

@@ -15,7 +15,7 @@
   icon = "${icons}/build/neue_outrun.icns";
 
   fileicon =
-    if pkgs.stdenv.system == "aarch64-darwin"
+    if pkgs.stdenv.hostPlatform.system == "aarch64-darwin"
     then "/opt/homebrew/bin/fileicon"
     else "/usr/local/bin/fileicon";
 

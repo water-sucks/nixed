@@ -6,17 +6,18 @@
 }: let
   inherit (self.lib) collectLeaves genModules genHosts;
 
-  mkDarwin = hostname: configuration: {system ? "x86_64-darwin", ...}:
+  mkDarwin = hostname: configuration: {system, ...}:
     withSystem system ({
       pkgs,
       lib,
       system,
+      pkgsStable,
       ...
     }:
       inputs.darwin.lib.darwinSystem {
         inherit system;
         specialArgs = {
-          inherit self inputs lib pkgs;
+          inherit self inputs lib pkgs pkgsStable;
         };
         modules = with inputs; [
           home.darwinModules.home-manager

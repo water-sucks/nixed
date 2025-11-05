@@ -1,13 +1,14 @@
 {
   config,
   pkgs,
+  pkgsStable,
   ...
 }: let
   sources = pkgs.callPackage _sources/generated.nix {};
 in {
   programs.git = {
     enable = true;
-    package = pkgs.stable.gitFull;
+    package = pkgsStable.gitFull;
     includes = [
       {path = "${sources.git-aliases.src}/gitalias.txt";}
       {path = "${config.home.homeDirectory}/.config/git/local.txt";}

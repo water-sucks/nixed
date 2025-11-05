@@ -6,18 +6,18 @@
 }: let
   inherit (self.lib) importModules collectLeaves genModules genHosts;
 
-  mkNixOS = hostname: configuration: {system ? "x86_64-linux", ...}:
+  mkNixOS = hostname: configuration: {system, ...}:
     withSystem system ({
       pkgs,
       lib,
+      pkgsStable,
       ...
     }:
       lib.nixosSystem {
         specialArgs = {
-          inherit self inputs lib pkgs;
+          inherit self inputs lib pkgsStable;
         };
         modules = with inputs; [
-          nixpkgs.nixosModules.readOnlyPkgs
           sops-nix.nixosModules.sops
           impermanence.nixosModules.impermanence
           home.nixosModules.home-manager
@@ -26,15 +26,18 @@
           (import configuration)
           {
             nixpkgs = {
-              inherit pkgs;
               hostPlatform = system;
+              overlays = [self.overlays.default];
+              config.allowUnfree = true;
             };
             networking.hostName = hostname;
             users.mutableUsers = false;
             programs.fuse.userAllowOther = true; # Used for home.persistence.allowOther options, must be enabled
             system.configurationRevision = self.rev or "dirty";
           }
-          (args: {
+          (args': let
+            args = args' // {inherit pkgs;};
+          in {
             imports =
               (genModules args "profiles" ../profiles) # Common profiles
               ++ (genModules args "profiles" ./profiles) # NixOS profiles
@@ -49,8 +52,8 @@
 in {
   flake = {
     nixosConfigurations = with generatedHosts; {
-      CharlesWoodson = CharlesWoodson {};
-      SebastianJanikowski = SebastianJanikowski {};
+      CharlesWoodson = CharlesWoodson {system = "x86_64-linux";};
+      SebastianJanikowski = SebastianJanikowski {system = "x86_64-linux";};
     };
 
     nixosModules = let

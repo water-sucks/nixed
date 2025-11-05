@@ -57,35 +57,22 @@
         ./templates
       ];
 
-      systems = ["x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin"];
+      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin"];
 
-      perSystem = {
-        pkgs,
-        system,
-        ...
-      }: let
-        overlays = with inputs;
-          [
-            self.overlays.default
-            # Keeping this out of the exposed overlay, I don't want to
-            # expose nvfetcher-generated stuff, that's annoying.
-            (_final: _prev: {
-              sources = pkgs.callPackage ./pkgs/_sources/generated.nix {};
-            })
-            (_final: _prev: {
-              stable = import nixpkgs-stable {
-                inherit system;
-                config.allowUnfree = true;
-              };
-            })
-          ]
-          ++ (map import (with lib; collectLeaves ./overrides));
-      in {
+      perSystem = {system, ...}: {
         _module.args = {
           inherit self inputs;
           lib = nixpkgs.lib.extend (_: _: lib);
+
           pkgs = import nixpkgs {
-            inherit system overlays;
+            inherit system;
+            overlays = [self.overlays.default];
+            config.allowUnfree = true;
+          };
+
+          pkgsStable = import inputs.nixpkgs-stable {
+            inherit system;
+            overlays = [self.overlays.default];
             config.allowUnfree = true;
           };
         };
