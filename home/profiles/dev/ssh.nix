@@ -23,7 +23,7 @@ lib.mkMerge [
           extraOptions = {
             AddKeysToAgent = "yes";
             ChallengeResponseAuthentication = "no";
-            PasswordAuthentication = "no";
+            PasswordAuthentication = "yes";
             StrictHostKeyChecking = "ask";
             VisualHostKey = "yes";
           };
