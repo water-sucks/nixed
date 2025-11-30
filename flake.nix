@@ -17,7 +17,7 @@
 
     nixos-cli.url = "github:nix-community/nixos-cli";
 
-    optnix.url = "github:water-sucks/optnix";
+    optnix.url = "sourcehut:~watersucks/optnix";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
