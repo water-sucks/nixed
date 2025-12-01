@@ -58,6 +58,7 @@ in
           dog = "bat";
           benji = "dog";
           mkdir = "mkdir -p";
+          thon = "python";
         };
       };
     }
