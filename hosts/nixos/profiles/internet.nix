@@ -16,18 +16,8 @@ in {
     nameservers = defaultNameservers;
     networkmanager = {
       enable = true;
-      dns = "systemd-resolved";
+      dns = "default";
     };
-  };
-
-  # systemd-resolved handles nameserver resolution.
-  services.resolved = {
-    enable = true;
-    extraConfig = ''
-      MulticastDNS=no # This is handled by Avahi.
-    '';
-    domains = ["~."];
-    fallbackDns = defaultNameservers;
   };
 
   # Avahi provides mDNS resolution for local networks.
