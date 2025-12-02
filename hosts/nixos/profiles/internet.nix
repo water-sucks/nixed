@@ -17,6 +17,7 @@ in {
     networkmanager = {
       enable = true;
       dns = "default";
+      appendNameservers = defaultNameservers;
     };
   };
 
