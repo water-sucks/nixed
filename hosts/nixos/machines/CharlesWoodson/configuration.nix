@@ -1,4 +1,8 @@
-{config, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   pwSecretLocation = username: {
     sopsFile = ./secrets/passwords.yml;
     format = "yaml";
@@ -58,11 +62,7 @@ in {
   services.hardware.openrgb.enable = true;
 
   services.ollama = {
-    # The ollama systemd service does not deal with bind
-    # mounts properly, and attempts to configure this directory.
-    # imperatively upon startup by changing permissions and other.
-    # things
-    acceleration = "rocm";
+    package = pkgs.ollama-rocm;
     rocmOverrideGfx = "10.3.0"; # AMD RX 6900 XT
   };
 
