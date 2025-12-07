@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgsStable,
   lib,
   ...
 }: let
@@ -7,8 +8,8 @@
 in
   lib.mkMerge [
     (lib.mkIf isLinux {
-      home.packages = with pkgs; [
-        bitwarden-desktop
+      home.packages = [
+        pkgsStable.bitwarden-desktop
       ];
 
       persistence = {
