@@ -23,6 +23,10 @@ in {
         spinner = ''
           [ ⡿ ],[ ⣟ ],[ ⣯ ],[ ⣷ ],[ ⣾ ],[ ⣽ ],[ ⣻ ],[ ⢿ ]
         '';
+
+        threading-enabled = true;
+        threading-by-subject = true;
+        show-thread-context = true;
       };
 
       hooks = {
@@ -127,8 +131,10 @@ in {
         H = ":toggle-headers<Enter>";
         "<C-k>" = ":prev-part<Enter>";
         "<C-j>" = ":next-part<Enter>";
-        J = ":next <Enter>";
+        J = ":next<Enter>";
         K = ":prev<Enter>";
+        "<A-j>" = ":next-message<Enter>";
+        "<A-k>" = ":prev-message<Enter>";
       };
 
       "view::passthrough" = {
