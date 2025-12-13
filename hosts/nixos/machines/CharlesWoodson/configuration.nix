@@ -20,8 +20,6 @@ in {
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  xdg.portal.wlr.settings.screencast.output_name = "HDMI-A-1";
-
   sops = {
     age.keyFile = "/persist/var/secrets/sops_key";
     secrets = {

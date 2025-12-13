@@ -18,8 +18,6 @@ in {
 
   networking.hostId = "7effc63b";
 
-  xdg.portal.wlr.settings.screencast.output_name = "eDP-1";
-
   sops = {
     age.keyFile = "/persist/var/secrets/sops_key";
     secrets = {
