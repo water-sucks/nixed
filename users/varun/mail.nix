@@ -45,6 +45,11 @@ in
               expunge = "both";
               remove = "both";
             };
+
+            imapnotify = {
+              enable = true;
+              onNotify = ''${pkgs.isync}/bin/mbsync personal'';
+            };
           };
 
           work = {
@@ -114,6 +119,11 @@ in
                   };
                 };
             };
+
+            imapnotify = {
+              enable = true;
+              onNotify = ''${pkgs.isync}/bin/mbsync work'';
+            };
           };
         };
       };
@@ -123,6 +133,9 @@ in
         mbsync = {
           enable = true;
         };
+      };
+      services.imapnotify = {
+        enable = true;
       };
     }
 
