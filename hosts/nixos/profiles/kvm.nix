@@ -2,6 +2,7 @@
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
+      swtpm.enable = true;
       runAsRoot = true;
       verbatimConfig = ''
         remember_owner=0
