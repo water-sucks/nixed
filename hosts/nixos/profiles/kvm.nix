@@ -4,6 +4,7 @@
     qemu = {
       swtpm.enable = true;
       runAsRoot = true;
+      vhostUserPackages = [pkgs.virtiofsd];
       verbatimConfig = ''
         remember_owner=0
         namespaces=[]
