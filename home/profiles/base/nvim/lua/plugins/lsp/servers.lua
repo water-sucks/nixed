@@ -260,8 +260,18 @@ local server_configs = {
       },
     },
   },
-  svelte = {},
+  sourcekit = {
+    filetypes = { "swift", "objcpp", "objc" },
+    capabilities = {
+      workspace = {
+        didChangeWatchedFiles = {
+          dynamicRegistration = true,
+        },
+      },
+    },
+  },
   superhtml = {},
+  svelte = {},
   terraformls = {},
   tinymist = {
     settings = {
