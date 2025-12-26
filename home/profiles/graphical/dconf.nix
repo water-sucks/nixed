@@ -17,4 +17,10 @@
       theme-name = "";
     };
   };
+
+  persistence = {
+    directories = [
+      ".config/dconf"
+    ];
+  };
 }
