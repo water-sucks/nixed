@@ -16,7 +16,6 @@
 
     xserver = {
       enable = true;
-      videoDrivers = ["modesetting"]; # Base, all hosts should set accordingly
       xkb.layout = "us";
 
       autoRepeatDelay = 250;
@@ -44,6 +43,9 @@
     sounds.enable = false;
     portal = {
       enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
       configPackages = [
         pkgs.xdg-desktop-portal-gtk
       ];

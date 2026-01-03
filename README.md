@@ -62,13 +62,17 @@ hear it! The Autumn Wind is a Raider no matter the location ;}
 - Type: Home workstation
 - Operating system: NixOS
 - Specs:
-  - AMD Ryzen 9 3950X (16 cores, 3.8 GHz OC)
-  - G.SKILL Trident RGB (64 GB DDR4-3600)
-  - AMD Radeon RX 5500 XT
-  - Sabrent Rocket 4.0 (1 TB)
+  - CPU :: AMD Ryzen 9 9950 X3D (16 cores, 4.5 GHz OC)
+  - CPU Cooler :: Scythe Mugen 5 Rev. B
+  - Motherboard :: MSI X870E-P PRO WIFI AMD AM5 ATX
+  - RAM :: G.Skill Flare X5 Series (32 GB DDR5-6000, 2x16 GB)
+  - GPU :: ASUS Prime RTX 5080 OC (16 GB GDDR7 VRAM)
+  - Storage :: Sabrent Rocket 4.0 (1 TB)
+  - Case :: Fractal Design Meshify C
+  - PSU :: Phanteks Revolt SFX (850W, 80+ Gold)
 
-My daily driver workstation; it's served me well throughout the years, and
-doesn't take too much power, even when overclocked. What a legend.
+My daily driver workstation. It's a BEAST of a machine, built right as the
+global supply shortages started to ramp up at the very beginning of 2026.
 
 ### SebastianJanikowski
 

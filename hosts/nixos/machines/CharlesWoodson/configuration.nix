@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   pwSecretLocation = username: {
     sopsFile = ./secrets/passwords.yml;
     format = "yaml";
@@ -58,11 +54,6 @@ in {
   services.earlyoom.enable = true;
 
   services.hardware.openrgb.enable = true;
-
-  services.ollama = {
-    package = pkgs.ollama-rocm;
-    rocmOverrideGfx = "10.3.0"; # AMD RX 6900 XT
-  };
 
   system.stateVersion = "21.11";
 }

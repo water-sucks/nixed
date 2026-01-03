@@ -1,39 +1,61 @@
 {config, ...}: {
-  hardware.enableRedistributableFirmware = true;
-  hardware.cpu.amd.updateMicrocode = true;
-
   boot = {
     loader.grub = {
       default = "saved";
       gfxmodeEfi = "2560x1440";
     };
 
-    initrd = {
-      luks.devices.root = {
-        device = "/dev/disk/by-uuid/f2bf3c59-b764-43d7-b48f-8163f7219387";
-        preLVM = true;
-        allowDiscards = true;
-      };
+    zfs = {
+      devNodes = "/dev/disk/by-uuid";
+      requestEncryptionCredentials = true;
+    };
 
-      availableKernelModules = ["amdgpu" "dm-snapshot" "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
-      kernelModules = ["dm-snapshot" "amdgpu"];
+    initrd = {
+      availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
+      kernelModules = [];
       verbose = false;
+
+      systemd.services.impermanence-root = {
+        wantedBy = ["initrd.target"];
+        after = ["zfs-import-locker.service"];
+        before = ["sysroot.mount"];
+        path = [config.boot.zfs.package];
+        unitConfig.DefaultDependencies = "no";
+        serviceConfig.type = "oneshot";
+        script = ''
+          zfs rollback -r locker/root@blank
+        '';
+      };
     };
 
     supportedFilesystems = ["zfs"];
 
-    kernelModules = ["amdgpu" "kvm-amd" "wl" "v412loopback"];
+    kernelModules = ["wl" "v412loopback"];
 
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback.out
     ];
   };
 
+  # TODO: enable zfs scrub, trim service periodically (weekly)
+
+  hardware = {
+    enableRedistributableFirmware = true;
+    cpu.amd.updateMicrocode = true;
+    nvidia = {
+      open = true; # Use the open-source modules
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      modesetting.enable = true;
+    };
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
+
   fileSystems = {
     "/" = {
-      device = "none";
-      fsType = "tmpfs";
-      options = ["size=6G" "mode=755"];
+      device = "locker/root";
+      fsType = "zfs";
+      neededForBoot = true;
     };
 
     "/boot" = {
@@ -59,9 +81,12 @@
     };
   };
 
-  swapDevices = [{device = "/dev/disk/by-partlabel/swap";}];
+  swapDevices = [
+    {device = "/dev/disk/by-uuid/2668a398-1360-4f36-9898-1969ceaa327b";}
+  ];
 
   systemd.services.systemd-udev-settle.enable = false;
+
   systemd.services.NetworkManager-wait-online.enable = false;
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
