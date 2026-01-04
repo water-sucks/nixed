@@ -26,7 +26,7 @@
         statix = {
           tags = ["check"];
           glob = "*.nix";
-          exclude = "generated.nix|node-packages";
+          exclude = "**/generated.nix";
           # statix only supports single files; cringe
           run = "echo {staged_files} | xargs -n1 ${pkgs.statix}/bin/statix check";
         };
@@ -34,7 +34,7 @@
         deadnix = {
           tags = ["check"];
           glob = "*.nix";
-          exclude = "generated.nix|node-packages";
+          exclude = "**/generated.nix";
           run = "${pkgs.deadnix}/bin/deadnix -f {staged_files}";
         };
 
