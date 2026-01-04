@@ -683,15 +683,16 @@
   };
   plugin-render-markdown-nvim = {
     pname = "plugin-render-markdown-nvim";
-    version = "f2bdf9f866671456f7a6119cc94501048d9d172c";
+    version = "da6a7b25471ab23824f3429225973186eb0b62d2";
     src = fetchFromGitHub {
       owner = "MeanderingProgrammer";
       repo = "render-markdown.nvim";
-      rev = "f2bdf9f866671456f7a6119cc94501048d9d172c";
+      rev = "da6a7b25471ab23824f3429225973186eb0b62d2";
       fetchSubmodules = false;
-      sha256 = "sha256-1GbjWHfcC6TIQM1zPnybKs0fcNbQjJJcb6Rb4R9T3nc=";
+      sha256 = "sha256-IqH0GWDy08aWMAxaqSwL1yf/DxDgVUyhlEXGR/+UjOw=";
     };
     pretty-name = "render-markdown.nvim";
+    date = "2026-01-03";
   };
   plugin-roslyn-nvim = {
     pname = "plugin-roslyn-nvim";
