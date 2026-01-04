@@ -1,7 +1,6 @@
 local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
   dependencies = {
     use("nvim-treesitter/nvim-treesitter-textobjects", {}),
-    use("nvim-treesitter/nvim-treesitter-refactor", {}),
     use("windwp/nvim-ts-autotag", {}),
     use("JoosepAlviste/nvim-ts-context-commentstring", {}),
   },
@@ -103,26 +102,6 @@ treesitter_spec.config = function()
       },
     },
 
-    refactor = {
-      highlight_definitions = {
-        enable = false,
-      },
-      highlight_current_scope = {
-        enable = false,
-      },
-      navigation = {
-        enable = true,
-        keymaps = {
-          goto_definition_lsp_fallback = "gd",
-          goto_definition = "<nop>",
-          list_definitions = "glD",
-          list_definitions_toc = "glO",
-          goto_next_usage = "gn",
-          goto_previous_usage = "gp",
-        },
-      },
-    },
-
     autotag = {
       enable = true,
     },
@@ -130,12 +109,6 @@ treesitter_spec.config = function()
 
   wk.add({
     { "<Leader>s", group = "Swap" },
-    { "gd", desc = "Go to definition" },
-    { "gn", desc = "Jump to next usage" },
-    { "gp", desc = "Jump to previous usage" },
-    { "gl", group = "List" },
-    { "glD", desc = "List definitions" },
-    { "glO", desc = "List definitions TOC" },
   })
 
   --[[ -- Use HTML parser for XML files ]]

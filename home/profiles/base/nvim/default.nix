@@ -56,7 +56,7 @@
     // {
       # Add plugins you want synced with nixpkgs here, or override
       # existing ones from the generated plugin set.
-      inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects nvim-treesitter-refactor;
+      inherit (pkgs.vimPlugins) nvim-treesitter nvim-treesitter-textobjects;
       "blink.cmp" = pkgs.vimPlugins.blink-cmp;
     };
 
