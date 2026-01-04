@@ -965,6 +965,29 @@
     },
     "version": "d17c99fb527ada98ffb0212ffc87ccda6fd4f7d9"
   },
+  "plugin-nvim-treesitter-textobjects": {
+    "cargoLocks": null,
+    "date": "2025-10-31",
+    "extract": null,
+    "name": "plugin-nvim-treesitter-textobjects",
+    "passthru": {
+      "pretty-name": "nvim-treesitter-textobjects"
+    },
+    "pinned": false,
+    "src": {
+      "deepClone": false,
+      "fetchSubmodules": false,
+      "leaveDotGit": false,
+      "name": null,
+      "owner": "nvim-treesitter",
+      "repo": "nvim-treesitter-textobjects",
+      "rev": "5ca4aaa6efdcc59be46b95a3e876300cfead05ef",
+      "sha256": "sha256-lf+AwSu96iKO1vWWU2D7jWHGfjXkbX9R2CX3gMZaD4M=",
+      "sparseCheckout": [],
+      "type": "github"
+    },
+    "version": "5ca4aaa6efdcc59be46b95a3e876300cfead05ef"
+  },
   "plugin-nvim-ts-autotag": {
     "cargoLocks": null,
     "date": "2025-09-11",

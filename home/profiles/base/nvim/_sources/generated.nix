@@ -551,6 +551,19 @@
     pretty-name = "nvim-tetris";
     date = "2021-06-28";
   };
+  plugin-nvim-treesitter-textobjects = {
+    pname = "plugin-nvim-treesitter-textobjects";
+    version = "5ca4aaa6efdcc59be46b95a3e876300cfead05ef";
+    src = fetchFromGitHub {
+      owner = "nvim-treesitter";
+      repo = "nvim-treesitter-textobjects";
+      rev = "5ca4aaa6efdcc59be46b95a3e876300cfead05ef";
+      fetchSubmodules = false;
+      sha256 = "sha256-lf+AwSu96iKO1vWWU2D7jWHGfjXkbX9R2CX3gMZaD4M=";
+    };
+    pretty-name = "nvim-treesitter-textobjects";
+    date = "2025-10-31";
+  };
   plugin-nvim-ts-autotag = {
     pname = "plugin-nvim-ts-autotag";
     version = "c4ca798ab95b316a768d51eaaaee48f64a4a46bc";
