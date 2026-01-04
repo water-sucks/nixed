@@ -1,128 +1,350 @@
 local treesitter_spec = use("nvim-treesitter/nvim-treesitter", {
-  dependencies = {
-    use("nvim-treesitter/nvim-treesitter-textobjects", {}),
-    use("windwp/nvim-ts-autotag", {}),
-    use("JoosepAlviste/nvim-ts-context-commentstring", {}),
-  },
+  config = function()
+    -- Use HTML parser for XML files
+    vim.treesitter.language.register("html", "xml")
+
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "*",
+      callback = function(args)
+        local filetype = args.match
+        local bufnr = args.buf
+
+        if vim.treesitter.language.add(filetype) then
+          vim.treesitter.start(bufnr, filetype)
+        end
+      end,
+    })
+  end,
 })
 
-treesitter_spec.config = function()
-  local wk = require("which-key")
-
-  require("nvim-treesitter.configs").setup({
-    modules = {},
-    auto_install = false,
-    sync_install = false,
-    ignore_install = {},
-    ensure_installed = {},
-
-    highlight = {
-      enable = true,
-      disable = { "comment" },
-    },
-
-    indent = {
-      enable = true,
-      disable = { "dart" },
-    },
-
-    textobjects = {
+local tsobj_spec = use("nvim-treesitter/nvim-treesitter-textobjects", {
+  config = function()
+    require("nvim-treesitter-textobjects").setup({
       select = {
-        enable = true,
-        disable = { "latex" },
         lookahead = true,
-        keymaps = {
-          ib = { query = "@block.inner", desc = "Inner block region" },
-          ab = { query = "@block.outer", desc = "Outer block region" },
-
-          ic = { query = "@class.inner", desc = "Inner class region" },
-          ac = { query = "@class.outer", desc = "Outer class region" },
-
-          ["if"] = { query = "@function.inner", desc = "Inner function region" },
-          af = { query = "@function.outer", desc = "Outer function region" },
-
-          ii = { query = "@conditional.inner", desc = "Inner conditional region" },
-          ai = { query = "@conditional.outer", desc = "Outer conditional region" },
-
-          il = { query = "@loop.inner", desc = "Inner loop region" },
-          al = { query = "@loop.outer", desc = "Outer loop region" },
-
-          ip = { query = "@parameter.inner", desc = "Inner parameter region" },
-          ap = { query = "@parameter.outer", desc = "Outer parameter region" },
-
-          az = { query = "@call.inner", desc = "Outer call region" },
-          iz = { query = "@call.inner", desc = "Inner call region" },
-
-          c = { query = "@comment.outer", desc = "Comment" },
-          L = { query = "@statement.outer", desc = "Statement" },
-        },
       },
-
-      swap = {
-        enable = true,
-        disable = { "latex" },
-        swap_next = {
-          ["<Leader>sb"] = { query = "@block.outer", desc = "Next block" },
-          ["<Leader>sc"] = { query = "@class.outer", desc = "Next class" },
-          ["<Leader>sf"] = { query = "@function.outer", desc = "Next function" },
-          ["<Leader>si"] = { query = "@conditional.outer", desc = "Next conditional" },
-          ["<Leader>sp"] = { query = "@parameter.inner", desc = "Next parameter" },
-          ["<Leader>ss"] = { query = "@statement.outer", desc = "Next statement" },
-        },
-        swap_previous = {
-          ["<Leader>sB"] = { query = "@block.outer", desc = "Previous block" },
-          ["<Leader>sC"] = { query = "@class.outer", desc = "Previous class" },
-          ["<Leader>sF"] = { query = "@function.outer", desc = "Previous function" },
-          ["<Leader>sI"] = { query = "@conditional.outer", desc = "Previous conditional" },
-          ["<Leader>sP"] = { query = "@parameter.inner", desc = "Previous parameter" },
-          ["<Leader>sS"] = { query = "@statement.outer", desc = "Previous statement" },
-        },
-      },
-
       move = {
-        enable = true,
-        disable = { "latex" },
         set_jumps = true,
-        goto_next_start = {
-          ["]m"] = { query = "@function.outer", desc = "Next function start" },
-          ["]]"] = { query = "@class.outer", desc = "Next class start" },
-        },
-        goto_next_end = {
-          ["]M"] = { query = "@function.outer", desc = "Next function end" },
-          ["]["] = { query = "@class.outer", desc = "Next class end" },
-        },
-        goto_previous_start = {
-          ["[m"] = { query = "@function.outer", desc = "Previous function start" },
-          ["[["] = { query = "@class.outer", desc = "Previous class start" },
-        },
-        goto_previous_end = {
-          ["[M"] = { query = "@function.outer", desc = "Previous function end" },
-          ["[]"] = { query = "@class.outer", desc = "Previous class end" },
-        },
       },
-    },
+    })
 
-    autotag = {
-      enable = true,
-    },
-  })
+    local wk = require("which-key")
 
-  wk.add({
-    { "<Leader>s", group = "Swap" },
-  })
+    local select_textobj = require("nvim-treesitter-textobjects.select").select_textobject
+    local swap_next = require("nvim-treesitter-textobjects.swap").swap_next
+    local swap_prev = require("nvim-treesitter-textobjects.swap").swap_previous
+    local goto_next_start = require("nvim-treesitter-textobjects.move").goto_next_start
+    local goto_next_end = require("nvim-treesitter-textobjects.move").goto_next_end
+    local goto_prev_start = require("nvim-treesitter-textobjects.move").goto_previous_start
+    local goto_prev_end = require("nvim-treesitter-textobjects.move").goto_previous_end
 
-  --[[ -- Use HTML parser for XML files ]]
-  vim.treesitter.language.register("html", "xml")
+    wk.add({
+      -- Selection keybinds
+      {
+        "ib",
+        function()
+          select_textobj("@block.inner", "textobjects")
+        end,
+        desc = "Inner block region",
+        mode = { "x", "o" },
+      },
+      {
+        "ab",
+        function()
+          select_textobj("@block.outer", "textobjects")
+        end,
+        desc = "Outer block region",
+        mode = { "x", "o" },
+      },
 
-  -- Only enable Treesitter highlighting for TeX files explicitly
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = "tex",
-    callback = function()
-      vim.cmd(":TSBufDisable highlight")
-    end,
-  })
-end
+      {
+        "ic",
+        function()
+          select_textobj("@class.inner", "textobjects")
+        end,
+        desc = "Inner class region",
+        mode = { "x", "o" },
+      },
+      {
+        "ac",
+        function()
+          select_textobj("@class.outer", "textobjects")
+        end,
+        desc = "Outer class region",
+        mode = { "x", "o" },
+      },
+
+      {
+        "if",
+        function()
+          select_textobj("@function.inner", "textobjects")
+        end,
+        desc = "Inner function region",
+        mode = { "x", "o" },
+      },
+      {
+        "af",
+        function()
+          select_textobj("@function.outer", "textobjects")
+        end,
+        desc = "Outer function region",
+        mode = { "x", "o" },
+      },
+
+      {
+        "ii",
+        function()
+          select_textobj("@conditional.inner", "textobjects")
+        end,
+        desc = "Inner conditional region",
+        mode = { "x", "o" },
+      },
+      {
+        "ai",
+        function()
+          select_textobj("@conditional.outer", "textobjects")
+        end,
+        desc = "Outer conditional region",
+        mode = { "x", "o" },
+      },
+
+      {
+        "il",
+        function()
+          select_textobj("@loop.inner", "textobjects")
+        end,
+        desc = "Inner loop region",
+        mode = { "x", "o" },
+      },
+      {
+        "al",
+        function()
+          select_textobj("@loop.outer", "textobjects")
+        end,
+        desc = "Outer loop region",
+        mode = { "x", "o" },
+      },
+
+      {
+        "ip",
+        function()
+          select_textobj("@parameter.inner", "textobjects")
+        end,
+        desc = "Inner parameter region",
+        mode = { "x", "o" },
+      },
+      {
+        "ap",
+        function()
+          select_textobj("@parameter.outer", "textobjects")
+        end,
+        desc = "Outer parameter region",
+        mode = { "x", "o" },
+      },
+
+      {
+        "az",
+        function()
+          select_textobj("@call.inner", "textobjects")
+        end,
+        desc = "Outer call region",
+        mode = { "x", "o" },
+      },
+      {
+        "iz",
+        function()
+          select_textobj("@call.inner", "textobjects")
+        end,
+        desc = "Inner call region",
+        mode = { "x", "o" },
+      },
+
+      {
+        "c",
+        function()
+          select_textobj("@comment.outer", "textobjects")
+        end,
+        desc = "Comment",
+        mode = { "x", "o" },
+      },
+      {
+        "L",
+        function()
+          select_textobj("@statement.outer", "textobjects")
+        end,
+        desc = "Statement",
+        mode = { "x", "o" },
+      },
+
+      -- Swap keybinds
+      { "<Leader>s", group = "Swap" },
+
+      {
+        "<Leader>sb",
+        function()
+          swap_next("@block.outer")
+        end,
+        desc = "Next block",
+      },
+      {
+        "<Leader>sc",
+        function()
+          swap_next("@class.outer")
+        end,
+        desc = "Next class",
+      },
+      {
+        "<Leader>sf",
+        function()
+          swap_next("@function.outer")
+        end,
+        desc = "Next function",
+      },
+      {
+        "<Leader>si",
+        function()
+          swap_next("@conditional.outer")
+        end,
+        desc = "Next conditional",
+      },
+      {
+        "<Leader>sp",
+        function()
+          swap_next("@parameter.inner")
+        end,
+        desc = "Next parameter",
+      },
+      {
+        "<Leader>ss",
+        function()
+          swap_next("@statement.outer")
+        end,
+        desc = "Next statement",
+      },
+
+      {
+        "<Leader>sB",
+        function()
+          swap_prev("@block.outer")
+        end,
+        desc = "Previous block",
+      },
+      {
+        "<Leader>sC",
+        function()
+          swap_prev("@class.outer")
+        end,
+        desc = "Previous class",
+      },
+      {
+        "<Leader>sF",
+        function()
+          swap_prev("@function.outer")
+        end,
+        desc = "Previous function",
+      },
+      {
+        "<Leader>sI",
+        function()
+          swap_prev("@conditional.outer")
+        end,
+        desc = "Previous conditional",
+      },
+      {
+        "<Leader>sP",
+        function()
+          swap_prev("@parameter.inner")
+        end,
+        desc = "Previous parameter",
+      },
+      {
+        "<Leader>sS",
+        function()
+          swap_prev("@statement.outer")
+        end,
+        desc = "Previous statement",
+      },
+
+      -- Move keybinds
+      {
+        "]m",
+        function()
+          goto_next_start("@function.outer", "textobjects")
+        end,
+        desc = "Next function start",
+        mode = { "n", "x", "o" },
+      },
+      {
+        "]]",
+        function()
+          goto_next_start("@class.outer", "textobjects")
+        end,
+        desc = "Next class start",
+        mode = { "n", "x", "o" },
+      },
+
+      {
+        "]M",
+        function()
+          goto_next_end("@function.outer", "textobjects")
+        end,
+        desc = "Next function end",
+        mode = { "n", "x", "o" },
+      },
+      {
+        "][",
+        function()
+          goto_next_end("@class.outer", "textobjects")
+        end,
+        desc = "Next class end",
+        mode = { "n", "x", "o" },
+      },
+
+      {
+        "[m",
+        function()
+          goto_prev_start("@function.outer", "textobjects")
+        end,
+        desc = "Previous function start",
+        mode = { "n", "x", "o" },
+      },
+      {
+        "[[",
+        function()
+          goto_prev_start("@class.outer", "textobjects")
+        end,
+        desc = "Previous class start",
+        mode = { "n", "x", "o" },
+      },
+
+      {
+        "[M",
+        function()
+          goto_prev_end("@function.outer", "textobjects")
+        end,
+        desc = "Previous function end",
+        mode = { "n", "x", "o" },
+      },
+      {
+        "[]",
+        function()
+          goto_prev_end("@class.outer", "textobjects")
+        end,
+        desc = "Previous class end",
+        mode = { "n", "x", "o" },
+      },
+    })
+  end,
+})
+
+local autotag_spec = use("windwp/nvim-ts-autotag", {
+  config = function()
+    require("nvim-ts-autotag").setup({})
+  end,
+})
 
 return {
   treesitter_spec,
+  tsobj_spec,
+  autotag_spec,
 }

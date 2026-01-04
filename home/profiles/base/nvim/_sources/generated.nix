@@ -553,16 +553,16 @@
   };
   plugin-nvim-treesitter-textobjects = {
     pname = "plugin-nvim-treesitter-textobjects";
-    version = "5ca4aaa6efdcc59be46b95a3e876300cfead05ef";
+    version = "28a3494c075ef0f353314f627546537e43c09592";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter-textobjects";
-      rev = "5ca4aaa6efdcc59be46b95a3e876300cfead05ef";
+      rev = "28a3494c075ef0f353314f627546537e43c09592";
       fetchSubmodules = false;
-      sha256 = "sha256-lf+AwSu96iKO1vWWU2D7jWHGfjXkbX9R2CX3gMZaD4M=";
+      sha256 = "sha256-5VeIAW09my+4fqXbzVG7RnLXrjpXAk/g2vd7RbhNws8=";
     };
     pretty-name = "nvim-treesitter-textobjects";
-    date = "2025-10-31";
+    date = "2026-01-03";
   };
   plugin-nvim-ts-autotag = {
     pname = "plugin-nvim-ts-autotag";

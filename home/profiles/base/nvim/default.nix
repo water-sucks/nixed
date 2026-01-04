@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   lib,
   ...
@@ -7,33 +6,6 @@
   inherit (pkgs.stdenv) isLinux;
 
   sources = pkgs.callPackage _sources/generated.nix {};
-
-  # Grammar builder function
-  buildGrammar = pkgs.callPackage "${inputs.nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" {};
-
-  # Build grammars that were fetched using nvfetcher
-  generatedGrammars = with lib;
-    mapAttrs (n: v:
-      buildGrammar {
-        language = removePrefix "tree-sitter-" n;
-        inherit (v) version src;
-      }) (filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources);
-
-  # Attrset of grammars built using nvim-treesitter's lockfile
-  grammars' = lib.filterAttrs (n: _: lib.hasPrefix "tree-sitter-" n) pkgs.vimPlugins.nvim-treesitter.passthru.builtGrammars;
-  grammars = grammars' // generatedGrammars;
-
-  parserDir = with lib;
-    pkgs.linkFarm
-    "treesitter-parsers"
-    (mapAttrsToList
-      (n: v: let
-        name = "${replaceStrings ["-"] ["_"] (removePrefix "tree-sitter-" n)}.so";
-      in {
-        inherit name;
-        path = "${v}/parser";
-      })
-      grammars);
 
   buildPlugin = name: source:
     pkgs.vimUtils.buildVimPlugin {
@@ -51,12 +23,20 @@
   generatedPlugins = with lib;
     mapAttrs buildPlugin generatedPluginSources;
 
+  nvim-treesitter = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+  parserDir = pkgs.symlinkJoin {
+    name = "treesitter-parsers";
+    paths = nvim-treesitter.dependencies;
+  };
+  queryDir = "${nvim-treesitter}/runtime/queries";
+
   plugins =
     generatedPlugins
     // {
       # Add plugins you want synced with nixpkgs here, or override
       # existing ones from the generated plugin set.
-      inherit (pkgs.vimPlugins) nvim-treesitter;
+      # inherit (pkgs.vimPlugins) nvim-treesitter;
+      inherit nvim-treesitter;
       "blink.cmp" = pkgs.vimPlugins.blink-cmp;
     };
 
@@ -149,21 +129,19 @@ in
 
           # DAP servers
           delve
-
-          # Other special sauce
-          codeium
         ];
       };
 
       xdg.configFile = {
         "nvim/init.lua".source = ./init.lua;
         "nvim/lua".source = ./lua;
-        "nvim/parser".source = "${parserDir}";
         "nvim/templates".source = ./templates;
       };
 
       xdg.dataFile = lib.mkMerge [
         {
+          "nvim/site/parser".source = "${parserDir}/parser";
+          "nvim/site/queries".source = queryDir;
           "nvim/plugins".source = "${pluginDir}";
           # Workaround for not being able to package `java-debug` from source
           "nvim/java-debug/com.microsoft.java.debug.plugin.jar".source = pkgs.fetchurl {

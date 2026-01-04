@@ -77,7 +77,9 @@ in
 
     # Appearance/Theming
     # Treesitter queries will be synced with the nixpkgs treesitter input
-    (plugin "nvim-treesitter" "nvim-treesitter-textobjects")
+    (fetch "nvim-treesitter" "nvim-treesitter-textobjects" {
+      branch = "main";
+    })
     (plugin "windwp" "nvim-ts-autotag")
     (plugin "JoosepAlviste" "nvim-ts-context-commentstring")
     (plugin "water-sucks" "darkrose.nvim")
