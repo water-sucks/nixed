@@ -37,8 +37,6 @@
     ];
   };
 
-  # TODO: enable zfs scrub, trim service periodically (weekly)
-
   hardware = {
     enableRedistributableFirmware = true;
     cpu.amd.updateMicrocode = true;
@@ -84,6 +82,18 @@
   swapDevices = [
     {device = "/dev/disk/by-uuid/2668a398-1360-4f36-9898-1969ceaa327b";}
   ];
+
+  services.zfs = {
+    autoScrub = {
+      enable = true;
+      interval = "monthly";
+    };
+
+    trim = {
+      enable = true;
+      interval = "weekly";
+    };
+  };
 
   systemd.services.systemd-udev-settle.enable = false;
 
