@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   boot = {
     loader.grub = {
       default = "saved";
@@ -98,6 +102,10 @@
   systemd.services.systemd-udev-settle.enable = false;
 
   systemd.services.NetworkManager-wait-online.enable = false;
+
+  services.ollama = {
+    package = pkgs.ollama-cuda;
+  };
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
 }
