@@ -25,6 +25,7 @@
   };
 
   settings = {
+    "browser.download.start_downloads_in_tmp_dir" = false;
     "browser.toolbars.bookmarks.visibility" = "never";
     "browser.tabs.drawInTitlebar" = true;
     "browser.tabs.cardPreview.showThumbnails" = true;
