@@ -21,7 +21,7 @@
 
       systemd.services.impermanence-root = {
         wantedBy = ["initrd.target"];
-        after = ["zfs-import-locker.service"];
+        after = ["zfs-import.target"];
         before = ["sysroot.mount"];
         path = [config.boot.zfs.package];
         unitConfig.DefaultDependencies = "no";
