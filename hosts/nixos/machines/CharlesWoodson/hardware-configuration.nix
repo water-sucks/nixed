@@ -76,11 +76,6 @@
       fsType = "zfs";
       neededForBoot = true;
     };
-
-    "/etc/ssh" = {
-      depends = ["/persist"];
-      neededForBoot = true;
-    };
   };
 
   swapDevices = [
