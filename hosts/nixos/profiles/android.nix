@@ -1,3 +1,5 @@
-_: {
-  programs.adb.enable = true;
+{pkgs, ...}: {
+  environment.systemPackages = [
+    pkgs.android-tools
+  ];
 }
