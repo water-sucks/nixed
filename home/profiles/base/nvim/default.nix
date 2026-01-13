@@ -115,7 +115,7 @@ in
           efm-langserver
           gitlint
           gofumpt
-          nixfmt-rfc-style
+          nixfmt
           prettierDefaultConfig
           python3Packages.flake8
           rust-analyzer
