@@ -52,7 +52,7 @@ in {
         modules-right = [
           "battery"
           "backlight"
-          "disk"
+          "custom/zfs-disk"
           "cpu"
           "memory"
           "pulseaudio"
@@ -95,11 +95,6 @@ in {
           interval = 10;
           format = " {}%";
           max-length = 10;
-        };
-        disk = {
-          interval = 30;
-          path = lib.mkDefault "/nix";
-          format = "󰋊 {used}";
         };
         memory = {
           interval = 30;
@@ -158,6 +153,13 @@ in {
           format = "Δ";
           on-click = "${pkgs.dunst}/bin/dunstctl history-pop";
           on-click-right = "systemctl --user restart dunst";
+        };
+        "custom/zfs-disk" = {
+          interval = 30;
+          exec = lib.mkDefault ''
+            zfs get -H -o value used locker
+          '';
+          format = "󰋊 {}";
         };
       };
       sidebar = {
