@@ -24,6 +24,7 @@
     wm-helper.enable = true;
     leftwm.enable = true;
     river.enable = true;
+    keyring.enable = true;
 
     sound.enable = true;
     bluetooth.enable = true;
