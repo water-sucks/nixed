@@ -8,9 +8,7 @@ in
   lib.mkMerge [
     (lib.mkIf isLinux {
       home.packages = [
-        # There is a strange build failure with Dart.
-        # pkgs.bitwarden-desktop
-        pkgs.bitwarden-cli
+        pkgs.bitwarden-desktop
       ];
 
       persistence = {
