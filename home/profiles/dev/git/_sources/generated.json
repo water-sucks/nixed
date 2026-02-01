@@ -1,6 +1,6 @@
 {
   "git-aliases": {
-    "cargoLocks": null,
+    "cargoLock": null,
     "date": "2026-01-02",
     "extract": null,
     "name": "git-aliases",

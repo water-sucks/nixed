@@ -1,6 +1,6 @@
 {
   "get-appname": {
-    "cargoLocks": null,
+    "cargoLock": null,
     "date": "2025-01-10",
     "extract": null,
     "name": "get-appname",
@@ -21,7 +21,7 @@
     "version": "c22fd3a9181279d4742578b8d0e279cded82b3f2"
   },
   "java-debug": {
-    "cargoLocks": null,
+    "cargoLock": null,
     "date": null,
     "extract": null,
     "name": "java-debug",
@@ -42,7 +42,7 @@
     "version": "0.53.1"
   },
   "nsmb-mvl": {
-    "cargoLocks": null,
+    "cargoLock": null,
     "date": null,
     "extract": null,
     "name": "nsmb-mvl",
