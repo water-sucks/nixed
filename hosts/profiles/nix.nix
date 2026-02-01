@@ -52,14 +52,9 @@ in {
         type = "path";
         path = inputs.nixpkgs;
       };
-      nixpkgs-stable.to = lib.mkForce {
-        type = "path";
-        path = inputs.nixpkgs-stable;
-      };
     };
     nixPath = [
       "nixpkgs=${inputs.nixpkgs}"
-      "nixpkgs-stable=${inputs.nixpkgs-stable}"
       "home-manager=${inputs.home}"
     ];
     extraOptions = let

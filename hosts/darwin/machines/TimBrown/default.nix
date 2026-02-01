@@ -1,26 +1,26 @@
 {
   imports = [
+    # Machine-specific
     ./configuration.nix
     ./home-manager.nix
+
+    # General common modules
+    ../../../profiles/nix.nix
+    ../../../profiles/core.nix
+    ../../../profiles/fonts.nix
+
+    # nix-darwin-specific
+    ../../profiles/defaults.nix
+    ../../profiles/brew.nix
+    ../../profiles/optnix.nix
+    ../../profiles/vscode.nix
+    ../../profiles/ollama.nix
+    ../../profiles/tailscale.nix
+    ../../profiles/amphetamine.nix
+
+    # Users
+    ../../../../users/varun
   ];
 
-  profiles = {
-    nix.enable = true;
-    core.enable = true;
-    fonts.enable = true;
-
-    defaults.enable = true;
-    brew.enable = true;
-    optnix.enable = true;
-    vscode.enable = true;
-    ollama.enable = true;
-    tailscale.enable = true;
-    amphetamine.enable = true;
-  };
-
   system.primaryUser = "varun";
-
-  users = {
-    varun.enable = true;
-  };
 }

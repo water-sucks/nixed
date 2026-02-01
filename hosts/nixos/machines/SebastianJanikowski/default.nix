@@ -1,44 +1,42 @@
 {
   imports = [
+    # Machine-specific modules
     ./configuration.nix
     ./home-manager.nix
+
+    # General common modules
+    ../../../profiles/nix.nix
+    ../../../profiles/core.nix
+    ../../../profiles/fonts.nix
+
+    # NixOS-specific modules
+    ../../profiles/boot.nix
+    ../../profiles/systemd.nix
+    ../../profiles/internet.nix
+    ../../profiles/ssh.nix
+    ../../profiles/pam.nix
+    ../../profiles/sudo.nix
+    ../../profiles/fontconfig.nix
+    ../../profiles/console.nix
+    ../../profiles/yubikey.nix
+    ../../profiles/nixos-cli.nix
+    ../../profiles/plymouth.nix
+    ../../profiles/ly.nix
+    ../../profiles/wm-helper.nix
+    ../../profiles/leftwm.nix
+    ../../profiles/river.nix
+    ../../profiles/keyring.nix
+    ../../profiles/sound.nix
+    ../../profiles/bluetooth.nix
+    ../../profiles/i18n.nix
+    ../../profiles/printers.nix
+    ../../profiles/tailscale.nix
+    ../../profiles/optnix.nix
+    ../../profiles/android.nix
+    ../../profiles/kvm.nix
+    ../../profiles/ios.nix
+
+    # Users
+    ../../../../users/varun
   ];
-
-  profiles = {
-    nix.enable = true;
-    core.enable = true;
-    boot.enable = true;
-    systemd.enable = true;
-    internet.enable = true;
-    ssh.enable = true;
-    pam.enable = true;
-    sudo.enable = true;
-    fonts.enable = true;
-    fontconfig.enable = true;
-    console.enable = true;
-    yubikey.enable = true;
-    nixos-cli.enable = true;
-
-    plymouth.enable = true;
-    ly.enable = true;
-    wm-helper.enable = true;
-    leftwm.enable = true;
-    river.enable = true;
-    keyring.enable = true;
-
-    sound.enable = true;
-    bluetooth.enable = true;
-    i18n.enable = true;
-    printers.enable = true;
-    tailscale.enable = true;
-    optnix.enable = true;
-
-    android.enable = true;
-    kvm.enable = true;
-    ios.enable = true;
-  };
-
-  users = {
-    varun.enable = true;
-  };
 }

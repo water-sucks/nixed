@@ -3,15 +3,15 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isLinux isDarwin;
+  inherit (pkgs.stdenv) isLinux;
 in {
-  users.users.varun =
+  users.users.varun = lib.mkMerge [
     {
       uid = 1000;
       description = "Varun Narravula";
       shell = pkgs.zsh;
     }
-    // (lib.optionalAttrs isLinux {
+    (lib.mkIf isLinux {
       extraGroups = ["wheel" "audio" "video" "input" "networkmanager" "libvirtd" "adbusers" "dialout" "docker"];
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
@@ -20,99 +20,8 @@ in {
         # Yubikey 5 FIDO2 SSH key
         "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBD07JbCo3daOE89ov9PV8dLImymQCR5vlXYgFmYK69qwalnXFVj3GUZzPiPeZZ1+CvOXGXW487G2KqpAmhC9akQAAAALdGVybWl1cy5jb20="
       ];
-    });
+    })
+  ];
 
-  home-manager.users.varun = {
-    config,
-    pkgs,
-    ...
-  }:
-    lib.mkMerge [
-      (import ./mail.nix {inherit config pkgs;})
-      # User-specific program configuration
-      {
-        programs.git.settings = {
-          user.email = "varun@snare.dev";
-          user.name = "Varun Narravula";
-          signing = {
-            key = "A1F17E43F6747FC0";
-            signByDefault = true;
-          };
-        };
-        programs.ssh = {
-          githubAccounts = {
-            "water-sucks" = {email = "varun@snare.dev";};
-          };
-          sourcehutAccounts = {
-            "watersucks" = {email = "varun@snare.dev";};
-          };
-        };
-        home.sessionVariables = lib.mkMerge [
-          (lib.mkIf isLinux {
-            NIXOS_CONFIG = "$HOME/.nixed";
-          })
-          (lib.mkIf isDarwin {
-            NIX_DARWIN_CONFIG = "$HOME/.nixed";
-          })
-        ];
-        programs.gpg.publicKeys = [
-          {
-            source = ./pgp.asc;
-            trust = 5;
-          }
-        ];
-        services.gpg-agent.sshKeys = [
-          "522E3A7813B5D0B5D70E5A40A1F17E43F6747FC0"
-        ];
-
-        sops = let
-          secretBlock = sopsFile: secretName: {
-            inherit sopsFile;
-            format = "yaml";
-            key = secretName;
-          };
-
-          atuinSecretBlock = secretBlock ./secrets/atuin.yml;
-        in {
-          # This may be overridden due to impermanence.
-          age.keyFile = lib.mkDefault "${config.home.homeDirectory}/.sops_key";
-          secrets = {
-            atuin-username = atuinSecretBlock "username";
-            atuin-password = atuinSecretBlock "password";
-            atuin-enc-key = atuinSecretBlock "encryption_key";
-          };
-        };
-      }
-      {
-        profiles = {
-          base.enable = true;
-          dev.enable = true;
-          apps.enable = true;
-        };
-      }
-      (lib.mkIf isLinux {
-        profiles = {
-          graphical = {
-            enable = true;
-            x11.enable = true;
-            wayland.enable = true;
-          };
-        };
-
-        openrgb.profile = "darkrose";
-
-        persistence = {
-          directories = [
-            ".nixed"
-            "Code"
-            "Documents"
-            "Downloads"
-            "Music"
-            "Pictures"
-            "Videos"
-            "VMs"
-          ];
-        };
-      })
-    ];
+  home-manager.users.varun = ./home.nix;
 }

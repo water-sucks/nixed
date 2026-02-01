@@ -42,6 +42,7 @@ to use them, feel free! Here's a rundown of what they are:
 | Name   | Description          |
 | ------ | -------------------- |
 | leftwm | LeftWM configuration |
+| xob    | X11 overlay bar      |
 
 To use these modules, you can use the provided `homeModules` attribute.
 

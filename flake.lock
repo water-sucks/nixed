@@ -492,22 +492,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1769228815,
-        "narHash": "sha256-h69VLDu4LtwdpK6XbjoUTPXqh44gEWn4puUJj/+ydAY=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "71c946ac4ea3bfbcae0fe2105d019faa59acdc4d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-25.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1767151656,
@@ -637,7 +621,6 @@
         "nixago": "nixago",
         "nixos-cli": "nixos-cli",
         "nixpkgs": "nixpkgs_4",
-        "nixpkgs-stable": "nixpkgs-stable",
         "optnix": "optnix_2",
         "sops-nix": "sops-nix"
       }

@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/release-25.11";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 
@@ -38,9 +37,7 @@
     nixpkgs,
     flake-parts,
     ...
-  } @ inputs: let
-    lib = import ./lib inputs;
-  in
+  } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
       # This is for nixd, a little bit of a misleading name
       # but this exposes module options from flake-parts.
@@ -65,24 +62,13 @@
       perSystem = {system, ...}: {
         _module.args = {
           inherit self inputs;
-          lib = nixpkgs.lib.extend (_: _: lib);
 
           pkgs = import nixpkgs {
             inherit system;
             overlays = [self.overlays.default];
             config.allowUnfree = true;
           };
-
-          pkgsStable = import inputs.nixpkgs-stable {
-            inherit system;
-            overlays = [self.overlays.default];
-            config.allowUnfree = true;
-          };
         };
-      };
-
-      flake = {
-        inherit lib;
       };
     };
 }

@@ -21,7 +21,6 @@ in {
     default = _final: prev:
       (lib.mapAttrs (_: v: callPackage prev v {}) packages')
       // {
-        sources = prev.callPackage _sources/generated.nix {};
         formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
       };
   };

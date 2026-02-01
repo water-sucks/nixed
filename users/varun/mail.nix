@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  ...
 }: let
   inherit (pkgs) lib;
   inherit (pkgs.stdenv) isLinux isDarwin;
