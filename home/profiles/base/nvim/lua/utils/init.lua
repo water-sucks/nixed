@@ -26,7 +26,9 @@ _G.use = function(name, spec)
   if vim.fn.isdirectory(plugin_dir) > 0 then
     spec.dir = plugin_dir
   else
-    spec[1] = name
+    if spec.url == nil then
+      spec[1] = name
+    end
   end
   return spec
 end

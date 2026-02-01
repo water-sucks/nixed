@@ -62,7 +62,16 @@ in
     (plugin "windwp" "nvim-autopairs")
     (plugin "sQVe" "sort.nvim")
     (plugin "echasnovski" "mini.move")
-    (plugin "ggandor" "leap.nvim")
+    {
+      name = "plugin-leap-nvim";
+      value = {
+        "src.git" = "https://codeberg.org/andyg/leap.nvim";
+        "fetch.git" = "https://codeberg.org/andyg/leap.nvim";
+        passthru = {
+          pretty-name = "leap.nvim";
+        };
+      };
+    }
     (plugin "Allaman" "emoji.nvim")
     (plugin "2kabhishek" "nerdy.nvim")
     (plugin "bullets-vim" "bullets.vim")

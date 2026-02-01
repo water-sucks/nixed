@@ -57,8 +57,11 @@ minimove.config = function()
   })
 end
 
-local leap_spec = use("ggandor/leap.nvim", {
+-- This isn't the actual GitHub owner/repo.
+-- This plugin uses Codeberg to host.
+local leap_spec = use("andyg/leap.nvim", {
   event = "VeryLazy",
+  url = "https://codeberg.org/andyg/leap.nvim",
 })
 leap_spec.config = function()
   local wk = require("which-key")

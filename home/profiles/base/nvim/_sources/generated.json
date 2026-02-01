@@ -484,7 +484,7 @@
   },
   "plugin-leap-nvim": {
     "cargoLock": null,
-    "date": "2026-01-25",
+    "date": "2026-01-30",
     "extract": null,
     "name": "plugin-leap-nvim",
     "passthru": {
@@ -496,14 +496,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "owner": "ggandor",
-      "repo": "leap.nvim",
-      "rev": "0033bcaefc3cd7cf5a70b28cd356fe4860e5c074",
-      "sha256": "sha256-ibZH0AOm9LGqyjn7VLYQu19FfWnvHQdMzQbS0lsLaRo=",
+      "rev": "1ea6ecb9cf1b961e507f39d4b4f37e89b7c72011",
+      "sha256": "sha256-RBOq5ZAS1o7mn3Zhjxoo3io0I1YqMOxeQmRs22dbVpE=",
       "sparseCheckout": [],
-      "type": "github"
+      "type": "git",
+      "url": "https://codeberg.org/andyg/leap.nvim"
     },
-    "version": "0033bcaefc3cd7cf5a70b28cd356fe4860e5c074"
+    "version": "1ea6ecb9cf1b961e507f39d4b4f37e89b7c72011"
   },
   "plugin-lspkind-nvim": {
     "cargoLock": null,

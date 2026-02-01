@@ -280,16 +280,18 @@
   };
   plugin-leap-nvim = {
     pname = "plugin-leap-nvim";
-    version = "0033bcaefc3cd7cf5a70b28cd356fe4860e5c074";
-    src = fetchFromGitHub {
-      owner = "ggandor";
-      repo = "leap.nvim";
-      rev = "0033bcaefc3cd7cf5a70b28cd356fe4860e5c074";
+    version = "1ea6ecb9cf1b961e507f39d4b4f37e89b7c72011";
+    src = fetchgit {
+      url = "https://codeberg.org/andyg/leap.nvim";
+      rev = "1ea6ecb9cf1b961e507f39d4b4f37e89b7c72011";
       fetchSubmodules = false;
-      sha256 = "sha256-ibZH0AOm9LGqyjn7VLYQu19FfWnvHQdMzQbS0lsLaRo=";
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [];
+      sha256 = "sha256-RBOq5ZAS1o7mn3Zhjxoo3io0I1YqMOxeQmRs22dbVpE=";
     };
     pretty-name = "leap.nvim";
-    date = "2026-01-25";
+    date = "2026-01-30";
   };
   plugin-lspkind-nvim = {
     pname = "plugin-lspkind-nvim";
