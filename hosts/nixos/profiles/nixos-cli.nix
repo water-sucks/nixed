@@ -17,6 +17,7 @@ _: {
         imply_impure_with_tag = true;
         use_git_commit_msg = true;
         ignore_dirty_tree = true;
+        reexec_as_root = true;
       };
     };
   };
