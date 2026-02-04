@@ -4,6 +4,18 @@
   ...
 }: let
   inherit (pkgs.stdenv) isLinux isDarwin;
+
+  sioyek-wrapped = pkgs.symlinkJoin {
+    name = "sioyek-wrapped";
+    paths = [pkgs.sioyek];
+
+    nativeBuildInputs = [pkgs.makeWrapper];
+
+    postBuild = ''
+      wrapProgram $out/bin/sioyek \
+        --set QT_QPA_PLATFORM xcb
+    '';
+  };
 in
   lib.mkMerge [
     {
@@ -11,7 +23,7 @@ in
         enable = true;
         package = with pkgs;
           if isLinux
-          then pkgs.sioyek
+          then sioyek-wrapped
           else runCommand "sioyek-0.0.0" {} "mkdir $out";
         bindings = {
           move_up = "k";
