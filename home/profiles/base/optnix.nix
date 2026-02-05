@@ -14,6 +14,8 @@ in {
     settings = {
       min_score = 3;
 
+      formatter_cmd = "${pkgs.alejandra}/bin/alejandra";
+
       scopes = {
         CharlesWoodson = {
           description = "NixOS configuration for CharlesWoodson";
