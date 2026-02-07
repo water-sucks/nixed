@@ -8,6 +8,7 @@
     ./gh.nix
     ./go.nix
     ./libvirtd.nix
+    ./opencode.nix
     ./python.nix
     ./ssh.nix
     ./tmux.nix

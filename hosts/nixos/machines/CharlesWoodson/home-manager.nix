@@ -1,4 +1,4 @@
-let
+{config, ...}: let
   kanshiModule = {
     services.kanshi = {
       settings = [
@@ -58,6 +58,35 @@ let
       ];
     };
   };
+
+  opencodeModule = {
+    profiles.opencode.enable = true;
+
+    programs.opencode = {
+      settings = {
+        provider = {
+          ollama = {
+            npm = "@ai-sdk/openai-compatible";
+            name = "Ollama (local)";
+            options = {
+              baseURL = "http://${config.services.ollama.host}:${toString config.services.ollama.port}/v1";
+            };
+            models = {
+              qwen3-coder = {
+                name = "Qwen3-Coder";
+              };
+            };
+          };
+        };
+      };
+    };
+
+    persistence = {
+      directories = [
+        ".config/opencode"
+      ];
+    };
+  };
 in {
   home-manager.sharedModules = [
     kanshiModule
@@ -65,6 +94,10 @@ in {
   ];
 
   home-manager.users.varun = _: {
+    imports = [
+      opencodeModule
+    ];
+
     sops.age.keyFile = "/persist/home/varun/.sops_key";
     persistence = {
       files = [
