@@ -7,10 +7,6 @@
     enable = true;
     user = "ollama";
     group = "ollama";
-    loadModels = [
-      "llama3.3"
-      "codestral"
-    ];
   };
 
   environment.persistence."/persist" = {
