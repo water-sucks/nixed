@@ -36,7 +36,7 @@
   feh = "${pkgs.feh}/bin/feh";
   kitty = "${pkgs.kitty}/bin/kitty";
   rofi = "${pkgs.rofi}/bin/rofi";
-  xset = "${pkgs.xorg.xset}/bin/xset";
+  xset = "${pkgs.xset}/bin/xset";
   maim = "${pkgs.maim}/bin/maim";
   dunstify = "${pkgs.dunst}/bin/dunstify";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
