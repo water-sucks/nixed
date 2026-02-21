@@ -98,6 +98,20 @@
 
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  services.pipewire = {
+    extraConfig.pipewire = {
+      "10-clock-rate" = {
+        "context.properties" = {
+          # Reduces stuttering of Focusrite Scarlett Solo Gen 4 audio under load.
+          "default.clock.rate" = 48000;
+          "default.clock.quantum" = 256;
+          "default.clock.min-quantum" = 128;
+          "default.clock.max-quantum" = 512;
+        };
+      };
+    };
+  };
+
   services.ollama = {
     package = pkgs.ollama-cuda;
   };
