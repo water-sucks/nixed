@@ -1,8 +1,8 @@
 _: {
-  services.nixos-cli = {
+  programs.nixos-cli = {
     enable = true;
     activation-interface.enable = true;
-    config = {
+    settings = {
       aliases = {
         genlist = ["generation" "list"];
         switch = ["generation" "switch"];
@@ -21,8 +21,4 @@ _: {
       };
     };
   };
-
-  security.sudo.extraConfig = ''
-    Defaults env_keep += "NO_COLOR"
-  '';
 }
