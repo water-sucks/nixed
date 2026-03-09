@@ -93,4 +93,25 @@ workloads quite far (a lot like its namesake!).
 A legit MacBook that is a beast on the run. Used for music production on-the-go
 with Logic Pro X and mobile app development.
 
+### BoJackson
+
+- Type: Server
+- Operating system: NixOS
+- Specs:
+  - CPU :: AMD Ryzen 9 3950X (16 cores, 3.5 GHz)
+  - CPU Cooler :: Noctua NH-L12S
+  - Motherboard :: ASUS TUF GAMING X570-PLUS (WI-FI)
+  - RAM :: G.Skill Trident Z (48 GB DDR4-3600, 3x16 GB)
+  - GPU :: SAPLOS Radeon RX 550 (literally just for when servicing)
+  - Storage
+    - OS :: Inland QN450 NVMe SSD (512 GB x2)
+    - Primary :: 16 TB (4x4 TB, to be purchased later)
+  - Case :: Rosewill Z2006
+  - PSU :: SAMA P1200 (1200W, 80+ Platinum)
+
+My first homelab server. It's repurposed from my old gaming machine's parts,
+also built before the global computer supply chain shortages started.
+
+### More to Come!
+
 More to come in the future, such as Bo Jackson. Stay tuned!
