@@ -27,9 +27,6 @@
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   light = "${pkgs.light}/bin/light";
-  slurp = "${pkgs.slurp}/bin/slurp";
-  grim = "${pkgs.grim}/bin/grim";
-  dunstify = "${pkgs.dunst}/bin/dunstify";
   rofi = "${pkgs.rofi}/bin/rofi";
   swayidle = "${pkgs.swayidle}/bin/swayidle";
   waylockWrapper =
@@ -38,17 +35,24 @@
   waylockCommand = "${waylockWrapper}/bin/waylock";
   wobSocket = "$XDG_RUNTIME_DIR/wob.sock";
 
-  screenshot = pkgs.writeShellScript "take-screenshot.sh" ''
-    if [ "$1" == "-s" ]; then
-      cmd="${grim} -g '$(${slurp})'"
-    else
-      cmd="${grim}"
-    fi
+  screenshot = pkgs.writeShellApplication {
+    name = "take-screenshot";
+    runtimeInputs = with pkgs; [slurp grim dunst];
+    text = ''
+      OUTPUT="$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"
+      mkdir -p "$(dirname "$OUTPUT")"
 
-    if eval "$cmd $HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"; then
-      ${dunstify} -u low "Screenshot taken" "at $(date +%r)"
-    fi
-  '';
+      if [ "''${1:-}" = "-s" ]; then
+        grim -g "$(slurp)" "$OUTPUT"
+      else
+        grim -g "$(slurp -o)" "$OUTPUT"
+      fi
+
+      if [ -f "$OUTPUT" ]; then
+        dunstify -u low "Screenshot taken" "at $(date +%r)"
+      fi
+    '';
+  };
 in {
   home.packages = with pkgs; [
     waylockWrapper
@@ -153,8 +157,8 @@ in {
           (exec [mod] return "${kitty}")
           (exec [mod] "space" "${rofi} -show drun")
           (exec [mod shift] return "${rofi} -show combi -combi-modi 'drun,window,run,ssh' -modi combi")
-          (exec [] "Print" "${screenshot}")
-          (exec [mod] "Print" "${screenshot} -s")
+          (exec [] "Print" "${lib.getExe screenshot}")
+          (exec [mod] "Print" "${lib.getExe screenshot} -s")
           (exec [ctrl alt] "Delete" "rofi-power-menu")
           (exec [mod ctrl alt] "l" "${waylockCommand}")
 
