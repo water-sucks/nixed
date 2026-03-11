@@ -40,7 +40,7 @@
   maim = "${pkgs.maim}/bin/maim";
   dunstify = "${pkgs.dunst}/bin/dunstify";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
-  light = "${pkgs.light}/bin/light";
+  brightnessctl = lib.getExe pkgs.brightnessctl;
   xobSocket = "$XDG_RUNTIME_DIR/xob.sock";
 
   switchTag = tag: transform: (bind' [mod] (toString (transform tag)) "GotoTag" (toString tag));
@@ -168,8 +168,8 @@ in {
         (execute [] "XF86XK_AudioLowerVolume" ''${amixer} sset Master 5%- | ${sed} -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > ${xobSocket}'')
         (execute [] "XF86XK_AudioMute" ''${amixer} sset Master toggle | ${sed} -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > ${xobSocket}'')
         (execute [] "XF86XK_AudioMicMute" "${amixer} sset Capture toggle")
-        (execute [] "XF86XK_MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${xobSocket}")
-        (execute [] "XF86XK_MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${xobSocket}")
+        (execute [] "XF86XK_MonBrightnessUp" "${brightnessctl} set 5%+ -m | cut -d'.' -f4 | tr -d '%' > ${xobSocket}")
+        (execute [] "XF86XK_MonBrightnessDown" "${brightnessctl} set 5%- -m | cut -d'.' -f4 | tr -d '%' > ${xobSocket}")
         (execute [] "XF86XK_Calculator" "rofi -modi calc -show calc")
         (execute [ctrl alt] "Delete" "rofi-power-menu")
       ]);

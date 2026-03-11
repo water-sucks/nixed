@@ -26,7 +26,7 @@
   kitty = "${pkgs.kitty}/bin/kitty";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
-  light = "${pkgs.light}/bin/light";
+  brightnessctl = lib.getExe pkgs.brightnessctl;
   rofi = "${pkgs.rofi}/bin/rofi";
   swayidle = "${pkgs.swayidle}/bin/swayidle";
   waylockWrapper =
@@ -170,8 +170,8 @@ in {
           (exec [] "XF86AudioPlay" "${playerctl} play-pause")
           (exec [] "XF86AudioPrev" "${playerctl} previous")
           (exec [] "XF86AudioNext" "${playerctl} next")
-          (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
-          (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
+          (exec [] "XF86MonBrightnessUp" "${brightnessctl} set 5%+ -m | cut -d'.' -f4 | tr -d '%' > ${wobSocket}")
+          (exec [] "XF86MonBrightnessDown" "${brightnessctl} set 5%- -m | cut -d'.' -f4 | tr -d '%' > ${wobSocket}")
           (exec [] "XF86Calculator" "${rofi} -modi calc -show calc")
         ]);
         locked = builtins.listToAttrs [
@@ -183,8 +183,8 @@ in {
           (exec [] "XF86AudioPlay" "${playerctl} play-pause")
           (exec [] "XF86AudioPrev" "${playerctl} previous")
           (exec [] "XF86AudioNext" "${playerctl} next")
-          (exec [] "XF86MonBrightnessUp" "${light} -A 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
-          (exec [] "XF86MonBrightnessDown" "${light} -U 5 && ${light} -G | cut -d'.' -f1 > ${wobSocket}")
+          (exec [] "XF86MonBrightnessUp" "${brightnessctl} set 5%+ -m | cut -d'.' -f4 | tr -d '%' > ${wobSocket}")
+          (exec [] "XF86MonBrightnessDown" "${brightnessctl} set 5%- -m | cut -d'.' -f4 | tr -d '%' > ${wobSocket}")
           (exec [] "XF86Calculator" "${rofi} -modi calc -show calc")
         ];
       };
@@ -236,8 +236,8 @@ in {
         ${swayidle} \
           -w timeout 900 ${waylockCommand} \
           before-sleep ${waylockCommand} \
-          timeout 915 "${light} -O; ${light} -S 0" \
-          resume "${light} -I" \
+          timeout 915 "${brightnessctl} -s; ${brightnessctl} set 0" \
+          resume "${brightnessctl} -r" \
           lock ${waylockCommand}
       '';
       Restart = "on-failure";
