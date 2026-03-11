@@ -35,7 +35,7 @@ autopairs_spec.config = function()
   map("i", "<bs>", "v:lua.MUtils.BS()", { expr = true, noremap = true })
 end
 
-local minimove = use("echasnovski/mini.move", {
+local minimove = use("nvim-mini/mini.move", {
   event = "VeryLazy",
 })
 minimove.config = function()
@@ -113,7 +113,7 @@ sort_spec.config = function()
   })
 end
 
-local surround_spec = use("echasnovski/mini.surround", {
+local surround_spec = use("nvim-mini/mini.surround", {
   event = "VeryLazy",
   config = function()
     require("mini.surround").setup()
@@ -153,27 +153,8 @@ local template_spec = use("nvimdev/template.nvim", {
   end,
 })
 
-local hardtime_spec = use("m4xshen/hardtime.nvim", {
-  dependencies = { use("MunifTanjim/nui.nvim") },
-  opts = {
-    -- Turn on manually for now. This is a hard plugin to get used to
-    -- when being productive.
-    enabled = false,
-  },
-  keys = {
-    {
-      "<Leader>t",
-      function()
-        require("hardtime").toggle()
-      end,
-      desc = "Toggle 'um akshually'",
-    },
-  },
-})
-
 return {
   autopairs_spec,
-  hardtime_spec,
   minimove,
   leap_spec,
   repeat_spec,

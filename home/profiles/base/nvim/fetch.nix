@@ -57,11 +57,11 @@ in
 
     # Text editing assistance/annotations
     (plugin "NMAC427" "guess-indent.nvim")
-    (plugin "echasnovski" "mini.surround")
+    (plugin "nvim-mini" "mini.surround")
     (plugin "tpope" "vim-repeat")
     (plugin "windwp" "nvim-autopairs")
     (plugin "sQVe" "sort.nvim")
-    (plugin "echasnovski" "mini.move")
+    (plugin "nvim-mini" "mini.move")
     {
       name = "plugin-leap-nvim";
       value = {
@@ -110,14 +110,7 @@ in
 
     # Special Neovim sauce
     (plugin "IogaMaster" "neocord")
-    (plugin "alec-gibson" "nvim-tetris")
-    (plugin "Eandrju" "cellular-automaton.nvim")
     (plugin "folke" "which-key.nvim")
-    (plugin "tamton-aquib" "duck.nvim")
-    (plugin "samjwill" "nvim-unception")
-    (plugin "folke" "noice.nvim")
-    (plugin "stevearc" "overseer.nvim")
-    (plugin "m4xshen" "hardtime.nvim")
 
     # Debugging
     (plugin "mfussenegger" "nvim-dap")

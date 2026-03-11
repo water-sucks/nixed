@@ -48,14 +48,3 @@ au("FileType", {
     vim.opt.colorcolumn = "72"
   end,
 })
-
-vim.api.nvim_create_augroup("AutoDeleteGitBuffer", { clear = true })
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = "AutoDeleteGitBuffer",
-  pattern = { "COMMIT_EDITMSG", "git-rebase-todo" },
-  callback = function(args)
-    if not vim.g.unception_block_while_host_edits then
-      vim.api.nvim_buf_delete(args.buf, { force = true })
-    end
-  end,
-})
