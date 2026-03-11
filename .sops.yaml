@@ -3,6 +3,7 @@ keys:
   - &varun_age age1lq2t4k8la567nvgk5j3f3du0gahg5y9u20s5x43t8cdc5zyqsu2qunrpaz
   - &SebastianJanikowski age12yl7t27k2hvdv0kt8ky2gmshfdt3ysw83zzjnk7fxxenqf3sv4zsjug5me
   - &CharlesWoodson age1wt5e7nasfsztzje86lnjxz3xycuzawhk4pl099mk4cn8xxw75vls5fyu6g
+  - &BoJackson age14gezvufsumyxu6fhtwadrf06npdupumspdhez3mrdw339pu57c2q63ar0k
 creation_rules:
   - path_regex: hosts/nixos/machines/SebastianJanikowski/secrets/[^/]+\.yml$
     key_groups:
@@ -16,6 +17,12 @@ creation_rules:
           - *varun
         age:
           - *CharlesWoodson
+  - path_regex: hosts/nixos/machines/BoJackson/secrets/[^/]+\.yml$
+    key_groups:
+      - pgp:
+          - *varun
+        age:
+          - *BoJackson
   - path_regex: users/varun/secrets/[^/]+\.yml$
     key_groups:
       - pgp:
