@@ -18,18 +18,6 @@
       availableKernelModules = ["nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod"];
       kernelModules = [];
       verbose = false;
-
-      systemd.services.impermanence-root = {
-        wantedBy = ["initrd.target"];
-        after = ["zfs-import.target"];
-        before = ["sysroot.mount"];
-        path = [config.boot.zfs.package];
-        unitConfig.DefaultDependencies = "no";
-        serviceConfig.type = "oneshot";
-        script = ''
-          zfs rollback -r locker/root@blank
-        '';
-      };
     };
 
     supportedFilesystems = ["zfs"];
@@ -76,6 +64,16 @@
       fsType = "zfs";
       neededForBoot = true;
     };
+  };
+
+  zfs.impermanence = {
+    enable = true;
+    volumes = [
+      {
+        volume = "locker/root";
+        target = "blank";
+      }
+    ];
   };
 
   swapDevices = [

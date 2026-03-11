@@ -11,6 +11,7 @@
     optnix.nixosModules.optnix
     ../modules/user-defaults.nix
     ./modules/luks.nix
+    ./modules/zfs-impermanence.nix
   ];
 
   mkNixOS = hostname: configuration: {
@@ -51,6 +52,7 @@ in {
           sops-nix.nixosModules.sops
           impermanence.nixosModules.impermanence
           nixos-cli.nixosModules.nixos-cli
+          ./modules/zfs-impermanence.nix
         ];
       };
     };

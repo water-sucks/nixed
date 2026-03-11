@@ -33,18 +33,6 @@
         };
 
         users.root.shell = "/bin/systemd-tty-ask-password-agent";
-
-        services.impermanence-root = {
-          wantedBy = ["initrd.target"];
-          after = ["zfs-import.target"];
-          before = ["sysroot.mount"];
-          path = [config.boot.zfs.package];
-          unitConfig.DefaultDependencies = "no";
-          serviceConfig.type = "oneshot";
-          script = ''
-            zfs rollback -r rpool/root@blank
-          '';
-        };
       };
 
       network = {
@@ -68,6 +56,16 @@
     };
 
     kernelModules = ["kvm-amd"];
+  };
+
+  zfs.impermanence = {
+    enable = true;
+    volumes = [
+      {
+        volume = "rpool/root";
+        target = "blank";
+      }
+    ];
   };
 
   fileSystems."/" = {
