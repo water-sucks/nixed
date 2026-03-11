@@ -672,7 +672,31 @@
         "nixos-cli": "nixos-cli",
         "nixpkgs": "nixpkgs_3",
         "optnix": "optnix_2",
+        "sanjay-soup": "sanjay-soup",
         "sops-nix": "sops-nix"
+      }
+    },
+    "sanjay-soup": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773257994,
+        "narHash": "sha256-axM938SICd+8h8vpHgTswILVk8GJ9TzrBNgz2cX1Q/g=",
+        "owner": "~watersucks",
+        "repo": "sanjay-soup",
+        "rev": "31741aa509c3a5986117e4883024e467bab9e68f",
+        "type": "sourcehut"
+      },
+      "original": {
+        "owner": "~watersucks",
+        "repo": "sanjay-soup",
+        "type": "sourcehut"
       }
     },
     "sops-nix": {

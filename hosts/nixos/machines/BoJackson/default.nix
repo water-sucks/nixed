@@ -13,5 +13,6 @@ _: {
     ../../profiles/systemd.nix
     ../../profiles/nixos-cli.nix
     ../../profiles/tailscale.nix
+    ../../profiles/sanjay-soup.nix
   ];
 }

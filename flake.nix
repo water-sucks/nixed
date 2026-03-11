@@ -30,6 +30,10 @@
 
     nix-ai-tools.url = "github:numtide/nix-ai-tools";
     nix-ai-tools.inputs.nixpkgs.follows = "nixpkgs";
+
+    sanjay-soup.url = "sourcehut:~watersucks/sanjay-soup";
+    sanjay-soup.inputs.nixpkgs.follows = "nixpkgs";
+    sanjay-soup.inputs.flake-parts.follows = "flake-parts";
   };
 
   outputs = {

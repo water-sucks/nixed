@@ -53,6 +53,13 @@
         format = "yaml";
         key = "auth_key";
       };
+      sanjay-soup-env = {
+        sopsFile = ./secrets/sanjay_soup.env;
+        format = "dotenv";
+        mode = "0400";
+        owner = "sanjay";
+        group = "sanjay";
+      };
     };
   };
 
@@ -96,6 +103,12 @@
 
   services.tailscale = {
     authKeyFile = config.sops.secrets.tailscale-key.path;
+  };
+
+  systemd.services.sanjaysoup = {
+    serviceConfig = {
+      EnvironmentFile = config.sops.secrets.sanjay-soup-env.path;
+    };
   };
 
   services.earlyoom.enable = true;
