@@ -32,6 +32,8 @@
           inherit (config.systemd.network) networks links;
         };
 
+        users.root.shell = "/bin/systemd-tty-ask-password-agent";
+
         services.impermanence-root = {
           wantedBy = ["initrd.target"];
           after = ["zfs-import.target"];
