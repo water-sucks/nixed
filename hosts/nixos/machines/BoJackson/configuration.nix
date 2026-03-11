@@ -48,6 +48,11 @@
         key = "host_key";
         neededForUsers = true;
       };
+      tailscale-key = {
+        sopsFile = ./secrets/tailscale.yml;
+        format = "yaml";
+        key = "auth_key";
+      };
     };
   };
 
@@ -78,6 +83,8 @@
     ];
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
   services.openssh = {
     hostKeys = [
       {
@@ -87,7 +94,9 @@
     ];
   };
 
-  security.sudo.wheelNeedsPassword = false;
+  services.tailscale = {
+    authKeyFile = config.sops.secrets.tailscale-key.path;
+  };
 
   services.earlyoom.enable = true;
 

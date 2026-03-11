@@ -12,5 +12,6 @@ _: {
     ../../profiles/sudo.nix
     ../../profiles/systemd.nix
     ../../profiles/nixos-cli.nix
+    ../../profiles/tailscale.nix
   ];
 }
