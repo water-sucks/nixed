@@ -7,9 +7,9 @@
 
   sources = pkgs.callPackage _sources/generated.nix {};
 
-  buildPlugin = name: source:
+  buildPlugin = _: source:
     pkgs.vimUtils.buildVimPlugin {
-      name = "${name}-${source.version}";
+      name = lib.removePrefix "plugin-" source.pname;
       namePrefix = ""; # Clear name prefix
       inherit (source) version src;
       doCheck = false;
