@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   c = config.colorscheme.palette;
@@ -13,7 +14,7 @@
   termLaunch = "${kitty} start --";
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   bluetoothctl = "${pkgs.bluez}/bin/bluetoothctl";
-  blueberry = "${pkgs.blueberry}/bin/blueberry";
+  overskride = lib.getExe pkgs.overskride;
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   nmtui = "${pkgs.networkmanager}/bin/nmtui";
   rofi = "${pkgs.rofi}/bin/rofi";
@@ -237,7 +238,7 @@ in {
         exec = "${bluetooth-status}";
         interval = 2;
         click-left = "${toggle-bluetooth}";
-        click-right = "${blueberry}";
+        click-right = "${overskride}";
       };
 
       "module/wlan" = {

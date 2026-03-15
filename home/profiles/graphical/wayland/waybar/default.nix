@@ -14,7 +14,7 @@
   nmcli = "${pkgs.networkmanager}/bin/nmcli";
   amixer = "${pkgs.alsa-utils}/bin/amixer";
   playerctl = "${pkgs.playerctl}/bin/playerctl";
-  blueberry = "${pkgs.blueberry}/bin/blueberry";
+  overskride = lib.getExe pkgs.overskride;
   pavucontrol = "${theme} ${pkgs.pavucontrol}/bin/pavucontrol";
   getAppname = "${pkgs.get-appname}/bin/get-appname";
   activeWindowAppName = with pkgs;
@@ -81,7 +81,7 @@ in {
           format-off = "󰂲";
           format-on = ":";
           format-connected = " {device_alias}";
-          on-click = "${blueberry}";
+          on-click = "${overskride}";
           tooltip-format = "{controller_alias}\t{controller_address}";
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
