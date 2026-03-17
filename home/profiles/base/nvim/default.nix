@@ -10,8 +10,10 @@
   buildPlugin = _: source:
     pkgs.vimUtils.buildVimPlugin {
       name = lib.removePrefix "plugin-" source.pname;
-      namePrefix = ""; # Clear name prefix
-      inherit (source) version src;
+      version = let
+        rev = lib.sources.shortRev source.version;
+      in "0.0.0+rev=${rev}";
+      inherit (source) src;
       doCheck = false;
     };
 
