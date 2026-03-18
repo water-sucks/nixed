@@ -3,6 +3,7 @@
     ./git
 
     ./coderabbit.nix
+    ./delta.nix
     ./direnv.nix
     ./fzf.nix
     ./gh.nix

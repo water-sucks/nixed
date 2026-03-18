@@ -54,11 +54,6 @@ in {
     };
   };
 
-  programs.delta = {
-    enable = true;
-    enableGitIntegration = true;
-  };
-
   home.packages = with pkgs; [
     # Fast status monitoring
     watchman
