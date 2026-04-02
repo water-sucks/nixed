@@ -52,6 +52,7 @@ in {
       core.fsmonitor = true;
       commit.gpgsign = true;
     };
+    signing.format = "openpgp";
   };
 
   home.packages = with pkgs; [
