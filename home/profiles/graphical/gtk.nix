@@ -44,6 +44,7 @@
       '';
     };
     gtk4 = {
+      inherit (config.gtk) theme;
       extraConfig = {
         gtk-application-prefer-dark-theme = 1;
       };
