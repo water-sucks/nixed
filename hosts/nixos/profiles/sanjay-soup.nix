@@ -22,6 +22,9 @@ in {
     description = "SanjaySoup Discord bot";
     restartIfChanged = true;
 
+    wantedBy = ["multi-user.target"];
+    after = ["network.target"];
+
     serviceConfig = {
       Restart = "always";
       ExecStart = lib.getExe sanjay-soup;
