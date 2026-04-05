@@ -11,7 +11,7 @@
     apps.update-nvfetcher-sources = let
       nvfetcher = "${pkgs.nvfetcher}/bin/nvfetcher";
       alejandra = "${pkgs.alejandra}/bin/alejandra";
-      prettier = "${pkgs.nodePackages.prettier}/bin/prettier";
+      prettier = "${pkgs.prettier}/bin/prettier";
 
       program = pkgs.writeShellScript "update-nvfetcher-sources" ''
         shopt -s globstar

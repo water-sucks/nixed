@@ -6,7 +6,7 @@
         includes = ["*.nix"];
       };
       prettier = {
-        command = "${pkgs.nodePackages.prettier}/bin/prettier";
+        command = "${pkgs.prettier}/bin/prettier";
         includes = ["*.css" "*.js" "*.md" "*.yml" "*.json"];
         options = ["-w"];
       };

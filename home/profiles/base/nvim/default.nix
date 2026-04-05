@@ -53,7 +53,7 @@
   # This is a workaround wrapper, that can be overridden by having
   # Prettier inside a development shell.
   prettierDefaultConfig = let
-    inherit (pkgs.nodePackages) prettier;
+    inherit (pkgs) prettier;
     prettierConfig = pkgs.writeText "prettier-wrapper-config.json" (
       builtins.toJSON {
         experimentalTernaries = true;
@@ -96,13 +96,13 @@ in
           jdt-language-server
           lua-language-server
           nixd
-          nodePackages.bash-language-server
-          nodePackages.svelte-language-server
-          nodePackages.typescript-language-server
+          bash-language-server
+          svelte-language-server
+          typescript-language-server
           pyright
           ruff
           superhtml
-          nodePackages.vscode-langservers-extracted
+          vscode-langservers-extracted
           terraform-ls
           tinymist
           zls
