@@ -46,5 +46,3 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.g.baleia.automatically(vim.api.nvim_get_current_buf())
   end,
 })
-
-require("dap.ext.vscode").load_launchjs()
