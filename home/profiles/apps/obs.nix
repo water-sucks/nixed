@@ -7,10 +7,16 @@
 in
   lib.mkMerge [
     (lib.mkIf isLinux {
-      home.packages = with pkgs; [
-        obs-studio
-        chatterino2
-      ];
+      programs.obs-studio = {
+        enable = true;
+        package = pkgs.obs-studio.override {
+          cudaSupport = true;
+        };
+        plugins = with pkgs.obs-studio-plugins; [
+          obs-pipewire-audio-capture
+          wlrobs
+        ];
+      };
 
       persistence = {
         directories = [
