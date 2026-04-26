@@ -28,7 +28,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-ai-tools.url = "github:numtide/nix-ai-tools";
+    nix-ai-tools.url = "github:numtide/llm-agents.nix";
     nix-ai-tools.inputs.nixpkgs.follows = "nixpkgs";
 
     sanjay-soup.url = "sourcehut:~watersucks/sanjay-soup";
