@@ -38,6 +38,7 @@
     ../../profiles/tailscale.nix
     ../../profiles/optnix.nix
     ../../profiles/steam.nix
+    ../../profiles/nix-ld.nix
 
     # Users
     ../../../../users/varun
