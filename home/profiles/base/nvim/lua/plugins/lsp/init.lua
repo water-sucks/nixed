@@ -148,20 +148,40 @@ local conform_spec = use("stevearc/conform.nvim", {
       timeout_ms = 500,
     },
     formatters = {
-      sqlfluff = {
-        command = "sqlfluff",
-        args = {
-          "fix",
-          "--disable-progress-bar",
-          "-f",
-          "-n",
-          "-",
-        },
-        stdin = true,
-      },
+      prettier = function()
+        local prettier_cmd = vim.fn.exepath("prettier")
+        if prettier_cmd == "" then
+          prettier_cmd = vim.fn.exepath("prettier-default-config")
+        end
+        return {
+          command = prettier_cmd,
+        }
+      end,
     },
     formatters_by_ft = {
+      astro = { "prettier" },
+      asm = { "asmfmt" },
+      css = { "prettier" },
       sql = { "sqlfluff" },
+      graphql = { "prettier" },
+      handlebars = { "prettier" },
+      html = { "prettier" },
+      javascript = { "prettier" },
+      javascriptreact = { "prettier" },
+      json = { "prettier" },
+      jsonc = { "prettier" },
+      less = { "prettier" },
+      lua = { "stylua" },
+      markdown = { "prettier" },
+      ["markdown.mdx"] = { "prettier" },
+      python = { "black" },
+      scss = { "prettier" },
+      sh = { "shfmt", "shellharden" },
+      tex = { "latexindent" },
+      typescript = { "prettier" },
+      typescriptreact = { "prettier" },
+      vue = { "prettier" },
+      yaml = { "prettier" },
     },
   },
 })

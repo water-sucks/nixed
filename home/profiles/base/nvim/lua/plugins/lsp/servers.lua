@@ -4,44 +4,6 @@ if prettier == "" then
 end
 
 local efm_sources = {
-  formatters = {
-    asmfmt = { formatCommand = "asmfmt", formatStdin = true },
-    black = {
-      formatCommand = "black --no-color -q -",
-      formatStdin = true,
-      rootMarkers = { "pyproject.toml", "requirements.txt", ".git" },
-    },
-    latexindent = { formatCommand = "latexindent -l -", formatStdin = true },
-    prettier = {
-      formatCanRange = true,
-      formatCommand = prettier
-        .. " --stdin --stdin-filepath ${INPUT}"
-        .. " ${--range-start:charStart} ${--range-end:charEnd}",
-      formatStdin = true,
-      rootMarkers = {
-        ".prettierrc",
-        ".prettierrc.json",
-        ".prettierrc.js",
-        ".prettierrc.yml",
-        ".prettierrc.yaml",
-        ".prettierrc.json5",
-        ".prettierrc.mjs",
-        ".prettierrc.cjs",
-        ".prettierrc.toml",
-        "prettier.config.js",
-        "prettier.config.cjs",
-        "package.json",
-      },
-    },
-    shfmt = { formatCommand = "shfmt -filename ${INPUT} -", formatStdin = true },
-    shellharden = { formatCommand = "shellharden --transform ''", formatStdin = true },
-    stylua = {
-      formatCanRange = true,
-      formatCommand = "stylua --color Never ${--range-start:charStart} ${--range-end:charEnd} -",
-      formatStdin = true,
-    },
-  },
-
   diagnostics = {
     chktex = {
       lintCommand = "chktex -v0 -q",
@@ -101,45 +63,14 @@ local server_configs = {
     settings = {
       rootMarkers = { ".git/" },
       languages = {
-        astro = { efm_sources.formatters.prettier },
-        asm = { efm_sources.formatters.asmfmt },
         c = { efm_sources.diagnostics.cppcheck },
         cpp = { efm_sources.diagnostics.cppcheck },
-        css = { efm_sources.formatters.prettier },
         elixir = { efm_sources.diagnostics.credo },
         gitcommit = { efm_sources.diagnostics.gitlint },
-        graphql = { efm_sources.formatters.prettier },
-        handlebars = { efm_sources.formatters.prettier },
-        html = { efm_sources.formatters.prettier },
-        javascript = { efm_sources.formatters.prettier },
-        javascriptreact = { efm_sources.formatters.prettier },
-        json = { efm_sources.formatters.prettier },
-        jsonc = { efm_sources.formatters.prettier },
-        less = { efm_sources.formatters.prettier },
-        lua = { efm_sources.formatters.stylua },
-        markdown = {
-          efm_sources.diagnostics.markdownlint,
-          efm_sources.formatters.prettier,
-        },
-        ["markdown.mdx"] = { efm_sources.formatters.prettier },
+        markdown = { efm_sources.diagnostics.markdownlint },
         nix = { efm_sources.diagnostics.statix },
-        python = {
-          efm_sources.diagnostics.mypy,
-          efm_sources.formatters.black,
-        },
-        scss = { efm_sources.formatters.prettier },
-        sh = {
-          efm_sources.formatters.shfmt,
-          efm_sources.formatters.shellharden,
-        },
-        tex = {
-          efm_sources.diagnostics.chktex,
-          efm_sources.formatters.latexindent,
-        },
-        typescript = { efm_sources.formatters.prettier },
-        typescriptreact = { efm_sources.formatters.prettier },
-        vue = { efm_sources.formatters.prettier },
-        yaml = { efm_sources.formatters.prettier },
+        python = { efm_sources.diagnostics.mypy },
+        tex = { efm_sources.diagnostics.chktex },
         ["="] = { efm_sources.diagnostics.editorconfig_checker },
       },
     },
