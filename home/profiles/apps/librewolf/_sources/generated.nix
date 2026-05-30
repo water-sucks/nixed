@@ -7,14 +7,14 @@
 }: {
   cascadefox-theme = {
     pname = "cascadefox-theme";
-    version = "8700d7718d130023815f0b036f3b1c4aaa2d5392";
+    version = "52dd00e76348bab226701c6316a8b6581549d21b";
     src = fetchFromGitHub {
       owner = "cascadefox";
       repo = "cascade";
-      rev = "8700d7718d130023815f0b036f3b1c4aaa2d5392";
+      rev = "52dd00e76348bab226701c6316a8b6581549d21b";
       fetchSubmodules = false;
-      sha256 = "sha256-uGC+SIRisABvulJcpiHwE4mhhwzMVtpo3RMJEJoCaPU=";
+      sha256 = "sha256-MW6E9OaTGlnbHMRl8svgIyqd7BzYOjvUYi92sdgxNCc=";
     };
-    date = "2025-10-02";
+    date = "2026-05-23";
   };
 }
