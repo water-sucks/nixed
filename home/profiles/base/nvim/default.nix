@@ -114,7 +114,6 @@ in
           cppcheck
           deadnix
           editorconfig-checker
-          efm-langserver
           gitlint
           gofumpt
           nixfmt

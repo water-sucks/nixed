@@ -462,6 +462,19 @@
     pretty-name = "nvim-lightbulb";
     date = "2026-04-27";
   };
+  plugin-nvim-lint = {
+    pname = "plugin-nvim-lint";
+    version = "d48f3a76189d03b2239f6df1b2f7e3fa8353743b";
+    src = fetchFromGitHub {
+      owner = "mfussenegger";
+      repo = "nvim-lint";
+      rev = "d48f3a76189d03b2239f6df1b2f7e3fa8353743b";
+      fetchSubmodules = false;
+      sha256 = "sha256-5mlNCE0KFGfJTocV5NMlczZMmZKGzxqVdUO23KVZ4O8=";
+    };
+    pretty-name = "nvim-lint";
+    date = "2026-05-19";
+  };
   plugin-nvim-lspconfig = {
     pname = "plugin-nvim-lspconfig";
     version = "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7";

@@ -47,6 +47,7 @@ in
     (plugin "rafamadriz" "friendly-snippets")
     (plugin "onsails" "lspkind-nvim")
     (plugin "stevearc" "conform.nvim")
+    (plugin "mfussenegger" "nvim-lint")
 
     # Specialized windows
     (plugin "stevearc" "dressing.nvim")
