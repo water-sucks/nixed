@@ -93,6 +93,17 @@ workloads quite far (a lot like its namesake!).
 A legit MacBook that is a beast on the run. Used for music production on-the-go
 with Logic Pro X and mobile app development.
 
+### MarcusAllen
+
+- Type: Work laptop
+- Operating system: macOS (with nix-darwin)
+- Model: MacBook M3 Max (128 GB RAM)
+
+You thought TimBrown was a beast? Nah, this one is a beast! Especially
+considering the global RAM shortage.
+
+Used for work purposes only @ [Neuralink](https://neuralink.com).
+
 ### BoJackson
 
 - Type: Server

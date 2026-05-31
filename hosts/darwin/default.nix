@@ -28,6 +28,7 @@ in {
   flake = {
     darwinConfigurations = {
       TimBrown = mkDarwin "TimBrown" ./machines/TimBrown {system = "aarch64-darwin";};
+      MarcusAllen = mkDarwin "MarcusAllen" ./machines/MarcusAllen {system = "aarch64-darwin";};
     };
   };
 }
