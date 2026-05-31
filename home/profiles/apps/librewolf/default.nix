@@ -114,16 +114,17 @@ in
       programs.librewolf.package = null;
 
       homebrew.casks = [
-        {
-          name = "librewolf";
-          args = {
-            no_quarantine = true;
-          };
-        }
+        "librewolf"
       ];
 
       home.sessionVariables = {
         MOZ_LEGACY_PROFILES = "1";
+      };
+
+      home.activation = {
+        removeLibrewolfQuarantine = lib.hm.dag.entryAfter ["writeBefore"] ''
+          xattr -r -d com.apple.quarantine /Applications/LibreWolf.app
+        '';
       };
     })
 
