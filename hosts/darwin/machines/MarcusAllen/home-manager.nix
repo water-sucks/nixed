@@ -6,7 +6,7 @@ let
   };
 
   wallpaperModule = {
-    services.darwin-wallpaper.file = ../../../../assets/city.jpg;
+    services.darwin-wallpaper.file = ../../../../assets/moonscape.jpg;
   };
 in {
   home-manager.sharedModules = [
