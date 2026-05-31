@@ -10,23 +10,19 @@ lib.mkMerge [
       enableDefaultConfig = false;
 
       includes = ["~/.config/ssh/config.local"];
-
-      matchBlocks = {
+      settings = {
         "*" = {
-          addressFamily = "inet";
-          forwardAgent = false;
-          forwardX11 = false;
-          forwardX11Trusted = false;
-          serverAliveInterval = 300;
-          serverAliveCountMax = 2;
-
-          extraOptions = {
-            AddKeysToAgent = "yes";
-            ChallengeResponseAuthentication = "no";
-            PasswordAuthentication = "yes";
-            StrictHostKeyChecking = "ask";
-            VisualHostKey = "yes";
-          };
+          AddKeysToAgent = "yes";
+          AddressFamily = "inet";
+          ChallengeResponseAuthentication = "no";
+          ForwardAgent = false;
+          ForwardX11 = false;
+          ForwardX11Trusted = false;
+          PasswordAuthentication = "yes";
+          ServerAliveCountMax = 2;
+          ServerAliveInterval = 300;
+          StrictHostKeyChecking = "ask";
+          VisualHostKey = "yes";
         };
       };
     };

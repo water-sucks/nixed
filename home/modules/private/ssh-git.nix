@@ -22,17 +22,17 @@ with lib; let
     };
   };
 
-  sshMatchBlock = {
+  sshMatchBlocks = {
     "github.com" = {
-      hostname = "github.com";
-      user = "git";
-      identityFile = map (username: "~/.ssh/github_${username}") (builtins.attrNames cfg.githubAccounts);
+      Hostname = "github.com";
+      User = "git";
+      IdentityFile = map (username: "~/.ssh/github_${username}") (builtins.attrNames cfg.githubAccounts);
     };
 
     "git.sr.ht" = {
-      hostname = "git.sr.ht";
-      user = "git";
-      identityFile = map (username: "~/.ssh/srht_${username}") (builtins.attrNames cfg.sourcehutAccounts);
+      Hostname = "git.sr.ht";
+      User = "git";
+      IdentityFile = map (username: "~/.ssh/srht_${username}") (builtins.attrNames cfg.sourcehutAccounts);
     };
   };
 in {
@@ -51,7 +51,7 @@ in {
   };
 
   config = mkIf (cfg != {}) {
-    programs.ssh.matchBlocks = sshMatchBlock;
+    programs.ssh.settings = sshMatchBlocks;
 
     home.activation.generateSshKeys = let
       generateSshStub = prefix: username: properties: let
