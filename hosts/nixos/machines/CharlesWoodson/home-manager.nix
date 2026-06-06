@@ -87,10 +87,23 @@
       ];
     };
   };
+
+  riverModule = {
+    wayland.windowManager.river = {
+      settings = {
+        input = {
+          "*Keychron*" = {
+            pointer-accel = "-0.7";
+          };
+        };
+      };
+    };
+  };
 in {
   home-manager.sharedModules = [
     kanshiModule
     openrgbModule
+    riverModule
   ];
 
   home-manager.users.varun = _: {
