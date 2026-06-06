@@ -90,6 +90,18 @@
     ];
   };
 
+  # TODO: remove when systemd is updated; currently on staging
+  systemd.package = pkgs.systemd.overrideAttrs (o: {
+    patches =
+      o.patches
+      ++ [
+        (pkgs.fetchpatch {
+          url = "https://github.com/systemd/systemd/commit/df45055942330fcd2b77389e449905e7f6ca34ec.patch";
+          hash = "sha256-PDh4mP9rYGCglp25346nExU2v6P0WYPfLZgu+YwzZ9c=";
+        })
+      ];
+  });
+
   security.sudo.wheelNeedsPassword = false;
 
   services.openssh = {
