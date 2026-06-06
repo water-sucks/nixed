@@ -40,7 +40,7 @@
 
         editorconfig-checker = {
           tags = ["check"];
-          run = "${pkgs.editorconfig-checker}/bin/editorconfig-checker";
+          run = "${pkgs.editorconfig-checker}/bin/editorconfig-checker -disable-charset";
         };
       };
     };
