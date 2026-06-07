@@ -10,6 +10,7 @@
     zfs = {
       devNodes = "/dev/disk/by-uuid";
       requestEncryptionCredentials = true;
+      forceImportRoot = false;
     };
 
     initrd = {
