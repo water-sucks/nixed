@@ -350,6 +350,7 @@ local nvim_lint_spec = use("mfussenegger/nvim-lint", {
   config = function()
     local lint = require("lint")
     lint.linters_by_ft = {
+      bzl = { "buildifier" },
       c = { "cppcheck" },
       cpp = { "cppcheck" },
       elixir = { "credo" },
