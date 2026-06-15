@@ -29,7 +29,10 @@ in
         settings = {
           update_check = false;
           sync_frequency = "15m";
-          search_mode = "fuzzy";
+          search_mode = "daemon-fuzzy";
+          filter_mode = "host";
+          search_mode_shell_up_key_binding = "prefix";
+          filter_mode_shell_up_key_binding = "host";
           inline_height = 33;
           enter_accept = "false";
           common_subcommands = ["nixos"];
