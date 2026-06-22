@@ -9,6 +9,12 @@
   atuin = "${config.programs.atuin.package}/bin/atuin";
 
   automaticLogin = config.sops.secrets ? atuin-username;
+  socketPath = "${config.home.homeDirectory}/.local/share/atuin/atuin.sock";
+  daemonStartScript = pkgs.writeShellScript "atuin-daemon-start.sh" ''
+    rm -f ${socketPath}
+    exec ${atuin} daemon start
+  '';
+
   automaticLoginScript = pkgs.writeShellScript "automatic-atuin-login.sh" ''
     if [ -e ${config.home.homeDirectory}/.local/share/atuin/session ]; then
       echo "atuin session exists already"
@@ -121,7 +127,7 @@ in
       launchd.agents.atuin-daemon = {
         enable = true;
         config = {
-          ProgramArguments = ["${atuin}" "daemon"];
+          ProgramArguments = ["${daemonStartScript}"];
           EnvironmentVariables = {
             ATUIN_LOG = "info";
           };
@@ -130,6 +136,8 @@ in
             SuccessfulExit = false;
           };
           ProcessType = "Background";
+          StandardErrorPath = "${config.xdg.stateHome}/atuin/daemon.log";
+          StandardOutPath = "${config.xdg.stateHome}/atuin/daemon.log";
         };
       };
 
