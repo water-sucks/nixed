@@ -321,6 +321,7 @@ local conform_spec = use("stevearc/conform.nvim", {
     formatters_by_ft = {
       astro = { "prettier" },
       asm = { "asmfmt" },
+      bzl = { "buildifier" },
       css = { "prettier" },
       sql = { "sqlfluff" },
       graphql = { "prettier" },
