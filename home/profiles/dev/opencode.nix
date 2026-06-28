@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   options = {
     # This option will only be enabled on home-manager systems that have
     # access to a local AI engine for now.
@@ -8,6 +12,7 @@
   config = {
     programs.opencode = {
       enable = true;
+      package = pkgs.stable.opencode;
       tui = {
         theme = "darkrose";
       };
