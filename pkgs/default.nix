@@ -1,4 +1,8 @@
-{lib, ...}: let
+{
+  inputs,
+  lib,
+  ...
+}: let
   callPackage = pkgs: path: args: let
     sources = pkgs.callPackage _sources/generated.nix {};
   in
@@ -21,6 +25,10 @@ in {
     default = _final: prev:
       (lib.mapAttrs (_: v: callPackage prev v {}) packages')
       // {
+        stable = import inputs.nixpkgs-stable {
+          inherit (prev.hostPlatform) system;
+        };
+
         formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
       };
   };

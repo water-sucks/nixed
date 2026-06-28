@@ -536,6 +536,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1782604477,
+        "narHash": "sha256-wGTjgfnUBw89PeHbWVqz2rKTEJIPQc50dUdpNbjHBUc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0a79de113ede50271babdd3c201c9acf26bd1652",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1780336545,
@@ -655,6 +671,7 @@
         "nixago": "nixago",
         "nixos-cli": "nixos-cli",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-stable": "nixpkgs-stable",
         "optnix": "optnix_2",
         "sanjay-soup": "sanjay-soup",
         "sops-nix": "sops-nix"
