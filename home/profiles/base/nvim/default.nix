@@ -124,7 +124,7 @@ in
           shellharden
           shfmt
           statix
-          sqlfluff
+          stable.sqlfluff
           stylua
           typstyle
 
