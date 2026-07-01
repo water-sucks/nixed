@@ -13,6 +13,7 @@
     ./lsd.nix
     ./nix-index.nix
     ./optnix.nix
+    ./ripgrep.nix
     ./sops.nix
     ./starship.nix
     ./vivid.nix
