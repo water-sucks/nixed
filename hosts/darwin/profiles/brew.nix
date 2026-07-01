@@ -5,6 +5,8 @@
 }: {
   homebrew = {
     enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
     global = {
       brewfile = true;
     };
