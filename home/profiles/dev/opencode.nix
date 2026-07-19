@@ -12,7 +12,7 @@
   config = {
     programs.opencode = {
       enable = true;
-      package = pkgs.stable.opencode;
+      package = pkgs.opencode;
       tui = {
         theme = "darkrose";
       };
