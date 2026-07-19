@@ -8,7 +8,7 @@ in {
       "--border"
     ];
     defaultCommand = "fd --type f";
-    fileWidgetCommand = "fd --type f";
+    fileWidget.command = "fd --type f";
     colors = {
       fg = "#${c.dark-pink}";
       bg = "#${c.bg}";
