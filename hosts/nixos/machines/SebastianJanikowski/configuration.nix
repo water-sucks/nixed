@@ -44,6 +44,7 @@ in {
     ];
     files = [
       "/etc/machine-id"
+      "/var/lib/systemd/credential.secret"
     ];
 
     users.varun = let
