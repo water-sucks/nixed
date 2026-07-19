@@ -31,7 +31,7 @@ in
     {
       programs.atuin = {
         enable = true;
-        flags = [];
+        flags = ["--disable-ctrl-r"];
         settings = {
           update_check = false;
           sync_frequency = "15m";
