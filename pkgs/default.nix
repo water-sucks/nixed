@@ -26,7 +26,7 @@ in {
       (lib.mapAttrs (_: v: callPackage prev v {}) packages')
       // {
         stable = import inputs.nixpkgs-stable {
-          inherit (prev.hostPlatform) system;
+          inherit (prev.stdenv.hostPlatform) system;
         };
 
         formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
