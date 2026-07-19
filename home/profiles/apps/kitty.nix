@@ -37,6 +37,8 @@ in
           size = lib.mkDefault 10;
         };
         settings = {
+          auto_reload_config = -1;
+
           macos_option_as_alt = "both";
 
           allow_remote_control = "yes";
