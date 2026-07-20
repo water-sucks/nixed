@@ -14,7 +14,6 @@
     ../../profiles/brew.nix
     ../../profiles/optnix.nix
     ../../profiles/vscode.nix
-    ../../profiles/ollama.nix
     ../../profiles/tailscale.nix
     ../../profiles/amphetamine.nix
 

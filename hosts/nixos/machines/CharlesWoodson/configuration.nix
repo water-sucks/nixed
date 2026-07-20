@@ -1,4 +1,8 @@
-{config, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   pwSecretLocation = username: {
     sopsFile = ./secrets/passwords.yml;
     format = "yaml";
@@ -53,6 +57,26 @@ in {
   };
 
   services.earlyoom.enable = true;
+
+  profiles.llama-cpp = {
+    enable = true;
+    presets = {
+      "OmniCoder-9B" = let
+        model = pkgs.fetchHuggingFaceModel {
+          repo = "Tesslate/OmniCoder-9B-GGUF";
+          rev = "c06117a99179f36962d782946970726b9fc9e533";
+          file = "omnicoder-9b-q8_0.gguf";
+          hash = "sha256-O7Ng8NW/eIUD3NdR5wR2AXMpijWyZgLfuTlHTYd0VzI=";
+        };
+      in {
+        model = "${model}";
+        alias = "Tesslate/OmniCoder-9B";
+        temp = "1.0";
+        top-p = "0.95";
+        top-k = "40";
+      };
+    };
+  };
 
   services.hardware.openrgb.enable = true;
 

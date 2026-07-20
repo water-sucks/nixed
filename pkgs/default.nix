@@ -30,6 +30,17 @@ in {
         };
 
         formats = (import ./pkgs-lib {inherit (prev) lib pkgs;}).formats // prev.formats;
+
+        fetchHuggingFaceModel = {
+          repo,
+          rev,
+          file,
+          hash,
+        }:
+          prev.fetchurl {
+            url = "https://huggingface.co/${repo}/resolve/${rev}/${file}";
+            inherit hash;
+          };
       };
   };
 }

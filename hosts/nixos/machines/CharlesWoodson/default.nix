@@ -34,7 +34,7 @@
     ../../profiles/kvm.nix
     ../../profiles/ios.nix
     ../../profiles/docker.nix
-    ../../profiles/ollama.nix
+    ../../profiles/llama.nix
     ../../profiles/tailscale.nix
     ../../profiles/optnix.nix
     ../../profiles/steam.nix

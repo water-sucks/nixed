@@ -68,27 +68,24 @@
 
     programs.opencode = {
       settings = {
+        model = "OmniCoder-9B";
         provider = {
-          ollama = {
+          "llama.cpp" = let
+            llamaCfg = config.services.llama-cpp.settings;
+          in {
             npm = "@ai-sdk/openai-compatible";
-            name = "Ollama (local)";
+            name = "llama-server";
             options = {
-              baseURL = "http://${config.services.ollama.host}:${toString config.services.ollama.port}/v1";
+              baseURL = "http://${llamaCfg.host}:${toString llamaCfg.port}/v1";
             };
             models = {
-              qwen3-coder = {
-                name = "Qwen3-Coder";
+              "OmniCoder-9B" = {
+                name = "OmniCoder-9B (local)";
               };
             };
           };
         };
       };
-    };
-
-    persistence = {
-      directories = [
-        ".config/opencode"
-      ];
     };
   };
 

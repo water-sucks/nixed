@@ -111,8 +111,8 @@
     };
   };
 
-  services.ollama = {
-    package = pkgs.ollama-cuda;
+  services.llama-cpp = {
+    package = pkgs.llama-cpp.override {cudaSupport = true;};
   };
 
   boot.binfmt.emulatedSystems = ["aarch64-linux"];
