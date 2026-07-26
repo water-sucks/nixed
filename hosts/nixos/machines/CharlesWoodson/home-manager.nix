@@ -8,13 +8,11 @@
             {
               criteria = "DP-5";
               mode = "2560x1440@74.968002Hz";
-              adaptiveSync = true;
             }
             {
               criteria = "DP-4";
               mode = "2560x1440@74.968002Hz";
               transform = "90";
-              adaptiveSync = true;
             }
           ];
         }
