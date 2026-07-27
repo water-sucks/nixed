@@ -7,11 +7,9 @@
           profile.outputs = [
             {
               criteria = "DP-5";
-              mode = "2560x1440@74.968002Hz";
             }
             {
               criteria = "DP-4";
-              mode = "2560x1440@74.968002Hz";
               transform = "90";
             }
           ];
