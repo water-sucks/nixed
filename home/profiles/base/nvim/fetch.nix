@@ -75,13 +75,12 @@ in
     }
     (plugin "Allaman" "emoji.nvim")
     (plugin "2kabhishek" "nerdy.nvim")
-    (plugin "bullets-vim" "bullets.vim")
+    (plugin "bullets-vim" "bullets.nvim")
     (plugin "nvimdev" "template.nvim")
 
     # UNIX/Git commands
     (plugin "tpope" "vim-eunuch")
     (plugin "lewis6991" "gitsigns.nvim")
-    (plugin "sindrets" "diffview.nvim")
     (plugin "nanotee" "zoxide.vim")
     (plugin "stevearc" "oil.nvim")
 
@@ -113,19 +112,7 @@ in
     (plugin "IogaMaster" "neocord")
     (plugin "folke" "which-key.nvim")
 
-    # Debugging
-    (plugin "mfussenegger" "nvim-dap")
-    (plugin "rcarriga" "nvim-dap-ui")
-    (plugin "nvim-neotest" "nvim-nio")
-    (plugin "theHamsta" "nvim-dap-virtual-text")
-    (plugin "leoluz" "nvim-dap-go")
-    (plugin "mfussenegger" "nvim-dap-python")
-
     # Language-specific plugins
     (plugin "folke" "lazydev.nvim")
     (plugin "akinsho" "flutter-tools.nvim")
-    (plugin "mfussenegger" "nvim-jdtls")
-    (plugin "lervag" "vimtex")
-    (plugin "kaarmu" "typst.vim")
-    (plugin "seblj" "roslyn.nvim")
   ]

@@ -1,203 +1,168 @@
 local c = require("darkrose.colors").get()
 
-local lualine_spec = use("nvim-lualine/lualine.nvim", {
-  event = "BufEnter",
-})
+local conditions = {
+  buffer_not_empty = function()
+    return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
+  end,
+  hide_in_width = function()
+    return vim.fn.winwidth(0) > 80
+  end,
+}
 
-lualine_spec.config = function()
-  local lualine = require("lualine")
+local mode_component = {
+  function()
+    return "󰇈"
+  end,
+  color = function()
+    local mode_color = {
+      n = c.red,
+      i = c.orange,
+      ic = c.orange,
+      no = c.red,
+      c = c.dark_pink,
+      v = c.magenta,
+      V = c.magenta,
+      [""] = c.magenta,
+      s = c.magenta,
+      S = c.magenta,
+      [""] = c.magenta,
+      R = c.light_pink,
+      Rv = c.light_pink,
+      cv = c.dark_pink,
+      r = c.red,
+      rm = c.red,
+      ["r?"] = c.red,
+      ["!"] = c.red,
+      t = c.red,
+    }
+    return { fg = mode_color[vim.fn.mode()] }
+  end,
+}
 
-  local bg = c.bg_float_bright
+local filename_component = {
+  "filename",
+  cond = conditions.buffer_not_empty,
+  color = { fg = c.dark_pink, gui = "bold" },
+}
 
-  local conditions = {
-    buffer_not_empty = function()
-      return vim.fn.empty(vim.fn.expand("%:t")) ~= 1
-    end,
-    hide_in_width = function()
-      return vim.fn.winwidth(0) > 80
-    end,
-    check_git_workspace = function()
-      local filepath = vim.fn.expand("%:p:h")
-      local gitdir = vim.fn.finddir(".git", filepath .. ";")
-      return gitdir and #gitdir > 0 and #gitdir < #filepath
-    end,
-  }
+local scroll_percentage_component = {
+  function()
+    local cur = vim.fn.line(".")
+    local total = vim.fn.line("$")
+    return math.floor(cur / total * 100) .. "%%"
+  end,
+  color = { fg = c.fg, gui = "bold" },
+}
 
-  -- Config
-  local config = {
-    options = {
-      -- Disable sections and component separators
-      component_separators = "",
-      section_separators = "",
-      theme = {
-        -- We are going to use lualine_c an lualine_x as the left
-        -- and right sections. Both are highlighted by c theme.
-        normal = { c = { fg = c.fg, bg = bg } },
-        inactive = { c = { fg = c.fg, bg = bg } },
+local diagnostics_component = {
+  "diagnostics",
+  sources = { "nvim_diagnostic" },
+  symbols = { error = " ", warn = " ", info = " ", hint = " " },
+  diagnostics_color = {
+    error = { fg = c.error },
+    warn = { fg = c.warning },
+    info = { fg = c.info },
+    hint = { fg = c.hint },
+  },
+}
+
+local search_count_component = {
+  function()
+    local search = vim.fn.searchcount({ maxcount = 0 })
+    local current_search = search.current
+    local total = search.total
+    if current_search > 0 and vim.v.hlsearch ~= 0 then
+      return "[" .. current_search .. "/" .. total .. "]"
+    else
+      return ""
+    end
+  end,
+}
+
+local encoding_component = {
+  "o:encoding",
+  fmt = string.upper,
+  cond = conditions.hide_in_width,
+  color = { fg = c.red, gui = "bold" },
+}
+
+local eol_type_component = {
+  "fileformat",
+  fmt = string.upper,
+  icons_enabled = false,
+  color = { fg = c.red, gui = "bold" },
+}
+
+local branch_component = {
+  "branch",
+  icon = "",
+  color = { fg = c.orange, gui = "bold" },
+}
+
+local diff_component = {
+  "diff",
+  symbols = { added = "+", modified = "~", removed = "-" },
+  diff_color = {
+    added = { fg = c.diff.add },
+    modified = { fg = c.diff.change },
+    removed = { fg = c.diff.delete },
+  },
+  cond = conditions.hide_in_width,
+}
+
+require("lualine").setup({
+  options = {
+    component_separators = "",
+    section_separators = "",
+    theme = {
+      normal = { c = { fg = c.fg, bg = c.bg_float_bright } },
+      inactive = { c = { fg = c.fg, bg = c.bg_float_bright } },
+    },
+  },
+  -- these are to remove the defaults
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    lualine_c = {},
+    lualine_x = {},
+  },
+  sections = {
+    -- also to remove the defaults
+    lualine_a = {},
+    lualine_b = {},
+    lualine_y = {},
+    lualine_z = {},
+    lualine_c = {
+      {
+        function()
+          return "▊"
+        end,
+        color = { fg = c.gray },
+        padding = { left = 0, right = 1 },
+      },
+      mode_component,
+      filename_component,
+      { "location" },
+      scroll_percentage_component,
+      diagnostics_component,
+    },
+    lualine_x = {
+      search_count_component,
+      { "filetype" },
+      { "filesize", cond = conditions.buffer_not_empty },
+      encoding_component,
+      eol_type_component,
+      branch_component,
+      diff_component,
+      {
+        function()
+          return "▊"
+        end,
+        color = { fg = c.gray },
+        padding = { left = 1 },
       },
     },
-    sections = {
-      -- these are to remove the defaults
-      lualine_a = {},
-      lualine_b = {},
-      lualine_y = {},
-      lualine_z = {},
-      -- These will be filled later
-      lualine_c = {},
-      lualine_x = {},
-    },
-    inactive_sections = {
-      -- these are to remove the defaults
-      lualine_a = {},
-      lualine_b = {},
-      lualine_y = {},
-      lualine_z = {},
-      lualine_c = {},
-      lualine_x = {},
-    },
-  }
-
-  -- Inserts a component in lualine_c at left section
-  local function left(component)
-    table.insert(config.sections.lualine_c, component)
-  end
-
-  -- Inserts a component in lualine_x ot right section
-  local function right(component)
-    table.insert(config.sections.lualine_x, component)
-  end
-
-  left({
-    function()
-      return "▊"
-    end,
-    color = { fg = c.gray },
-    padding = { left = 0, right = 1 },
-  })
-
-  left({
-    function()
-      return ""
-    end,
-    color = function()
-      local mode_color = {
-        n = c.red, -- Normal
-        i = c.orange, -- Insert
-        ic = c.orange, -- Completion insert
-        no = c.red, -- Operator-pending
-        c = c.dark_pink, -- Command-line
-        v = c.magenta, -- Visual
-        V = c.magenta, -- Line-wise visual
-        [""] = c.magenta, --  Block-wise visual
-        s = c.magenta, -- Select
-        S = c.magenta, -- Line-wise visual
-        [""] = c.magenta, -- Block-wise visual
-        R = c.light_pink, -- Replace
-        Rv = c.light_pink, -- Virtual replace
-        cv = c.dark_pink, -- Ex
-        r = c.red, -- Hit-enter
-        rm = c.red, -- More prompt
-        ["r?"] = c.red, -- :confirm
-        ["!"] = c.red, -- Shell command
-        t = c.red, -- Terminal
-      }
-      return { fg = mode_color[vim.fn.mode()] }
-    end,
-    padding = { right = 1 },
-  })
-
-  left({
-    "filename",
-    cond = conditions.buffer_not_empty,
-    color = { fg = c.dark_pink, gui = "bold" },
-  })
-
-  left({ "location" })
-
-  left({
-    function()
-      local cur = vim.fn.line(".")
-      local total = vim.fn.line("$")
-      return math.floor(cur / total * 100) .. "%%"
-    end,
-    color = { fg = c.fg, gui = "bold" },
-  })
-
-  left({
-    "diagnostics",
-    sources = { "nvim_diagnostic" },
-    symbols = { error = " ", warn = " ", info = " ", hint = " " },
-    diagnostics_color = {
-      error = { fg = c.error },
-      warn = { fg = c.warning },
-      info = { fg = c.info },
-      hint = { fg = c.hint },
-    },
-  })
-
-  right({
-    function()
-      local search = vim.fn.searchcount({ maxcount = 0 })
-      local current_search = search.current
-      local total = search.total
-
-      if current_search > 0 and vim.v.hlsearch ~= 0 then
-        return "[" .. current_search .. "/" .. total .. "]"
-      else
-        return ""
-      end
-    end,
-  })
-
-  right({ "filetype" })
-
-  right({
-    "filesize",
-    cond = conditions.buffer_not_empty,
-  })
-
-  right({
-    "o:encoding",
-    fmt = string.upper,
-    cond = conditions.hide_in_width,
-    color = { fg = c.red, gui = "bold" },
-  })
-
-  right({
-    "fileformat",
-    fmt = string.upper,
-    icons_enabled = false,
-    color = { fg = c.red, gui = "bold" },
-  })
-
-  right({
-    "branch",
-    icon = "",
-    color = { fg = c.orange, gui = "bold" },
-  })
-
-  right({
-    "diff",
-    symbols = { added = "+", modified = "~", removed = "-" },
-    diff_color = {
-      added = { fg = c.diff.add },
-      modified = { fg = c.diff.change },
-      removed = { fg = c.diff.delete },
-    },
-    cond = conditions.hide_in_width,
-  })
-
-  right({
-    function()
-      return "▊"
-    end,
-    color = { fg = c.gray },
-    padding = { left = 1 },
-  })
-
-  lualine.setup(config)
-end
-
-return {
-  lualine_spec,
-}
+  },
+})

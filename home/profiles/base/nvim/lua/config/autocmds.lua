@@ -1,29 +1,29 @@
 local augroup = vim.api.nvim_create_augroup
-local au = vim.api.nvim_create_autocmd
+local autocmd = vim.api.nvim_create_autocmd
 
 -- Remove terminal decorations
 augroup("TerminalSignsToggle", { clear = true })
-au({ "TermOpen", "TermEnter", "BufEnter" }, {
+autocmd({ "TermOpen", "TermEnter", "BufEnter" }, {
   group = "TerminalSignsToggle",
   pattern = { "term://*" },
   callback = function()
-    vim.o.number = false
-    vim.o.signcolumn = "no"
+    vim.opt.number = false
+    vim.opt.signcolumn = "no"
 
     vim.cmd("startinsert")
   end,
 })
-au("TermClose", {
+autocmd("TermClose", {
   group = "TerminalSignsToggle",
   pattern = { "term://**" },
   callback = function()
-    vim.o.number = true
-    vim.o.signcolumn = "yes"
+    vim.opt.number = true
+    vim.opt.signcolumn = "yes"
   end,
 })
 
 vim.api.nvim_create_augroup("MarkdownCommands", { clear = true })
-au("FileType", {
+autocmd("FileType", {
   group = "MarkdownCommands",
   pattern = "markdown",
   callback = function()
@@ -32,7 +32,7 @@ au("FileType", {
 })
 
 vim.api.nvim_create_augroup("MailCommands", { clear = true })
-au("FileType", {
+autocmd("FileType", {
   group = "MailCommands",
   pattern = "mail",
   callback = function()
@@ -41,7 +41,7 @@ au("FileType", {
 })
 
 vim.api.nvim_create_augroup("GitCommit", { clear = true })
-au("FileType", {
+autocmd("FileType", {
   group = "GitCommit",
   pattern = "gitcommit",
   callback = function()

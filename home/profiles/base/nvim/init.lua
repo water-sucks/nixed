@@ -1,11 +1,4 @@
-local modules = {
-  "options",
-  "autocmds",
-  "mappings",
-  "commands",
-  "filetypes",
-}
-
+local modules = { "options", "autocmds", "mappings", "commands", "filetypes" }
 for _, module in ipairs(modules) do
   local ok = pcall(require, "config." .. module)
   if not ok then
@@ -13,58 +6,25 @@ for _, module in ipairs(modules) do
   end
 end
 
-require("utils")
-
-local lazypath = vim.fn.stdpath("data") .. "/plugins/lazy.nvim"
-if vim.fn.isdirectory(lazypath) == 0 then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "--single-branch",
-    "https://github.com/folke/lazy.nvim.git",
-    lazypath,
-  })
+local plugin_dir = vim.fn.stdpath("data") .. "/plugins"
+for _, path in ipairs(vim.fn.glob(plugin_dir .. "/*", true, true)) do
+  vim.opt.runtimepath:append(path)
 end
-vim.opt.runtimepath:prepend(lazypath)
 
-require("lazy").setup("plugins", {
-  default = {
-    lazy = true,
-  },
-  colorschemes = { "darkrose" },
-  dev = {
-    path = vim.env.HOME .. "/Code/NeovimPlugins",
-    patterns = { "water-sucks" },
-    fallback = false,
-  },
-  performance = {
-    cache = {
-      enabled = true,
-    },
-    rtp = {
-      disabled_plugins = {
-        "2html_plugin",
-        "getscript",
-        "getscriptPlugin",
-        "gzip",
-        "logipat",
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
-        "matchit",
-        "tar",
-        "tarPlugin",
-        "rrhelper",
-        "spellfile_plugin",
-        "vimball",
-        "vimballPlugin",
-        "zip",
-        "zipPlugin",
-        "matchparen",
-        "fzf",
-      },
-    },
-  },
-})
+for _, plugin in ipairs({
+  "core",
+  "lsp",
+  "colors",
+  "appearance",
+  "lualine",
+  "treesitter",
+  "telescope",
+  "editing",
+  "langs",
+  "fun",
+}) do
+  local ok, err = pcall(require, "plugins." .. plugin)
+  if not ok then
+    print("Failed to load " .. plugin .. ": " .. tostring(err))
+  end
+end

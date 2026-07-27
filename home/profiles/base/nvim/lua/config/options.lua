@@ -3,7 +3,6 @@ vim.o.laststatus = 3
 vim.o.termguicolors = true
 vim.o.hidden = true
 vim.o.updatetime = 100
-vim.o.foldenable = false
 vim.o.scrolloff = 0
 vim.o.mouse = "a"
 vim.o.tabstop = 4
@@ -13,6 +12,9 @@ vim.o.smartindent = true
 vim.o.timeoutlen = 50
 vim.o.pumheight = 10
 vim.o.formatoptions = "jcroql1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 vim.opt.number = true
 vim.opt.ignorecase = true
