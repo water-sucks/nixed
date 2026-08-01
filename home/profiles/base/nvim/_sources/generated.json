@@ -667,7 +667,7 @@
   },
   "plugin-nvim-lspconfig": {
     "cargoLock": null,
-    "date": "2026-07-23",
+    "date": "2026-07-31",
     "extract": null,
     "name": "plugin-nvim-lspconfig",
     "passthru": {
@@ -681,12 +681,12 @@
       "name": null,
       "owner": "neovim",
       "repo": "nvim-lspconfig",
-      "rev": "d592c1e6ad9a0a01b3d5ed3f0345d68407167181",
-      "sha256": "sha256-yrIZFI/ZraWska4HKBHwvKZVAiGjmSIi5uf/vzpeR4c=",
+      "rev": "9ae2b3b63b924b1329724dae76e9d2c5c40b389c",
+      "sha256": "sha256-1YUENcgt76ocM4gs3w9F/6Djeh0jKRIPbjj5mh07pf4=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "d592c1e6ad9a0a01b3d5ed3f0345d68407167181"
+    "version": "9ae2b3b63b924b1329724dae76e9d2c5c40b389c"
   },
   "plugin-nvim-treesitter-textobjects": {
     "cargoLock": null,

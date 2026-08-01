@@ -386,16 +386,16 @@
   };
   plugin-nvim-lspconfig = {
     pname = "plugin-nvim-lspconfig";
-    version = "d592c1e6ad9a0a01b3d5ed3f0345d68407167181";
+    version = "9ae2b3b63b924b1329724dae76e9d2c5c40b389c";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "d592c1e6ad9a0a01b3d5ed3f0345d68407167181";
+      rev = "9ae2b3b63b924b1329724dae76e9d2c5c40b389c";
       fetchSubmodules = false;
-      sha256 = "sha256-yrIZFI/ZraWska4HKBHwvKZVAiGjmSIi5uf/vzpeR4c=";
+      sha256 = "sha256-1YUENcgt76ocM4gs3w9F/6Djeh0jKRIPbjj5mh07pf4=";
     };
     pretty-name = "nvim-lspconfig";
-    date = "2026-07-23";
+    date = "2026-07-31";
   };
   plugin-nvim-treesitter-textobjects = {
     pname = "plugin-nvim-treesitter-textobjects";
