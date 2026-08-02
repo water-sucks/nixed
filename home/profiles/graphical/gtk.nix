@@ -19,18 +19,12 @@
       name = "IBM Plex Sans";
     };
     iconTheme = {
-      name = "Colloid-grey-dark";
-      package = pkgs.colloid-icon-theme.override {
-        colorVariants = ["grey"];
-      };
+      name = "rose-pine-icons";
+      package = pkgs.rose-pine-icon-theme;
     };
     theme = {
-      name = "Vimix-dark-ruby";
-      package = pkgs.vimix-gtk-themes.override {
-        themeVariants = ["ruby"];
-        colorVariants = ["dark"];
-        tweaks = ["flat" "grey"];
-      };
+      name = "Juno-mirage";
+      package = pkgs.juno-theme;
     };
 
     gtk3 = {
