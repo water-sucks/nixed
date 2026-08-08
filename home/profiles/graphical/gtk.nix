@@ -19,12 +19,15 @@
       name = "IBM Plex Sans";
     };
     iconTheme = {
-      name = "rose-pine-icons";
-      package = pkgs.rose-pine-icon-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
     theme = {
-      name = "Juno-mirage";
-      package = pkgs.juno-theme;
+      name = "Orchis-Dark";
+      package = pkgs.orchis-theme.override {
+        tweaks = ["solid" "compact" "black" "primary" "submenu"];
+        border-radius = 2;
+      };
     };
 
     gtk3 = {
