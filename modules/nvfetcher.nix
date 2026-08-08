@@ -40,7 +40,7 @@
         echo "Formatting generated files..."
 
         ${alejandra} -q ./**/_sources/generated.nix
-        ${prettier} --loglevel=silent -w ./**/_sources/generated.json
+        ${prettier} -w ./**/_sources/generated.json
       '';
     in {
       program = "${program}";
