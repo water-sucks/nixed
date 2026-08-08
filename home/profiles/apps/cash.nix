@@ -11,6 +11,12 @@ in
         pkgs.gnucash
       ];
 
+      gtk.gtk3.extraCss = ''
+        gnc-id-sheet-list {
+          background-color: @theme_bg_color;
+        }
+      '';
+
       persistence = {
         directories = [
           ".config/gnucash"
