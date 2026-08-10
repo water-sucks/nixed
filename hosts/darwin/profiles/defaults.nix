@@ -26,6 +26,7 @@ in {
       CreateDesktop = false;
       FXEnableExtensionChangeWarning = false;
       _FXShowPosixPathInTitle = true;
+      QuitMenuItem = true;
     };
 
     LaunchServices.LSQuarantine = false;
