@@ -1,9 +1,12 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: let
   sources = pkgs.callPackage _sources/generated.nix {};
+
+  inherit (pkgs) git-spice;
 in {
   programs.git = {
     enable = true;
@@ -54,8 +57,11 @@ in {
     signing.format = "openpgp";
   };
 
-  home.packages = with pkgs; [
-    # Stacking branches
+  home.packages = [
     git-spice
   ];
+
+  programs.zsh.initContent = ''
+    eval "$(${lib.getExe git-spice} shell completion zsh)"
+  '';
 }
