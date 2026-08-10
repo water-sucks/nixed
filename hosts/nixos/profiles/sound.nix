@@ -17,10 +17,10 @@ _: {
             {
               matches = [
                 {
-                  "device.name" = "~alsa_input.*";
+                  "node.name" = "~alsa_input.*";
                 }
                 {
-                  "device.name" = "~alsa_output.*";
+                  "node.name" = "~alsa_output.*";
                 }
               ];
               actions = {
