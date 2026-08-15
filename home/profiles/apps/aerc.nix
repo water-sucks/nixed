@@ -14,7 +14,10 @@ in {
       };
     };
     extraConfig = {
-      general.unsafe-accounts-conf = true;
+      general = {
+        unsafe-accounts-conf = true;
+        use-terminal-pinentry = true;
+      };
 
       ui = {
         this-day-time-format = ''"           15:04"'';
