@@ -13,6 +13,9 @@
     darwin.url = "github:nix-darwin/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    determinate.url = "github:DeterminateSystems/determinate";
+    determinate.inputs.nixpkgs.follows = "nixpkgs";
+
     impermanence.url = "github:nix-community/impermanence";
 
     nixos-cli.url = "github:nix-community/nixos-cli";

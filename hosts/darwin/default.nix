@@ -10,6 +10,7 @@
         inherit self inputs;
       };
       modules = with inputs; [
+        determinate.darwinModules.default
         home.darwinModules.home-manager
         optnix.darwinModules.optnix
         {

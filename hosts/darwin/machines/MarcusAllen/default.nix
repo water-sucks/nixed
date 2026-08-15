@@ -5,7 +5,9 @@
     ./home-manager.nix
 
     # General common modules
-    ../../../profiles/nix.nix
+    # Nix is not imported here since
+    # this is configured with Determinate Nix
+    # directly in configuration.nix.
     ../../../profiles/core.nix
     ../../../profiles/fonts.nix
 
