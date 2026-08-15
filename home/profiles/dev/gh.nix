@@ -2,26 +2,28 @@
   pkgs,
   lib,
   ...
-}:
-lib.mkMerge [
-  {
-    programs.gh = {
-      enable = true;
+}: let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
+in
+  lib.mkMerge [
+    {
+      programs.gh = {
+        enable = true;
 
-      settings = {
-        version = 1;
-        git_protocol = "ssh";
-        aliases = {
-          co = "pr checkout";
+        settings = {
+          version = 1;
+          git_protocol = "ssh";
+          aliases = {
+            co = "pr checkout";
+          };
         };
       };
-    };
-  }
-  (lib.mkIf pkgs.stdenv.isLinux {
-    persistence = {
-      files = [
-        ".config/gh/hosts.yml"
-      ];
-    };
-  })
-]
+    }
+    (lib.mkIf isLinux {
+      persistence = {
+        files = [
+          ".config/gh/hosts.yml"
+        ];
+      };
+    })
+  ]

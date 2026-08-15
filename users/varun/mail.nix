@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (pkgs) lib;
-  inherit (pkgs.stdenv) isLinux isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
 
   sopsEmailPasswordBlock = key: {
     sopsFile = ./secrets/email.yml;

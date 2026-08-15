@@ -5,8 +5,7 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isLinux isDarwin;
-  inherit (pkgs.stdenv.hostPlatform) system;
+  inherit (pkgs.stdenv.hostPlatform) system isLinux isDarwin;
 
   sources = pkgs.callPackage _sources/generated.nix {};
 

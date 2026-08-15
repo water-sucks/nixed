@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isLinux isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
 
   nix-index-build = pkgs.writeShellScript "build-nix-index.sh" ''
     mkdir -p $HOME/.cache/nix-index

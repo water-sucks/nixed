@@ -2,9 +2,11 @@
   pkgs,
   lib,
   ...
-}:
-lib.mkIf pkgs.stdenv.isLinux {
-  home.packages = [
-    pkgs.overskride
-  ];
-}
+}: let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
+in
+  lib.mkIf isLinux {
+    home.packages = [
+      pkgs.overskride
+    ];
+  }

@@ -2,7 +2,9 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
+in {
   fonts = {
     packages = with pkgs; [
       berkeley-mono
@@ -11,6 +13,6 @@
       font-awesome
       noto-fonts
     ];
-    fontDir.enable = lib.mkIf (!pkgs.stdenv.isDarwin) true;
+    fontDir.enable = lib.mkIf (!isDarwin) true;
   };
 }

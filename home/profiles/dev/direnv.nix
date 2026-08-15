@@ -2,24 +2,26 @@
   pkgs,
   lib,
   ...
-}:
-lib.mkMerge [
-  {
-    programs.direnv = {
-      enable = true;
-      config = {
-        hide_env_diff = true;
-      };
-      nix-direnv = {
+}: let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
+in
+  lib.mkMerge [
+    {
+      programs.direnv = {
         enable = true;
+        config = {
+          hide_env_diff = true;
+        };
+        nix-direnv = {
+          enable = true;
+        };
       };
-    };
-  }
-  (lib.mkIf pkgs.stdenv.isLinux {
-    persistence = {
-      directories = [
-        ".local/share/direnv"
-      ];
-    };
-  })
-]
+    }
+    (lib.mkIf isLinux {
+      persistence = {
+        directories = [
+          ".local/share/direnv"
+        ];
+      };
+    })
+  ]

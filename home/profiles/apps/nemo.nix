@@ -2,13 +2,15 @@
   pkgs,
   lib,
   ...
-}:
-lib.mkIf pkgs.stdenv.isLinux {
-  home.packages = with pkgs; [
-    nemo
-  ];
+}: let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
+in
+  lib.mkIf isLinux {
+    home.packages = with pkgs; [
+      nemo
+    ];
 
-  xdg.mimeApps.defaultApplications = {
-    "inode/directory" = ["nemo.desktop"];
-  };
-}
+    xdg.mimeApps.defaultApplications = {
+      "inode/directory" = ["nemo.desktop"];
+    };
+  }

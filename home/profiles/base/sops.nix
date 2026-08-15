@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  inherit (pkgs.stdenv) isDarwin isLinux;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin isLinux;
 in {
   home.activation.sops = lib.hm.dag.entryAfter ["writeBoundary"] (
     (lib.optionalString isLinux ''

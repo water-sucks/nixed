@@ -6,7 +6,7 @@
 }: let
   sources = pkgs.callPackage _sources/generated.nix {};
 
-  inherit (pkgs.stdenv) isLinux isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
 in
   lib.mkMerge [
     {

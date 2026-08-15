@@ -2,7 +2,9 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
+in {
   programs.zsh.enable = true;
 
   environment = {
@@ -31,7 +33,7 @@
         tree
         zoxide
       ]
-      ++ (lib.optionals stdenv.isLinux [
+      ++ (lib.optionals isLinux [
         gptfdisk
         iputils
         file
