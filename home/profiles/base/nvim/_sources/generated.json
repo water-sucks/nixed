@@ -392,7 +392,7 @@
   },
   "plugin-leap-nvim": {
     "cargoLock": null,
-    "date": "2026-08-12",
+    "date": "2026-08-21",
     "extract": null,
     "name": "plugin-leap-nvim",
     "passthru": {
@@ -404,13 +404,13 @@
       "fetchSubmodules": false,
       "leaveDotGit": false,
       "name": null,
-      "rev": "b41c342a67d0fb36694c506ca369761dd5b60b6c",
-      "sha256": "sha256-z4tRbqmW950OqC84zuz9rOpFqX+yvxvfYFe5ppQ80O4=",
+      "rev": "7884f9455e5bf07bd11a3dcd9f961095a966a5d7",
+      "sha256": "sha256-SwzjzwlGmFyV+iHprqrpbnLWVxgA8w5a8uJvbSu00d0=",
       "sparseCheckout": [],
       "type": "git",
       "url": "https://codeberg.org/andyg/leap.nvim"
     },
-    "version": "b41c342a67d0fb36694c506ca369761dd5b60b6c"
+    "version": "7884f9455e5bf07bd11a3dcd9f961095a966a5d7"
   },
   "plugin-lspkind-nvim": {
     "cargoLock": null,
@@ -552,7 +552,7 @@
   },
   "plugin-nui-nvim": {
     "cargoLock": null,
-    "date": "2026-08-15",
+    "date": "2026-08-21",
     "extract": null,
     "name": "plugin-nui-nvim",
     "passthru": {
@@ -566,12 +566,12 @@
       "name": null,
       "owner": "MunifTanjim",
       "repo": "nui.nvim",
-      "rev": "5959922693a785a0e1624b45c968c844822f1ca1",
-      "sha256": "sha256-iHO4kPfaLmuhTdjLSZahA0rcWCIAks9piux7gtMejDg=",
+      "rev": "10fc361835c856ba4233ef5ea135b919bf3dce97",
+      "sha256": "sha256-UJp9A5Qb38ie552wRdHAeA9vm5PFURumYP9wZ83OU7Y=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "5959922693a785a0e1624b45c968c844822f1ca1"
+    "version": "10fc361835c856ba4233ef5ea135b919bf3dce97"
   },
   "plugin-nvim-autopairs": {
     "cargoLock": null,
@@ -644,7 +644,7 @@
   },
   "plugin-nvim-lint": {
     "cargoLock": null,
-    "date": "2026-08-13",
+    "date": "2026-08-20",
     "extract": null,
     "name": "plugin-nvim-lint",
     "passthru": {
@@ -658,16 +658,16 @@
       "name": null,
       "owner": "mfussenegger",
       "repo": "nvim-lint",
-      "rev": "9b99aad869102ac01775187abd8d49017b148612",
-      "sha256": "sha256-SUSYWLoTEo/l+hHJWl4XvT6QMsOeCf0ckAMakmgLEIA=",
+      "rev": "0370fe965697aa8f04252a1562441bdc13723cd1",
+      "sha256": "sha256-MhQOZe4/FxcZUudadSRl7tfyxE8lazUq7RekhJT28rE=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "9b99aad869102ac01775187abd8d49017b148612"
+    "version": "0370fe965697aa8f04252a1562441bdc13723cd1"
   },
   "plugin-nvim-lspconfig": {
     "cargoLock": null,
-    "date": "2026-08-13",
+    "date": "2026-08-21",
     "extract": null,
     "name": "plugin-nvim-lspconfig",
     "passthru": {
@@ -681,12 +681,12 @@
       "name": null,
       "owner": "neovim",
       "repo": "nvim-lspconfig",
-      "rev": "51dbf5359da86721662c87ca10eb73add973737b",
-      "sha256": "sha256-lVcJmcvNMs75VuCb0rx1O68pC49Ru8ii0j/4EjNDuHQ=",
+      "rev": "221c43884319e791519f0d6c94a7f2fbcd653278",
+      "sha256": "sha256-wosaQ2DTbV58hv/ohnSJQG28srpp/Ietv0EQE/P9RwM=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "51dbf5359da86721662c87ca10eb73add973737b"
+    "version": "221c43884319e791519f0d6c94a7f2fbcd653278"
   },
   "plugin-nvim-treesitter-textobjects": {
     "cargoLock": null,
@@ -943,7 +943,7 @@
   },
   "plugin-telescope-nvim": {
     "cargoLock": null,
-    "date": "2026-06-23",
+    "date": "2026-08-17",
     "extract": null,
     "name": "plugin-telescope-nvim",
     "passthru": {
@@ -957,12 +957,12 @@
       "name": null,
       "owner": "nvim-telescope",
       "repo": "telescope.nvim",
-      "rev": "427b576c16792edad01a92b89721d923c19ad60f",
-      "sha256": "sha256-/GycCrepwDer0UvBN/f84pJUSvNp+ZfTIUPv0psl+IQ=",
+      "rev": "40aedd8a68c78a656a10a8d62d80c54af59420fb",
+      "sha256": "sha256-Ci7D8aTUhh9DwwHvEV8Pndma8b/iwylUcoDKrIKVYN4=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "427b576c16792edad01a92b89721d923c19ad60f"
+    "version": "40aedd8a68c78a656a10a8d62d80c54af59420fb"
   },
   "plugin-template-nvim": {
     "cargoLock": null,
@@ -1150,7 +1150,7 @@
   },
   "plugin-zoxide-vim": {
     "cargoLock": null,
-    "date": "2026-08-15",
+    "date": "2026-08-18",
     "extract": null,
     "name": "plugin-zoxide-vim",
     "passthru": {
@@ -1164,11 +1164,11 @@
       "name": null,
       "owner": "nanotee",
       "repo": "zoxide.vim",
-      "rev": "f40ac99fe70bc707f56c4fd1e5f614857a4b0d6d",
-      "sha256": "sha256-KddMbbNsoUfXnSEaoiNPNgPyOFOKJ8fb4urEejeyZGs=",
+      "rev": "d4c3d088a70a4edae9def6209644c092f4221fe5",
+      "sha256": "sha256-IxC/1cy0qsMwdUcqHdaReFAwLVKaIAJFiAyh1G7JtSY=",
       "sparseCheckout": [],
       "type": "github"
     },
-    "version": "f40ac99fe70bc707f56c4fd1e5f614857a4b0d6d"
+    "version": "d4c3d088a70a4edae9def6209644c092f4221fe5"
   }
 }
