@@ -159,6 +159,8 @@ in {
           (exec [mod shift] return "${rofi} -show combi -combi-modi 'drun,window,run,ssh' -modi combi")
           (exec [] "Print" "${lib.getExe screenshot}")
           (exec [mod] "Print" "${lib.getExe screenshot} -s")
+          (exec [mod shift] "s" "${lib.getExe screenshot}")
+          (exec [mod shift] "r" "${lib.getExe screenshot} -s")
           (exec [ctrl alt] "Delete" "rofi-power-menu")
           (exec [mod ctrl alt] "l" "${waylockCommand}")
 
