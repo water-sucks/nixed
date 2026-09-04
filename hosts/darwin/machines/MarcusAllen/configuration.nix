@@ -11,10 +11,11 @@
     enable = true;
     customSettings = {
       allowed-users = ["*"];
+      trusted-users = ["root" "@admin"];
       max-jobs = "auto";
       cores = 0;
       auto-optimise-store = false;
-      extra-substituters = [
+      extra-trusted-substituters = [
         "https://artifact-s3-gateway.int.n7k.io/n7k-nix-cache"
         "https://nix-community.cachix.org"
       ];
