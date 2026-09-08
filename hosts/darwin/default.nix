@@ -13,14 +13,15 @@
         determinate.darwinModules.default
         home.darwinModules.home-manager
         optnix.darwinModules.optnix
-        {
+        ({lib, ...}: {
           nixpkgs = {
             hostPlatform = system;
             overlays = [self.overlays.default];
             config.allowUnfree = true;
           };
           networking.hostName = hostname;
-        }
+          determinateNix.enable = lib.mkDefault false;
+        })
         ../modules/user-defaults.nix
         configuration
       ];

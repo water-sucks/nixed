@@ -7,6 +7,7 @@
   inherit (pkgs.stdenv.hostPlatform) isDarwin isLinux;
 in {
   nix = {
+    enable = true;
     package = pkgs.nixVersions.latest;
     # Run GC every Sunday at 10:00 AM
     gc =
