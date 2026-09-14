@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./modules/nixed-auto-update.nix
   ];
 
   networking = {

@@ -1,6 +1,3 @@
-# This is the manifest that gets submitted by cron-job.org
-# every Saturday at midnight.
-
 image: nixos/unstable
 
 secrets:
