@@ -9,13 +9,15 @@
 in {
   programs.rofi = {
     enable = true;
-    font = "IBM Plex Mono 11";
-    location = "center";
+    settings = {
+      font = "IBM Plex Mono 11";
+      terminal = "${pkgs.kitty}/bin/kitty";
+      location = 0; # center
+    };
     plugins = with pkgs; [
       rofi-calc
     ];
 
-    terminal = "${pkgs.kitty}/bin/kitty";
     theme = {
       configuration = {
         font = "BlexMono Nerd Font 11";
