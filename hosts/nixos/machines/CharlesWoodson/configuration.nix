@@ -60,6 +60,11 @@ in {
 
   profiles.llama-cpp = {
     enable = true;
+    settings = {
+      ctx-size = 100000;
+      cache-type-k = "q4_0";
+      cache-type-v = "q4_0";
+    };
     presets = {
       "OmniCoder-9B" = let
         model = pkgs.fetchHuggingFaceModel {
@@ -74,6 +79,20 @@ in {
         temp = "1.0";
         top-p = "0.95";
         top-k = "40";
+      };
+      "Qwen3-8B" = let
+        model = pkgs.fetchHuggingFaceModel {
+          repo = "Qwen/Qwen3-8B-GGUF";
+          rev = "7c41481f57cb95916b40956ab2f0b139b296d974";
+          file = "Qwen3-8B-Q4_K_M.gguf";
+          hash = "sha256-2YzcvQPhfOR2gUNbUVDjTBQX9QtcABndVg5IgsV0V4U=";
+        };
+      in {
+        model = "${model}";
+        alias = "Qwen/Qwen3-8B-GGUF";
+        temp = "0.6";
+        top-p = "0.9";
+        top-k = "20";
       };
     };
   };

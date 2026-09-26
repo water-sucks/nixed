@@ -13,6 +13,12 @@ in {
   options.profiles.llama-cpp = {
     enable = lib.mkEnableOption "llama-cpp config profile";
 
+    settings = lib.mkOption {
+      type = lib.types.attrs;
+      description = "llama-cpp flags";
+      default = {};
+    };
+
     presets = lib.mkOption {
       inherit (iniFormat) type;
       description = "Model preset file contents";
@@ -23,11 +29,13 @@ in {
   config = lib.mkIf cfg.enable {
     services.llama-cpp = {
       enable = true;
-      settings = {
-        host = "127.0.0.1";
-        port = 11434; # Because something something fuck ollama.
-        models-preset = modelsPresetFile;
-      };
+      settings =
+        {
+          host = "127.0.0.1";
+          port = 11434; # Because something something fuck ollama.
+          models-preset = modelsPresetFile;
+        }
+        // cfg.settings;
     };
 
     systemd.services.llama-cpp = {

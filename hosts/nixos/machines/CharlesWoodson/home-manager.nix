@@ -78,6 +78,9 @@
               "OmniCoder-9B" = {
                 name = "OmniCoder-9B (local)";
               };
+              "Qwen3-8B" = {
+                name = "Qwen3-8B (local)";
+              };
             };
           };
         };
