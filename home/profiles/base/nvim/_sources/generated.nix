@@ -137,16 +137,16 @@
   };
   plugin-flutter-tools-nvim = {
     pname = "plugin-flutter-tools-nvim";
-    version = "97feb38b39f656c1f3fda3225489430b58fb2ae2";
+    version = "d43203bc23f6d905efa5ab919d268c5c53ca7faf";
     src = fetchFromGitHub {
       owner = "akinsho";
       repo = "flutter-tools.nvim";
-      rev = "97feb38b39f656c1f3fda3225489430b58fb2ae2";
+      rev = "d43203bc23f6d905efa5ab919d268c5c53ca7faf";
       fetchSubmodules = false;
-      sha256 = "sha256-zRdavZTa6GWMvaxnXlm8RNV0DH8qtb9GiotIY1IEQcw=";
+      sha256 = "sha256-nP9HwNf6TwIsmOjk9LRWEoIeVZ3xM1kCU/BGFJJvkWw=";
     };
     pretty-name = "flutter-tools.nvim";
-    date = "2026-09-25";
+    date = "2026-09-28";
   };
   plugin-friendly-snippets = {
     pname = "plugin-friendly-snippets";
@@ -228,18 +228,18 @@
   };
   plugin-leap-nvim = {
     pname = "plugin-leap-nvim";
-    version = "32bde2e932417e8a065f039f00f0cebdd0da4710";
+    version = "277e04fad21e3af05a55cc414757b09a704f2a92";
     src = fetchgit {
       url = "https://codeberg.org/andyg/leap.nvim";
-      rev = "32bde2e932417e8a065f039f00f0cebdd0da4710";
+      rev = "277e04fad21e3af05a55cc414757b09a704f2a92";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [];
-      sha256 = "sha256-SXtPDUdu5cju3CQW64Pi21Ry4Swlbki5Qjwb5bizJnA=";
+      sha256 = "sha256-Yd64QLzeKWcfJEWkvr9944aKPkgNmlsN/OpARVFRBes=";
     };
     pretty-name = "leap.nvim";
-    date = "2026-09-19";
+    date = "2026-09-27";
   };
   plugin-lspkind-nvim = {
     pname = "plugin-lspkind-nvim";
@@ -282,16 +282,16 @@
   };
   plugin-mini-surround = {
     pname = "plugin-mini-surround";
-    version = "33a2ebe5df8eb4751828fcba133e18ed0fbbdfab";
+    version = "72feeaa0f984646efde875cc775a97b6f8a8be9b";
     src = fetchFromGitHub {
       owner = "nvim-mini";
       repo = "mini.surround";
-      rev = "33a2ebe5df8eb4751828fcba133e18ed0fbbdfab";
+      rev = "72feeaa0f984646efde875cc775a97b6f8a8be9b";
       fetchSubmodules = false;
-      sha256 = "sha256-xvZ8CFpuWzm849um/ZCv1uOFkvaOR7Nxx21R+LfIOXY=";
+      sha256 = "sha256-yB/Z1jrT8mwrUddI+3Uv669isTpwHKdgVX1k3K8FQkg=";
     };
     pretty-name = "mini.surround";
-    date = "2026-09-22";
+    date = "2026-10-02";
   };
   plugin-neocord = {
     pname = "plugin-neocord";
@@ -308,16 +308,16 @@
   };
   plugin-nerdy-nvim = {
     pname = "plugin-nerdy-nvim";
-    version = "5d2d37f828a6df2f85e6df6b0a2b375f45bd5125";
+    version = "313260b2dd2054b6fc7327fe70f3e0aa06aa7cb8";
     src = fetchFromGitHub {
       owner = "2kabhishek";
       repo = "nerdy.nvim";
-      rev = "5d2d37f828a6df2f85e6df6b0a2b375f45bd5125";
+      rev = "313260b2dd2054b6fc7327fe70f3e0aa06aa7cb8";
       fetchSubmodules = false;
-      sha256 = "sha256-jYqCi92qLzIJcWj5FitZ3pk15r/2nkLiISaLTkj13Yw=";
+      sha256 = "sha256-KzJvVXd5JY3DUulu4OaW1NcZNtKt8DFwlsLUBkU5+Sw=";
     };
     pretty-name = "nerdy.nvim";
-    date = "2026-08-04";
+    date = "2026-10-02";
   };
   plugin-nui-nvim = {
     pname = "plugin-nui-nvim";
@@ -386,16 +386,16 @@
   };
   plugin-nvim-lspconfig = {
     pname = "plugin-nvim-lspconfig";
-    version = "046b1a797af1effe8e0474b9af9657a3761ec58a";
+    version = "3e8d598d3b5f8338a41699c436e5fa11d2666cf0";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "046b1a797af1effe8e0474b9af9657a3761ec58a";
+      rev = "3e8d598d3b5f8338a41699c436e5fa11d2666cf0";
       fetchSubmodules = false;
-      sha256 = "sha256-QqbgCJxKHkiJUQji6+CGtGSD1HQjJ6F8R6pFRZd6BsQ=";
+      sha256 = "sha256-osWKz9uZD2VanBUMZONbb2AKXXkfy5expYz2urFMxQI=";
     };
     pretty-name = "nvim-lspconfig";
-    date = "2026-09-23";
+    date = "2026-09-30";
   };
   plugin-nvim-treesitter-textobjects = {
     pname = "plugin-nvim-treesitter-textobjects";
@@ -412,16 +412,16 @@
   };
   plugin-nvim-ts-autotag = {
     pname = "plugin-nvim-ts-autotag";
-    version = "88c1453db4ba7dd24131086fe51fdf74e587d275";
+    version = "d7220b55e16ed3c04e88086256def5d282429493";
     src = fetchFromGitHub {
       owner = "windwp";
       repo = "nvim-ts-autotag";
-      rev = "88c1453db4ba7dd24131086fe51fdf74e587d275";
+      rev = "d7220b55e16ed3c04e88086256def5d282429493";
       fetchSubmodules = false;
-      sha256 = "sha256-bvBf9wEDxdwlMGN29v4dEPexZGuxZZr7s+6xAOrDNKI=";
+      sha256 = "sha256-L0A0at16v8SrylDAaRzUyU/H2vgd7zrT2WP+Ofgiv7s=";
     };
     pretty-name = "nvim-ts-autotag";
-    date = "2026-04-15";
+    date = "2026-10-03";
   };
   plugin-nvim-ts-context-commentstring = {
     pname = "plugin-nvim-ts-context-commentstring";
