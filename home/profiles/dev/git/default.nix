@@ -35,9 +35,6 @@ in {
         stu = "stash --include-untracked";
         stall = "stash --all";
 
-        sw = "switch";
-        swc = "switch -create";
-
         wt = "worktree";
         lswt = "worktree list";
         mkwt = ''!f() { git worktree add -b "$@" "$(git rev-parse --show-toplevel)+$@"; }; f'';
