@@ -30,10 +30,7 @@ in
           then kitty
           else runCommand "kitty-0.0.0" {} "mkdir $out";
         font = {
-          name =
-            if isLinux
-            then "BerkeleyMono Nerd Font"
-            else "BerkeleyMonoNerdFont-Regular";
+          name = "BerkeleyMono Nerd Font";
           size = lib.mkDefault 10;
         };
         settings = {
