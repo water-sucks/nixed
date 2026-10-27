@@ -23,6 +23,42 @@ autocmd("LspAttach", {
 
 lazydev.setup()
 
+local lsp_log = vim.lsp.log.get_filename()
+local lsp_log_cap = 1024 * 1024
+local lsp_log_stat = vim.uv.fs_stat(lsp_log)
+if lsp_log_stat and lsp_log_stat.size > lsp_log_cap then
+  local f = io.open(lsp_log, "rb")
+  if f then
+    f:seek("end", -lsp_log_cap)
+    local tail = f:read(lsp_log_cap)
+    f:close()
+    local out = io.open(lsp_log, "wb")
+    if out and tail then
+      out:write(tail)
+      out:close()
+    end
+  end
+end
+
+local log_stderr = vim.env.NVIM_LSP_STDERR == "1"
+vim.lsp.log.set_format_func(function(level, ...)
+  if vim.log.levels[level] < vim.lsp.log.get_level() then
+    return nil
+  end
+  if not log_stderr and select(1, ...) == "rpc" and select(3, ...) == "stderr" then
+    return nil
+  end
+  local info = debug.getinfo(2, "Sl")
+  local parts = {
+    string.format("[%s][%s] %s:%s", level, os.date("%F %H:%M:%S"), info.short_src, info.currentline),
+  }
+  for i = 1, select("#", ...) do
+    local arg = select(i, ...)
+    table.insert(parts, arg == nil and "nil" or vim.inspect(arg, { newline = " ", indent = "" }))
+  end
+  return table.concat(parts, "\t") .. "\n"
+end)
+
 vim.diagnostic.config({
   virtual_text = { prefix = "●", spacing = 1 },
   virtual_lines = false,
