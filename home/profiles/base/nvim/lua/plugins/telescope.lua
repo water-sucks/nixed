@@ -1,6 +1,5 @@
 local telescope = require("telescope")
 local finders = require("telescope.builtin")
-local emoji = require("emoji")
 local wk = require("which-key")
 
 telescope.setup({
@@ -40,11 +39,3 @@ wk.add({
   { "<Leader>fgbr", finders.git_branches, desc = "Find Git branches" },
   { "<Leader>fgbc", finders.git_bcommits, desc = "Find Git buffer commits" },
 })
-
-emoji.setup({ plugin_path = vim.fn.stdpath("data") .. "/plugins" })
-
-require("telescope").load_extension("emoji")
-vim.keymap.set("n", "<Leader>fe", require("telescope").extensions.emoji.emoji, { desc = "Find emojis" })
-
-require("telescope").load_extension("nerdy")
-vim.keymap.set("n", "<Leader>fn", "<Cmd>Telescope nerdy<CR>", { desc = "Find nerd icons" })

@@ -109,19 +109,6 @@
     pretty-name = "dressing.nvim";
     date = "2025-02-12";
   };
-  plugin-emoji-nvim = {
-    pname = "plugin-emoji-nvim";
-    version = "372cb33e608941d2ddbdb60fc52eb78bfdf62ea2";
-    src = fetchFromGitHub {
-      owner = "Allaman";
-      repo = "emoji.nvim";
-      rev = "372cb33e608941d2ddbdb60fc52eb78bfdf62ea2";
-      fetchSubmodules = false;
-      sha256 = "sha256-Z6njpXPG1AnCh76HKPITF0TA3eIBeP0LWP8rUxgMvjk=";
-    };
-    pretty-name = "emoji.nvim";
-    date = "2026-09-20";
-  };
   plugin-fidget-nvim = {
     pname = "plugin-fidget-nvim";
     version = "9e0201673e08e997e7cf52afca5565c70bd117f3";
@@ -305,19 +292,6 @@
     };
     pretty-name = "neocord";
     date = "2026-06-01";
-  };
-  plugin-nerdy-nvim = {
-    pname = "plugin-nerdy-nvim";
-    version = "313260b2dd2054b6fc7327fe70f3e0aa06aa7cb8";
-    src = fetchFromGitHub {
-      owner = "2kabhishek";
-      repo = "nerdy.nvim";
-      rev = "313260b2dd2054b6fc7327fe70f3e0aa06aa7cb8";
-      fetchSubmodules = false;
-      sha256 = "sha256-KzJvVXd5JY3DUulu4OaW1NcZNtKt8DFwlsLUBkU5+Sw=";
-    };
-    pretty-name = "nerdy.nvim";
-    date = "2026-10-02";
   };
   plugin-nui-nvim = {
     pname = "plugin-nui-nvim";

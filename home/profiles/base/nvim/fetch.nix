@@ -73,8 +73,6 @@ in
         };
       };
     }
-    (plugin "Allaman" "emoji.nvim")
-    (plugin "2kabhishek" "nerdy.nvim")
     (plugin "bullets-vim" "bullets.nvim")
     (plugin "nvimdev" "template.nvim")
 

@@ -183,29 +183,6 @@
     },
     "version": "2d7c2db2507fa3c4956142ee607431ddb2828639"
   },
-  "plugin-emoji-nvim": {
-    "cargoLock": null,
-    "date": "2026-09-20",
-    "extract": null,
-    "name": "plugin-emoji-nvim",
-    "passthru": {
-      "pretty-name": "emoji.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "Allaman",
-      "repo": "emoji.nvim",
-      "rev": "372cb33e608941d2ddbdb60fc52eb78bfdf62ea2",
-      "sha256": "sha256-Z6njpXPG1AnCh76HKPITF0TA3eIBeP0LWP8rUxgMvjk=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "372cb33e608941d2ddbdb60fc52eb78bfdf62ea2"
-  },
   "plugin-fidget-nvim": {
     "cargoLock": null,
     "date": "2026-09-03",
@@ -526,29 +503,6 @@
       "type": "github"
     },
     "version": "4cf99993826a1d555294a2f152804bcdce9be2e6"
-  },
-  "plugin-nerdy-nvim": {
-    "cargoLock": null,
-    "date": "2026-10-02",
-    "extract": null,
-    "name": "plugin-nerdy-nvim",
-    "passthru": {
-      "pretty-name": "nerdy.nvim"
-    },
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "2kabhishek",
-      "repo": "nerdy.nvim",
-      "rev": "313260b2dd2054b6fc7327fe70f3e0aa06aa7cb8",
-      "sha256": "sha256-KzJvVXd5JY3DUulu4OaW1NcZNtKt8DFwlsLUBkU5+Sw=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "313260b2dd2054b6fc7327fe70f3e0aa06aa7cb8"
   },
   "plugin-nui-nvim": {
     "cargoLock": null,
