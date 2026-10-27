@@ -53,6 +53,13 @@ in {
       core.sshCommand = "ssh -o ConnectTimeout=1 -o ConnectionAttempts=1";
       core.fsmonitor = true;
       commit.gpgsign = true;
+
+      fetch.prune = true;
+      fetch.parallel = 0;
+      fetch.writeCommitGraph = true;
+      maintenance.strategy = "geometric";
+      push.autoSetupRemote = true;
+      branch.autoSetupMerge = "simple";
     };
     signing.format = "openpgp";
   };
