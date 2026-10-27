@@ -19,10 +19,7 @@ in {
   programs.git.settings = {
     user.email = "varun@snare.dev";
     user.name = "Varun Narravula";
-    signing = {
-      key = "A1F17E43F6747FC0";
-      signByDefault = true;
-    };
+    user.signingKey = "A1F17E43F6747FC0";
   };
 
   programs.ssh = {
