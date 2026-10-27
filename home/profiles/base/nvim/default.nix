@@ -68,70 +68,76 @@
     pkgs.writeShellScriptBin "prettier-default-config" ''
       ${lib.getExe prettier} --config "${prettierConfig}" "$@"
     '';
+
+  nvimTools = with pkgs;
+    [
+      # Language servers
+      astro-language-server
+      ccls
+      emmet-ls
+      gopls
+      golangci-lint-langserver
+      golangci-lint
+      harper
+      jdt-language-server
+      lua-language-server
+      nixd
+      bash-language-server
+      svelte-language-server
+      typescript-language-server
+      pyright
+      ruff
+      superhtml
+      vscode-langservers-extracted
+      terraform-ls
+      tinymist
+      zls
+
+      # efm-langserver sources
+      alejandra
+      asmfmt
+      black
+      cppcheck
+      deadnix
+      editorconfig-checker
+      gitlint
+      gofumpt
+      nixfmt
+      prettierDefaultConfig
+      python3Packages.flake8
+      rust-analyzer
+      shellcheck
+      shellharden
+      shfmt
+      statix
+      stable.sqlfluff
+      stylua
+      typstyle
+
+      # DAP servers
+      delve
+    ]
+    ++ lib.optionals isLinux [wl-clipboard];
+
+  neovimWrapped =
+    pkgs.runCommand "neovim-${pkgs.neovim-unwrapped.version}" {
+      nativeBuildInputs = [pkgs.makeBinaryWrapper];
+      preferLocalBuild = true;
+      meta.mainProgram = "nvim";
+    } ''
+      mkdir -p "$out/bin"
+      makeBinaryWrapper ${pkgs.neovim-unwrapped}/bin/nvim "$out/bin/nvim" \
+        --suffix PATH : ${lib.escapeShellArg (lib.makeBinPath nvimTools)}
+      ln -s nvim "$out/bin/vi"
+      ln -s nvim "$out/bin/vim"
+    '';
 in
   lib.mkMerge [
     {
-      home.packages = with pkgs; [
-        neovim-remote
+      home.packages = [
+        neovimWrapped
+        pkgs.neovim-remote
       ];
-
-      programs.neovim = {
-        enable = true;
-        viAlias = true;
-        vimAlias = true;
-
-        withPython3 = true;
-        withRuby = false;
-        withNodeJs = false;
-
-        extraPackages = with pkgs; [
-          # Language servers
-          astro-language-server
-          ccls
-          emmet-ls
-          gopls
-          golangci-lint-langserver
-          golangci-lint
-          harper
-          jdt-language-server
-          lua-language-server
-          nixd
-          bash-language-server
-          svelte-language-server
-          typescript-language-server
-          pyright
-          ruff
-          superhtml
-          vscode-langservers-extracted
-          terraform-ls
-          tinymist
-          zls
-
-          # efm-langserver sources
-          alejandra
-          asmfmt
-          black
-          cppcheck
-          deadnix
-          editorconfig-checker
-          gitlint
-          gofumpt
-          nixfmt
-          prettierDefaultConfig
-          python3Packages.flake8
-          rust-analyzer
-          shellcheck
-          shellharden
-          shfmt
-          statix
-          stable.sqlfluff
-          stylua
-          typstyle
-
-          # DAP servers
-          delve
-        ];
-      };
 
       xdg.configFile = {
         "nvim/init.lua".source = ./init.lua;
