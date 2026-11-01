@@ -6,10 +6,10 @@
           profile.name = "default";
           profile.outputs = [
             {
-              criteria = "DP-5";
+              criteria = "DP-1";
             }
             {
-              criteria = "DP-4";
+              criteria = "DP-2";
               transform = "90";
             }
           ];
