@@ -46,7 +46,6 @@ in {
       };
 
       pull.rebase = false;
-      branch.autoSetupMerge = "simple";
       init.defaultBranch = "main";
       core.sshCommand = "ssh -o ConnectTimeout=1 -o ConnectionAttempts=1";
       core.fsmonitor = true;
