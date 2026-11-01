@@ -17,7 +17,6 @@
 
     initrd = {
       systemd = {
-        enable = true;
         settings.Manager = {
           # Prevent timeouts on boot
           DefaultDeviceTimeoutSec = "infinity";

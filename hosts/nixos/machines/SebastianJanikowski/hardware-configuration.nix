@@ -18,7 +18,6 @@
       };
       availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "i915"];
       kernelModules = ["dm-snapshot"];
-      verbose = false;
     };
 
     supportedFilesystems = ["zfs"];
