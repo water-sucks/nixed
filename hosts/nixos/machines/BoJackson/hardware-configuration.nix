@@ -15,8 +15,6 @@
 
     initrd = {
       systemd = {
-        enable = true;
-
         settings.Manager = {
           DefaultDeviceTimeoutSec = "infinity";
         };
