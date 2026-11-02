@@ -25,6 +25,7 @@ in {
         lsd
         lsof
         moreutils
+        ncdu
         nix-index
         neovim
         nmap
