@@ -1,23 +1,23 @@
 {
-  "cascadefox-theme": {
-    "cargoLock": null,
-    "date": "2026-05-23",
-    "extract": null,
-    "name": "cascadefox-theme",
-    "passthru": null,
-    "pinned": false,
-    "src": {
-      "deepClone": false,
-      "fetchSubmodules": false,
-      "leaveDotGit": false,
-      "name": null,
-      "owner": "cascadefox",
-      "repo": "cascade",
-      "rev": "52dd00e76348bab226701c6316a8b6581549d21b",
-      "sha256": "sha256-MW6E9OaTGlnbHMRl8svgIyqd7BzYOjvUYi92sdgxNCc=",
-      "sparseCheckout": [],
-      "type": "github"
-    },
-    "version": "52dd00e76348bab226701c6316a8b6581549d21b"
-  }
+    "cascadefox-theme": {
+        "cargoLock": null,
+        "date": "2026-05-23",
+        "extract": null,
+        "name": "cascadefox-theme",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cascadefox",
+            "repo": "cascade",
+            "rev": "52dd00e76348bab226701c6316a8b6581549d21b",
+            "sha256": "sha256-MW6E9OaTGlnbHMRl8svgIyqd7BzYOjvUYi92sdgxNCc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "52dd00e76348bab226701c6316a8b6581549d21b"
+    }
 }
