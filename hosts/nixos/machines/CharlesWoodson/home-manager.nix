@@ -59,32 +59,14 @@
     };
   };
 
-  opencodeModule = {
-    profiles.opencode.enable = true;
+  piModule = {
+    home.sessionVariables.LLAMA_BASE_URL = let
+      llamaCfg = config.services.llama-cpp.settings;
+    in "http://${llamaCfg.host}:${toString llamaCfg.port}";
 
-    programs.opencode = {
-      settings = {
-        model = "OmniCoder-9B";
-        provider = {
-          "llama.cpp" = let
-            llamaCfg = config.services.llama-cpp.settings;
-          in {
-            npm = "@ai-sdk/openai-compatible";
-            name = "llama-server";
-            options = {
-              baseURL = "http://${llamaCfg.host}:${toString llamaCfg.port}/v1";
-            };
-            models = {
-              "OmniCoder-9B" = {
-                name = "OmniCoder-9B (local)";
-              };
-              "Qwen3-8B" = {
-                name = "Qwen3-8B (local)";
-              };
-            };
-          };
-        };
-      };
+    programs.pi-coding-agent.settings = {
+      defaultProvider = "llama.cpp";
+      defaultModel = "OmniCoder-9B";
     };
   };
 
@@ -108,7 +90,7 @@ in {
 
   home-manager.users.varun = _: {
     imports = [
-      opencodeModule
+      piModule
     ];
 
     sops.age.keyFile = "/persist/home/varun/.sops_key";

@@ -17,6 +17,13 @@ in {
   home-manager.users.varun = {
     profiles.messaging.slack.enable = false;
 
+    # The nlk-gateway provider comes from a pi extension that lives outside
+    # this repo and is linked into ~/.pi/agent/extensions by hand.
+    programs.pi-coding-agent.settings = {
+      defaultProvider = "nlk-gateway";
+      defaultModel = "global.anthropic.claude-opus-5-5";
+    };
+
     programs.git.includes = let
       neuralinkGitIdentity = {
         user.email = "varun.narravula@neuralink.com";
