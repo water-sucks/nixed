@@ -23,6 +23,7 @@
     supportedFilesystems = ["zfs"];
 
     kernelModules = ["wl" "v412loopback"];
+    blacklistedKernelModules = ["amdgpu"];
 
     extraModulePackages = [
       config.boot.kernelPackages.v4l2loopback.out
