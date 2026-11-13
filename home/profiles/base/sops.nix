@@ -2,15 +2,12 @@
   pkgs,
   lib,
   ...
-}: let
-  inherit (pkgs.stdenv.hostPlatform) isDarwin isLinux;
-in {
-  home.activation.sops = lib.hm.dag.entryAfter ["writeBoundary"] (
-    (lib.optionalString isLinux ''
+}: {
+  # On Darwin, sops-nix's own `sops-nix` activation step already reloads
+  # (and thereby starts) the org.nix-community.home.sops-nix agent.
+  home.activation.sops = lib.mkIf pkgs.stdenv.hostPlatform.isLinux (
+    lib.hm.dag.entryAfter ["writeBoundary"] ''
       systemctl --user start sops-nix
-    '')
-    + (lib.optionalString isDarwin ''
-      launchctl start sops-nix
-    '')
+    ''
   );
 }
