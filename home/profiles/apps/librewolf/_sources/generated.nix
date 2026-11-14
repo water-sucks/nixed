@@ -4,8 +4,7 @@
   fetchurl,
   fetchFromGitHub,
   dockerTools,
-}:
-{
+}: {
   cascadefox-theme = {
     pname = "cascadefox-theme";
     version = "52dd00e76348bab226701c6316a8b6581549d21b";
