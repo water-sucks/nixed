@@ -16,11 +16,11 @@
     ./legcord.nix
     ./messaging.nix
     ./mpv.nix
-    ./music.nix
     ./nemo.nix
     ./obs.nix
     ./sioyek.nix
     ./syncthing.nix
+    ./tidal.nix
     ./tor.nix
   ];
 }
