@@ -1,0 +1,7 @@
+{
+  "name": "pi-mcp-adapter-deps",
+  "private": true,
+  "dependencies": {
+    "pi-mcp-adapter": "7.0.1"
+  }
+}

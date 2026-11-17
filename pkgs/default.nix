@@ -10,6 +10,7 @@
 
   packages' = {
     get-appname = ./tools/get-appname;
+    pi-mcp-adapter = ./tools/pi-mcp-adapter;
 
     nsmb-mvl = ./games/nsmb-mvl;
 

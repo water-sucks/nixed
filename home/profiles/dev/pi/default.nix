@@ -95,21 +95,34 @@ in {
       programs.pi-coding-agent = {
         enable = true;
         package = pkgs.pi-coding-agent;
-        mutableSettings = true;
+        mutableSettings = false;
         extraPackages = [pkgs.nodejs];
         settings = {
           theme = "darkrose";
           packages = [
-            "npm:pi-mcp-adapter@7.0.1"
+            "${pkgs.pi-mcp-adapter}/node_modules/pi-mcp-adapter"
           ];
           extensions = ["-builtin:mcp"];
           defaultTools = ["+codemode"];
         };
       };
 
-      home.file = {
-        "${piCfg.configDir}/themes/darkrose.json".source = jsonFormat.generate "pi-darkrose.json" darkrose;
-      };
+      home.file =
+        {
+          "${piCfg.configDir}/themes/darkrose.json".source = jsonFormat.generate "pi-darkrose.json" darkrose;
+        }
+        # Vendored extensions are linked file-by-file so hand-managed
+        # ones in extensions/ (e.g. nlk-gateway.ts) stay untouched.
+        // lib.mapAttrs'
+        (
+          name: _:
+            lib.nameValuePair "${piCfg.configDir}/extensions/${name}" {source = ./extensions/${name};}
+        )
+        (
+          lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".ts" name) (
+            builtins.readDir ./extensions
+          )
+        );
     }
     (lib.mkIf isLinux {
       persistence = {
